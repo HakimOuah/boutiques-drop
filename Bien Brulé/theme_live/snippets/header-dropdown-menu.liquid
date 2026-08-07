@@ -1,0 +1,113 @@
+{% comment %}
+  Renders a standard dropdown style menu for the header.
+
+  Usage:
+  {% render 'header-dropdown-menu' %}
+{% endcomment %}
+
+{{ 'component-dropdown-menu.css' | asset_url | stylesheet_tag }}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li data-anchor="{{ link.title | handleize }}" data-handle="{{ link.handle }}">
+        {%- if link.links != blank -%}
+          <dropdown-menu>
+            <span class="header__menu-item list-menu__item link link--text focus-inset">
+              <span class="styled-link {%- if link.child_active %} header__active-menu-item{% endif %}">
+                {{- link.title | escape -}}
+              </span>
+              {%- if settings.menu_icon_style == "arrow" -%}
+                {%- render 'icon-arrow'-%}
+              {%- elsif settings.menu_icon_style == "caret" -%}
+                {%- render 'icon-caret' -%}
+              {%- endif -%}
+            </span>
+            
+            <!-- Mega Menu Content -->
+              <div
+                class="dropdown__content dropdown__container color-{{ section.settings.menu_color_scheme }} gradient motion-reduce"
+                tabindex="-1"
+                aria-expanded="false" style="display: none;"
+              >
+                <ul
+                  class="dropdown__list{% if link.levels == 1 %} dropdown__list--condensed{% endif %}"
+                  role="list"
+                >
+                  {%- for childlink in link.links -%}
+                    <li>
+                      {%- if childlink.links != blank -%}
+                        <dropdown-menu class="dropdown__child">
+                          <span class="header__menu-item list-menu__item list-menu__item--parent link link--text focus-inset">
+                            <span class="link list-menu__item--title{%- if childlink.child_active %} header__active-menu-item{% endif %}">
+                              {{- childlink.title | escape -}}
+                            </span>
+                            {%- if settings.menu_icon_style == "arrow" -%}
+                              {%- render 'icon-arrow'-%}
+                            {%- elsif settings.menu_icon_style == "caret" -%}
+                              {%- render 'icon-caret' -%}
+                            {%- endif -%}
+                          </span>
+                          <div
+                            class="dropdown__content color-{{ section.settings.dropdown_color_scheme }} gradient motion-reduce"
+                            tabindex="-1"
+                            aria-expanded="false" style="display: none;"
+                          >
+                            <ul
+                              class="dropdown__list dropdown__list--deep"
+                              role="list"
+                            >
+                              {%- for grandchildlink in childlink.links -%}
+                                <li class="header__menu-item">
+                                  <a
+                                    href="{{ grandchildlink.url }}"
+                                    class="dropdown__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
+                                    {% if grandchildlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          </div>
+                        </dropdown-menu>
+                      {%- else -%}
+                        <a
+                          href="{{ childlink.url }}"
+                          class="header__menu-item list-menu__item link link--text focus-inset"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          <span class="styled-link {%- if childlink.current %} header__active-menu-item{% endif %}">
+                            {{- childlink.title | escape -}}
+                          </span>
+                        </a>
+                      {%- endif -%}
+                    </li>
+                    
+                  {%- endfor -%}
+                </ul>
+              </div>
+          </dropdown-menu>     
+        {%- else -%}
+          <a
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span class="styled-link {%- if link.current %} header__active-menu-item{% endif %}">
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+
+<script src="{{ 'dropdown-menu.js' | asset_url }}" defer></script>

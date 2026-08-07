@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_wmYJEb": {
+      "type": "breadcrumbs",
+      "name": "Fil d'Ariane",
+      "settings": {
+        "show_home": true,
+        "show_on_homepage": false,
+        "home_text": "Accueil",
+        "font_size": 14,
+        "text_color": "#5A4636",
+        "current_color": "#B5651D",
+        "separator": "/"
+      }
+    },
+    "collection_banner_Tqr6xw": {
+      "type": "collection-banner",
+      "name": "Collection banner",
+      "settings": {
+        "auto_description": true,
+        "manual_title": "",
+        "manual_description": "",
+        "show_learn_more": true,
+        "learn_more_text": "En savoir plus",
+        "image_position": "right",
+        "background_color": "#FFFFFF",
+        "title_color": "#2B1D14",
+        "text_color": "#5A4636",
+        "link_color": "#B5651D",
+        "title_size": 30,
+        "reduce_top_spacing": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "settings": {
+        "auto_description": true,
+        "manual_title": "",
+        "manual_description": "",
+        "show_learn_more": true,
+        "learn_more_text": "En savoir plus",
+        "image_position": "right",
+        "background_color": "#FFFFFF",
+        "title_color": "#2B1D14",
+        "text_color": "#F5F0E8",
+        "link_color": "#B5651D",
+        "title_size": 30,
+        "reduce_top_spacing": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "filter_layout": "horizontal",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": false
+      }
+    },
+    "description_collection_zny8p8": {
+      "type": "description-collection",
+      "name": "Collection description",
+      "settings": {
+        "auto_description": true,
+        "manual_description": "",
+        "show_toggle_button": true,
+        "button_text_more": "En savoir plus",
+        "button_text_less": "Voir moins",
+        "heading_size": 24,
+        "title_color": "#2B1D14",
+        "text_color": "#5A4636",
+        "button_background": "#B5651D",
+        "button_hover": "#9A5417",
+        "button_text_color": "#FFFFFF",
+        "background": "#F5F0E8",
+        "background_gradient": ""
+      }
+    },
+    "faq_BPNgQg": {
+      "type": "faq",
+      "blocks": {
+        "item_4D47zP": {
+          "type": "item",
+          "settings": {
+            "title": "Peut-on vraiment réussir un expresso de qualité avec une machine portable ?",
+            "content": "<p>Oui, à condition de choisir une machine capable d'atteindre une <strong>pression d'au moins 15 bars</strong>, le seuil nécessaire pour extraire une véritable crema.<br/><br/>Nos machines Bien Brûlé montent jusqu'à 20 bars et délivrent un expresso dense, aromatique et nappé d'une belle crema, exactement comme au comptoir d'un café. Les modèles bas de gamme (6 à 8 bars) ne produisent qu'un café allongé sans corps ni crema.</p>"
+          }
+        },
+        "item_CmmKWB": {
+          "type": "item",
+          "settings": {
+            "title": "Combien de cafés puis-je préparer avec une seule charge de batterie ?",
+            "content": "<p>Avec une batterie pleine, nos machines portables permettent de préparer <strong>2 à 3 expressos consécutifs</strong> avant une nouvelle recharge.<br/><br/>La recharge complète s'effectue en moins de 2 heures via USB-C, depuis un ordinateur, une batterie externe ou l'allume-cigare de votre véhicule. Idéal pour les road-trips, le bureau ou les randonnées.</p>"
+          }
+        },
+        "item_hp6CNB": {
+          "type": "item",
+          "settings": {
+            "title": "Quel type de café utiliser dans une machine portable ?",
+            "content": "<p>Nos machines acceptent à la fois le <strong>café moulu</strong> et les <strong>capsules compatibles</strong>, selon le modèle.<br/><br/>Pour un résultat optimal, privilégiez une mouture fine et fraîche. Associée à l'un de nos moulins à café, elle révèle pleinement les arômes de votre café, où que vous soyez.</p>"
+          }
+        },
+        "item_qVi7fA": {
+          "type": "item",
+          "settings": {
+            "title": "Comment entretenir ma machine à café portable ?",
+            "content": "<p>L'entretien est simple : rincez le porte-filtre et le réservoir à l'eau claire après chaque utilisation, puis laissez sécher à l'air libre.</p><p>Une fois par mois, effectuez un cycle de détartrage avec une solution adaptée pour préserver la qualité d'extraction et la longévité de la pompe. Ces gestes simples prolongent la durée de vie de votre machine de plusieurs années.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_4D47zP",
+        "item_CmmKWB",
+        "item_hp6CNB",
+        "item_qVi7fA"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Questions fréquentes sur nos machines à café portables",
+        "content": "",
+        "team_avatar_width": 160,
+        "support_hours": "",
+        "answer_time": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": "",
+        "button_background": "#B5651D",
+        "button_text_color": "#B5651D",
+        "accordion_background": "#F5F0E8",
+        "accordion_text_color": "#5A4636"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_wmYJEb",
+    "collection_banner_Tqr6xw",
+    "banner",
+    "main",
+    "description_collection_zny8p8",
+    "faq_BPNgQg"
+  ]
+}

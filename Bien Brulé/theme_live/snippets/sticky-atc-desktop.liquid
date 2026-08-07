@@ -1,0 +1,170 @@
+{% comment %}
+  Renders a professional sticky add-to-cart bar for desktop.
+  Accepts:
+  - product: {Object} product object
+  - block: {Object} block object with settings
+  - product_form_id: {String} product form id
+
+  Usage:
+  {% render 'sticky-atc-desktop', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+
+{%- liquid
+  # Safety check - ensure product is a valid product object
+  if product == blank or product.title == blank
+    assign render_sticky = false
+  else
+    assign render_sticky = true
+    assign sticky_product = product
+    assign current_variant = sticky_product.selected_or_first_available_variant
+    assign featured_image = current_variant.featured_image | default: sticky_product.featured_image
+    assign sticky_form_id = 'sticky-atc-form-' | append: section.id
+  endif
+-%}
+
+{%- if render_sticky -%}
+{{ 'component-sticky-atc-desktop.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'sticky-atc-desktop.js' | asset_url }}" defer="defer"></script>
+
+<sticky-atc-desktop
+  class="sticky-atc-desktop"
+  data-section-id="{{ section.id }}"
+  style="
+    --sticky-atc-bg: {{ block.settings.sticky_atc_bg_color }};
+    --sticky-atc-text: {{ block.settings.sticky_atc_text_color }};
+    --sticky-atc-button-bg: {{ block.settings.sticky_atc_button_bg_color }};
+    --sticky-atc-button-text: {{ block.settings.sticky_atc_button_text_color }};
+  "
+>
+  <div class="sticky-atc-desktop__container page-width">
+    {%- if block.settings.sticky_atc_show_image -%}
+      <div class="sticky-atc-desktop__image">
+        {%- if featured_image != blank -%}
+          {{ featured_image | image_url: width: 100 | image_tag:
+            loading: 'lazy',
+            class: 'sticky-atc-desktop__img',
+            widths: '50, 75, 100',
+            sizes: '50px',
+            alt: featured_image.alt | escape
+          }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'sticky-atc-desktop__img placeholder-svg' }}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="sticky-atc-desktop__info">
+      <h3 class="sticky-atc-desktop__title">{{ sticky_product.title }}</h3>
+      {%- if block.settings.sticky_atc_show_variant and sticky_product.has_only_default_variant == false -%}
+        <p class="sticky-atc-desktop__variant" data-sticky-variant-title>
+          {{ current_variant.title }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="sticky-atc-desktop__price" data-sticky-price>
+      {%- if current_variant.compare_at_price > current_variant.price -%}
+        <span class="sticky-atc-desktop__price-sale">
+          {{ current_variant.price | money }}
+        </span>
+        <span class="sticky-atc-desktop__price-compare">
+          {{ current_variant.compare_at_price | money }}
+        </span>
+      {%- else -%}
+        <span class="sticky-atc-desktop__price-regular">
+          {{ current_variant.price | money }}
+        </span>
+      {%- endif -%}
+    </div>
+
+    {%- if block.settings.sticky_atc_show_quantity -%}
+      <div class="sticky-atc-desktop__quantity">
+        <label class="visually-hidden" for="StickyQuantity-{{ section.id }}">
+          {{ 'products.product.quantity.label' | t }}
+        </label>
+        <quantity-input class="quantity sticky-atc-desktop__quantity-input">
+          <button class="quantity__button no-js-hidden" name="minus" type="button">
+            <span class="visually-hidden">
+              {{- 'products.product.quantity.decrease' | t: product: sticky_product.title | escape -}}
+            </span>
+            {% render 'icon-minus' %}
+          </button>
+          <input
+            class="quantity__input"
+            type="number"
+            name="quantity"
+            id="StickyQuantity-{{ section.id }}"
+            data-cart-quantity="{{ cart | item_count_for_variant: current_variant.id }}"
+            data-min="{{ current_variant.quantity_rule.min }}"
+            min="{{ current_variant.quantity_rule.min }}"
+            {% if current_variant.quantity_rule.max != null %}
+              data-max="{{ current_variant.quantity_rule.max }}"
+              max="{{ current_variant.quantity_rule.max }}"
+            {% endif %}
+            step="{{ current_variant.quantity_rule.increment }}"
+            value="{{ current_variant.quantity_rule.min }}"
+            form="{{ sticky_form_id }}"
+          />
+          <button class="quantity__button no-js-hidden" name="plus" type="button">
+            <span class="visually-hidden">
+              {{- 'products.product.quantity.increase' | t: product: sticky_product.title | escape -}}
+            </span>
+            {% render 'icon-plus' %}
+          </button>
+        </quantity-input>
+      </div>
+    {%- endif -%}
+
+    <div class="sticky-atc-desktop__actions">
+      <product-form class="sticky-atc-desktop__form" data-hide-errors="false">
+        <div class="product-form__error-message-wrapper" role="alert" hidden>
+          <svg aria-hidden="true" focusable="false" class="icon icon-error" viewBox="0 0 13 13">
+            <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+            <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+            <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+            <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7"/>
+          </svg>
+          <span class="product-form__error-message"></span>
+        </div>
+
+        {% form 'product', sticky_product %}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ current_variant.id }}"
+            disabled
+            class="product-variant-id sticky-atc-variant-id"
+          >
+          <button
+            type="submit"
+            name="add"
+            class="sticky-atc-desktop__button button button--primary"
+            {% if current_variant.available == false %}
+              disabled
+            {% endif %}
+          >
+            <span class="sticky-atc-desktop__button-text">
+              {%- if current_variant.available == false -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <div class="loading-overlay__spinner hidden">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
+          </button>
+        {% endform %}
+      </product-form>
+    </div>
+  </div>
+</sticky-atc-desktop>
+{%- endif -%}

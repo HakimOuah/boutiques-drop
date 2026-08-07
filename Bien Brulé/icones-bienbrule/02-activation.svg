@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#B5651D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- duotone fill behind power button -->
+  <circle cx="32" cy="36.5" r="13" fill="#B5651D" fill-opacity="0.12" stroke="none"/>
+  <!-- heat / waves (subtle) -->
+  <g stroke-opacity="0.55">
+    <path d="M14 27 A11 11 0 0 0 14 46"/>
+    <path d="M19 30 A7 7 0 0 0 19 43"/>
+    <path d="M50 27 A11 11 0 0 1 50 46"/>
+    <path d="M45 30 A7 7 0 0 1 45 43"/>
+  </g>
+  <!-- power button -->
+  <path d="M24 28 A14 14 0 1 1 40 28"/>
+  <path d="M32 19 V34"/>
+</svg>

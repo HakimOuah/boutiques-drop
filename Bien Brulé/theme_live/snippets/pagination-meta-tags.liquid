@@ -1,0 +1,19 @@
+{% comment %}
+  Renders SEO-friendly pagination meta tags (rel="next" and rel="prev") in the <head> section.
+  
+  Usage:
+  {% render 'pagination-meta-tags', paginate: paginate %}
+  
+  Accepts:
+  - paginate: {Object} The Shopify paginate object from any paginated context
+{% endcomment %}
+
+{%- if paginate and paginate.parts.size > 0 -%}
+  {%- if paginate.previous -%}
+    <link rel="prev" href="{{ paginate.previous.url | prepend: request.origin }}">
+  {%- endif -%}
+  
+  {%- if paginate.next -%}
+    <link rel="next" href="{{ paginate.next.url | prepend: request.origin }}">
+  {%- endif -%}
+{%- endif -%}

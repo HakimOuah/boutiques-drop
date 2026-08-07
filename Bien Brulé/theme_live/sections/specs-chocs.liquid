@@ -1,0 +1,153 @@
+{% comment %}
+  Bien Brûlé — Specs chocs
+  Bandeau de chiffres-clés (élément de conversion central).
+  Gros chiffre serif terracotta + label sans-serif. Réutilisable home + produit.
+{% endcomment %}
+
+{{ 'section-specs-chocs.css' | asset_url | stylesheet_tag }}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div
+    class="specs-chocs page-width section-{{ section.id }}-padding"
+    {% if section.settings.heading != blank %}aria-label="{{ section.settings.heading | escape }}"{% endif %}
+  >
+    {%- if section.settings.heading != blank -%}
+      <h2 class="specs-chocs__title {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="specs-chocs__grid" role="list" style="--bb-cols: {{ section.blocks.size }};">
+        {%- for block in section.blocks -%}
+          <li class="specs-chocs__item" {{ block.shopify_attributes }}>
+            <p class="specs-chocs__value">
+              {{- block.settings.value -}}
+              {%- if block.settings.unit != blank -%}
+                <span class="specs-chocs__unit">{{ block.settings.unit }}</span>
+              {%- endif -%}
+            </p>
+            {%- if block.settings.label != blank -%}
+              <p class="specs-chocs__label">{{ block.settings.label }}</p>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+.section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
+@media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Specs chocs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre (optionnel)"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "options": [
+        { "value": "h2", "label": "Petit" },
+        { "value": "h1", "label": "Moyen" },
+        { "value": "h0", "label": "Grand" }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Jeu de couleurs",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Marges internes"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge haute",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Marge basse",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Chiffre-clé",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Chiffre",
+          "default": "15"
+        },
+        {
+          "type": "text",
+          "id": "unit",
+          "label": "Unité (optionnel)",
+          "default": "bars"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Libellé",
+          "default": "Pression professionnelle"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Specs chocs",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": { "value": "20", "unit": "bars", "label": "Pression professionnelle" }
+        },
+        {
+          "type": "stat",
+          "settings": { "value": "~5", "unit": "min", "label": "Chauffe à 92 °C" }
+        },
+        {
+          "type": "stat",
+          "settings": { "value": "USB-C", "unit": "", "label": "100% sans fil" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

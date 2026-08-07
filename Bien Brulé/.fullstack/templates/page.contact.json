@@ -1,0 +1,103 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "blocks": {
+        "subheading": {
+          "type": "text",
+          "name": "t:subheading",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<p>NOUS CONTACTER</p>",
+            "text_style": "paragraph",
+            "font_weight": 600,
+            "alignment": "left",
+            "margin_top": 0,
+            "margin_bottom": 6,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "title": {
+          "type": "text",
+          "name": "t:title",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<h1>Vous avez une question ? L'équipe Bien Brûlé est à votre service !</h1>",
+            "text_style": "h2",
+            "font_weight": 400,
+            "alignment": "left",
+            "margin_top": 0,
+            "margin_bottom": 12,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "intro": {
+          "type": "text",
+          "name": "Contenu",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<p>Écrivez-nous via le formulaire ci-dessous ou par email : <a href=\"mailto:contact@bienbrule.com\">contact@bienbrule.com</a></p><p>Nous répondons généralement dans un délai de 8 à 24h par email (hors week-ends et jours fériés).</p><p><strong>Service client ouvert du lundi au vendredi, de 9h à 18h.</strong></p>",
+            "text_style": "paragraph",
+            "font_weight": 400,
+            "alignment": "left",
+            "margin_top": 0,
+            "margin_bottom": 20,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "contact_form": {
+          "type": "contact-form",
+          "name": "t:contact_form",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "subheading",
+        "title",
+        "intro",
+        "contact_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "hide_header_and_footer": false,
+        "section_width": "narrow",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "column",
+        "layout_grid_columns_desktop": 3,
+        "layout_gap_desktop": 20,
+        "layout_wrap_desktop": "nowrap",
+        "layout_flex_justify_desktop": "flex-start",
+        "layout_flex_align_items_desktop": "flex-start",
+        "same_as_desktop": true,
+        "layout_flex_direction_mobile": "column",
+        "layout_gap_mobile": 20,
+        "layout_wrap_mobile": "nowrap",
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main-page"
+  ]
+}

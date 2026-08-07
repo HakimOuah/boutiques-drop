@@ -1,0 +1,123 @@
+/* Infinite Loading Component Styles */
+
+infinite-loading {
+  display: block;
+  width: 100%;
+  margin-top: 3rem;
+  position: relative;
+  min-height: 1px;
+}
+
+.infinite-loading__button {
+  display: block;
+  margin: 0 auto;
+  min-width: 20rem;
+  text-align: center;
+}
+
+.infinite-loading__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.infinite-loading__indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.infinite-loading__indicator .loading-overlay__spinner {
+  width: 4rem;
+  height: 4rem;
+}
+
+.infinite-loading__indicator .spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.infinite-loading__indicator .spinner .path {
+  stroke: rgb(var(--color-foreground));
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+}
+
+.infinite-loading__text {
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.infinite-loading__end {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.55);
+  font-style: italic;
+}
+
+.infinite-loading__sentinel {
+  height: 10px;
+  width: 100%;
+  pointer-events: none;
+  display: block !important;
+  clear: both;
+  margin-top: 2rem;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure smooth appearance of new products (only for dynamically added ones) */
+infinite-loading .grid__item.infinite-loaded {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 749px) {
+  infinite-loading {
+    margin-top: 2rem;
+  }
+
+  .infinite-loading__button {
+    min-width: 100%;
+    width: 100%;
+  }
+}

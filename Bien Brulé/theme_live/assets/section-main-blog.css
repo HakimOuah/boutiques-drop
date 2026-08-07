@@ -1,0 +1,11 @@
+.blog-articles {
+  display: flex;
+  gap: var(--grid-desktop-horizontal-spacing);
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 749px) {
+  .blog-articles {
+    gap: var(--grid-mobile-horizontal-spacing)
+  }
+}

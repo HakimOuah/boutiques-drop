@@ -1,0 +1,46 @@
+.product-timer {
+  display: block;  
+  max-width: fit-content;
+  color: rgb(var(--timer-color));
+  line-height: 1.5;
+}
+
+.product-timer.product-timer--only {
+  color: rgb(var(--color-foreground))
+}
+
+.product-timer.product-timer--only .product-timer__timer {
+  color: rgb(var(--timer-color)); 
+}
+
+.product-timer--box {
+  background-color: rgba(var(--timer-color), 0.05);
+  padding: 4px 5px;
+  border-radius: var(--variant-pills-radius);
+  border: solid 1px rgba(var(--timer-color), 0.596);
+}
+
+.product-timer__timer > * {
+  display: inline-flex;
+}
+
+.product-timer__icon {
+  line-height: 1;
+}
+
+.product-timer__icon svg {
+  width: 20px;
+  height: 20px;
+	fill: none;
+	margin-right: 3px;
+	margin-bottom: -5px;
+}
+
+.product-timer__text p {
+  margin: 0;
+	display: contents;
+}
+
+.product-timer__timer {
+  font-weight: bold;
+}

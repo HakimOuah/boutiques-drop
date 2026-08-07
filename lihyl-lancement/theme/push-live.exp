@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+set timeout 420
+log_file -noappend /tmp/lihyl-theme/cli2.log
+cd /tmp/lihyl-theme/push
+spawn npx -y @shopify/cli@latest theme push --store lihyl.myshopify.com --theme 185642385737 --allow-live --nodelete --only templates/product.json
+expect {
+    -re {Press any key} { send "\r"; exp_continue }
+    -re {theme directory} { sleep 1; send "y"; exp_continue }
+    -re {Do you want to proceed} { sleep 1; send "y"; exp_continue }
+    -re {(Synced|synced|successfully|Pushed)} { puts "\nPUSH_OK"; expect eof; exit 0 }
+    -re {(Auth error|auth error|failed to authenticate)} { puts "\nAUTH_FAIL"; exit 2 }
+    timeout { puts "\nEXPECT_TIMEOUT"; exit 1 }
+    eof { puts "\nEOF_REACHED" }
+}

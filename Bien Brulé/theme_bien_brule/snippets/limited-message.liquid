@@ -1,0 +1,10 @@
+{{ 'limited-message.css' | asset_url | stylesheet_tag }}
+
+<div class="limited-message">
+  <p>
+    {{ 'general.limited_message.part1' | t }}
+    <a href="mailto:{{ 'general.limited_message.email' | t }}">{{ 'general.limited_message.email' | t }}</a>
+    {{ 'general.limited_message.part2' | t }}
+    <a href="{{ 'general.limited_message.website' | t }}">{{ 'general.limited_message.website' | t }}</a>.
+  </p>
+</div>

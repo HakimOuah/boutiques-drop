@@ -1,0 +1,26 @@
+# Repos GitHub autonomes — clonés séparément, voir README.md
+/boutique-pipeline/
+/New project/
+
+# Temporaire / jetable
+/scratchpad/
+.DS_Store
+*.log
+.playwright-mcp/
+
+# Dépendances & environnements
+node_modules/
+.venv*/
+venv/
+__pycache__/
+*.pyc
+.next/
+
+# Secrets — jamais dans git
+.env
+.env.*
+!.env.example
+ecommerce-dropshipping/dataforseo_analysis/cache.json
+
+# Config locale Claude propre à cette machine
+.claude/settings.local.json

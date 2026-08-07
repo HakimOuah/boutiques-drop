@@ -1,0 +1,212 @@
+[
+  {
+    "niche": "Kayak gonflable",
+    "vol": 12350,
+    "kd": 0.6,
+    "cpc": 0.12,
+    "n": 45,
+    "score": 1914,
+    "top": [
+      "kayak gonflable",
+      "kayak gonflable 2 places",
+      "kayak gonflable decathlon",
+      "canoe kayak gonflable",
+      "kayak gonflable 3 places"
+    ]
+  },
+  {
+    "niche": "Kayak de mer",
+    "vol": 5380,
+    "kd": 0.3,
+    "cpc": 0.13,
+    "n": 28,
+    "score": 1172,
+    "top": [
+      "kayak de mer",
+      "kayak mer",
+      "kayak de mer decathlon",
+      "kayak de mer rigide",
+      "kayak de mer corse"
+    ]
+  },
+  {
+    "niche": "Pagaie / rame",
+    "vol": 2700,
+    "kd": 0.1,
+    "cpc": 0.2,
+    "n": 17,
+    "score": 784,
+    "top": [
+      "pagaie kayak",
+      "paddle kayak",
+      "kayak paddle",
+      "pagaie kayak decathlon",
+      "how to paddle a kayak"
+    ]
+  },
+  {
+    "niche": "Kayak rigide / sit-on-top",
+    "vol": 2570,
+    "kd": 0.1,
+    "cpc": 0.1,
+    "n": 18,
+    "score": 752,
+    "top": [
+      "sit on top vs sit inside kayak comparison",
+      "canoë kayak rigide",
+      "kayak rigide",
+      "kayak rigide 2 places",
+      "sit on top vs sit inside kayak"
+    ]
+  },
+  {
+    "niche": "Kayak 2-3 places",
+    "vol": 2320,
+    "kd": 0.1,
+    "cpc": 0.13,
+    "n": 17,
+    "score": 692,
+    "top": [
+      "kayak 2 places",
+      "kayak 3 places",
+      "kayak decathlon 2 places",
+      "kayak decathlon itiwit 3 places",
+      "kayak decathlon itiwit 2 places"
+    ]
+  },
+  {
+    "niche": "Kayak de pêche",
+    "vol": 1440,
+    "kd": 0.0,
+    "cpc": 0.11,
+    "n": 10,
+    "score": 466,
+    "top": [
+      "kayak de peche",
+      "kayak peche",
+      "kayak de pêche decathlon",
+      "kayak de pêche",
+      "kayak de peche a pedal"
+    ]
+  },
+  {
+    "niche": "Chariot / transport",
+    "vol": 1550,
+    "kd": 0.0,
+    "cpc": 0.17,
+    "n": 9,
+    "score": 458,
+    "top": [
+      "chariot kayak",
+      "remorque kayak",
+      "chariot kayak decathlon",
+      "remorque kayak occasion",
+      "remorque kayak decathlon"
+    ]
+  },
+  {
+    "niche": "Kayak transparent",
+    "vol": 1090,
+    "kd": 0.5,
+    "cpc": 0.13,
+    "n": 11,
+    "score": 301,
+    "top": [
+      "kayak transparent",
+      "kayak transparent martinique",
+      "kayak transparent prix",
+      "kayak transparent guadeloupe",
+      "canoe kayak transparent"
+    ]
+  },
+  {
+    "niche": "Gilet / sécurité",
+    "vol": 800,
+    "kd": 0.0,
+    "cpc": 0.13,
+    "n": 6,
+    "score": 270,
+    "top": [
+      "gilet de sauvetage kayak",
+      "gilet kayak",
+      "casque kayak",
+      "gilet sauvetage kayak",
+      "gilet kayak decathlon"
+    ]
+  },
+  {
+    "niche": "Accessoires étanche",
+    "vol": 320,
+    "kd": 0.0,
+    "cpc": 0.15,
+    "n": 4,
+    "score": 148,
+    "top": [
+      "sac étanche kayak",
+      "bidon kayak",
+      "pantalon étanche kayak",
+      "bidon étanche kayak"
+    ]
+  },
+  {
+    "niche": "Siège / confort",
+    "vol": 230,
+    "kd": 0.0,
+    "cpc": 0.17,
+    "n": 3,
+    "score": 110,
+    "top": [
+      "siege kayak",
+      "siège kayak",
+      "siège kayak decathlon"
+    ]
+  },
+  {
+    "niche": "Pompe / gonfleur",
+    "vol": 210,
+    "kd": 0.0,
+    "cpc": 0.13,
+    "n": 3,
+    "score": 106,
+    "top": [
+      "pompe kayak decathlon",
+      "gonfleur kayak",
+      "pompe kayak"
+    ]
+  },
+  {
+    "niche": "Jupe / accessoires",
+    "vol": 200,
+    "kd": 0.0,
+    "cpc": 0.11,
+    "n": 3,
+    "score": 105,
+    "top": [
+      "jupe kayak",
+      "jupe de kayak",
+      "jupe kayak decathlon"
+    ]
+  },
+  {
+    "niche": "Stand up paddle",
+    "vol": 50,
+    "kd": 0.0,
+    "cpc": 0.0,
+    "n": 1,
+    "score": 32,
+    "top": [
+      "exploration de l'île raccoon sur sup kayak"
+    ]
+  },
+  {
+    "niche": "Ancre / accessoires pêche",
+    "vol": 100,
+    "kd": 34.0,
+    "cpc": 0.35,
+    "n": 1,
+    "score": 1,
+    "top": [
+      "kayak cannes"
+    ]
+  }
+]

@@ -1,0 +1,2785 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "text_zLqMQw": {
+          "type": "text",
+          "name": "t:title",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<p>{{ product.title }}</p>",
+            "text_style": "h3",
+            "paragraph_font_size": "normal",
+            "font_weight": 400,
+            "alignment": "left",
+            "alignment_mobile": "left",
+            "show_read_more": false,
+            "read_more_length": 200,
+            "read_more_text": "Voir plus",
+            "read_less_text": "Voir moins",
+            "truncate": false,
+            "truncate_length": 2,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "price_yEeMeb": {
+          "type": "product-price",
+          "name": "t:price",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "product": "{{ closest.product }}",
+            "sales_badge": "percentage",
+            "show_sales_badge_text": false,
+            "text_style": "paragraph",
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "text_yQdqF8": {
+          "type": "text",
+          "name": "t:text",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "{{ closest.product.description }}",
+            "text_style": "paragraph",
+            "paragraph_font_size": "normal",
+            "font_weight": 400,
+            "alignment": "left",
+            "alignment_mobile": "left",
+            "show_read_more": false,
+            "read_more_length": 50,
+            "read_more_text": "Voir plus",
+            "read_less_text": "Voir moins",
+            "truncate": false,
+            "truncate_length": 3,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "product_form_grYQk6": {
+          "type": "_product-form",
+          "name": "t:product_form",
+          "settings": {},
+          "blocks": {
+            "product_variant_picker_xWC3wF": {
+              "type": "_product-variant-picker",
+              "name": "t:product_variant_picker",
+              "settings": {
+                "show_option_name": true,
+                "variant_picker_type": "buttons",
+                "show_swatches": true,
+                "swatches_size": "normal",
+                "swatches_rounded": true,
+                "margin_top": 0,
+                "margin_bottom": 15,
+                "additional_class": ""
+              },
+              "blocks": {
+                "product-variant-popup": {
+                  "type": "_product-variant-popup",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "show_on_option_name": "Taille",
+                    "color_scheme": "scheme-1",
+                    "button_style": "button",
+                    "button_label": "Guide des tailles",
+                    "icon": "straighten",
+                    "icon_custom": "",
+                    "icon_position": "end",
+                    "additional_class": ""
+                  },
+                  "blocks": {
+                    "text_LfyX9A": {
+                      "type": "text",
+                      "name": "t:title",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<h1>Guide des tailles</h1>",
+                        "text_style": "h3",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 200,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 10,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    },
+                    "text_99rHbT": {
+                      "type": "text",
+                      "name": "t:text",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<p>Le Reformer Lihyl — une vraie séance de studio, chez vous.</p>",
+                        "text_style": "paragraph",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 200,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 0,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_LfyX9A",
+                    "text_99rHbT"
+                  ]
+                }
+              },
+              "block_order": []
+            },
+            "product-add-to-cart-button": {
+              "type": "_product-add-to-cart-button",
+              "static": true,
+              "settings": {
+                "enable_sticky_add_to_cart": true,
+                "button_style": "primary",
+                "show_price": true,
+                "icon": "none",
+                "icon_custom": "",
+                "icon_position": "end",
+                "additional_class": ""
+              },
+              "blocks": {
+                "product-quantity-selector": {
+                  "type": "_product-quantity-selector",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "add-to-wishlist-button": {
+                  "type": "_add-to-wishlist-button",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "accelerated-checkout": {
+              "type": "_accelerated-checkout",
+              "static": true,
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "full_width": true,
+                "button_style": "primary",
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "toggle_xsell": {
+              "type": "_toggle-cross-sell",
+              "name": "t:toggle_cross_sell",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "title": "Ajoutez les essentiels",
+                "description": "<p>Cochez ce que vous voulez ajouter à votre commande.</p>",
+                "product_list": [
+                  "reformer-pilates-pliable",
+                  "tapis-sol-modulaire-reformer",
+                  "anneau-pilates",
+                  "socquettes-pilates-antiderapantes",
+                  "chaussettes-pilates-montantes-rose"
+                ],
+                "toggle_mode": "checkbox",
+                "show_image": true,
+                "margin_top": 8,
+                "margin_bottom": 8,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_variant_picker_xWC3wF",
+            "toggle_xsell"
+          ]
+        },
+        "payment_methods_BdjpFB": {
+          "type": "payment-methods",
+          "name": "t:payment_methods",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "alignment_desktop": "center",
+            "alignment_mobile": "flex-start",
+            "icon_size": 35,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "accordions_KKUaHK": {
+          "type": "accordions",
+          "name": "t:accordions",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "icon": "caret",
+            "dividers": true,
+            "additional_class": ""
+          },
+          "blocks": {
+            "accordion_mEqYBU": {
+              "type": "_accordion",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "heading": "Politique de retour",
+                "open_by_default": false,
+                "icon": "none",
+                "icon_custom": "",
+                "additional_class": ""
+              },
+              "blocks": {
+                "text_KyCgAW": {
+                  "type": "text",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>Vous disposez de 14 jours après réception pour changer d'avis, sans motif. L'article doit être complet, à l'état neuf, dans son emballage d'origine ; les frais de retour restent à la charge du client. Écrivez-nous à contact@lihyl.fr pour lancer la procédure.</p>",
+                    "text_style": "paragraph",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 400,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 200,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_KyCgAW"
+              ]
+            },
+            "accordion_gU7QYn": {
+              "type": "_accordion",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "heading": "Livraison",
+                "open_by_default": false,
+                "icon": "none",
+                "icon_custom": "",
+                "additional_class": ""
+              },
+              "blocks": {
+                "text_zgU7ap": {
+                  "type": "text",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>Commande préparée sous 24-48 h, livraison <strong>offerte</strong> partout en France, en 5 à 9 jours ouvrés depuis notre stock européen — sans frais de douane. Numéro de suivi envoyé dès l'expédition.</p>",
+                    "text_style": "paragraph",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 400,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 200,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_zgU7ap"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_mEqYBU",
+            "accordion_gU7QYn"
+          ]
+        },
+        "group_dddxG7": {
+          "type": "group",
+          "name": "t:icons_and_text_column",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-2",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "row",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 10,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "space-around",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": true,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "flex-start",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {
+            "icon_with_text_DWkBqr": {
+              "type": "icon-with-text",
+              "name": "t:icon_with_text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "layout_direction_desktop": "column",
+                "layout_gap_desktop": 5,
+                "same_as_desktop": true,
+                "layout_direction_mobile": "column",
+                "layout_gap_mobile": 10,
+                "icon_type": "icon",
+                "icon": "savings",
+                "icon_custom": "",
+                "icon_size": 32,
+                "icon_position": "start",
+                "text": "<p>Livraison offerte</p>",
+                "text_style": "paragraph",
+                "font_weight": 500,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "icon_with_text_LqjaQL": {
+              "type": "icon-with-text",
+              "name": "t:icon_with_text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "layout_direction_desktop": "column",
+                "layout_gap_desktop": 5,
+                "same_as_desktop": true,
+                "layout_direction_mobile": "column",
+                "layout_gap_mobile": 10,
+                "icon_type": "icon",
+                "icon": "encrypted",
+                "icon_custom": "",
+                "icon_size": 32,
+                "icon_position": "start",
+                "text": "<p>Paiement sécurisé</p>",
+                "text_style": "paragraph",
+                "font_weight": 500,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "icon_with_text_Y6hka8": {
+              "type": "icon-with-text",
+              "name": "t:icon_with_text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "layout_direction_desktop": "column",
+                "layout_gap_desktop": 5,
+                "same_as_desktop": true,
+                "layout_direction_mobile": "column",
+                "layout_gap_mobile": 10,
+                "icon_type": "icon",
+                "icon": "delivery_truck_speed",
+                "icon_custom": "",
+                "icon_size": 32,
+                "icon_position": "start",
+                "text": "<p>Garantie 2 ans</p>",
+                "text_style": "paragraph",
+                "font_weight": 500,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_with_text_DWkBqr",
+            "icon_with_text_LqjaQL",
+            "icon_with_text_Y6hka8"
+          ]
+        },
+        "product_media_gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "hide_variants": false,
+            "media_display": "carrousel",
+            "media_ratio": "1 / 1",
+            "media_rounded": true,
+            "grid_columns": "2",
+            "grid_gap": 10,
+            "main_image_full_width": true,
+            "show_arrows": false,
+            "show_pagination": false,
+            "show_thumbnails": true,
+            "show_thumbnails_on_display": "desktop_and_mobile",
+            "thumbnails_show_arrows": false,
+            "video_loop": true,
+            "enable_video_controls": false,
+            "show_badges": true,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "delivery_estimation_lihyl": {
+          "type": "delivery-estimation",
+          "name": "t:delivery_estimation",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "icon": "delivery_truck_speed",
+            "icon_custom": "",
+            "alignment_desktop": "flex-start",
+            "alignment_mobile": "flex-start",
+            "date_format": "in_letters",
+            "show_weekday": true,
+            "minimum_delivery_days": 6,
+            "maximum_delivery_days": 10,
+            "cutoff_hour": 15,
+            "no_delivery_on_saturday": true,
+            "no_delivery_on_sunday": true,
+            "delivery_estimation_text": "Commandez aujourd'hui, livraison estimée entre le",
+            "translation_between_dates": "et le",
+            "margin_top": 10,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_zLqMQw",
+        "price_yEeMeb",
+        "product_form_grYQk6",
+        "payment_methods_BdjpFB",
+        "text_yQdqF8",
+        "delivery_estimation_lihyl",
+        "accordions_KKUaHK",
+        "group_dddxG7"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_product_info_card": false,
+        "color_scheme_product_info": "",
+        "image_position": "row",
+        "product_info_width": 50,
+        "gap": 60,
+        "carrousel_sticky": false,
+        "product_info_sticky": false,
+        "carrousel_full_width": true,
+        "padding_top": 30,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "custom_section_HfqtB3": {
+      "type": "custom-section",
+      "blocks": {
+        "image_QQNAyM": {
+          "type": "image",
+          "name": "t:image",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "show_placeholder": true,
+            "link": "",
+            "image_ratio": "adapt",
+            "image_width_desktop": 100,
+            "image_width_mobile": 100,
+            "additional_class": "",
+            "image": "shopify://shop_images/lihyl-seance-studio.jpg"
+          },
+          "blocks": {}
+        },
+        "group_hFEX9q": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "color_scheme": "scheme-2",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 15,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "flex-start",
+            "same_as_desktop": true,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "flex-start",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "text_q8yyGy": {
+              "type": "text",
+              "name": "t:title",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<h2>une vraie séance <em>de studio</em></h2>",
+                "text_style": "h3",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_fCxgBV": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Chariot fluide, tubes latex à résistance progressive, sangles mains et pieds, barre d'appui : retrouvez les exercices fondamentaux du reformer — footwork, hundred, leg circles — du niveau débutant au confirmé.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_q8yyGy",
+            "text_fCxgBV"
+          ]
+        }
+      },
+      "block_order": [
+        "image_QQNAyM",
+        "group_hFEX9q"
+      ],
+      "name": "t:image_with_text",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-2",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "row",
+        "layout_grid_columns_desktop": 3,
+        "layout_gap_desktop": 30,
+        "layout_flex_justify_desktop": "flex-start",
+        "layout_flex_align_items_desktop": "center",
+        "same_as_desktop": false,
+        "layout_flex_direction_mobile": "column",
+        "layout_gap_mobile": 10,
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "additional_class": ""
+      }
+    },
+    "custom_section_iEjmyJ": {
+      "type": "custom-section",
+      "blocks": {
+        "group_U3gXVj": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "color_scheme": "scheme-2",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 15,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "flex-start",
+            "same_as_desktop": true,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "flex-start",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "text_phnnWB": {
+              "type": "text",
+              "name": "t:title",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<h2>il disparaît <em>quand vous avez terminé</em></h2>",
+                "text_style": "h3",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_eUcFgg": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>32 kg, stable pendant l'effort, replié en 30 secondes dans 112 × 56 × 28,5 cm : sous le lit, derrière une porte, contre un mur. Votre salon reste un salon.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_phnnWB",
+            "text_eUcFgg"
+          ]
+        },
+        "image_NRLtBA": {
+          "type": "image",
+          "name": "t:image",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "show_placeholder": true,
+            "link": "",
+            "image_ratio": "adapt",
+            "image_width_desktop": 100,
+            "image_width_mobile": 100,
+            "additional_class": "",
+            "image": "shopify://shop_images/lihyl-contre-le-mur.jpg"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "group_U3gXVj",
+        "image_NRLtBA"
+      ],
+      "name": "t:video_with_text",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-1",
+        "wrap_in_card": false,
+        "color_scheme_card": "scheme-1",
+        "section_width": "normal",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "row",
+        "layout_grid_columns_desktop": 3,
+        "layout_gap_desktop": 30,
+        "layout_flex_justify_desktop": "flex-start",
+        "layout_flex_align_items_desktop": "center",
+        "same_as_desktop": false,
+        "layout_flex_direction_mobile": "column",
+        "layout_gap_mobile": 10,
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "additional_class": ""
+      }
+    },
+    "reviews_8P6xW3": {
+      "type": "reviews",
+      "blocks": {
+        "review_kaimbX": {
+          "type": "_review-slide",
+          "name": "t:review_display_1",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_type": "1",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": true,
+            "rating": 4.5,
+            "image_ratio": "landscape",
+            "source": "uploaded",
+            "video_url": "",
+            "title": "Avis vérifié à venir",
+            "content": "<p>Les avis clients vérifiés s'afficheront ici après les premières livraisons.</p>",
+            "author": "Cliente Lihyl",
+            "date": "Le 11/03/2025",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "review_PAiAyA": {
+          "type": "_review-slide",
+          "name": "t:review_display_1",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_type": "1",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": true,
+            "rating": 4.5,
+            "image_ratio": "landscape",
+            "source": "uploaded",
+            "video_url": "",
+            "title": "Avis vérifié à venir",
+            "content": "<p>Les avis clients vérifiés s'afficheront ici après les premières livraisons.</p>",
+            "author": "Cliente Lihyl",
+            "date": "Le 11/03/2025",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "review_EKTArY": {
+          "type": "_review-slide",
+          "name": "t:review_display_1",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_type": "1",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": true,
+            "rating": 4.5,
+            "image_ratio": "landscape",
+            "source": "uploaded",
+            "video_url": "",
+            "title": "Avis vérifié à venir",
+            "content": "<p>Les avis clients vérifiés s'afficheront ici après les premières livraisons.</p>",
+            "author": "Cliente Lihyl",
+            "date": "Le 11/03/2025",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "review_K9Vi8A": {
+          "type": "_review-slide",
+          "name": "t:review_display_1",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_type": "1",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": true,
+            "rating": 4.5,
+            "image_ratio": "landscape",
+            "source": "uploaded",
+            "video_url": "",
+            "title": "Avis vérifié à venir",
+            "content": "<p>Les avis clients vérifiés s'afficheront ici après les premières livraisons.</p>",
+            "author": "Cliente Lihyl",
+            "date": "Le 11/03/2025",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "review_kFzBM6": {
+          "type": "_review-slide",
+          "name": "t:review_display_1",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_type": "1",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": true,
+            "rating": 4.5,
+            "image_ratio": "landscape",
+            "source": "uploaded",
+            "video_url": "",
+            "title": "Avis vérifié à venir",
+            "content": "<p>Les avis clients vérifiés s'afficheront ici après les premières livraisons.</p>",
+            "author": "Cliente Lihyl",
+            "date": "Le 11/03/2025",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "review_Hi9gwT": {
+          "type": "_review-slide",
+          "name": "t:review_display_1",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_type": "1",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": true,
+            "rating": 4.5,
+            "image_ratio": "landscape",
+            "source": "uploaded",
+            "video_url": "",
+            "title": "Avis vérifié à venir",
+            "content": "<p>Les avis clients vérifiés s'afficheront ici après les premières livraisons.</p>",
+            "author": "Cliente Lihyl",
+            "date": "Le 11/03/2025",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "title": {
+          "type": "text",
+          "static": true,
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<h3>Avis client</h3>",
+            "text_style": "h3",
+            "paragraph_font_size": "normal",
+            "font_weight": 400,
+            "alignment": "left",
+            "alignment_mobile": "left",
+            "show_read_more": false,
+            "read_more_length": 200,
+            "read_more_text": "Voir plus",
+            "read_less_text": "Voir moins",
+            "truncate": false,
+            "truncate_length": 2,
+            "margin_top": 0,
+            "margin_bottom": 30,
+            "additional_class": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "review_kaimbX",
+        "review_PAiAyA",
+        "review_EKTArY",
+        "review_K9Vi8A",
+        "review_kFzBM6",
+        "review_Hi9gwT"
+      ],
+      "name": "t:reviews_grid",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "anchor": "reviews",
+        "color_scheme": "scheme-2",
+        "layout_type": "grid",
+        "grid_columns": 3,
+        "grid_columns_mobile": "1",
+        "slider_items": 3,
+        "slider_items_mobile": "1",
+        "show_arrows": false,
+        "show_pagination": true,
+        "rewind": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "additional_class": ""
+      },
+      "disabled": true
+    },
+    "custom_section_LBJBG7": {
+      "type": "custom-section",
+      "blocks": {
+        "group_NkNJJg": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": true,
+            "color_scheme": "scheme-1",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 55,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 10,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "center",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": false,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "flex-start",
+            "use_global_container_padding": false,
+            "padding_horizontal": 20,
+            "padding_vertical": 30,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {
+            "text_VLtRib": {
+              "type": "text",
+              "name": "t:title",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<h4>besoin d'aide ?</h4>",
+                "text_style": "h5",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 100,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_FyFaMj": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Notre équipe vous répond du lundi au vendredi, sous 24 h ouvrées, à contact@lihyl.fr.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 100,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 20,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "button_Q3UxFk": {
+              "type": "button",
+              "name": "t:button",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "link": "shopify://pages/contact",
+                "open_in_new_tab": false,
+                "label": "Contactez notre support",
+                "button_style": "primary",
+                "button_shape": "full-width",
+                "icon": "none",
+                "icon_custom": "",
+                "icon_position": "end",
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "button_qUpbgY": {
+              "type": "button",
+              "name": "t:button",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "link": "/policies/shipping-policy",
+                "open_in_new_tab": false,
+                "label": "Livraison & retours",
+                "button_style": "secondary",
+                "button_shape": "full-width",
+                "icon": "none",
+                "icon_custom": "",
+                "icon_position": "end",
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_VLtRib",
+            "text_FyFaMj",
+            "button_Q3UxFk",
+            "button_qUpbgY"
+          ]
+        },
+        "group_ampbiX": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "color_scheme": "",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 10,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "flex-start",
+            "same_as_desktop": true,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "flex-start",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {
+            "text_XR3Gyx": {
+              "type": "text",
+              "name": "t:title",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<h3>questions <em>fréquentes</em></h3>",
+                "text_style": "h3",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 100,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 10,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "accordions_JeK8VW": {
+              "type": "accordions",
+              "name": "t:accordions",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "icon": "caret",
+                "dividers": true,
+                "additional_class": ""
+              },
+              "blocks": {
+                "accordion_wVm9bk": {
+                  "type": "_accordion",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "heading": "Convient-il aux débutantes ?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "icon_custom": "",
+                    "additional_class": ""
+                  },
+                  "blocks": {
+                    "text_b36xbk": {
+                      "type": "text",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<p>Oui. La résistance des tubes latex s'ajuste en quelques secondes : commencez en douceur, puis augmentez l'intensité à mesure que votre pratique progresse.</p>",
+                        "text_style": "paragraph",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 100,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 0,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_b36xbk"
+                  ]
+                },
+                "accordion_FDaFgh": {
+                  "type": "_accordion",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "heading": "Quelle place faut-il prévoir ?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "icon_custom": "",
+                    "additional_class": ""
+                  },
+                  "blocks": {
+                    "text_yarNag": {
+                      "type": "text",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<p>Dépliée : 197 × 57 cm au sol, pour 72,5 cm de hauteur. Repliée (112 × 56 × 28,5 cm), elle se glisse sous un lit ou se range contre un mur.</p>",
+                        "text_style": "paragraph",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 100,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 0,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_yarNag"
+                  ]
+                },
+                "accordion_9NiJU7": {
+                  "type": "_accordion",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "heading": "Quels sont les délais de livraison ?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "icon_custom": "",
+                    "additional_class": ""
+                  },
+                  "blocks": {
+                    "text_FP3XGi": {
+                      "type": "text",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<p>Commande préparée sous 24-48 h, puis 5 à 9 jours ouvrés de livraison offerte partout en France, depuis notre stock européen — sans frais de douane.</p>",
+                        "text_style": "paragraph",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 100,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 0,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_FP3XGi"
+                  ]
+                },
+                "accordion_ePJYyi": {
+                  "type": "_accordion",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "heading": "Comment fonctionnent les retours ?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "icon_custom": "",
+                    "additional_class": ""
+                  },
+                  "blocks": {
+                    "text_nDYpUH": {
+                      "type": "text",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<p>14 jours pour changer d'avis après réception. Article complet et à l'état neuf, frais de retour à la charge du client. Contactez contact@lihyl.fr pour la procédure.</p>",
+                        "text_style": "paragraph",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 100,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 0,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_nDYpUH"
+                  ]
+                },
+                "accordion_Y8Qaxp": {
+                  "type": "_accordion",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "heading": "Quelle est la garantie ?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "icon_custom": "",
+                    "additional_class": ""
+                  },
+                  "blocks": {
+                    "text_mNHTMj": {
+                      "type": "text",
+                      "settings": {
+                        "show_on_display": "desktop_and_mobile",
+                        "text": "<p>Votre reformer est couvert par la garantie légale de conformité de 2 ans. En cas de défaut, écrivez-nous avec photos à contact@lihyl.fr : échange ou remboursement.</p>",
+                        "text_style": "paragraph",
+                        "paragraph_font_size": "normal",
+                        "font_weight": 400,
+                        "alignment": "left",
+                        "alignment_mobile": "left",
+                        "show_read_more": false,
+                        "read_more_length": 100,
+                        "read_more_text": "Voir plus",
+                        "read_less_text": "Voir moins",
+                        "truncate": false,
+                        "truncate_length": 2,
+                        "margin_top": 0,
+                        "margin_bottom": 0,
+                        "additional_class": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_mNHTMj"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_wVm9bk",
+                "accordion_FDaFgh",
+                "accordion_9NiJU7",
+                "accordion_ePJYyi",
+                "accordion_Y8Qaxp"
+              ]
+            }
+          },
+          "block_order": [
+            "text_XR3Gyx",
+            "accordions_JeK8VW"
+          ]
+        }
+      },
+      "block_order": [
+        "group_NkNJJg",
+        "group_ampbiX"
+      ],
+      "name": "t:faq_2",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-1",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "row",
+        "layout_grid_columns_desktop": 3,
+        "layout_gap_desktop": 50,
+        "layout_flex_justify_desktop": "flex-start",
+        "layout_flex_align_items_desktop": "flex-start",
+        "same_as_desktop": false,
+        "layout_flex_direction_mobile": "column-reverse",
+        "layout_gap_mobile": 20,
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "additional_class": ""
+      }
+    },
+    "product_recommendations_G8mJVG": {
+      "type": "product-recommendations",
+      "blocks": {
+        "title": {
+          "type": "text",
+          "static": true,
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<p>Vous aimerez aussi</p>",
+            "text_style": "h3",
+            "paragraph_font_size": "normal",
+            "font_weight": 400,
+            "alignment": "left",
+            "alignment_mobile": "left",
+            "show_read_more": false,
+            "read_more_length": 200,
+            "read_more_text": "Voir plus",
+            "read_less_text": "Voir moins",
+            "truncate": false,
+            "truncate_length": 2,
+            "margin_top": 0,
+            "margin_bottom": 30,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "product-card": {
+          "type": "_product-card",
+          "static": true,
+          "settings": {
+            "wrap_in_card": false,
+            "color_scheme": "",
+            "layout_gap": 10
+          },
+          "blocks": {
+            "product_card_media_gallery_L3zV7a": {
+              "type": "_product-card-media-gallery",
+              "name": "t:product_card_gallery",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "show_slider": true,
+                "media_rounded": true,
+                "show_badges": true,
+                "media_ratio": "1 / 1",
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "product_card_group_EcgVgX": {
+              "type": "_product-card-group",
+              "name": "t:group",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "wrap_in_card": false,
+                "color_scheme": "",
+                "layout_direction_desktop": "column",
+                "layout_gap_desktop": 5,
+                "layout_wrap_desktop": "nowrap",
+                "layout_justify_desktop": "flex-start",
+                "layout_align_items_desktop": "flex-start",
+                "same_as_desktop": true,
+                "layout_direction_mobile": "column",
+                "layout_gap_mobile": 10,
+                "layout_wrap_mobile": "nowrap",
+                "layout_justify_mobile": "flex-start",
+                "layout_align_items_mobile": "flex-start",
+                "margin_top": 10,
+                "margin_bottom": 10,
+                "additional_class": ""
+              },
+              "blocks": {
+                "text_cxYhee": {
+                  "type": "text",
+                  "name": "t:text",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<h2>{{ closest.product.title }}</h2>",
+                    "text_style": "paragraph",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 500,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 100,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "product_price_6F6rax": {
+                  "type": "product-price",
+                  "name": "t:product_price",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "product": "{{ closest.product }}",
+                    "sales_badge": "amount",
+                    "show_sales_badge_text": false,
+                    "text_style": "paragraph",
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "rating_stars_nz7WzY": {
+                  "type": "rating-stars",
+                  "name": "t:rating_stars",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "product": "{{ closest.product }}",
+                    "hide_rating_when_no_reviews": true,
+                    "rating": 4.5,
+                    "show_note": true,
+                    "show_review_count": true,
+                    "review_count": 123,
+                    "link": "",
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "product_card_swatches_w3Vawj": {
+                  "type": "_product-card-swatches",
+                  "name": "t:swatches",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "swatches_size": "small",
+                    "swatches_rounded": true,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_cxYhee",
+                "product_price_6F6rax",
+                "rating_stars_nz7WzY",
+                "product_card_swatches_w3Vawj"
+              ]
+            }
+          },
+          "block_order": [
+            "product_card_media_gallery_L3zV7a",
+            "product_card_group_EcgVgX"
+          ]
+        }
+      },
+      "name": "t:product_recommendations",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "",
+        "max_products": 4,
+        "grid_columns": 4,
+        "grid_columns_mobile": "2",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "additional_class": ""
+      },
+      "disabled": true
+    },
+    "benefits_bar_produit": {
+      "type": "custom-section",
+      "blocks": {
+        "group_Xb8cmj": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "card_link": "",
+            "color_scheme": "",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 5,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": false,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "center",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "icon_ecqj97": {
+              "type": "icon",
+              "name": "t:icon",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "icon_type": "icon",
+                "icon": "local_shipping",
+                "icon_custom": "",
+                "icon_size": 42,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_6KXXtE": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Expédié d'Europe</p>",
+                "text_style": "h6",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_QCNw3n": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Livraison offerte en 5 à 9 jours ouvrés, suivi inclus.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_ecqj97",
+            "text_6KXXtE",
+            "text_QCNw3n"
+          ]
+        },
+        "group_r6xr7P": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "card_link": "",
+            "color_scheme": "",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 5,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": false,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "center",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "icon_UCtDLw": {
+              "type": "icon",
+              "name": "t:icon",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "icon_type": "icon",
+                "icon": "verified_user",
+                "icon_custom": "",
+                "icon_size": 42,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_EqDALK": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Garantie 2 ans</p>",
+                "text_style": "h6",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_GxU484": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Garantie légale de conformité, SAV français.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_UCtDLw",
+            "text_EqDALK",
+            "text_GxU484"
+          ]
+        },
+        "group_wMEVzi": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "card_link": "",
+            "color_scheme": "",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 5,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": false,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "center",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "icon_axd3UQ": {
+              "type": "icon",
+              "name": "t:icon",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "icon_type": "icon",
+                "icon": "package_2",
+                "icon_custom": "",
+                "icon_size": 42,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_7DApic": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>14 jours pour changer d'avis</p>",
+                "text_style": "h6",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_ew3NP8": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Retour possible après réception, sans justification.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_axd3UQ",
+            "text_7DApic",
+            "text_ew3NP8"
+          ]
+        },
+        "group_x7TjnR": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "card_link": "",
+            "color_scheme": "",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 5,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": false,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "center",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "icon_WcRhTN": {
+              "type": "icon",
+              "name": "t:icon",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "icon_type": "icon",
+                "icon": "encrypted",
+                "icon_custom": "",
+                "icon_size": 42,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_V6AhLH": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Paiement sécurisé</p>",
+                "text_style": "h6",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_wDwwwK": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Transactions chiffrées SSL via Shopify Payments.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_WcRhTN",
+            "text_V6AhLH",
+            "text_wDwwwK"
+          ]
+        }
+      },
+      "block_order": [
+        "group_Xb8cmj",
+        "group_r6xr7P",
+        "group_wMEVzi",
+        "group_x7TjnR"
+      ],
+      "name": "Bandeau réassurance",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-1",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "grid",
+        "layout_flex_direction_desktop": "row",
+        "layout_grid_columns_desktop": 4,
+        "layout_gap_desktop": 30,
+        "layout_wrap_desktop": "nowrap",
+        "layout_flex_justify_desktop": "flex-start",
+        "layout_flex_align_items_desktop": "flex-start",
+        "same_as_desktop": false,
+        "layout_flex_direction_mobile": "row",
+        "layout_gap_mobile": 20,
+        "layout_wrap_mobile": "nowrap",
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 2,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "anchor_id": "",
+        "additional_class": ""
+      }
+    },
+    "comparatif_produit": {
+      "type": "custom-section",
+      "blocks": {
+        "image_mFqbDi": {
+          "type": "image",
+          "name": "t:image",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "show_placeholder": true,
+            "link": "",
+            "image_ratio": "adapt",
+            "image_width_desktop": 100,
+            "image_width_mobile": 100,
+            "enable_rounded_corners": true,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "group_DgQq6e": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "card_link": "",
+            "color_scheme": "scheme-2",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 100,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 15,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "flex-start",
+            "layout_align_items_desktop": "flex-start",
+            "same_as_desktop": true,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "flex-start",
+            "layout_align_items_mobile": "flex-start",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 10,
+            "margin_bottom": 10,
+            "additional_class": ""
+          },
+          "blocks": {
+            "text_Y894Gj": {
+              "type": "text",
+              "name": "t:title",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<h2>499 €, une fois. <em>faites le calcul.</em></h2>",
+                "text_style": "h3",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 200,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "group_ck7DhP": {
+              "type": "group",
+              "name": "Résultat (Groupe)",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "wrap_in_card": false,
+                "card_link": "",
+                "color_scheme": "",
+                "show_card_border": false,
+                "layout_type": "flex",
+                "width_desktop": 100,
+                "layout_direction_desktop": "row",
+                "layout_grid_columns_desktop": 3,
+                "layout_gap_desktop": 15,
+                "layout_wrap_desktop": "nowrap",
+                "layout_justify_desktop": "flex-start",
+                "layout_align_items_desktop": "center",
+                "same_as_desktop": true,
+                "width_mobile": 100,
+                "layout_direction_mobile": "column",
+                "layout_grid_columns_mobile": 1,
+                "layout_gap_mobile": 10,
+                "layout_wrap_mobile": "nowrap",
+                "layout_justify_mobile": "flex-start",
+                "layout_align_items_mobile": "flex-start",
+                "use_global_container_padding": true,
+                "padding_horizontal": 30,
+                "padding_vertical": 30,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {
+                "text_PYPXGd": {
+                  "type": "text",
+                  "name": "t:title",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>1 560 €/an</p>",
+                    "text_style": "h3",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 400,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 50,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "text_zGbfUK": {
+                  "type": "text",
+                  "name": "t:text",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>le studio, à raison d'une séance à 30 € par semaine</p>",
+                    "text_style": "paragraph",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 500,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 200,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_PYPXGd",
+                "text_zGbfUK"
+              ]
+            },
+            "group_yXUtHB": {
+              "type": "group",
+              "name": "Résultat (Groupe)",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "wrap_in_card": false,
+                "card_link": "",
+                "color_scheme": "",
+                "show_card_border": false,
+                "layout_type": "flex",
+                "width_desktop": 100,
+                "layout_direction_desktop": "row",
+                "layout_grid_columns_desktop": 3,
+                "layout_gap_desktop": 15,
+                "layout_wrap_desktop": "nowrap",
+                "layout_justify_desktop": "flex-start",
+                "layout_align_items_desktop": "center",
+                "same_as_desktop": true,
+                "width_mobile": 100,
+                "layout_direction_mobile": "column",
+                "layout_grid_columns_mobile": 1,
+                "layout_gap_mobile": 10,
+                "layout_wrap_mobile": "nowrap",
+                "layout_justify_mobile": "flex-start",
+                "layout_align_items_mobile": "flex-start",
+                "use_global_container_padding": true,
+                "padding_horizontal": 30,
+                "padding_vertical": 30,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {
+                "text_Lnw38Y": {
+                  "type": "text",
+                  "name": "t:title",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>1 990 €</p>",
+                    "text_style": "h3",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 400,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 50,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "text_EJFQ7w": {
+                  "type": "text",
+                  "name": "t:text",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>un reformer de studio classique, fixe et encombrant</p>",
+                    "text_style": "paragraph",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 500,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 200,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_Lnw38Y",
+                "text_EJFQ7w"
+              ]
+            },
+            "group_H3TcJD": {
+              "type": "group",
+              "name": "Résultat (Groupe)",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "wrap_in_card": false,
+                "card_link": "",
+                "color_scheme": "",
+                "show_card_border": false,
+                "layout_type": "flex",
+                "width_desktop": 100,
+                "layout_direction_desktop": "row",
+                "layout_grid_columns_desktop": 3,
+                "layout_gap_desktop": 15,
+                "layout_wrap_desktop": "nowrap",
+                "layout_justify_desktop": "flex-start",
+                "layout_align_items_desktop": "center",
+                "same_as_desktop": true,
+                "width_mobile": 100,
+                "layout_direction_mobile": "column",
+                "layout_grid_columns_mobile": 1,
+                "layout_gap_mobile": 10,
+                "layout_wrap_mobile": "nowrap",
+                "layout_justify_mobile": "flex-start",
+                "layout_align_items_mobile": "flex-start",
+                "use_global_container_padding": true,
+                "padding_horizontal": 30,
+                "padding_vertical": 30,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {
+                "text_7dg3tx": {
+                  "type": "text",
+                  "name": "t:title",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>499 €</p>",
+                    "text_style": "h3",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 400,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 50,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                },
+                "text_67Hf9m": {
+                  "type": "text",
+                  "name": "t:text",
+                  "settings": {
+                    "show_on_display": "desktop_and_mobile",
+                    "text": "<p>le Reformer Lihyl — pliable, chez vous, à vous pour toujours</p>",
+                    "text_style": "paragraph",
+                    "paragraph_font_size": "normal",
+                    "font_weight": 500,
+                    "alignment": "left",
+                    "alignment_mobile": "left",
+                    "show_read_more": false,
+                    "read_more_length": 200,
+                    "read_more_text": "Voir plus",
+                    "read_less_text": "Voir moins",
+                    "truncate": false,
+                    "truncate_length": 2,
+                    "margin_top": 0,
+                    "margin_bottom": 0,
+                    "additional_class": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_7dg3tx",
+                "text_67Hf9m"
+              ]
+            },
+            "text_7yaQVx": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Amorti en une vingtaine de séances par rapport au studio.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "left",
+                "alignment_mobile": "left",
+                "show_read_more": false,
+                "read_more_length": 50,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_Y894Gj",
+            "group_ck7DhP",
+            "group_yXUtHB",
+            "group_H3TcJD",
+            "text_7yaQVx"
+          ]
+        }
+      },
+      "block_order": [
+        "group_DgQq6e"
+      ],
+      "name": "Résultats prouvés",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-2",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "row",
+        "layout_grid_columns_desktop": 3,
+        "layout_gap_desktop": 30,
+        "layout_wrap_desktop": "nowrap",
+        "layout_flex_justify_desktop": "flex-start",
+        "layout_flex_align_items_desktop": "center",
+        "same_as_desktop": false,
+        "layout_flex_direction_mobile": "column",
+        "layout_gap_mobile": 10,
+        "layout_wrap_mobile": "nowrap",
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "anchor_id": "",
+        "additional_class": ""
+      }
+    },
+    "garantie_cta_produit": {
+      "type": "custom-section",
+      "blocks": {
+        "group_K88fpM": {
+          "type": "group",
+          "name": "t:group",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "wrap_in_card": false,
+            "card_link": "",
+            "color_scheme": "",
+            "show_card_border": false,
+            "layout_type": "flex",
+            "width_desktop": 60,
+            "layout_direction_desktop": "column",
+            "layout_grid_columns_desktop": 3,
+            "layout_gap_desktop": 15,
+            "layout_wrap_desktop": "nowrap",
+            "layout_justify_desktop": "center",
+            "layout_align_items_desktop": "center",
+            "same_as_desktop": false,
+            "width_mobile": 100,
+            "layout_direction_mobile": "column",
+            "layout_grid_columns_mobile": 1,
+            "layout_gap_mobile": 10,
+            "layout_wrap_mobile": "nowrap",
+            "layout_justify_mobile": "center",
+            "layout_align_items_mobile": "center",
+            "use_global_container_padding": true,
+            "padding_horizontal": 30,
+            "padding_vertical": 30,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {
+            "text_EQyUFB": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>sans risque</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 50,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_TmGPC9": {
+              "type": "text",
+              "name": "t:title",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<h2>commandez <em>sereinement</em></h2>",
+                "text_style": "h2",
+                "paragraph_font_size": "normal",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 50,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            },
+            "text_QABwJ9": {
+              "type": "text",
+              "name": "t:text",
+              "settings": {
+                "show_on_display": "desktop_and_mobile",
+                "text": "<p>Garantie 2 ans. 14 jours pour changer d'avis après réception. Stock en Europe, livré en 5 à 9 jours ouvrés, sans frais de douane. Si le reformer ne trouve pas sa place chez vous, il repart — c'est aussi simple que ça.</p>",
+                "text_style": "paragraph",
+                "paragraph_font_size": "large",
+                "font_weight": 400,
+                "alignment": "center",
+                "alignment_mobile": "center",
+                "show_read_more": false,
+                "read_more_length": 50,
+                "read_more_text": "Voir plus",
+                "read_less_text": "Voir moins",
+                "truncate": false,
+                "truncate_length": 2,
+                "margin_top": 0,
+                "margin_bottom": 0,
+                "additional_class": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_EQyUFB",
+            "text_TmGPC9",
+            "text_QABwJ9"
+          ]
+        }
+      },
+      "block_order": [
+        "group_K88fpM"
+      ],
+      "name": "Sources d'autorité",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-3",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "column",
+        "layout_grid_columns_desktop": 3,
+        "layout_gap_desktop": 20,
+        "layout_wrap_desktop": "nowrap",
+        "layout_flex_justify_desktop": "center",
+        "layout_flex_align_items_desktop": "center",
+        "same_as_desktop": true,
+        "layout_flex_direction_mobile": "column",
+        "layout_gap_mobile": 20,
+        "layout_wrap_mobile": "nowrap",
+        "layout_flex_justify_mobile": "flex-start",
+        "layout_flex_align_items_mobile": "flex-start",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 70,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "anchor_id": "",
+        "additional_class": ""
+      }
+    },
+    "decouvrez_heading": {
+      "type": "custom-section",
+      "name": "Découvrez aussi — titre",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-1",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "flex",
+        "layout_flex_direction_desktop": "column",
+        "layout_grid_columns_desktop": 1,
+        "layout_gap_desktop": 4,
+        "layout_wrap_desktop": "nowrap",
+        "layout_flex_justify_desktop": "center",
+        "layout_flex_align_items_desktop": "center",
+        "same_as_desktop": true,
+        "layout_flex_direction_mobile": "column",
+        "layout_gap_mobile": 4,
+        "layout_wrap_mobile": "nowrap",
+        "layout_flex_justify_mobile": "center",
+        "layout_flex_align_items_mobile": "center",
+        "layout_grid_columns_mobile": 1,
+        "padding_top": 50,
+        "padding_bottom": 10,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "anchor_id": "",
+        "additional_class": ""
+      },
+      "blocks": {
+        "dh": {
+          "type": "text",
+          "name": "t:text",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "text": "<h2>découvrez <em>aussi</em></h2>",
+            "text_style": "h2",
+            "paragraph_font_size": "normal",
+            "font_weight": 400,
+            "alignment": "center",
+            "alignment_mobile": "center",
+            "show_read_more": false,
+            "read_more_length": 200,
+            "read_more_text": "Voir plus",
+            "read_less_text": "Voir moins",
+            "truncate": false,
+            "truncate_length": 2,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "dh"
+      ]
+    },
+    "decouvrez_cards": {
+      "type": "custom-section",
+      "name": "Découvrez aussi — cartes",
+      "settings": {
+        "show_on_display": "desktop_and_mobile",
+        "color_scheme": "scheme-1",
+        "wrap_in_card": false,
+        "color_scheme_card": "",
+        "section_width": "normal",
+        "layout_type": "grid",
+        "layout_flex_direction_desktop": "row",
+        "layout_grid_columns_desktop": 4,
+        "layout_gap_desktop": 20,
+        "layout_wrap_desktop": "nowrap",
+        "layout_flex_justify_desktop": "center",
+        "layout_flex_align_items_desktop": "stretch",
+        "same_as_desktop": false,
+        "layout_flex_direction_mobile": "row",
+        "layout_gap_mobile": 12,
+        "layout_wrap_mobile": "wrap",
+        "layout_flex_justify_mobile": "center",
+        "layout_flex_align_items_mobile": "stretch",
+        "layout_grid_columns_mobile": 2,
+        "padding_top": 10,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "anchor_id": "",
+        "additional_class": ""
+      },
+      "blocks": {
+        "da_0": {
+          "type": "cross-sell",
+          "name": "t:cross_sell",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_mode": "column",
+            "color_scheme": "scheme-1",
+            "products": [
+              "reformer-pilates-pliable"
+            ],
+            "title": "",
+            "description": "",
+            "show_image": true,
+            "image_width": 90,
+            "image": "",
+            "show_options_label": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "da_1": {
+          "type": "cross-sell",
+          "name": "t:cross_sell",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_mode": "column",
+            "color_scheme": "scheme-1",
+            "products": [
+              "tapis-sol-modulaire-reformer"
+            ],
+            "title": "",
+            "description": "",
+            "show_image": true,
+            "image_width": 90,
+            "image": "",
+            "show_options_label": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "da_2": {
+          "type": "cross-sell",
+          "name": "t:cross_sell",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_mode": "column",
+            "color_scheme": "scheme-1",
+            "products": [
+              "anneau-pilates"
+            ],
+            "title": "",
+            "description": "",
+            "show_image": true,
+            "image_width": 90,
+            "image": "",
+            "show_options_label": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "da_3": {
+          "type": "cross-sell",
+          "name": "t:cross_sell",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_mode": "column",
+            "color_scheme": "scheme-1",
+            "products": [
+              "socquettes-pilates-antiderapantes"
+            ],
+            "title": "",
+            "description": "",
+            "show_image": true,
+            "image_width": 90,
+            "image": "",
+            "show_options_label": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        },
+        "da_4": {
+          "type": "cross-sell",
+          "name": "t:cross_sell",
+          "settings": {
+            "show_on_display": "desktop_and_mobile",
+            "display_mode": "column",
+            "color_scheme": "scheme-1",
+            "products": [
+              "chaussettes-pilates-montantes-rose"
+            ],
+            "title": "",
+            "description": "",
+            "show_image": true,
+            "image_width": 90,
+            "image": "",
+            "show_options_label": false,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "additional_class": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "da_0",
+        "da_1",
+        "da_2",
+        "da_3",
+        "da_4"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "benefits_bar_produit",
+    "custom_section_HfqtB3",
+    "custom_section_iEjmyJ",
+    "comparatif_produit",
+    "custom_section_LBJBG7",
+    "garantie_cta_produit",
+    "decouvrez_heading",
+    "decouvrez_cards",
+    "reviews_8P6xW3",
+    "product_recommendations_G8mJVG"
+  ]
+}

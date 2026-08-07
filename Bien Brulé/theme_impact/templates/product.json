@@ -1,0 +1,693 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_xaY7Rg": {
+      "type": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {
+        "show_home": true,
+        "show_on_homepage": false,
+        "home_text": "Accueil",
+        "font_size": 14,
+        "text_color": "#5A4636",
+        "current_color": "#B5651D",
+        "separator": "/"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h1"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_livraison": {
+          "type": "liquid",
+          "name": "Livraison offerte",
+          "settings": {
+            "liquid": "<div style=\"display: flex; align-items: center;\">\n  <span style=\"color: #B5651D; font-size: 13px; font-weight: 600; letter-spacing: 0.02em;\">\u2713 Livraison offerte \u2014 France, Belgique, Suisse</span>\n</div>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "dropdown",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "couleur,",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "#B5651D",
+            "atc_button_text_color": "#FFFFFF",
+            "payment_button_background": "#2B1D14",
+            "payment_button_text_color": "#F5F0E8"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {}
+        },
+        "trust_box": {
+          "type": "liquid",
+          "name": "Réassurance",
+          "settings": {
+            "liquid": "<style>\n.trust-box{background:#FAF7F1;border:1px solid #E6DDCE;border-radius:8px;padding:14px 18px;font-size:13px;font-family:'Work Sans',Arial,sans-serif;line-height:1.6;color:#5A4636;}\n.trust-item{display:flex;align-items:center;gap:10px;margin-bottom:9px;}\n.trust-item:last-child{margin-bottom:0;}\n.trust-item svg{flex-shrink:0;width:18px;height:18px;color:#B5651D;}\n.trust-item strong{font-weight:700;color:#2B1D14;}\n.trust-link{color:#B5651D;text-decoration:underline;}\n.trust-link:hover{color:#9A5417;}\n@media (max-width:768px){.trust-box{padding:12px 14px;font-size:12px;}}\n</style>\n<div class=\"trust-box\" role=\"complementary\" aria-label=\"Garanties et avantages\">\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M1 3h15v13H1z\"/><path d=\"M16 8h4l3 3v5h-7z\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>\n    <span><strong>Livraison offerte</strong> en France, Belgique et Suisse</span>\n  </div>\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 12H4M10 6l-6 6 6 6\"/></svg>\n    <span><strong>Retour sous 14 jours</strong> (\u00e9change ou remboursement)</span>\n  </div>\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>\n    <span><strong>Paiement 100 % s\u00e9curis\u00e9</strong> par CB, PayPal, Apple Pay\u2026</span>\n  </div>\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/></svg>\n    <span><strong>Service client r\u00e9actif</strong> : <a href=\"mailto:contact@bienbrule.com\" class=\"trust-link\">contact@bienbrule.com</a></span>\n  </div>\n</div>"
+          }
+        },
+        "fbt": {
+          "type": "associated_products",
+          "settings": {
+            "title": "Fréquemment achetés ensemble",
+            "stack_products": true,
+            "products_count": 3,
+            "background": "#FAF7F1",
+            "text_color": "#5A4636"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
+        },
+        "specs": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Caractéristiques techniques",
+            "content": "<ul><li>Pression : 20 bars (pour une vraie crema de barista)</li><li>Auto-chauffe : 92 °C en ~2 minutes, à partir d'eau froide</li><li>Mode froid : extraction à froid disponible</li><li>Système 3-en-1 : café moulu, capsules Nespresso Original et petites Dolce Gusto</li><li>Écran digital : niveau de batterie, température et temps d'extraction en temps réel</li><li>Batterie : 7 500 mAh, recharge USB-C en 2 à 3 h</li><li>Réservoir d'eau : 80 ml, acier inoxydable 304</li><li>Matériaux sains : contact alimentaire, sans substances nocives</li></ul>",
+            "page": ""
+          }
+        },
+        "livraison": {
+          "type": "collapsible_text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Livraison & retours",
+            "content": "<p>Livraison offerte en France, Belgique et Suisse. Commande préparée sous 24 à 48h et reçue sous 8 à 13 jours ouvrés. Vous disposez de 14 jours pour changer d'avis et nous retourner votre commande.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "title",
+        "rating",
+        "price",
+        "liquid_livraison",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "inventory",
+        "trust_box",
+        "fbt",
+        "description",
+        "specs",
+        "livraison"
+      ],
+      "settings": {
+        "reduce_top_spacing": true,
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 50,
+        "desktop_media_layout": "grid_highlight",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "thumbnails",
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 2,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "",
+        "input_text_color": ""
+      }
+    },
+    "specs_chocs": {
+      "type": "impact-text",
+      "blocks": {
+        "stat-1": {
+          "type": "item",
+          "settings": {
+            "title": "20",
+            "subheading": "Pression professionnelle",
+            "content": "<p>bars</p>",
+            "animate_impact_text": true,
+            "animate_impact_text_duration": 2
+          }
+        },
+        "stat-2": {
+          "type": "item",
+          "settings": {
+            "title": "~2",
+            "subheading": "Chauffe à 92 °C",
+            "content": "<p>min</p>",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        },
+        "stat-3": {
+          "type": "item",
+          "settings": {
+            "title": "USB-C",
+            "subheading": "100 % sans fil",
+            "content": "",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "settings": {
+        "full_width": false,
+        "stack_mobile": false,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "line",
+        "impact_text_size_ratio": 1,
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "heading_text_color": "#B5651D",
+        "heading_gradient": "",
+        "text_color": "#5A4636",
+        "button_background": "#B5651D",
+        "button_text_color": "#FFFFFF"
+      }
+    },
+    "box": {
+      "type": "multi-column",
+      "name": "Dans la boîte",
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "La machine expresso",
+            "heading_tag": "h4",
+            "content": "<p>Le cœur du dispositif : pompe 20 bars, auto-chauffe à 92 °C, batterie 7 500 mAh USB-C intégrée.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Le porte-filtre",
+            "heading_tag": "h4",
+            "content": "<p>Pour le café moulu comme pour les capsules, au choix selon votre humeur.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Le câble USB-C",
+            "heading_tag": "h4",
+            "content": "<p>Pour recharger partout : bureau, voiture, batterie externe ou prise classique.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "b4": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Le guide de prise en main",
+            "heading_tag": "h4",
+            "content": "<p>Pour réussir votre premier expresso en quelques minutes, sans prise de tête.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "full_width": false,
+        "stack_on_mobile": true,
+        "gap": "medium",
+        "text_alignment": "center",
+        "subheading": "Le contenu",
+        "title": "Ce qu'il y a dans la boîte",
+        "content": "",
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    },
+    "trois_gestes": {
+      "type": "rich-text",
+      "name": "Un expresso en 3 gestes",
+      "blocks": {
+        "tg_subheading": {
+          "type": "subheading",
+          "settings": {
+            "text": "Auto-chauffe"
+          }
+        },
+        "tg_heading": {
+          "type": "heading",
+          "settings": {
+            "text": "Un expresso chaud en 3 gestes, sans rien apporter",
+            "heading_tag": "h2",
+            "heading_style": "h2",
+            "text_color": "#2B1D14"
+          }
+        },
+        "tg_intro": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Contrairement à la plupart des machines portables, pas besoin de trimballer une bouteille d'eau chaude. Vous versez de l'eau froide, la machine s'occupe du reste.</p>"
+          }
+        },
+        "tg_steps": {
+          "type": "richtext",
+          "settings": {
+            "content": "<ol><li>Remplissez le réservoir d'eau froide (80 ml) et insérez votre capsule ou votre café moulu.</li><li>Double-clic sur le bouton : la machine chauffe l'eau à 92 °C en environ 2 minutes (le niveau s'affiche à l'écran).</li><li>L'extraction sous 20 bars démarre automatiquement. Votre expresso crema est prêt.</li></ol>"
+          }
+        },
+        "tg_note": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><em>Envie d'un café glacé ? Un simple appui lance le mode extraction à froid, sans chauffe.</em></p>"
+          }
+        }
+      },
+      "block_order": ["tg_subheading", "tg_heading", "tg_intro", "tg_steps", "tg_note"],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    },
+    "tech_intro": {
+      "type": "media-with-text",
+      "name": "La technologie",
+      "blocks": {
+        "img": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Technologie.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Sous le capot",
+            "title": "Une vraie ingénierie d'expresso",
+            "heading_tag": "h2",
+            "content": "<p>Derrière des lignes épurées se cache tout ce qui fait un bon expresso : la pression, la température et l'autonomie. Voici, en détail, ce qui change vraiment dans votre tasse.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["img"],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "tech_pression": {
+      "type": "media-with-text",
+      "name": "Pression 20 bars",
+      "blocks": {
+        "img": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Pompe_haute_pression.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Extraction",
+            "title": "Pompe 20 bars",
+            "heading_tag": "h3",
+            "content": "<p>La pression idéale pour extraire les arômes et faire naître une crema dense et onctueuse, comme au comptoir d'un barista.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["img"],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "tech_chauffe": {
+      "type": "media-with-text",
+      "name": "Auto-chauffe 92 °C",
+      "blocks": {
+        "img": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/systeme_de_chauffe.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Température",
+            "title": "Auto-chauffe intelligente à 92 °C",
+            "heading_tag": "h3",
+            "content": "<p>Versez de l'eau froide : la machine chauffe seule à la bonne température, atteinte en environ 2 minutes, pour révéler les arômes sans jamais brûler le café.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["img"],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "tech_autonomie": {
+      "type": "media-with-text",
+      "name": "Autonomie USB-C",
+      "blocks": {
+        "img": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/batterie_ok.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Liberté",
+            "title": "Autonomie USB-C, 100 % sans fil",
+            "heading_tag": "h3",
+            "content": "<p>Batterie 7 500 mAh, rechargée en 2 à 3 heures comme votre téléphone. Plus de prise dédiée, plus d'eau chaude à apporter : votre expresso vous suit du bureau au salon.</p>",
+            "link_text": "",
+            "link_url": "",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["img"],
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "reassurance_band": {
+      "type": "text-with-icons",
+      "blocks": {
+        "r1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-truck",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Livraison offerte",
+            "content": "<p>France, Belgique et Suisse, sans minimum d'achat.</p>"
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-love",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Retour 14 jours",
+            "content": "<p>Changez d'avis sereinement, échange ou remboursement.</p>"
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-credit-card",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Paiement sécurisé",
+            "content": "<p>CB, PayPal, Apple Pay : transactions chiffrées.</p>"
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-question",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Service client",
+            "content": "<p>contact@bienbrule.com, du lundi au vendredi 9h-18h.</p>"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "#EDE6D9",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    },
+    "avis": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Camille R., consultante en télétravail",
+            "title": "Mon expresso du matin, même en visio",
+            "content": "<p>Je retrouve mon expresso du matin même en visio depuis le salon. La crema est bluffante pour une machine sans fil.</p>"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Thomas L., souvent en déplacement",
+            "title": "Compacte et costaude",
+            "content": "<p>Compacte, costaude, et le café est vraiment bon. Elle ne quitte plus mon bureau.</p>"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sophie M., amatrice de café de spécialité",
+            "title": "Du matériel à la hauteur",
+            "content": "<p>Enfin du matériel à la hauteur à la maison. Qualité premium et service client réactif.</p>"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": true,
+        "subheading": "Ils témoignent",
+        "title": "Ils l'utilisent au quotidien",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": ""
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "title": "Quels cafés puis-je utiliser ?",
+            "content": "<p>La machine accepte le café moulu ainsi que les capsules Nespresso Original et les petites capsules Dolce Gusto. Vous gardez la liberté de choisir selon votre humeur du moment, entre la rapidité d'une capsule et le plaisir d'un café fraîchement moulu.</p>"
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "title": "Combien de temps pour un expresso ?",
+            "content": "<p>Vous versez de l'eau froide, double-cliquez, et la machine chauffe seule à 92 °C en environ 2 minutes. L'extraction sous 20 bars démarre ensuite automatiquement. Aucune eau chaude à préparer à l'avance.</p>"
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "title": "Comment se recharge la machine ?",
+            "content": "<p>Elle se recharge en USB-C, exactement comme un smartphone récent. Branchez-la sur un ordinateur, une batterie externe, un chargeur secteur ou la prise USB d'une voiture. Plus besoin de prise dédiée.</p>"
+          }
+        },
+        "q4": {
+          "type": "item",
+          "settings": {
+            "title": "L'entretien est-il compliqué ?",
+            "content": "<p>Un rinçage du porte-filtre après chaque utilisation et un détartrage occasionnel suffisent. Les pièces en contact avec le café se nettoient en quelques secondes sous l'eau claire.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4"],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Vos questions fréquentes",
+        "heading_tag": "h2",
+        "content": "",
+        "team_avatar_width": 160,
+        "support_hours": "Service client du lundi au vendredi de 9h à 18h.",
+        "answer_time": "Délai de réponse moyen : 8 à 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": "",
+        "accordion_background": "#FAF7F1",
+        "accordion_text_color": "#5A4636"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 4,
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Vous pourriez aussi aimer",
+        "content": "",
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": "",
+        "product_card_background": "#FFFFFF",
+        "product_card_text_color": "#5A4636"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_xaY7Rg",
+    "main",
+    "specs_chocs",
+    "box",
+    "trois_gestes",
+    "tech_intro",
+    "tech_pression",
+    "tech_chauffe",
+    "tech_autonomie",
+    "reassurance_band",
+    "avis",
+    "faq",
+    "related-products"
+  ]
+}

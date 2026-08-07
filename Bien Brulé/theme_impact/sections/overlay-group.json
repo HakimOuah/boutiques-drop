@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "Overlay group",
+  "sections": {
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "disabled": true,
+      "settings": {
+        "apparition_delay": 5,
+        "show_only_on_index": true,
+        "show_only_for_visitors": true,
+        "show_only_once": true,
+        "title": "Signup for our newsletter",
+        "button_text": "Subscribe",
+        "subtext": "Describe what your customers will receive when subscribing to your newsletter."
+      }
+    },
+    "privacy-banner": {
+      "type": "privacy-banner",
+      "disabled": true,
+      "settings": {
+        "privacy_bar_title": "Cookie policy",
+        "privacy_bar_content": "<p>We use cookies and similar technologies to provide the best experience on our website. Refer to our Privacy Policy for more information.</p>"
+      }
+    },
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+        "show_cart_note": false,
+        "show_shipping_text": true,
+        "allow_discount_application": false,
+        "show_view_cart_button": false,
+        "show_checkout_button": true,
+        "recommendations_title": "Vous pourriez aussi aimer :",
+        "products": [],
+        "product_card_background": "#FFFFFF",
+        "product_card_text_color": "#5A4636"
+      }
+    },
+    "search-drawer": {
+      "type": "search-drawer",
+      "settings": {
+        "full_width": false,
+        "show_article_category": true,
+        "search_menu": "",
+        "search_menu_show_title": true
+      }
+    },
+    "breadcrumbs_RMnVTb": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "name": "Breadcrumbs",
+      "settings": {
+        "show_home": true,
+        "show_on_homepage": false,
+        "home_text": "Accueil",
+        "font_size": 14,
+        "text_color": "#5A4636",
+        "current_color": "#B5651D",
+        "separator": "/"
+      }
+    }
+  },
+  "order": [
+    "newsletter-popup",
+    "privacy-banner",
+    "cart-drawer",
+    "search-drawer",
+    "breadcrumbs_RMnVTb"
+  ]
+}

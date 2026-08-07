@@ -1,0 +1,161 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Niche {
+  id                String   @id @default(cuid())
+  name              String
+  slug              String   @unique
+  description       String?
+  volumeScore       Int?
+  cpcScore          Int?
+  concurrenceScore  Int?
+  margeScore        Int?
+  fournisseursScore Int?
+  totalScore        Int?
+  avgCPC            Float?
+  avgVolume         Float?
+  avgKD             Float?
+  priceRangeMin     Int?
+  priceRangeMax     Int?
+  verdict           String?
+  source            String   @default("manual")
+  keywords          Json?
+  active            Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  products  Product[]
+  agentRuns AgentRun[]
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  nicheId         String
+  name            String
+  description     String?
+  supplierName    String?
+  supplierUrl     String?
+  purchasePrice   Float
+  shippingCost    Float    @default(0)
+  salePrice       Float?
+  salePriceTTC    Float?
+  grossMargin     Float?
+  grossMarginPct  Float?
+  netMargin       Float?
+  netMarginPct    Float?
+  supplierRating  Float?
+  supplierOrders  Int?
+  imageUrl        String?
+  features        Json?
+  marginVerdict   String?
+  seoKeywords     String?
+  source          String   @default("manual")
+  active          Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  niche          Niche           @relation(fields: [nicheId], references: [id], onDelete: Cascade)
+  productPages   ProductPage[]
+  campaigns      Campaign[]
+  pricingResults PricingResult[]
+  agentRuns      AgentRun[]
+}
+
+model ProductPage {
+  id              String   @id @default(cuid())
+  productId       String
+  h1Title         String
+  metaTitle       String
+  metaDescription String
+  description     String
+  bulletPoints    Json
+  technicalSpecs  Json
+  seoKeywords     Json?
+  schemaMarkup    String?
+  status          String   @default("draft")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Campaign {
+  id               String   @id @default(cuid())
+  productId        String
+  name             String
+  type             String
+  structure        Json
+  negativeKeywords Json
+  adCopy           Json
+  biddingStrategy  String?
+  dailyBudget      Float?
+  targetCPA        Float?
+  targetROAS       Float?
+  scalingPlan      Json?
+  status           String   @default("draft")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model PricingResult {
+  id                String   @id @default(cuid())
+  productId         String
+  purchasePrice     Float
+  shippingCost      Float
+  shippingClient    Float
+  salePriceHT       Float
+  salePriceTTC      Float
+  tva               Float
+  stripeCommission  Float
+  shopifyCommission Float
+  cpaHT             Float
+  fixedCosts        Float
+  netMargin         Float
+  netMarginPct      Float
+  verdict           String
+  adjustments       Json?
+  createdAt         DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model AgentRun {
+  id        String   @id @default(cuid())
+  agentType String
+  status    String   @default("running")
+  input     Json?
+  output    Json?
+  logs      Json?
+  duration  Int?
+  nicheId   String?
+  productId String?
+  createdAt DateTime @default(now())
+
+  niche   Niche?   @relation(fields: [nicheId], references: [id])
+  product Product? @relation(fields: [productId], references: [id])
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  type      String
+  message   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+}

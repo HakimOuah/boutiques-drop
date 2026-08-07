@@ -1,0 +1,21 @@
+{{ 'component-free-bar.css' | asset_url | stylesheet_tag }}
+
+{%- assign delivery_limit = settings.free_delivery_limit | times: 100 -%}
+{%- if cart.total_price < delivery_limit -%}
+	{%- assign remaining = delivery_limit | minus: cart.total_price -%}
+	{%- assign remaining_money = remaining | money -%}
+	{%- assign progress = cart.total_price | times: 100 | divided_by: delivery_limit -%}
+{%- endif -%}
+
+<div class="cart__free-bar">
+	<div class="free-bar__text">
+		{%- if cart.total_price > delivery_limit -%}
+			{{- 'general.cart.free_delivery_html' | t -}}
+		{%- else -%}
+			{{- 'general.cart.free_delivery_progress_html' | t: amount: remaining_money -}}
+		{%- endif -%}
+	</div>
+	<div class="free-bar__container">
+		<div class="free-bar__progress" style="width: {{ progress }}%"></div>
+	</div>
+</div>

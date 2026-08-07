@@ -1,0 +1,193 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+  - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
+  - price_class: {String} Adds a price class to the price element (optional)
+  - sale_color: {String} Sets the color of the 'Sale' tag (optional)
+  - regular_price_font_size_desktop: {Number} Desktop font size for regular price in px (optional)
+  - regular_price_font_size_mobile: {Number} Mobile font size for regular price in px (optional)
+  - regular_price_color: {String} Color for regular price (optional)
+  - regular_price_font_weight: {String} Font weight for regular price (optional)
+  - sale_price_font_size_desktop: {Number} Desktop font size for sale price in px (optional)
+  - sale_price_font_size_mobile: {Number} Mobile font size for sale price in px (optional)
+  - sale_price_color: {String} Color for sale price (optional)
+  - sale_price_font_weight: {String} Font weight for sale price (optional)
+  - compare_price_font_size_desktop: {Number} Desktop font size for compare-at price in px (optional)
+  - compare_price_font_size_mobile: {Number} Mobile font size for compare-at price in px (optional)
+  - compare_price_color: {String} Color for compare-at price (optional)
+  - compare_price_font_weight: {String} Font weight for compare-at price (optional)
+  - price_text_box: {String} Custom text to display next to the price (optional)
+  - price_text_box_text_color: {String} Color for the text box text (optional)
+  - price_text_box_background_color: {String} Background color for the text box (optional)
+  - price_text_box_border_color: {String} Border color for the text box (optional)
+
+  Usage:
+  {% render 'price', product: product %}
+{% endcomment %}
+{%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign available = target.available | default: false
+  assign money_price = price | money
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+  endif
+
+  if target == product and product.price_varies
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  endif
+
+  # Create a unique ID for this price component instance
+  assign unique_id = 'price-' | append: section.id | append: '-' | append: product.id | default: 'default'
+-%}
+
+{%- # Generate CSS styles for custom pricing -%}
+<style>
+  .{{ unique_id }} .price-item--regular {
+    {%- if regular_price_color -%}
+      color: {{ regular_price_color }} !important;
+    {%- endif -%}
+    {%- if regular_price_font_weight -%}
+      font-weight: {{ regular_price_font_weight }} !important;
+    {%- endif -%}
+    {%- if regular_price_font_size_mobile -%}
+      font-size: {{ regular_price_font_size_mobile }}px !important;
+    {%- endif -%}
+  }
+
+  .{{ unique_id }} .price-item--sale {
+    {%- if sale_price_color -%}
+      color: {{ sale_price_color }} !important;
+    {%- endif -%}
+    {%- if sale_price_font_weight -%}
+      font-weight: {{ sale_price_font_weight }} !important;
+    {%- endif -%}
+    {%- if sale_price_font_size_mobile -%}
+      font-size: {{ sale_price_font_size_mobile }}px !important;
+    {%- endif -%}
+  }
+
+  .{{ unique_id }} .price-item--compare {
+    {%- if compare_price_color -%}
+      color: {{ compare_price_color }} !important;
+    {%- endif -%}
+    {%- if compare_price_font_weight -%}
+      font-weight: {{ compare_price_font_weight }} !important;
+    {%- endif -%}
+    {%- if compare_price_font_size_mobile -%}
+      font-size: {{ compare_price_font_size_mobile }}px !important;
+    {%- endif -%}
+  }
+
+  @media screen and (min-width: 750px) {
+    .{{ unique_id }} .price-item--regular {
+      {%- if regular_price_font_size_desktop -%}
+        font-size: {{ regular_price_font_size_desktop }}px !important;
+      {%- endif -%}
+    }
+
+    .{{ unique_id }} .price-item--sale {
+      {%- if sale_price_font_size_desktop -%}
+        font-size: {{ sale_price_font_size_desktop }}px !important;
+      {%- endif -%}
+    }
+
+    .{{ unique_id }} .price-item--compare {
+      {%- if compare_price_font_size_desktop -%}
+        font-size: {{ compare_price_font_size_desktop }}px !important;
+      {%- endif -%}
+    }
+  }
+</style>
+
+<div
+  class="
+    price {{ unique_id }}
+    {%- if price_class %} {{ price_class }}{% endif -%}
+    {%- if available == false %} price--sold-out {% endif -%}
+    {%- if compare_at_price > price %} price--on-sale {% endif -%}
+    {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
+    {%- if show_badges %} price--show-badge{% endif -%}
+    {%- if price_text_box != blank %} price--with-text-box{% endif -%}
+  "
+  style="--sale-color: {{ sale_color }};"
+>
+  <div class="price__container">
+    {%- comment -%}
+      Explanation of description list:
+        - div.price__regular: Displayed when there are no variants on sale
+        - div.price__sale: Displayed when a variant is a sale
+    {%- endcomment -%}
+    <div class="price__regular">
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+      <span class="price-item price-item--regular">
+        {{ money_price }}
+      </span>
+    </div>
+    <div class="price__sale">
+      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+      <span class="price-item price-item--sale price-item--last">
+        {{ money_price }}
+      </span>
+      {%- unless product.price_varies == false and product.compare_at_price_varies %}
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+        <span>
+          <s class="price-item price-item--regular price-item--compare">
+            {% if settings.currency_code_enabled %}
+              {{ compare_at_price | money_with_currency }}
+            {% else %}
+              {{ compare_at_price | money }}
+            {% endif %}
+          </s>
+        </span>
+      {%- endunless -%}
+    </div>
+    <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
+      <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+      <span class="price-item price-item--last">
+        <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
+        <span aria-hidden="true">/</span>
+        <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+        <span>
+          {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+            {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+          {%- endif -%}
+          {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+        </span>
+      </span>
+    </small>
+  </div>
+  {%- if price_text_box != blank -%}
+    <div class="price__text-box">
+      <span class="price-text-box-content" style="
+        {%- if price_text_box_text_color -%}color: {{ price_text_box_text_color }};{%- endif -%}
+        {%- if price_text_box_background_color -%}background-color: {{ price_text_box_background_color }};{%- endif -%}
+        {%- if price_text_box_border_color -%}border-color: {{ price_text_box_border_color }};{%- endif -%}
+      ">{{ price_text_box }}</span>
+    </div>
+  {%- endif -%}
+  {%- if show_badges -%}
+    <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
+      {% if settings.enable_percentage_discount %}
+        {% assign discount_amount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price %}
+        {% assign discount_percentage = discount_amount | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round %}
+        -{{ discount_percentage }}%
+      {% else %}
+        {{- 'products.product.on_sale' | t -}}
+      {% endif %}
+    </span>
+
+    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+      {{ 'products.product.sold_out' | t }}
+    </span>
+  {%- endif -%}
+</div>

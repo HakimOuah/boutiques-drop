@@ -1,0 +1,119 @@
+{% assign colors = '' %}
+{% assign images = '' %}
+
+{% for variant in product.variants %}
+	{% if variant.metafields.smt.color_file %}
+		{% assign color = variant.metafields.smt.color_file | image_url: width: 300 %}
+		{% unless colors contains color %}
+			{% assign colors = colors | append: color | append: ", " %}
+		{% endunless %}
+	{% elsif variant.metafields.smt.color.value %}
+		{% assign color = variant.metafields.smt.color %}
+		{% unless colors contains color %}
+			{% assign gradient = variant.metafields.smt.gradient %}
+			{% if gradient %}
+				{% assign simple_color = color %}
+				{% assign color = "linear-gradient(0deg," | append: simple_color | append: " 0%," | append: gradient | append: " 100%);" %}
+			{% endif %}
+			{% assign colors = colors | append: color | append: ", " %}
+		{% endunless %}
+	{% endif %}
+	{% assign image = variant.featured_media | image_url: width: 300 %}
+	{% unless images contains image %}
+		{% assign images = images | append: image | append: ", " %}
+	{% endunless %}
+{% endfor %}
+
+{% assign colors = colors | split: ", " %}
+{% assign images = images | split: ", " %}
+
+{% if images.size > 0 or colors.size > 0 %}
+	{% liquid
+		if settings.image_swatches
+			assign total_swatches = images.size
+			assign swatches_to_show = images
+		else
+			assign total_swatches = colors.size
+			assign swatches_to_show = colors
+		endif
+		
+		assign max_display = settings.color_swatches_max_display | default: 4
+		assign limit_enabled = settings.color_swatches_limit_enabled | default: false
+		assign show_count_indicator = false
+		assign remaining_count = 0
+		
+		if limit_enabled and total_swatches > max_display
+			assign show_count_indicator = true
+			assign remaining_count = total_swatches | minus: max_display
+		endif
+		
+		# Check if we should hide swatches when there's only one
+		assign should_hide_single = settings.hide_single_color_swatch | default: false
+		assign should_display_swatches = true
+		
+		if should_hide_single and total_swatches == 1
+			assign should_display_swatches = false
+		endif
+	%}
+	
+	{% if should_display_swatches %}
+		<div class="color-swatches" 
+			style="
+				--color-swatches-ratio: {{ settings.color_swatches_ratio }};
+				--color-swatches-width: {{ settings.color_swatches_width_card }}px;
+				--color-swatches-width-image: {{ settings.color_swatches_width_card | times: settings.color_swatches_image_multiplier }}px;
+			">
+			{% if settings.image_swatches %}
+				{% if limit_enabled %}
+					{% for image in images limit: max_display %}
+						<div class="color-swatches__swatch image-swatch" style="background-image: url('{{ image }}')"></div>
+					{% endfor %}
+				{% else %}
+					{% for image in images %}
+						<div class="color-swatches__swatch image-swatch" style="background-image: url('{{ image }}')"></div>
+					{% endfor %}
+				{% endif %}
+			{% else %}
+				{% if limit_enabled %}
+					{% for color in colors limit: max_display %}
+						{% assign is_color = false %}
+						{% if color contains "#" %}
+							{% if color contains "cdn" or color contains "files" %}
+								{% assign is_color = false %}
+							{% else %}
+								{% assign is_color = true %}
+							{% endif %}
+						{% endif %}
+						{% if is_color %}
+							<div class="color-swatches__swatch" style="background: {{ color }}"></div>
+						{% else %}
+							<div class="color-swatches__swatch color-swatches__file" style="background-image: url('{{ color }}')"></div>
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					{% for color in colors %}
+						{% assign is_color = false %}
+						{% if color contains "#" %}
+							{% if color contains "cdn" or color contains "files" %}
+								{% assign is_color = false %}
+							{% else %}
+								{% assign is_color = true %}
+							{% endif %}
+						{% endif %}
+						{% if is_color %}
+							<div class="color-swatches__swatch" style="background: {{ color }}"></div>
+						{% else %}
+							<div class="color-swatches__swatch color-swatches__file" style="background-image: url('{{ color }}')"></div>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+			
+			{% if show_count_indicator %}
+				<div class="color-swatches__count-indicator">
+					+{{ remaining_count }}
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+{% endif %}

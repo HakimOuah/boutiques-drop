@@ -1,0 +1,211 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+  %}
+{% endcomment %}
+{%- liquid
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign option_disabled = true
+
+    for option1_name in variants_option1_arr
+      case option.position
+        when 1
+          if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 2
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 3
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+      endcase
+    endfor
+  -%}
+
+  {% if is_bundle %}
+    {% for variant in product.variants %}
+      {% if variant.option1 == value %}
+        {% assign current_variant = variant %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% assign show_free_shipping = block.settings.show_free_shipping %}
+  {% assign free_shipping_threshold = block.settings.free_shipping_threshold | times: 100 %}
+
+  {% assign assign option_name = option.name | downcase %}
+  {% assign assign color_label = settings.color_swatches_label | downcase %}
+
+  {% assign current_variant = nil %}
+  {%- for variant in product.variants -%}
+    {%- case option.position -%}
+      {%- when 1 -%}
+        {% if variant.option1 == value %}
+          {% assign current_variant = variant %}
+        {% endif %}
+      {%- when 2 -%}
+        {% if variant.option2 == value %}
+          {% assign current_variant = variant %}
+        {% endif %}
+      {%- when 3 -%}
+        {% if variant.option3 == value %}
+          {% assign current_variant = variant %}
+        {% endif %}
+    {%- endcase -%}
+  {% endfor %}
+
+
+
+
+  {%- liquid 
+    assign is_color = false
+    if color_label contains option_name and current_variant.metafields.smt.color != blank
+      assign is_color = true
+    elsif color_label contains option_name and current_variant.featured_media != blank
+      assign is_color = true
+    endif
+  -%}
+
+  {%- if block.settings.show_color_swatches and is_color and block.settings.picker_type == 'button'-%}
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+      
+    {%- liquid
+      assign gradient = current_variant.metafields.smt.gradient
+      if gradient 
+        assign simple_color = current_variant.metafields.smt.color
+        assign color = "linear-gradient(0deg," | append: simple_color | append: " 0%," | append: gradient | append: " 100%);" 
+      else
+        if current_variant.metafields.smt.color_file
+          assign color = current_variant.metafields.smt.color_file | image_url: width: 300 
+        else 
+          assign color = current_variant.metafields.smt.color
+        endif
+      endif
+      assign is_color = false
+      assign first = color | slice: 0
+      if color contains "#" or first == "#"
+        if color contains "cdn" or color contains "files"
+          assign is_color = false
+        else 
+          assign is_color = true
+        endif 
+      endif
+    -%}
+
+    {% assign image_swatches = settings.image_swatches %}
+
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="color-swatches__swatch{% if image_swatches %} image-swatch{% endif %}" 
+      style="{% if image_swatches %}
+        background-image: url('{{ current_variant.featured_media | image_url: width: 300 }}')
+        {% else %}
+          {% if is_color %}
+            background: {{ color }}
+          {% else %}
+            background-image: url('{{ color }}');
+            background-size: cover;
+            background-position: center;
+            background-color: transparent !important;
+            background-repeat: no-repeat;
+          {% endif %}
+        {% endif %}; 
+        --color-swatches-ratio: {{ settings.color_swatches_ratio }};
+        --color-swatches-width: {{ settings.color_swatches_width_product }}px;
+        --color-swatches-width-image: {{ settings.color_swatches_width_product | times: settings.color_swatches_image_multiplier }}px;">
+      <span class="option__value">{{ value }}</span>
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+    </label>
+  {%- elsif block.settings.picker_type == 'button' or is_bundle -%}
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      <span class="option__value">
+        <span class="option__wrapper">
+          <span>{{ value }}</span>
+          {%- if is_bundle and show_free_shipping -%}
+            {%- if current_variant.price > free_shipping_threshold -%}
+              <span class="option__free-shipping">{{ "products.product.free_shipping" | t }}</span>
+            {%- endif -%}
+          {%- endif -%}
+        </span>
+          {% if is_bundle %}
+            {% if current_variant.price < current_variant.compare_at_price %}
+              <span class="option__saving">
+                {% assign savings = current_variant.compare_at_price | minus: current_variant.price | money %}
+                {{ 'products.product.price.savings' | t: savings: savings }}
+              </span>
+            {% endif %}
+          {% endif %}
+      </span>
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      {% if is_bundle %}
+        <div class="option__price">
+          {% if current_variant.price < current_variant.compare_at_price %}
+            <span class="option__price--sale">{{ current_variant.price | money }}</span>
+            <span class="option__price--compare-at-price">{{ current_variant.compare_at_price | money }}</span>
+          {% else %}
+            <span class="option__price--normal">{{ current_variant.price | money }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </label>
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
+    <option
+      value="{{ value | escape }}"
+      {% if option.selected_value == value %}
+        selected="selected"
+      {% endif %}
+    >
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
+{%- endfor -%}

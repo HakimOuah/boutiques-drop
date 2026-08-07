@@ -1,0 +1,249 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--loading-screen-background, #ffffff);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--loading-screen-fade-duration, 300ms) ease-out;
+}
+
+.loading-screen--active {
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity var(--loading-screen-fade-duration, 300ms) ease-out;
+}
+
+.loading-screen__inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Spinner Animation - Modern Smooth Ring Style */
+.loading-screen__spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loading-screen__spinner .spinner {
+  width: 100%;
+  height: 100%;
+  animation: spinner-rotate 1.2s linear infinite;
+}
+
+.loading-screen__spinner .path {
+  stroke: var(--loading-screen-accent-color, currentColor);
+  stroke-linecap: round;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 90 120;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+/* Smooth continuous rotation */
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Smooth dash animation */
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 5 120;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90 120;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 5 120;
+    stroke-dashoffset: -125;
+  }
+}
+
+
+/* Progress Bar */
+.loading-screen__progress {
+  width: 200px;
+  height: 6px;
+  background-color: rgba(currentColor, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loading-screen__progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(var(--loading-screen-accent-color, currentColor));
+  width: 0%;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: progress-fill var(--loading-screen-progress-duration, 500ms) ease-out forwards;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Ensure animation runs when loading screen is active */
+.loading-screen--active .loading-screen__progress-bar {
+  animation-play-state: running;
+}
+
+@keyframes progress-fill {
+  0% {
+    width: 0%;
+  }
+  30% {
+    width: 30%;
+  }
+  40% {
+    width: 30%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Alternative infinite progress animation */
+.loading-screen__progress-bar.infinite {
+  animation: progress-infinite calc(var(--loading-screen-progress-duration, 500ms) * 0.8) ease-in-out infinite;
+}
+
+@keyframes progress-infinite {
+  0% {
+    width: 0%;
+    left: 0%;
+  }
+  50% {
+    width: 40%;
+    left: 30%;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+
+/* Image Loading System */
+.loading-screen__image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.loading-screen__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+
+.loading-screen__image--loaded {
+  opacity: 1;
+}
+
+/* Pulse Animation for Images */
+.loading-screen__image--pulse.loading-screen__image--loaded {
+  animation: image-pulse var(--loading-screen-pulse-speed, 1.5s) ease-in-out infinite;
+}
+
+.loading-screen__text {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: var(--font-heading-weight);
+  color: var(--loading-screen-text-color, currentColor);
+}
+
+@keyframes image-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Custom Image */
+.loading-screen__custom-image {
+  display: inline-block;
+}
+
+.loading-screen__custom-image--pulse .loading-screen__image {
+  transition: opacity 0.3s ease-out;
+}
+
+/* Loading Message */
+.loading-screen__message {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--loading-screen-text-color, currentColor);
+  animation: text-fade var(--loading-screen-text-pulse-speed, 0.8s) ease-in-out infinite;
+}
+
+@keyframes text-fade {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* CSS Variables for customization */
+:root {
+  --loading-screen-background: var(--color-background);
+  --loading-screen-accent-color: var(--color-foreground);
+  --loading-screen-text-color: var(--color-foreground);
+  --loading-screen-fade-duration: 300ms;
+  --loading-screen-progress-duration: 500ms;
+  --loading-screen-pulse-speed: 1.5s;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .loading-screen {
+    background-color: var(--loading-screen-background, #000000);
+  }
+
+  /* Progress bar uses opacity instead of rgba now */
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 749px) {
+  .loading-screen__spinner {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .loading-screen__text {
+    font-size: 1.5rem;
+  }
+
+  .loading-screen__message {
+    font-size: 1rem;
+  }
+
+  .loading-screen__progress {
+    width: 150px;
+  }
+}

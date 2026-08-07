@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#B5651D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- duotone fills -->
+  <path d="M32 9 C36.5 17 39 20.5 39 24 A7 7 0 0 1 25 24 C25 20.5 27.5 17 32 9 Z" fill="#B5651D" fill-opacity="0.12" stroke="none"/>
+  <path d="M22 44 Q27 41 32 44 T42 44 V47 A10 10 0 0 1 22 47 Z" fill="#B5651D" fill-opacity="0.15" stroke="none"/>
+  <!-- water drop -->
+  <path d="M32 9 C36.5 17 39 20.5 39 24 A7 7 0 0 1 25 24 C25 20.5 27.5 17 32 9 Z"/>
+  <!-- reservoir / tank -->
+  <path d="M22 35 V48 A10 10 0 0 0 42 48 V35"/>
+  <!-- water surface -->
+  <path d="M22 44 Q27 41 32 44 T42 44"/>
+</svg>

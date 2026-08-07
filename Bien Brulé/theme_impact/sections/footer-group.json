@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "text-with-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "free-shipping": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-star",
+            "mobile_icon_width": 24,
+            "icon_width": 24,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Sélection experte",
+            "content": "<p>Chaque produit est testé et sélectionné par nos soins.</p>"
+          }
+        },
+        "customer-support": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-like",
+            "mobile_icon_width": 24,
+            "icon_width": 24,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Café d'exception",
+            "content": "<p>Une extraction digne d'un barista, jusque dans votre cuisine.</p>"
+          }
+        },
+        "discount": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "mobile_icon_width": 24,
+            "icon_width": 24,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Carte-cadeau",
+            "content": "<p>Offrez un café d'exception, chaque matin.</p>"
+          }
+        },
+        "payment": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-lock",
+            "mobile_icon_width": 24,
+            "icon_width": 24,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Paiement 100% sécurisé",
+            "content": "<p>Nos moyens de paiement sont sécurisés et entièrement cryptés.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "free-shipping",
+        "customer-support",
+        "discount",
+        "payment"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h6",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "À propos de Bien Brûlé",
+            "content": "<p>Bien Brûlé, c'est le café nomade premium pensé pour les exigeants du quotidien. Des machines et moulins sélectionnés pour une extraction digne d'un barista, là où vous vivez et travaillez.<br/><br/><strong>Nous contacter :<br/></strong>Notre service client est disponible du lundi au vendredi de 9h à 18h.</p><p><a href=\"mailto:contact@bienbrule.com\" title=\"mailto:contact@bienbrule.com\">contact@bienbrule.com</a></p>",
+            "enable_follow_on_shop": false
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links_wtdhN4": {
+          "type": "links",
+          "settings": {
+            "menu": "informations",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "image_width": 150,
+            "heading_size": "h6",
+            "title": "Abonnez-vous : -10% sur votre première commande",
+            "content": "<p>Et profitez de nos offres privées, conseils café et nouveautés en avant-première.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "links",
+        "links_wtdhN4",
+        "newsletter"
+      ],
+      "settings": {
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_policy_links": false,
+        "show_country_selector": false,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "show_locale_selector": false
+      }
+    }
+  },
+  "order": [
+    "text-with-icons",
+    "footer"
+  ]
+}

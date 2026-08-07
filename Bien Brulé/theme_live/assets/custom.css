@@ -1,0 +1,259 @@
+/*
+ * Custom CSS
+ * ===========================================================================
+ *
+ * Use this file to add your own custom CSS styles.
+ *
+ * This file is loaded after all theme styles, so your custom styles will
+ * override the default theme styles when using the same specificity.
+ *
+ * Tips:
+ * - Use browser developer tools to inspect elements and find the right selectors
+ * - Avoid using !important unless absolutely necessary
+ * - Consider using CSS custom properties (variables) defined in the theme
+ *   for colors and other values to maintain consistency
+ *
+ * Example theme CSS variables you can use:
+ * - var(--color-foreground) - Text color
+ * - var(--color-background) - Background color
+ * - var(--color-button) - Button color
+ * - var(--font-body-family) - Body font
+ * - var(--font-heading-family) - Heading font
+ * - var(--page-width) - Maximum page width
+ *
+ * ===========================================================================
+ */
+
+/* Add your custom CSS below this line */
+
+/* =========================================================================
+   BIEN BRÛLÉ — Charte "Torréfaction artisanale"
+   Café nomade premium · mobile-first · CSS only (perf Quality Score)
+   ========================================================================= */
+
+/* ---- 1. Design tokens (override des variables thème, chargé après base.css) ---- */
+:root {
+  /* Palette */
+  --bb-cream: #F5F0E8;
+  --bb-sand: #EDE6D9;
+  --bb-espresso: #2B1D14;
+  --bb-brown-2: #5A4636;
+  --bb-terracotta: #B5651D;
+  --bb-terracotta-dark: #9A5417;
+  --bb-sage: #7C8471;
+  --bb-success: #5A7355;
+  --bb-error: #A03A2A;
+
+  /* Typographie exacte (sécurité même si la police picker change) */
+  --font-heading-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-heading-weight: 600;
+
+  /* Rayons : doux, premium, jamais "bubble" */
+  --buttons-radius: 6px;
+  --buttons-radius-outset: 6px;
+  --inputs-radius: 6px;
+  --inputs-radius-outset: 6px;
+  --variant-pills-radius: 6px;
+  --media-radius: 8px;
+  --product-card-corner-radius: 0.8rem;
+  --popup-corner-radius: 0.8rem;
+  --text-boxes-radius: 0.8rem;
+
+  /* Couleurs prix */
+  --color-sale-price: 181, 101, 29;        /* terracotta */
+  --color-compare-at-price: 160, 58, 42;   /* rouge brique discret */
+}
+
+/* ---- 2. Fond + texture papier très subtile (atmosphère artisanale) ---- */
+body {
+  background-color: var(--bb-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- 3. Typographie ---- */
+h1, h2, h3, h4, h5,
+.h0, .h1, .h2, .h3, .h4, .h5 {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+h1, .h1, .h0 { font-size: clamp(36px, 5.2vw, 48px); }
+h2, .h2 { font-size: clamp(26px, 4vw, 34px); }
+h3, .h3 { font-size: clamp(20px, 3vw, 24px); }
+h4, .h4 { font-size: clamp(17px, 2.4vw, 20px); }
+
+body, .rte, p, li, input, select, textarea, button {
+  font-family: var(--font-body-family);
+}
+p, .rte { line-height: 1.6; }
+small, .caption, .product__text.caption, .caption-large { font-size: 14px; letter-spacing: 0.02em; }
+
+/* ---- 4. Boutons : pleins terracotta, généreux, élégants ---- */
+.button,
+button.button,
+.shopify-payment-button__button--unbranded,
+.product-form__submit {
+  font-family: var(--font-body-family);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  border-radius: 6px;
+  padding: 16px 32px;
+  min-height: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.button--primary,
+.shopify-payment-button__button--unbranded,
+.product-form__submit {
+  box-shadow: 0 6px 16px rgba(181, 101, 29, 0.22);
+}
+.button--primary:hover,
+.shopify-payment-button__button--unbranded:hover,
+.product-form__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(181, 101, 29, 0.30);
+  background-color: var(--bb-terracotta-dark);
+}
+/* le ::after du thème crée parfois un voile sombre au hover : on l'adoucit */
+.button:not(.button--secondary):not([disabled])::after { box-shadow: none; }
+
+.button--secondary {
+  background: transparent;
+  border: 1.5px solid rgba(43, 29, 20, 0.25);
+  color: rgb(var(--color-foreground));
+}
+.button--secondary:hover {
+  border-color: var(--bb-terracotta);
+  color: var(--bb-terracotta);
+  transform: translateY(-1px);
+}
+
+/* ---- 5. Cartes produit : blanc, ombre douce, arrondi 8px, lift au survol ---- */
+.card-wrapper .card,
+.card--standard .card__inner,
+.card.card--media,
+.collection-card {
+  border-radius: 8px;
+}
+.card-wrapper { transition: transform 0.3s ease; }
+.card__inner {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(43, 29, 20, 0.07);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-wrapper:hover .card__inner {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(43, 29, 20, 0.14);
+}
+.card__heading,
+.card__heading a {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+}
+.card-information .vendor,
+.card__information .caption-with-letter-spacing {
+  color: var(--bb-sage);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* ---- 6. Prix ---- */
+.price__sale .price-item--sale,
+.price-item--sale {
+  color: rgb(var(--color-sale-price));
+  font-weight: 600;
+}
+.price--on-sale .price-item--regular {
+  color: rgb(var(--color-compare-at-price));
+}
+
+/* ---- 7. Liens ---- */
+a { text-underline-offset: 0.18em; }
+.link, a.link { color: var(--bb-terracotta); }
+.link:hover, a.link:hover { color: var(--bb-terracotta-dark); }
+
+/* ---- 8. Barre d'annonce : fine, lettrée ---- */
+.announcement-bar__message,
+.utility-bar .announcement-bar__message {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* ---- 9. Réassurance / icônes : teinte terracotta ---- */
+.multicolumn-list__item .multicolumn-card__icon svg,
+.reassurance__icon svg,
+.icon-with-text svg { color: var(--bb-terracotta); }
+
+/* ---- 10. Formulaires / champs ---- */
+.field__input,
+.select__select,
+.customer .field input,
+textarea { border-radius: 6px; }
+
+/* ---- 11. Accordéon FAQ / description : sobre et lisible ---- */
+.accordion summary,
+.product .accordion__title,
+details > summary .h4 {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+}
+
+/* ---- 12. Respiration : titres de section un peu plus aérés ---- */
+.title-wrapper-with-link { margin-bottom: 3rem; }
+
+/* ---- 13. Mobile : padding bouton resserré sur très petits écrans ---- */
+@media screen and (max-width: 480px) {
+  .button,
+  button.button,
+  .product-form__submit { padding: 14px 24px; font-size: 14px; }
+}
+
+/* ---- 14. Cart drawer : réassurance sous le panier ---- */
+.cart-drawer__reassurance {
+  list-style: none;
+  margin: 1.2rem 0 0.4rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(43, 29, 20, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.cart-drawer__reassurance li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--bb-brown-2);
+}
+.cart-drawer__reassurance .icon-accordion {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: var(--bb-terracotta);
+}
+/* La barre de livraison offerte : teinte sauge/terracotta cohérente */
+.cart__free-bar .free-bar__container { background: var(--bb-sand); border-radius: 999px; overflow: hidden; }
+.cart__free-bar .free-bar__progress { background: var(--bb-terracotta); }
+.cart__free-bar .free-bar__text { font-size: 13px; letter-spacing: 0.01em; margin-bottom: 0.5rem; }
+
+/* Contenu au-dessus du voile de texture */
+#MainContent, .header-wrapper, .footer, .shopify-section { position: relative; z-index: 1; }
+

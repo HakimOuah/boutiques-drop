@@ -1,0 +1,539 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bien_brule_header.jpg",
+            "mobile_image": "shopify://shop_images/Bienbrulemachine.jpg",
+            "content_max_width": 560,
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-center-end sm:text-start",
+            "subheading": "Voiture, bureau, salle de sport, sortie des classes, road trip d'été — un vrai expresso crema, sans prise, sans compromis. Fini le café de distributeur.",
+            "title": "Votre expresso, où que la journée vous mène",
+            "heading_tag": "h0",
+            "button_text": "Découvrir la machine",
+            "button_link": "shopify://collections/machines-cafetieres-portables",
+            "button_text_secondary": "",
+            "button_link_secondary": "",
+            "text_color": "#F5F0E8",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF",
+            "button_background_secondary": "#F5F0E8",
+            "button_text_color_secondary": "#2B1D14",
+            "overlay_color": "#2B1D14",
+            "overlay_opacity": 28,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": ["slide-1"],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "outline_arrows",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 7,
+        "background": "#F5F0E8",
+        "background_gradient": ""
+      }
+    },
+    "specs_chocs": {
+      "type": "impact-text",
+      "blocks": {
+        "stat-1": {
+          "type": "item",
+          "settings": {
+            "title": "20",
+            "subheading": "Pression professionnelle",
+            "content": "<p>bars</p>",
+            "animate_impact_text": true,
+            "animate_impact_text_duration": 2
+          }
+        },
+        "stat-2": {
+          "type": "item",
+          "settings": {
+            "title": "~2",
+            "subheading": "Chauffe à 92 °C",
+            "content": "<p>min</p>",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        },
+        "stat-3": {
+          "type": "item",
+          "settings": {
+            "title": "USB-C",
+            "subheading": "100 % sans fil",
+            "content": "",
+            "animate_impact_text": false,
+            "animate_impact_text_duration": 2
+          }
+        }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "settings": {
+        "full_width": false,
+        "stack_mobile": false,
+        "text_alignment": "center",
+        "impact_text_style": "fill",
+        "text_divider": "line",
+        "impact_text_size_ratio": 1,
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "heading_text_color": "#B5651D",
+        "heading_gradient": "",
+        "text_color": "#5A4636",
+        "button_background": "#B5651D",
+        "button_text_color": "#FFFFFF"
+      }
+    },
+    "probleme_solution": {
+      "type": "rich-text",
+      "blocks": {
+        "ps_subheading": {
+          "type": "subheading",
+          "settings": {
+            "text": "Le compromis, c'est fini"
+          }
+        },
+        "ps_heading": {
+          "type": "heading",
+          "settings": {
+            "text": "Le bon café s'arrête trop souvent à votre porte",
+            "heading_tag": "h2",
+            "heading_style": "h2",
+            "text_color": "#2B1D14"
+          }
+        },
+        "ps_paragraph": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Le gobelet tiède de la station-service. La file d'attente à 4€ le café. Le thermos qui refroidit. Quand votre journée se passe dehors, bien boire devient un luxe. Bien Brûlé règle ça : un expresso de qualité barista, à la demande, partout où vous êtes.</p>"
+          }
+        }
+      },
+      "block_order": ["ps_subheading", "ps_heading", "ps_paragraph"],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    },
+    "pole_machines": {
+      "type": "featured-collection",
+      "name": "Machines à café",
+      "settings": {
+        "collection": "machines-cafetieres-portables",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_count": 8,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "Notre sélection",
+        "title": "Nos machines à café nomades",
+        "content": "<p>Sélectionnées pour une extraction digne d'un barista, jusque dans votre cuisine.</p>",
+        "link_url": "shopify://collections/machines-cafetieres-portables",
+        "link_text": "Voir toutes les machines",
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": "",
+        "product_card_background": "#FFFFFF",
+        "product_card_text_color": "#5A4636"
+      }
+    },
+    "pourquoi": {
+      "type": "multi-column",
+      "blocks": {
+        "col-1": {
+          "type": "item",
+          "settings": {
+            "column_size": "4",
+            "title": "Partout, sans prise",
+            "heading_tag": "h3",
+            "content": "<p>Batterie USB-C, chauffe intégrée. Aucune source d'eau chaude ni d'électricité nécessaire.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "col-2": {
+          "type": "item",
+          "settings": {
+            "column_size": "4",
+            "title": "Qualité barista",
+            "heading_tag": "h3",
+            "content": "<p>Pression pro, vraie crema. Le café d'exception ne reste pas à la maison.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "col-3": {
+          "type": "item",
+          "settings": {
+            "column_size": "4",
+            "title": "Sélection experte",
+            "heading_tag": "h3",
+            "content": "<p>On teste et on sélectionne chaque pièce. Pas de gadget : l'essentiel qui tient ses promesses.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": ["col-1", "col-2", "col-3"],
+      "settings": {
+        "full_width": false,
+        "stack_on_mobile": true,
+        "gap": "medium",
+        "text_alignment": "center",
+        "subheading": "Nos engagements",
+        "title": "Pourquoi Bien Brûlé",
+        "content": "",
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    },
+    "tech": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_tech": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Technologie.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Ingénierie d'expresso",
+            "title": "La technologie qui fait la différence",
+            "heading_tag": "h2",
+            "content": "<p>Pompe 20 bars, auto-chauffe maîtrisée à 92 °C, autonomie USB-C : sous des lignes épurées se cache une vraie ingénierie d'expresso. Le comptoir, libéré de la prise.</p>",
+            "link_text": "Voir la technologie",
+            "link_url": "shopify://collections/machines-cafetieres-portables",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["image_tech"],
+      "name": "La technologie",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "pole_moulins": {
+      "type": "featured-collection",
+      "name": "Moulins à café",
+      "settings": {
+        "collection": "moulins-a-cafe",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_count": 8,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "Mouture fraîche",
+        "title": "Moulins à café",
+        "content": "<p>La fraîcheur d'une mouture réalisée juste avant l'extraction.</p>",
+        "link_url": "shopify://collections/moulins-a-cafe",
+        "link_text": "Voir tous les moulins",
+        "background": "#FFFFFF",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": "",
+        "product_card_background": "#FFFFFF",
+        "product_card_text_color": "#5A4636"
+      }
+    },
+    "pack_bundle": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_pack": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bien_brule_machine_2.jpg",
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Le coffret complet",
+            "title": "Le Pack Barista Nomade",
+            "heading_tag": "h2",
+            "content": "<p>Machine expresso, moulin et mug isotherme : tout l'équipement du barista réuni, à prix avantageux. Le coffret idéal pour s'offrir, ou offrir, un café d'exception chaque jour.</p>",
+            "link_text": "Composer mon pack",
+            "link_url": "shopify://products/pack-barista-nomade-machine-moulin-mug",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#B5651D",
+            "button_text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["image_pack"],
+      "name": "Pack Barista Nomade",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "voyage_saisonnier": {
+      "type": "rich-text",
+      "blocks": {
+        "vs_subheading": {
+          "type": "subheading",
+          "settings": {
+            "text": "Édition été"
+          }
+        },
+        "vs_heading": {
+          "type": "heading",
+          "settings": {
+            "text": "L'été, votre expresso part avec vous",
+            "heading_tag": "h2",
+            "heading_style": "h2",
+            "text_color": "#2B1D14"
+          }
+        },
+        "vs_paragraph": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Road trip, camping, location au bord de mer, escale à l'hôtel : emportez votre café d'exception au lieu de subir celui des autres. Léger, sans fil, prêt en quelques minutes.</p>"
+          }
+        },
+        "vs_button": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "xl",
+            "text": "Voir la machine",
+            "url": "shopify://collections/machines-cafetieres-portables",
+            "background": "#B5651D",
+            "text_color": "#FFFFFF"
+          }
+        }
+      },
+      "block_order": ["vs_subheading", "vs_heading", "vs_paragraph", "vs_button"],
+      "settings": {
+        "full_width": true,
+        "content_width": "medium",
+        "text_position": "center",
+        "background": "#EDE6D9",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    },
+    "avis": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Camille R., consultante en télétravail",
+            "title": "Mon expresso du matin, même en visio",
+            "content": "<p>Je retrouve mon expresso du matin même en visio depuis le salon. La crema est bluffante pour une machine sans fil.</p>"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Thomas L., souvent en déplacement",
+            "title": "Compacte et costaude",
+            "content": "<p>Compacte, costaude, et le café est vraiment bon. Elle ne quitte plus mon bureau.</p>"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "round_avatar": true,
+            "show_rating": true,
+            "rating": 5,
+            "author": "Sophie M., amatrice de café de spécialité",
+            "title": "Du matériel à la hauteur",
+            "content": "<p>Enfin du matériel à la hauteur à la maison. Qualité premium et service client réactif.</p>"
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "full_width": true,
+        "stack_testimonials": true,
+        "subheading": "Ils témoignent",
+        "title": "Ils ne reviendraient pas en arrière",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "#F5F0E8",
+        "background_gradient": "",
+        "text_color": "#5A4636",
+        "heading_color": "#2B1D14",
+        "heading_gradient": ""
+      }
+    },
+    "editorial_quotidien": {
+      "type": "media-with-text",
+      "blocks": {
+        "image_edito": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bien_brule_machine_couple.jpg",
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "icon": "none",
+            "icon_width": 48,
+            "subheading": "Liberté",
+            "title": "Votre café ne vous attend plus, il vous suit",
+            "heading_tag": "h2",
+            "content": "<p>Entre deux rendez-vous, sur le parking avant le match, à l'aire d'autoroute en route vers les vacances. Bien Brûlé, c'est la liberté de boire un vrai expresso sans dépendre d'un lieu — sans jamais sacrifier la qualité.</p>",
+            "link_text": "Découvrir la machine",
+            "link_url": "shopify://collections/machines-cafetieres-portables",
+            "background": "rgba(0,0,0,0)",
+            "background_gradient": "",
+            "text_color": "#5A4636",
+            "heading_color": "#2B1D14",
+            "heading_gradient": "",
+            "text_gradient": "",
+            "button_background": "#2B1D14",
+            "button_text_color": "#F5F0E8"
+          }
+        }
+      },
+      "block_order": ["image_edito"],
+      "name": "Éditorial quotidien",
+      "settings": {
+        "full_width": false,
+        "alternate_media_position": false,
+        "spacing": "small"
+      }
+    },
+    "reassurance": {
+      "type": "text-with-icons",
+      "blocks": {
+        "r1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-truck",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Livraison offerte",
+            "content": "<p>Expédition soignée et livraison offerte en France, Belgique et Suisse.</p>"
+          }
+        },
+        "r2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-love",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Retour 14 jours",
+            "content": "<p>Vous changez d'avis ? Vous disposez de 14 jours pour nous retourner votre commande.</p>"
+          }
+        },
+        "r3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-question",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Service client",
+            "content": "<p>Une question ? Écrivez-nous à contact@bienbrule.com, du lundi au vendredi de 9h à 18h.</p>"
+          }
+        },
+        "r4": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-credit-card",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "circle",
+            "icon_background": "#FFFFFF",
+            "icon_color": "#B5651D",
+            "title": "Paiement sécurisé",
+            "content": "<p>Tous les paiements sont chiffrés et 100 % sécurisés.</p>"
+          }
+        }
+      },
+      "block_order": ["r1", "r2", "r3", "r4"],
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h5",
+        "text_alignment": "center",
+        "icon_spacing": "medium",
+        "background": "#EDE6D9",
+        "background_gradient": "",
+        "text_color": "#5A4636"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "specs_chocs",
+    "probleme_solution",
+    "pole_machines",
+    "pourquoi",
+    "tech",
+    "pole_moulins",
+    "pack_bundle",
+    "voyage_saisonnier",
+    "avis",
+    "editorial_quotidien",
+    "reassurance"
+  ]
+}

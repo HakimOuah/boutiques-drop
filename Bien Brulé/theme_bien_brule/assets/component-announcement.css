@@ -1,0 +1,75 @@
+.announcement-bar__slider {
+  max-width: 800px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.announcement-bar__slide a p {
+  text-align: center;
+  color: rgb(var(--color-foreground));
+  margin: 0.5rem 0;
+  max-width: 100%;
+  display: block;
+}
+
+.announcement-bar__slider > .page-width {
+  max-width: 700px;
+  position: static;
+}
+
+.announcement-bar__slider .navigation-wrapper {
+  position: relative;
+}
+
+.announcement-bar__slider .slider__navigation {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  padding: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.announcement-bar__slider .slider__navigation--inner {
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.announcement-bar__slider .slider__navigation--inner .dots {
+  display: none;
+}
+
+.announcement-bar__slider .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: all;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0.5rem;
+}
+
+.announcement-bar__slider .arrow--left {
+  left: 1rem;
+}
+
+.announcement-bar__slider .arrow--right {
+  right: 1rem;
+}
+
+.announcement-bar__slider .slider__navigation--inner .arrow svg {
+  color: rgb(var(--color-foreground));
+}
+
+.announcement-bar__slide {
+  padding: 0 2.5rem;
+}

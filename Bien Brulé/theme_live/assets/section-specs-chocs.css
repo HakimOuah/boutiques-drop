@@ -1,0 +1,70 @@
+/* Bien Brûlé — Specs chocs : chiffres-clés de conversion */
+.specs-chocs__title {
+  text-align: center;
+  margin: 0 0 2.4rem;
+}
+
+.specs-chocs__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--bb-cols, 3), 1fr);
+  align-items: start;
+  gap: 1.2rem;
+}
+
+.specs-chocs__item {
+  position: relative;
+  text-align: center;
+  padding: 0.8rem 0.6rem;
+}
+
+/* Séparateurs verticaux fins entre les chiffres */
+.specs-chocs__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: calc(-0.6rem - 0.5px);
+  height: 64%;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.18;
+}
+
+.specs-chocs__value {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--bb-terracotta);
+  margin: 0;
+  font-size: clamp(34px, 9vw, 64px);
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.12em;
+}
+
+.specs-chocs__unit {
+  font-size: 0.42em;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.specs-chocs__label {
+  font-family: var(--font-body-family);
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0.8rem auto 0;
+  max-width: 16ch;
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 749px) {
+  .specs-chocs__grid { gap: 0.6rem; }
+  .specs-chocs__item:not(:last-child)::after { right: calc(-0.3rem - 0.5px); }
+  .specs-chocs__label { font-size: 11px; letter-spacing: 0.02em; }
+}

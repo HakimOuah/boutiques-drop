@@ -1,0 +1,143 @@
+{{ "section-breadcrumbs.css" | asset_url | stylesheet_tag }}
+
+{%- comment -%} Pre-render collection handles and titles for breadcrumb JavaScript {%- endcomment -%}
+<script>
+  window.breadcrumbCollections = {
+    {%- for collection in collections -%}
+      "{{ collection.handle }}": "{{ collection.title | escape }}"{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  };
+</script>
+<script src="{{ 'breadcrumbs.js' | asset_url }}" defer></script>
+
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+
+{%- unless template == 'index' or template == 'cart' or template == 'list-collections' or template == '404' -%}
+  {%- assign t = template | split: '.' | first -%}
+  
+  <nav class="breadcrumbs section-{{ section.id }}-padding page-width" role="navigation" aria-label="breadcrumbs">
+    <ol class="breadcrumbs__list{% if section.settings.hide_active_mobile %} breadscrumbs--hide-active-mobile{% endif %}">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ routes.root_url }}">{{ "general.breadcrumbs.home" | t }}</a>
+      </li>
+      {%- case t -%}
+        {%- when 'page' -%}
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+          </li>
+        {%- when 'product' -%}
+          <li class="breadcrumbs__item breadcrumbs__product" data-breadcrumb-collection>
+            {%- comment -%} Fallback shown, will be updated by JS if sessionStorage has collection data {%- endcomment -%}
+            <a class="breadcrumbs__link breadcrumbs__link--fallback" href="{{ routes.all_products_collection_url }}">{{ "general.breadcrumbs.shop" | t }}</a>
+          </li>
+          <li class="breadcrumbs__item breadcrumbs__product">
+            <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+          </li>
+        {%- when 'collection' and collection.handle -%}
+          {%- if current_tags -%}
+            <li class="breadcrumbs__item">
+              {{ collection.title | link_to: collection.url }}
+            </li>
+            <li class="breadcrumbs__item">
+              {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+              <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + "}}</a>
+            </li>
+          {%- else -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+            </li>
+          {%- endif -%}
+        {%- when 'blog' -%}
+          {%- if current_tags -%}
+            <li class="breadcrumbs__item">
+              {{ blog.title | link_to: blog.url }}
+            </li>
+            <li class="breadcrumbs__item">
+              {%- capture tag_url -%}{{ blog.url }}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+              <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">{{ current_tags | join: " + " }}</a>
+            </li>
+          {%- else -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+            </li>
+          {%- endif -%}
+        {%- when 'article' -%}
+          <li class="breadcrumbs__item">
+            {{ blog.title | link_to: blog.url }}
+          </li>
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+          </li>
+        {%- else -%}
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+          </li>
+      {%- endcase -%}
+    </ol>
+  </nav>
+{%- endunless -%}
+
+{% schema %}
+    {
+        "name": "t:sections.breadcrumbs.name",
+        "tag": "section",
+        "disabled_on": {
+          "groups": ["header", "footer"]
+        },
+        "settings": [
+            {
+              "type": "paragraph",
+              "content": "t:sections.breadcrumbs.paragraph"
+            },
+            {
+              "type": "header",
+              "content": "t:sections.all.padding.section_padding_heading"
+            },
+            {
+              "type": "checkbox",
+              "id": "hide_active_mobile",
+              "label": "t:sections.breadcrumbs.settings.hide_active_mobile.label",
+              "info": "t:sections.breadcrumbs.settings.hide_active_mobile.info",
+              "default": false
+            },
+            {
+              "type": "range",
+              "id": "padding_top",
+              "min": 0,
+              "max": 100,
+              "step": 4,
+              "unit": "px",
+              "label": "t:sections.all.padding.padding_top",
+              "default": 36
+            },
+            {
+              "type": "range",
+              "id": "padding_bottom",
+              "min": 0,
+              "max": 100,
+              "step": 4,
+              "unit": "px",
+              "label": "t:sections.all.padding.padding_bottom",
+              "default": 36
+            }
+        ],
+        "blocks": [],
+        "presets": [
+            {
+              "name": "t:sections.breadcrumbs.name"
+            }
+        ]
+    }
+{% endschema %}

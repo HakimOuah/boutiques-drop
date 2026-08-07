@@ -1,0 +1,36 @@
+{{ "component-scroll-top-button.css" | asset_url | stylesheet_tag }}
+
+<div class="scroll-top-button hidden position--{{ settings.scroll_top_position }}" 
+    style="
+        --border-radius: {{ settings.scroll_top_radius }}px;
+        --background-color: {{ settings.scroll_top_background_color.red }}, {{ settings.scroll_top_background_color.green }}, {{ settings.scroll_top_background_color.blue }};
+        --background-opacity: {{ settings.scroll_top_background_opacity |  divided_by: 100.0 }};
+        --arrow-color: {{ settings.scroll_top_arrow_color }};
+    ">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+    </svg>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollTopButton = document.querySelector(".scroll-top-button");
+        scrollTopButton.addEventListener("click", () => {
+            scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+
+            scrollTopButton.classList.add("hidden");
+        })
+    })
+
+    window.addEventListener("scroll", () => {
+        const scrollTopButton = document.querySelector(".scroll-top-button");
+        if (window.scrollY > 100) {
+            scrollTopButton.classList.remove("hidden");
+        } else {
+            scrollTopButton.classList.add("hidden");
+        }
+    })
+</script>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#B5651D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- duotone coffee/crema fill -->
+  <path d="M18 25 H46 C46 25 45 39 32 39 C19 39 18 25 18 25 Z" fill="#B5651D" fill-opacity="0.13" stroke="none"/>
+  <!-- steam (subtle) -->
+  <g stroke-opacity="0.6">
+    <path d="M27 19 C23 16 31 13 27 8"/>
+    <path d="M37 19 C33 16 41 13 37 8"/>
+  </g>
+  <!-- cup bowl -->
+  <path d="M18 25 H46 C46 25 45 39 32 39 C19 39 18 25 18 25 Z"/>
+  <!-- crema surface -->
+  <path d="M21 28 Q32 32 43 28"/>
+  <!-- handle -->
+  <path d="M46 28 C53 28 53 37 46 37"/>
+  <!-- saucer -->
+  <path d="M16 43 Q32 49 48 43"/>
+</svg>

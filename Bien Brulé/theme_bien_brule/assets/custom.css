@@ -1,0 +1,27 @@
+/*
+ * Custom CSS
+ * ===========================================================================
+ *
+ * Use this file to add your own custom CSS styles.
+ *
+ * This file is loaded after all theme styles, so your custom styles will
+ * override the default theme styles when using the same specificity.
+ *
+ * Tips:
+ * - Use browser developer tools to inspect elements and find the right selectors
+ * - Avoid using !important unless absolutely necessary
+ * - Consider using CSS custom properties (variables) defined in the theme
+ *   for colors and other values to maintain consistency
+ *
+ * Example theme CSS variables you can use:
+ * - var(--color-foreground) - Text color
+ * - var(--color-background) - Background color
+ * - var(--color-button) - Button color
+ * - var(--font-body-family) - Body font
+ * - var(--font-heading-family) - Heading font
+ * - var(--page-width) - Maximum page width
+ *
+ * ===========================================================================
+ */
+
+/* Add your custom CSS below this line */

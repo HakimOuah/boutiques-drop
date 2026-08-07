@@ -1,0 +1,30 @@
+{%- comment -%}
+  Tracking Code Snippet
+  ---------------------
+  Add your tracking and analytics code below based on location.
+
+  This snippet is rendered in multiple locations:
+  - 'head': In the <head> section (for main tracking scripts)
+  - 'body': Right after opening <body> tag (for noscript fallbacks)
+
+  Usage in theme.liquid:
+    {% render 'tracking', location: 'head' %}
+    {% render 'tracking', location: 'body' %}
+
+  Common tracking codes:
+  - Google Tag Manager (requires both head and body locations)
+  - Google Analytics (GA4) - head only
+  - Facebook Pixel - head only
+  - Other third-party tracking scripts
+
+  Note: Shopify's built-in analytics are already included via {{ content_for_header }}.
+{%- endcomment -%}
+
+{% case location %}
+{% when 'head' %}
+  {%- comment -%} Add tracking scripts for <head> section below {%- endcomment -%}
+
+{% when 'body' %}
+  {%- comment -%} Add tracking scripts for <body> section below (e.g., noscript tags) {%- endcomment -%}
+
+{% endcase %}

@@ -1,0 +1,192 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_xaY7Rg": {
+      "type": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": {
+        "show_home": true,
+        "show_on_homepage": false,
+        "home_text": "Accueil",
+        "font_size": 14,
+        "text_color": "#5A4636",
+        "current_color": "#B5651D",
+        "separator": "/"
+      }
+    },
+    "custom_liquid_4NgrKj": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [],
+      "name": "Offre produit ",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "{% if template.name == 'product' %}\n<style>\n/* --- Reset uniquement sur le bloc promo --- */\n.promo-wrap, .promo-wrap * { \n  box-sizing:border-box;\n  margin:0; \n  padding:0; \n}\n\n/* Conteneur bandeau */\n.promo-wrap {\n  width:100vw !important;\n  margin-left:calc(50% - 50vw) !important;\n  margin-right:calc(50% - 50vw) !important;\n  display:block;\n  position:relative;\n  z-index:2;\n  margin-bottom:24px; /* espace blanc sous le bandeau */\n}\n\n/* Supprime marges/paddings du conteneur parent Shopify */\n.shopify-section:has(.promo-wrap),\n.page-width:has(.promo-wrap),\n.section:has(.promo-wrap) {\n  padding:0 !important;\n  margin:0 !important;\n  border:0 !important;\n}\n\n/* ---- BANDEAU GLOBAL ---- */\n.promo-banner{\n  width:100%;\n  background:#F5F0E8;\n  font-family:'Helvetica Neue', Arial, sans-serif;\n  text-align:center;\n  display:flex;\n  justify-content:center;\n  align-items:center;\n  gap:12px;\n  padding:8px 14px; /* desktop */\n  min-height:42px;   \n  line-height:1.2;\n}\n\n/* Tokens */\n.promo-title{ font-weight:700; color:#B5651D; font-size:16px; }\n.promo-badge{ background:#2B1D14; color:#fff; padding:2px 6px; border-radius:6px; font-size:12px; margin-left:6px; }\n.promo-strong{ font-weight:700; font-size:14px; color:#2B1D14; }\n.promo-info{ font-size:13px; color:#5A4636; }\n.promo-note{ background:#EDE6D9; color:#2B1D14; padding:2px 6px; border-radius:6px; font-size:12px; }\n\n/* Desktop */\n.promo-desktop{ display:flex; gap:12px; align-items:center; }\n\n/* Mobile rotateur fade */\n.promo-mobile{ \n  display:none; \n  width:100%; \n  padding:4px 10px; \n  position:relative; \n  height:34px; \n  overflow:hidden; \n}\n.promo-mobile .slide{\n  position:absolute; \n  inset:0;\n  display:flex; \n  justify-content:center; \n  align-items:center; \n  gap:6px;\n  opacity:0; \n  animation:promoFade 12s linear infinite;\n}\n.promo-mobile .slide:nth-child(1){ animation-delay:0s; }\n.promo-mobile .slide:nth-child(2){ animation-delay:3s; }\n.promo-mobile .slide:nth-child(3){ animation-delay:6s; }\n.promo-mobile .slide:nth-child(4){ animation-delay:9s; }\n\n@keyframes promoFade{\n  0%   { opacity:0; }\n  5%   { opacity:1; }\n  25%  { opacity:1; }\n  30%  { opacity:0; }\n  100% { opacity:0; }\n}\n\n/* >>> Breakpoint mis plus tôt <<< */\n/* Desktop only */\n@media (min-width:1025px){\n  .promo-desktop{ display:flex; }\n  .promo-mobile{ display:none; }\n}\n\n/* Mobile / tablette (active plus tôt) */\n@media (max-width:1024px){\n  .promo-banner{ \n    padding:4px 6px;\n    gap:0; \n    min-height:34px;\n  }\n  .promo-title { font-size:13px; }\n  .promo-badge { font-size:11px; padding:2px 5px; }\n  .promo-strong { font-size:12px; }\n  .promo-info { font-size:12px; }\n  .promo-note { font-size:11px; padding:2px 5px; }\n  .promo-desktop{ display:none; }\n  .promo-mobile{ display:block; }\n}\n</style>\n\n<div class=\"promo-wrap\">\n  <div class=\"promo-banner\" role=\"region\" aria-label=\"Offre Pack d'été\">\n    <!-- Desktop -->\n    <div class=\"promo-desktop\">\n      <div class=\"promo-title\">PACK D’ÉTÉ <span class=\"promo-badge\">JUSQU’AU 15 AOÛT</span></div>\n      <div class=\"promo-strong\">2 ARTICLES = -10€ &nbsp; | &nbsp; 3 ARTICLES = -20€</div>\n      <div class=\"promo-info\">Remise automatique — <em>Stocks limités</em></div>\n      <div class=\"promo-note\">Offre valable sur toute la boutique</div>\n    </div>\n\n    <!-- Mobile -->\n    <div class=\"promo-mobile\" aria-live=\"polite\">\n      <div class=\"slide\"><div class=\"promo-title\">PACK D’ÉTÉ</div><div class=\"promo-badge\">JUSQU’AU 15 AOÛT</div></div>\n      <div class=\"slide\"><div class=\"promo-strong\">2 ARTICLES = -10€ &nbsp; | &nbsp; 3 ARTICLES = -20€</div></div>\n      <div class=\"slide\"><div class=\"promo-info\">Remise automatique — <em>Stocks limités</em></div></div>\n      <div class=\"slide\"><div class=\"promo-note\">Offre spéciale valable sur toute la boutique</div></div>\n    </div>\n  </div>\n</div>\n{% endif %}",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_DDF79b": {
+          "type": "liquid",
+          "name": "Livraison Offerte",
+          "settings": {
+            "liquid": "<div style=\"display: flex; align-items: center;\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0689/8194/8718/files/picto.gif?v=1754403806\" alt=\"Icon\" style=\"width: 20px; height: 20px; margin-right: 10px;\">\n  <span style=\"color: #2dae7a; font-size: 13px; font-weight: 600;\">Livraison offerte</span>\n</div>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "dropdown",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "couleur,",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "rgba(0,0,0,0)",
+            "atc_button_text_color": "rgba(0,0,0,0)",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_DkBR6E": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n.trust-box{\n  background:#F5F0E8;\n  border:1px solid #e5e5e5;\n  border-radius:5px;\n  padding:12px 17px;\n  font-size:13px;\n  font-family:Arial,sans-serif;\n  line-height:1.6;\n  color:#5A4636;\n}\n.trust-item{\n  display:flex;\n  align-items:center;\n  gap:8px;\n  margin-bottom:8px;\n}\n.trust-item:last-child{\n  margin-bottom:0;\n}\n.trust-item svg{\n  flex-shrink:0;\n  width:18px;\n  height:18px;\n}\n.trust-emoji{\n  font-size:15px;\n  flex-shrink:0;\n  line-height:1;\n}\n.trust-item strong{\n  font-weight:700;\n}\n.trust-link{\n  color:#B5651D;\n  text-decoration:underline;\n}\n.trust-link:hover{\n  color:#9A5417;\n}\n@media (max-width:768px){\n  .trust-box{\n    padding:10px 12px;\n    font-size:12px;\n  }\n  .trust-item svg{\n    width:16px;\n    height:16px;\n  }\n  .trust-item{\n    gap:6px;\n  }\n}\n</style>\n\n<div class=\"trust-box\" role=\"complementary\" aria-label=\"Garanties et avantages\">\n  <!-- Clients satisfaits -->\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"#111\" aria-hidden=\"true\">\n      <path d=\"M12 2l2.9 6.6L22 9.3l-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 7.1-0.7L12 2z\"/>\n    </svg>\n    <span><strong>+1500 clients conquis</strong> par nos cafés 🖤</span>\n  </div>\n  \n  <!-- Retours -->\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#111\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n      <path d=\"M20 12H4M10 6l-6 6 6 6\"/>\n    </svg>\n    <span><strong>Retours 14 jours</strong> (échange ou remboursement)</span>\n  </div>\n  \n  <!-- Paiement -->\n  <div class=\"trust-item\">\n    <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#111\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\n      <rect x=\"2\" y=\"5\" width=\"20\" height=\"14\" rx=\"2\" ry=\"2\"/>\n      <line x1=\"2\" y1=\"10\" x2=\"22\" y2=\"10\"/>\n      <circle cx=\"6\" cy=\"16\" r=\"1\"/>\n      <circle cx=\"10\" cy=\"16\" r=\"1\"/>\n    </svg>\n    <span><strong>Paiement sécurisé</strong> par CB, Paypal, Apple Pay...</span>\n  </div>\n  \n  <!-- Service client -->\n  <div class=\"trust-item\">\n    <span class=\"trust-emoji\" aria-hidden=\"true\">🇫🇷</span>\n    <span><strong>Support réactif</strong> : <a href=\"mailto:contact@bienbrule.com\" class=\"trust-link\">contact@bienbrule.com</a></span>\n  </div>\n</div>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": true
+          }
+        },
+        "collapsible_text_QaCwYR": {
+          "type": "collapsible_text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Caractéristiques techniques",
+            "content": "<p>Pression 20 bars, auto-chauffe 92 °C, batterie 7 500 mAh USB-C, compatible café moulu et capsules.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_text_3zkxBG": {
+          "type": "collapsible_text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Livraison & retours",
+            "content": "<p>Livraison offerte en France, Belgique et Suisse. Retour sous 14 jours.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "title",
+        "rating",
+        "price",
+        "liquid_DDF79b",
+        "variant_picker",
+        "buy_buttons",
+        "liquid_DkBR6E",
+        "description",
+        "collapsible_text_QaCwYR",
+        "collapsible_text_3zkxBG"
+      ],
+      "settings": {
+        "reduce_top_spacing": true,
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 50,
+        "desktop_media_layout": "grid_highlight",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "thumbnails",
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 2,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "recommendations_count": 6,
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Vous pourriez aussi aimer :",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "#2B1D14",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_xaY7Rg",
+    "custom_liquid_4NgrKj",
+    "main",
+    "related-products"
+  ]
+}

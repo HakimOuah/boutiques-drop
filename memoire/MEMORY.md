@@ -1,0 +1,23 @@
+# Index mémoire — Boutiques drop
+
+- [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit + 5 sous-agents, registre central, anciens skills archivés
+- [Boucle chasse clusters volume-first](boucle-chasse-clusters-volume-first.md) — /chasse-clusters mesure le volume avant d'idéer, objectif 20 candidats en autonomie
+- [Explicable-particulier, pas technique-pro](explicable-particulier-pas-technique-pro.md) — le levier est la pédagogie au particulier ; persona métier = signal d'exclusion
+- [Brand Search source d'idées](brand-search-source-idees.md) — minage MCP de boutiques prouvées Google Ads FR, recette de filtres + limites MCP
+- [Notion pipeline boutiques](notion-pipeline-boutiques.md) — hub OH VENTURES : bases Recherches produit + Boutiques + modèle, Notion = dashboard, fichiers locaux = source de vérité
+- [Campement type lancement boutique](campement-type-lancement-boutique.md) — Kanban Notion 18 tickets-briefs d'agents, à dupliquer à chaque « lance une boutique sur X »
+- [Persona obligatoire avant copywriting](persona-obligatoire-copywriting.md) — étape bloquante (PLAYBOOK 1d + Phase 4), template + exemple tufting
+- [Mobile-first et placeholders démo](mobile-first-et-placeholders-demo.md) — QA mobile prioritaire sur les builds thème ; slider/avis démo = chasse gardée de Hakim
+- [DA créative, pas premium fade](da-creative-pas-premium-fade.md) — boutiques DIY : pop, mouvement, stickers ; le pastel sage est un défaut, valider la direction avec Hakim
+- [Promesses vérifiables, guide numérique](promesses-verifiables-guide-numerique.md) — dropship = pas d'insert physique ; « offert/accès inclus » livré en numérique, jamais « inclus dans le colis »
+- [Import avis Trustoo par bookmarklet](import-avis-trustoo-bookmark.md) — recette Chrome+JS pour importer en masse les avis AliExpress via TT Import Reviews, pièges postMessage/select/iframe
+- [Skills skills.sh e-commerce installés](skills-sh-ecommerce-installes.md) — CRO/copy/persona/UI-UX/brandkit/Liquid en global, recette CLI + packs écartés
+- [Canal Online Store & visuels IA](shopify-canal-et-visuels-ia.md) — produits DSers publiés sur aucun canal (publishablePublish), IA qui imprime de faux logos sur les cadrans (compositions + inpainting), recette thème brouillon via API
+- [Reprise 6 août : optimisation des process](reprise-6-aout-optimisation-process.md) — vacances Portugal jusqu'au 06/08/2026 ; chantier annoncé : cadence tenable pour des recherches produit récurrentes
+- [Protocole test ads Hakim + experts](protocole-test-ads-hakim-experts.md) — 30 €/j × 5 j sans toucher, tracking achats en place, topo experts ; lancer vite puis instrumenter
+- [Cap Q4 2026 : leçons audit boutiques](cap-q4-2026-lecons-audit-boutiques.md) — Q4 déterminant ; analyse concurrents dropship + pricing = manques n°1, niche brûlée = tueur Lihyl, Notion = backup cloud
+- [Critères détection concurrent dropship](criteres-detection-concurrent-dropship.md) — Shopify d'abord, PDP type drop, entreprise derrière ; marque établie + produit AliExpress = intéressant quand même
+- [Mesure express SEMrush par lots](mesure-express-semrush-lots.md) — analyse par lots 100 kw + KMT par URL, recette validée 01/08/2026
+- [Rejets terrain handpan/lit cabane/purificateur](rejets-terrain-handpan-litcabane-purificateur.md) — retours terrain de Hakim priment sur les volumes, 3 rejets du 02/08/2026
+- [AliExpress bloque les couteaux cuisine en France](aliexpress-bloque-couteaux-cuisine-france.md) — catégorie invisible à la livraison FR, tueur de dossier pour toute idée « lame » (02/08/2026, re-test au retour)
+- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — 4 PDF Terry Ecom distillés en 2 skills projet : gmc-acceptance (approbation GMC + templates policies FR) et shopping-scaling (PMAX profit-first)

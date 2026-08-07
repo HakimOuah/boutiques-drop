@@ -1,0 +1,75 @@
+.reassurance__text {
+    margin-bottom: 3rem;
+}
+
+.reassurance__grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.reassurance__item {
+    padding: 1rem;
+    border-radius: var(--card-border-radius);
+    color: var(--card-text-color)
+}
+
+.reassurance--text-right .reassurance__item {
+    padding: 1.5rem;
+}
+
+.reassurance.reassurance--text-right:not(.reassurance--border, .reassurance--background) .reassurance__item {
+    padding: 1.5rem 0;
+}
+
+.reassurance.reassurance--text-below:not(.reassurance--border, .reassurance--background) .reassurance__item {
+    padding: 1rem 0;
+}
+
+.reassurance__item-icon {
+    width: 6rem;
+    height: 6rem;
+    min-width: 6rem;
+    min-height: 6rem;
+}
+
+.reassurance--text-below .reassurance__item {
+    gap: 1rem;
+}
+
+.reassurance--text-right .reassurance__item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.reassurance--text-below .reassurance__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reassurance--text-below .reassurance__item-icon {
+    margin-bottom: .5rem;
+}
+
+.reassurance--border .reassurance__item {
+    border: 1px solid var(--card-border);
+}
+
+.reassurance--background .reassurance__item {
+    background-color: var(--card-background);
+}
+
+.reassurance__item-heading {
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: .5rem;
+    font-size: 1.1em;
+}
+
+@media (max-width: 749px) {
+    .reassurance__grid {
+        gap: 1rem;
+    }
+}

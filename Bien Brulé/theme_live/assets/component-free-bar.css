@@ -1,0 +1,29 @@
+.cart__free-bar {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: .5rem 0;
+}
+
+.free-bar__container {
+	display: block !important;
+	width: 100%;
+	background-color: rgba(var(--color-foreground), 0.15);
+	height: .8rem;
+	border-radius: var(--variant-pills-radius)
+}
+
+.free-bar__progress {
+	display: block !important;
+	background-color: rgb(var(--color-foreground));
+	border-radius: var(--variant-pills-radius);
+	max-width: 100%;
+	height: 100%;
+	transition: width .6s ease-in-out;
+}
+
+.free-bar__text {
+	font-size: 1.4rem;
+}

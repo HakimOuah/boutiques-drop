@@ -1,0 +1,348 @@
+{% comment %}
+  Section bannière de collection avec description et image
+  Optimisée pour SEO, Performance et Accessibilité (sans JSON-LD)
+{% endcomment %}
+
+<section class="collection-banner-section" aria-labelledby="collection-title-{{ section.id }}">
+{%- render 'section-spacing-collapsing' -%}
+
+{% liquid
+  # Contenu auto vs manuel
+  if section.settings.auto_description
+    assign banner_title = collection.title
+
+    # Récupère le 1er "paragraphe" brut (s'il n'y a pas de <p>, on prend le début)
+    assign first_para_raw = collection.description | split: '</p>' | first
+  else
+    assign banner_title = section.settings.manual_title
+
+    assign first_para_raw = section.settings.manual_description | split: '</p>' | first
+  endif
+
+  # inner text du 1er paragraphe (on enlève uniquement la balise ouvrante <p>)
+  assign banner_first_para_text = first_para_raw | remove: '<p>' | strip
+
+  # Image
+  if section.settings.custom_image != blank
+    assign banner_image = section.settings.custom_image
+    assign banner_image_alt = banner_title
+  elsif collection.image
+    assign banner_image = collection.image
+    assign banner_image_alt = collection.title
+  else
+    assign banner_image = blank
+  endif
+
+  # Paramètres
+  assign show_learn_more = section.settings.show_learn_more
+  assign learn_more_text = section.settings.learn_more_text
+%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --collection-banner-bg: {{ section.settings.background_color }};
+    --collection-banner-title-color: {{ section.settings.title_color }};
+    --collection-banner-text-color: {{ section.settings.text_color }};
+    --collection-banner-link-color: {{ section.settings.link_color }};
+    --collection-banner-title-size: {{ section.settings.title_size }}px;
+    --section-outer-spacing-block-start: {% if section.settings.reduce_top_spacing %}0px{% else %}{{ section.settings.padding_top }}px{% endif %} !important;
+    --section-outer-spacing-block-end: {{ section.settings.padding_bottom }}px !important;
+  }
+
+  #shopify-section-{{ section.id }} .section {
+    padding-block-start: {% if section.settings.reduce_top_spacing %}0px{% else %}{{ section.settings.padding_top }}px{% endif %};
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  }
+
+  #shopify-section-{{ section.id }} .collection-banner {
+    background-color: var(--collection-banner-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-6);
+    border-radius: var(--rounded);
+    overflow: hidden;
+    {% if section.settings.image_position == 'left' %}
+      flex-direction: row-reverse;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .collection-banner__content {
+    flex: 1;
+    padding: var(--spacing-8);
+    {% if banner_image == blank %}
+      width: 100%;
+      text-align: center;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .collection-banner__title {
+    font-size: var(--collection-banner-title-size);
+    font-weight: 700;
+    color: var(--collection-banner-title-color);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-4);
+  }
+
+  #shopify-section-{{ section.id }} .collection-banner__description {
+    color: var(--collection-banner-text-color);
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  /* remet le p à 0 pour éviter l’espace sous la ligne du lien */
+  #shopify-section-{{ section.id }} .collection-banner__description p {
+    margin-bottom: 0;
+  }
+
+  /* Lien "En savoir plus" — soulignement animé + accessibilité visuelle */
+  #shopify-section-{{ section.id }} .collection-banner__description a {
+    position: relative;
+    color: var(--collection-banner-link-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline;      /* force la même ligne */
+    margin-left: 4px;     /* petit espace avant le lien */
+    padding-bottom: 2px;
+    transition: opacity 0.2s ease-in-out;
+  }
+  #shopify-section-{{ section.id }} .collection-banner__description a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 2px;
+    background-color: var(--collection-banner-link-color);
+    transition: width 0.3s ease;
+  }
+  #shopify-section-{{ section.id }} .collection-banner__description a:hover {
+    opacity: 0.85;
+  }
+  #shopify-section-{{ section.id }} .collection-banner__description a:hover::after,
+  #shopify-section-{{ section.id }} .collection-banner__description a:focus::after {
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .collection-banner__image {
+    flex-shrink: 0;
+    max-width: 50%;
+    position: relative;
+  }
+
+  /* réserve un ratio pour éviter le CLS */
+  #shopify-section-{{ section.id }} .collection-banner__image .media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+  }
+  #shopify-section-{{ section.id }} .collection-banner__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media screen and (max-width: 999px) {
+    #shopify-section-{{ section.id }} .collection-banner {
+      flex-direction: column;
+    }
+    #shopify-section-{{ section.id }} .collection-banner__image {
+      order: -1;
+      max-width: 100%;
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} .collection-banner__image .media {
+      aspect-ratio: 16 / 9;
+    }
+    #shopify-section-{{ section.id }} .collection-banner__content {
+      padding: var(--spacing-6);
+    }
+    #shopify-section-{{ section.id }} .collection-banner__title {
+      line-height: 1.1;
+      margin-bottom: var(--spacing-3);
+      font-size: calc(var(--collection-banner-title-size) * 0.85);
+    }
+  }
+</style>
+
+<div {% render 'section-properties' %}>
+  <div class="collection-banner">
+    <div class="collection-banner__content">
+      {% if banner_title != blank %}
+        <h1 id="collection-title-{{ section.id }}" class="collection-banner__title">{{ banner_title }}</h1>
+      {% endif %}
+
+      {% if banner_first_para_text != blank %}
+        <div class="prose collection-banner__description">
+          <p>
+            {{ banner_first_para_text }}
+            {% if show_learn_more %}
+              <a href="#collection-description"
+                 aria-label="Lire la description complète de {{ banner_title }}">
+                {{ learn_more_text }}
+              </a>
+            {% endif %}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if banner_image != blank %}
+      <div class="collection-banner__image">
+        <div class="media">
+          {{- banner_image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              decoding: 'async',
+              fetchpriority: 'low',
+              sizes: '(max-width: 999px) 100vw, 50vw',
+              widths: '400,600,800,1000,1200,1400,1600',
+              alt: banner_image_alt
+          -}}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection banner",
+  "tag": "section",
+  "class": "shopify-section--collection-banner",
+  "enabled_on": {
+    "templates": ["collection"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contenu"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_description",
+      "label": "Utiliser automatiquement les infos de la collection",
+      "default": true,
+      "info": "Si décoché, vous pouvez saisir manuellement le titre et la description ci-dessous"
+    },
+    {
+      "type": "text",
+      "id": "manual_title",
+      "label": "Titre personnalisé",
+      "visible_if": "{{ section.settings.auto_description == false }}"
+    },
+    {
+      "type": "textarea",
+      "id": "manual_description",
+      "label": "Description personnalisée",
+      "visible_if": "{{ section.settings.auto_description == false }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_learn_more",
+      "label": "Afficher le lien 'En savoir plus'",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "learn_more_text",
+      "label": "Texte du lien 'En savoir plus'",
+      "default": "En savoir plus"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_image",
+      "label": "Image personnalisée",
+      "info": "Recommandé : 800x400px. Si vide, utilise l'image de la collection"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Position de l'image",
+      "options": [
+        { "value": "right", "label": "Droite" },
+        { "value": "left", "label": "Gauche" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Apparence"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Couleur de fond",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#2B1D14"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Couleur du texte",
+      "default": "#5A4636"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Couleur du lien 'En savoir plus'",
+      "default": "#B5651D"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Taille du titre",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Espacement"
+    },
+    {
+      "type": "checkbox",
+      "id": "reduce_top_spacing",
+      "label": "Réduire l'espacement du haut",
+      "default": true,
+      "info": "Cocher si le fil d'Ariane est affiché juste au-dessus"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacement haut",
+      "default": 40,
+      "info": "Utilisé uniquement si 'Réduire espacement' est décoché"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espacement bas",
+      "default": 0
+    }
+  ],
+  "presets": [
+    { "name": "Collection banner" }
+  ]
+}
+{% endschema %}

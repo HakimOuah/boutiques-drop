@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message": {
+          "type": "message",
+          "settings": {
+            "text": "Livraison offerte sans minimum d'achat",
+            "url": ""
+          }
+        },
+        "message_fb7hmR": {
+          "type": "message",
+          "settings": {
+            "text": "Service client 🇫🇷 : 9h à 18h / du lundi au vendredi",
+            "url": ""
+          }
+        },
+        "message_EQpMXq": {
+          "type": "message",
+          "settings": {
+            "text": "Satisfait ou remboursé - Retours sous 14 jours",
+            "url": ""
+          }
+        },
+        "message_Pmf4Eh": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "🔥 1 acheté = -50% sur le deuxième 🔥",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "message",
+        "message_fb7hmR",
+        "message_EQpMXq",
+        "message_Pmf4Eh"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "navigation_mode": "arrows",
+        "autoplay": true,
+        "cycle_speed": 6,
+        "scrolling_speed": 10,
+        "text_size": "text-xs",
+        "background": "#2B1D14",
+        "background_gradient": "linear-gradient(90deg, rgba(43, 29, 20, 1), rgba(181, 101, 29, 1) 100%)",
+        "text_color": "#F5F0E8"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "enable_sticky": true,
+        "hide_on_scroll": true,
+        "logo": "",
+        "logo_max_width": 185,
+        "logo_mobile_max_width": 140,
+        "menu": "main-menu",
+        "sidebar_menu": "",
+        "secondary_menu": "",
+        "menu_open_trigger": "hover",
+        "opening_from": "left",
+        "layout": "logo_left_navigation_center",
+        "show_social_media": true,
+        "show_locale_selector": false,
+        "show_country_selector": false,
+        "show_country_flag": true,
+        "show_country_name": false,
+        "transparent_header_text_color": "#ffffff",
+        "reduce_padding": true,
+        "background_opacity": 43,
+        "background_blur_radius": 10
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

@@ -1,0 +1,33 @@
+{{ 'component-timer.css' | asset_url | stylesheet_tag }}
+
+<timer-component class="product-timer{% if block.settings.color_timer_only %} product-timer--only{% endif %}{% if block.settings.box %} product-timer--box{% endif %}" style="--timer-color: {{ block.settings.color.red }}, {{ block.settings.color.green }}, {{ block.settings.color.blue }}"
+	data-end-date="{{ block.settings.end_date }}" 
+	data-loop="{{ block.settings.loop }}"
+	data-loop-hour="{{ block.settings.loop_hour }}"
+	{{ block.shopify_attributes }}>
+	{% if block.settings.icon %}
+		<span class="product-timer__icon">
+			{% render "icon-clock" %}	
+		</span>
+	{% endif %}
+	<span class="product-timer__text text--before">{{ block.settings.text_before }}</span>
+	<span class="product-timer__timer">
+		<span class="days">
+			<span class="unit"></span>
+			<span class="text">{{ block.settings.text_day }}</span>
+		</span>
+		<span class="hours">
+			<span class="unit"></span>
+			<span class="text">{{ block.settings.text_hour }}</span>
+		</span>
+		<span class="minutes">
+			<span class="unit"></span>
+			<span class="text">{{ block.settings.text_minute }}</span>
+		</span>
+		<span class="seconds">
+			<span class="unit"></span>
+			<span class="text">{{ block.settings.text_second }}</span>
+		</span>
+	</span>
+	<span class="product-timer__text text--before"> {{ block.settings.text_after }}</span>
+</timer-component>

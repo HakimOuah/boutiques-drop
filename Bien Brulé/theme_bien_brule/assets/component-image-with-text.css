@@ -1,0 +1,829 @@
+.image-with-text .grid {
+  margin-bottom: 0;
+}
+
+div:not(.page-width) > .image-with-text.content-container {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  div:not(.page-width) > .image-with-text.content-container {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+}
+
+.image-with-text--full-width {
+  background: inherit;
+}
+
+.image-with-text--full-width .image-with-text__content {
+  background: transparent !important;
+}
+
+/* Flush Style - background only on text portion, image has no background */
+.image-with-text--flush .image-with-text__media {
+  background: transparent;
+}
+
+/* Flush Style - remove gap between image and text */
+/* Mobile: remove bottom radius from image, top radius from text, and top border from text */
+@media screen and (max-width: 749px) {
+  .image-with-text--flush .image-with-text__media-item > *,
+  .image-with-text--flush .image-with-text__media,
+  .image-with-text--flush .image-with-text__media img,
+  .image-with-text--flush .image-with-text__media .placeholder-svg,
+  .image-with-text--flush .image-with-text__media-item:after,
+  .image-with-text--flush .deferred-media__poster,
+  .image-with-text--flush .global-media-settings,
+  .image-with-text--flush .global-media-settings img,
+  .image-with-text--flush .global-media-settings iframe,
+  .image-with-text--flush .global-media-settings video {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .image-with-text--flush .image-with-text__text-item:after,
+  .image-with-text--flush .image-with-text__content,
+  .image-with-text--flush .image-with-text__content:after {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+
+  .image-with-text--flush .image-with-text__content {
+    border-top: 0 !important;
+  }
+}
+
+/* Desktop: remove adjacent corners and border based on layout direction */
+@media screen and (min-width: 750px) {
+  /* Image first (default): remove right corners from image, left corners from text */
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__media-item > *,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__media,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__media img,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__media .placeholder-svg,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__media-item:after,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .deferred-media__poster,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .global-media-settings,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .global-media-settings img,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .global-media-settings iframe,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .global-media-settings video {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__text-item:after,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__content,
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__content:after {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .image-with-text--flush .grid:not(.image-with-text__grid--reverse) .image-with-text__content {
+    border-left: 0 !important;
+  }
+
+  /* Image second (reverse): remove left corners from image, right corners from text */
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__media-item > *,
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__media,
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__media img,
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__media .placeholder-svg,
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__media-item:after,
+  .image-with-text--flush .image-with-text__grid--reverse .deferred-media__poster,
+  .image-with-text--flush .image-with-text__grid--reverse .global-media-settings,
+  .image-with-text--flush .image-with-text__grid--reverse .global-media-settings img,
+  .image-with-text--flush .image-with-text__grid--reverse .global-media-settings iframe,
+  .image-with-text--flush .image-with-text__grid--reverse .global-media-settings video {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__text-item:after,
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__content,
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__content:after {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .image-with-text--flush .image-with-text__grid--reverse .image-with-text__content {
+    border-right: 0 !important;
+  }
+}
+
+/* When not full-width, make media fill its grid cell */
+.image-with-text:not(.image-with-text--full-width) .image-with-text__media {
+  width: 100%;
+  height: 100%;
+}
+
+.image-with-text .grid__item {
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .image-with-text__grid--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.image-with-text__media {
+  min-height: 100%;
+  overflow: visible;
+}
+
+.image-with-text__media--small {
+  height: 19.4rem;
+}
+
+.image-with-text__media--medium {
+  height: 29.6rem;
+}
+
+.image-with-text__media--large {
+  height: 43.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .image-with-text__media--small {
+    height: 31.4rem;
+  }
+
+  .image-with-text__media--medium {
+    height: 46rem;
+  }
+
+  .image-with-text__media--large {
+    height: 69.5rem;
+  }
+}
+
+.image-with-text__media--placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-with-text__media--placeholder:after {
+  content: '';
+  position: absolute;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.image-with-text__media--placeholder.image-with-text__media--adapt {
+  height: 20rem;
+}
+
+@media screen and (min-width: 750px) {
+  .image-with-text__media--placeholder.image-with-text__media--adapt {
+    height: 30rem;
+  }
+}
+
+.image-with-text__media--placeholder > svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.image-with-text__media--border {
+  overflow: hidden;
+  border: solid var(--media-border-thickness) var(--media-border-color) !important;
+  border-radius: var(--media-radius);
+}
+
+.image-with-text__media--border img {
+  border-radius: 0;
+}
+
+/* Ensure full border radius for media when displayed as card */
+.content-container--card .image-with-text__media,
+.content-container--card .image-with-text__media img,
+.content-container--card .image-with-text__media video,
+.content-container--card .image-with-text__media iframe,
+.content-container--card .image-with-text__media .placeholder-svg,
+.content-container--card .image-with-text__media-item > *,
+.content-container--card .image-with-text__media-item:after,
+.content-container--card .deferred-media__poster,
+.content-container--card .global-media-settings,
+.content-container--card .global-media-settings img,
+.content-container--card .global-media-settings iframe,
+.content-container--card .global-media-settings video {
+  border-radius: var(--media-radius) !important;
+}
+
+.image-with-text__media.decoration--rectangle {
+  position: relative;
+}
+
+.image-with-text__media.decoration--rectangle::after {
+  content: '';
+  position: absolute;
+  display: block;
+  inset: 7px;
+  border: solid 1px var(--media-border-color);
+  z-index: 1;
+  border-radius: var(--media-radius);
+}
+
+.image-with-text__content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-self: center;
+  padding: 4rem calc(4rem / var(--font-body-scale)) 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.image-with-text .grid__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.image-with-text__media-item {
+  line-height: 0;
+}
+
+.image-with-text__media-item iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.image-with-text__media-item video {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__media-item:after {
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__text-item:after {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+}
+
+.image-with-text .image-with-text__media-item > * {
+  border-radius: var(--media-radius);
+  overflow: hidden;
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.image-with-text .global-media-settings {
+  overflow: hidden !important;
+}
+
+.image-with-text .image-with-text__text-item > * {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__media-item > *,
+.image-with-text:not(.image-with-text--overlap) .image-with-text__text-item > * {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 749px) {
+  .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__media-item:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid__item .image-with-text__media,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__media img,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__media .placeholder-svg {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .image-with-text.collapse-corners:not(.image-with-text--overlap) .image-with-text__text-item:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap) .grid__item .image-with-text__content {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .image-with-text.collapse-borders:not(.image-with-text--overlap) .image-with-text__content {
+    border-top: 0;
+  }
+}
+
+.image-with-text__content--mobile-right > * {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.image-with-text__content--mobile-right .image-with-text__background-heading {
+  right: -1rem;
+  left: auto;
+}
+
+.image-with-text__content--mobile-center > * {
+  align-self: center;
+  text-align: center;
+}
+
+.image-with-text__content--mobile-center .image-with-text__background-heading {
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+}
+
+.image-with-text--overlap .image-with-text__content {
+  width: 90%;
+  margin: -3rem auto 0;
+}
+
+@media screen and (min-width: 750px) {
+  .image-with-text__grid--reverse .image-with-text__content {
+    margin-left: auto;
+  }
+
+  .image-with-text__content--bottom {
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  .image-with-text__content--top {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .image-with-text__content--desktop-right > * {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .image-with-text__content--desktop-right .image-with-text__background-heading {
+    right: -3rem;
+    left: auto;
+  }
+
+  .image-with-text__content--desktop-left > * {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .image-with-text__content--desktop-center > * {
+    align-self: center;
+    text-align: center;
+  }
+
+  .image-with-text__content--desktop-center .image-with-text__background-heading {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .image-with-text--overlap .image-with-text__text-item {
+    display: flex;
+    padding: 3rem 0;
+  }
+
+  .image-with-text--overlap .image-with-text__content {
+    height: auto;
+    width: calc(100% + 4rem);
+    min-width: calc(100% + 4rem);
+    margin-top: 0;
+    margin-left: -4rem;
+  }
+
+  .image-with-text--overlap .image-with-text__grid--reverse .image-with-text__content {
+    margin-left: 0;
+    margin-right: -4rem;
+  }
+
+  .image-with-text--overlap .image-with-text__grid--reverse .image-with-text__text-item {
+    justify-content: flex-end;
+  }
+
+  .image-with-text--overlap .image-with-text__media-item--top {
+    align-self: flex-start;
+  }
+
+  .image-with-text--overlap .image-with-text__media-item--middle {
+    align-self: center;
+  }
+
+  .image-with-text--overlap .image-with-text__media-item--bottom {
+    align-self: flex-end;
+  }
+
+  .image-with-text__media-item--small,
+  .image-with-text__media-item--large + .image-with-text__text-item {
+    flex-grow: 0;
+  }
+
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media-item:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media
+    img,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media
+    .placeholder-svg,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__text-item:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__content,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__content:after {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__text-item:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__content,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__content:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media-item:after,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media
+    img,
+  .image-with-text.collapse-corners:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media
+    .placeholder-svg {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .image-with-text.collapse-borders:not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__content {
+    border-left: 0;
+  }
+
+  .image-with-text.collapse-borders:not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__content {
+    border-right: 0;
+  }
+}
+
+/* Border radius adjustments for non-full-width sections - but preserve for card display */
+@media screen and (max-width: 749px) {
+  /* Remove bottom corners from image elements on mobile - except when displayed as card */
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__media-item > *,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .deferred-media__poster,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .global-media-settings img,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .global-media-settings iframe,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .global-media-settings model-viewer,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .global-media-settings video,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .global-media-settings
+    .placeholder-svg,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__media,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__media img,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__media
+    .placeholder-svg,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__media-item:after,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__media--border,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__media.decoration--rectangle::after {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  /* Remove top corners from text content on mobile - except when displayed as card */
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__text-item:after,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__content,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap) .image-with-text__content:after {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  /* When image is on the left (default layout) - remove right corners from image - except when displayed as card */
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media-item
+    > *,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .deferred-media__poster,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .global-media-settings
+    img,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .global-media-settings
+    iframe,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .global-media-settings
+    model-viewer,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .global-media-settings
+    video,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .global-media-settings
+    .placeholder-svg,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media
+    img,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media
+    .placeholder-svg,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media-item:after,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media--border,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__media.decoration--rectangle::after {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  /* When image is on the left - remove left corners from text - except when displayed as card */
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__text-item:after,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__content,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .grid:not(.image-with-text__grid--reverse)
+    .image-with-text__content:after {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  /* When image is on the right (reverse layout) - remove left corners from image - except when displayed as card */
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media-item
+    > *,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .deferred-media__poster,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .global-media-settings
+    img,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .global-media-settings
+    iframe,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .global-media-settings
+    model-viewer,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .global-media-settings
+    video,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .global-media-settings
+    .placeholder-svg,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media
+    img,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media
+    .placeholder-svg,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media-item:after,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media--border,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__media.decoration--rectangle::after {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  /* When image is on the right - remove right corners from text - except when displayed as card */
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__text-item:after,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__content,
+  .image-with-text-wrapper:not(.content-container--card) .image-with-text:not(.image-with-text--full-width):not(.image-with-text--overlap)
+    .image-with-text__grid--reverse
+    .image-with-text__content:after {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+.image-with-text:not(.collapse-corners, .image-with-text--overlap) .image-with-text__media-item {
+  z-index: 2;
+}
+
+/* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
+.image-with-text:not(.image-with-text--overlap) .color-background-1,
+.image-with-text.image-with-text--overlap .image-with-text__media.color-background-1 {
+  background: transparent;
+}
+
+/* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
+.image-with-text .gradient {
+  transform: perspective(0);
+}
+
+.image-with-text__content {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+  word-break: break-word;
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-text__content {
+    padding: 6rem 7rem 7rem;
+  }
+}
+
+.image-with-text__content > * + * {
+  margin-top: 2rem;
+}
+
+.image-with-text__content > .image-with-text__text:empty ~ a {
+  margin-top: 2rem;
+}
+
+.image-with-text__content > :first-child:is(.image-with-text__heading),
+.image-with-text__text--caption + .image-with-text__heading,
+.image-with-text__text--caption:first-child {
+  margin-top: 0;
+}
+
+.image-with-text__content :last-child:is(.image-with-text__heading),
+.image-with-text__text--caption {
+  margin-bottom: 0;
+}
+
+.image-with-text__content .button + .image-with-text__text {
+  margin-top: 2rem;
+}
+
+.image-with-text__content .image-with-text__text + .button {
+  margin-top: 3rem;
+}
+
+/* Make video section fill full height in image-with-text - Desktop only */
+/* Exclude overlap mode to allow videos to use natural aspect ratio */
+@media screen and (min-width: 750px) {
+  .image-with-text:not(.image-with-text--overlap) .image-with-text__media-item .video-section {
+    height: 100%;
+  }
+
+  .image-with-text:not(.image-with-text--overlap) .image-with-text__media-item .video-section__media {
+    padding-bottom: 0 !important;
+    height: 100%;
+  }
+
+  .image-with-text:not(.image-with-text--overlap) .image-with-text__media-item .video-section__media video,
+  .image-with-text:not(.image-with-text--overlap) .image-with-text__media-item .video-section__media iframe {
+    object-fit: cover;
+  }
+}
+
+/* On mobile, maintain aspect ratio */
+@media screen and (max-width: 749px) {
+  .image-with-text__media-item .video-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-with-text__media-item .video-section__media {
+    height: auto;
+  }
+}
+
+.image-with-text__heading-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.image-with-text__heading {
+  margin: 0;
+}
+
+.image-with-text__background-heading {
+  position: absolute;
+  z-index: -1;
+  font-size: 1.8em;
+  line-height: 0.9;
+  top: -2.5rem;
+  left: -3rem;
+  opacity: 0.15;
+  word-break: keep-all;
+}
+
+@media (min-width: 750px) {
+  .image-with-text__background-heading {
+    max-width: 140%;
+    min-width: 110%;
+  }
+}
+
+.image-with-text__text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 749px) {
+  .collapse-padding .image-with-text__grid .image-with-text__content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .image-with-text__background-heading {
+    font-size: 1.3em;
+    left: -1rem;
+    top: -1rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collapse-padding
+    .image-with-text__grid:not(.image-with-text__grid--reverse)
+    .image-with-text__content:not(.image-with-text__content--desktop-center) {
+    padding-right: 0;
+  }
+
+  .collapse-padding
+    .image-with-text__grid--reverse
+    .image-with-text__content:not(.image-with-text__content--desktop-center) {
+    padding-left: 0;
+  }
+}
+
+/* check for flexbox gap in older Safari versions */
+@supports not (inset: 10px) {
+  .image-with-text .grid {
+    margin-left: 0;
+  }
+}
+
+/*
+  Multirow
+  note: consider removing from this stylesheet if multirow-specific styles increase signficantly
+*/
+.multirow__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--grid-mobile-vertical-spacing);
+}
+
+@media screen and (min-width: 750px) {
+  .multirow__inner {
+    row-gap: var(--grid-desktop-vertical-spacing);
+  }
+}

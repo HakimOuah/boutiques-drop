@@ -1,0 +1,33 @@
+.limited-footer {
+	padding-bottom: 10rem !important;
+}
+
+.limited-message {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	background-color: red;
+	display: none;
+	z-index: 10000000;
+}
+
+.limited-message a {
+	color: white;
+	text-decoration: underline;
+}
+
+@media (max-width: 749px) {
+	.limited-message {
+		font-size: 1.2rem;
+	}
+
+	.limited-footer {
+		padding-bottom: 12rem !important;
+	}
+}
