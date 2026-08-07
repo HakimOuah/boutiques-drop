@@ -21,3 +21,4 @@
 - [Rejets terrain handpan/lit cabane/purificateur](rejets-terrain-handpan-litcabane-purificateur.md) — retours terrain de Hakim priment sur les volumes, 3 rejets du 02/08/2026
 - [AliExpress bloque les couteaux cuisine en France](aliexpress-bloque-couteaux-cuisine-france.md) — catégorie invisible à la livraison FR, tueur de dossier pour toute idée « lame » (02/08/2026, re-test au retour)
 - [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — 4 PDF Terry Ecom distillés en 2 skills projet : gmc-acceptance (approbation GMC + templates policies FR) et shopping-scaling (PMAX profit-first)
+- [GitHub source de vérité](github-source-de-verite.md) — 3 repos HakimOuah (hub boutiques-drop privé + pipeline + factory), réflexe commit+push en fin de toute tâche depuis le 07/08/2026

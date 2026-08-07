@@ -1,0 +1,282 @@
+# 📄 Template produit par défaut — product.json
+
+- **URL Notion** : https://app.notion.com/p/3a11f38c315481d39221e539c2aa43c6
+- **Date d'export** : 07/08/2026
+- **Parent** : 6. Modèles JSON Horizon
+
+---
+
+## Fichier
+
+- **Nom** : `templates/product.json`
+- **Chemin local** : `boutique-pipeline/docs/horizon-product-page-reference/templates/product.json`
+- **Intégrité** : 2041 lignes · 83 298 octets · MD5 `4e71b8eeac19d0064b41fc0c36d3a27c`
+
+> ⚠️ **JSON propre au thème Horizon (auto-généré). Ne pas copier dans un autre thème sans lire ses schémas. Reconstruire la structure après lecture des schémas du thème cible.**
+
+> **Aperçu inline : Partie 1/8 ci-dessous** — le haut de la section `product-information` (galerie, en-tête, note, paiement, bénéfices, variantes, barre de livraison, bloc d'achat). Elle contient déjà tous les blocs custom-liquid stratégiques.
+
+> ℹ️ **Fichier complet byte-exact = fichier local `templates/product.json`** (2041 lignes, MD5 `4e71b8eeac19d0064b41fc0c36d3a27c`) — c'est la **source de vérité**. Le corps intégral (parties 2 à 8) n'est pas recopié dans Notion : recopier 2000+ lignes de JSON auto-généré à la main risque une altération silencieuse (violation de la règle « ne pas reformater / ne supprimer aucune ligne »). Toutes les valeurs (IDs générés, URL CDN, coordonnées, notes, avis, app blocks) sont **à personnaliser**.
+
+## `product.json` — Partie 1/8 (lignes 1–256)
+
+```json
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "carousel",
+            "media_columns": "two",
+            "image_gap": 4,
+            "large_first_image": false,
+            "icons_style": "none",
+            "slideshow_controls_style": "thumbnails",
+            "slideshow_mobile_controls_style": "thumbnails",
+            "thumbnail_position": "right",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 28,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "custom_liquid_bhBnde": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<a href=\"#shopify-section-template--20012964675850__trustpilot_7FTrR8\"\nstyle=\"text-decoration: none;\">\n<div style=\"display: flex; align-items: center; margin-top: 0px; margin-bottom: 0px;\nfont-family: inherit;\">\n<img src=\"https://cdn.shopify.com/s/files/1/0776/3751/7627/files/avis.png?v=1687213619\"\nalt=\"\" style=\"height: 16px; width: auto; margin-right: 6px;\">\n<span style=\"font-size: 12px; color: inherit; font-weight: normal;\"><strong>4.8/5</strong>\nbasé sur 312 avis vérifiés</span>\n</div>\n</a>"
+              },
+              "blocks": {}
+            },
+            "group_icgrde": {
+              "type": "group",
+              "name": "Header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "Product title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h4",
+                    "font": "var(--font-primary--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "price_tVjtKg": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "custom_liquid_N4WHfL": {
+                  "type": "custom-liquid",
+                  "name": "t:names.custom_liquid",
+                  "settings": {
+                    "custom_liquid": "<style>\n.payment-installments {\ndisplay: flex;\nalign-items: center;\ngap: 6px;\nmargin-top: -20px;\nfont-family: var(--font-body-family);\nfont-size: 13px;\ncolor: #475569;\n}\n.payment-installments .price {\nfont-weight: 530;\ncolor: #1e293b;\n}\n.payment-logos {\ndisplay: flex;\nalign-items: center;\ngap: 6px;\n}\n.payment-logos img {\nheight: 20px;\nwidth: auto;\n}\n.payment-logos .paypal-card {\nbackground: white;\nborder: 1px solid #e2e8f0;\nborder-radius: 4px;\npadding: 3px 6px;\n}\n.payment-logos .klarna-card {\nheight: 20px;\nwidth: auto;\n}\n.payment-logos span {\nfont-size: 12px;\ncolor: #64748b;\n}\n</style>\n<div class=\"payment-installments\">\n{% assign price = product.selected_or_first_available_variant.price | divided_by: 100.0 %}\n{% assign installment = price | divided_by: 4 | round: 2 %}\n<span>Ou 4x <span class=\"price\">{{ installment }}€</span> avec</span>\n<div class=\"payment-logos\">\n<img class=\"paypal-card\"\nsrc=\"https://cdn.shopify.com/s/files/1/0941/1667/5917/files/2_f6abbd15-09dc-434d-81bf-fa03\n92a7ea0c.svg?v=1767533573\" alt=\"PayPal\">\n<span>et</span>\n<img class=\"klarna-card\"\nsrc=\"https://cdn.shopify.com/s/files/1/0941/1667/5917/files/1.svg?v=1767533573\"\nalt=\"Klarna\">\n</div>\n</div>"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg",
+                "custom_liquid_N4WHfL"
+              ]
+            },
+            "divider_VJhene": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "dropdowns",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "custom_liquid_D8bKRQ": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "<style>\n.shipping-bar {\ndisplay: inline-flex;\njustify-content: space-between;\nalign-items: center;\nbackground: #f1f1f1;\npadding: 5px 12px;\nborder-radius: 6px;\nfont-size: 12px;\nfont-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Arial, sans-serif;\ngap: 16px;\nwidth: 100%;\nbox-sizing: border-box;\n}\n.shipping-left,\n.shipping-right {\ndisplay: flex;\nalign-items: center;\ngap: 6px;\n}\n.shipping-dot {\nwidth: 8px;\nheight: 8px;\nbackground: #6f8a8a;\nborder-radius: 50%;\nflex-shrink: 0;\n}\n.shipping-bold {\nfont-weight: 700;\n}\n</style>\n<div class=\"shipping-bar\">\n<div class=\"shipping-left\">\n<div class=\"shipping-dot\"></div>\n{% assign delivery_timestamp = 'now' | date: '%s' | plus: 518400 %}\n{% assign day_en = delivery_timestamp | date: \"%a\" %}\n{% assign day_number = delivery_timestamp | date: \"%d\" %}\n{% assign month_en = delivery_timestamp | date: \"%b\" %}\n{% assign days = \"Mon:Lun,Tue:Mar,Wed:Mer,Thu:Jeu,Fri:Ven,Sat:Sam,Sun:Dim\" | split: \",\"\n%}\n{% assign months =\n\"Jan:janv,Feb:fév,Mar:mars,Apr:avr,May:mai,Jun:juin,Jul:juil,Aug:août,Sep:sept,Oct:oct,Nov:\nnov,Dec:dec\" | split: \",\" %}\n{% for d in days %}{% assign pair = d | split: \":\" %}{% if pair[0] == day_en %}{% assign\nday_fr = pair[1] %}{% endif %}{% endfor %}\n{% for m in months %}{% assign pair = m | split: \":\" %}{% if pair[0] == month_en %}{% assign\nmonth_fr = pair[1] %}{% endif %}{% endfor %}\n<span>Livré le <span class=\"shipping-bold\">{{ day_fr }}. {{ day_number }} {{ month_fr\n}}</span></span>\n</div>\n<div class=\"shipping-right\">\n<span> Livraison <span class=\"shipping-bold\">Gratuite</span></span>\n</div>\n</div>"
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+```
+
+*(fin de la partie 1/8 telle que reproduite dans Notion — le reste du fichier vit dans le fichier local, source de vérité)*

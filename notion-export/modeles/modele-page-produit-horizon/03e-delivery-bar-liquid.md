@@ -1,0 +1,95 @@
+# 🚚 Barre de livraison — delivery-bar.liquid
+
+- **URL Notion** : https://app.notion.com/p/3a11f38c31548113aaced2ba5e4deaa7
+- **Date d'export** : 07/08/2026
+- **Parent** : 3. Liquid personnalisé (Modèle Page Produit Horizon)
+
+---
+
+## Fichier
+
+- **Nom** : `delivery-bar.liquid`
+- **Chemin local** : `boutique-pipeline/docs/horizon-product-page-reference/custom-liquid/delivery-bar.liquid`
+- **Emplacement exact** : **après les variantes et avant le bouton d'achat**.
+
+## Fonction
+
+Affiche une date de livraison estimée (« aujourd'hui + 6 jours ») et la mention « Livraison Gratuite ».
+
+## Dépendances
+
+- Calcul de date en Liquid (`'now' | date` + offset `518400` secondes = 6 jours).
+
+## Valeurs codées en dur (à personnaliser)
+
+- Offset `518400` (6 jours) — **ce n'est pas une donnée logistique réelle**.
+- Mention « Gratuite ».
+
+## Valeurs à modifier pour une nouvelle boutique
+
+> ⚠️ La date actuelle correspond à « aujourd'hui + six jours ». Une version réutilisable doit lire le délai depuis la variante, le fournisseur, un métachamp ou une règle documentée.
+
+## Code complet
+
+```liquid
+<style>
+.shipping-bar {
+display: inline-flex;
+justify-content: space-between;
+align-items: center;
+background: #f1f1f1;
+padding: 5px 12px;
+border-radius: 6px;
+font-size: 12px;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+gap: 16px;
+width: 100%;
+box-sizing: border-box;
+}
+.shipping-left,
+.shipping-right {
+display: flex;
+align-items: center;
+gap: 6px;
+}
+.shipping-dot {
+width: 8px;
+height: 8px;
+background: #6f8a8a;
+border-radius: 50%;
+flex-shrink: 0;
+}
+.shipping-bold {
+font-weight: 700;
+}
+</style>
+<div class="shipping-bar">
+<div class="shipping-left">
+<div class="shipping-dot"></div>
+{% assign delivery_timestamp = 'now' | date: '%s' | plus: 518400 %}
+{% assign day_en = delivery_timestamp | date: "%a" %}
+{% assign day_number = delivery_timestamp | date: "%d" %}
+{% assign month_en = delivery_timestamp | date: "%b" %}
+{% assign days = "Mon:Lun,Tue:Mar,Wed:Mer,Thu:Jeu,Fri:Ven,Sat:Sam,Sun:Dim" | split: ","
+%}
+{% assign months =
+"Jan:janv,Feb:fév,Mar:mars,Apr:avr,May:mai,Jun:juin,Jul:juil,Aug:août,Sep:sept,Oct:oct,Nov:
+nov,Dec:dec" | split: "," %}
+{% for d in days %}{% assign pair = d | split: ":" %}{% if pair[0] == day_en %}{% assign
+day_fr = pair[1] %}{% endif %}{% endfor %}
+{% for m in months %}{% assign pair = m | split: ":" %}{% if pair[0] == month_en %}{% assign
+month_fr = pair[1] %}{% endif %}{% endfor %}
+<span>Livré le <span class="shipping-bold">{{ day_fr }}. {{ day_number }} {{ month_fr
+}}</span></span>
+</div>
+<div class="shipping-right">
+<span> Livraison <span class="shipping-bold">Gratuite</span></span>
+</div>
+</div>
+```
+
+## Checklist de validation
+
+- [ ] Délai basé sur une donnée réelle (variante / fournisseur / métachamp)
+- [ ] Mention « Gratuite » conforme à la politique de livraison
+- [ ] Rendu correct en mobile
