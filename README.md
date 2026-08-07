@@ -2,13 +2,14 @@
 
 Hub central du projet e-commerce de Hakim (OH Ventures) : boutiques Shopify dropshipping France. **GitHub est la source de vérité** — tout ce qui est modifié localement est commité et poussé (règle détaillée dans [CLAUDE.md](CLAUDE.md)).
 
-## Les 3 repos du projet
+## Les 4 repos du projet
 
 | Repo | Contenu | Local |
 |---|---|---|
 | **[boutiques-drop](https://github.com/HakimOuah/boutiques-drop)** (ce repo) | Hub : skills & agents Claude, mémoire, export Notion, boutiques historiques, docs transverses | `~/Documents/Boutiques drop/` |
 | **[boutique-pipeline](https://github.com/HakimOuah/boutique-pipeline)** | Pipeline de recherche produit actif : registre des candidats, chasse aux clusters (Claude + Codex), rapports de phases, boutiques Tufting & Seiko Mod | `~/Documents/Boutiques drop/boutique-pipeline/` |
 | **[dropshipping-product-factory](https://github.com/HakimOuah/dropshipping-product-factory)** | Ancienne usine à produits (« New project ») : playbook recherche, broyeur DropPilot, fiches produits, outputs de recherches (images) | `~/Documents/Boutiques drop/New project/` |
+| **[drop-elite-google-os](https://github.com/HakimOuah/drop-elite-google-os)** (privé) | Corpus de formation autorisé, skills Codex, modèles de politiques FR et système sourcé Google Ads/SEO | `~/Documents/Boutiques drop/drop-elite-google-os/` |
 
 ## Contenu de ce hub
 
@@ -19,6 +20,7 @@ Hub central du projet e-commerce de Hakim (OH Ventures) : boutiques Shopify drop
 - **`Bien Brulé/`**, **`Canapé enfant/`**, **`lihyl-lancement/`** — dossiers historiques des boutiques passées (Lihyl : leçon « niche brûlée », voir mémoire).
 - **`CONTEXTE-MEMOIRE-pour-Codex.md`** — contexte historique transmis à Codex.
 - **`scripts/`** — utilitaires du hub (`sync-memoire.sh`).
+- **`drop-elite-google-os/`** — clone autonome ignoré par ce hub ; sa propre racine Git est la source de vérité du corpus et des skills Codex.
 
 ## Installer sur une nouvelle machine
 
@@ -28,9 +30,12 @@ git clone https://github.com/HakimOuah/boutiques-drop.git "Boutiques drop"
 cd "Boutiques drop"
 git clone https://github.com/HakimOuah/boutique-pipeline.git
 git clone https://github.com/HakimOuah/dropshipping-product-factory.git "New project"
+git clone https://github.com/HakimOuah/drop-elite-google-os.git
 ```
 
 Puis ouvrir Claude Code dans `~/Documents/Boutiques drop/` : les skills et agents sont dans `.claude/`, la mémoire de référence est consultable dans `memoire/` (la mémoire vivante de Claude se reconstruira localement ; `memoire/` sert de sauvegarde et de référence).
+
+Pour Codex, suivre ensuite `drop-elite-google-os/RESTORE.md` afin d'installer les trois skills propres et les onze dépendances spécialisées sauvegardées.
 
 ## Ce qui n'est PAS versionné
 

@@ -15,13 +15,16 @@ Procédure en fin de tâche (avant de rendre la main) :
 2. `git add` + commit dans le repo concerné (message en français, une ligne de résumé claire).
 3. `git push`.
 
-Le travail se répartit sur 3 repos — committer dans le bon :
+Le travail se répartit sur 4 repos — committer dans le bon :
 
 | Ce qui a changé | Repo |
 |---|---|
 | Skills, agents, mémoire, export Notion, docs transverses, boutiques historiques | ce repo (`boutiques-drop`, racine) |
 | Pipeline recherche produit, registre candidats, chasse clusters, rapports, Tufting/Seiko | `boutique-pipeline/` |
 | Usine à produits historique (« New project ») | `New project/` |
+| Corpus Drop Elite autorisé, skills Codex, politiques FR et OS Google Ads/SEO | `drop-elite-google-os/` |
+
+Dans `drop-elite-google-os`, mettre aussi à jour `CHANGELOG.md`, `DECISIONS.md` ou `OPERATIONS_LOG.md` selon la nature du changement, puis exécuter `python3 scripts/validate_repo.py` avant le push.
 
 Ne jamais committer : secrets (`.env`, caches contenant des clés API), `node_modules/`, venvs, `scratchpad/`, `settings.local.json`. Le `.gitignore` de chaque repo fait foi — ne pas le contourner avec `git add -f`.
 
