@@ -26,3 +26,4 @@
 - [Plafond des niches Kraken évidentes](plafond-niches-kraken-evidentes.md) — 8 STOP/8 le 08/08 : preuve visible = occupation, dropship FR plafonnés 1-10 k visites, filtres précoces à réutiliser
 - [Trafic SimilarWeb × 3](trafic-similarweb-x3.md) — règle Hakim : trafic réel ≈ SimilarWeb ×3 ; visites Brand Search non fiables, jamais de verdict dessus
 - [Workflow thème live + copie de travail](workflow-theme-live-copie-travail.md) — le connecteur refuse d écrire sur le thème MAIN : travailler sur une copie non publiée, vérifier par empreinte md5
+- [Piège de lecture SERP AliExpress](piege-lecture-serp-aliexpress.md) — « 531 vendus » = 5,0 étoiles / 31 ventes ; tout chiffre non confirmé en PDP est à jeter (niveaux A/B/C)
