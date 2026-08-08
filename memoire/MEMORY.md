@@ -23,3 +23,4 @@
 - [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — 4 PDF Terry Ecom distillés en 2 skills projet : gmc-acceptance (approbation GMC + templates policies FR) et shopping-scaling (PMAX profit-first)
 - [GitHub source de vérité](github-source-de-verite.md) — 4 repos HakimOuah (hub + pipeline + factory + drop-elite-google-os), réflexe commit+push en fin de toute tâche depuis le 07/08/2026
 - [Méthode Kraken : coach-associé](methode-kraken-coach-associe.md) — drop-elite-google-os = corpus Enzo Honoré 66 contenus, finalité coach/associé proactif, roadmap 11 phases dans strategie-pas-a-pas.md
+- [Plafond des niches Kraken évidentes](plafond-niches-kraken-evidentes.md) — 8 STOP/8 le 08/08 : preuve visible = occupation, dropship FR plafonnés 1-10 k visites, filtres précoces à réutiliser
