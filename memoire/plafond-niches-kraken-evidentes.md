@@ -10,6 +10,8 @@ metadata:
 
 Salve Kraken du 08/08/2026 (2 sources indépendantes : Claude Brand Search + idéation, Codex expansion concurrents) : **8 niches sur 8 tuées en étude concurrentielle profonde** — mercerie, chien balade/transport, équipement basse-cour, terrarium, puzzle 3D bois, aquariophilie, théière, lunch box. Dossiers : `boutique-pipeline/competitor-profiles/kraken-2026-08-08/`.
 
+**⚠ CORRECTION HAKIM (08/08 soir)** : les chiffres de trafic ci-dessous viennent de Brand Search, source **non fiable**. Règle à appliquer désormais : [[trafic-similarweb-x3]] (SimilarWeb × 3). Le « plafond 1-10 k » est à re-vérifier ; les STOP fondés sur le verrouillage structurel (mercerie, basse-cour) tiennent, ceux fondés surtout sur le plafond de trafic (lunch box, puzzle 3D, théière, chien) sont en re-vérification.
+
 **Patterns récurrents des STOP (à réutiliser comme filtres précoces) :**
 1. **La preuve visible est un signal d'occupation, pas d'opportunité** : une boutique-modèle vivante trouvée en Brand Search/SERP signifie presque toujours que l'angle est pris (souvent en multiple : 6+ clones théière, 5-6 housses de canapé).
 2. **Plafond récurrent des dropship spécialistes FR : 1 à 10 k visites/mois** même après 5-7 ans (healthy-lunch 5,4 k/6 ans, Golemites 4,4 k/7 ans, theiere-france ~10 k/5 ans, boutiquehusky 3,6 k). Vérifier le trafic des « preuves » AVANT de s'enthousiasmer.
