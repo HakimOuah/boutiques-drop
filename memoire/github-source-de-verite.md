@@ -1,11 +1,11 @@
 ---
 name: github-source-de-verite
-description: "GitHub = source de vérité unique depuis le 07/08/2026 — 3 repos (hub boutiques-drop + boutique-pipeline + dropshipping-product-factory), réflexe push en fin de toute tâche"
+description: "GitHub = source de vérité unique depuis le 07/08/2026 — 4 repos (hub boutiques-drop + boutique-pipeline + dropshipping-product-factory + drop-elite-google-os), réflexe push en fin de toute tâche"
 metadata: 
   node_type: memory
   type: feedback
   originSessionId: 1589ce7e-ae26-41f0-bf94-f71a98fce292
-  modified: 2026-08-07T15:46:31.175Z
+  modified: 2026-08-08T11:43:25.421Z
 ---
 
 Depuis le 07/08/2026, Hakim veut GitHub comme source de vérité unique et concentrée du projet, avec un réflexe systématique : **toute modification durable est commitée et poussée en fin de tâche, sans qu'il ait à le demander** — y compris la création/modification de skills, les docs, les registres, le travail boutiques.
@@ -16,5 +16,6 @@ Depuis le 07/08/2026, Hakim veut GitHub comme source de vérité unique et conce
 - `boutiques-drop` (privé) — hub à la racine : `.claude/` (skills + agents), `memoire/` (copie de la mémoire via `scripts/sync-memoire.sh`), `notion-export/`, boutiques historiques, docs transverses.
 - `boutique-pipeline` — pipeline actif (registre candidats, chasse clusters, rapports, Tufting/Seiko).
 - `dropshipping-product-factory` — « New project », usine à produits historique.
+- `drop-elite-google-os` (privé) — corpus La Méthode Kraken (Enzo Honoré), skills Codex, politiques FR, OS Google Ads/SEO ([[methode-kraken-coach-associe]]). Après tout changement : mettre à jour CHANGELOG/DECISIONS/OPERATIONS_LOG selon la nature, puis `python3 scripts/validate_repo.py` avant push.
 
 En fin de tâche : sync mémoire si modifiée (`bash scripts/sync-memoire.sh` à la racine), puis commit (message en français) + push dans le(s) repo(s) touché(s). Les CLAUDE.md des 3 repos portent la règle. Jamais de secrets dans git (un `.env` et `ecommerce-dropshipping/dataforseo_analysis/cache.json` contiennent des clés réelles — gitignorés). Notion reste un dashboard ([[notion-pipeline-boutiques]]) : après une mise à jour Notion significative, rafraîchir `notion-export/` dans le hub.
