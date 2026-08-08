@@ -27,3 +27,4 @@
 - [Trafic SimilarWeb × 3](trafic-similarweb-x3.md) — règle Hakim : trafic réel ≈ SimilarWeb ×3 ; visites Brand Search non fiables, jamais de verdict dessus
 - [Workflow thème live + copie de travail](workflow-theme-live-copie-travail.md) — le connecteur refuse d écrire sur le thème MAIN : travailler sur une copie non publiée, vérifier par empreinte md5
 - [Piège de lecture SERP AliExpress](piege-lecture-serp-aliexpress.md) — « 531 vendus » = 5,0 étoiles / 31 ventes ; tout chiffre non confirmé en PDP est à jeter (niveaux A/B/C)
+- [Visuels composés, jamais la photo fournisseur](visuels-composes-jamais-photo-fournisseur.md) — générer depuis l'image produit du fournisseur en ne changeant que la mise en scène ; ne jamais publier la photo AliExpress brute
