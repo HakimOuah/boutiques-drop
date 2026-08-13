@@ -396,3 +396,34 @@ Un dossier daté, dans le répertoire de la boutique, avec au minimum :
   restent dans `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`.
 - **Elle ne tranche aucun cas limite.** Volume à ±20 % d'un seuil, données contradictoires, outil
   partiellement inaccessible : ça remonte à Hakim, comme partout ailleurs.
+
+---
+
+## Étape 9 — Fixer les prix : juste en dessous du comparable
+
+Règle de Hakim, 14/08/2026. Vaut pour toutes les boutiques.
+
+**Se positionner juste en dessous des concurrents qui vendent les mêmes produits que nous.**
+
+Tout se joue sur la question « juste en dessous de qui ». Le repère est le **concurrent comparable**, jamais le plus cher de la page. On écarte trois catégories :
+
+- les **marques officielles** (Seiko, Tissot, Citizen) : elles vendent une notoriété ;
+- les **marques à récit** : Charlie Paris tient un palier à 445 € avec « Assemblée en France » dans le titre de ses dix fiches. S'aligner dessus, c'est s'aligner sur un argument qu'on n'a pas ;
+- le **bas de gamme marketplace**, qui ne joue pas le même jeu.
+
+Le comparable, c'est le même produit, la même gamme, **sans récit de marque**.
+
+### Le piège : les bandes bimodales
+
+Vérifié sur Noirmont. Sur `montre squelette`, la page 1 montre un socle à 25-300 €, un palier unique à 445 €, et **rien entre 300 et 440 €**. Se placer « juste sous le plus cher » donnait 429 €, en plein dans le vide. Le comparable était un indépendant à 285-295 €, donc une cible à 279 €.
+
+**Un vide de marché n'est pas une place à prendre.** C'est un prix que personne ne pratique, parce qu'aucun argument ne le justifie à ce niveau.
+
+### La marche à suivre
+
+1. Relever les prix **en SERP et en Shopping**, jamais en estimation.
+2. Classer les acteurs : marque officielle, marque à récit, indépendant comparable, marketplace. Ne retenir que les comparables.
+3. Repérer les paliers et les vides.
+4. Se placer juste sous le comparable, terminaison psychologique.
+5. Vérifier le **ratio prix ÷ CPC ≥ 100** (cible 150-200).
+6. Calculer la marge **sur la base HT** : prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les frais de paiement (≈ 1,4 % + 0,25 €). Une marge calculée sur le prix TTC se raconte 20 % qui n'existent pas.

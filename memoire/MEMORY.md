@@ -29,3 +29,4 @@
 - [Piège de lecture SERP AliExpress](piege-lecture-serp-aliexpress.md) — « 531 vendus » = 5,0 étoiles / 31 ventes ; tout chiffre non confirmé en PDP est à jeter (niveaux A/B/C)
 - [Visuels composés, jamais la photo fournisseur](visuels-composes-jamais-photo-fournisseur.md) — générer depuis l'image produit du fournisseur en ne changeant que la mise en scène ; ne jamais publier la photo AliExpress brute
 - [Mur PDP AliExpress navigateur intégré](mur-pdp-aliexpress-navigateur-integre.md) — PDP bloquées (anti-bot), recette SERP JSON + API avis publique + photos = plafond B+, classe A réservée à l'étape DSers
+- [Pricing : juste sous le comparable](pricing-juste-sous-le-comparable.md) — se placer sous le concurrent comparable (ni marque officielle, ni marque a recit, ni marketplace), et ne jamais se poser dans un vide de marche
