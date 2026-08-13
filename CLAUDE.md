@@ -36,6 +36,7 @@ Ne jamais committer : secrets (`.env`, caches contenant des clés API), `node_mo
 
 ## Repères projet
 
+- **Analyse de marché et de concurrence : `METHODE-ANALYSE-MARCHE.md` (racine).** Séquence obligatoire pour **chaque nouvelle boutique**, dans l'ordre : partir du catalogue → mesurer par lots → consolider par famille → net de marque → **vérifier en SERP** → puis seulement les concurrents → cartographier → arborescence, trous d'offre et axe. Contient le catalogue des pièges (retournement pièce/produit fini, rabattement orthographique, marque cachée, KD trompeur…), tous vérifiés sur Maison Noirmont les 13-14/08/2026. Cartographie d'un concurrent : agent `cartographie-concurrence`.
 - Pipeline de recherche produit : orchestrateur `/recherche-produit`, boucle `/chasse-clusters`, qualification express `/qualifie-idees` — sous-agents phase0→phase5 dans `.claude/agents/`.
 - Conformité Google : skill `gmc-acceptance` (approbation Merchant Center, templates policies FR) ; scaling : skill `shopping-scaling` (PMAX profit-first).
 - Registre des candidats et rapports : dans `boutique-pipeline/` (pas ici).

@@ -62,6 +62,15 @@ Elles s'appliquent à toi et à chaque sous-agent, sans exception :
 - les quatre niveaux de validation (marché → fiche AliExpress → commande test → lancement) sont étanches : aucun raccourci, aucun verdict d'un niveau exprimé avec le vocabulaire d'un autre ;
 - ne jamais supprimer une réserve d'un rapport précédent ; ne jamais transformer un verdict conditionnel en validation définitive.
 
+## Quand la recherche débouche sur une boutique
+
+Ce pipeline décide **s'il faut lancer une boutique**. Il ne dit pas comment la construire. Dès qu'une niche est retenue et qu'on passe au catalogue, à l'arborescence ou aux concurrents, la suite est `/Users/Hakim/Documents/Boutiques drop/METHODE-ANALYSE-MARCHE.md` (séquence obligatoire pour chaque nouvelle boutique, plus le catalogue des pièges de mesure) et l'agent `cartographie-concurrence` pour le profilage des concurrents.
+
+Deux règles de cette méthode valent aussi **à l'intérieur du pipeline**, en phase 0 et en phase 3 :
+
+- **la demande d'une famille est la somme des formulations qu'une même page servirait**, pas sa tête (Keyword Magic Tool en « Expression exacte », `&mt=phrase`, 100 lignes sans crédit), sans jamais additionner deux familles distinctes, ce qui reste l'interdit n° 1 ;
+- **toute requête contenant une marque tierce est inutilisable en flux Merchant Center** : on annonce toujours deux chiffres, brut et net de marque.
+
 ## Rappels de maintenance
 
 - Les critères chiffrés vivent dans `PRODUCT-RESEARCH-CRITERIA.md` et la méthode dans `PRODUCT-RESEARCH-PLAYBOOK.md`. Si Hakim change un critère, c'est là qu'on le change — jamais dans les fichiers d'agents.
