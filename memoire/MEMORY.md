@@ -35,3 +35,4 @@
 - [Salve niches univers 15/08](salve-niches-univers-2026-08-15.md) — 6 idées boutiques univers de Hakim (literie, bouillottes, globe, astro, goth, ésotérisme), niveau 0, plan 7 étapes mode Kraken dans boutique-pipeline/plans/
 - [Pièges de l'import DSers](pieges-import-dsers.md) — vérifier qu'un article n'est pas déjà le fournisseur d'une fiche active, « Unsaved changes » qui s'ouvre sans modification, galerie qui mélange cadrans marqués et stériles
 - [Variantes sans accent dans le KMT](variantes-sans-accent-kmt.md) — SEMrush traite `ciel etoile` et `ciel étoilé` comme deux corpus ; interroger les deux, écart jusqu'à ×8
+- [Plan Q4 2026 (experts, 16/08)](plan-q4-2026-experts-16-08.md) — boutiques prêtes + GMC en août, campagnes en septembre ; tests coupés trop tôt à 120-130 €, seuil produit 20 k

@@ -12,6 +12,8 @@ Précisé par Hakim le 06/08/2026 (audit des process). Les 4 boutiques (Bien Br�
 
 Philosophie assumée : lancer le plus vite possible pour vérifier la traction marché ; l'instrumentation lourde (GA4 complet, capture emails, flows Klaviyo) n'arrive qu'**après** 3-4 ventes signal. Le suivi post-lancement passe par Hakim + experts, pas par les agents.
 
+⚠️ **RÉVISÉ le 16/08/2026 par les experts** : ce protocole (30 €/j × 5 j ≈ 150 €) **coupait trop tôt**. Verdict : le problème n'était pas les produits mais la durée — Google n'avait pas assez de données pour optimiser. Le budget de test doit désormais être **proportionné au prix du produit**, et on ne conclut jamais à 120-130 €. Voir [[plan-q4-2026-experts-16-08]].
+
 **Why:** Hakim arbitre vitesse vs outillage — il refuse d'équiper une boutique qui n'a pas prouvé une demande.
 
 **How to apply:** ne pas re-proposer « brancher tout le tracking d'abord » comme si rien n'existait ; le débat porté par l'audit du 06/08 est ailleurs : le test ads mesure la capacité du site à convertir (la demande étant déjà prouvée par [[pipeline-recherche-produit-agents]] et les concurrents actifs), et GA4/Clarity coûtent ~1-2 h — les proposer comme prérequis léger, pas comme instrumentation lourde. Voir [[cap-q4-2026-lecons-audit-boutiques]].
