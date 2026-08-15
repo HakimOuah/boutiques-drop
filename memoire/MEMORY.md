@@ -30,3 +30,4 @@
 - [Visuels composés, jamais la photo fournisseur](visuels-composes-jamais-photo-fournisseur.md) — générer depuis l'image produit du fournisseur en ne changeant que la mise en scène ; ne jamais publier la photo AliExpress brute
 - [Mur PDP AliExpress navigateur intégré](mur-pdp-aliexpress-navigateur-integre.md) — PDP bloquées (anti-bot), recette SERP JSON + API avis publique + photos = plafond B+, classe A réservée à l'étape DSers
 - [Pricing : juste sous le comparable](pricing-juste-sous-le-comparable.md) — se placer sous le concurrent comparable (ni marque officielle, ni marque a recit, ni marketplace), et ne jamais se poser dans un vide de marche
+- [Sources d'audit de conformité boutique](sources-audit-conformite-boutique.md) — /payments/config ne voit pas Klarna (croiser shop.enabled_payment_types), faux positifs du grep dans le HTML, JSON-LD à parser en strict
