@@ -33,3 +33,4 @@
 - [Pricing : juste sous le comparable](pricing-juste-sous-le-comparable.md) — se placer sous le concurrent comparable (ni marque officielle, ni marque a recit, ni marketplace), et ne jamais se poser dans un vide de marche
 - [Sources d'audit de conformité boutique](sources-audit-conformite-boutique.md) — /payments/config ne voit pas Klarna (croiser shop.enabled_payment_types), faux positifs du grep dans le HTML, JSON-LD à parser en strict
 - [Salve niches univers 15/08](salve-niches-univers-2026-08-15.md) — 6 idées boutiques univers de Hakim (literie, bouillottes, globe, astro, goth, ésotérisme), niveau 0, plan 7 étapes mode Kraken dans boutique-pipeline/plans/
+- [Pièges de l'import DSers](pieges-import-dsers.md) — vérifier qu'un article n'est pas déjà le fournisseur d'une fiche active, « Unsaved changes » qui s'ouvre sans modification, galerie qui mélange cadrans marqués et stériles
