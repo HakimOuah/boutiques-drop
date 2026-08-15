@@ -29,5 +29,6 @@
 - [Piège de lecture SERP AliExpress](piege-lecture-serp-aliexpress.md) — « 531 vendus » = 5,0 étoiles / 31 ventes ; tout chiffre non confirmé en PDP est à jeter (niveaux A/B/C)
 - [Visuels composés, jamais la photo fournisseur](visuels-composes-jamais-photo-fournisseur.md) — générer depuis l'image produit du fournisseur en ne changeant que la mise en scène ; ne jamais publier la photo AliExpress brute
 - [Mur PDP AliExpress navigateur intégré](mur-pdp-aliexpress-navigateur-integre.md) — PDP bloquées (anti-bot), recette SERP JSON + API avis publique + photos = plafond B+, classe A réservée à l'étape DSers
+- [API AliExpress : `search` en mots rares](api-aliexpress-search-mots-rares.md) — le moteur trie par popularité, pas par pertinence ; deux mots rares, jamais de mot fréquent ; limite 20, `latest` rend 0 ; note absente de `variants`
 - [Pricing : juste sous le comparable](pricing-juste-sous-le-comparable.md) — se placer sous le concurrent comparable (ni marque officielle, ni marque a recit, ni marketplace), et ne jamais se poser dans un vide de marche
 - [Sources d'audit de conformité boutique](sources-audit-conformite-boutique.md) — /payments/config ne voit pas Klarna (croiser shop.enabled_payment_types), faux positifs du grep dans le HTML, JSON-LD à parser en strict
