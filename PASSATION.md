@@ -239,9 +239,39 @@ en vocal. Il satisfait donc la règle anti-VoIP, qui est un motif de refus immé
 boutique veut dire quatre SIM physiques joignables — donc un coût et une astreinte. Le garder veut
 dire assumer le linkage.
 
-**Il faut une décision écrite avant de créer le moindre GMC**, parce que l'ordre de création est
-strict et qu'on ne revient pas en arrière proprement : boutique finie → policies → produits → GMC →
-claim du domaine → review.
+### DÉCISION DE HAKIM, 16/08/2026 : on assume le linkage, et on soumet en séquence
+
+Une seule adresse et un seul numéro pour tout le parc. **Le risque de cascade est assumé et écrit.**
+En contrepartie, la soumission devient séquentielle et prudente :
+
+1. **Tuftéo seul d'abord.** Aucune autre boutique n'est soumise pendant sa revue.
+2. **30 jours d'observation** après approbation. C'est la fenêtre où tombent la plupart des
+   suspensions — elles arrivent APRÈS l'approbation, pas avant.
+3. **Noirmont seulement après approbation confirmée** de Tuftéo.
+
+**Ce que cette décision rend obligatoire, et qui ne coûte rien.** Puisqu'on ne peut plus compter sur
+la séparation des identités, tout ce qui reste séparable doit l'être — la misrepresentation est
+cumulative, chaque signal compte double dans ce scénario :
+
+- **Les policies ne doivent jamais être identiques mot pour mot entre deux boutiques.** Google
+  détecte les policies dupliquées entre domaines. C'est le levier le plus important qui nous reste.
+- **Un compte Google dédié par marque.** L'hygiène était déjà notée après la suspension de juin.
+- **Les e-mails de contact restent distincts** — c'est déjà le cas.
+- **Le numéro doit être écrit de façon identique partout.** Aujourd'hui ce n'est pas le cas :
+  Maison Noirmont en publie **trois écritures** (`0756828094` au pied de page, `+33 7 56 82 80 94`
+  dans les politiques, `tel:+33756828094` sur la page Contact), et Bien Brûlé publie carrément
+  **deux numéros différents** selon le thème (`+33 6 77 70 08 10` et `+33756828094`). Une
+  incohérence de format est un motif de refus en soi, indépendamment du linkage.
+
+**Et une vérification préalable que la décision rend nécessaire.** Puisque la suspension de juin
+attachait **l'entité**, un déclencheur encore en ligne sur Bien Brûlé ou Bonum Vitae dégrade la
+confiance pendant la revue de Tuftéo. **Avant de soumettre Tuftéo, passer les deux anciennes
+boutiques au crible des déclencheurs connus** : faux avis, fausses notes, faux compteurs, images à
+filigrane de marque tierce, prix barrés jamais pratiqués. Ce sont exactement les motifs de la
+suspension du 15/06.
+
+L'ordre de création reste strict et on ne revient pas en arrière proprement : boutique finie →
+policies → produits → GMC → claim du domaine → review.
 
 1. **Le CSS (Comparison Shopping Services)** — environ 50 €/mois pour des enchères plus basses et
    une meilleure stabilité GMC. À chiffrer, décision non prise.
