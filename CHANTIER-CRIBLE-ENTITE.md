@@ -54,25 +54,25 @@ Ceux qui ont réellement causé la suspension de juin, plus ceux de la checklist
 |---|---|---|
 | **Bien Brûlé** | à cribler | C'est elle qui portait le compte suspendu en juin. Corrections faites à l'époque (faux widgets retirés, produits à filigrane passés en DRAFT, page Contact remplie). **À revérifier sur le site public** : les corrections de juin peuvent avoir été perdues, et deux thèmes coexistent avec **deux numéros de téléphone différents** (`+33 6 77 70 08 10` et `+33756828094`) |
 | **Bonum Vitae** | à cribler | Jamais auditée. Footer connu : `+33 7 56 82 80 94`, `contact@bonumvitae.fr`, 47 rue Vivienne |
-| **Lihyl** | à cribler | **599 € barré 799 €, le 799 n'a jamais été pratiqué** — risque assumé à l'époque, mais il change de nature avec le linkage. Faux avis également présents à l'origine |
+| ~~Lihyl~~ | ✅ **hors périmètre** | **Boutique fermée par Hakim.** Plus aucun signal public : son prix barré fantôme (599 € barré 799 €, le 799 jamais pratiqué) et ses faux avis d'origine ne pèsent plus sur l'entité |
+
+**Le crible porte donc sur deux boutiques**, pas trois.
 
 ---
 
-## Une question à trancher sur Lihyl
+## Le seul résidu à vérifier sur Lihyl
 
-Décision de Hakim : **on ne relance pas Lihyl** (niche brûlée — des dropshippers avaient arnaqué des
-clients français sur le reformer pilates, la confiance marché est morte).
+Fermer la boutique Shopify supprime la vitrine, mais **pas nécessairement ce que Google a enregistré
+sous l'entité**. Deux contrôles rapides, une fois chacun :
 
-Mais **« ne pas relancer » n'est pas « hors ligne »**. Si la boutique est encore servie publiquement,
-son prix barré fantôme et ses éventuels faux avis restent des signaux actifs sur l'entité, même sans
-un euro de publicité derrière.
+1. **Un compte Merchant Center subsiste-t-il pour Lihyl ?** Tuftéo a montré qu'un GMC se crée
+   **automatiquement** via l'application Google & YouTube de Shopify, sans qu'on le demande. Si un
+   compte Lihyl existe encore avec des produits désapprouvés ou un avertissement, il reste rattaché à
+   l'entité. Le cas échéant : le fermer proprement plutôt que le laisser dériver.
+2. **Le domaine ne sert plus rien** — vérifier qu'il ne renvoie ni une page Shopify de boutique
+   fermée avec l'ancien contenu, ni une redirection vers une autre boutique du parc.
 
-Trois issues, par coût croissant :
-
-1. **Mettre la boutique sous mot de passe** (Boutique en ligne → Préférences). Instantané, réversible,
-   supprime tout signal public. **C'est l'option recommandée** puisqu'on ne la relance pas.
-2. Retirer les seuls déclencheurs — prix barrés, faux avis — et laisser le site en ligne.
-3. Fermer la boutique. Irréversible, à ne pas faire sans raison comptable.
+Ce ne sont pas des urgences, mais ce sont deux choses qu'on ne veut pas découvrir pendant une revue.
 
 ---
 
