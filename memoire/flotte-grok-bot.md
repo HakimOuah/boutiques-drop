@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 578c8896-7f46-48a6-ab64-d0045d9c4b9c
-  modified: 2026-08-16T19:11:34.390Z
+  modified: 2026-08-16T19:16:45.043Z
 ---
 
 Le 16/08/2026, Hakim a demandé de découper son process en bots Grok (bêta Grok Bot lancée le 11/08/2026, incluse dans son abonnement SuperGrok Heavy). **Le découpage est le sien, arrêté après une première proposition par outils que j'avais faite et qu'il a écartée : il veut un bot par métier du process, pas par famille d'outils.** Les 7 bots, avec leurs instructions prêtes à coller, vivent dans `GROK-BOT-FLEET.md` à la racine du hub : RECHERCHE PRODUIT · MOTS-CLÉS · SOURCING · CONCURRENCE · PERSONAS · DESIGN SHOPIFY · CONFORMITÉ GMC.
@@ -13,6 +13,8 @@ Le 16/08/2026, Hakim a demandé de découper son process en bots Grok (bêta Gro
 Les trois décisions structurantes, à ne pas re-débattre :
 
 1. **Cinq bots mutualisés, deux bots par boutique.** RECHERCHE PRODUIT, MOTS-CLÉS, SOURCING, CONCURRENCE et PERSONAS ne touchent aucun compte de boutique : un seul jeu sert toutes les boutiques. DESIGN SHOPIFY et CONFORMITÉ GMC touchent le Shopify admin et le Merchant Center : il en faut **un par boutique, jamais un pour deux**. Motif : un bot Grok travaille depuis une machine cloud avec sa propre IP, et le principe n° 1 du skill [[skill-gmc-acceptance]] interdit de partager une IP entre boutiques — c'est la cause n° 1 des suspensions répétées.
+
+1 bis. **Instructions longues et autoportantes, chemins en référence.** Décision de Hakim : un bot Grok tourne dans le cloud et ne peut lire aucun fichier local, donc le contenu utile des skills (gmc-acceptance, webdesign-boutiques, customer-research, competitor-profiling, cro, pricing) est **recopié dans les instructions**, et les chemins ne servent qu'à retrouver la source côté Claude Code. Corollaire : **quand une règle change dans un skill, il faut repasser l'instruction du bot** — rien ne se propage. La table des chemins est en tête de `GROK-BOT-FLEET.md`.
 
 2. **Aucun bot n'écrit dans GitHub.** Les bots déposent en Notion ou Drive, Claude Code relit, consolide, tranche et pousse. Cohérent avec [[github-source-de-verite]] : la source de vérité ne se confie pas à un VM cloud exposé à du contenu tiers.
 

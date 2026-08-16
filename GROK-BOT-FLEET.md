@@ -22,6 +22,69 @@ Ce document dit **qui exécute quoi**. Les règles de fond restent dans `METHODE
 
 ---
 
+## Où trouver les méthodes complètes
+
+**Un bot Grok tourne dans le cloud : il ne peut lire aucun fichier de ton Mac.** Les instructions
+ci-dessous sont donc **autoportantes** — tout ce qui est nécessaire à l'exécution y est recopié, y
+compris ce qui vient des skills. Les chemins de cette section servent à toi et à Claude Code, pour
+retrouver la source, la mettre à jour, et régénérer une instruction quand une règle change.
+
+**Quand tu modifies une règle dans un skill ou une méthode, il faut repasser l'instruction du bot
+concerné.** Rien ne se propage tout seul.
+
+### Méthodes maison — racine `~/Documents/Boutiques drop/`
+
+| Source | Chemin | Bots concernés |
+|---|---|---|
+| Méthode d'analyse de marché, 9 étapes + catalogue des pièges | `METHODE-ANALYSE-MARCHE.md` | MOTS-CLÉS, CONCURRENCE |
+| Critères canoniques de recherche produit | `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` | RECHERCHE PRODUIT |
+| Playbook de création de boutique, 6 phases et 3 portes | `boutique-pipeline/PLAYBOOK.md` | PERSONAS, DESIGN |
+| Playbook de recherche produit détaillé | `boutique-pipeline/PRODUCT-RESEARCH-PLAYBOOK.md` | RECHERCHE PRODUIT |
+| Convention des tableaux de boutique et format de ticket | `boutique-pipeline/METHODE-TABLEAU.md` | tous (dépôts) |
+| Template de persona | `boutique-pipeline/templates/persona.template.md` | PERSONAS |
+| Checklist GMC du pipeline | `boutique-pipeline/reference/gmc-checklist.md` | CONFORMITÉ GMC |
+| Livraison FR/BE/CH | `boutique-pipeline/reference/delivery-fr-be-ch.md` | CONFORMITÉ GMC |
+| Conventions de nommage (ALT, SKU) | `boutique-pipeline/reference/naming-conventions.md` | DESIGN |
+| Guide de prompts d'images | `boutique-pipeline/reference/image-prompt-guide.md` | DESIGN |
+| Base Horizon, code Liquid byte-exact (PDP, panier, homepage) | `boutique-pipeline/docs/horizon-product-page-reference/` | DESIGN |
+| Documentation des modèles Horizon | `notion-export/modeles/` | DESIGN |
+| Dossiers de référence Noirmont (format et niveau d'exigence) | `boutique-pipeline/boutique-seiko-mod/journal/` | MOTS-CLÉS, CONCURRENCE |
+
+### Agents Claude — `.claude/agents/`
+
+| Agent | Ce qu'il apporte | Bot |
+|---|---|---|
+| `executant-boutique.md` | recette AliExpress complète, recette d'écriture de thème Shopify, les 3 règles qui coûtent cher | SOURCING, DESIGN |
+| `cartographie-concurrence.md` | méthode de cartographie, format attendu | CONCURRENCE |
+| `mineur-brandsearch.md` | recette de filtres Brand Search | RECHERCHE PRODUIT |
+| `phase3-demande.md`, `phase4-sourcing.md`, `phase5-marge.md` | seuils et calculs du pipeline | RECHERCHE PRODUIT, SOURCING |
+
+### Skills projet — `.claude/skills/`
+
+| Skill | Ce qu'il apporte | Bot |
+|---|---|---|
+| `gmc-acceptance/SKILL.md` | framework d'approbation GMC | CONFORMITÉ GMC |
+| `gmc-acceptance/references/checklist-pre-soumission.md` | **la checklist pass/fail complète** | CONFORMITÉ GMC |
+| `gmc-acceptance/references/templates-policies.md` | règles d'usage des 6 policies | CONFORMITÉ GMC |
+| `gmc-acceptance/references/templates-fr/` | les 6 policies FR prêtes à adapter | CONFORMITÉ GMC |
+| `webdesign-boutiques/SKILL.md` | DA maison, workflow ui-ux-pro-max, base Horizon | DESIGN |
+| `shopping-scaling/SKILL.md` | scaling PMAX profit-first | hors flotte (voir §7) |
+
+### Skills globaux — `~/.claude/skills/`
+
+| Skill | Ce qu'il apporte | Bot |
+|---|---|---|
+| `customer-research/SKILL.md` | JTBD, minage d'avis, niveaux de confiance, biais d'échantillon | PERSONAS |
+| `customer-research/references/source-guides.md` | playbooks par plateforme, opérateurs de recherche | PERSONAS |
+| `competitor-profiling/SKILL.md` | structure de fiche concurrent, faits traçables | CONCURRENCE |
+| `cro/SKILL.md` | les 7 dimensions d'analyse, par ordre d'impact | DESIGN |
+| `copywriting/SKILL.md`, `marketing-psychology/SKILL.md` | implications copy du persona | PERSONAS |
+| `pricing/SKILL.md`, `offers/SKILL.md` | construction de l'offre et du prix | RECHERCHE PRODUIT |
+| `ui-ux-pro-max/scripts/search.py` | moteur design (84 styles, 192 palettes) — **script local, inaccessible au bot** | DESIGN, via Claude Code |
+| `shopify-liquid/SKILL.md` | syntaxe Liquid | DESIGN, via Claude Code |
+
+---
+
 ## 1. La chaîne : où chaque bot se branche
 
 ```
@@ -164,6 +227,11 @@ poursuite ou de rejet.
 d'annonces Google → ouvrir 3 boutiques → relever les champs → passer la liste à MOTS-CLÉS → reprendre
 la mesure et appliquer le filtre qualitatif.
 
+**Réf.** `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` (les 7 sections de critères, intégralement
+recopiées ci-dessous) · `boutique-pipeline/PRODUCT-RESEARCH-PLAYBOOK.md` ·
+`.claude/agents/mineur-brandsearch.md` (recette de filtres) · `boutique-pipeline/registre-candidats.md`
+(anti-doublon) · skills globaux `pricing` et `offers`.
+
 **Instruction à coller :**
 
 ```
@@ -250,11 +318,37 @@ commande. TU N'INVENTES JAMAIS UN BUNDLE pour faire passer une idée.
   exécutable — jamais à la découverte du premier acteur.
 - Un trafic estimé faible ou une absence d'Ads ne prouve ni échec ni rentabilité.
 
+## Le contrôle économique, avant de conclure quoi que ce soit
+
+Trois chiffres à rendre pour toute idée qui survit au filtre qualitatif :
+
+1. RATIO PRIX ÷ CPC. Le prix de vente envisagé divisé par le CPC mesuré doit être ≥ 100, la cible
+   étant 150 à 200. En dessous de 100, l'acquisition Search ne peut pas financer le produit, quel
+   que soit le volume.
+
+2. MARGE CALCULÉE SUR LA BASE HT. prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les frais
+   de paiement (environ 1,4 % + 0,25 €). UNE MARGE CALCULÉE SUR LE PRIX TTC SE RACONTE 20 % QUI
+   N'EXISTENT PAS. Raisonner en SASU, HT, TVA au réel, IS.
+
+3. FAISABILITÉ LOGISTIQUE. Poids, dimensions, risque de casse, retours, SAV, stock et délais vers la
+   France et l'UE. Vigilance renforcée sur les produits électriques, les produits destinés aux
+   enfants et toute allégation liée à la santé. Conformité CE/RoHS vérifiable ou non — tu constates,
+   tu ne tranches pas.
+
+## La scalabilité — bonus, jamais critère éliminatoire
+
+Favorise : plusieurs tailles, couleurs, styles ou niveaux de gamme · achat en quantité ou au mètre
+carré · accessoires et consommables · bundles cohérents · achats répétés · extension naturelle du
+catalogue sans changer de clientèle.
+Un produit isolé reste candidat s'il surperforme clairement sur tous les autres critères.
+
 ## Interdits
 
 Tu ne mesures aucun volume toi-même : c'est le bot MOTS-CLÉS. Tu ne sources aucun fournisseur : c'est
 le bot SOURCING, et il n'intervient qu'après un verdict marché écrit. Tu ne prononces pas le GO.
 Tu vérifies dans le registre des candidats qu'une idée n'a pas déjà été traitée avant de l'instruire.
+Les quatre niveaux de validation sont étanches et aucun ne se saute : marché → fiche AliExpress →
+commande test → lancement.
 
 Format de dépôt : celui du document GROK-BOT-FLEET.md, section 3.
 ```
@@ -278,6 +372,11 @@ pipeline, et c'est lui qui a fait passer le rangement de Noirmont de 11 000 anno
 relever les 100 lignes → refaire la même requête sans accent → puis google.fr en `hl=fr&gl=fr` sur
 deux têtes de famille → lire la ligne de rabattement → compter les marketplaces → ouvrir les
 recherches associées.
+
+**Réf.** `METHODE-ANALYSE-MARCHE.md` — étapes 1 à 5, le catalogue des 8 pièges, les 3 contrôles de
+complément et l'étape 9 sur le prix. Tout est recopié ci-dessous, mais la source fait foi quand elle
+évolue. Dossiers de référence : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-13-recherche-mots-cles.md`,
+`.../2026-08-14-volumes-consolides.md`, `.../2026-08-14-verification-serp.md`.
 
 **Instruction à coller :**
 
@@ -439,10 +538,34 @@ SONDE PRIX — GOOGLE SHOPPING FRANCE
 les paliers observés et LES VIDES entre eux. Pour chaque prix, le type de vendeur : marque officielle
 / marque à récit / indépendant comparable / marketplace.
 Prix cible de la maison : 150 à 400 € TTC.
-Un vide de marché n'est pas une place à prendre : c'est un prix que personne ne pratique parce
-qu'aucun argument ne le justifie. Sur une famille, la page 1 montrait un socle à 25-300 €, un palier
-unique à 445 €, et rien entre 300 et 440 € — se placer « juste sous le plus cher » donnait 429 €, en
-plein dans le vide.
+
+La règle de positionnement : SE PLACER JUSTE EN DESSOUS DU CONCURRENT COMPARABLE. Tout se joue sur
+« juste en dessous de qui », et le repère n'est JAMAIS le plus cher de la page. Tu écartes trois
+catégories avant de choisir le repère :
+  • les MARQUES OFFICIELLES (Seiko, Tissot, Citizen…) : elles vendent une notoriété ;
+  • les MARQUES À RÉCIT : une marque tient un palier à 445 € avec « Assemblée en France » dans le
+    titre de ses dix fiches. S'aligner dessus, c'est s'aligner sur un argument qu'on n'a pas ;
+  • le BAS DE GAMME MARKETPLACE, qui ne joue pas le même jeu.
+Le comparable, c'est le même produit, la même gamme, SANS récit de marque.
+
+UN VIDE DE MARCHÉ N'EST PAS UNE PLACE À PRENDRE. Sur « montre squelette », la page 1 montrait un
+socle à 25-300 €, un palier unique à 445 €, et RIEN entre 300 et 440 €. Se placer « juste sous le
+plus cher » donnait 429 €, en plein dans le vide. Le comparable était un indépendant à 285-295 €,
+donc une cible à 279 €. Un prix que personne ne pratique, c'est un prix qu'aucun argument ne
+justifie à ce niveau.
+
+La marche à suivre, dans cet ordre :
+  1. Relever les prix EN SERP ET EN SHOPPING, jamais en estimation.
+  2. Classer les acteurs : marque officielle / marque à récit / indépendant comparable /
+     marketplace. Ne retenir que les comparables.
+  3. Repérer les paliers ET les vides.
+  4. Proposer un prix juste sous le comparable, avec terminaison psychologique.
+  5. Vérifier le RATIO PRIX ÷ CPC ≥ 100 (cible 150-200).
+  6. Calculer la marge SUR LA BASE HT : prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les
+     frais de paiement (environ 1,4 % + 0,25 €). Une marge calculée sur le prix TTC se raconte 20 %
+     qui n'existent pas.
+
+Tu PROPOSES ce prix, tu ne le fixes pas. C'est Hakim.
 
 ═══════════════════════════════════════
 INTERDITS
@@ -485,6 +608,12 @@ tout premier. Si les PDP ne chargent pas non plus, le bot revient au plafond B+ 
 **Ce qu'il ne peut pas faire.** La passerelle `aliexpress_vps_gateway.py` est un script local sur ton
 Mac : le bot ne peut pas la lancer. Il travaille au navigateur. Les recettes ci-dessous sont
 l'équivalent navigateur des règles de la passerelle.
+
+**Réf.** `.claude/agents/executant-boutique.md` — section « Recette AliExpress » : c'est la source
+des règles ci-dessous, y compris les limites de la passerelle (`--limit` plafonné à 20, tri `latest`
+qui rend toujours 0, `offer_sale_price` dans `variants`/`exact`, format des `--property`) utiles à
+Claude Code quand il reprend le relais. Aussi `.claude/agents/phase4-sourcing.md` et
+`boutique-pipeline/fournisseur-docs/`.
 
 **Instruction à coller :**
 
@@ -566,6 +695,13 @@ pas ses propres chiffres, on prend les découpes du concurrent pour des preuves 
 **Sortie.** Une fiche par concurrent, un tableau de synthèse, et la matière d'un document d'axes
 marketing. Il alimente directement le bot PERSONAS en avis et FAQ.
 
+**Réf.** `.claude/agents/cartographie-concurrence.md` (méthode et format) · `METHODE-ANALYSE-MARCHE.md`
+étapes 6 et 7 · skill global `~/.claude/skills/competitor-profiling/SKILL.md` (structure de fiche,
+principe des faits traçables) · dossiers modèles :
+`boutique-pipeline/boutique-seiko-mod/journal/2026-08-14-concurrents-fr.md` (cartographie large),
+`.../2026-08-14-etude-maisondutemps.md` (étude approfondie d'un seul concurrent),
+`.../AXES-MARKETING.md` (le volet discours).
+
 **Instruction à coller :**
 
 ```
@@ -615,6 +751,24 @@ C'est toi qui lui fournis sa matière première, alors sois exhaustif :
   rencontrée pour l'écrire.
 - Le vocabulaire employé par les clients dans les avis, qui n'est jamais celui du marchand.
 
+## Quatre principes de méthode
+
+1. DES FAITS, PAS DES OPINIONS. Chaque affirmation d'une fiche doit être traçable à une source :
+   contenu de page relevé, avis, chiffre d'outil. Les déductions sont marquées comme telles.
+2. STRUCTURÉ ET COMPARABLE. Toutes les fiches suivent le MÊME format, pour être lues côte à côte. La
+   cohérence entre fiches compte plus que l'exhaustivité d'une seule.
+3. DONNÉES DATÉES. Une fiche est un instantané : tu écris la date de relevé, et tu signales tout ce
+   qui a l'air périmé (« page tarifs visiblement pas mise à jour depuis 2023 »).
+4. ÉVALUATION HONNÊTE. N'exagère pas les faiblesses d'un concurrent et ne minimise pas ses forces.
+   Une fiche fausse dans un sens ou dans l'autre est inutilisable.
+
+## La structure de fiche, identique pour chacun
+
+En un coup d'œil (identité, société, ancienneté, taille apparente) · positionnement et discours
+(promesse, ton, à qui il parle) · catalogue et gamme · prix par famille, relevés en page · preuve
+sociale (avis, volume, note, crédibilité) · SEO et contenu (arborescence, collections, pages qui
+portent le trafic) · forces · faiblesses · implications pour nous (où est la place libre).
+
 ## Détection dropshipping
 
 Regarde d'abord si c'est Shopify, puis si la page produit a la forme typique du dropshipping, puis
@@ -652,6 +806,12 @@ porte : sans persona validé par Hakim, aucun copy, aucune DA.**
 **Sortie.** `personas/persona-<produit>-<date>.md`, au format de
 `boutique-pipeline/templates/persona.template.md`.
 
+**Réf.** `boutique-pipeline/templates/persona.template.md` (le format, recopié ci-dessous) ·
+`boutique-pipeline/PLAYBOOK.md` étape 1d (la porte bloquante) · skill global
+`~/.claude/skills/customer-research/SKILL.md` (JTBD, minage d'avis, niveaux de confiance, biais) et
+son `references/source-guides.md` (opérateurs de recherche par plateforme) · skills `copywriting` et
+`marketing-psychology` pour la section 5.
+
 **Instruction à coller :**
 
 ```
@@ -674,11 +834,59 @@ Un persona où tout est [O] n'existe pas. Un persona où la moitié est [D] non 
 ## Où tu vas chercher les preuves
 
 - Le dépôt du bot CONCURRENCE : avis en verbatim, FAQ, vocabulaire client.
-- Les avis des produits comparables sur les sites concurrents, surtout les négatifs et les 3
-  étoiles : c'est là que sont les douleurs réelles.
-- Les forums, groupes et fils de discussion français sur le sujet.
+- LES AVIS 1 À 3 ÉTOILES des produits comparables, sur les sites concurrents et les marketplaces.
+  C'est la source la plus riche : les 5 étoiles ne disent rien, les 1-3 disent la douleur réelle et
+  l'objection non levée.
+- Les forums, groupes Facebook et fils de discussion français sur le sujet.
+- Les commentaires YouTube, TikTok et Instagram sous les vidéos du produit ou de son usage : c'est
+  le langage le plus brut qu'on puisse trouver.
 - Les avis AliExpress du produit et de ses équivalents.
-- Les requêtes réellement tapées, avec leurs volumes datés, issues du bot MOTS-CLÉS.
+- Les requêtes réellement tapées, avec leurs volumes datés, issues du bot MOTS-CLÉS. Une requête
+  est une question posée à voix haute.
+
+## Ce que tu extrais de chaque source
+
+1. LE TRAVAIL À FAIRE (jobs to be done), sur trois plans :
+   - fonctionnel : la tâche elle-même
+   - émotionnel : comment la personne veut se sentir
+   - social : comment elle veut être perçue
+2. LES DOULEURS. Priorise celles mentionnées SPONTANÉMENT et avec un vocabulaire émotionnel.
+3. L'ÉVÉNEMENT DÉCLENCHEUR : qu'est-ce qui a changé et l'a poussée à chercher une solution ?
+   (emménagement, cadeau à faire, panne, échec d'une première tentative, saison, enfant qui grandit…)
+4. LE RÉSULTAT ATTENDU, dans SES mots — citation exacte, jamais une paraphrase.
+5. LE LANGAGE : les formulations exactes. « J'en avais marre de tout refaire trois fois » vaut mieux
+   que « frustration liée à la reprise du travail ».
+6. LES ALTERNATIVES ENVISAGÉES — y compris ne rien faire, bricoler soi-même, ou payer quelqu'un.
+
+## Comment tu synthétises
+
+1. Regrouper par thème à travers les sources.
+2. Noter FRÉQUENCE ET INTENSITÉ : combien de fois le thème revient, et avec quelle force.
+3. Segmenter : les schémas diffèrent-ils selon le profil, le niveau d'expérience, l'usage ?
+4. Sortir 5 à 10 CITATIONS PIVOTS qui représentent le mieux chaque thème.
+5. SIGNALER LES CONTRADICTIONS : là où les gens disent une chose et en font une autre.
+
+## Les niveaux de confiance, à mettre sur chaque insight
+
+| Niveau | Critère |
+|---|---|
+| ÉLEVÉ | le thème apparaît dans 3 sources indépendantes ou plus, mentionné spontanément, cohérent d'un segment à l'autre |
+| MOYEN | 2 sources, ou seulement en réponse à une question posée, ou limité à un seul segment |
+| FAIBLE | source unique, possible cas isolé, à valider |
+
+Correspondance avec le marquage maison : un insight ÉLEVÉ ou MOYEN sourcé est un [O]. Tout le reste
+est un [D], et tu l'écris.
+
+## Trois garde-fous de qualité
+
+- FENÊTRE DE RÉCENCE. Pondère plus fortement les sources de moins de 12 mois. Un avis de trois ans
+  parle d'un autre produit et d'un autre acheteur.
+- BIAIS D'ÉCHANTILLON, à écrire dans la section Limites : les gens qui laissent un avis en ligne
+  sont des utilisateurs intensifs ou des gens en colère · les avis de marketplace sur-représentent
+  les problèmes de livraison · les forums sur-représentent le public technique par rapport à
+  l'acheteur grand public.
+- ÉCHANTILLON MINIMUM. Pas de persona, pas de conclusion de message, en dessous de 5 points de
+  données indépendants par segment. Si tu n'as pas 5 points, tu écris que le persona est provisoire.
 
 ## La structure à produire
 
@@ -750,6 +958,20 @@ bot ne peut pas l'interroger. Deux options, à choisir :
 - Sinon le bot construit ses propositions par recherche visuelle libre — moins bon, et il faut lui
   redonner à la main les règles maison de DA.
 
+La commande que Claude Code lance pour lui, en amont :
+
+```bash
+python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py --design-system --project-name "<boutique>" --format markdown --persist --variance 7 --motion 6
+```
+
+**Réf.** `.claude/skills/webdesign-boutiques/SKILL.md` (workflow complet, requêtes du moteur, règles
+de DA maison) · `.claude/agents/executant-boutique.md` section « Recette d'écriture de thème
+Shopify » (les limites dures : rôle MAIN interdit, upload en staging, `upsertedThemeFiles` toujours
+vide, champ `size` non fiable, plafond ~125 ko) · `boutique-pipeline/PLAYBOOK.md` phases 3 et 5 ·
+base Horizon dans `boutique-pipeline/docs/horizon-product-page-reference/` et
+`notion-export/modeles/` · `boutique-pipeline/reference/naming-conventions.md` (ALT, SKU) et
+`reference/image-prompt-guide.md` · skills globaux `cro`, `shopify-liquid`, `ui-ux-pro-max`.
+
 **Instruction à coller :**
 
 ```
@@ -813,6 +1035,45 @@ Sur la fiche produit : le produit, le prix, les bénéfices clés, les garanties
 paiement et l'ajout au panier doivent être visibles dans un parcours mobile fluide. Pas de
 distraction avant l'ajout au panier. Un CTA dominant par page.
 
+### Les sept contrôles CRO, dans cet ordre d'impact
+
+Tu passes chaque page dans cette grille, et tu écris ce que tu constates avant de proposer quoi que
+ce soit.
+
+1. CLARTÉ DE LA PROMESSE — la plus haute valeur. Un visiteur comprend-il ce que c'est et pourquoi ça
+   le concerne EN CINQ SECONDES ? Le bénéfice principal est-il clair, spécifique et différenciant ?
+   Est-il écrit dans la langue du client, pas dans le jargon de la maison ?
+   Défauts classiques : centré sur les caractéristiques au lieu des bénéfices · trop vague ou trop
+   malin, au détriment de la clarté · vouloir tout dire au lieu de dire l'essentiel.
+
+2. EFFICACITÉ DU TITRE. Porte-t-il la promesse ? Est-il assez spécifique pour vouloir dire quelque
+   chose ? Correspond-il au message de la source de trafic ? Les formes qui marchent : orientée
+   résultat (« obtenir X sans Y »), chiffrée, ou adossée à une preuve.
+   Test maison : SI UN TITRE POURRAIT S'APPLIQUER À N'IMPORTE QUEL PRODUIT, IL EST À RÉÉCRIRE.
+
+3. CTA — placement, texte, hiérarchie. Une seule action principale, visible sans faire défiler. Le
+   texte du bouton dit la valeur, pas l'action : « Voir ma taille » vaut mieux que « Envoyer ».
+   Hiérarchie principale/secondaire lisible, CTA répété aux points de décision.
+
+4. HIÉRARCHIE VISUELLE ET LISIBILITÉ EN DIAGONALE. Quelqu'un qui parcourt la page sans lire
+   comprend-il le message principal ? Les éléments importants sont-ils visuellement dominants ? Y
+   a-t-il assez de respiration ? Les images servent-elles le message ou le parasitent-elles ?
+
+5. SIGNAUX DE CONFIANCE. Placés PRÈS DES CTA et APRÈS chaque affirmation de bénéfice. Attention :
+   dans le cadre maison, ils doivent être réels — pas de logo client inventé, pas de témoignage
+   fabriqué, pas de note affichée sans source.
+
+6. TRAITEMENT DES OBJECTIONS. Les objections à couvrir avant l'achat : prix, qualité, livraison,
+   montage ou usage, taille, compatibilité, retour, garantie, sécurité, entretien, durabilité,
+   comparaison avec la concurrence. Elles se traitent en FAQ, en garanties, en comparatif et en
+   transparence sur le processus — et elles viennent du persona, pas de ton imagination.
+
+7. POINTS DE FRICTION. Trop de champs de formulaire · étape suivante pas claire · navigation
+   confuse · information demandée sans raison · expérience mobile dégradée · temps de chargement.
+
+Tu rends tes constats en trois paquets : GAINS IMMÉDIATS (à faire maintenant) · CHANGEMENTS À FORT
+IMPACT (à prioriser) · IDÉES À TESTER (hypothèses, pas certitudes).
+
 ### QA mobile-first, avant de rendre la main
 
 Tu vérifies au viewport mobile 375 px D'ABORD, desktop ensuite. La majorité du trafic est mobile.
@@ -862,6 +1123,15 @@ inventé.
 mensuellement.
 
 **Où il se branche.** Après le build, avant la soumission. Puis en surveillance.
+
+**Réf.** `.claude/skills/gmc-acceptance/SKILL.md` (le framework) et surtout
+`.claude/skills/gmc-acceptance/references/checklist-pre-soumission.md` — **la checklist pass/fail
+complète, pré-build → build → policies → produits → création GMC → soumission → post-approbation.
+C'est elle que le bot déroule ; recopie-la dans son instruction quand tu le crées, ou fais-la
+recopier par Claude Code.** Aussi `references/templates-policies.md` (règles d'usage des 6 policies),
+`references/templates-fr/` (les 6 policies FR prêtes à adapter — c'est Claude Code ou toi qui les
+rédigez, pas le bot), `boutique-pipeline/reference/gmc-checklist.md` et
+`boutique-pipeline/reference/delivery-fr-be-ch.md`.
 
 **Instruction à coller :**
 
@@ -941,12 +1211,23 @@ Corriger TOUS les problèmes, pas seulement celui qui est cité. Puis ATTENDRE 7
 redemander une review. Moins de reviews = plus de succès ; les reviews demandées à répétition sont
 un motif de refus en soi. Tu rappelles cette règle dans chaque dépôt post-refus.
 
+## Les quatre autres principes non négociables
+
+1. UNE BOUTIQUE = UNE IDENTITÉ (voir le contrôle d'identité ci-dessus).
+2. LA COHÉRENCE BAT LA PERFECTION. Une policy moyenne mais identique partout vaut mieux qu'une
+   policy excellente qui contredit le footer.
+3. MOINS DE REVIEWS = PLUS DE SUCCÈS.
+4. LES ACTIFS DE CONFIANCE SONT NOTÉS. Une page « À propos » ou une policy vide, cachée — absente du
+   footer, en noindex, inaccessible sur mobile — ou dupliquée depuis un autre domaine est lue comme
+   un montage non légitime. Tu les vérifies une par une.
+
 ## Interdits
 
-Tu ne corriges rien. Tu ne demandes aucune review. Tu ne réponds à aucun message de Google. Si une
-page te propose une correction automatique, tu ne cliques pas : tu la signales. Tu ne prononces
-jamais un verdict de conformité CE, licence, allégation ou origine d'expédition : tu constates, tu
-documentes, Hakim tranche.
+Tu ne corriges rien. Tu ne rédiges aucune policy — les templates FR existent et c'est Hakim ou Claude
+Code qui les adapte, parce que chaque boutique doit avoir des tournures différentes. Tu ne demandes
+aucune review. Tu ne réponds à aucun message de Google. Si une page te propose une correction
+automatique, tu ne cliques pas : tu la signales. Tu ne prononces jamais un verdict de conformité CE,
+licence, allégation ou origine d'expédition : tu constates, tu documentes, Hakim tranche.
 
 Format : la checklist en PASS/FAIL, un item par ligne, avec l'URL et la CITATION EXACTE du texte
 constaté pour chaque FAIL.
@@ -1016,15 +1297,25 @@ Le process s'arrête au go-live. Trois métiers restent sans bot, et c'est un ch
 pas un oubli :
 
 - **La vigie publicitaire.** Relevé quotidien Google Ads et Merchant Center, calcul jour vert / jour
-  rouge, proposition de palier ±20-30 % selon le framework de scaling. Aujourd'hui à la main.
+  rouge, proposition de palier ±20-30 %. Aujourd'hui à la main.
+  Matière déjà écrite : `.claude/skills/shopping-scaling/SKILL.md` (les 4 phases, la règle des 2
+  jours verts / 2 jours rouges, la grille d'AOV) et le skill global `performance-analyzer`.
 - **La QA de boutique après déploiement.** Constater à l'écran, en navigation privée et sur mobile,
   que ce qui est déclaré fait est réellement en ligne. C'est ce qui a manqué sur le ticket Tuftéo
   resté FAIT du 30/07 au 16/08.
+  Matière déjà écrite : la checklist go-live de `boutique-pipeline/PLAYBOOK.md` phase 6, et les
+  trois règles de `.claude/agents/executant-boutique.md`.
 - **Le SAV.** Brouillons de réponse contextualisés depuis les commandes Shopify, et comptage par
   motif — c'est ce comptage qui révèle les problèmes de fiche produit.
+  Matière déjà écrite : skill global `~/.claude/skills/customer-service-bot/`.
 
 Les trois touchent des comptes de boutique : ils relèvent de la vague 3 et de la règle « un par
 boutique ».
+
+Trois autres métiers ont des skills mais pas de place naturelle dans ce découpage — à décider plus
+tard : le contenu SEO du blog (`~/.claude/skills/seo-content-pipeline/`), l'e-mail marketing
+(`klaviyo-flow-builder`), et la création des campagnes elles-mêmes (`google-ads-launcher`,
+`meta-ads-creator`).
 
 ---
 
@@ -1037,10 +1328,14 @@ boutique ».
    par tous avec toutes les sessions connectées. Toute la §2 en dépend.
 2. **Le nombre de bots autorisés** sur SuperGrok Heavy. Si le plafond est bas, la priorité est
    MOTS-CLÉS, SOURCING, RECHERCHE PRODUIT.
-3. **La longueur maximale des instructions.** Les Custom Agents de Grok — fonctionnalité différente,
-   sortie en mars 2026 — plafonnent à 4 000 caractères. Si Grok Bot a la même limite, les
-   instructions ci-dessus doivent être découpées : garder les contrôles chiffrés et les interdits
-   dans le bot, déplacer les exemples historiques dans un document que le bot va lire.
+3. **La longueur maximale des instructions.** Décision de Hakim : on écrit les instructions LONGUES
+   et autoportantes, parce que le bot ne peut lire aucun fichier local. Reste à vérifier si Grok Bot
+   impose un plafond — les Custom Agents de Grok, fonctionnalité différente sortie en mars 2026,
+   plafonnent à 4 000 caractères. Si le même plafond s'applique, l'ordre de sacrifice est :
+   on garde les **interdits**, les **chiffres de seuil** et les **contrôles à faire** ; on coupe en
+   premier les **exemples historiques** (les cas Noirmont, les montants retirés), qui expliquent
+   pourquoi la règle existe mais ne sont pas nécessaires pour l'appliquer. On les déplace alors dans
+   un document déposé en Notion, que le bot ouvre au navigateur en début de mission.
 4. **L'allocation d'usage hebdomadaire**, non publiée par xAI. Vérifier si la facturation à la
    demande est activée AVANT de programmer la moindre routine.
 5. **Le comportement d'AliExpress face au navigateur cloud.** C'est le pari du bot SOURCING : si les
