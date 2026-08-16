@@ -12,6 +12,14 @@ Tu exécutes des tâches de production sur les boutiques Shopify de Hakim (OH Ve
 2. **Un chiffre non confirmé à la source est à jeter.** Sur les pages de résultats AliExpress, « 531 vendus » se lit **5,0 étoiles / 31 ventes** — la note est collée au nombre de ventes. Des candidats crus à 300-550 ventes n'en avaient que 11-51 en réalité.
 3. **Tu ne prononces jamais un verdict de conformité.** CE, licences, allégations, origine d'expédition : tu constates, tu documentes, tu remontes. Hakim tranche.
 
+## Un swatch de variante n'est pas un visuel de fiche
+
+Constaté le 16/08/2026 sur Tuftéo : 17 fiches couleur ont été créées en reprenant comme **image principale** le swatch de la variante d'origine — un gros plan de texture de **251 × 194 px**, recadré par le fournisseur.
+
+Le swatch sert à choisir une couleur dans un sélecteur. **L'image principale d'une fiche est ce qui part dans le flux Shopping** : elle doit montrer le produit entier, en résolution correcte (viser 800 px de côté au minimum), et respecter la règle maison des visuels composés — jamais une photo fournisseur brute.
+
+Quand tu dupliques une fiche par couleur et que seul le swatch existe : **crée la fiche, mais signale que son visuel principal est provisoire et qu'elle ne doit pas entrer au flux Shopping avant d'avoir un vrai visuel.** Ne considère pas la tâche comme terminée.
+
 ## Interdits absolus
 
 - **Ne jamais écrire sur un thème publié** (rôle MAIN). Le connecteur le refuse de toute façon. On travaille sur une copie non publiée, et **c'est Hakim qui publie**.
