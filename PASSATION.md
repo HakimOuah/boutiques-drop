@@ -51,6 +51,29 @@ GMC ; (3) osmoseur — conservé, test complet relancé en septembre avec un bud
 Le calendrier est contraint par Google, pas par nous : une revue GMC prend des jours, une suspension
 prend des semaines. D'où « soumettre tôt ».
 
+> **⚠️ CORRECTION DU 17/08/2026 — le mot « soumettre » est inexact pour Tuftéo.**
+>
+> Constaté par Hakim le 16/08 et retrouvé dans `boutique-tufting/journal/2026-08-16-plan-audit-final-gmc.md` :
+> **le compte Merchant Center de Tuftéo existe déjà et il est approuvé** — ACTIF, **173 produits,
+> 173 approuvés, 0 limité, 0 non approuvé, 0 en examen**. Il a été créé automatiquement par
+> l'application Google & YouTube de Shopify lors de la mise en place de Google Ads.
+>
+> **Ça inverse l'objectif : on ne cherche pas une approbation, on protège un actif.** Le compte a été
+> exposé pendant des semaines à la version fautive du site — faux avis, prix barrés fabriqués,
+> policies dupliquées — sans qu'aucun produit ne soit désapprouvé. Les contrôles automatiques ne les
+> ont pas attrapés, ou pas encore.
+>
+> Trois conséquences pratiques :
+> - Le risque n'est plus le refus à l'entrée, c'est **la suspension d'un compte établi**. La
+>   checklist est nette : la plupart des suspensions arrivent après l'approbation.
+> - **Les changements brutaux sont à éviter** sur un compte établi. Or le 16/08 a déjà cumulé
+>   17 nouveaux produits, deux renommages, 215 variantes reprises, une refonte des policies et un
+>   changement d'e-mail. D'où : publier proprement, **une seule fois**, puis surveiller 30 jours.
+> - La décision d'identité de la question n° 0 ci-dessous ne se prend plus « avant de créer le
+>   GMC » — elle se prend **sur un compte en production**.
+>
+> Le raisonnement reste valable pour Maison Noirmont, dont le compte, lui, n'existe pas.
+
 **Ce que ça implique pour quelqu'un qui arrive.** Si on te demande une recherche produit dans les
 semaines qui viennent, la bonne réponse est probablement de demander d'abord si les boutiques sont
 soumises à GMC. Proposer une nouvelle niche maintenant, c'est reproduire exactement ce qu'on vient
