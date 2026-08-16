@@ -160,11 +160,48 @@ Un bot Grok travaille depuis une machine cloud avec **sa propre IP** et des sess
 bot unique qui gérerait le thème de Tuftéo puis le GMC de Maison Noirmont produirait exactement le
 faisceau que le skill interdit : même IP, mêmes cookies, même environnement.
 
-Donc : `DESIGN — TUFTÉO`, `DESIGN — NOIRMONT`, `GMC — TUFTÉO`, `GMC — NOIRMONT`. On duplique le bot,
-on ne mutualise jamais le compte.
+### TRANCHÉ LE 16/08/2026 — et le remède envisagé ne marche pas
 
-Et tant que xAI n'a pas documenté si chaque bot a sa propre machine ou si tous partagent la même
-(point ambigu, voir §6), **ces deux bots-là ne se déploient pas**. Les cinq autres, si.
+La documentation officielle xAI (`docs.x.ai/grok-bot/computer-and-apps` et
+`/approvals-security-and-privacy`) répond sans ambiguïté :
+
+> Tous les bots d'un compte utilisent **un seul ordinateur cloud persistant**. Ils en partagent les
+> fichiers, les sessions de navigateur et les connexions. L'ordinateur est attribué **par
+> utilisateur, pas par bot**. Ne pas utiliser des bots séparés comme frontière de sécurité.
+
+Trois conséquences, toutes défavorables :
+
+1. **Dupliquer le bot par boutique ne cloisonne rien.** `DESIGN — TUFTÉO` et `DESIGN — NOIRMONT`
+   partageraient la même machine, la même IP et les mêmes cookies. Le diagnostic de cette section
+   était bon ; le remède ne l'était pas.
+2. **Se connecter pour un bot connecte tous les autres.** Une session ouverte est disponible pour
+   toute la flotte.
+3. **Supprimer un bot n'efface ni ses fichiers ni ses connexions.** Il n'y a pas de retour en
+   arrière propre.
+
+**La règle devient donc plus simple et plus stricte, et elle porte sur la machine, pas sur le bot :**
+
+> **Aucun compte de boutique — Shopify admin, Merchant Center, Google Ads, boîte SAV — ne doit
+> JAMAIS être connecté sur cet ordinateur cloud. Pas une seule fois, pas « juste pour montrer ».**
+
+Le piège concret : la démonstration d'une routine se fait **dans le navigateur de la machine
+cloud**. Si tu montres une tâche Shopify à un bot, tu es connecté sur la machine partagée pour de
+bon — et supprimer le bot n'y changera rien. La règle vaut donc autant pour toi que pour les bots.
+
+Reformulé comme la doc xAI le formule elle-même : **si tu n'accepterais pas de donner cet accès à
+tous tes bots à la fois, ne le mets pas sur cet ordinateur.**
+
+**Ce que ça autorise quand même.** Les cinq bots de marché — RECHERCHE PRODUIT, MOTS-CLÉS, SOURCING,
+CONCURRENCE, PERSONAS — ne demandent que des outils de marché : SEMrush, Brand Search, Google en
+session neutre, AliExpress en lecture, sites concurrents. Aucun compte de boutique, donc aucun
+linkage possible. Ils sont pleinement compatibles avec une machine partagée.
+
+**Ce que ça interdit.** DESIGN SHOPIFY et CONFORMITÉ GMC ne se déploient pas sur ce compte. Deux
+sorties possibles, à trancher plus tard :
+- un **compte xAI distinct par boutique** (une machine par compte, donc un vrai cloisonnement) — à
+  chiffrer, un abonnement par boutique ;
+- ou on les garde dans **Claude Code**, en local, où le connecteur Shopify refuse déjà le thème MAIN
+  et où l'IP est la tienne.
 
 ---
 
@@ -1248,9 +1285,10 @@ Sinon on sait exactement où il dérive avant de lui confier une famille inconnu
 
 **Vague 2 — CONCURRENCE, PERSONAS.** Toujours aucun compte de boutique.
 
-**Vague 3 — DESIGN SHOPIFY et CONFORMITÉ GMC**, un jeu par boutique, comptes jamais mélangés. Ne se
-fait **que si xAI documente le cloisonnement des bots** (§6). Sinon le risque de suspension GMC par
-linkage d'IP coûte plus cher que le temps gagné.
+**Vague 3 — DESIGN SHOPIFY et CONFORMITÉ GMC : annulée sur ce compte.** Tranché le 16/08/2026 : tous
+les bots d'un compte partagent un seul ordinateur cloud, donc dupliquer un bot par boutique ne
+cloisonne rien (§2). Ces deux métiers restent dans Claude Code, ou attendent un compte xAI distinct
+par boutique.
 
 ---
 
@@ -1319,25 +1357,39 @@ tard : le contenu SEO du blog (`~/.claude/skills/seo-content-pipeline/`), l'e-ma
 
 ---
 
-## 8. Ce qui n'est pas tranché
+## 8. Les questions ouvertes — réponses du 16/08/2026
 
-À vérifier dans la documentation officielle avant la vague 3 :
+Réponses obtenues de la documentation officielle xAI (`docs.x.ai/grok-bot/`), recoupées.
 
-1. **Le cloisonnement.** La formulation de xAI (« Bots share a computer of their own in the cloud »)
-   est ambiguë et la presse la lit dans les deux sens : une machine par bot, ou une machine partagée
-   par tous avec toutes les sessions connectées. Toute la §2 en dépend.
-2. **Le nombre de bots autorisés** sur SuperGrok Heavy. Si le plafond est bas, la priorité est
-   MOTS-CLÉS, SOURCING, RECHERCHE PRODUIT.
-3. **La longueur maximale des instructions.** Décision de Hakim : on écrit les instructions LONGUES
-   et autoportantes, parce que le bot ne peut lire aucun fichier local. Reste à vérifier si Grok Bot
-   impose un plafond — les Custom Agents de Grok, fonctionnalité différente sortie en mars 2026,
-   plafonnent à 4 000 caractères. Si le même plafond s'applique, l'ordre de sacrifice est :
-   on garde les **interdits**, les **chiffres de seuil** et les **contrôles à faire** ; on coupe en
-   premier les **exemples historiques** (les cas Noirmont, les montants retirés), qui expliquent
-   pourquoi la règle existe mais ne sont pas nécessaires pour l'appliquer. On les déplace alors dans
-   un document déposé en Notion, que le bot ouvre au navigateur en début de mission.
-4. **L'allocation d'usage hebdomadaire**, non publiée par xAI. Vérifier si la facturation à la
-   demande est activée AVANT de programmer la moindre routine.
-5. **Le comportement d'AliExpress face au navigateur cloud.** C'est le pari du bot SOURCING : si les
+1. **Le cloisonnement — TRANCHÉ, et défavorablement.** Un seul ordinateur cloud persistant par
+   compte, partagé par tous les bots : mêmes fichiers, mêmes sessions de navigateur, mêmes
+   connexions. Attribué par utilisateur, pas par bot. La doc dit explicitement de ne pas se servir
+   de bots séparés comme frontière de sécurité, et supprimer un bot n'efface ni ses fichiers ni ses
+   connexions. Conséquences en §2 : la vague 3 est annulée sur ce compte.
+2. **Le nombre de bots — non contraignant.** Jusqu'à 50 bots et conversations de groupe combinés par
+   compte. Les 7 tiennent largement.
+3. **Les routines — 50 par bot**, avec les 20 derniers comptes rendus d'exécution conservés. Une
+   exécution de test est un vrai travail et consomme de l'usage.
+4. **Montrer une tâche.** La démonstration se fait en conversation individuelle avec le bot, dans le
+   navigateur de sa machine cloud, en 10 minutes maximum et sans micro. Si la fonction dédiée n'est
+   pas encore active sur le compte (déploiement progressif), le repli est de demander au bot de
+   construire une routine à partir des instructions et de la tâche qu'on vient de faire ensemble.
+   Puis : relire le brouillon de routine, y ajouter les règles de décision, les cas d'échec et les
+   points d'approbation, et la tester sur un cas sûr avant de la planifier.
+5. **La longueur des instructions — aucun plafond documenté** pour la description d'un bot. Le
+   plafond de 4 000 caractères concerne les Custom Agents de Grok, qui sont un autre produit. Les
+   instructions longues et autoportantes de ce document sont donc le bon pari. Répartition à
+   respecter : **la description porte les règles permanentes, la conversation porte la mission du
+   jour.**
+
+### Ce qui reste ouvert
+
+6. **L'allocation d'usage hebdomadaire.** Le chiffre n'est pas publié. C'est un **pool unique par
+   compte, partagé entre Chat, Imagine, Voice, Build et Bot** — donc les routines des bots mangent
+   l'usage courant de Grok. Visible dans Réglages → Usage, remis à zéro chaque semaine.
+   **À faire avant toute routine planifiée : relever la consommation d'une semaine normale, et
+   n'activer la facturation à la demande que si c'est un choix assumé.** En semaine 1, tout lancer
+   à la demande, ne rien programmer.
+7. **Le comportement d'AliExpress face au navigateur cloud.** C'est le pari du bot SOURCING : si les
    pages produit s'ouvrent, le niveau de preuve A devient accessible avant l'étape DSers. À tester en
    premier, et à documenter dans les deux cas.
