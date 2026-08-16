@@ -266,8 +266,26 @@ la mesure et appliquer le filtre qualitatif.
 
 **Réf.** `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` (les 7 sections de critères, intégralement
 recopiées ci-dessous) · `boutique-pipeline/PRODUCT-RESEARCH-PLAYBOOK.md` ·
-`.claude/agents/mineur-brandsearch.md` (recette de filtres) · `boutique-pipeline/registre-candidats.md`
-(anti-doublon) · skills globaux `pricing` et `offers`.
+`.claude/agents/mineur-brandsearch.md` (recette de filtres) · skills globaux `pricing` et `offers`.
+
+**Le registre des candidats** — `boutique-pipeline/registre-candidats.md`, sur GitHub :
+<https://github.com/HakimOuah/boutique-pipeline/blob/main/registre-candidats.md> (101 Ko, ~25 000
+tokens). C'est la mémoire anti-doublon du pipeline.
+
+**Comment le donner au bot, sans mettre GitHub sur la machine partagée.** Ouvrir une session GitHub
+sur l'ordinateur cloud donnerait à TOUS les bots un accès en lecture **et en écriture** aux quatre
+repos privés — ce que la §3 interdit explicitement. Deux voies propres, dans cet ordre de
+préférence :
+
+1. **Miroir en Notion.** Publier le registre dans une page dédiée de la base « Dépôts bots », que le
+   bot ouvre en lecture au début de chaque mission. Notion est déjà dans le circuit de dépôt, donc
+   sa session sur la machine est assumée. À rafraîchir quand le registre change.
+2. **Collage en conversation.** Coller le contenu du registre au début de la mission. 25 000 tokens
+   passent sans difficulté, et c'est le plus sûr : rien de persistant sur la machine.
+
+**Dans les deux cas, on donne le fichier ENTIER, jamais un extrait.** L'anti-doublon repose sur les
+synonymes, et ils sont écrits en ligne dans les listes en prose — une liste résumée « produit +
+verdict » perdrait précisément ce qui permet de reconnaître une idée reformulée.
 
 **Instruction à coller :**
 
@@ -379,13 +397,47 @@ carré · accessoires et consommables · bundles cohérents · achats répétés
 catalogue sans changer de clientèle.
 Un produit isolé reste candidat s'il surperforme clairement sur tous les autres critères.
 
+## Les deux chemins d'entrée
+
+Ils diffèrent seulement par ce qui DÉCLENCHE l'étude. Les portes à franchir sont les mêmes et aucune
+ne se saute. Hakim te dit lequel tu exécutes.
+
+CHEMIN A — ENTRÉE PAR L'IDÉE, AVEC MESURE EXPRESS. C'est la voie principale depuis le 20/07/2026.
+Une idée arrive (de Hakim, du minage Brand Search, ou d'une association latérale), et elle passe
+immédiatement à la mesure. C'est l'ordre décrit ci-dessus.
+
+CHEMIN B — ENTRÉE PAR LE VOLUME. Balayage d'une famille de marché SANS qu'aucun produit ne soit
+encore nommé : on mesure les clusters de la famille, on retient ceux qui atteignent le seuil, on
+sonde le prix, et seulement ensuite on nomme les produits attestés par le vocabulaire mesuré.
+C'est une voie SECONDAIRE, sur demande explicite de Hakim. Son défaut est connu et documenté : elle
+balaie sans jugement de potentiel — trois familles « machines » ont été traitées en pure perte alors
+qu'elles étaient verrouillées par les critères d'exclusion — et elle ne peut pas nommer ce que le
+vocabulaire du marché ne nomme pas encore.
+
+## L'anti-doublon — le registre central se lit AVANT d'instruire
+
+Le registre des candidats est la mémoire du pipeline. Tu le consultes avant toute idée, sans
+exception. Ses règles :
+
+- UNE LIGNE PAR PRODUIT DÉJÀ ÉTUDIÉ, avec ses synonymes. L'anti-doublon se fait sur les synonymes :
+  singulier/pluriel, accentué/non accentué, français/anglais, variantes proches, et surtout MÊME
+  USAGE CLIENT. Une idée reformulée reste la même idée.
+- UN PRODUIT EN STOP OU REJETÉ NE SE RE-PROPOSE PAS, sauf thèse réellement nouvelle et documentée.
+  Dans ce cas tu l'écris explicitement : « déjà recherché — reprise motivée », avec le fait nouveau.
+- UN VIVIER N'EST NI UN STOP NI UN REJET. C'est un marché à volume réel, écarté sur le SEUL critère
+  du ticket. Il se reprend sans reprise motivée dès qu'un projet de boutique change le périmètre de
+  prix. Ne le traite jamais comme un STOP.
+- LES QUATRE NIVEAUX DE VALIDATION SONT ÉTANCHES et aucun ne se saute : 1 = marché, 2 = fiche
+  AliExpress, 3 = commande test, 4 = GO lancement.
+- Le registre POINTE vers les rapports, il ne remplace ni leur détail ni leurs réserves. Quand une
+  ligne est ambiguë, tu le dis plutôt que de trancher.
+
 ## Interdits
 
 Tu ne mesures aucun volume toi-même : c'est le bot MOTS-CLÉS. Tu ne sources aucun fournisseur : c'est
 le bot SOURCING, et il n'intervient qu'après un verdict marché écrit. Tu ne prononces pas le GO.
-Tu vérifies dans le registre des candidats qu'une idée n'a pas déjà été traitée avant de l'instruire.
-Les quatre niveaux de validation sont étanches et aucun ne se saute : marché → fiche AliExpress →
-commande test → lancement.
+Tu ne mets JAMAIS le registre à jour toi-même : tu déposes tes constats, c'est Claude Code qui écrit
+dans le registre et le pousse sur GitHub.
 
 Format de dépôt : celui du document GROK-BOT-FLEET.md, section 3.
 ```
