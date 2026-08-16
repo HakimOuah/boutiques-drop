@@ -205,6 +205,44 @@ seulement de l'éthique : c'est exactement ce que Google signale aussi.
 
 ## 6. Les questions ouvertes au 16/08/2026
 
+**0. L'IDENTITÉ PARTAGÉE ENTRE BOUTIQUES — décision bloquante, à prendre AVANT toute création de
+GMC.** Ajouté le 16/08/2026 au soir, après vérification fichier par fichier.
+
+Les quatre boutiques publient **la même adresse et le même téléphone** :
+
+| Boutique | Adresse | Téléphone publié |
+|---|---|---|
+| Bien Brûlé | 47 rue Vivienne, 75002 Paris | `+33756828094` (thème publié) / `+33 6 77 70 08 10` (thème de travail) |
+| Bonum Vitae | 47 rue Vivienne, 75002 Paris | `+33 7 56 82 80 94` |
+| Tuftéo | 47 Rue Vivienne, 75002 Paris (footer, policies, JSON-LD) | `+33756828094` |
+| Maison Noirmont | 47 rue Vivienne / 75002 (policies) | `+33 7 56 82 80 94` (publié dans le JSON-LD) |
+
+Or le principe n° 1 du skill `gmc-acceptance` est : *« Une boutique = une identité. Jamais réutiliser
+Gmail, téléphone, adresse, IP ou contenu entre boutiques. Le linkage multi-boutiques est la cause
+n° 1 des suspensions répétées. »* Et le précédent existe : le compte GMC **5806019978** a été suspendu
+le 15/06/2026 pour « misrepresentation », puis réintégré après correction — **la suspension attachait
+l'entité OH Ventures**, pas seulement la boutique.
+
+**Ce n'est pas une négligence, c'est structurel.** 47 rue Vivienne est le **siège social de la SASU**
+(SIREN 103157251), et le droit français impose de publier l'adresse de l'entité dans les mentions
+légales. On ne peut donc pas « mettre une adresse différente par boutique » sans changer quelque
+chose de réel : domiciliations distinctes, ou entités distinctes. C'est une décision de structure,
+pas une correction de contenu.
+
+**Ce qui est séparable sans toucher à la structure** : le **téléphone** (une SIM par boutique), les
+**e-mails de contact** (déjà distincts : `contact@tufteo.com`, `contact@maisonnoirmont.fr`,
+`contact@bienbrule.com`), les **comptes Google**, et les **formulations de policies** — deux
+boutiques ne doivent jamais avoir le même texte mot pour mot.
+
+**Le compromis à arbitrer.** Le numéro `+33 7 56 82 80 94` a été testé par Hakim le 16/08 : il répond
+en vocal. Il satisfait donc la règle anti-VoIP, qui est un motif de refus immédiat. Le séparer par
+boutique veut dire quatre SIM physiques joignables — donc un coût et une astreinte. Le garder veut
+dire assumer le linkage.
+
+**Il faut une décision écrite avant de créer le moindre GMC**, parce que l'ordre de création est
+strict et qu'on ne revient pas en arrière proprement : boutique finie → policies → produits → GMC →
+claim du domaine → review.
+
 1. **Le CSS (Comparison Shopping Services)** — environ 50 €/mois pour des enchères plus basses et
    une meilleure stabilité GMC. À chiffrer, décision non prise.
 2. **L'arbitrage Google Ads du repo drop-elite** : méthode « charognard » à CPC manuel (~0,28 €)

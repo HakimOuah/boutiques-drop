@@ -1326,8 +1326,22 @@ constaté pour chaque FAIL.
 
 ## 5. Ordre de déploiement
 
-**Vague 1 — MOTS-CLÉS, SOURCING, RECHERCHE PRODUIT.** Lecture seule, aucun compte de boutique, aucun
-risque de linkage GMC. Ce sont eux qui portent l'étape la plus éliminatoire du pipeline.
+> **Révision du 16/08/2026 au soir.** L'ordre ci-dessous a été écrit avant le renversement de
+> diagnostic des experts. Depuis, la priorité n'est plus la recherche mais la mise en production :
+> GMC en août, campagnes en septembre. Conséquences sur le déploiement :
+>
+> - **RECHERCHE PRODUIT reste éteint** tant que les deux GMC ne sont pas demandés. L'allumer
+>   maintenant, c'est refaire exactement ce qu'on vient d'arrêter.
+> - **Un huitième bot monte en priorité : AUDIT PUBLIC** (voir §7). Il contrôle le site **en visiteur
+>   anonyme, sans aucun login** — footer, policies, avis, collections, cohérence des délais. Il est
+>   donc compatible avec la machine partagée, et c'est lui qui aurait vu les faux avis servis
+>   publiquement du 30/07 au 16/08. C'est l'équivalent manquant du registre, côté production.
+> - **Aucun bot portant une session Shopify ou GMC ne tourne pendant la fenêtre de revue** (48 h,
+>   puis 7 jours, puis 30 jours). Une IP de centre de données supplémentaire au moment précis où
+>   Google scrute le compte n'aide pas.
+
+**Vague 1 — MOTS-CLÉS, AUDIT PUBLIC, puis SOURCING.** Lecture seule, aucun compte de boutique, aucun
+risque de linkage GMC.
 
 **Recette de validation, qui ne coûte rien :** relancer MOTS-CLÉS sur des familles déjà mesurées de
 Maison Noirmont, dont les résultats sont écrits et datés dans
