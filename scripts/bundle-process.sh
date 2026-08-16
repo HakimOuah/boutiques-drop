@@ -77,6 +77,12 @@ V2_TAIL=(
   "drop-elite-google-os/skills/creer-boutique-niche-google/references/catalogue-sourcing-gate-v3.md|KRAKEN — gate catalogue/sourcing v3"
   "drop-elite-google-os/docs/parc-sites-enzo-honore.md|KRAKEN — le parc de sites de référence"
 )
+# Les 9 gates du mode Kraken (gate-0 à gate-8) : la séquence de portes de bout en bout
+V2_GATES=()
+for f in drop-elite-google-os/skills/creer-boutique-niche-google/references/gate-*.md; do
+  [ -f "$f" ] || continue
+  V2_GATES+=("$f|KRAKEN — $(basename "$f" .md)")
+done
 
 # ─── VOLUME 3 — l'état réel ──────────────────────────────────────────────────
 V3_TITLE="OH Ventures — volume 3/3 : état réel du parc et registre"
@@ -103,6 +109,12 @@ V3=(
   "boutique-pipeline/boutique-tufting/test-plan.md|TUFTÉO — plan de test"
   "notion-export/INDEX.md|Notion — index du dashboard"
 )
+# Les personas réellement produits — les exemples valent le template
+V3_PERSONAS=()
+for f in boutique-pipeline/personas/*.md; do
+  [ -f "$f" ] || continue
+  V3_PERSONAS+=("$f|PERSONA PRODUIT — $(basename "$f" .md)")
+done
 
 # ─── Garde-fou : aucun secret ne part vers un LLM externe ────────────────────
 PATTERN='(api[_-]?key|client_secret|password|passwd)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_\-]{12,}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AIza[A-Za-z0-9_\-]{30,}'
@@ -167,6 +179,6 @@ done
 
 echo "Passation OH Ventures — génération des 3 volumes :"
 write_volume "$OUTDIR/EXPORT-1-METHODES.md"  "$V1_TITLE" "$V1_INTRO" "${V1[@]}" "${V1_CAMP[@]}"
-write_volume "$OUTDIR/EXPORT-2-MEMOIRE.md"   "$V2_TITLE" "$V2_INTRO" "${V2[@]}" "${V2_MEM[@]}" "${V2_TAIL[@]}"
-write_volume "$OUTDIR/EXPORT-3-ETAT.md"      "$V3_TITLE" "$V3_INTRO" "${V3[@]}"
+write_volume "$OUTDIR/EXPORT-2-MEMOIRE.md"   "$V2_TITLE" "$V2_INTRO" "${V2[@]}" "${V2_MEM[@]}" "${V2_TAIL[@]}" "${V2_GATES[@]}"
+write_volume "$OUTDIR/EXPORT-3-ETAT.md"      "$V3_TITLE" "$V3_INTRO" "${V3[@]}" "${V3_PERSONAS[@]}"
 echo "Terminé. Ordre de lecture conseillé : volume 2, puis 1, puis 3."
