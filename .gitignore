@@ -5,6 +5,8 @@
 
 # Temporaire / jetable
 /scratchpad/
+# Export régénérable par scripts/bundle-process.sh — duplique des fichiers déjà versionnés
+/EXPORT-PROCESS-OH-VENTURES.md
 .DS_Store
 *.log
 .playwright-mcp/
