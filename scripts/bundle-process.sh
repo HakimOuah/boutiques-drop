@@ -1,24 +1,27 @@
 #!/bin/bash
-# Génère un fichier unique contenant toute la méthode OH Ventures — stratégie, critères,
-# playbooks, méthode d'analyse de marché, skills et agents — pour le donner à un LLM externe
-# (Grok, ChatGPT…) qui n'a pas accès aux repos privés.
+# Génère la passation complète OH Ventures en 3 volumes, pour un LLM externe (Grok, ChatGPT…)
+# qui n'a pas accès aux repos privés.
 #
-# Usage :  bash scripts/bundle-process.sh [chemin/de/sortie.md]
-# Défaut : ./EXPORT-PROCESS-OH-VENTURES.md
+#   Volume 1 — MÉTHODES  : stratégie, critères, playbooks, skills, agents. Le « comment ».
+#   Volume 2 — MÉMOIRE   : passation, leçons, décisions, méthode Kraken. Le « pourquoi ».
+#   Volume 3 — ÉTAT      : registre des candidats, état réel des boutiques. Le « où on en est ».
 #
-# Ne contient aucun secret : uniquement de la méthode. Vérifié par grep avant chaque génération.
+# Usage :  bash scripts/bundle-process.sh [répertoire de sortie]
+# Défaut : ./  (racine du hub, les 3 fichiers sont en .gitignore)
+#
+# Ne contient aucun secret : uniquement de la méthode et de l'état. Vérifié par grep avant écriture.
 
 set -euo pipefail
 
 HUB="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="${1:-$HUB/EXPORT-PROCESS-OH-VENTURES.md}"
-PIPE="$HUB/boutique-pipeline"
-
+OUTDIR="${1:-$HUB}"
 cd "$HUB"
+mkdir -p "$OUTDIR"
 
-# ─── Les fichiers, dans l'ordre de lecture ────────────────────────────────────
-# Format : "chemin relatif au hub|Titre de section"
-FILES=(
+# ─── VOLUME 1 — les méthodes ─────────────────────────────────────────────────
+V1_TITLE="OH Ventures — volume 1/3 : stratégie, process et méthodes"
+V1_INTRO="Le « comment ». Les critères de décision chiffrés, les process découpés étape par étape, et les instructions des agents qui les exécutent. À lire après le volume 2, qui explique pourquoi ces règles existent."
+V1=(
   "README.md|Présentation du hub"
   "CLAUDE.md|Règles du hub — sources de vérité et réflexe GitHub"
   "boutique-pipeline/CLAUDE.md|Règles du repo pipeline"
@@ -43,77 +46,127 @@ FILES=(
   ".claude/agents/critique-candidat.md|AGENT — critique de candidat"
   ".claude/agents/cartographie-concurrence.md|AGENT — cartographie de la concurrence"
   ".claude/agents/executant-boutique.md|AGENT — exécutant boutique (recettes AliExpress et thème)"
+  "GROK-BOT-FLEET.md|Découpage du process en 7 bots Grok"
+  "notion-export/campement/campement-type-lancement-boutique.md|RUNBOOK — campement type de lancement d'une boutique"
+)
+# Les 18 tickets du campement (le lancement d'une boutique, découpé en briefs exécutables)
+V1_CAMP=()
+for f in notion-export/campement/[0-9]*.md; do
+  [ -f "$f" ] || continue
+  V1_CAMP+=("$f|RUNBOOK LANCEMENT — $(basename "$f" .md)")
+done
+
+# ─── VOLUME 2 — la mémoire et l'histoire ─────────────────────────────────────
+V2_TITLE="OH Ventures — volume 2/3 : passation, mémoire et décisions"
+V2_INTRO="Le « pourquoi ». La note de passation, puis les leçons accumulées session après session, puis le corps de méthode Kraken du repo drop-elite-google-os. C'est le volume à lire EN PREMIER : sans lui, les méthodes du volume 1 paraissent arbitraires."
+V2=(
+  "PASSATION.md|LA NOTE DE PASSATION — à lire en premier"
+  "memoire/MEMORY.md|Index de la mémoire"
+)
+# les fiches mémoire sont ajoutées dynamiquement plus bas
+V2_TAIL=(
+  "drop-elite-google-os/README.md|MÉTHODE KRAKEN — présentation du repo"
+  "drop-elite-google-os/DECISIONS.md|MÉTHODE KRAKEN — journal des décisions"
+  "drop-elite-google-os/CHANGELOG.md|MÉTHODE KRAKEN — journal des changements"
+  "drop-elite-google-os/OPERATIONS_LOG.md|MÉTHODE KRAKEN — journal des opérations"
+  "drop-elite-google-os/skills/creer-boutique-niche-google/references/mission-coach-associe.md|KRAKEN — mission coach-associé"
+  "drop-elite-google-os/skills/creer-boutique-niche-google/references/strategie-pas-a-pas.md|KRAKEN — la stratégie en 11 phases"
+  "drop-elite-google-os/skills/creer-boutique-niche-google/references/operating-model.md|KRAKEN — modèle opératoire"
+  "drop-elite-google-os/skills/creer-boutique-niche-google/references/evidence-and-currentness.md|KRAKEN — preuve et fraîcheur des données"
+  "drop-elite-google-os/skills/creer-boutique-niche-google/references/metrics-dictionary.md|KRAKEN — dictionnaire des métriques"
+  "drop-elite-google-os/skills/creer-boutique-niche-google/references/catalogue-sourcing-gate-v3.md|KRAKEN — gate catalogue/sourcing v3"
+  "drop-elite-google-os/docs/parc-sites-enzo-honore.md|KRAKEN — le parc de sites de référence"
 )
 
-# ─── Garde-fou : aucun secret ne doit partir vers un LLM externe ──────────────
+# ─── VOLUME 3 — l'état réel ──────────────────────────────────────────────────
+V3_TITLE="OH Ventures — volume 3/3 : état réel du parc et registre"
+V3_INTRO="Le « où on en est ». Le registre anti-doublon de tout ce qui a déjà été étudié, puis l'état chiffré et les règles propres à chaque boutique. C'est ce qui évite de refaire un travail déjà fait ou de rouvrir un dossier fermé."
+V3=(
+  "boutique-pipeline/registre-candidats.md|REGISTRE CENTRAL des candidats produit (anti-doublon)"
+  "boutique-pipeline/familles-exploration.md|Familles de marché explorées"
+  "boutique-pipeline/boutique-seiko-mod/TABLEAU.md|MAISON NOIRMONT — le kanban, point d'entrée"
+  "boutique-pipeline/boutique-seiko-mod/ETAT.md|MAISON NOIRMONT — état courant chiffré"
+  "boutique-pipeline/boutique-seiko-mod/REGLES.md|MAISON NOIRMONT — règles et pièges déjà payés"
+  "boutique-pipeline/boutique-seiko-mod/ARBORESCENCE.md|MAISON NOIRMONT — arborescence"
+  "boutique-pipeline/boutique-seiko-mod/AXES-MARKETING.md|MAISON NOIRMONT — axes marketing"
+  "boutique-pipeline/boutique-seiko-mod/GRILLE-PRIX.md|MAISON NOIRMONT — grille de prix"
+  "boutique-pipeline/boutique-seiko-mod/NOTES-PRICING.md|MAISON NOIRMONT — notes de pricing"
+  "boutique-pipeline/boutique-seiko-mod/STYLE-REDACTION.md|MAISON NOIRMONT — style rédactionnel"
+  "boutique-pipeline/boutique-seiko-mod/A-FAIRE-HAKIM.md|MAISON NOIRMONT — ce qui attend Hakim"
+  "boutique-pipeline/boutique-tufting/project-state.md|TUFTÉO — état du projet"
+  "boutique-pipeline/boutique-tufting/research-brief.md|TUFTÉO — brief de recherche"
+  "boutique-pipeline/boutique-tufting/AUDIT-GMC-2026-08-16.md|TUFTÉO — audit GMC du 16/08"
+  "boutique-pipeline/boutique-tufting/AUDIT-FINAL-A-contenu.md|TUFTÉO — audit final, contenu"
+  "boutique-pipeline/boutique-tufting/AUDIT-FINAL-B-catalogue.md|TUFTÉO — audit final, catalogue"
+  "boutique-pipeline/boutique-tufting/AUDIT-FINAL-C-technique.md|TUFTÉO — audit final, technique"
+  "boutique-pipeline/boutique-tufting/sitemap.md|TUFTÉO — arborescence"
+  "boutique-pipeline/boutique-tufting/test-plan.md|TUFTÉO — plan de test"
+  "notion-export/INDEX.md|Notion — index du dashboard"
+)
+
+# ─── Garde-fou : aucun secret ne part vers un LLM externe ────────────────────
 PATTERN='(api[_-]?key|client_secret|password|passwd)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_\-]{12,}|sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|AIza[A-Za-z0-9_\-]{30,}'
-LEAKS=""
-for entry in "${FILES[@]}"; do
-  f="${entry%%|*}"
-  [ -f "$f" ] || continue
-  if grep -qEn "$PATTERN" "$f" 2>/dev/null; then
-    LEAKS="$LEAKS\n  $f"
+
+check_leak() {
+  if [ -f "$1" ] && grep -qE "$PATTERN" "$1" 2>/dev/null; then
+    echo "ARRÊT — secret potentiel détecté dans : $1" >&2
+    exit 1
   fi
-done
-if [ -n "$LEAKS" ]; then
-  echo "ARRÊT — secret potentiel détecté dans :$LEAKS" >&2
-  echo "Vérifie ces fichiers avant de générer l'export." >&2
-  exit 1
-fi
+}
 
-# ─── Génération ──────────────────────────────────────────────────────────────
-{
-  echo "# OH Ventures — méthode complète de création de boutiques Shopify dropshipping France"
-  echo
-  echo "**Export généré le $(date '+%d/%m/%Y à %H:%M').** Document de travail interne d'Hakim Ouahabi"
-  echo "(OH Ventures), rassemblé en un seul fichier pour être lu par un assistant externe."
-  echo
-  echo "Ce document contient la stratégie, les critères de décision chiffrés, les process découpés"
-  echo "étape par étape, et les instructions des agents qui les exécutent. Il ne contient aucun"
-  echo "identifiant, aucune clé d'API et aucune donnée client."
-  echo
-  echo "Contexte : boutiques de niche mono-produit ou petit catalogue, marché France, prix de vente"
-  echo "cible 150-400 € TTC, acquisition Google Ads Search puis Shopping, fournisseurs AliExpress,"
-  echo "structure SASU."
-  echo
-  echo "---"
-  echo
-  echo "## Sommaire"
-  echo
-  i=0
-  for entry in "${FILES[@]}"; do
-    f="${entry%%|*}"; t="${entry#*|}"
-    [ -f "$f" ] || continue
-    i=$((i+1))
-    echo "$i. $t — \`$f\`"
-  done
-  echo
-  echo "---"
-  echo
+# ─── Écriture d'un volume ────────────────────────────────────────────────────
+write_volume() {
+  local out="$1" title="$2" intro="$3"; shift 3
+  local entries=("$@")
 
-  i=0
-  for entry in "${FILES[@]}"; do
-    f="${entry%%|*}"; t="${entry#*|}"
-    if [ ! -f "$f" ]; then
-      echo "<!-- MANQUANT : $f -->" >&2
-      continue
-    fi
-    i=$((i+1))
+  for entry in "${entries[@]}"; do check_leak "${entry%%|*}"; done
+
+  {
+    echo "# $title"
     echo
-    echo "==============================================================================="
+    echo "**Export généré le $(date '+%d/%m/%Y à %H:%M').** Document de travail interne d'Hakim"
+    echo "Ouahabi (OH Ventures, SASU), rassemblé pour être lu par un assistant externe."
     echo
-    echo "# $i. $t"
+    echo "$intro"
     echo
-    echo "> Source : \`$f\`"
+    echo "Contexte : boutiques Shopify de niche, marché France, dropshipping AliExpress, prix de"
+    echo "vente cible 150-400 € TTC, acquisition Google Ads Search puis Shopping. Aucun identifiant,"
+    echo "aucune clé d'API, aucune donnée client dans ce document."
     echo
     echo "---"
     echo
-    cat "$f"
+    echo "## Sommaire"
     echo
-  done
-} > "$OUT"
+    local i=0
+    for entry in "${entries[@]}"; do
+      local f="${entry%%|*}" t="${entry#*|}"
+      [ -f "$f" ] || continue
+      i=$((i+1)); echo "$i. $t — \`$f\`"
+    done
+    echo
+    i=0
+    for entry in "${entries[@]}"; do
+      local f="${entry%%|*}" t="${entry#*|}"
+      [ -f "$f" ] || { echo "  MANQUANT : $f" >&2; continue; }
+      i=$((i+1))
+      echo; echo "==============================================================================="
+      echo; echo "# $i. $t"; echo; echo "> Source : \`$f\`"; echo; echo "---"; echo
+      cat "$f"; echo
+    done
+  } > "$out"
 
-SIZE=$(du -h "$OUT" | cut -f1)
-LINES=$(wc -l < "$OUT" | tr -d ' ')
-echo "Export généré : $OUT"
-echo "  $LINES lignes, $SIZE"
+  echo "  $(basename "$out") — $(wc -l < "$out" | tr -d ' ') lignes, $(du -h "$out" | cut -f1)"
+}
+
+# Les fiches mémoire, dans l'ordre alphabétique, MEMORY.md exclu (déjà en tête)
+V2_MEM=()
+for f in memoire/*.md; do
+  [ "$(basename "$f")" = "MEMORY.md" ] && continue
+  V2_MEM+=("$f|MÉMOIRE — $(basename "$f" .md)")
+done
+
+echo "Passation OH Ventures — génération des 3 volumes :"
+write_volume "$OUTDIR/EXPORT-1-METHODES.md"  "$V1_TITLE" "$V1_INTRO" "${V1[@]}" "${V1_CAMP[@]}"
+write_volume "$OUTDIR/EXPORT-2-MEMOIRE.md"   "$V2_TITLE" "$V2_INTRO" "${V2[@]}" "${V2_MEM[@]}" "${V2_TAIL[@]}"
+write_volume "$OUTDIR/EXPORT-3-ETAT.md"      "$V3_TITLE" "$V3_INTRO" "${V3[@]}"
+echo "Terminé. Ordre de lecture conseillé : volume 2, puis 1, puis 3."
