@@ -16,7 +16,7 @@ Instructions du bot Grok. Rien d’autre. Les règles sont autoportantes (le bot
 | 2 | **PERSONAS** | oui, après CONCURRENCE |
 | — | DESIGN SHOPIFY / CONFORMITÉ GMC | non — pas sur ce compte xAI |
 
-Tu parles d’abord à `OH — ORCHESTRATEUR`. Deux rails en parallèle : **soumettre les boutiques prêtes à GMC** et **chercher les prochaines niches** pour viser 5–6 boutiques.
+Tu parles d’abord à `OH — ORCHESTRATEUR`. Il embarque la **mémoire de passation Claude** (état du parc, virages datés, réflexes, identité GMC, angles morts). Deux rails en parallèle : **GMC des boutiques prêtes** et **recherche de niches** vers 5–6 boutiques.
 
 ---
 

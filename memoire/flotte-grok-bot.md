@@ -1,26 +1,21 @@
 ---
 name: flotte-grok-bot
-description: "Flotte Grok Bot OH Ventures : ORCHESTRATEUR + spécialistes ; deux rails parallèles (GMC + recherche niches vers 5-6 boutiques)"
+description: "Flotte Grok : ORCHESTRATEUR (passation intégrée) + spécialistes ; rails GMC + recherche niches (parc 5-6)"
 metadata:
   node_type: memory
   type: project
   modified: 2026-08-17
 ---
 
-Flotte Grok (SuperGrok Heavy / bêta Grok Bot). **Découpage = un bot par métier**, pas par outil.
+Flotte Grok (SuperGrok Heavy / bêta Grok Bot). **Découpage = un bot par métier**.
 
-**Point d'entrée : `OH — ORCHESTRATEUR`** (Bot 0). Il route, rédige les briefs, contrôle les dépôts, ne franchit aucune porte Hakim.
+**Point d'entrée : `OH — ORCHESTRATEUR`**. Embarque la mémoire de `PASSATION.md` (état parc, virages, 12 réflexes, identité GMC, angles morts) pour router et contredire les erreurs déjà payées. Si PASSATION évolue → repasser le bloc Bot 0 dans `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
 
-**Priorités (17/08/2026, Hakim) — deux rails en parallèle, aucun en pause :**
-1. Production GMC des boutiques prêtes (Tuftéo, Maison Noirmont).
-2. Recherche de niche **constante** — objectif parc **5 à 6 boutiques**. Bot RECHERCHE PRODUIT allumé.
+**Priorités (17/08 Hakim) — deux rails parallèles :**
+1. Production GMC (Tuftéo protégé / Noirmont à créer).
+2. Recherche de niche constante — parc **5 à 6 boutiques**.
 
-Textes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`. Référence process : `GROK-BOT-FLEET.md`.
+Bots compte xAI : ORCHESTRATEUR · RECHERCHE PRODUIT · MOTS-CLÉS · AUDIT PUBLIC · SOURCING · CONCURRENCE · PERSONAS.
+Hors compte : DESIGN, CONFORMITÉ GMC → Claude Code (machine cloud partagée).
 
-Bots sur ce compte xAI : ORCHESTRATEUR · RECHERCHE PRODUIT · MOTS-CLÉS · AUDIT PUBLIC · SOURCING · CONCURRENCE · PERSONAS.
-Hors compte (machine cloud partagée) : DESIGN SHOPIFY, CONFORMITÉ GMC → Claude Code.
-
-Règles structurantes :
-1. Aucun login boutique (Shopify/GMC/Ads/SAV) sur l'ordinateur cloud partagé.
-2. Aucun bot n'écrit dans GitHub (Notion/Drive → Claude Code → commit).
-3. Trois inversions interdites : CONCURRENCE avant SERP · DESIGN avant persona · SOURCING avant verdict marché.
+Règles : pas de login boutique sur l'ordi cloud · pas d'écriture GitHub par les bots · 3 inversions interdites (CONCURRENCE avant SERP · DESIGN avant persona · SOURCING avant verdict marché).

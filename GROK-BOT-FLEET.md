@@ -265,14 +265,16 @@ A = page source ouverte et lue · B = liste/JSON/agrégat · C = titre ou libell
 
 ### Bot 0 — ORCHESTRATEUR
 
-**Mission.** Point d'entrée unique. Vision du process, aiguillage vers le bon spécialiste, contrôle
-qualité des dépôts, portage des portes Hakim. **Il n'exécute jamais le métier d'un spécialiste.**
+**Mission.** Point d'entrée unique. Vision du process, **mémoire de passation** (état réel du parc,
+virages datés, réflexes payés, identité GMC, angles morts), aiguillage vers le bon spécialiste,
+contrôle qualité des dépôts, portage des portes Hakim. **Il n'exécute jamais le métier d'un
+spécialiste.**
 
 **Où il se branche.** Avant tout le reste. Hakim lui parle ; il rend un brief collable + une
-synthèse d'état.
+synthèse d'état ancrée dans l'historique.
 
-**Instruction à coller :** Bot 0 dans `GROK-BOT-INSTRUCTIONS-A-COLLER.md` (bloc complet, garde-fous
-inclus).
+**Instruction à coller :** Bot 0 dans `GROK-BOT-INSTRUCTIONS-A-COLLER.md` (bloc complet = règles +
+passation intégrée). Si PASSATION.md évolue, **repasser ce bloc**.
 
 ---
 
