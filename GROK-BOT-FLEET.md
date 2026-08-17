@@ -2,7 +2,7 @@
 
 **Rédigé le 16/08/2026, découpage arrêté par Hakim.** SuperGrok Heavy donne accès à la bêta Grok Bot
 (lancée le 11/08/2026). **Instructions prêtes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`
-(17/08/2026)** — ORCHESTRATEUR + Vague 1–2 + AUDIT PUBLIC, avec garde-fous inclus.
+(17/08/2026)** — ORCHESTRATEUR + RECHERCHE PRODUIT (priorité constante) + Vague 1–2 + AUDIT PUBLIC.
 
 Un orchestrateur + sept métiers + un huitième prioritaire (AUDIT PUBLIC) :
 
