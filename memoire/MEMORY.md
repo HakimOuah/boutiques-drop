@@ -38,3 +38,4 @@
 - [Identité partagée et soumission GMC](identite-partagee-gmc.md) — 4 boutiques, même adresse et même téléphone ; linkage assumé, Tuftéo soumis seul puis Noirmont à 30 jours ; storefront Noirmont gelé le 17/08
 - [Flotte Grok Bot](flotte-grok-bot.md) — 10 bots dans GROK-BOT-FLEET.md, recherche mutualisée vs exploitation 1/boutique (risque IP GMC), aucun accès GitHub
 - [Plan Q4 2026 (experts, 16/08)](plan-q4-2026-experts-16-08.md) — boutiques prêtes + GMC en août, campagnes en septembre ; tests coupés trop tôt à 120-130 €, seuil produit 20 k
+- [DB Industrie : migration REPINFO](db-industrie-migration-repinfo.md) — projet n8n hors dropshipping, VM REPINFO va remplacer l'instance n8n Cloud perso, migration actée le 17/08 pas commencée
