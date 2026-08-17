@@ -53,7 +53,7 @@ Ceux qui ont réellement causé la suspension de juin, plus ceux de la checklist
 | Boutique | État | Ce qu'on sait déjà |
 |---|---|---|
 | **Bien Brûlé** | à cribler | C'est elle qui portait le compte suspendu en juin. Corrections faites à l'époque (faux widgets retirés, produits à filigrane passés en DRAFT, page Contact remplie). **À revérifier sur le site public** : les corrections de juin peuvent avoir été perdues, et deux thèmes coexistent avec **deux numéros de téléphone différents** (`+33 6 77 70 08 10` et `+33756828094`) |
-| **Bonum Vitae** | 🔴 crible ouvert 17/08 — P0 encore publics | Dossier : `boutique-pipeline/boutique-bonum-vitae/` (`TABLEAU.md`). Store `kw7vak-g0`. Live = Horizon MAIN. **Encore en ligne** : 3 faux avis « Vérifié » (Claire/Karim/Bernard) sur accueil **et** fiches, « 4.8/5 · 312 avis vérifiés », 6 prix barrés, bandeau « -20% osmoseurs ». Auth CLI Bonum Vitae manquante (T-H1). Journal : `boutique-bonum-vitae/journal/2026-08-17-ouverture-crible.md` |
+| **Bonum Vitae** | 🟢 P0 purgés le 17/08 soir, constaté en anonyme | Dossier : `boutique-pipeline/boutique-bonum-vitae/` (`TABLEAU.md`). Store `kw7vak-g0`. Retirés du live : 3 faux avis « Vérifié », « 4.8/5 · 312 avis », 8 prix barrés (dont 2 dormants sur brouillon), bandeau « -20% ». Restent P1 : doublon mentions légales, footer sans raison sociale, collections < 5, GMC inconnu (T-H6). Journal : `boutique-bonum-vitae/journal/2026-08-17-rail-a-p0.md` |
 | ~~Lihyl~~ | ✅ **hors périmètre** | **Boutique fermée par Hakim.** Plus aucun signal public : son prix barré fantôme (599 € barré 799 €, le 799 jamais pratiqué) et ses faux avis d'origine ne pèsent plus sur l'entité |
 
 **Le crible porte donc sur deux boutiques**, pas trois.
