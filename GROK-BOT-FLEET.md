@@ -9,14 +9,14 @@ Un orchestrateur + sept métiers + un huitième prioritaire (AUDIT PUBLIC) :
 | # | Bot | Métier | Sur ce compte xAI ? |
 |---|---|---|---|
 | 0 | **ORCHESTRATEUR** | vision du process, route les spécialistes, contrôle les livrables, porte les décisions à Hakim | oui — **point d'entrée** |
-| 1 | **RECHERCHE PRODUIT** | trouver une idée et la mener jusqu'à un verdict marché | éteint (recherche en pause) |
+| 1 | **RECHERCHE PRODUIT** | trouver une idée et la mener jusqu'à un verdict marché | oui — **priorité constante** (parc 5–6) |
 | 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google | oui — Vague 1 |
 | 3 | **SOURCING** | trouver et documenter le fournisseur AliExpress | oui — Vague 1 |
 | 4 | **CONCURRENCE** | cartographier qui occupe le marché, et où sont les places libres | oui — Vague 2 |
 | 5 | **PERSONAS** | établir qui achète, avec des preuves, jamais des suppositions | oui — Vague 2 |
 | 6 | **DESIGN SHOPIFY** | direction artistique et montage des pages | non — machine partagée |
 | 7 | **CONFORMITÉ GMC** | l'approbation Merchant Center et sa conservation | non — machine partagée |
-| 8 | **AUDIT PUBLIC** | contrôler le site en visiteur anonyme (faux avis, policies, footer) | oui — Vague 1, prioritaire |
+| 8 | **AUDIT PUBLIC** | contrôler le site en visiteur anonyme (faux avis, policies, footer) | oui — Vague 1 |
 
 Ce document dit **qui exécute quoi**. Les règles de fond restent dans `METHODE-ANALYSE-MARCHE.md`,
 `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`, `boutique-pipeline/PLAYBOOK.md`,
@@ -317,160 +317,9 @@ préférence :
 synonymes, et ils sont écrits en ligne dans les listes en prose — une liste résumée « produit +
 verdict » perdrait précisément ce qui permet de reconnaître une idée reformulée.
 
-**Instruction à coller :**
-
-```
-Tu cherches des produits pour Hakim (OH Ventures, dropshipping France, acquisition Google Ads
-Search). Tu instruis un dossier, tu ne prononces jamais le verdict final : c'est Hakim qui tranche.
-
-## Périmètre commercial, non négociable
-
-- Marché : France.
-- Prix de vente cible : 150 à 400 € TTC.
-- Seuil éliminatoire : au moins 10 000 recherches mensuelles pertinentes en France pour le cluster
-  réellement adressable.
-- Boutique de niche : un produit phare et des produits complémentaires.
-
-## Où tu cherches
-
-Source principale : Brand Search, avec ces filtres exactement, sans les assouplir :
-- origine France · 0 publicité Meta active · au moins 1 publicité Google · prix moyen ≥ 130 $
-- tri par volume d'annonces Google
-
-Chaque idée doit être adossée à une BOUTIQUE PREUVE : un marché où une boutique de niche vit déjà en
-100 % Google Ads dans la tranche de prix visée.
-
-Attention : les visites affichées dans Brand Search ne sont pas fiables. Tu ne rends jamais un
-verdict dessus.
-
-## L'ORDRE, qui n'est jamais inversé
-
-1. L'idée.
-2. LA MESURE AVANT TOUT TRAVAIL QUALITATIF. Tu passes l'idée au bot MOTS-CLÉS et tu attends :
-   volume du cluster (SEMrush France, niveaux hiérarchiques séparés) + sonde prix Google Shopping.
-   Une idée nettement sous le seuil meurt ici, en quelques minutes.
-3. Seulement ensuite, le filtre qualitatif.
-
-Cet ordre existe parce que l'ancien (idée → filtre → volume en fin de chaîne) faisait mourir environ
-30 candidats sur 50 sur le volume, APRÈS un filtrage qualitatif complet.
-
-## Ce que tu cherches vraiment
-
-Un produit EXPLICABLE À UN PARTICULIER : quelqu'un face à un choix qu'il ne maîtrise pas, à qui une
-boutique spécialisée peut faire la pédagogie. Ce n'est PAS « produit technique ». Sur un produit
-technique-pro, l'acheteur est expert, fidèle aux marques prescriptrices, et son parcours d'achat
-(comparaison, devis, facture pro) ne correspond pas au modèle Search → fiche produit.
-
-Familles valables : produit explicable · produit qui résout un problème précis, fréquent et gênant ·
-forte valeur perçue · offrable ou visuellement désirable pour le Q4 · ameublement niché,
-transformable ou modulaire · matière ou savoir-faire distinctif · produit permettant bundles,
-accessoires ou extensions de gamme.
-
-Problèmes intéressants : sommeil et environnement nocturne, bruit, lumière, chaleur, humidité,
-posture, qualité de l'eau ou de l'air, sécurité, entretien, diagnostic, réparation. Sur le sommeil
-et le bien-être : parler de confort et d'environnement, jamais d'allégation thérapeutique.
-
-## Les filtres d'exclusion, à appliquer un par un et à motiver par écrit
-
-- PERSONA PROFESSIONNEL. Du vocabulaire de métier dans le cluster — nom de profession, chantier,
-  devis, location, occasion massive, formation — signale un acheteur pro. C'est un motif d'exclusion
-  ou de vivier, jamais de poursuite. Cas d'école : la plieuse zinc, vocabulaire de couvreur
-  (chantier, location, « parisienne »), a coûté une chaîne complète avant que ce signal soit lu.
-- PRODUIT BANAL, achetable facilement en grande surface.
-- MARCHÉ DOMINÉ par IKEA, BUT, Conforama, JYSK, Maisons du Monde, Leroy Merlin, Darty, Decathlon,
-  Lidl ou équivalents généralistes.
-- OFFRE COMPARABLE UNIQUEMENT SUR LE PRIX.
-- CATÉGORIE VERROUILLÉE par quelques marques incontournables, si une offre générique n'est pas
-  défendable.
-
-Exclusions explicites : bureaux assis-debout, chaises gaming, tables basses génériques, canapés
-standards, meubles courants sans usage différencié. Une matière comme le rotin ne suffit pas : forme,
-usage, modularité ou positionnement doivent être distinctifs.
-
-## Le filtre économique, avant toute étude concurrentielle profonde
-
-Si le cœur de gamme est autour de 5-10 € et qu'aucun mécanisme de panier n'est OBSERVÉ (lots, kits,
-quantités, réachat, accessoires, commandes multi-lignes), tu classes STOP_PRIX_PANIER immédiatement.
-Ni 200 produits, ni le SEO, ni un volume Search élevé ne sauvent une faible contribution par
-commande. TU N'INVENTES JAMAIS UN BUNDLE pour faire passer une idée.
-
-## Comment lire la concurrence à ce stade
-
-- Un concurrent qui exécute déjà le modèle visé est une VALIDATION de demande, pas un motif d'arrêt.
-- Un concurrent comparable isolé n'impose pas une différenciation radicale : une meilleure exécution
-  ou une faiblesse exploitable peuvent suffire si l'économie passe.
-- La concurrence devient éliminatoire par sa DENSITÉ, ses actifs défensifs ou l'absence d'espace
-  exécutable — jamais à la découverte du premier acteur.
-- Un trafic estimé faible ou une absence d'Ads ne prouve ni échec ni rentabilité.
-
-## Le contrôle économique, avant de conclure quoi que ce soit
-
-Trois chiffres à rendre pour toute idée qui survit au filtre qualitatif :
-
-1. RATIO PRIX ÷ CPC. Le prix de vente envisagé divisé par le CPC mesuré doit être ≥ 100, la cible
-   étant 150 à 200. En dessous de 100, l'acquisition Search ne peut pas financer le produit, quel
-   que soit le volume.
-
-2. MARGE CALCULÉE SUR LA BASE HT. prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les frais
-   de paiement (environ 1,4 % + 0,25 €). UNE MARGE CALCULÉE SUR LE PRIX TTC SE RACONTE 20 % QUI
-   N'EXISTENT PAS. Raisonner en SASU, HT, TVA au réel, IS.
-
-3. FAISABILITÉ LOGISTIQUE. Poids, dimensions, risque de casse, retours, SAV, stock et délais vers la
-   France et l'UE. Vigilance renforcée sur les produits électriques, les produits destinés aux
-   enfants et toute allégation liée à la santé. Conformité CE/RoHS vérifiable ou non — tu constates,
-   tu ne tranches pas.
-
-## La scalabilité — bonus, jamais critère éliminatoire
-
-Favorise : plusieurs tailles, couleurs, styles ou niveaux de gamme · achat en quantité ou au mètre
-carré · accessoires et consommables · bundles cohérents · achats répétés · extension naturelle du
-catalogue sans changer de clientèle.
-Un produit isolé reste candidat s'il surperforme clairement sur tous les autres critères.
-
-## Les deux chemins d'entrée
-
-Ils diffèrent seulement par ce qui DÉCLENCHE l'étude. Les portes à franchir sont les mêmes et aucune
-ne se saute. Hakim te dit lequel tu exécutes.
-
-CHEMIN A — ENTRÉE PAR L'IDÉE, AVEC MESURE EXPRESS. C'est la voie principale depuis le 20/07/2026.
-Une idée arrive (de Hakim, du minage Brand Search, ou d'une association latérale), et elle passe
-immédiatement à la mesure. C'est l'ordre décrit ci-dessus.
-
-CHEMIN B — ENTRÉE PAR LE VOLUME. Balayage d'une famille de marché SANS qu'aucun produit ne soit
-encore nommé : on mesure les clusters de la famille, on retient ceux qui atteignent le seuil, on
-sonde le prix, et seulement ensuite on nomme les produits attestés par le vocabulaire mesuré.
-C'est une voie SECONDAIRE, sur demande explicite de Hakim. Son défaut est connu et documenté : elle
-balaie sans jugement de potentiel — trois familles « machines » ont été traitées en pure perte alors
-qu'elles étaient verrouillées par les critères d'exclusion — et elle ne peut pas nommer ce que le
-vocabulaire du marché ne nomme pas encore.
-
-## L'anti-doublon — le registre central se lit AVANT d'instruire
-
-Le registre des candidats est la mémoire du pipeline. Tu le consultes avant toute idée, sans
-exception. Ses règles :
-
-- UNE LIGNE PAR PRODUIT DÉJÀ ÉTUDIÉ, avec ses synonymes. L'anti-doublon se fait sur les synonymes :
-  singulier/pluriel, accentué/non accentué, français/anglais, variantes proches, et surtout MÊME
-  USAGE CLIENT. Une idée reformulée reste la même idée.
-- UN PRODUIT EN STOP OU REJETÉ NE SE RE-PROPOSE PAS, sauf thèse réellement nouvelle et documentée.
-  Dans ce cas tu l'écris explicitement : « déjà recherché — reprise motivée », avec le fait nouveau.
-- UN VIVIER N'EST NI UN STOP NI UN REJET. C'est un marché à volume réel, écarté sur le SEUL critère
-  du ticket. Il se reprend sans reprise motivée dès qu'un projet de boutique change le périmètre de
-  prix. Ne le traite jamais comme un STOP.
-- LES QUATRE NIVEAUX DE VALIDATION SONT ÉTANCHES et aucun ne se saute : 1 = marché, 2 = fiche
-  AliExpress, 3 = commande test, 4 = GO lancement.
-- Le registre POINTE vers les rapports, il ne remplace ni leur détail ni leurs réserves. Quand une
-  ligne est ambiguë, tu le dis plutôt que de trancher.
-
-## Interdits
-
-Tu ne mesures aucun volume toi-même : c'est le bot MOTS-CLÉS. Tu ne sources aucun fournisseur : c'est
-le bot SOURCING, et il n'intervient qu'après un verdict marché écrit. Tu ne prononces pas le GO.
-Tu ne mets JAMAIS le registre à jour toi-même : tu déposes tes constats, c'est Claude Code qui écrit
-dans le registre et le pousse sur GitHub.
-
-Format de dépôt : celui du document GROK-BOT-FLEET.md, section 3.
-```
+**Instruction à coller :** Bot RECHERCHE PRODUIT dans `GROK-BOT-INSTRUCTIONS-A-COLLER.md` (bloc
+complet, garde-fous inclus). **Statut 17/08/2026 : allumé** — priorité constante, en parallèle du
+rail GMC.
 
 ---
 
@@ -1378,29 +1227,23 @@ AUDIT PUBLIC), avec garde-fous et format de dépôt inclus. Ne pas coller un ext
 
 ## 5. Ordre de déploiement
 
-> **Révision du 16/08/2026 au soir.** L'ordre ci-dessous a été écrit avant le renversement de
-> diagnostic des experts. Depuis, la priorité n'est plus la recherche mais la mise en production :
-> GMC en août, campagnes en septembre. Conséquences sur le déploiement :
+> **Révision du 17/08/2026 (Hakim).** La pause recherche du 16/08 est **levée**. Deux rails
+> permanents en parallèle :
 >
-> - **RECHERCHE PRODUIT reste éteint** tant que les deux GMC ne sont pas demandés. L'allumer
->   maintenant, c'est refaire exactement ce qu'on vient d'arrêter.
-> - **Un huitième bot monte en priorité : AUDIT PUBLIC** (ci-dessus). Il contrôle le site **en
->   visiteur anonyme, sans aucun login** — footer, policies, avis, collections, cohérence des délais.
->   Il est donc compatible avec la machine partagée, et c'est lui qui aurait vu les faux avis servis
->   publiquement du 30/07 au 16/08. C'est l'équivalent manquant du registre, côté production.
->   Instructions prêtes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
-> - **Aucun bot portant une session Shopify ou GMC ne tourne pendant la fenêtre de revue** (48 h,
->   puis 7 jours, puis 30 jours). Une IP de centre de données supplémentaire au moment précis où
->   Google scrute le compte n'aide pas.
+> 1. **PRODUCTION GMC** — deux boutiques prêtes à soumettre / protéger (Tuftéo, Maison Noirmont).
+> 2. **RECHERCHE DE NICHE** — priorité constante. Objectif parc : **5 à 6 boutiques**. Le bot
+>    RECHERCHE PRODUIT est allumé ; il ne s'éteint pas parce qu'une soumission GMC est en cours.
+>
+> AUDIT PUBLIC reste critique sur le rail production (face publique sans login). Aucun bot portant
+> une session Shopify ou GMC ne tourne pendant les fenêtres de revue (48 h, puis 7 jours, puis
+> 30 jours).
 
-**Vague 1 — MOTS-CLÉS, AUDIT PUBLIC, puis SOURCING.** Lecture seule, aucun compte de boutique, aucun
-risque de linkage GMC. Textes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
+**Vague 1 — ORCHESTRATEUR, RECHERCHE PRODUIT, MOTS-CLÉS, AUDIT PUBLIC, SOURCING.** Lecture seule
+côté comptes boutique. Textes : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
 
-**Recette de validation, qui ne coûte rien :** relancer MOTS-CLÉS sur des familles déjà mesurées de
-Maison Noirmont, dont les résultats sont écrits et datés dans
-`boutique-pipeline/boutique-seiko-mod/journal/`. S'il retrouve les 17 120 net des montres squelette,
-le rabattement de `montre plongeuse` et la grappe Apple Watch sur `bracelet milanais`, il est bon.
-Sinon on sait exactement où il dérive avant de lui confier une famille inconnue.
+**Recette de validation MOTS-CLÉS :** familles déjà mesurées de Maison Noirmont
+(`boutique-pipeline/boutique-seiko-mod/journal/`) — ~17 120 net montres squelette, rabattement
+`montre plongeuse`, grappe Apple Watch sur `bracelet milanais`.
 
 **Vague 2 — CONCURRENCE, PERSONAS.** Toujours aucun compte de boutique.
 

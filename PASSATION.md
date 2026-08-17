@@ -44,9 +44,18 @@ Conséquence directe sur les priorités, et elle est contre-intuitive pour qui a
 > production. Boutiques prêtes et soumises à GMC en **août**, campagnes en **septembre**. La
 > recherche des niches univers (U1-U6) est **en pause**.
 
+> **⚠️ CORRECTION DU 17/08/2026 — la pause recherche est levée.**
+>
+> Tranché par Hakim : la recherche de niche est une **priorité constante**. Deux boutiques sont
+> prêtes pour Google Merchant Center ; l'objectif parc est **5 à 6 boutiques**. Produire les GMC
+> en cours et miner les prochaines niches avancent **en parallèle** — ni l'un ni l'autre ne
+> s'éteint. Conséquence flotte Grok : le bot RECHERCHE PRODUIT est allumé ; l'orchestrateur gère
+> deux rails (production GMC + recherche). Voir `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
+
 Ordre de priorité donné : (1) Tuftéo — retravailler les visuels puis soumettre à GMC, produit très
 visuel, tendance favorable en octobre-novembre ; (2) Maison Noirmont — finaliser puis soumettre à
-GMC ; (3) osmoseur — conservé, test complet relancé en septembre avec un budget suffisant.
+GMC ; (3) osmoseur — conservé, test complet relancé en septembre avec un budget suffisant ;
+**(4) recherche de niches en continu** pour alimenter le parc jusqu'à 5–6 boutiques.
 
 Le calendrier est contraint par Google, pas par nous : une revue GMC prend des jours, une suspension
 prend des semaines. D'où « soumettre tôt ».
@@ -74,10 +83,10 @@ prend des semaines. D'où « soumettre tôt ».
 >
 > Le raisonnement reste valable pour Maison Noirmont, dont le compte, lui, n'existe pas.
 
-**Ce que ça implique pour quelqu'un qui arrive.** Si on te demande une recherche produit dans les
-semaines qui viennent, la bonne réponse est probablement de demander d'abord si les boutiques sont
-soumises à GMC. Proposer une nouvelle niche maintenant, c'est reproduire exactement ce qu'on vient
-d'arrêter de faire.
+**Ce que ça implique pour quelqu'un qui arrive.** Les deux rails tournent : finaliser / protéger
+les GMC des boutiques prêtes, **et** continuer la recherche de niches pour viser 5 à 6 boutiques.
+Une demande de recherche produit est légitime ; une demande qui ferait **abandonner** le rail GMC
+en cours ne l'est pas. Les deux avancent en parallèle.
 
 **Les critères des nouveaux produits Q4, quand on y reviendra** : au moins **20 000 recherches par
 mois** (à ne pas confondre avec le plancher de 30 000 du mode catalogue), potentiel saisonnier Q4,
@@ -106,7 +115,8 @@ les méthodes — elles présentent l'état final comme s'il avait toujours ét�
 | **11/08** | Un rapport daté par intervention | **Un `TABLEAU.md` par boutique**, point d'entrée unique | 110 fichiers markdown pour Noirmont, aucun point d'entrée. Une semaine de flottement quand une limite d'usage est tombée en plein chantier |
 | **13-14/08** | Décider sur un volume mesuré | **Vérifier en SERP avant de décider** | 3 familles sur 20 se sont retournées. 24 500 recherches retirées. Deux familles déplacées de 6 et 11 rangs |
 | **14/08** | Prix « juste sous le plus cher » | **Juste sous le concurrent comparable**, marques officielles et marques à récit écartées | Un vide de marché à 429 € : un prix que personne ne pratique parce qu'aucun argument ne le justifie |
-| **16/08** | « Si ça ne vend pas, c'est le produit ou le site » | **« On a coupé trop tôt »** — recherche en pause, production prioritaire | Retour des experts externes. C'est le pivot en cours |
+| **16/08** | « Si ça ne vend pas, c'est le produit ou le site » | « On a coupé trop tôt » — production GMC prioritaire, recherche momentanément en pause | Retour des experts externes |
+| **17/08** | Recherche en pause jusqu'aux GMC | **Recherche = priorité constante** en parallèle des GMC ; objectif parc 5–6 boutiques | Hakim : deux boutiques prêtes GMC ne suffisent pas à éteindre le pipeline niches |
 
 **La leçon transversale de ce tableau** : chaque changement de voie est venu d'un fait mesuré ou
 d'un retour terrain, jamais d'un raisonnement a priori. Et à chaque fois, la version précédente
