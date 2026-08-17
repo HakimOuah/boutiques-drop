@@ -14,6 +14,8 @@ Précédent à connaître : le compte GMC **5806019978** a été suspendu le 15/
 
 **Décision de Hakim (16/08/2026) : on assume le linkage.** Une seule adresse, un seul numéro, risque de cascade assumé. En contrepartie, soumission **séquentielle** : Tuftéo seul → 30 jours d'observation après approbation → Noirmont seulement ensuite.
 
+**Décision de Hakim (17/08/2026 ~15h25) : le storefront Noirmont dort.** Pas de GMC, pas d'écriture live, pas d'activation des 20 brouillons, jusqu'après les 30 jours Tuftéo. Travail encore possible hors vitrine (brouillons T-07, docs, Tuftéo). Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-17-gel-storefront.md`.
+
 **Why:** séparer les adresses supposerait des domiciliations ou des entités distinctes — décision de structure incompatible avec l'objectif « GMC en août ». Le téléphone unique a été testé le 16/08 et répond en vocal, donc il satisfait la règle anti-VoIP, qui est un motif de refus immédiat.
 
 **How to apply:** ne pas rouvrir ce débat, il est tranché. Mais comme la misrepresentation est cumulative, tout ce qui reste séparable doit l'être : **policies jamais identiques mot pour mot** entre deux boutiques, un compte Google par marque, e-mails distincts, et **le numéro écrit de façon identique partout** (Noirmont en publie trois écritures, Bien Brûlé deux numéros différents selon le thème). Et avant de soumettre Tuftéo, **passer Bien Brûlé et Bonum Vitae au crible des déclencheurs de juin** — faux avis, fausses notes, faux compteurs, filigranes de marque tierce, prix barrés jamais pratiqués — puisqu'un déclencheur encore en ligne dégrade l'entité pendant la revue. Détail complet en question n° 0 de `PASSATION.md`. Voir [[skill-gmc-acceptance]] et [[plan-q4-2026-experts-16-08]].
