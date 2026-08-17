@@ -36,5 +36,5 @@
 - [Pièges de l'import DSers](pieges-import-dsers.md) — vérifier qu'un article n'est pas déjà le fournisseur d'une fiche active, « Unsaved changes » qui s'ouvre sans modification, galerie qui mélange cadrans marqués et stériles
 - [Variantes sans accent dans le KMT](variantes-sans-accent-kmt.md) — SEMrush traite `ciel etoile` et `ciel étoilé` comme deux corpus ; interroger les deux, écart jusqu'à ×8
 - [Identité partagée et soumission GMC](identite-partagee-gmc.md) — 4 boutiques, même adresse et même téléphone ; linkage assumé, Tuftéo soumis seul puis Noirmont à 30 jours
-- [Flotte Grok Bot](flotte-grok-bot.md) — 10 bots dans GROK-BOT-FLEET.md, recherche mutualisée vs exploitation 1/boutique (risque IP GMC), aucun accès GitHub
+- [Flotte Grok Bot](flotte-grok-bot.md) — ORCHESTRATEUR (point d'entrée) + spécialistes ; instructions dans GROK-BOT-INSTRUCTIONS-A-COLLER.md ; pas de DESIGN/GMC sur le compte xAI (machine partagée)
 - [Plan Q4 2026 (experts, 16/08)](plan-q4-2026-experts-16-08.md) — boutiques prêtes + GMC en août, campagnes en septembre ; tests coupés trop tôt à 120-130 €, seuil produit 20 k
