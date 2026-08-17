@@ -1,7 +1,10 @@
 {
   "mcpServers": {
     "trendtrack": {
-      "url": "https://api.trendtrack.io/v1/mcp"
+      "url": "https://api.trendtrack.io/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:TRENDTRACK_API_KEY}"
+      }
     }
   }
 }
