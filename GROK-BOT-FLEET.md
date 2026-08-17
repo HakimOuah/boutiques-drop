@@ -1324,6 +1324,28 @@ constaté pour chaque FAIL.
 
 ---
 
+### Bot 8 — AUDIT PUBLIC
+
+**Mission.** Contrôler ce qu'un visiteur anonyme (et Google) voit réellement sur une boutique :
+footer, policies, avis, prix barrés, urgence, collections, cohérence des délais. Constater à
+l'écran — pas dans un journal de tickets.
+
+**Où il se branche.** En production, en parallèle de tout le reste. Deux modes : **cible** (Tuftéo,
+Noirmont…) et **crible entité** (boutiques sœurs — voir `CHANTIER-CRIBLE-ENTITE.md`).
+
+**Pourquoi il est prioritaire.** Compatible machine partagée (aucun login). C'est lui qui aurait vu
+les faux avis Tuftéo du 30/07 au 16/08. Premier travail réel : le crible Bien Brûlé / Bonum Vitae.
+
+**Connexions.** Navigateur en session non connectée uniquement. Aucun Shopify, GMC, Ads, SAV.
+
+**Réf.** `CHANTIER-CRIBLE-ENTITE.md` · skill `gmc-acceptance` (parties visibles sans login) ·
+leçon « Fait ≠ vérifié à l'écran » de `.claude/agents/executant-boutique.md`.
+
+**Instruction à coller :** le bloc complet est dans `GROK-BOT-INSTRUCTIONS-A-COLLER.md` (Bot 2 —
+AUDIT PUBLIC), avec garde-fous et format de dépôt inclus. Ne pas coller un extrait.
+
+---
+
 ## 5. Ordre de déploiement
 
 > **Révision du 16/08/2026 au soir.** L'ordre ci-dessous a été écrit avant le renversement de
@@ -1332,16 +1354,17 @@ constaté pour chaque FAIL.
 >
 > - **RECHERCHE PRODUIT reste éteint** tant que les deux GMC ne sont pas demandés. L'allumer
 >   maintenant, c'est refaire exactement ce qu'on vient d'arrêter.
-> - **Un huitième bot monte en priorité : AUDIT PUBLIC** (voir §7). Il contrôle le site **en visiteur
->   anonyme, sans aucun login** — footer, policies, avis, collections, cohérence des délais. Il est
->   donc compatible avec la machine partagée, et c'est lui qui aurait vu les faux avis servis
+> - **Un huitième bot monte en priorité : AUDIT PUBLIC** (ci-dessus). Il contrôle le site **en
+>   visiteur anonyme, sans aucun login** — footer, policies, avis, collections, cohérence des délais.
+>   Il est donc compatible avec la machine partagée, et c'est lui qui aurait vu les faux avis servis
 >   publiquement du 30/07 au 16/08. C'est l'équivalent manquant du registre, côté production.
+>   Instructions prêtes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
 > - **Aucun bot portant une session Shopify ou GMC ne tourne pendant la fenêtre de revue** (48 h,
 >   puis 7 jours, puis 30 jours). Une IP de centre de données supplémentaire au moment précis où
 >   Google scrute le compte n'aide pas.
 
 **Vague 1 — MOTS-CLÉS, AUDIT PUBLIC, puis SOURCING.** Lecture seule, aucun compte de boutique, aucun
-risque de linkage GMC.
+risque de linkage GMC. Textes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
 
 **Recette de validation, qui ne coûte rien :** relancer MOTS-CLÉS sur des familles déjà mesurées de
 Maison Noirmont, dont les résultats sont écrits et datés dans
@@ -1397,24 +1420,21 @@ dis-le. Jamais de mode dégradé silencieux, jamais de saisie d'identifiants.
 
 ## 7. Ce que ce découpage ne couvre pas
 
-Le process s'arrête au go-live. Trois métiers restent sans bot, et c'est un choix à faire plus tard,
-pas un oubli :
+Le process s'arrête au go-live. Métiers encore sans bot (choix à faire plus tard, pas un oubli) :
 
 - **La vigie publicitaire.** Relevé quotidien Google Ads et Merchant Center, calcul jour vert / jour
   rouge, proposition de palier ±20-30 %. Aujourd'hui à la main.
   Matière déjà écrite : `.claude/skills/shopping-scaling/SKILL.md` (les 4 phases, la règle des 2
   jours verts / 2 jours rouges, la grille d'AOV) et le skill global `performance-analyzer`.
-- **La QA de boutique après déploiement.** Constater à l'écran, en navigation privée et sur mobile,
-  que ce qui est déclaré fait est réellement en ligne. C'est ce qui a manqué sur le ticket Tuftéo
-  resté FAIT du 30/07 au 16/08.
-  Matière déjà écrite : la checklist go-live de `boutique-pipeline/PLAYBOOK.md` phase 6, et les
-  trois règles de `.claude/agents/executant-boutique.md`.
+- **La QA de boutique après déploiement (côté admin).** L'AUDIT PUBLIC (Bot 8) couvre déjà la face
+  publique sans login. Ce qui reste hors flotte : constats qui exigent l'admin Shopify (thème non
+  publié, drafts, settings). Matière : checklist go-live `PLAYBOOK.md` phase 6, et
+  `.claude/agents/executant-boutique.md`.
 - **Le SAV.** Brouillons de réponse contextualisés depuis les commandes Shopify, et comptage par
   motif — c'est ce comptage qui révèle les problèmes de fiche produit.
   Matière déjà écrite : skill global `~/.claude/skills/customer-service-bot/`.
 
-Les trois touchent des comptes de boutique : ils relèvent de la vague 3 et de la règle « un par
-boutique ».
+Vigie et SAV touchent des comptes de boutique : vague 3 / compte xAI distinct, ou Claude Code.
 
 Trois autres métiers ont des skills mais pas de place naturelle dans ce découpage — à décider plus
 tard : le contenu SEO du blog (`~/.claude/skills/seo-content-pipeline/`), l'e-mail marketing
