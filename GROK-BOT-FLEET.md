@@ -1,19 +1,22 @@
-# Flotte Grok Bot — le process OH Ventures découpé en 7 bots
+# Flotte Grok Bot — le process OH Ventures découpé en bots
 
 **Rédigé le 16/08/2026, découpage arrêté par Hakim.** SuperGrok Heavy donne accès à la bêta Grok Bot
-(lancée le 11/08/2026).
+(lancée le 11/08/2026). **Instructions prêtes à coller : `GROK-BOT-INSTRUCTIONS-A-COLLER.md`
+(17/08/2026)** — ORCHESTRATEUR + Vague 1–2 + AUDIT PUBLIC, avec garde-fous inclus.
 
-Sept bots, un par métier du process :
+Un orchestrateur + sept métiers + un huitième prioritaire (AUDIT PUBLIC) :
 
-| # | Bot | Métier |
-|---|---|---|
-| 1 | **RECHERCHE PRODUIT** | trouver une idée et la mener jusqu'à un verdict marché |
-| 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google |
-| 3 | **SOURCING** | trouver et documenter le fournisseur AliExpress |
-| 4 | **CONCURRENCE** | cartographier qui occupe le marché, et où sont les places libres |
-| 5 | **PERSONAS** | établir qui achète, avec des preuves, jamais des suppositions |
-| 6 | **DESIGN SHOPIFY** | direction artistique et montage des pages |
-| 7 | **CONFORMITÉ GMC** | l'approbation Merchant Center et sa conservation |
+| # | Bot | Métier | Sur ce compte xAI ? |
+|---|---|---|---|
+| 0 | **ORCHESTRATEUR** | vision du process, route les spécialistes, contrôle les livrables, porte les décisions à Hakim | oui — **point d'entrée** |
+| 1 | **RECHERCHE PRODUIT** | trouver une idée et la mener jusqu'à un verdict marché | éteint (recherche en pause) |
+| 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google | oui — Vague 1 |
+| 3 | **SOURCING** | trouver et documenter le fournisseur AliExpress | oui — Vague 1 |
+| 4 | **CONCURRENCE** | cartographier qui occupe le marché, et où sont les places libres | oui — Vague 2 |
+| 5 | **PERSONAS** | établir qui achète, avec des preuves, jamais des suppositions | oui — Vague 2 |
+| 6 | **DESIGN SHOPIFY** | direction artistique et montage des pages | non — machine partagée |
+| 7 | **CONFORMITÉ GMC** | l'approbation Merchant Center et sa conservation | non — machine partagée |
+| 8 | **AUDIT PUBLIC** | contrôler le site en visiteur anonyme (faux avis, policies, footer) | oui — Vague 1, prioritaire |
 
 Ce document dit **qui exécute quoi**. Les règles de fond restent dans `METHODE-ANALYSE-MARCHE.md`,
 `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`, `boutique-pipeline/PLAYBOOK.md`,
@@ -88,6 +91,11 @@ concerné.** Rien ne se propage tout seul.
 ## 1. La chaîne : où chaque bot se branche
 
 ```
+                    ┌──────────────────┐
+   Hakim ──────────▶│ 0. ORCHESTRATEUR │── brief ──▶ spécialiste
+                    └────────┬─────────┘◀─ dépôt ──┘
+                             │ portes / synthèse
+                             ▼
    IDÉE
      │
      ▼
@@ -119,13 +127,22 @@ concerné.** Rien ne se propage tout seul.
      ▼
 ┌─────────────────────┐
 │ 6. DESIGN SHOPIFY   │   PORTE HAKIM sur la DA, puis montage sur thème non publié
+└─────────────────────┘   (Claude Code sur ce compte xAI)
+     │
+     ▼
+┌─────────────────────┐
+│ 7. CONFORMITÉ GMC   │   audit avant soumission, puis mensuel (Claude Code)
 └─────────────────────┘
      │
      ▼
 ┌─────────────────────┐
-│ 7. CONFORMITÉ GMC   │   audit avant soumission, puis mensuel
+│ 8. AUDIT PUBLIC     │   face publique, sans login — aussi en parallèle / crible sœurs
 └─────────────────────┘
 ```
+
+**L'ORCHESTRATEUR est le seul point d'entrée.** Hakim lui parle ; il rédige le brief du
+spécialiste, contrôle le dépôt, et ne franchit aucune porte. Instruction : Bot 0 dans
+`GROK-BOT-INSTRUCTIONS-A-COLLER.md`.
 
 **Le bot MOTS-CLÉS sert deux fois**, et c'est voulu : une passe courte dans le pipeline produit (la
 mesure express, qui tue une idée en cinq minutes), et une passe longue sur la boutique retenue
@@ -242,7 +259,20 @@ A = page source ouverte et lue · B = liste/JSON/agrégat · C = titre ou libell
 
 ---
 
-## 4. Les sept bots
+## 4. Les bots
+
+---
+
+### Bot 0 — ORCHESTRATEUR
+
+**Mission.** Point d'entrée unique. Vision du process, aiguillage vers le bon spécialiste, contrôle
+qualité des dépôts, portage des portes Hakim. **Il n'exécute jamais le métier d'un spécialiste.**
+
+**Où il se branche.** Avant tout le reste. Hakim lui parle ; il rend un brief collable + une
+synthèse d'état.
+
+**Instruction à coller :** Bot 0 dans `GROK-BOT-INSTRUCTIONS-A-COLLER.md` (bloc complet, garde-fous
+inclus).
 
 ---
 
