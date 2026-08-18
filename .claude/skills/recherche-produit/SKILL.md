@@ -1,6 +1,6 @@
 ---
 name: recherche-produit
-description: Orchestrateur du pipeline de recherche produit en 5 phases (idéation → filtre → demande SEMrush → sourcing AliExpress → marge). Utiliser quand Hakim demande une recherche produit, une nouvelle niche, ou lance /recherche-produit. Enchaîne les sous-agents phase1-ideation à phase5-marge avec arrêt automatique sur échec ou cas limite.
+description: Orchestrateur Claude Code du pipeline en 5 sous-agents (phase1-ideation → phase5-marge). Utiliser uniquement quand Hakim lance /recherche-produit ou demande explicitement la chaîne 5 phases / les sous-agents. Ne pas utiliser pour instruire un dossier TrendTrack, une idée isolée ou le métier RECHERCHE PRODUIT — ça c'est le skill recherche-produit-dossier.
 ---
 
 # Orchestrateur — Recherche produit en 5 phases

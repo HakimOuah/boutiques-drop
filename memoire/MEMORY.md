@@ -1,9 +1,10 @@
 # Index mémoire — Boutiques drop
 
-- [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit + 5 sous-agents, registre central, anciens skills archivés
+- [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit = chaîne 5 phases ; dossier TrendTrack = skill recherche-produit-dossier
+- [Recherche produit — instruire un dossier](recherche-produit-dossier.md) — TrendTrack 5 modules, mesure MOTS-CLÉS, jamais de GO (18/08/2026)
 - [Boucle chasse clusters volume-first](boucle-chasse-clusters-volume-first.md) — /chasse-clusters mesure le volume avant d'idéer, objectif 20 candidats en autonomie
 - [Explicable-particulier, pas technique-pro](explicable-particulier-pas-technique-pro.md) — le levier est la pédagogie au particulier ; persona métier = signal d'exclusion
-- [Brand Search source d'idées](brand-search-source-idees.md) — minage MCP de boutiques prouvées Google Ads FR, recette de filtres + limites MCP
+- [Brand Search source d'idées](brand-search-source-idees.md) — méthode valide (filtres FR / 0 Meta), plus la source unique depuis le 18/08 (TrendTrack = principale 1)
 - [Notion pipeline boutiques](notion-pipeline-boutiques.md) — hub OH VENTURES : bases Recherches produit + Boutiques + modèle, Notion = dashboard, fichiers locaux = source de vérité
 - [Campement type lancement boutique](campement-type-lancement-boutique.md) — Kanban Notion 18 tickets-briefs d'agents, à dupliquer à chaque « lance une boutique sur X »
 - [Persona obligatoire avant copywriting](persona-obligatoire-copywriting.md) — étape bloquante (PLAYBOOK 1d + Phase 4), template + exemple tufting
