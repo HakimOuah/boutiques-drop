@@ -72,7 +72,7 @@ prend des semaines. D'où « soumettre tôt ».
 > - La décision d'identité de la question n° 0 ci-dessous ne se prend plus « avant de créer le
 >   GMC » — elle se prend **sur un compte en production**.
 >
-> Le raisonnement reste valable pour Maison Noirmont, dont le compte, lui, n'existe pas.
+> **18/08/2026 ~19h50 — Maison Noirmont a le même montage.** Hakim a posé Workspace + l'app Google & YouTube, sans campagne. Le storefront reste gelé ; le flux se laisse vivre. Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-18-gmc-app.md`.
 >
 > **18/08/2026 — Bonum Vitae est dans le même cas que Tuftéo.** L'app Google & YouTube a créé le GMC, le flux a été soumis, les produits ont d'abord été limités puis validés, et ils tiennent depuis des semaines. Décision Hakim : **on laisse vivre**, on ne recrée pas. Chemin pour un nouveau lien : Google Workspace (adresse pro) → app Google & YouTube → Ads + GMC, **sans lancer d'ads**. Mémoire : `memoire/app-google-youtube-flux-vivant.md`.
 

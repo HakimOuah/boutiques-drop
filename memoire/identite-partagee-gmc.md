@@ -14,7 +14,9 @@ Précédent à connaître : le compte GMC **5806019978** a été suspendu le 15/
 
 **Décision de Hakim (16/08/2026) : on assume le linkage.** Une seule adresse, un seul numéro, risque de cascade assumé. En contrepartie, soumission **séquentielle** : Tuftéo seul → 30 jours d'observation après approbation → Noirmont seulement ensuite.
 
-**Décision de Hakim (17/08/2026 ~15h25) : le storefront Noirmont dort.** Pas de GMC, pas d'écriture live, pas d'activation des 20 brouillons, jusqu'après les 30 jours Tuftéo. Travail encore possible hors vitrine (brouillons T-07, docs, Tuftéo). Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-17-gel-storefront.md`.
+**Décision de Hakim (17/08/2026 ~15h25) : le storefront Noirmont dort.** Pas d'écriture live, pas d'activation des 20 brouillons. Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-17-gel-storefront.md`.
+
+**Décision de Hakim (18/08/2026 ~19h50) : GMC Noirmont via l'app Google & YouTube**, Workspace posé, **pas d'ads**. Le storefront reste gelé ; le flux se laisse vivre. Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-18-gmc-app.md`.
 
 **Décision de Hakim (18/08/2026) : un flux déjà soumis se laisse vivre.** Tuftéo **et** Bonum Vitae ont un Merchant Center créé par l'app Shopify **Google & YouTube**, sans campagne. Produits d'abord limités, puis validés, stables depuis des semaines. On ne recrée pas, on ne resoumet pas. Chemin pour un nouveau lien : Workspace (adresse pro) → app Google & YouTube → Ads + GMC liés, **zéro ad**. Détail : [[app-google-youtube-flux-vivant]].
 
