@@ -10,7 +10,7 @@ metadata:
 
 Le 16/08/2026, Hakim a demandé de découper son process en bots Grok (bêta Grok Bot lancée le 11/08/2026, incluse dans son abonnement SuperGrok Heavy). **Le découpage est le sien, arrêté après une première proposition par outils que j'avais faite et qu'il a écartée : il veut un bot par métier du process, pas par famille d'outils.** Les 7 bots, avec leurs instructions prêtes à coller, vivent dans `GROK-BOT-FLEET.md` à la racine du hub : RECHERCHE PRODUIT · MOTS-CLÉS · SOURCING · CONCURRENCE · PERSONAS · DESIGN SHOPIFY · CONFORMITÉ GMC.
 
-**18/08/2026 :** l'instruction du bot RECHERCHE PRODUIT a été réécrite — TrendTrack 5 modules = source principale 1. Skill miroir Cursor : `recherche-produit-dossier`. Voir [[recherche-produit-dossier]].
+**18/08/2026 :** bot RECHERCHE PRODUIT réécrit (TrendTrack). Skills Cursor séparés le soir même : `ideation-produit` · `recherche-mots-cles` · `sourcing-aliexpress`. Voir [[skills-recherche-separes]].
 
 Les trois décisions structurantes, à ne pas re-débattre :
 

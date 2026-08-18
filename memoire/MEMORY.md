@@ -1,7 +1,8 @@
 # Index mémoire — Boutiques drop
 
-- [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit = chaîne 5 phases ; dossier TrendTrack = skill recherche-produit-dossier
-- [Recherche produit — instruire un dossier](recherche-produit-dossier.md) — TrendTrack 5 modules, mesure MOTS-CLÉS, jamais de GO (18/08/2026)
+- [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit = chaîne 5 phases ; Cursor = 3 skills étanches
+- [Skills recherche séparés](skills-recherche-separes.md) — ideation-produit · recherche-mots-cles · sourcing-aliexpress (18/08 soir)
+- [Recherche produit — instruire un dossier](recherche-produit-dossier.md) — OBSOLÈTE, pointe vers les 3 skills
 - [Boucle chasse clusters volume-first](boucle-chasse-clusters-volume-first.md) — /chasse-clusters mesure le volume avant d'idéer, objectif 20 candidats en autonomie
 - [Explicable-particulier, pas technique-pro](explicable-particulier-pas-technique-pro.md) — le levier est la pédagogie au particulier ; persona métier = signal d'exclusion
 - [Brand Search source d'idées](brand-search-source-idees.md) — méthode valide (filtres FR / 0 Meta), plus la source unique depuis le 18/08 (TrendTrack = principale 1)

@@ -1,6 +1,6 @@
 ---
 name: recherche-produit
-description: Orchestrateur Claude Code du pipeline en 5 sous-agents (phase1-ideation → phase5-marge). Utiliser uniquement quand Hakim lance /recherche-produit ou demande explicitement la chaîne 5 phases / les sous-agents. Ne pas utiliser pour instruire un dossier TrendTrack, une idée isolée ou le métier RECHERCHE PRODUIT — ça c'est le skill recherche-produit-dossier.
+description: Orchestrateur Claude Code du pipeline en 5 sous-agents (phase1-ideation → phase5-marge). Utiliser uniquement quand Hakim lance /recherche-produit ou demande explicitement la chaîne 5 phases. Pour une idée TrendTrack : skill ideation-produit. Pour un volume SEMrush : recherche-mots-cles. Pour AliExpress : sourcing-aliexpress.
 ---
 
 # Orchestrateur — Recherche produit en 5 phases

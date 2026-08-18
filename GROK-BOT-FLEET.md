@@ -40,7 +40,9 @@ concerné.** Rien ne se propage tout seul.
 | Critères canoniques de recherche produit | `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` | RECHERCHE PRODUIT |
 | Playbook de création de boutique, 6 phases et 3 portes | `boutique-pipeline/PLAYBOOK.md` | PERSONAS, DESIGN |
 | Playbook de recherche produit détaillé | `boutique-pipeline/PRODUCT-RESEARCH-PLAYBOOK.md` | RECHERCHE PRODUIT |
-| Skill instruire un dossier (TrendTrack 5 modules) | `.claude/skills/recherche-produit-dossier/SKILL.md` | RECHERCHE PRODUIT |
+| Skill idéation (TrendTrack 5 modules) | `.claude/skills/ideation-produit/SKILL.md` | RECHERCHE PRODUIT |
+| Skill mots-clés (SEMrush, SERP, sonde prix) | `.claude/skills/recherche-mots-cles/SKILL.md` | MOTS-CLÉS |
+| Skill sourcing AliExpress | `.claude/skills/sourcing-aliexpress/SKILL.md` | SOURCING |
 | Convention des tableaux de boutique et format de ticket | `boutique-pipeline/METHODE-TABLEAU.md` | tous (dépôts) |
 | Template de persona | `boutique-pipeline/templates/persona.template.md` | PERSONAS |
 | Checklist GMC du pipeline | `boutique-pipeline/reference/gmc-checklist.md` | CONFORMITÉ GMC |
@@ -69,7 +71,9 @@ concerné.** Rien ne se propage tout seul.
 | `gmc-acceptance/references/templates-policies.md` | règles d'usage des 6 policies | CONFORMITÉ GMC |
 | `gmc-acceptance/references/templates-fr/` | les 6 policies FR prêtes à adapter | CONFORMITÉ GMC |
 | `webdesign-boutiques/SKILL.md` | DA maison, workflow ui-ux-pro-max, base Horizon | DESIGN |
-| `recherche-produit-dossier/SKILL.md` | instruire un dossier, TrendTrack 5 modules, sans GO | RECHERCHE PRODUIT |
+| `ideation-produit/SKILL.md` | TrendTrack 5 modules, idées, sans volume ni AliExpress | RECHERCHE PRODUIT |
+| `recherche-mots-cles/SKILL.md` | SEMrush France, SERP, sonde prix, sans GO | MOTS-CLÉS |
+| `sourcing-aliexpress/SKILL.md` | fiches AliExpress après GO marché | SOURCING |
 | `shopping-scaling/SKILL.md` | scaling PMAX profit-first | hors flotte (voir §7) |
 
 ### Skills globaux — `~/.claude/skills/`
@@ -268,8 +272,7 @@ AliExpress : le sourcing n'est pas ce métier.
 isoler 3 shops / ads → relever l'intention et le pivot FR → passer la liste à MOTS-CLÉS → reprendre
 la mesure et appliquer le filtre qualitatif.
 
-**Réf.** skill projet `.claude/skills/recherche-produit-dossier/SKILL.md` (composition à jour,
-18/08/2026) · `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` ·
+**Réf.** skill projet `.claude/skills/ideation-produit/SKILL.md` (idéation TrendTrack, 18/08/2026) · `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` ·
 `boutique-pipeline/PRODUCT-RESEARCH-PLAYBOOK.md` · `.claude/agents/mineur-brandsearch.md` ·
 skills globaux `pricing` et `offers`.
 
@@ -472,9 +475,7 @@ relever les 100 lignes → refaire la même requête sans accent → puis google
 deux têtes de famille → lire la ligne de rabattement → compter les marketplaces → ouvrir les
 recherches associées.
 
-**Réf.** `METHODE-ANALYSE-MARCHE.md` — étapes 1 à 5, le catalogue des 8 pièges, les 3 contrôles de
-complément et l'étape 9 sur le prix. Tout est recopié ci-dessous, mais la source fait foi quand elle
-évolue. Dossiers de référence : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-13-recherche-mots-cles.md`,
+**Réf.** skill projet `.claude/skills/recherche-mots-cles/SKILL.md` · `METHODE-ANALYSE-MARCHE.md` — étapes 1 à 5, le catalogue des 8 pièges, les 3 contrôles de complément et l'étape 9 sur le prix. La source `METHODE-ANALYSE-MARCHE.md` fait foi quand elle évolue. Dossiers de référence : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-13-recherche-mots-cles.md`,
 `.../2026-08-14-volumes-consolides.md`, `.../2026-08-14-verification-serp.md`.
 
 **Instruction à coller :**
@@ -708,7 +709,7 @@ tout premier. Si les PDP ne chargent pas non plus, le bot revient au plafond B+ 
 Mac : le bot ne peut pas la lancer. Il travaille au navigateur. Les recettes ci-dessous sont
 l'équivalent navigateur des règles de la passerelle.
 
-**Réf.** `.claude/agents/executant-boutique.md` — section « Recette AliExpress » : c'est la source
+**Réf.** skill projet `.claude/skills/sourcing-aliexpress/SKILL.md` · `.claude/agents/executant-boutique.md` — section « Recette AliExpress » : c'est la source
 des règles ci-dessous, y compris les limites de la passerelle (`--limit` plafonné à 20, tri `latest`
 qui rend toujours 0, `offer_sale_price` dans `variants`/`exact`, format des `--property`) utiles à
 Claude Code quand il reprend le relais. Aussi `.claude/agents/phase4-sourcing.md` et
