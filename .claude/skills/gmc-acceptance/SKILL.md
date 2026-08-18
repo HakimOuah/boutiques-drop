@@ -33,6 +33,12 @@ Tu aides Hakim (OH Ventures, boutiques Shopify dropshipping France) à obtenir e
 
 Pages policies dupliquées · numéro VoIP (préférer SIM physique, joignable en vocal, identique partout : vérif Gmail, GMC, footer) · réseaux sociaux faux ou tout neufs liés trop tôt · Trustpilot < 3,0 (gate dur — pas de Trustpilot vaut mieux qu'un mauvais) · claims santé/résultats · reviews demandées à répétition · texte incrusté ou collages sur les images produit · collections de moins de 5 produits · 404 non redirigées.
 
+## Adaptation maison (Hakim, 18/08/2026) — flux déjà vivant
+
+Terry dit « ne jamais créer le GMC avant que la boutique soit complète » et de connecter le feed via Simprosys. **Le parc ne fait pas ça.** Le GMC naît de l'application Shopify **Google & YouTube**, liée à Ads **sans lancer de campagne**. Tuftéo et Bonum Vitae : flux soumis → produits d'abord **limités** → puis **validés**, stables depuis des semaines.
+
+**Si un flux est déjà validé : on le laisse vivre.** Pas de nouveau compte, pas de resoumission « propre », pas de coupure du lien. L'objectif devient protéger l'actif (éviter un changement brutal de thème / e-mail / policies / catalogue). Workspace (adresse pro) **avant** de lier un nouveau compte. Détail en mémoire `app-google-youtube-flux-vivant.md`.
+
 ## Adaptation France (contexte Hakim)
 
 Les playbooks sont écrits pour le marché US. Pour les boutiques FR :

@@ -73,6 +73,8 @@ prend des semaines. D'où « soumettre tôt ».
 >   GMC » — elle se prend **sur un compte en production**.
 >
 > Le raisonnement reste valable pour Maison Noirmont, dont le compte, lui, n'existe pas.
+>
+> **18/08/2026 — Bonum Vitae est dans le même cas que Tuftéo.** L'app Google & YouTube a créé le GMC, le flux a été soumis, les produits ont d'abord été limités puis validés, et ils tiennent depuis des semaines. Décision Hakim : **on laisse vivre**, on ne recrée pas. Chemin pour un nouveau lien : Google Workspace (adresse pro) → app Google & YouTube → Ads + GMC, **sans lancer d'ads**. Mémoire : `memoire/app-google-youtube-flux-vivant.md`.
 
 **Ce que ça implique pour quelqu'un qui arrive.** Si on te demande une recherche produit dans les
 semaines qui viennent, la bonne réponse est probablement de demander d'abord si les boutiques sont
