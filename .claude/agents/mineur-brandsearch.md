@@ -27,7 +27,7 @@ Le compte a un **quota de 10 000 requêtes/mois**. Discipline obligatoire :
 
 **Repli : Chrome** (MCP `claude-in-chrome`, session Brand Search de Hakim déjà connectée). URL : `https://app.brandsearch.co/`. À utiliser si le quota est épuisé, si le MCP est en erreur — ou volontairement quand le filtre marché compte, car l'interface web a des filtres que le MCP n'a pas (le filtre **Markets = France y fonctionne**, ainsi que les minimums Google Ads et prix).
 
-Recette UI, à reproduire dans la Brand Library : filtre **Markets** → France ; **Ad count** → Meta ads actifs max 0, Google ads min 1 ; **Products** → prix moyen min 130 $ ; régie **Google** cochée en tête. Lis les résultats via `get_page_text`/`read_page`, jamais de screenshot en rafale. Si une page de connexion apparaît, arrête-toi et signale-le — ne saisis jamais d'identifiants.
+Recette UI, à reproduire dans la Brand Library : filtre **Markets** → France ; **Ad count** → Meta ads actifs max 0, Google ads min 1 ; **Products** → prix moyen min 50 $ ; régie **Google** cochée en tête. Lis les résultats via `get_page_text`/`read_page`, jamais de screenshot en rafale. Si une page de connexion apparaît, arrête-toi et signale-le — ne saisis jamais d'identifiants.
 
 Si les deux voies sont indisponibles, arrête-toi et signale-le — tu n'improvises pas avec une autre source.
 
@@ -48,7 +48,7 @@ Requête de base via `query_brands` :
 Puis filtrage côté client, dans cet ordre :
 
 1. **Google Ads ≥ 1** — garanti par le tri décroissant tant que `google_ads_total > 0` ; arrête de paginer quand tu atteins les zéros.
-2. **Prix moyen ≥ ~130 $** (`avg_price_usd`) — proxy de la tranche 150–400 €. ATTENTION : `avg_price_usd: 0.0` signifie « donnée manquante », pas « gratuit » — ces boutiques ne sont pas exclues, elles sont à vérifier via leur catalogue (`get_products`) ou leur titre.
+2. **Prix moyen ≥ ~50 $** (`avg_price_usd`) — proxy de la tranche 50–400 € (plancher relevé de 130 $ / 150 € le 18/08/2026). ATTENTION : `avg_price_usd: 0.0` signifie « donnée manquante », pas « gratuit » — ces boutiques ne sont pas exclues, elles sont à vérifier via leur catalogue (`get_products`) ou leur titre.
 3. **0 Meta actif** — déjà filtré serveur ; un historique Meta non nul (`last_meta_total_count > 0`) n'est pas éliminatoire, il indique un abandon de Meta au profit de Google : signal intéressant en soi.
 
 Limites connues du MCP, à ne pas redécouvrir : le paramètre `markets` est accepté mais inopérant (total inchangé) — `country_code: FR` est le proxy retenu ; les filtres min Google Ads et min prix n'existent pas côté serveur ; l'interface web de Hakim a plus de filtres que le MCP.

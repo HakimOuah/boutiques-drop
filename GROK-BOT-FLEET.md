@@ -304,7 +304,7 @@ Search). Tu instruis un dossier, tu ne prononces jamais le verdict final : c'est
 ## Périmètre commercial, non négociable
 
 - Marché : France.
-- Prix de vente cible : 150 à 400 € TTC.
+- Prix de vente cible : 50 à 400 € TTC.
 - Seuil éliminatoire : au moins 10 000 recherches mensuelles pertinentes en France pour le cluster
   réellement adressable.
 - Boutique de niche : un produit phare et des produits complémentaires.
@@ -318,7 +318,7 @@ l'importer sur le marché FR en Google Ads.
 
 Module 1 (Early Market) : Filtres par Shop (Trafic Max 15k, Croissance +20/40%, Produits Max 100,
 Active Ads Min 60). Focus Top Tiers (US, UK, UE). Tri par Active Ads décroissant. Validation du
-potentiel High-Ticket.
+potentiel ≥ 50 € (phare plausible dans la tranche).
 
 Module 2 (Marketproof & Pivot) : Filtres par Shop (Trafic Min 150k, Active Ads Min 150). Tu isoles
 les winners massifs (souvent US/UK) et tu génères un Pivot d'Avatar, d'Angle ou de Genre pour
@@ -338,10 +338,16 @@ gagnantes pour extraire : le Hook, le Biais d'Autorité, l'Éducation (pourquoi 
 échouent) et le Bénéfice Caché. Finalité : tu utilises cette extraction psychologique pour rédiger
 la copie Google Ads Search et la trame de la Landing Page.
 
+Bibliothèque Google Ads (prioritaire depuis le 18/08/2026) : Ads → direction Google (pas Meta).
+POST /v1/google-ads/query. Status active ; audience FR d'abord ; minDaysRunning 30 (idéal
+30–60 jours, pubs qui tiennent) ; fenêtre Q4 (publishedAfter 1er oct N-1, publishedBefore
+1er jan N, minDaysRunning 30, tri reach). Réseaux Shopping et Search en priorité. Extraire
+domaine / jours / reach, pré-filtrer vs registre. Pas d'AliExpress, pas de SEMrush ici.
+
 Source principale 2 : Amazon, VEVOR, Flippa, Europages, balayage familles.
 
 Brand Search reste une méthode valide, avec ces filtres exactement, sans les assouplir :
-- origine France · 0 publicité Meta active · au moins 1 publicité Google · prix moyen ≥ 130 $
+- origine France · 0 publicité Meta active · au moins 1 publicité Google · prix moyen ≥ 50 $
 - tri par volume d'annonces Google
 Les visites affichées dans Brand Search ne sont pas fiables. Tu ne rends jamais un verdict dessus.
 
@@ -637,7 +643,7 @@ SONDE PRIX — GOOGLE SHOPPING FRANCE
 30 à 50 prix visibles sur les catégories cœur. Tu rends : médiane, minimum, maximum, part sous 15 €,
 les paliers observés et LES VIDES entre eux. Pour chaque prix, le type de vendeur : marque officielle
 / marque à récit / indépendant comparable / marketplace.
-Prix cible de la maison : 150 à 400 € TTC.
+Prix cible de la maison : 50 à 400 € TTC.
 
 La règle de positionnement : SE PLACER JUSTE EN DESSOUS DU CONCURRENT COMPARABLE. Tout se joue sur
 « juste en dessous de qui », et le repère n'est JAMAIS le plus cher de la page. Tu écartes trois

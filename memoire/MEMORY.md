@@ -2,6 +2,7 @@
 
 - [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit = chaîne 5 phases ; Cursor = 3 skills étanches
 - [Skills recherche séparés](skills-recherche-separes.md) — ideation-produit · recherche-mots-cles · sourcing-aliexpress (18/08 soir)
+- [Plancher 50 € + Google Ads TrendTrack](plancher-prix-50e-google-ads-tt.md) — plus de high-ticket obligatoire ; RoboLaVite exclu ; recette Ads Google 30–60 j / Q4 (18/08 soir)
 - [Recherche produit — instruire un dossier](recherche-produit-dossier.md) — OBSOLÈTE, pointe vers les 3 skills
 - [Boucle chasse clusters volume-first](boucle-chasse-clusters-volume-first.md) — /chasse-clusters mesure le volume avant d'idéer, objectif 20 candidats en autonomie
 - [Explicable-particulier, pas technique-pro](explicable-particulier-pas-technique-pro.md) — le levier est la pédagogie au particulier ; persona métier = signal d'exclusion

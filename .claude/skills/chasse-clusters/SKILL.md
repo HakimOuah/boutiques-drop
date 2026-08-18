@@ -48,7 +48,7 @@ C'est le premier point d'économie de la boucle, et c'est aussi ce qui rend le f
 
 Un vivier **n'est pas un rejet** : c'est un marché à volume réel dont le ticket est incompatible avec le périmètre actuel, mis de côté pour une éventuelle boutique mêlant low et high ticket. Il ne compte pas dans les 20 et ne compte pas non plus comme candidat pour la règle des trois familles stériles — une famille qui ne produit que des viviers reste une famille sans candidat.
 
-**b. Filtre qualitatif** — lance `phase2-filtre` avec le cluster, son volume, et la fourchette de prix rendue par la sonde. Il identifie les produits qui servent ce cluster et applique banalité, valeur perçue, différenciation et tranche 150–400 €. Shortlist vide = cluster abandonné, on passe au suivant.
+**b. Filtre qualitatif** — lance `phase2-filtre` avec le cluster, son volume, et la fourchette de prix rendue par la sonde. Il identifie les produits qui servent ce cluster et applique banalité, valeur perçue, différenciation et tranche 50–400 €. Shortlist vide = cluster abandonné, on passe au suivant.
 
 Le brief transmis à `phase2-filtre` doit contenir, à chaque fois :
 

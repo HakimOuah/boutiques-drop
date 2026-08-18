@@ -70,7 +70,7 @@ Précautions à écrire : carrousel Shopping ≠ annonces Search texte · page 1
 
 30–50 prix visibles, catégories cœur. Médiane, min, max, part sous 15 €, paliers **et vides**, type de vendeur : marque officielle / marque à récit / indépendant comparable / marketplace.
 
-Cible maison : 150–400 € TTC.
+Cible maison : 50–400 € TTC.
 
 Positionnement : **juste sous le concurrent comparable**, jamais sous le plus cher. Écarter marques officielles, marques à récit, bas de gamme marketplace. Un vide de marché n’est pas une place à prendre (squelette : 429 € dans le trou 300–440 ; comparable 285–295 → 279 €).
 

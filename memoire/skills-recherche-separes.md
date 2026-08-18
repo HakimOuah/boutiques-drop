@@ -10,7 +10,7 @@ metadata:
 
 Le 18/08/2026 au soir, Hakim a demandé de **séparer** le skill mixte `recherche-produit-dossier` (créé le matin) en trois métiers, calqués sur la flotte Grok :
 
-1. **`ideation-produit`** — TrendTrack 5 modules + Brand Search + Amazon/VEVOR/Flippa/Europages. Pré-filtre d'amont. Aucun volume, aucun AliExpress, aucun GO.
+1. **`ideation-produit`** — TrendTrack 5 modules **+ bibliothèque Google Ads** (30–60 j, fenêtre Q4) + Brand Search + Amazon/VEVOR/Flippa/Europages. Pré-filtre d'amont. Aucun volume, aucun AliExpress, aucun GO. Plancher de vente **50–400 €** depuis le 18/08.
 2. **`recherche-mots-cles`** — SEMrush France, contrôles, SERP page 1, sonde Shopping. Mission A (idée) ou B (catalogue). Ne consolide pas, ne tranche pas le seuil 10 000.
 3. **`sourcing-aliexpress`** — après GO marché écrit seulement. PDP `/item/`, coût rendu, confiance A/B/C. Pas de GO fournisseur.
 

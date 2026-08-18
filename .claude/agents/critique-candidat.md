@@ -29,7 +29,7 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 2 — Concurrence
 
-- Le prix marché constaté permet-il de défendre une offre entre 150 et 400 € ?
+- Le prix marché constaté permet-il de défendre une offre entre 50 et 400 € ?
 - Le comptage sépare-t-il bien concurrents institutionnels et dropshippers ?
 - Le marché est-il dominé par des enseignes généralistes au sens du §4 des critères ? Si oui, échec.
 - Existe-t-il une différenciation défendable, ou l'offre est-elle immédiatement comparable sur le prix ?
