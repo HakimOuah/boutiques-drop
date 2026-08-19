@@ -1,17 +1,15 @@
 ---
 name: brand-search-source-idees
-description: "Brand Search (MCP) est la source d'idées principale du pipeline — boutiques prouvées en Google Ads France, recette de filtres de Hakim, limites MCP connues"
-metadata: 
+description: "OBSOLÈTE le 19/08/2026 — Brand Search remplacé par TrendTrack. Conservé pour l'historique des vagues 20/07–18/08."
+metadata:
   node_type: memory
   type: project
   originSessionId: 8b58a5e6-1f07-441c-8e13-70a48e990b63
-  modified: 2026-07-20T16:39:31.521Z
+  modified: 2026-08-19T11:30:00.000Z
 ---
 
-Depuis le 20 juillet 2026, l'idéation du pipeline de recherche produit partait du **minage Brand Search** (outil connecté en MCP, serveur `909b5b93-…`), via l'agent `mineur-brandsearch` appelé par `/qualifie-idees`. **Depuis le 18/08/2026, Brand Search n'est plus la source unique** : source principale 1 = TrendTrack (5 modules, skill `ideation-produit`) ; source principale 2 = Amazon, VEVOR, Flippa, Europages, balayage familles. Mesure = `recherche-mots-cles`. Sourcing = `sourcing-aliexpress`. Brand Search reste une **méthode valide** (boutique preuve FR, 0 Meta, ≥ 1 Google, ≥ 50 $ depuis le 18/08). Les 40 familles de `familles-exploration.md` restent une voie de couverture, pas la voie par défaut.
+**OBSOLÈTE comme source courante depuis le 19/08/2026.** Hakim : TrendTrack fait le même travail (boutiques / pubs qui vivent en Google Ads). Recette actuelle : skill `ideation-produit` (modes PRODUIT PUR / UNIVERS) et agent `mineur-brandsearch` (mineur TrendTrack, identifiant conservé). Voir [[deux-modes-produit-univers-trendtrack]].
 
-Recette de filtres de Hakim : boutiques **origine France** (`country_code: FR`), **0 pub Meta active** (`meta_active_max: 0`), **≥ 1 pub Google** (via tri `google_ads_total` décroissant), **prix moyen ≥ ~50 $** (filtré côté client ; était 130 $ jusqu'au 18/08). Chaque idée extraite est adossée à une boutique preuve (domaine, trafic, annonces Google, prix moyen). L'exploration s'élargit ensuite par les sous-groupes SEMrush et par associations latérales (marquées `latérale`, chaîne complète obligatoire).
+Ci-dessous : historique. Les rapports `minage-brandsearch-*` restent de l'anti-doublon. Les visites Brand Search n'ont jamais fondé un verdict ([[trafic-similarweb-x3]]).
 
-**Why:** Une boutique qui vit en 100 % Google Ads France dans la tranche de prix répond AVANT la phase 3 à la question « une boutique spécialisée peut-elle exister sur ce marché en Search ? » — c'est la source d'idées la plus qualifiée : marché prouvé monétisable + prix constaté + catalogue à lire. Bilan vague 1 (20/07/2026, soirée) : 20 idées minées pour 11 requêtes → **1 RETENU (surpresseur domestique, candidat n°2 du registre, confiance B, fiche Allemagne 161,39 € vs marché 208-450 €)**, 3 À APPROFONDIR (papier peint panoramique 40 500 mais standard sur-mesure déjà en place ; pompe immergée = extension de gamme derrière le surpresseur ; Seiko mod 17,6-20 k mais marques déposées + 20 spécialistes FR), 4 rejets phase 2 (dont béton ciré : promesse structurelle non prouvable en générique — la preuve maison-etanche était le DTC du fabricant Arcane). Leçon de la vague : **vérifier la boutique preuve au Transparency Center région France** — wondermural (preuve papier peint) n'avait que 30 ads en DE/IT, preuve invalidée pour la France ; pompeaeau (≈ 600 ads FR) et chrono-mod (~200 ads FR) confirmées.
-
-**How to apply:** Quota : **10 000 requêtes/mois** (vérifier via `get_usage` en début de session ; ~10 requêtes = un scan de test, budget ≤ 100/session ; restant < 200 → repli navigateur). Repli Chrome sur `https://app.brandsearch.co/` (session Hakim connectée) — l'UI web a des filtres absents du MCP, dont Markets=France qui y fonctionne. Limites MCP à ne pas redécouvrir : le paramètre `markets` est accepté mais **inopérant** (total inchangé) → utiliser `country_code: FR` ; les filtres min Google Ads / min prix n'existent pas côté serveur → tri + post-filtrage ; `avg_price_usd: 0.0` = donnée manquante, pas gratuit — vérifier via `get_products`, ne pas exclure ; les estimations de revenus sont des fourchettes modélisées, jamais des faits. L'interface web de Hakim (app.brandsearch.co) a plus de filtres que le MCP. Voir [[boucle-chasse-clusters-volume-first]] et [[explicable-particulier-pas-technique-pro]].
+Depuis le 20 juillet 2026, l'idéation partait du minage Brand Search (MCP, 0 Meta, ≥ 1 Google, prix moyen ≥ 50 $ après le 18/08). Vague 1 (20/07) : 20 idées → 1 RETENU (surpresseur). Le 18/08 TrendTrack est devenu source principale 1 ; le 19/08 Brand Search est retiré.

@@ -1,12 +1,13 @@
 # Index mémoire — Boutiques drop
 
 - [Pipeline recherche produit par agents](pipeline-recherche-produit-agents.md) — /recherche-produit = chaîne 5 phases ; Cursor = 3 skills étanches
+- [Deux modes PRODUIT PUR / UNIVERS](deux-modes-produit-univers-trendtrack.md) — TrendTrack remplace Brand Search ; Search ≠ Shopping (19/08)
 - [Skills recherche séparés](skills-recherche-separes.md) — ideation-produit · recherche-mots-cles · sourcing-aliexpress (18/08 soir)
 - [Plancher 50 € + Google Ads TrendTrack](plancher-prix-50e-google-ads-tt.md) — plus de high-ticket obligatoire ; RoboLaVite exclu ; recette Ads Google 30–60 j / Q4 (18/08 soir)
 - [Recherche produit — instruire un dossier](recherche-produit-dossier.md) — OBSOLÈTE, pointe vers les 3 skills
 - [Boucle chasse clusters volume-first](boucle-chasse-clusters-volume-first.md) — /chasse-clusters mesure le volume avant d'idéer, objectif 20 candidats en autonomie
 - [Explicable-particulier, pas technique-pro](explicable-particulier-pas-technique-pro.md) — le levier est la pédagogie au particulier ; persona métier = signal d'exclusion
-- [Brand Search source d'idées](brand-search-source-idees.md) — méthode valide (filtres FR / 0 Meta), plus la source unique depuis le 18/08 (TrendTrack = principale 1)
+- [Brand Search source d'idées](brand-search-source-idees.md) — **OBSOLÈTE** comme source (19/08, remplacé par TrendTrack) ; historique des vagues 20/07–18/08
 - [Notion pipeline boutiques](notion-pipeline-boutiques.md) — hub OH VENTURES : bases Recherches produit + Boutiques + modèle, Notion = dashboard, fichiers locaux = source de vérité
 - [Campement type lancement boutique](campement-type-lancement-boutique.md) — Kanban Notion 18 tickets-briefs d'agents, à dupliquer à chaque « lance une boutique sur X »
 - [Persona obligatoire avant copywriting](persona-obligatoire-copywriting.md) — étape bloquante (PLAYBOOK 1d + Phase 4), template + exemple tufting

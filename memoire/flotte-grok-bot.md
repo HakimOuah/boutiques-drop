@@ -12,6 +12,8 @@ Le 16/08/2026, Hakim a demandé de découper son process en bots Grok (bêta Gro
 
 **18/08/2026 :** bot RECHERCHE PRODUIT réécrit (TrendTrack). Skills Cursor séparés le soir même : `ideation-produit` · `recherche-mots-cles` · `sourcing-aliexpress`. Voir [[skills-recherche-separes]].
 
+**19/08/2026 :** deux modes PRODUIT PUR / UNIVERS ; Brand Search retiré ; TrendTrack seule source d'idées. Instructions Bot 1 + MOTS-CLÉS mises à jour. Voir [[deux-modes-produit-univers-trendtrack]].
+
 Les trois décisions structurantes, à ne pas re-débattre :
 
 1. **Cinq bots mutualisés, deux bots par boutique.** RECHERCHE PRODUIT, MOTS-CLÉS, SOURCING, CONCURRENCE et PERSONAS ne touchent aucun compte de boutique : un seul jeu sert toutes les boutiques. DESIGN SHOPIFY et CONFORMITÉ GMC touchent le Shopify admin et le Merchant Center : il en faut **un par boutique, jamais un pour deux**. Motif : un bot Grok travaille depuis une machine cloud avec sa propre IP, et le principe n° 1 du skill [[skill-gmc-acceptance]] interdit de partager une IP entre boutiques — c'est la cause n° 1 des suspensions répétées.

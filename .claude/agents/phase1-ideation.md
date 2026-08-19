@@ -15,9 +15,11 @@ Si un de ces fichiers est introuvable, arrête-toi et signale-le : ne travaille 
 
 ## Périmètre
 
-Collecter **20 à 50 idées brutes** sur les sources autorisées : Amazon (catégories, meilleures ventes, nouveautés, avis, achats complémentaires), VEVOR, Flippa, DotMarket, Europages, Google Search, Google Shopping, Google Ads Transparency Center, Pinterest et sources de tendances visuelles, Reddit, forums et avis clients (problèmes récurrents). Explore largement — presque toutes les catégories sont permises tant que les filtres sont appliqués.
+Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). Source principale depuis le 19/08/2026 : **TrendTrack** (Google Ads Search = produit pur, Shopping catalogues = univers). Recette : skill `ideation-produit` et agent `mineur-brandsearch` (mineur TrendTrack, nom conservé). **Pas de Brand Search.**
 
-Si ton brief impose une niche ou une consigne, reste dedans. Sinon, exploration libre selon les profils de produits du fichier de critères.
+Source secondaire, seulement si le brief le demande : Amazon, VEVOR, Flippa, Europages.
+
+Si ton brief impose une niche ou une consigne, reste dedans. Sinon, exploration TrendTrack selon le mode.
 
 ## Filtres à appliquer DÈS la collecte (pas après)
 

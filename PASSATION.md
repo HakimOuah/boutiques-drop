@@ -5,6 +5,8 @@ ailleurs et elles sont bonnes ; ce document contient ce qui n'est écrit nulle p
 règles existent, ce qu'on a essayé et abandonné, où on en est réellement, et comment on raisonne
 ici.**
 
+**Mise à jour 19/08/2026 (ne pas relire le 16/08 comme l'état courant de l'idéation).** Produit pur et univers sont deux métiers, jamais mélangés. Brand Search n'est plus une source : TrendTrack fait le même travail (pubs / boutiques déjà en Google Ads). Seuils : cluster ~10 000 en PRODUIT PUR (osmoseur 9 900 passe) ; consolidé 30 000 boutique en UNIVERS. Recette : skill `ideation-produit`, agent `mineur-brandsearch` (mineur TrendTrack, nom conservé).
+
 Un successeur qui lit seulement les méthodes exécutera correctement et se trompera de priorité. Les
 méthodes disent quoi faire. Ce document dit **ce que ça a coûté de ne pas le faire**, et **ce qui a
 changé d'avis en cours de route**.
@@ -108,7 +110,9 @@ les méthodes — elles présentent l'état final comme s'il avait toujours ét�
 | **11/08** | Un rapport daté par intervention | **Un `TABLEAU.md` par boutique**, point d'entrée unique | 110 fichiers markdown pour Noirmont, aucun point d'entrée. Une semaine de flottement quand une limite d'usage est tombée en plein chantier |
 | **13-14/08** | Décider sur un volume mesuré | **Vérifier en SERP avant de décider** | 3 familles sur 20 se sont retournées. 24 500 recherches retirées. Deux familles déplacées de 6 et 11 rangs |
 | **14/08** | Prix « juste sous le plus cher » | **Juste sous le concurrent comparable**, marques officielles et marques à récit écartées | Un vide de marché à 429 € : un prix que personne ne pratique parce qu'aucun argument ne le justifie |
-| **16/08** | « Si ça ne vend pas, c'est le produit ou le site » | **« On a coupé trop tôt »** — recherche en pause, production prioritaire | Retour des experts externes. C'est le pivot en cours |
+| **16/08** | « Si ça ne vend pas, c'est le produit ou le site » | **« On a coupé trop tôt »** — tests ads coupés à 120-130 € | Retour des experts externes |
+| **18/08** | Plancher high-ticket 150 € | **50–400 € TTC** ; TrendTrack Google Ads 30–60 j + fenêtre Q4 | Viviers trop hauts (globe, detective box) ; direction Google, pas seulement Meta |
+| **19/08** | Un pipeline produit-pur appliqué aux univers ; Brand Search = source d'idées | **Deux modes PRODUIT PUR / UNIVERS** ; **TrendTrack remplace Brand Search** | Faux négatifs (gothique tué à 26 k sur un seuil de tête) ; TrendTrack mines déjà les boutiques Ads |
 
 **La leçon transversale de ce tableau** : chaque changement de voie est venu d'un fait mesuré ou
 d'un retour terrain, jamais d'un raisonnement a priori. Et à chaque fois, la version précédente

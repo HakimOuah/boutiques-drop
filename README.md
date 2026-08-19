@@ -13,7 +13,7 @@ Hub central du projet e-commerce de Hakim (OH Ventures) : boutiques Shopify drop
 
 ## Contenu de ce hub
 
-- **`.claude/`** — la configuration Claude du projet : skills (`ideation-produit`, `recherche-mots-cles`, `sourcing-aliexpress`, `recherche-produit`, `chasse-clusters`, `qualifie-idees`, `gmc-acceptance`, `shopping-scaling`, `webdesign-boutiques`) et les 9 sous-agents du pipeline (phase0 à phase5, sonde-prix, critique-candidat, mineur-brandsearch).
+- **`.claude/`** — skills (`ideation-produit` deux modes PRODUIT PUR / UNIVERS, `recherche-mots-cles`, `sourcing-aliexpress`, `recherche-produit`, `chasse-clusters`, `qualifie-idees`, `gmc-acceptance`, `shopping-scaling`, `webdesign-boutiques`) et les sous-agents du pipeline (phase0 à phase5, sonde-prix, critique-candidat, mineur-brandsearch = mineur TrendTrack depuis le 19/08/2026).
 - **`memoire/`** — copie versionnée de la mémoire persistante de Claude (`~/.claude/projects/-Users-Hakim-Documents-Boutiques-drop/memory/`). Synchronisée par `scripts/sync-memoire.sh`. `MEMORY.md` est l'index.
 - **`notion-export/`** — export markdown du workspace Notion (hub Pipeline Boutiques Drop, bases Boutiques / Recherches produit / Tickets de lancement, campement type, modèles Horizon). Notion reste le dashboard visuel ; l'export est le backup versionné.
 - **`ecommerce-dropshipping/`** — projet Next.js d'outillage + analyses (DataForSEO, baromètres Amazon).

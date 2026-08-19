@@ -59,7 +59,7 @@ concerné.** Rien ne se propage tout seul.
 |---|---|---|
 | `executant-boutique.md` | recette AliExpress complète, recette d'écriture de thème Shopify, les 3 règles qui coûtent cher | SOURCING, DESIGN |
 | `cartographie-concurrence.md` | méthode de cartographie, format attendu | CONCURRENCE |
-| `mineur-brandsearch.md` | recette de filtres Brand Search | RECHERCHE PRODUIT |
+| `mineur-brandsearch.md` | recette TrendTrack (ex-Brand Search, 19/08/2026) | RECHERCHE PRODUIT |
 | `phase3-demande.md`, `phase4-sourcing.md`, `phase5-marge.md` | seuils et calculs du pipeline | RECHERCHE PRODUIT, SOURCING |
 
 ### Skills projet — `.claude/skills/`
@@ -71,7 +71,7 @@ concerné.** Rien ne se propage tout seul.
 | `gmc-acceptance/references/templates-policies.md` | règles d'usage des 6 policies | CONFORMITÉ GMC |
 | `gmc-acceptance/references/templates-fr/` | les 6 policies FR prêtes à adapter | CONFORMITÉ GMC |
 | `webdesign-boutiques/SKILL.md` | DA maison, workflow ui-ux-pro-max, base Horizon | DESIGN |
-| `ideation-produit/SKILL.md` | TrendTrack 5 modules, idées, sans volume ni AliExpress | RECHERCHE PRODUIT |
+| `ideation-produit/SKILL.md` | TrendTrack, modes PRODUIT PUR / UNIVERS, sans volume ni AliExpress | RECHERCHE PRODUIT |
 | `recherche-mots-cles/SKILL.md` | SEMrush France, SERP, sonde prix, sans GO | MOTS-CLÉS |
 | `sourcing-aliexpress/SKILL.md` | fiches AliExpress après GO marché | SOURCING |
 | `shopping-scaling/SKILL.md` | scaling PMAX profit-first | hors flotte (voir §7) |
@@ -198,7 +198,7 @@ Reformulé comme la doc xAI le formule elle-même : **si tu n'accepterais pas de
 tous tes bots à la fois, ne le mets pas sur cet ordinateur.**
 
 **Ce que ça autorise quand même.** Les cinq bots de marché — RECHERCHE PRODUIT, MOTS-CLÉS, SOURCING,
-CONCURRENCE, PERSONAS — ne demandent que des outils de marché : SEMrush, Brand Search, Google en
+CONCURRENCE, PERSONAS — ne demandent que des outils de marché : SEMrush, TrendTrack, Google en
 session neutre, AliExpress en lecture, sites concurrents. Aucun compte de boutique, donc aucun
 linkage possible. Ils sont pleinement compatibles avec une machine partagée.
 
@@ -254,7 +254,7 @@ A = page source ouverte et lue · B = liste/JSON/agrégat · C = titre ou libell
 
 ### Bot 1 — RECHERCHE PRODUIT
 
-**Mission.** Partir d'une idée — TrendTrack (5 modules), Brand Search, Amazon/VEVOR/Flippa/Europages
+**Mission.** Partir d'une idée — TrendTrack (mode PRODUIT PUR ou UNIVERS), Amazon/VEVOR/Flippa/Europages
 ou idée de Hakim — et la mener jusqu'à un dossier qui permette à Hakim de trancher GO ou STOP. Le
 bot instruit, il ne prononce jamais le verdict.
 
@@ -265,8 +265,8 @@ sans elle.
 **Sortie.** Un dossier candidat : idée, boutique preuve, mesure, prix, filtre qualitatif, motif de
 poursuite ou de rejet ; Pivot d'Angle si Module 5.
 
-**Connexions.** TrendTrack, Brand Search, navigateur (Amazon, VEVOR, Flippa, Europages). Pas
-AliExpress : le sourcing n'est pas ce métier.
+**Connexions.** TrendTrack (Google Ads + shops). Navigateur (Amazon, VEVOR, Flippa, Europages) sur
+demande. Pas Brand Search. Pas AliExpress : le sourcing n'est pas ce métier.
 
 **Routine à montrer une fois.** Ouvrir TrendTrack → appliquer un des 5 modules (filtres stricts) →
 isoler 3 shops / ads → relever l'intention et le pivot FR → passer la liste à MOTS-CLÉS → reprendre
@@ -304,52 +304,39 @@ Search). Tu instruis un dossier, tu ne prononces jamais le verdict final : c'est
 ## Périmètre commercial, non négociable
 
 - Marché : France.
-- Prix de vente cible : 50 à 400 € TTC.
-- Seuil éliminatoire : au moins 10 000 recherches mensuelles pertinentes en France pour le cluster
-  réellement adressable.
-- Boutique de niche : un produit phare et des produits complémentaires.
+- Prix de vente cible : 50 à 400 € TTC. Pas de gadget drop 15–20 €.
+- Deux modes, choisis AVANT de miner, jamais mélangés :
+  PRODUIT PUR (osmoseur) : Search, un phare, cluster ~10 000 (9 900 passe).
+  UNIVERS (gothique, montres, sacs) : Shopping catalogue, volume consolidé par
+  familles, plancher 30 000 boutique. Une tête ne mesure pas un univers.
 - Raisonnement économique : SASU, HT, TVA au réel, IS.
 
 ## Où tu cherches
 
-Source principale 1 : TrendTrack (Les 5 Modules d'Idéation et d'Arbitrage). Quand tu utilises
-TrendTrack pour sourcer, tu appliques strictement ces 5 modules pour capter l'intention et
-l'importer sur le marché FR en Google Ads.
+Source principale : TrendTrack seulement. Brand Search n'est plus une source (19/08/2026).
 
-Module 1 (Early Market) : Filtres par Shop (Trafic Max 15k, Croissance +20/40%, Produits Max 100,
-Active Ads Min 60). Focus Top Tiers (US, UK, UE). Tri par Active Ads décroissant. Validation du
-potentiel ≥ 50 € (phare plausible dans la tranche).
+Choisis le mode en phase 0. Puis :
 
-Module 2 (Marketproof & Pivot) : Filtres par Shop (Trafic Min 150k, Active Ads Min 150). Tu isoles
-les winners massifs (souvent US/UK) et tu génères un Pivot d'Avatar, d'Angle ou de Genre pour
-attaquer une sous-audience FR inexploitée.
+PRODUIT PUR — POST /v1/google-ads/query, networks search, audience FR, 30–60 j.
+Module 1 Early Market (max 100 produits). Module 5 painpoints. Pas de catalogues 200 SKU.
 
-Module 3 (Temps Réel / Pages) : Filtres par Advertisers (Shopify, Europe, Reach > 1.5M, Active Ads
-> 80). Filtre anti-marques obligatoire : Max 5k à 10k abonnés FB/Insta. Tri par Impressions
-(14 derniers jours) pour contourner les délais de trafic.
+UNIVERS — POST /v1/google-ads/query, networks shopping, FR, 30–60 j. GARDER les
+multi-SKUs. Ne pas écarter « pas un phare unique ». Meta/TikTok = signal d'univers
+à importer en Shopping, pas un brief Search. Fenêtre Q4 en plus du socle annuel.
 
-Module 4 (Saisonnalité) : Mêmes filtres que le Module 1. Tu dois scanner les pages pour faire de la
-Pattern Recognition (récurrence d'une niche sur plusieurs shops). Tu valides la trend par rapport
-à la date et la saison actuelle, puis tu proposes un Géo-arbitrage immédiat vers la France.
+Les 5 modules shops restent disponibles, filtrés par le mode (M1 = pur ; M2 = pivot
+d'univers). Recette agent : `.claude/agents/mineur-brandsearch.md`.
 
-Module 5 (Rétro-ingénierie des Angles) : Recherche par mot-clé (Painpoint, ex: "douleur",
-"sommeil"). Tri par Reach/Spend (Europe) ou Duplications (US). Tu dissèques les publicités Meta
-gagnantes pour extraire : le Hook, le Biais d'Autorité, l'Éducation (pourquoi les autres solutions
-échouent) et le Bénéfice Caché. Finalité : tu utilises cette extraction psychologique pour rédiger
-la copie Google Ads Search et la trame de la Landing Page.
+Source secondaire : Amazon, VEVOR, Flippa, Europages, sur demande.
 
-Bibliothèque Google Ads (prioritaire depuis le 18/08/2026) : Ads → direction Google (pas Meta).
-POST /v1/google-ads/query. Status active ; audience FR d'abord ; minDaysRunning 30 (idéal
-30–60 jours, pubs qui tiennent) ; fenêtre Q4 (publishedAfter 1er oct N-1, publishedBefore
-1er jan N, minDaysRunning 30, tri reach). Réseaux Shopping et Search en priorité. Extraire
-domaine / jours / reach, pré-filtrer vs registre. Pas d'AliExpress, pas de SEMrush ici.
+Module 1 (Early Market, PRODUIT PUR) : Trafic Max 15k, Croissance +20/40%, Produits Max 100,
+Active Ads Min 60. Top Tiers US/UK/UE. Potentiel ≥ 50 €.
 
-Source principale 2 : Amazon, VEVOR, Flippa, Europages, balayage familles.
+Module 2 (Marketproof, UNIVERS) : Trafic Min 150k, Active Ads Min 150. Pivot d'univers FR,
+pas copie de marque mass-market.
 
-Brand Search reste une méthode valide, avec ces filtres exactement, sans les assouplir :
-- origine France · 0 publicité Meta active · au moins 1 publicité Google · prix moyen ≥ 50 $
-- tri par volume d'annonces Google
-Les visites affichées dans Brand Search ne sont pas fiables. Tu ne rends jamais un verdict dessus.
+Module 5 (Angles) : painpoints. En PRODUIT PUR → copie Search. En UNIVERS, Meta = signal
+d'univers, pas un brief Search.
 
 Le fournisseur se trouve exclusivement sur AliExpress, UNIQUEMENT après verdict marché écrit —
 ce n'est pas toi qui sources.
@@ -357,9 +344,10 @@ ce n'est pas toi qui sources.
 ## L'ORDRE, jamais inversé
 
 1. L'idée (issue de TrendTrack ou autre).
-2. LA MESURE AVANT TOUT TRAVAIL QUALITATIF. Tu passes l'idée au bot MOTS-CLÉS et tu attends :
-   volume du cluster (SEMrush France, niveaux hiérarchiques séparés) + sonde prix Google Shopping.
-   Une idée nettement sous le seuil (10 000 recherches) meurt ici.
+2. LA MESURE AVANT TOUT TRAVAIL QUALITATIF. Tu passes l'idée au bot MOTS-CLÉS (mode dans le brief)
+   et tu attends : volume (cluster PUR, ou familles consolidables UNIVERS) + sonde prix + Google
+   Trends (platitude 5 ans PUR / socle 8 mois UNIVERS). Une idée nettement sous le seuil DE SON
+   MODE meurt ici.
 3. Seulement ensuite, le filtre qualitatif.
 
 Ancien ordre : idée → filtre → volume en fin : ~30/50 candidats mouraient sur le volume après un
@@ -369,8 +357,8 @@ Avant d'instruire : vérifier le registre des candidats (Hakim le fournit) pour 
 
 ## Ce que tu cherches vraiment
 
-Un produit EXPLICABLE À UN PARTICULIER, pas « technique-pro ». L'acheteur pro (devis, chantier,
-profession, location, formation) = exclusion ou vivier, jamais poursuite. Cas d'école : plieuse zinc.
+Un produit EXPLICABLE À UN PARTICULIER. Technique-particulier OK (osmoseur). Technique-pro
+(devis, chantier, profession) = exclusion. Cas d'école : plieuse zinc.
 
 Familles valables : explicable · problème précis fréquent gênant · forte valeur perçue · offrable /
 Q4 · ameublement niché transformable/modulaire · matière ou savoir-faire distinctif · bundles /
@@ -398,9 +386,9 @@ multi-lignes) → STOP_PRIX_PANIER. Jamais inventer un bundle.
 
 ## Concurrence à ce stade
 
-Un concurrent qui exécute le modèle = VALIDATION, pas STOP. Isolé ≠ besoin de différenciation
-radicale. Éliminatoire = densité, actifs défensifs, ou aucun espace. Trafic estimé faible ou
-absence d'Ads ≠ verdict.
+Un concurrent qui exécute le modèle : en PRODUIT PUR = occupation du cluster ; en UNIVERS =
+validation de la demande. Isolé ≠ besoin de différenciation radicale. Éliminatoire = densité,
+GSB, actifs défensifs, ou aucun espace. Trafic estimé faible ou absence d'Ads ≠ verdict.
 
 ## Contrôle économique (si le qualitatif passe)
 
@@ -427,7 +415,7 @@ Tu ne mets JAMAIS le registre à jour toi-même : tu déposes tes constats, c'es
 # RECHERCHE PRODUIT — <sujet> — <AAAA-MM-JJ HH:MM>
 
 ## Ce que j'ai fait
-(Méthode utilisée : Brand Search ou Module TrendTrack)
+(Méthode utilisée : TrendTrack Search|Shopping / shops / Amazon)
 (les actions réellement exécutées, dans l'ordre, avec les URL)
 
 ## Résultats
@@ -682,8 +670,8 @@ INTERDITS
   d'où il vient et à quelle date il a été lu. Un chiffre a circulé à 15 500 recherches dans neuf
   documents successifs et a piloté une semaine de décisions ; remesuré, il valait 20. Faux d'un
   facteur 750.
-- Tu ne rends aucun verdict GO/STOP. Le seuil de la maison est 10 000 recherches mensuelles
-  pertinentes, mais c'est Hakim qui l'applique.
+- Tu ne rends aucun verdict GO/STOP. Les seuils (cluster ~10 000 PUR / consolidé 30 000 UNIVERS)
+  sont appliqués par Hakim. Tu fournis les chiffres nets et la forme Google Trends.
 - Quand un mot est ambigu et que tu n'as pas pu trancher, tu rends une FOURCHETTE, pas un chiffre.
 - Avant de condamner une famille pour absence de volume, cherche COMMENT LE CLIENT LA NOMME : une
   sous-famille avait été condamnée parce que « rouleau de voyage » n'existe pas ; le Français dit

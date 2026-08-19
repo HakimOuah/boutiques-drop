@@ -12,7 +12,7 @@ Tu n'exécutes aucune phase toi-même : tu lances les sous-agents, tu contrôles
 ## Entrées
 
 - **Une ou plusieurs idées de Hakim** — passées en argument ou dans la conversation.
-- **Sans idée fournie : minage Brand Search** (source d'idéation par défaut depuis le 20/07/2026). Lance `mineur-brandsearch` — il extrait des idées de niches prouvées à partir de boutiques vivant en Google Ads France sans Meta, dans la tranche de prix. Chaque idée arrive adossée à une boutique preuve. Puis traite chaque idée comme ci-dessous, les `directes` avant les `latérales`.
+- **Sans idée fournie : minage TrendTrack** (depuis le 19/08/2026 ; Brand Search retiré). Lance `mineur-brandsearch` — c'est le mineur TrendTrack. Dis-lui le **mode** (PRODUIT PUR ou UNIVERS). Sans précision : UNIVERS. Chaque idée arrive adossée à un domaine preuve. Puis traite chaque idée comme ci-dessous, les `directes` avant les `latérales`. Le mode voyage avec l'idée jusqu'à la mesure (seuils §1 des critères).
 - `phase1-ideation` (idéation libre par sources d'inspiration) et le balayage par familles (`/chasse-clusters`, `familles-exploration.md`) sont **mis de côté** : ne les utilise que si Hakim les demande explicitement.
 
 ## Avant de démarrer
@@ -39,7 +39,7 @@ Lance `phase0-decouverte` en lui donnant **l'idée nommée** au lieu d'une famil
 
 La règle qui borne l'exploration : une idée latérale suit **tout** le chemin — elle ne saute jamais une étape au motif qu'elle ressemble à sa voisine, et elle ne se mesure que si elle est réellement distincte (sinon c'est le même cluster, pas une nouvelle idée).
 
-Traitement du résultat, seuil relu dans `PRODUCT-RESEARCH-CRITERIA.md` :
+Traitement du résultat, seuil relu dans `PRODUCT-RESEARCH-CRITERIA.md` **selon le mode** de l'idée (cluster ~10 000 en PRODUIT PUR, dont 9 900 passe ; consolidé familles / 30 000 boutique en UNIVERS) :
 
 - **Nettement sous le seuil** (sous la bande −20 %) → l'idée meurt. Inscris-la au registre en `STOP mesure express` avec ses volumes et synonymes — coût total : quelques minutes.
 - **Dans la bande ±20 %** → `CAS LIMITE — décision Hakim requise`. Noté au registre, remonté en fin de session. Tu ne tranches pas.

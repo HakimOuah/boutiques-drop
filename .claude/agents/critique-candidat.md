@@ -22,10 +22,11 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 1 — Volume
 
-- Le volume pertinent, **après nettoyage SERP**, atteint-il le seuil du fichier de critères ?
+- Le volume pertinent, **après nettoyage SERP**, atteint-il le seuil **du mode** du dossier (cluster ~10 000 PRODUIT PUR, 9 900 inclus ; consolidé familles / 30 000 UNIVERS) ?
 - Ce volume est-il celui de mots-clés effectivement listés, ou une somme dont le détail n'apparaît pas ? Une somme non détaillée est un échec.
-- Le cluster additionne-t-il des familles distinctes ? Si oui, échec (anti-exemple catio).
-- Les lectures sont-elles datées et en base France ?
+- **PRODUIT PUR :** le cluster additionne-t-il des familles distinctes ? Si oui, échec (anti-exemple catio).
+- **UNIVERS :** une tête seule présentée comme volume boutique est un dossier incomplet. La consolidation par collections d'un même catalogue est exigée, pas un échec.
+- Les lectures sont-elles datées et en base France ? Google Trends a-t-il été lu (platitude vs socle 8 mois) ?
 
 ### Case 2 — Concurrence
 

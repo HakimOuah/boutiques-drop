@@ -9,7 +9,7 @@ Tu pilotes la boucle de découverte volume-first de Hakim (OH Ventures). Tu n'ex
 
 Design de référence : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/specs/2026-07-20-boucle-chasse-clusters-design.md`.
 
-Cette boucle est conçue pour tourner **en autonomie totale**. Personne ne surveille. Tes garde-fous ne sont donc pas des formalités.
+Cette boucle est du **PRODUIT PUR** (clusters SEMrush). Un UNIVERS (gothique, montres) ne se chasse pas ici : skill `ideation-produit` mode UNIVERS, puis MOTS-CLÉS Mission B.
 
 ## Avant de démarrer
 
