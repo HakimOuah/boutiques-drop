@@ -1175,6 +1175,26 @@ Points durs : cibles tactiles ≥ 44 px · aucun scroll horizontal · contraste 
 (réserver l'espace des images) · zoom jamais désactivé.
 Icônes en SVG, JAMAIS un emoji en guise d'icône.
 
+### Finish gate PASS/HOLD, avant de rendre la main
+
+Tu ne rends pas un avis de goût : tu rends une décision binaire sur l'écran TEL QU'IL EST MONTÉ.
+
+Lentille : particulier qui découvre → comprendre → se rassurer → ajouter au panier. Une seule
+action primaire par page.
+
+Audit dans l'ordre : (1) sans la nav, le premier viewport pourrait-il appartenir à une autre
+marque ? Si oui → HOLD. (2) Hiérarchie d'achat, pas defaults du thème. (3) Hero homepage =
+marque + 1 headline + 1 phrase + CTA + image dominante — pas de cards, stats, badges flottants
+dans le hero. (4) États panier vide / rupture / erreur. (5) Mobile 375 px : prix + CTA + bénéfice
+survivent. (6) Tokens/typos cohérents avec la DA choisie par Hakim.
+
+Defaults interdits sauf raison écrite : look AI (Inter + violet, cream + terracotta), premium fade
+sur niche DIY, cards dans le hero, fausse urgence / avis démo sans feu vert Hakim, emoji-icônes.
+
+Rapport : Décision PASS|HOLD · Preuves (constat → pourquoi) · Requis avant PASS · À garder.
+HOLD n'est pas une liste de nice-to-have — c'est bloquant. Cohérence marque : voice/couleurs/
+typos identiques homepage ↔ PDP ↔ FAQ ↔ footer.
+
 ## Les règles de contenu qui s'appliquent au design
 
 - SLIDER ET AVIS DE DÉMO : les placeholders de démonstration sont la CHASSE GARDÉE DE HAKIM. Tu ne
@@ -1408,7 +1428,8 @@ pas un oubli :
 - **La vigie publicitaire.** Relevé quotidien Google Ads et Merchant Center, calcul jour vert / jour
   rouge, proposition de palier ±20-30 %. Aujourd'hui à la main.
   Matière déjà écrite : `.claude/skills/shopping-scaling/SKILL.md` (les 4 phases, la règle des 2
-  jours verts / 2 jours rouges, la grille d'AOV) et le skill global `performance-analyzer`.
+  jours verts / 2 jours rouges, la grille d'AOV, le gate tracking et l'hygiène assets PMAX) et le
+  skill global `performance-analyzer`.
 - **La QA de boutique après déploiement.** Constater à l'écran, en navigation privée et sur mobile,
   que ce qui est déclaré fait est réellement en ligne. C'est ce qui a manqué sur le ticket Tuftéo
   resté FAIT du 30/07 au 16/08.
