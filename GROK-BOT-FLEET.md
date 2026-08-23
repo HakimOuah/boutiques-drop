@@ -19,12 +19,12 @@ Sept bots, un par métier du process :
 |---|---|---|---|---|
 | 0 | **ORCHESTRATEUR** | Otto | chief of staff : dispatch, contrôle des dépôts, digest, décisions non critiques, préqualification technique | Grok cloud — **point d'entrée unique de Hakim** |
 | 1 | **RECHERCHE PRODUIT** | Marco | trouver une idée et préparer sa préqualification | Grok cloud |
-| 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google | Grok cloud |
-| 3 | **SOURCING** | documenter le fournisseur AliExpress (MCP d'abord, navigateur pour la revue visuelle SKU) | Grok cloud |
-| 4 | **CONCURRENCE** | cartographier qui occupe le marché et conclure sur la défendabilité | Grok cloud |
-| 5 | **PERSONAS** | établir qui achète, avec des preuves, jamais des suppositions | Grok cloud |
-| 6 | **DESIGN SHOPIFY** | direction artistique et montage des pages | **hors flotte cloud** — Claude Code local (§2, tranché 16/08) |
-| 7 | **CONFORMITÉ GMC** | l'approbation Merchant Center et sa conservation | **hors flotte cloud** — Claude Code local (§2, tranché 16/08) |
+| 2 | **MOTS-CLÉS** | Véra | mesurer la demande et la vérifier en page 1 de Google | Grok cloud |
+| 3 | **SOURCING** | Ali | documenter le fournisseur AliExpress (MCP d'abord, navigateur pour la revue visuelle SKU) | Grok cloud |
+| 4 | **CONCURRENCE** | Cassandre | cartographier qui occupe le marché et conclure sur la défendabilité | Grok cloud |
+| 5 | **PERSONAS** | Emma | établir qui achète, avec des preuves, jamais des suppositions | Grok cloud |
+| 6 | **DESIGN SHOPIFY** | — | direction artistique et montage des pages | **hors flotte cloud** — Claude Code local (§2, tranché 16/08) |
+| 7 | **CONFORMITÉ GMC** | — | l'approbation Merchant Center et sa conservation | **hors flotte cloud** — Claude Code local (§2, tranché 16/08) |
 
 Ce document dit **qui exécute quoi**. Les règles de fond restent dans `METHODE-ANALYSE-MARCHE.md`,
 `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`, `boutique-pipeline/PLAYBOOK.md`,
@@ -216,20 +216,41 @@ linkage possible. Ils sont pleinement compatibles avec une machine partagée.
 
 ### Connexion MCP Product Factory (depuis le 23/08/2026)
 
-La surface **scout** du Product Factory MCP est exposée en HTTPS pour les bots :
+La surface **scout** du Product Factory MCP est exposée en HTTPS pour les bots.
+**Une seule connexion, au niveau du compte** : Grok Bot partage les plugins entre tous
+les bots de la machine. Tu n'as pas à la recréer pour Otto, Marco, Véra, Ali, Cassandre
+et Emma.
 
 ```text
+Nom    : Product Factory scout
 URL    : https://srv1575867.hstgr.cloud/mcp
-Auth   : Bearer <SCOUT_MCP_TOKEN>   (à lire dans le .env du VPS — jamais écrit dans un doc)
-Outils : lecture/analyse seulement (SERP, Shopping, discovery, analyse d'opportunité
-         gatée par le pass, quote SKU, ranking). Aucune persistance de transition,
-         aucun outil Shopify.
+Header : Authorization = Bearer <SCOUT_MCP_TOKEN>
+         (lu dans le .env du VPS — jamais écrit dans un doc ni dans une instruction)
+Outils : lecture/analyse seulement (19 tools : SERP, Shopping, discovery, analyse
+         d'opportunité gatée par le pass, quote SKU, ranking, lecture d'état).
+         Aucune persistance de transition, aucun outil Shopify.
 ```
+
+#### Clics dans l'app Grok Bot
+
+1. Ouvre **Settings → Plugins** (parfois « Add MCP server » / connecteur custom).
+2. Nom : `Product Factory scout`.
+3. URL **exacte** : `https://srv1575867.hstgr.cloud/mcp` — le chemin `/mcp` est obligatoire (pas le domaine nu, pas `/sse`, pas `/health`).
+4. Header (selon l'UI) :
+   - deux champs : nom `Authorization` · valeur `Bearer <token>`
+   - ou un seul champ Auth : `Authorization: Bearer <token>`
+5. Enregistre. Si l'app propose un flux OAuth, **annule** : ce serveur parle en Bearer, pas en OAuth.
+6. Les tools deviennent attachables avec `@` dans une tâche. Si un bot ne les voit pas : Settings → Plugins → Yours, activer le connecteur pour ce bot.
+
+Qui s'en sert vraiment : **Ali** (sourcing API), **Otto** (liste / prochaine action), **Véra** (SERP / Shopping en complément de SEMrush), **Cassandre** (`analyze_google_competition`). Marco et Emma n'ont pas besoin de l'appeler. `analyze_product_opportunity` reste réservé : Otto le demande explicitement, ça consomme du budget API et exige un pass enregistré.
+
+Test de 30 secondes, à faire dire à Ali : « appelle `list_opportunity_states` ». Réponse attendue : serveur `product-factory-scout`, liste d'opportunités (dont la tente gonflable du test du 23/08). 401 = mauvais token. Timeout = URL incorrecte.
 
 **Le token CONTRÔLE ne doit JAMAIS être saisi sur la machine cloud des bots.** Les
 transitions (pass de préqualification, verdicts, décisions) passent par Claude Code en
 local — c'est le circuit de dépôt §3 qui s'applique : le bot mesure et dépose, Claude
-Code enregistre.
+Code enregistre. Ne pas brancher non plus l'API TrendTrack, Shopify, GMC ou Ads sur
+cette machine.
 
 **Ce que ça interdit.** DESIGN SHOPIFY et CONFORMITÉ GMC ne se déploient pas sur ce compte. Deux
 sorties possibles, à trancher plus tard :

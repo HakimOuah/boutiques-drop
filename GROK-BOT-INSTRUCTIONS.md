@@ -13,7 +13,15 @@ Export du 23/08/2026. **La source de fond reste `GROK-BOT-FLEET.md`** : quand un
 | **Cassandre** | Concurrence | elle dit ce qu'on n'a pas envie d'entendre |
 | **Emma** | Personas | l'empathie client |
 
-Connexion MCP (bots qui en ont besoin, Ali en premier) : `https://srv1575867.hstgr.cloud/mcp`, Bearer = `SCOUT_MCP_TOKEN` (dans le `.env` du VPS — jamais le token contrôle sur cette machine).
+Connexion MCP : **une seule fois, au niveau du compte** (tous les bots la voient). Réglages → Plugins → Add MCP server / connecteur custom.
+
+```text
+Nom    : Product Factory scout
+URL    : https://srv1575867.hstgr.cloud/mcp
+Header : Authorization = Bearer <SCOUT_MCP_TOKEN>
+```
+
+Le token se lit dans le `.env` du VPS (`SCOUT_MCP_TOKEN`) — Claude Code te le donne à coller, il ne s'écrit jamais dans un doc ni dans une instruction de bot. **Jamais** le token contrôle. Test : demander à Ali « appelle `list_opportunity_states` ». Si le serveur répond `product-factory-scout` et une liste, c'est bon. Détail des clics : `GROK-BOT-FLEET.md` §2.
 
 ---
 
