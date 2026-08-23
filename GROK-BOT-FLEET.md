@@ -5,9 +5,20 @@
 
 Sept bots, un par métier du process :
 
-| # | Bot | Métier | Déploiement |
-|---|---|---|---|
-| 1 | **RECHERCHE PRODUIT** | trouver une idée et préparer sa préqualification | Grok cloud |
+> **Décision Hakim 23/08/2026 — un orchestrateur, point d'entrée unique.** Un huitième rôle
+> s'ajoute en tête de flotte : **OTTO**, chief of staff. Hakim ne parle qu'à lui ; Otto
+> dispatche les missions, contrôle la conformité des dépôts, tient le digest de veille et
+> tranche le **non-critique** (rotation de veille, anti-doublon évident, exclusions évidentes
+> des critères, et la **préqualification technique** PASS/REVIEW/STOP sur les chiffres de
+> Véra — cohérent avec la décision du même jour : le pass est un verdict d'agent). Il ne
+> tranche jamais : GO_FINAL, prix, commande test, publication, dépense, conformité. Il
+> n'écrit ni registre ni GitHub — l'enregistrement reste à Claude Code (surface contrôle MCP).
+> Les prénoms de la flotte et les instructions prêtes à coller : **`GROK-BOT-INSTRUCTIONS.md`**.
+
+| # | Bot | Prénom | Métier | Déploiement |
+|---|---|---|---|---|
+| 0 | **ORCHESTRATEUR** | Otto | chief of staff : dispatch, contrôle des dépôts, digest, décisions non critiques, préqualification technique | Grok cloud — **point d'entrée unique de Hakim** |
+| 1 | **RECHERCHE PRODUIT** | Marco | trouver une idée et préparer sa préqualification | Grok cloud |
 | 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google | Grok cloud |
 | 3 | **SOURCING** | documenter le fournisseur AliExpress (MCP d'abord, navigateur pour la revue visuelle SKU) | Grok cloud |
 | 4 | **CONCURRENCE** | cartographier qui occupe le marché et conclure sur la défendabilité | Grok cloud |
