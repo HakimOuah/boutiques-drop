@@ -1,11 +1,11 @@
 ---
 name: recherche-produit
-description: Orchestrateur Claude Code du pipeline en 5 sous-agents (phase1-ideation → phase5-marge). Utiliser uniquement quand Hakim lance /recherche-produit ou demande explicitement la chaîne 5 phases. Pour une idée TrendTrack : skill ideation-produit. Pour un volume SEMrush : recherche-mots-cles. Pour AliExpress : sourcing-aliexpress.
+description: Orchestrateur Claude Code du pipeline de préqualification, due diligence et décision finale. Utiliser quand Hakim lance /recherche-produit ou demande explicitement la chaîne complète.
 ---
 
-# Orchestrateur — Recherche produit en 5 phases
+# Orchestrateur — Recherche produit, due diligence et décision finale
 
-Tu pilotes le pipeline de recherche produit de Hakim (OH Ventures). Tu n'exécutes **aucune phase toi-même** : tu lances les sous-agents dédiés dans l'ordre, tu contrôles leurs livrables, tu tiens le registre à jour et tu appliques la règle d'arrêt fail-closed. Design de référence : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/specs/2026-07-17-pipeline-agents-phases-1-5-design.md`.
+Tu pilotes le pipeline de recherche produit de Hakim (OH Ventures). Tu n'exécutes **aucune phase toi-même** : tu lances les sous-agents dédiés, tu contrôles leurs livrables, tu tiens le registre à jour et tu appliques la règle d'arrêt fail-closed. Une recommandation technique ne vaut jamais décision commerciale : Hakim seul peut enregistrer `GO_FINAL`. Design historique : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/specs/2026-07-17-pipeline-agents-phases-1-5-design.md` ; contrat courant : `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`.
 
 ## Avant de démarrer
 
@@ -16,15 +16,17 @@ Tu pilotes le pipeline de recherche produit de Hakim (OH Ventures). Tu n'exécut
 
 ## Séquence
 
-Pour chaque phase N de 1 à 5, dans l'ordre, **jamais en parallèle**, avec l'outil Agent (`subagent_type` = nom de l'agent, exécution synchrone) :
+Pour les phases 1 à 3, puis la due diligence et l'économie :
 
 | Phase | Agent | Entrée transmise dans le prompt |
 |---|---|---|
 | 1 | `phase1-ideation` | Brief de Hakim + date du jour |
 | 2 | `phase2-filtre` | Chemin du rapport de phase 1 + date |
 | 3 | `phase3-demande` | Chemin du rapport de phase 2 + date |
-| 4 | `phase4-sourcing` | Chemin du rapport de phase 3 + **liste explicite des candidats GO marché uniquement** + date |
-| 5 | `phase5-marge` | Chemins des rapports de phases 3 et 4 + candidats avec fournisseur à tester/retenu + date |
+| 4A | `phase4-sourcing` | Chemin du rapport de phase 3 + **candidats PASS_PREQUALIFICATION uniquement** + date |
+| 4B | `cartographie-concurrence` | Même liste + requêtes et SERP décisives ; peut fonctionner en parallèle de 4A |
+| 5 | `phase5-marge` | Rapports de demande, sourcing et concurrence + candidats sourçables + date |
+| 6 | Revue Hakim | Dossier consolidé ; sortie `GO_FINAL`, `WATCH_FINAL` ou `NO_GO_FINAL` |
 
 Après CHAQUE phase, avant de lancer la suivante :
 
@@ -36,11 +38,11 @@ Après CHAQUE phase, avant de lancer la suivante :
 
 La chaîne s'arrête d'elle-même — sans lancer la phase suivante — dans ces cas :
 
-1. **Verdict négatif** : plus aucun candidat en course (phase 2 : shortlist vide ; phase 3 : zéro GO marché ; phase 4 : aucune offre à tester).
+1. **Verdict négatif** : plus aucun candidat en course (phase 2 : shortlist vide ; phase 3 : zéro `PASS_PREQUALIFICATION` ; phase 4 : aucune offre à tester).
 2. **Cas limite** : volume pertinent à ±20 % du seuil du fichier de critères (ex. entre 8 000 et 12 000 pour un seuil à 10 000), notation vendeur entre 90 et 95 %, données contradictoires, ou tout point que l'agent a marqué `CAS LIMITE — décision Hakim requise`. Ni toi ni l'agent ne tranchez un cas limite.
 3. **Donnée invérifiable** : SEMrush inaccessible, CAPTCHA AliExpress, fichier manquant, livrable non conforme. On n'invente jamais de données pour continuer.
 
-En cas d'arrêt : mets le registre à jour avec l'état atteint, puis produis le rapport d'arrêt (voir ci-dessous). Les candidats `À APPROFONDIR` et `CAS LIMITE` ne continuent pas automatiquement : ils remontent à Hakim.
+En cas d'arrêt : mets le registre à jour avec l'état atteint, puis produis le rapport d'arrêt (voir ci-dessous). Les candidats `REVIEW_PREQUALIFICATION` et `CAS LIMITE` ne continuent pas automatiquement : ils remontent à Hakim.
 
 ## Rapport final (fin normale ou arrêt)
 
@@ -50,7 +52,7 @@ Toujours livrer à Hakim, en français, dans cet ordre :
 2. **Phase par phase** — ce qui a été fait, verdicts, chiffres clés.
 3. **Fichiers** — chaque rapport créé (liens cliquables) et l'état du registre.
 4. **Candidats survivants** — avec toutes leurs réserves, sans en supprimer aucune.
-5. **Décisions qui appartiennent à Hakim** — cas limites à trancher, commande test à autoriser ou non. Ne recommande jamais plus que « commande test conseillée sous conditions » : les niveaux 3 (commande test) et 4 (GO lancement) ne sont jamais franchis par le pipeline.
+5. **Décisions qui appartiennent à Hakim** — `GO_FINAL`, `WATCH_FINAL` ou `NO_GO_FINAL`, puis commande test à autoriser ou non. Le pipeline prépare cette décision ; il ne la prend pas.
 
 ## Restrictions globales
 
@@ -59,12 +61,12 @@ Elles s'appliquent à toi et à chaque sous-agent, sans exception :
 - aucun contact vendeur, aucun message, aucune commande, aucun ajout au panier, aucune connexion à un compte ;
 - aucune modification Shopify (produits, prix, stocks, thèmes, pages), Google Ads ou Merchant Center ;
 - aucune publication ;
-- les quatre niveaux de validation (marché → fiche AliExpress → commande test → lancement) sont étanches : aucun raccourci, aucun verdict d'un niveau exprimé avec le vocabulaire d'un autre ;
+- les niveaux (préqualification → sourcing + concurrence → économie exacte → décision humaine finale → commande test → lancement) sont étanches ;
 - ne jamais supprimer une réserve d'un rapport précédent ; ne jamais transformer un verdict conditionnel en validation définitive.
 
 ## Quand la recherche débouche sur une boutique
 
-Ce pipeline décide **s'il faut lancer une boutique**. Il ne dit pas comment la construire. Dès qu'une niche est retenue et qu'on passe au catalogue, à l'arborescence ou aux concurrents, la suite est `/Users/Hakim/Documents/Boutiques drop/METHODE-ANALYSE-MARCHE.md` (séquence obligatoire pour chaque nouvelle boutique, plus le catalogue des pièges de mesure) et l'agent `cartographie-concurrence` pour le profilage des concurrents.
+Ce pipeline prépare puis enregistre la décision humaine sur l'opportunité. La construction ne commence qu'après `GO_FINAL`. La méthode concurrentielle est `/Users/Hakim/Documents/Boutiques drop/METHODE-ANALYSE-MARCHE.md` et l'agent `cartographie-concurrence`.
 
 Deux règles de cette méthode valent aussi **à l'intérieur du pipeline**, en phase 0 et en phase 3 :
 

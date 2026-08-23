@@ -55,19 +55,19 @@ Brief chemin B habituel : règle de dérivation (produits attestés par le vocab
 
 ### 4. Demande réelle — `phase3-demande`
 
-Nettoyage SERP, adressabilité, concurrents spécialistes vs enseignes, règle hiérarchique. `STOP marché` ferme l'idée ; `CAS LIMITE` remonte à Hakim sans continuer.
+Nettoyage SERP, adressabilité, concurrents spécialistes vs enseignes, règle hiérarchique. `STOP_PREQUALIFICATION` ferme l'idée ; `CAS LIMITE` remonte à Hakim sans continuer.
 
 ### 5. Fournisseur — `phase4-sourcing`
 
-Sur `GO marché` uniquement. Fiches ouvertes et vérifiées ; la case prouve la **sourçabilité**, pas la qualité du vendeur (décision Hakim 20/07/2026) — niveaux de confiance A/B/C, seuls bloquants : pas de fiche correspondante ou prix rendu ≥ prix marché.
+Sur `PASS_PREQUALIFICATION` uniquement. Fiches ouvertes et vérifiées ; la case prouve la **sourçabilité**, pas la qualité du vendeur ni un `GO_FINAL` — niveaux de confiance A/B/C, seuls bloquants : pas de fiche correspondante ou prix rendu ≥ prix marché.
 
-### 6. Critique — `critique-candidat`
+### 6. Critique technique — `critique-candidat`
 
-Avec les rapports du dossier. **Jamais le compteur ni l'avancement.** Verdict binaire.
+Avec les rapports de demande, sourcing et concurrence. **Jamais le compteur ni l'avancement.** Recommandation technique, jamais décision finale.
 
 ### 7. Écriture — après chaque idée, jamais en fin de session
 
-`RETENU` → ligne au registre (confiance A/B/C, toutes réserves), suppression du placeholder s'il reste, compteur `N / 20` recompté sur les lignes réelles. Morts et viviers s'écrivent aussi au fil de l'eau.
+`TECHNICAL_GO` → dossier présenté à Hakim pour `GO_FINAL`, `WATCH_FINAL` ou `NO_GO_FINAL`. Seul un `GO_FINAL` devient `RETENU` au registre. Morts et viviers s'écrivent aussi au fil de l'eau.
 
 ### 8. Synchronisation Notion — après chaque écriture registre
 

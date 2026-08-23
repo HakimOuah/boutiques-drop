@@ -56,17 +56,17 @@ Le brief transmis à `phase2-filtre` doit contenir, à chaque fois :
 2. **La fourchette de prix de la sonde**, avec sa date, comme seule donnée de prix autorisée.
 3. **L'obligation de verser les poches non instruites** — si l'agent repère dans le rapport de phase 0 un signal qu'il ne peut pas instruire comme candidat (segment adjacent, mot-clé à CPC élevé, persona pro), il le liste explicitement dans son rapport au lieu de le laisser tomber. Tu inscris ces poches dans la section « Viviers » du registre avec le motif `poche repérée, non instruite`, pour qu'elles ne soient pas perdues.
 
-**c. Demande réelle** — lance `phase3-demande` sur les survivants. C'est lui qui nettoie la SERP, mesure le volume réellement adressable, relève les prix et compte les concurrents en séparant institutionnels et dropshippers. Un `STOP marché` ferme le cluster. Un `CAS LIMITE` ne continue pas : il est noté au registre et remonté à Hakim en fin de tour.
+**c. Demande réelle** — lance `phase3-demande` sur les survivants. C'est lui qui nettoie la SERP, mesure le volume réellement adressable et relève les prix. Un `STOP_PREQUALIFICATION` ferme le cluster. Un `CAS LIMITE` ne continue pas : il est noté au registre et remonté à Hakim en fin de tour.
 
-**d. Fournisseur** — lance `phase4-sourcing` sur les `GO marché` uniquement. Une à deux fiches AliExpress ouvertes et vérifiées : prix rendu, notation vendeur si elle existe, nombre de commandes, délai, entrepôt.
+**d. Due diligence** — sur les `PASS_PREQUALIFICATION` uniquement, lance `phase4-sourcing` et la cartographie concurrentielle, en parallèle quand possible. Les deux rapports alimentent ensuite l'économie exacte et la décision humaine finale.
 
 Ce qu'on cherche à prouver ici est que le produit est **sourçable** et qu'une fiche précise lui correspond — pas que le fournisseur est bon. Décision de Hakim du 20 juillet 2026 : un vendeur sans avis, avec une ou deux commandes, ou expédiant depuis la Chine, **ne ferme pas le cluster**. Cherche en priorité un vendeur avec des avis solides et un entrepôt France ou UE ; si tu n'en trouves pas, retiens la meilleure fiche disponible et note-la comme telle.
 
 Cluster fermé uniquement si : aucune fiche ne correspond au produit, ou le prix rendu est supérieur ou égal au prix marché constaté.
 
-**e. Critique** — lance `critique-candidat` avec les rapports du dossier. **Ne lui transmets jamais le compteur, ni le nombre de candidats manquants, ni aucune indication d'avancement.** Son verdict est binaire et sans appel.
+**e. Critique technique** — lance `critique-candidat` avec les rapports du dossier. **Ne lui transmets jamais le compteur, ni le nombre de candidats manquants, ni aucune indication d'avancement.** Sa sortie est une recommandation technique, jamais `GO_FINAL`.
 
-**f. Écriture** — si `RETENU`, écris immédiatement dans la section « Chasse clusters » du registre, en trois gestes indissociables :
+**f. Décision et écriture** — présente le dossier consolidé à Hakim. Si et seulement si la décision est `GO_FINAL`, écris immédiatement `RETENU` dans la section « Chasse clusters » du registre, en trois gestes indissociables :
 
 1. ajoute la ligne du candidat avec son niveau de confiance fournisseur (A, B ou C) et toutes ses réserves ;
 2. si la ligne d'amorce `| — | *aucun candidat retenu à ce jour* | … |` est encore présente, **supprime-la** — c'est un placeholder, jamais un candidat ;
@@ -120,7 +120,7 @@ Sur blocage : mets le registre à jour avec l'état atteint, puis produis le rap
 
 - Ne jamais assouplir un critère pour atteindre l'objectif chiffré. Un compte de 12 candidats solides vaut mieux que 20 dont 8 sont faibles.
 - Ne jamais transmettre le compteur à `critique-candidat`.
-- Ne jamais aller au-delà du niveau 2 de validation : pas de phase 5, pas de commande test, pas de GO lancement.
+- Ne jamais transformer la recommandation technique en décision humaine : pas de commande test, pas de `GO_FINAL` automatique, pas de GO lancement.
 - Aucun contact vendeur, aucun achat, aucun ajout au panier, aucune connexion à un compte.
 - Aucune modification Shopify, Google Ads ou Merchant Center. Aucune publication.
 - Ne jamais supprimer une réserve d'un rapport précédent.

@@ -29,8 +29,8 @@ Un gadget drop 15–20 € n’est ni l’un ni l’autre. `SIGNAL_PRIX_PANIER` 
 | Après toi | Skill | Toi |
 |---|---|---|
 | Volume + sonde + SERP + **Google Trends** | `recherche-mots-cles` | brief tagué du mode, tu t’arrêtes |
-| Fournisseur AliExpress | `sourcing-aliexpress`, **après** verdict marché écrit | tu n’ouvres pas AliExpress |
-| GO / STOP | Hakim | tu ne prononces pas |
+| Fournisseur AliExpress | `sourcing-aliexpress`, **après** `PASS_PREQUALIFICATION` écrit | tu n’ouvres pas AliExpress |
+| Décision finale | Hakim, après sourcing + concurrence + économie | tu ne prononces ni préqualification ni `GO_FINAL` |
 
 Registre anti-doublon **avant** toute idée : `boutique-pipeline/registre-candidats.md` (fichier entier). Synonymes : singulier/pluriel, accents, FR/EN, même usage. STOP/rejeté → pas de re-proposition sauf `reprise motivée`. Un vivier n’est pas un STOP.
 
@@ -70,7 +70,7 @@ API : `https://api.trendtrack.io`, `Authorization: Bearer $TRENDTRACK_API_KEY`. 
 
 Amazon, VEVOR, Flippa, Europages — seulement si Hakim les demande, ou pour une preuve de prix datée. Même filtre de mode.
 
-Le fournisseur est **exclusivement AliExpress**, après verdict marché — pas ce skill.
+Le fournisseur est **exclusivement AliExpress**, après `PASS_PREQUALIFICATION` — pas ce skill. Ce pass ouvre la due diligence et n'est pas un GO commercial.
 
 ## Filtres d’amont (un par un, motivés)
 
