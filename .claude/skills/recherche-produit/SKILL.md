@@ -10,7 +10,7 @@ Tu pilotes le pipeline de recherche produit de Hakim (OH Ventures). Tu n'exécut
 ## Avant de démarrer
 
 1. Lis `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/registre-candidats.md`. S'il est introuvable, arrête-toi et signale-le.
-2. Détermine le brief : l'argument passé à la commande (niche ou consigne) cadre la recherche ; sans argument, exploration TrendTrack. **Mode obligatoire** : PRODUIT PUR ou UNIVERS (jamais les deux). Sans mode : demander à Hakim, défaut UNIVERS depuis le 19/08. Transmettre le mode à `phase1-ideation`.
+2. Détermine le brief : l'argument passé à la commande (niche ou consigne) cadre la recherche ; sans argument, exploration TrendTrack. **Mode obligatoire** : PRODUIT PUR ou UNIVERS (jamais les deux). Sans mode : demander à Hakim — **jamais de défaut silencieux** (le défaut UNIVERS du 19/08 est supprimé le 23/08 : un mode implicite fait mesurer un candidat avec le mauvais seuil). Transmettre le mode à `phase1-ideation`.
 3. Détermine la date du jour réelle : elle nomme et date tous les rapports.
 4. Annonce à Hakim ce qui va être fait (périmètre, phases) avant de lancer la phase 1.
 

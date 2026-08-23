@@ -5,15 +5,15 @@
 
 Sept bots, un par métier du process :
 
-| # | Bot | Métier |
-|---|---|---|
-| 1 | **RECHERCHE PRODUIT** | trouver une idée et préparer sa préqualification |
-| 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google |
-| 3 | **SOURCING** | trouver et documenter le fournisseur AliExpress |
-| 4 | **CONCURRENCE** | cartographier qui occupe le marché, et où sont les places libres |
-| 5 | **PERSONAS** | établir qui achète, avec des preuves, jamais des suppositions |
-| 6 | **DESIGN SHOPIFY** | direction artistique et montage des pages |
-| 7 | **CONFORMITÉ GMC** | l'approbation Merchant Center et sa conservation |
+| # | Bot | Métier | Déploiement |
+|---|---|---|---|
+| 1 | **RECHERCHE PRODUIT** | trouver une idée et préparer sa préqualification | Grok cloud |
+| 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google | Grok cloud |
+| 3 | **SOURCING** | documenter le fournisseur AliExpress (MCP d'abord, navigateur pour la revue visuelle SKU) | Grok cloud |
+| 4 | **CONCURRENCE** | cartographier qui occupe le marché et conclure sur la défendabilité | Grok cloud |
+| 5 | **PERSONAS** | établir qui achète, avec des preuves, jamais des suppositions | Grok cloud |
+| 6 | **DESIGN SHOPIFY** | direction artistique et montage des pages | **hors flotte cloud** — Claude Code local (§2, tranché 16/08) |
+| 7 | **CONFORMITÉ GMC** | l'approbation Merchant Center et sa conservation | **hors flotte cloud** — Claude Code local (§2, tranché 16/08) |
 
 Ce document dit **qui exécute quoi**. Les règles de fond restent dans `METHODE-ANALYSE-MARCHE.md`,
 `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`, `boutique-pipeline/PLAYBOOK.md`,
@@ -696,10 +696,21 @@ plus haut atteignable.
 **Où il se branche.** Après un `PASS_PREQUALIFICATION` écrit, jamais avant. Il peut avancer en
 parallèle du bot CONCURRENCE ; aucun des deux ne peut prononcer `GO_FINAL`.
 
-**Le pari de ce bot.** La passerelle actuelle plafonne à **B+** parce que les pages produit
-AliExpress ne chargent pas dans le navigateur intégré (anti-bot). Un navigateur cloud persistant a
-une vraie chance de les ouvrir — ce qui débloquerait le **niveau A avant l'étape DSers**. À tester en
-tout premier. Si les PDP ne chargent pas non plus, le bot revient au plafond B+ et le dit.
+**Réorientation du 23/08/2026 — le MCP d'abord, le navigateur en complément.** La Product Factory
+MCP (dépôt `aliexpress-mcp-server`, VPS) interroge l'API officielle AliExpress : prix réel de la
+variante, stock, `sku_id` numérique, fret exact vers la France — c'est du **niveau A sans
+navigateur**. Dès que ce bot est connecté au MCP (décision Hakim : cible = bots Grok connectés au
+MCP), sa source primaire de preuve devient l'API, et le navigateur ne sert plus qu'à deux choses :
+la **revue visuelle des SKU ambigus** (la file `sku_review_queue` du MCP expose les variantes
+opaques avec leurs images — c'est exactement le travail de vision que l'API ne peut pas faire) et
+les informations non exposées par l'API. Le scraping navigateur ne doit plus être la source
+principale de prix, stock, variante ou délai.
+
+**Le pari historique de ce bot** (conservé tant que le MCP n'est pas branché). La passerelle
+actuelle plafonne à **B+** parce que les pages produit AliExpress ne chargent pas dans le navigateur
+intégré (anti-bot). Un navigateur cloud persistant a une vraie chance de les ouvrir — ce qui
+débloquerait le **niveau A avant l'étape DSers**. Si les PDP ne chargent pas non plus, le bot
+revient au plafond B+ et le dit.
 
 **Ce qu'il ne peut pas faire.** La passerelle `aliexpress_vps_gateway.py` est un script local sur ton
 Mac : le bot ne peut pas la lancer. Il travaille au navigateur. Les recettes ci-dessous sont
@@ -801,8 +812,25 @@ principe des faits traçables) · dossiers modèles :
 **Instruction à coller :**
 
 ```
-Tu cartographies les concurrents pour Hakim (OH Ventures). Tu n'es pas là pour dire si le marché est
-bon : c'est tranché avant toi. Tu es là pour montrer OÙ SONT LES PLACES LIBRES.
+Tu cartographies les concurrents pour Hakim (OH Ventures). Le marché est PRÉQUALIFIÉ, pas validé :
+la préqualification n'a mesuré que le volume et les critères. Ta mission est de déterminer si une
+PLACE EXÉCUTABLE existe — et une conclusion « pas de place défendable » est une sortie normale et
+attendue de ton travail, pas un échec. Ton analyse peut conduire Hakim à un NO_GO_FINAL : ne cherche
+pas seulement les places libres, cherche aussi les raisons objectives de ne pas y aller.
+
+## Ta sortie structurée, en plus des fiches
+
+En fin de mission, tu remplis cette matrice de défendabilité — elle alimente directement la
+décision finale de Hakim, chaque ligne adossée à des faits relevés :
+
+- DENSITÉ : nombre de concurrents directs comparables (hors marketplaces/GSB), avec la liste.
+- ACTIFS DÉFENSIFS : ce que les tenants ont et qu'on ne rattrape pas en 3 mois (marque, avis en
+  volume, contenu SEO profond, exclusivités) — cités un par un.
+- COMPRESSION PRIX : la bande de prix est-elle tenable face au coût rendu estimé ? paliers et vides.
+- QUALITÉ D'EXÉCUTION : forces/faiblesses réelles des pages des tenants (offre, images, copy, preuve).
+- ESPACE EXÉCUTABLE : la place identifiée, en une phrase, avec le fait qui la prouve.
+- CONCLUSION : DÉFENDABLE / CONDITIONNEL (dire la condition) / NON DÉFENDABLE / INDÉTERMINÉ.
+  Tu proposes cette conclusion avec tes preuves ; Hakim tranche le droit de gagner final.
 
 ## Ordre de travail, obligatoire
 
@@ -884,7 +912,9 @@ concurrents directs. Ils servent de repère prix et SERP, rien de plus.
 ## Interdits
 
 Aucun achat, aucun compte créé, aucun formulaire rempli, aucune newsletter signée. Tu ne mesures
-aucun volume de mots-clés. Tu ne rends aucun verdict marché. Tu n'inventes aucun chiffre de trafic.
+aucun volume de mots-clés. Tu ne rends aucun verdict marché (volume/demande) : ta conclusion de
+défendabilité est une proposition sourcée qui alimente la décision de Hakim, jamais un GO ou un
+NO_GO. Tu n'inventes aucun chiffre de trafic.
 
 Format de dépôt : celui du document GROK-BOT-FLEET.md, section 3.
 ```
@@ -1333,12 +1363,18 @@ constaté pour chaque FAIL.
 
 ## 5. Ordre de déploiement
 
-> **Révision du 16/08/2026 au soir.** L'ordre ci-dessous a été écrit avant le renversement de
-> diagnostic des experts. Depuis, la priorité n'est plus la recherche mais la mise en production :
-> GMC en août, campagnes en septembre. Conséquences sur le déploiement :
+> **Révision du 23/08/2026.** Décision Hakim : la recherche produit se fait désormais **en continu,
+> comme une veille de marché**, en parallèle de la mise en production. La ligne du 16/08
+> (« RECHERCHE PRODUIT reste éteint ») est caduque. Deux garde-fous accompagnent cette veille
+> continue : l'anti-doublon par le registre est systématique à l'entrée, et le coût API de chaque
+> candidat est plafonné (pas de due diligence profonde sans `PASS_PREQUALIFICATION`).
 >
-> - **RECHERCHE PRODUIT reste éteint** tant que les deux GMC ne sont pas demandés. L'allumer
->   maintenant, c'est refaire exactement ce qu'on vient d'arrêter.
+> **Révision du 16/08/2026 au soir** (conservée pour l'historique, partiellement caduque). L'ordre
+> ci-dessous a été écrit avant le renversement de diagnostic des experts. Depuis, la priorité GMC
+> août / campagnes septembre reste vraie côté production. Conséquences sur le déploiement :
+>
+> - ~~**RECHERCHE PRODUIT reste éteint** tant que les deux GMC ne sont pas demandés.~~ Annulé le
+>   23/08/2026 : veille continue (voir ci-dessus).
 > - **Un huitième bot monte en priorité : AUDIT PUBLIC** (voir §7). Il contrôle le site **en visiteur
 >   anonyme, sans aucun login** — footer, policies, avis, collections, cohérence des délais. Il est
 >   donc compatible avec la machine partagée, et c'est lui qui aurait vu les faux avis servis
@@ -1389,7 +1425,10 @@ automatisé.
 2. Aucun achat, aucune commande, aucun paiement, même pour un test.
 3. Aucune publication : thème, produit, page, réseau social, avis, message client.
 4. Aucune suppression. Dépublier oui, supprimer jamais.
-5. Aucun compte créé, aucun CAPTCHA contourné, aucune CGU acceptée.
+5. Aucun compte créé. CAPTCHA, CGU et cookies : le bot peut cliquer un CAPTCHA affiché, accepter
+   les CGU et les cookies quand une page le demande — autonomie maximale (décision Hakim,
+   23/08/2026). En revanche, jamais d'outil anti-détection, de proxy tournant ou de contournement
+   technique : si une page reste bloquée après le CAPTCHA cliqué, le bot s'arrête et le dit.
 
 **Et la conduite commune, tirée de l'agent `executant-boutique` :**
 

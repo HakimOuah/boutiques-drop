@@ -44,7 +44,7 @@ Sections obligatoires :
 3. **Indicateurs** — marge contributive, CPA max, CAC break-even vs CPC observé, budget test.
 4. **Faisabilité opérationnelle** — logistique, SAV, conformité.
 5. **Droit de gagner** — éléments observés qui rendent l'offre défendable, ou pourquoi ils restent insuffisants.
-6. **Recommandation technique** — `TECHNICAL_GO`, `TECHNICAL_WATCH` ou `TECHNICAL_NO_GO`, avec réserves.
+6. **Recommandation technique** — `TECHNICAL_PASS`, `TECHNICAL_WATCH`, `TECHNICAL_FAIL` ou `TECHNICAL_INCONCLUSIVE` (preuve critique manquante : coût rendu non daté, CPC absent, concurrence non examinée), avec réserves. Vocabulaire canonique du 23/08/2026 : le mot « GO » est réservé à la seule décision de Hakim (`GO_FINAL`) et n'apparaît dans aucune recommandation technique.
 7. **Dossier pour décision humaine** — conditions et preuves permettant à Hakim de choisir `GO_FINAL`, `WATCH_FINAL` ou `NO_GO_FINAL`.
 
 ## Interdits stricts
