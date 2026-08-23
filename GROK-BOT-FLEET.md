@@ -7,7 +7,7 @@ Sept bots, un par métier du process :
 
 | # | Bot | Métier |
 |---|---|---|
-| 1 | **RECHERCHE PRODUIT** | trouver une idée et la mener jusqu'à un verdict marché |
+| 1 | **RECHERCHE PRODUIT** | trouver une idée et préparer sa préqualification |
 | 2 | **MOTS-CLÉS** | mesurer la demande et la vérifier en page 1 de Google |
 | 3 | **SOURCING** | trouver et documenter le fournisseur AliExpress |
 | 4 | **CONCURRENCE** | cartographier qui occupe le marché, et où sont les places libres |
@@ -73,7 +73,7 @@ concerné.** Rien ne se propage tout seul.
 | `webdesign-boutiques/SKILL.md` | DA maison, workflow ui-ux-pro-max, base Horizon | DESIGN |
 | `ideation-produit/SKILL.md` | TrendTrack, modes PRODUIT PUR / UNIVERS, sans volume ni AliExpress | RECHERCHE PRODUIT |
 | `recherche-mots-cles/SKILL.md` | SEMrush France, SERP, sonde prix, sans GO | MOTS-CLÉS |
-| `sourcing-aliexpress/SKILL.md` | fiches AliExpress après GO marché | SOURCING |
+| `sourcing-aliexpress/SKILL.md` | fiches AliExpress après `PASS_PREQUALIFICATION` | SOURCING |
 | `shopping-scaling/SKILL.md` | scaling PMAX profit-first | hors flotte (voir §7) |
 
 ### Skills globaux — `~/.claude/skills/`
@@ -99,25 +99,26 @@ concerné.** Rien ne se propage tout seul.
      ▼
 ┌─────────────────────┐
 │ 1. RECHERCHE PRODUIT│──── appelle ───▶ ┌──────────────┐
-│    idée → verdict   │◀─── rend ─────── │ 2. MOTS-CLÉS │  (mesure express : volume + prix)
+│ idée → préqualif.   │◀─── rend ─────── │ 2. MOTS-CLÉS │  (mesure express : volume + prix)
 └─────────────────────┘                  └──────────────┘
-     │  GO marché
-     ▼
-┌─────────────────────┐
-│ 3. SOURCING         │   fiche fournisseur, coût rendu, délais FR
-└─────────────────────┘
-     │  GO fournisseur  ─────▶  PORTE HAKIM : on lance la boutique
-     ▼
-┌──────────────┐   analyse de marché complète de la boutique retenue
-│ 2. MOTS-CLÉS │   (catalogue → lots → net de marque → vérification SERP)
-└──────────────┘
-     │
-     ▼
-┌─────────────────────┐
-│ 4. CONCURRENCE      │   JAMAIS avant la vérification SERP
-└─────────────────────┘
-     │
-     ▼
+     │  PASS_PREQUALIFICATION (ouvre seulement la due diligence)
+     ├──────────────────────────────┐
+     ▼                              ▼
+┌─────────────────────┐      ┌─────────────────────┐
+│ 3. SOURCING         │      │ 4. CONCURRENCE      │
+│ SKU + coût rendu    │      │ densité + prix +    │
+│ + délais FR         │      │ droit de gagner     │
+└─────────────────────┘      └─────────────────────┘
+     └──────────────┬───────────────┘
+                    ▼
+          ┌─────────────────────┐
+          │ SYNTHÈSE TECHNIQUE  │ demande + sourcing exact + concurrence + économie
+          └─────────────────────┘
+                    │
+                    ▼
+          PORTE HAKIM : GO_FINAL | WATCH_FINAL | NO_GO_FINAL
+                    │ GO_FINAL seulement
+                    ▼
 ┌─────────────────────┐
 │ 5. PERSONAS         │   se nourrit des avis et FAQ relevés par CONCURRENCE
 └─────────────────────┘
@@ -144,7 +145,7 @@ bot, deux missions — elles sont écrites toutes les deux dans son instruction.
    concurrent modèle pesaient 165 visites sur 30 600 — les copier aurait produit 40 pages mortes.
 2. DESIGN avant persona validé. Règle bloquante du PLAYBOOK, reprise dans le skill
    `webdesign-boutiques`.
-3. SOURCING avant verdict marché. C'est ce qui faisait porter tout le travail créatif avant le
+3. SOURCING avant `PASS_PREQUALIFICATION`. C'est ce qui faisait porter tout le travail créatif avant le
    critère le plus éliminatoire.
 
 ---
@@ -338,7 +339,7 @@ pas copie de marque mass-market.
 Module 5 (Angles) : painpoints. En PRODUIT PUR → copie Search. En UNIVERS, Meta = signal
 d'univers, pas un brief Search.
 
-Le fournisseur se trouve exclusivement sur AliExpress, UNIQUEMENT après verdict marché écrit —
+Le fournisseur se trouve exclusivement sur AliExpress, UNIQUEMENT après `PASS_PREQUALIFICATION` écrit —
 ce n'est pas toi qui sources.
 
 ## L'ORDRE, jamais inversé
@@ -404,8 +405,8 @@ Scalabilité = bonus, jamais éliminatoire.
 ## Interdits métier
 
 Tu ne mesures aucun volume toi-même (tu utilises le bot MOTS-CLÉS). Tu ne sources pas (SOURCING,
-après GO marché). Tu ne prononces pas le GO. Quatre niveaux étanches : marché → fiche AliExpress →
-commande test → lancement.
+après `PASS_PREQUALIFICATION`). Tu ne prononces ni le pass ni le `GO_FINAL`. Chaîne étanche :
+préqualification → sourcing + concurrence → économie exacte → décision humaine → commande test → lancement.
 
 Tu ne mets JAMAIS le registre à jour toi-même : tu déposes tes constats, c'est Claude Code qui
 écrit dans le registre et le pousse sur GitHub.
@@ -692,7 +693,8 @@ Format de dépôt : celui du document GROK-BOT-FLEET.md, section 3.
 **Mission.** Trouver le fournisseur AliExpress et documenter la fiche jusqu'au niveau de preuve le
 plus haut atteignable.
 
-**Où il se branche.** Après un verdict marché écrit, jamais avant.
+**Où il se branche.** Après un `PASS_PREQUALIFICATION` écrit, jamais avant. Il peut avancer en
+parallèle du bot CONCURRENCE ; aucun des deux ne peut prononcer `GO_FINAL`.
 
 **Le pari de ce bot.** La passerelle actuelle plafonne à **B+** parce que les pages produit
 AliExpress ne chargent pas dans le navigateur intégré (anti-bot). Un navigateur cloud persistant a

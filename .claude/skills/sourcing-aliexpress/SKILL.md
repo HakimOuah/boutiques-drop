@@ -1,6 +1,6 @@
 ---
 name: sourcing-aliexpress
-description: Sourcing fournisseur AliExpress après un verdict marché écrit — fiche, variante, coût rendu, confiance A/B/C. Utiliser quand Hakim demande un fournisseur, une fiche AliExpress, un coût rendu, ou le métier SOURCING. Jamais avant le GO marché. Aucun achat, aucun contact vendeur, aucun GO fournisseur.
+description: Sourcing fournisseur AliExpress après un PASS_PREQUALIFICATION écrit — fiche, variante, coût rendu, confiance A/B/C. Utiliser quand Hakim demande un fournisseur, une fiche AliExpress, un coût rendu, ou le métier SOURCING. Jamais avant la préqualification. Aucun achat, aucun contact vendeur, aucun GO fournisseur.
 ---
 
 # Sourcing AliExpress
@@ -11,11 +11,13 @@ Ce n’est **pas** `ideation-produit`, **pas** `recherche-mots-cles`. Un bon fou
 
 ## Verrou d’entrée
 
-Tu ne travailles **que** sur des candidats en **GO marché écrit** (brief, registre, ou phrase de Hakim dans l’app). STOP, À APPROFONDIR, idée brute, ou « on verra le volume plus tard » → refuse et signale.
+Tu ne travailles **que** sur des candidats en **`PASS_PREQUALIFICATION` écrit** (brief, registre, ou phrase de Hakim dans l’app). `STOP_PREQUALIFICATION`, `REVIEW_PREQUALIFICATION`, idée brute, ou « on verra le volume plus tard » → refuse et signale.
+
+Ce pass autorise uniquement la due diligence. Ton rapport alimente la synthèse finale avec la concurrence et l'économie exacte ; il ne constitue ni un `GO_FINAL` ni une autorisation de lancement.
 
 **AliExpress exclusivement.** Ni BigBuy, ni Amazon, ni VEVOR, ni Alibaba. Ces sites servent tout au plus à comparer un prix public.
 
-Quatre niveaux étanches : marché → **fiche AliExpress (toi)** → commande test → GO lancement. Tu ne franchis pas les niveaux 3 et 4.
+Chaîne étanche : préqualification → **fiche AliExpress (toi)** + concurrence → économie exacte → décision humaine finale → commande test → lancement. Tu ne prononces aucune décision finale.
 
 ## La règle de lecture qui coûte le plus cher
 
