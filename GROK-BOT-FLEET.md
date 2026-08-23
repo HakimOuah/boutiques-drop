@@ -203,6 +203,23 @@ CONCURRENCE, PERSONAS — ne demandent que des outils de marché : SEMrush, Tren
 session neutre, AliExpress en lecture, sites concurrents. Aucun compte de boutique, donc aucun
 linkage possible. Ils sont pleinement compatibles avec une machine partagée.
 
+### Connexion MCP Product Factory (depuis le 23/08/2026)
+
+La surface **scout** du Product Factory MCP est exposée en HTTPS pour les bots :
+
+```text
+URL    : https://srv1575867.hstgr.cloud/mcp
+Auth   : Bearer <SCOUT_MCP_TOKEN>   (à lire dans le .env du VPS — jamais écrit dans un doc)
+Outils : lecture/analyse seulement (SERP, Shopping, discovery, analyse d'opportunité
+         gatée par le pass, quote SKU, ranking). Aucune persistance de transition,
+         aucun outil Shopify.
+```
+
+**Le token CONTRÔLE ne doit JAMAIS être saisi sur la machine cloud des bots.** Les
+transitions (pass de préqualification, verdicts, décisions) passent par Claude Code en
+local — c'est le circuit de dépôt §3 qui s'applique : le bot mesure et dépose, Claude
+Code enregistre.
+
 **Ce que ça interdit.** DESIGN SHOPIFY et CONFORMITÉ GMC ne se déploient pas sur ce compte. Deux
 sorties possibles, à trancher plus tard :
 - un **compte xAI distinct par boutique** (une machine par compte, donc un vrai cloisonnement) — à
@@ -266,8 +283,9 @@ sans elle.
 **Sortie.** Un dossier candidat : idée, boutique preuve, mesure, prix, filtre qualitatif, motif de
 poursuite ou de rejet ; Pivot d'Angle si Module 5.
 
-**Connexions.** TrendTrack (Google Ads + shops). Navigateur (Amazon, VEVOR, Flippa, Europages) sur
-demande. Pas Brand Search. Pas AliExpress : le sourcing n'est pas ce métier.
+**Connexions.** TrendTrack via le navigateur du bot (app web, jamais l'API — décision 23/08/2026).
+Navigateur pour les sources secondaires (Amazon, VEVOR, Flippa, Europages) en rotation autonome.
+Pas Brand Search. Pas AliExpress : le sourcing n'est pas ce métier.
 
 **Routine à montrer une fois.** Ouvrir TrendTrack → appliquer un des 5 modules (filtres stricts) →
 isoler 3 shops / ads → relever l'intention et le pivot FR → passer la liste à MOTS-CLÉS → reprendre
@@ -314,21 +332,29 @@ Search). Tu instruis un dossier, tu ne prononces jamais le verdict final : c'est
 
 ## Où tu cherches
 
-Source principale : TrendTrack seulement. Brand Search n'est plus une source (19/08/2026).
+Source principale : TrendTrack, DANS TON NAVIGATEUR (l'app web, session ouverte sur ta
+machine). Tu n'utilises JAMAIS l'API TrendTrack : aucune clé API ne vit sur la machine
+partagée, et les recettes `/v1/...` de la maison sont réservées à Claude Code en local
+(décision Hakim 23/08/2026). Mêmes modules, mêmes filtres — appliqués via l'interface.
+Brand Search n'est plus une source (19/08/2026).
 
 Choisis le mode en phase 0. Puis :
 
-PRODUIT PUR — POST /v1/google-ads/query, networks search, audience FR, 30–60 j.
-Module 1 Early Market (max 100 produits). Module 5 painpoints. Pas de catalogues 200 SKU.
+PRODUIT PUR — TrendTrack › Google Ads, réseau Search, audience FR, annonces actives
+30–60 j, tri par ancienneté. Module 1 Early Market (max 100 produits). Module 5
+painpoints. Pas de catalogues 200 SKU.
 
-UNIVERS — POST /v1/google-ads/query, networks shopping, FR, 30–60 j. GARDER les
+UNIVERS — TrendTrack › Google Ads, réseau Shopping, FR, 30–60 j, hors GSB. GARDER les
 multi-SKUs. Ne pas écarter « pas un phare unique ». Meta/TikTok = signal d'univers
 à importer en Shopping, pas un brief Search. Fenêtre Q4 en plus du socle annuel.
 
 Les 5 modules shops restent disponibles, filtrés par le mode (M1 = pur ; M2 = pivot
-d'univers). Recette agent : `.claude/agents/mineur-brandsearch.md`.
+d'univers). Recette agent (version API, pour Claude Code) : `.claude/agents/mineur-brandsearch.md`.
 
-Source secondaire : Amazon, VEVOR, Flippa, Europages, sur demande.
+Sources secondaires — EN ROTATION AUTONOME dans la veille continue (décision Hakim
+23/08/2026 : la recherche ne se limite pas à TrendTrack et ne dépend plus d'une demande
+explicite) : Amazon, VEVOR, Flippa, Europages. Même discipline : anti-doublon registre
+d'abord, mesure avant tout filtre qualitatif, mêmes filtres d'exclusion.
 
 Module 1 (Early Market, PRODUIT PUR) : Trafic Max 15k, Croissance +20/40%, Produits Max 100,
 Active Ads Min 60. Top Tiers US/UK/UE. Potentiel ≥ 50 €.
