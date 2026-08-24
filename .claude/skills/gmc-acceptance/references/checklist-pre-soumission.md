@@ -29,7 +29,7 @@ Mode **PRODUIT PUR** : 1 héros + 2–4 variantes réellement différentes (5–
 - [ ] Ne pas créer le GMC le jour de l'achat
 
 **Compte Google**
-- [ ] Workspace / compte Google **dédié** à cette boutique (pas le Gmail perso)
+- [ ] E-mail pro **sur le domaine** (IONOS OK au départ). Workspace / compte Google dédié **quand la vérif SMS est possible** — pas un Gmail gratuit `contact.marque@gmail.com`
 - [ ] Il devient vivant parce qu'il **sert** (support, Shopify, factures, Google) — pas de chauffe artificielle YouTube / Search pour simuler un humain
 - [ ] **(précaution)** Attendre quelques jours avant de lier Ads / GMC. Pas de compte → GMC → Ads dans la même heure
 - [ ] Pas de Gmail « aged » acheté
