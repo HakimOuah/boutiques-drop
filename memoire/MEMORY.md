@@ -24,7 +24,8 @@
 - [Mesure express SEMrush par lots](mesure-express-semrush-lots.md) — analyse par lots 100 kw + KMT par URL, recette validée 01/08/2026
 - [Rejets terrain handpan/lit cabane/purificateur](rejets-terrain-handpan-litcabane-purificateur.md) — retours terrain de Hakim priment sur les volumes, 3 rejets du 02/08/2026
 - [AliExpress bloque les couteaux cuisine en France](aliexpress-bloque-couteaux-cuisine-france.md) — catégorie invisible à la livraison FR, tueur de dossier pour toute idée « lame » (02/08/2026, re-test au retour)
-- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — 4 PDF Terry Ecom distillés en 2 skills projet : gmc-acceptance (approbation GMC + templates policies FR) et shopping-scaling (PMAX profit-first)
+- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — Terry Ecom 2026 + recap 24/08 (isolation n°/adresse, Gmail vivant, pack policies FR, tuto IPRoyal ISP) ; shopping-scaling (PMAX profit-first)
+- [Proxy IPRoyal GMC](proxy-iproyal-gmc.md) — 1 IP ISP France par profil Chrome Gmail/GMC/Ads ; Shopify ailleurs, jamais derrière le proxy
 - [GitHub source de vérité](github-source-de-verite.md) — 4 repos HakimOuah (hub + pipeline + factory + drop-elite-google-os), réflexe commit+push en fin de toute tâche depuis le 07/08/2026
 - [Méthode Kraken : coach-associé](methode-kraken-coach-associe.md) — drop-elite-google-os = corpus Enzo Honoré 66 contenus, finalité coach/associé proactif, roadmap 11 phases dans strategie-pas-a-pas.md
 - [Plafond des niches Kraken évidentes](plafond-niches-kraken-evidentes.md) — 8 STOP/8 le 08/08 : preuve visible = occupation, dropship FR plafonnés 1-10 k visites, filtres précoces à réutiliser

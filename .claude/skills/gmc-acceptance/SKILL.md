@@ -62,7 +62,8 @@ Les playbooks Terry sont écrits pour le marché US. Pour les boutiques FR :
 
 ## Comment travailler
 
-- **Préparer une nouvelle boutique** → dérouler `references/checklist-pre-soumission.md` section par section, en pass/fail, avant toute création de GMC. Isolation identité (Gmail vivant, n° dédié, adresse Maps unique, domaine qui a quelques semaines) **avant** le build.
+- **Préparer une nouvelle boutique** → dérouler `references/checklist-pre-soumission.md` section par section, en pass/fail, avant toute création de GMC. Isolation identité (Gmail vivant, n° dédié, adresse Maps unique, domaine qui a quelques semaines, **IP ISP IPRoyal**) **avant** le build.
+- **Brancher l'IP Gmail / GMC** → recette simple dans `references/proxy-iproyal.md` (ISP France, 1 IP = 1 profil Chrome, Shopify ailleurs).
 - **Auditer / après un refus** → même checklist en mode audit : lister chaque item en échec, tout corriger, attendre 7–10 jours avant re-soumission.
 - **Rédiger les policies** → lire `references/templates-policies.md`, partir de `references/templates-fr/`, remplacer tous les [placeholders], reformuler des passages (jamais le même texte entre deux boutiques), **zéro identifiant d'entité**, puis coller le texte final identique dans Shopify Settings → Policies ET dans GMC.
 - **Scaler une campagne approuvée** → skill `shopping-scaling` (framework PMAX profit-first, hors périmètre de ce skill).
