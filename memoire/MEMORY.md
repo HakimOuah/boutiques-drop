@@ -39,7 +39,7 @@
 - [Salve niches univers 15/08](salve-niches-univers-2026-08-15.md) — 6 idées boutiques univers de Hakim (literie, bouillottes, globe, astro, goth, ésotérisme), niveau 0, plan 7 étapes mode Kraken dans boutique-pipeline/plans/
 - [Pièges de l'import DSers](pieges-import-dsers.md) — vérifier qu'un article n'est pas déjà le fournisseur d'une fiche active, « Unsaved changes » qui s'ouvre sans modification, galerie qui mélange cadrans marqués et stériles
 - [Variantes sans accent dans le KMT](variantes-sans-accent-kmt.md) — SEMrush traite `ciel etoile` et `ciel étoilé` comme deux corpus ; interroger les deux, écart jusqu'à ×8
-- [Identité partagée et soumission GMC](identite-partagee-gmc.md) — 4 boutiques, même adresse et même téléphone ; linkage assumé, Tuftéo soumis seul puis Noirmont à 30 jours ; storefront Noirmont gelé le 17/08
+- [Identité partagée et soumission GMC](identite-partagee-gmc.md) — parc actuel : même adresse et même téléphone ; nouvelles boutiques (24/08) : un n° et une adresse Maps par store, policies au nom de la marque
 - [App Google & YouTube, flux vivant](app-google-youtube-flux-vivant.md) — GMC via l'app Shopify sans lancer d'ads ; Tuftéo et Bonum Vitae déjà validés après une phase limitée ; on ne recrée pas un flux qui tient
 - [Flotte Grok Bot](flotte-grok-bot.md) — 10 bots dans GROK-BOT-FLEET.md, recherche mutualisée vs exploitation 1/boutique (risque IP GMC), aucun accès GitHub
 - [Plan Q4 2026 (experts, 16/08)](plan-q4-2026-experts-16-08.md) — boutiques prêtes + GMC en août, campagnes en septembre ; tests coupés trop tôt à 120-130 €, seuil produit 20 k

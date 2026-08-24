@@ -1,47 +1,76 @@
-# Politique de livraison
+# Politique d'expédition
 
-Chez [Nom de la boutique], nous nous engageons à offrir une expérience d'achat irréprochable, ce qui passe par une politique de livraison claire et transparente. Nous offrons la livraison gratuite sur toutes les commandes à destination de [Liste des pays ou régions].
+Chez [Nom de la boutique], nous mettons tout en œuvre pour que votre commande vous parvienne rapidement, en bon état et en toute transparence. Vous trouverez ci-dessous le détail complet de nos conditions de livraison.
 
-## Zones de livraison
+## 1. Frais de livraison
 
-Cette politique de livraison s'applique aux commandes expédiées vers [Liste des pays ou régions].
+La livraison est entièrement gratuite pour toutes les commandes, sans montant minimum d'achat. Aucun frais de port ne vous sera facturé au moment du paiement.
 
-## Délais de livraison
+## 2. Zone de livraison
 
-Voici les délais de livraison estimés pour tous les colis :
+Nous expédions actuellement en [Zones de livraison, ex. France métropolitaine (Corse incluse)]. Les livraisons vers les DOM-TOM et l'international ne sont pas proposées pour le moment.
 
-- **Heure limite de commande** : [Heure limite et fuseau horaire, ex. 17h00, heure de Paris]. Les commandes passées après cette heure sont traitées le jour ouvré suivant, ce qui peut ajouter un jour au délai estimé.
-- **Délai de traitement** : [Fourchette de traitement] (ex. 1 à 2 jours ouvrés, du lundi au vendredi). Une fois votre commande traitée, elle est expédiée par l'un de nos transporteurs de confiance.
-- **Délai d'acheminement** : [Fourchette de transit] (ex. 6 à 8 jours ouvrés, du lundi au vendredi).
-- **Délai de livraison total estimé** : [Fourchette totale estimée] (ex. 7 à 10 jours ouvrés).
+## 3. Heure limite de commande (cut-off)
 
-## Transporteurs
+L'heure limite de prise en compte des commandes est fixée à [Heure limite + fuseau, ex. minuit (00h00, heure de Paris)].
 
-Nous travaillons avec les transporteurs fiables suivants pour les livraisons vers [Pays ou régions concernés] : [Liste des transporteurs, ex. Colissimo, Mondial Relay, Chronopost].
+- Toute commande validée et payée avant cette heure est prise en compte le jour même.
+- La préparation démarre ensuite le jour ouvré suivant (du lundi au vendredi).
 
-## Frais de livraison
+## 4. Délai de préparation (traitement de la commande)
 
-**Livraison gratuite** : toutes les commandes à destination de [Liste des pays ou régions] bénéficient de la livraison gratuite, sans minimum d'achat.
+Le délai de préparation de votre colis est de [Délai de préparation, ex. 3 jours ouvrés] (du lundi au vendredi, hors week-ends et jours fériés). Ce délai correspond au temps nécessaire pour contrôler, emballer et remettre votre commande au transporteur.
 
-**Livraison payante (le cas échéant)** : pour les destinations hors de nos zones de livraison gratuite, les frais de livraison sont calculés et affichés au moment du paiement.
+## 5. Délai d'acheminement (transport)
 
-## Problèmes de livraison
+Une fois votre colis remis au transporteur, le délai d'acheminement est de [Délai d'acheminement, ex. 2 à 4 jours ouvrés] (du lundi au vendredi), pour toutes les destinations en [Zones de livraison].
 
-En cas de problème avec votre livraison (retard, colis perdu…), contactez immédiatement notre service client. Nous sommes là pour vous aider et faire en sorte que votre commande arrive à bon port et dans les délais.
+## 6. Délai de livraison total estimé
 
-## Suivi de votre commande
+En additionnant la préparation et l'acheminement, le délai de livraison total estimé est de [Délai total, ex. 5 à 7 jours ouvrés] à compter de la validation de votre commande.
 
-Dès l'expédition de votre commande, vous recevez un email contenant un numéro de suivi. Vous pouvez suivre le trajet de votre colis sur notre page [URL de la page de suivi].
+| Étape | Délai |
+|---|---|
+| Heure limite de commande | [Heure limite + fuseau] |
+| Préparation | [Délai de préparation] |
+| Acheminement | [Délai d'acheminement] |
+| Total estimé | [Délai total] |
 
-## Des questions ?
+## 7. Jours sans expédition
 
-Consultez notre page FAQ à l'adresse [URL de la page FAQ] ou contactez notre service client.
+Les commandes ne sont ni préparées ni expédiées les samedis, dimanches et jours fériés. Une commande passée le week-end ou un jour férié est traitée à partir du jour ouvré suivant.
 
-## Coordonnées
+## 8. Transporteurs et mode de livraison
 
-- Nom de la boutique : [Nom de la boutique]
-- Adresse : [Adresse de l'entreprise]
-- Email : [Email support]
-- Téléphone : [Téléphone support]
-- Horaires du service client : [Jours et horaires, ex. du lundi au vendredi, 9h00 – 17h00 (heure de Paris)]
-- Délai de réponse : nous nous efforçons de répondre sous [1 à 2 jours ouvrés].
+Vos colis sont confiés à [Liste réelle des transporteurs, ex. Colissimo, Mondial Relay]. Selon votre adresse et le format du produit, la livraison peut s'effectuer à domicile ou en point relais.
+
+## 9. Confirmation et suivi de commande
+
+Vous recevez un e-mail de confirmation dès la validation de votre commande, puis un second e-mail contenant un numéro de suivi dès l'expédition. Ce numéro vous permet de suivre votre colis en temps réel jusqu'à sa livraison.
+
+## 10. Adresse de livraison erronée ou incomplète
+
+Il vous appartient de vérifier l'exactitude de votre adresse lors de la commande. En cas d'adresse erronée ou incomplète entraînant un retour ou une non-livraison, contactez-nous au plus vite : nous vous aiderons à réexpédier le colis dès qu'il nous est retourné.
+
+## 11. Colis en retard ou non livré
+
+Si votre colis dépasse le délai annoncé de plusieurs jours ouvrés, vérifiez d'abord le suivi puis contactez-nous. Nous ouvrons immédiatement une enquête auprès du transporteur et trouvons une solution (réexpédition ou remboursement).
+
+## 12. Colis perdu ou endommagé
+
+Si votre colis arrive endommagé, refusez-le si possible ou prenez des photos à la réception. En cas de colis perdu ou abîmé, contactez-nous à [Email support] : un remplacement ou un remboursement vous sera proposé.
+
+## 13. Retours et remboursements
+
+Vous disposez de 30 jours pour retourner un article. Les conditions complètes figurent dans notre politique de remboursement et de retour.
+
+## Service client
+
+Une question avant ou après votre commande ? Notre équipe basée en France est à votre écoute :
+
+- E-mail : [Email support]
+- Téléphone : [Téléphone]
+- Horaires : du lundi au vendredi, de 9h00 à 17h00 (heure de Paris). Fermé les week-ends et jours fériés.
+- Adresse : [Adresse]
+
+Nous nous efforçons de répondre à toutes les demandes sous 24 heures ouvrées.

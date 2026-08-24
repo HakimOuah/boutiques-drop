@@ -1,53 +1,32 @@
-# Conditions de facturation et de paiement
+# Moyens de paiement
 
-Le présent document décrit les pratiques de paiement et de facturation de [Nom de la boutique].
+Chez [Nom de la boutique], votre paiement est 100 % sécurisé.
 
-## 1. Moyens de paiement acceptés
+## Moyens de paiement acceptés
 
-Chez [Nom de la boutique], nous proposons plusieurs options de paiement sécurisées pour une expérience d'achat simple et fluide. Nous acceptons les moyens de paiement suivants :
+- Carte bancaire : [ex. CB, Visa, Mastercard, American Express]
+- Portefeuilles : [ex. Apple Pay, Google Pay, Shop Pay]
+- [Autres moyens réellement proposés au checkout, ex. PayPal]
 
-- Cartes de crédit et de débit : [ex. Visa, MasterCard, American Express]
-- PayPal
-- Apple Pay et Google Pay
-- [Autres moyens réellement proposés au checkout — virement bancaire pour les commandes en gros, etc.]
+Ne lister que ce qui est réellement disponible au checkout. Les icônes du footer doivent correspondre exactement à cette liste.
 
-Tous les paiements sont traités en [Devises acceptées, ex. euros (EUR)].
+## Devise
 
-*Ne lister que les moyens réellement disponibles au checkout : les icônes de paiement du footer doivent correspondre exactement.*
+Tous les montants sont affichés et débités en euros (EUR), toutes taxes comprises.
 
-## 2. Traitement des paiements
+## Sécurité
 
-- Le paiement doit être effectué en totalité au moment de l'achat.
-- Aucune commande n'est traitée ni expédiée avant réception du paiement complet.
-- Si un paiement est refusé ou échoue, la commande n'est pas confirmée.
+- Paiement traité via une connexion chiffrée (SSL).
+- Nous ne stockons aucune donnée bancaire complète sur nos serveurs.
+- Le débit n'intervient qu'à la validation de votre commande.
 
-## 3. Prix et devise
+## Service client
 
-- Tous les prix affichés sur [Nom de la boutique ou URL du site] sont en [Devises acceptées], toutes taxes comprises.
-- Les prix peuvent être modifiés sans préavis.
-- Les taxes applicables et les frais de livraison sont calculés au moment du paiement.
+Une question avant ou après votre commande ? Notre équipe basée en France est à votre écoute :
 
-## 4. Sécurité des paiements
+- E-mail : [Email support]
+- Téléphone : [Téléphone]
+- Horaires : du lundi au vendredi, de 9h00 à 17h00 (heure de Paris). Fermé les week-ends et jours fériés.
+- Adresse : [Adresse]
 
-- [Nom de la boutique] utilise le chiffrement SSL et des passerelles de paiement de confiance pour garantir la sécurité de vos transactions.
-- Nous ne stockons jamais vos données de carte bancaire ni vos informations de paiement.
-
-## 5. Remboursements et litiges de paiement
-
-- Les remboursements sont traités conformément à notre politique de retours et remboursements.
-- Les litiges de paiement (chargebacks) non justifiés seront contestés.
-- En cas de problème, contactez-nous d'abord à [Email support] : nous trouverons une solution.
-
-## 6. Prévention de la fraude
-
-- [Nom de la boutique] se réserve le droit d'annuler ou de suspendre toute commande suspectée de fraude ou d'activité non autorisée.
-- Une vérification d'identité complémentaire peut être demandée pour les transactions d'un montant élevé.
-
-## 7. Coordonnées
-
-- Nom de la boutique : [Nom de la boutique]
-- Adresse : [Adresse de l'entreprise]
-- Email : [Email support]
-- Téléphone : [Téléphone support]
-- Horaires du service client : [Jours et horaires, ex. du lundi au vendredi, 9h00 – 17h00 (heure de Paris)]
-- Délai de réponse : nous nous efforçons de répondre sous [1 à 2 jours ouvrés].
+Nous nous efforçons de répondre à toutes les demandes sous 24 heures ouvrées.

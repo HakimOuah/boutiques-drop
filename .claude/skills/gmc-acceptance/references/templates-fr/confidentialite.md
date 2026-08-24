@@ -1,88 +1,56 @@
 # Politique de confidentialité
 
-Dernière mise à jour : [Jour Mois Année]
+La présente politique de confidentialité décrit la manière dont [Nom de la boutique] ([URL du site]) collecte, utilise, conserve et protège vos données personnelles, conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.
 
-La présente politique de confidentialité décrit comment [Nom de la boutique] (« nous », « notre », « nos ») collecte, utilise et divulgue vos informations personnelles lorsque vous visitez [URL du site] (le « Site »), y effectuez un achat ou communiquez avec nous de toute autre manière (collectivement, les « Services »).
+## 1. Responsable du traitement
 
-Veuillez lire attentivement cette politique de confidentialité. Elle est établie en conformité avec le Règlement général sur la protection des données (RGPD) et la loi Informatique et Libertés.
+Le responsable du traitement est [Nom de la boutique], [Adresse]. Pour toute question relative à vos données : [Email support].
 
-## Modifications de cette politique
+## 2. Données collectées
 
-Nous pouvons mettre à jour cette politique de confidentialité de temps à autre, afin de refléter l'évolution de nos pratiques ou pour des raisons opérationnelles, légales ou réglementaires. La version à jour est publiée sur le Site avec révision de la date de « Dernière mise à jour ».
+Nous collectons les données que vous nous communiquez et celles nécessaires au bon fonctionnement du site :
 
-## Comment nous collectons et utilisons vos informations personnelles
+- Identité et contact : nom, prénom, adresse e-mail, numéro de téléphone.
+- Livraison et facturation : adresse postale.
+- Commande : historique et détails des commandes.
+- Données de paiement : traitées directement par nos prestataires de paiement sécurisés ; nous ne stockons aucune donnée bancaire complète.
+- Données de navigation : cookies, adresse IP, pages consultées.
 
-Pour fournir et améliorer nos Services, nous collectons des informations personnelles auprès de différentes sources, décrites ci-dessous. Nous pouvons utiliser vos informations pour communiquer avec vous, traiter vos commandes, respecter nos obligations légales, faire appliquer nos conditions d'utilisation et protéger nos utilisateurs et notre activité.
+## 3. Finalités et bases légales
 
-## Quelles informations personnelles nous collectons
+- Traiter et livrer vos commandes (exécution du contrat).
+- Assurer le service client et le suivi (exécution du contrat).
+- Respecter nos obligations légales et comptables (obligation légale).
+- Vous adresser, avec votre consentement, nos actualités et offres (consentement).
+- Améliorer le site et mesurer l'audience (intérêt légitime / consentement pour les cookies non essentiels).
 
-**Informations que vous nous fournissez directement :**
-- Coordonnées (nom, adresse, téléphone, email).
-- Détails de commande (adresses de facturation et de livraison, confirmation de paiement).
-- Informations de compte (identifiant, mot de passe, éléments de sécurité).
-- Échanges avec le service client.
+## 4. Destinataires et sous-traitants
 
-**Informations collectées automatiquement :**
-Nous collectons automatiquement certaines données relatives à votre utilisation du Site via des cookies et technologies similaires (appareil, navigateur, adresse IP, données d'analyse d'audience).
+Vos données ne sont partagées qu'avec les prestataires strictement nécessaires : hébergeur du site, transporteurs, prestataires de paiement, outils d'e-mailing. Nous ne vendons jamais vos données à des tiers.
 
-**Informations provenant de tiers :**
-Nous pouvons recevoir des informations de prestataires, fournisseurs de services ou plateformes de réseaux sociaux qui nous aident à exploiter le Site et les Services.
+## 5. Durée de conservation
 
-## Comment nous utilisons vos informations personnelles
+Vos données sont conservées le temps nécessaire à la finalité poursuivie : durée de la relation commerciale, puis archivage conformément aux délais légaux (notamment 10 ans pour les documents comptables). Les données marketing sont conservées jusqu'au retrait de votre consentement.
 
-- Traiter les commandes et livrer les produits ou services.
-- Envoyer les communications liées au compte, aux commandes ou aux politiques.
-- Assurer le service client et le support.
-- À des fins de marketing et de publicité (lorsque la loi le permet et avec votre consentement le cas échéant).
-- Détecter la fraude et assurer la sécurité.
-- Respecter nos obligations légales et réglementaires.
+## 6. Vos droits
 
-## Cookies
+Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données, ainsi que du droit de définir des directives relatives à leur sort après votre décès. Pour exercer ces droits, écrivez-nous à [Email support]. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr).
 
-Nous utilisons des cookies et technologies de suivi similaires pour améliorer l'expérience utilisateur, réaliser des mesures d'audience et personnaliser les contenus. Vous pouvez gérer les cookies via les paramètres de votre navigateur et via notre bandeau de consentement ; les désactiver peut toutefois affecter certaines fonctionnalités.
+## 7. Cookies
 
-## Comment nous partageons vos informations personnelles
+Le site utilise des cookies nécessaires à son fonctionnement ainsi que des cookies de mesure d'audience et de personnalisation. Vous pouvez accepter, refuser ou paramétrer les cookies non essentiels à tout moment via le bandeau de consentement et les réglages de votre navigateur.
 
-Nous pouvons partager des informations personnelles avec :
-- Les prestataires et fournisseurs de services agissant pour notre compte.
-- Nos partenaires commerciaux et marketing.
-- Les sociétés affiliées de notre groupe.
-- Les autorités administratives ou judiciaires lorsque la loi l'exige.
+## 8. Sécurité
 
-Nous ne vendons pas et ne partageons pas d'informations personnelles sensibles sans votre consentement.
+Nous mettons en œuvre des mesures techniques et organisationnelles appropriées (connexion chiffrée, accès restreints) pour protéger vos données contre tout accès, altération ou divulgation non autorisés.
 
-## Sites et liens tiers
+## Service client
 
-Le Site peut contenir des liens vers des sites tiers que nous n'exploitons pas. Nous ne sommes pas responsables de leur contenu, de leurs politiques ou de leurs pratiques. Consultez leur politique de confidentialité avant de leur communiquer des informations personnelles.
+Une question avant ou après votre commande ? Notre équipe basée en France est à votre écoute :
 
-## Données des mineurs
+- E-mail : [Email support]
+- Téléphone : [Téléphone]
+- Horaires : du lundi au vendredi, de 9h00 à 17h00 (heure de Paris). Fermé les week-ends et jours fériés.
+- Adresse : [Adresse]
 
-Nos Services ne s'adressent pas aux enfants et nous ne collectons pas sciemment de données personnelles de mineurs. Si vous pensez que votre enfant nous a transmis des données, contactez-nous pour en demander la suppression.
-
-## Sécurité et conservation de vos informations
-
-Nous mettons en œuvre des mesures de sécurité pour protéger vos informations, sans pouvoir garantir une sécurité absolue. Nous conservons les données aussi longtemps que nécessaire pour remplir nos obligations légales, contractuelles ou opérationnelles.
-
-## Vos droits
-
-Conformément au RGPD, vous disposez des droits suivants :
-- Accéder à vos données, les rectifier ou les supprimer.
-- Demander la portabilité de vos données.
-- Limiter le traitement ou vous y opposer.
-- Retirer votre consentement à tout moment.
-- Introduire une réclamation auprès de la CNIL (www.cnil.fr).
-
-Pour exercer vos droits, contactez-nous à [Email support]. Une vérification d'identité peut être demandée avant le traitement de votre demande.
-
-## Utilisateurs internationaux
-
-Vos informations personnelles peuvent être transférées, stockées et traitées en dehors de votre pays de résidence, dans le respect des lois applicables en matière de protection des données et, le cas échéant, avec des garanties appropriées.
-
-## Coordonnées
-
-- Nom de la boutique : [Nom de la boutique]
-- Adresse : [Adresse de l'entreprise]
-- Email : [Email support]
-- Téléphone : [Téléphone support]
-- Horaires du service client : [Jours et horaires, ex. du lundi au vendredi, 9h00 – 17h00 (heure de Paris)]
-- Délai de réponse : nous nous efforçons de répondre sous [1 à 2 jours ouvrés].
+Nous nous efforçons de répondre à toutes les demandes sous 24 heures ouvrées.

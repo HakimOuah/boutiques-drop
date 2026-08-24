@@ -1,55 +1,62 @@
-# Politique de retours & remboursements
+# Politique de remboursement
 
-Chez [Nom de la boutique], nous voulons que votre achat vous plaise. Si, pour une raison quelconque, vous n'êtes pas satisfait, nous vous proposons une procédure de retour simple et sans tracas.
+Chez [Nom de la boutique], votre satisfaction est notre priorité. Si un article ne vous convient pas, vous bénéficiez de conditions de retour claires et protectrices, détaillées ci-dessous.
 
-## Retours faciles sous 30 jours
+## 1. Droit de rétractation légal (14 jours)
 
-Vous disposez de 30 jours à compter de la réception de votre commande pour retourner un article. Les articles doivent être non utilisés, dans leur état d'origine, et renvoyés avec leur emballage, leurs étiquettes et leurs accessoires d'origine. Notre équipe support vous accompagne tout au long de la procédure. Frais de restockage : 0 € — nous ne facturons aucun frais de restockage sur les retours.
+Conformément aux articles L221-18 et suivants du Code de la consommation, vous disposez d'un délai légal de rétractation de 14 jours à compter de la réception de votre commande, sans avoir à justifier de motif ni à payer de pénalité.
 
-Conformément à la loi, vous bénéficiez également d'un droit de rétractation de 14 jours à compter de la réception de votre commande, sans avoir à justifier de motif. Notre politique de 30 jours s'ajoute à ce droit légal et vous offre un délai plus long.
+## 2. Délai commercial étendu (30 jours)
 
-## En résumé
+Au-delà du droit légal, nous vous offrons un délai commercial étendu de 30 jours à compter de la réception pour changer d'avis et demander un retour.
 
-- **Délai de retour** : 30 jours à compter de la réception de votre commande.
-- **État** : articles non utilisés, dans leur état d'origine, avec emballage, étiquettes et accessoires d'origine.
-- **Retours faciles** : notre équipe support vous accompagne à chaque étape.
-- **Frais de restockage** : 0 € — aucun frais de restockage.
+## 3. État des articles retournés
 
-## Frais de retour
+Pour être repris, les articles doivent être retournés neufs et non utilisés, dans leur emballage d'origine complet, avec l'ensemble des accessoires, notices, câbles et étiquettes. Un produit visiblement utilisé, endommagé, incomplet ou sans son emballage d'origine ne pourra être ni repris ni remboursé.
 
-**Produit défectueux ou non conforme** : aucun frais pour le client. Cela s'applique lorsque le produit est incorrect, endommagé pendant le transport ou défectueux de quelque manière que ce soit.
+## 4. Méthode de retour
 
-**Rétractation (changement d'avis)** : les frais de retour réels sont à la charge du client. Cela s'applique lorsque le client a commandé le mauvais article, que la taille ne convient pas ou qu'il ne souhaite plus le produit. Les frais de livraison initiaux ne sont pas remboursables.
+Les retours s'effectuent par voie postale, via le transporteur de votre choix. Nous vous recommandons vivement un envoi suivi (avec numéro de suivi), seule preuve d'expédition en cas de litige. Aucun retour en main propre n'est possible.
 
-## Comment retourner un article
+## 5. Frais de retour
 
-1. **Contactez-nous** : écrivez à [Email support] en indiquant votre numéro de commande et le motif du retour.
-2. **Emballez votre article** : replacez l'article soigneusement dans son emballage d'origine, avec tous les accessoires, étiquettes et documents.
-3. **Renvoyez-le** : expédiez votre retour en suivant les instructions fournies dans l'email d'autorisation de retour. Vous pouvez utiliser le transporteur ou le mode d'envoi recommandé dans cet email.
+Les frais de retour sont à la charge du client. Aucune étiquette de retour prépayée n'est fournie : vous affranchissez vous-même le colis et choisissez votre mode d'envoi.
 
-## Procédure de remboursement
+## 6. Frais de réapprovisionnement
 
-**Inspection** : dès réception de votre retour, nous inspectons l'article pour vérifier qu'il respecte nos critères de retour.
+Aucun frais de réapprovisionnement (restocking fee) n'est appliqué. Vous n'avez à payer que les frais de réexpédition du colis vers notre entrepôt.
 
-**Délai de remboursement** : après validation, votre remboursement est traité. Il faut généralement compter [jusqu'à 7 jours ouvrés] pour que le remboursement apparaisse sur votre moyen de paiement d'origine, selon votre banque ou votre prestataire de paiement.
+## 7. Comment effectuer un retour, étape par étape
 
-## Échanges
+- Contactez-nous à [Email support] en indiquant votre numéro de commande et le ou les articles concernés.
+- Nous vous communiquons l'adresse de retour et la marche à suivre.
+- Emballez soigneusement l'article dans son emballage d'origine et expédiez-le en envoi suivi.
+- Transmettez-nous le numéro de suivi du retour.
+- Dès réception et contrôle, nous procédons au remboursement.
 
-Si vous souhaitez échanger votre article contre une autre taille, une autre couleur ou un autre produit, contactez-nous à [Email support] et nous organiserons un échange rapide.
+## 8. Délai et modalités de remboursement
 
-## Articles non retournables
+Une fois votre retour reçu et contrôlé, le remboursement est effectué sous 7 jours. Le remboursement est réalisé sur le moyen de paiement utilisé lors de la commande (carte bancaire, PayPal, etc.). Le délai d'apparition sur votre compte dépend ensuite de votre banque.
 
-Pour des raisons d'hygiène et de sécurité, certains articles ne sont pas éligibles au retour. Ces produits sont clairement signalés comme non retournables sur leur page produit.
+## 9. Articles défectueux ou non conformes
 
-## Des questions ?
+Si vous recevez un article défectueux, abîmé ou ne correspondant pas à votre commande, contactez-nous sous 48 heures avec photos à l'appui. Dans ce cas, le retour et le remboursement (ou l'échange) sont entièrement pris en charge par nos soins. Vous bénéficiez par ailleurs de la garantie légale de conformité (art. L217-3 et suivants du Code de la consommation) et de la garantie contre les vices cachés (art. 1641 du Code civil).
 
-Consultez notre page FAQ à l'adresse [URL de la page FAQ] ou contactez notre service client.
+## 10. Échanges
 
-## Coordonnées
+Vous souhaitez un autre modèle ? Le plus simple est de retourner l'article pour remboursement et de passer une nouvelle commande, afin de garantir la disponibilité du produit souhaité.
 
-- Nom de la boutique : [Nom de la boutique]
-- Adresse : [Adresse de l'entreprise]
-- Email : [Email support]
-- Téléphone : [Téléphone support]
-- Horaires du service client : [Jours et horaires, ex. du lundi au vendredi, 9h00 – 17h00 (heure de Paris)]
-- Délai de réponse : nous nous efforçons de répondre sous [1 à 2 jours ouvrés].
+## 11. Annulation avant expédition
+
+Tant que votre commande n'a pas été expédiée, vous pouvez demander son annulation par e-mail. Si elle est déjà partie, il faudra suivre la procédure de retour ci-dessus.
+
+## Service client
+
+Une question avant ou après votre commande ? Notre équipe basée en France est à votre écoute :
+
+- E-mail : [Email support]
+- Téléphone : [Téléphone]
+- Horaires : du lundi au vendredi, de 9h00 à 17h00 (heure de Paris). Fermé les week-ends et jours fériés.
+- Adresse : [Adresse]
+
+Nous nous efforçons de répondre à toutes les demandes sous 24 heures ouvrées.
