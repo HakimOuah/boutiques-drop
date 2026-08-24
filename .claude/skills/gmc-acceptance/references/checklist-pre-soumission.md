@@ -142,6 +142,30 @@ Recette (Maison Noirmont, 15/08 — détail en mémoire `sources-audit-conformit
 - [ ] Devise facturée : `"currency":"EUR"` dans ce JSON
 - [ ] Si le thème a « Afficher manuellement les icônes » **coché** : risque élevé de picto fantôme → le décocher (le footer suit alors `shop.enabled_payment_types`)
 - [ ] Attribut HTML typique des pictos auto : `aria-labelledby="pi-<type>"`
+- [ ] Pas de « 4× / Klarna » sous le seuil réel du fractionné, ni si Klarna est off
+- [ ] Mention **TTC** près des prix
+
+**Leçons Noirmont (15–23/08) — obligatoire, détail dans `audit-lecons-noirmont.md`**
+
+Identité / JSON-LD
+- [ ] `shop.email` = e-mail pro (pas un Gmail dans le JSON-LD)
+- [ ] Une seule graphie du n° ; footer = adresse + `mailto:` + `tel:`
+- [ ] JSON-LD `Organization` parse en strict ; Contact a l'adresse postale
+
+Policies
+- [ ] Une seule mentions légales (`/policies/legal-notice`), pas de page CMS jumelle
+- [ ] Médiateur + **URL** ; pas d'`assistance@shopify.com`
+- [ ] Page suivi colis si on l'annonce
+- [ ] Une formulation de délai (pas « 2–3 semaines » **et** « 14–21 j »)
+- [ ] Garantie / SAV / collection / configurateur : le site ne se ment pas
+
+Produit / trust (causes du ban 23/08)
+- [ ] 0 marque tierce (titre, body, JSON-LD, alt, tag, **filename CDN**)
+- [ ] 0 « Qualité Premium » / verified / note dormante
+- [ ] 0 `compareAtPrice` y compris brouillons ; 0 image partagée entre fiches actives
+- [ ] Handle changé → 301 (pas 404)
+
+Après correction d'un flag GMC : attendre **7–10 j**, pas d'ads.
 
 ## 7. Timeline & refus
 

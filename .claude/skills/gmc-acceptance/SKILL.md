@@ -16,6 +16,7 @@ Plusieurs heuristiques Terry (domaine 30 j, Gmail chauffé 5–7 j, IP dédiée,
 ## Références du skill
 
 - `references/checklist-pre-soumission.md` — checklist pass/fail + **audit boutique terminée** (dont moyens de paiement). À lire pour tout audit ou préparation.
+- `references/audit-lecons-noirmont.md` — défauts réellement corrigés sur Maison Noirmont (15–23/08) : scans + OneClickBrand + ban « déclarations trompeuses ». **À dérouler sur chaque boutique terminée.**
 - `references/templates-policies.md` — règles d'usage du pack FR. **Ne jamais copier tel quel** entre domaines.
 - `references/templates-fr/` — 6 templates. Ton commercial = marque. Identité légale OH Ventures là où la loi l'exige (CGV, confidentialité, mentions légales). Chiffres = ops réelle.
 - `references/proxy-iproyal.md` — recette IP ISP, **optionnelle**. Première boutique : IP box stable suffit. Jamais Shopify derrière un proxy.
@@ -62,7 +63,7 @@ Policies en français. Rétractation 14 j + 30 j commercial si assumé. Mentions
 ## Comment travailler
 
 - **Préparer une nouvelle boutique** → gate fournisseur / échantillon d'abord (checklist §0), puis `checklist-pre-soumission.md`. Isolation légère, identité honnête.
-- **Auditer une boutique terminée** → checklist section **Audit boutique terminée**. Y compris **moyens de paiement** : footer = checkout = policy. Recette `sources-audit-conformite-boutique.md`.
+- **Auditer une boutique terminée** → checklist §6 + `audit-lecons-noirmont.md`. Y compris **moyens de paiement** (footer = checkout = policy) et les flags Noirmont (marque tierce, JSON-LD, délais, mentions légales doublons, claims « premium »). Recette sources : `sources-audit-conformite-boutique.md`.
 - **Rédiger les policies** → `templates-policies.md` + `templates-fr/`, reformuler, chiffres ops, marque en façade, OH Ventures en CGV / confidentialité / mentions légales.
 - **Proxy** → seulement si incident. Recette `proxy-iproyal.md`. Jamais Shopify derrière.
 - **Scaler** → `shopping-scaling`.
