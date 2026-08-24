@@ -1,156 +1,152 @@
 # Checklist GMC pass/fail — de la pré-build à la post-approbation
 
-Consolidation du « Fast-Track GMC Approval Framework 2026 », de la « GMC Guidance & Compliance Checklist » (Terry Ecom) et du recap Hakim 24/08/2026. Dérouler dans l'ordre. Un item en échec = corriger avant de passer à la suite.
+Consolidation Terry Ecom + décisions Hakim 24/08 soir (avis Codex validé). Un item en échec = corriger avant d'avancer.
 
-Parc déjà validé (Tuftéo, Bonum Vitae, Noirmont, Bien Brûlé) : ne pas rétro-corriger adresse / téléphone / policies pour « isoler » après coup. Cette checklist s'applique aux **nouvelles** boutiques et aux audits sans resoumission.
+Parc déjà validé (Tuftéo, Bonum Vitae, Noirmont, Bien Brûlé) : ne pas rétro-corriger.
 
-## 1. Pré-build (avant même de créer la boutique ou le GMC)
+Les items marqués **(précaution)** ne sont pas des gates officiels Google.
 
-La plupart des échecs GMC naissent ici.
+## 0. Gate produit / fournisseur (avant tout abonnement)
+
+Pour un appareil électrique (sèche-serviettes, luminaire, etc.) c'est **plus sérieux** que l'IP GMC.
+
+- [ ] Variante exacte : stock France/UE, coût rendu, délai réel
+- [ ] Déclaration UE de conformité, notice, tension / prise, puissance, indice IP
+- [ ] Garanties fournisseur + procédure SAV
+- [ ] Obligations importateur + REP / DEEE si applicables
+- [ ] Échantillon commandé et testé (finition, température, odeur, fixation, notice, prise, emballage, casse, délai)
+- [ ] Économie unitaire figée : TVA, paiement, retours, casse, SAV, remplacement, REP, CPA max
+- [ ] Docs ou échantillon insatisfaisant → **STOP**, même si le domaine est acheté
+
+Mode **PRODUIT PUR** : 1 héros + 2–4 variantes réellement différentes (5–8 max si chaque source est validée). Ne pas importer 32 ou 121 fiches pour « faire catalogue ».
+
+## 1. Pré-build
 
 **Domaine**
-- [ ] Domaine neuf accepté, mais 30+ jours d'âge améliore matériellement le trust — c'est la première brique que Google observe
-- [ ] Jamais de domaine supprimé / expiré / racheté (l'âge est remis à zéro, l'historique est inconnu)
-- [ ] Recette : acheter → configurer la boutique → **ne pas soumettre** → laisser passer quelques semaines
-- [ ] Ne pas créer le GMC le jour de l'achat du domaine
+- [ ] Domaine dédié à la marque, neuf ou déjà actif — jamais d'expiré racheté
+- [ ] **(précaution)** Quelques semaines d'âge avant review aident le trust ; ça ne rattrape pas un mauvais fournisseur
+- [ ] Renouvellement automatique activé
+- [ ] Ne pas créer le GMC le jour de l'achat
 
-**Gmail (dédié ET vivant)**
-- [ ] Gmail neuf, **dédié** exclusivement à cette boutique + GMC + Ads (pas le Gmail perso, pas partagé)
-- [ ] **Et vivant** dans l'écosystème Google : newsletters, YouTube, Search, Google Play, mails entrants et sortants, connexions / déconnexions naturelles. Un Gmail qui ne sert qu'à ouvrir le GMC a l'air faux
-- [ ] Vieilli **5–7 jours minimum** avant toute création GMC (plusieurs jours chez Terry ; 5–7 est le plancher opérationnel)
-- [ ] Antidetect / proxy du bon pays pour Gmail, GMC et Ads — **jamais Shopify derrière ce proxy**
+**Compte Google**
+- [ ] Workspace / compte Google **dédié** à cette boutique (pas le Gmail perso)
+- [ ] Il devient vivant parce qu'il **sert** (support, Shopify, factures, Google) — pas de chauffe artificielle YouTube / Search pour simuler un humain
+- [ ] **(précaution)** Attendre quelques jours avant de lier Ads / GMC. Pas de compte → GMC → Ads dans la même heure
 - [ ] Pas de Gmail « aged » acheté
-- [ ] Pas de Gmail → GMC → Ads dans la même heure
-- [ ] Profil Chrome dédié + **1 IP ISP IPRoyal France** (statique) sur ce profil. Pas de residential tournant, pas de datacenter. Recette : `proxy-iproyal.md`
+- [ ] Profil Chrome dédié. Connexion **stable** (box). IPRoyal = option après incident, voir `proxy-iproyal.md`
+- [ ] Jamais Shopify derrière un proxy
 
-**Téléphone — un numéro par boutique, même société**
-- [ ] SIM physique de préférence (eSIM moins bon, VoIP = refus fréquent)
-- [ ] Ligne on/off acceptable **si** elle reçoit vraiment les appels vocaux (pas SMS-only)
-- [ ] Même numéro partout : vérification Gmail, coordonnées GMC, footer boutique
-- [ ] Mismatch de pays toléré si le numéro accepte les appels vocaux — le tester réellement
-- [ ] Jamais le même numéro sur deux boutiques
+**Téléphone**
+- [ ] Joignable en vocal, testé. SIM physique > eSIM > VoIP
+- [ ] Dédié **seulement** s'il est décroché et maintenu. Sinon le n° OH Ventures déjà testé
+- [ ] Même écriture partout où le n° apparaît (footer, policies, GMC)
 
-**Adresse — une par boutique, même société**
-- [ ] Adresse réelle, localisable sur Google Maps, **différente** de toutes les autres boutiques
-- [ ] Adresse boutique = adresse GMC (les documents de vérification d'identité, eux, n'ont pas besoin de correspondre)
-- [ ] Une fois choisie, on la garde : la changer juste après l'approbation est un changement brutal
-- [ ] Policies / footer / GMC : cette adresse vitrine + le nom de la **marque**. Jamais SIREN / TVA / SASU / OH Ventures
-- [ ] Mentions légales (page séparée, obligation FR) : siège réel. Cette page ne se recopie pas dans le GMC
+**Adresse et identité légale**
+- [ ] Adresse **professionnelle réelle**, droit d'usage, localisable, **identique aux justificatifs KYC GMC**
+- [ ] **Interdit** : adresse Maps décorative / empruntée « le temps de la review »
+- [ ] Footer / ton commercial : nom de la **marque**
+- [ ] Mentions légales, CGV, confidentialité, infos précontractuelles : **OH Ventures** identifié (siège, SIREN). Le relevé bancaire dira OH Ventures — ne pas le cacher
+- [ ] Une fois l'adresse choisie, on la garde (pas de swap post-approbation)
 
-**Isolation d'environnement (multi-boutiques)**
-- [ ] Proxy + navigateur anti-détection uniquement pour Gmail, GMC et Ads
-- [ ] Ne JAMAIS accéder à Shopify derrière le proxy (risque de ban élevé)
-- [ ] Par boutique : 1 GMC, 1 compte Ads, 1 Gmail dédié-vivant, 1 moyen de paiement unique, 1 adresse, 1 numéro, 1 IP/proxy propre, 1 profil navigateur isolé
-- [ ] Zéro réutilisation de détails entre boutiques — même un petit chevauchement crée du linkage
+**Isolation**
+- [ ] Isoler les **accès** (compte Google, profil Chrome, domaine). Pas fabriquer une autre personne morale
+- [ ] Policies jamais identiques mot pour mot entre deux boutiques
 
-## 2. Build de la boutique (signaux de confiance)
+## 2. Build (signaux de confiance)
 
-**Contact & identité (règle « footer d'abord » — les reviewers ne regardent souvent QUE le footer)**
-- [ ] Email cliquable en `mailto:`
-- [ ] Téléphone joignable en vocal, cliquable
-- [ ] Adresse réelle, localisable sur une carte
-- [ ] Cohérence exacte boutique / policies / GMC
-- [ ] Email professionnel (pas de gmail perso en façade)
-- [ ] Footer au nom de la **marque**, pas de l'entité
+**Contact (les reviewers regardent souvent le footer en premier)**
+- [ ] Email pro cliquable `mailto:`
+- [ ] Téléphone vocal cliquable
+- [ ] Adresse réelle (la même que KYC / mentions légales)
+- [ ] Footer → `/policies/*`, pas une copie CMS des policies
 
-**Page À propos**
-- [ ] Copy courte, simple, ton humain — éviter le texte détectable comme IA
-- [ ] Pas d'historique exagéré, de claims ou de fausses références
-- [ ] Pas de SIREN / TVA / « filiale de… »
+**À propos**
+- [ ] Court, humain, factuel. Pas de roman, pas de faux crédits
 
-**Réseaux sociaux (risqué si fait trop tôt)**
-- [ ] Pas de liens sociaux plutôt que des pages faibles ou toutes neuves
-- [ ] Followers achetés / activité faible = trust en baisse
-- [ ] Lier les réseaux seulement quand une activité réelle existe
-- [ ] Absence = neutre. Signal faible ou faux = négatif actif
+**Réseaux**
+- [ ] Ne pas lier un compte vide ou tout neuf. Absence = neutre
 
 **Trust externe**
-- [ ] Si un Trustpilot existe : note ≥ 3,0 obligatoire avant toute review (< 3,0 = gate de refus dur). Pas de Trustpilot > mauvais Trustpilot
-- [ ] ScamAdviser (scamadviser.com) : viser 70+. < 70 = signal négatif, **pas un gate** — un domaine neuf score bas, le GMC peut quand même passer. Ne pas paniquer
-- [ ] Leviers ScamAdviser utiles : âge du domaine, SSL, adresse physique affichée, sociaux avec historique, mentions tierces. WHOIS public aide le score ; la privacy le fait baisser — ne pas exposer l'entité pour autant (l'isolation GMC prime)
+- [ ] Trustpilot : absent, ou ≥ 3,0 (gate dur)
+- [ ] ScamAdviser : viser 70+ ; bas sur un domaine neuf n'est **pas** un gate
 
-**Branding & transparence**
-- [ ] ™ ou © uniquement si les droits sont réellement détenus
-- [ ] Aucune fausse urgence : fausse rareté, comptes à rebours trompeurs
-- [ ] Icônes de paiement du footer = moyens réellement proposés au checkout
-- [ ] Avant la review GMC : pas de promotions, pas d'avis, pas d'offres commerciales affichées. Boutique sobre et factuelle
+**Transparence**
+- [ ] ™/© seulement si les droits sont détenus
+- [ ] Pas de fausse urgence
+- [ ] Avant review : boutique sobre (pas de promo / avis / offres en façade)
 
-## 3. Policies (premier déclencheur de misrepresentation)
+## 3. Policies
 
-Trois copies **identiques** : Shopify → Réglages → Politiques · champs GMC · liens du footer. Un écart, même léger = échec de confiance. Google compare du texte, pas des intentions.
+Chiffres identiques partout. GMC s'appuie surtout sur **réglages structurés + URLs** : les conditions doivent matcher, le footer n'a pas à coller six textes.
 
-- [ ] Policies UNIQUEMENT dans Shopify → Settings → Policies (URLs `/policies/*`)
-- [ ] Liens du footer pointant vers `/policies/*`
-- [ ] Aucune page policy dupliquée ailleurs sur le site (pas de page CMS « Politique de retour »)
-- [ ] Aucune policy copiée d'un autre domaine (Google compare entre domaines)
-- [ ] Wording strictement identique entre Shopify, footer et champs GMC
-- [ ] Google vérifie ligne à ligne : heure limite de commande + fuseau horaire, délais de traitement et de transit, fenêtre de retour, délai de remboursement — mêmes chiffres partout (policies, FAQ, fiches produit)
-- [ ] Au nom de la **marque** uniquement : pas de SIREN, n° TVA, forme juridique, OH Ventures
-- [ ] Bloc contact identique sur les 6 policies (marque, adresse vitrine, email, téléphone, horaires, délai de réponse 24 h ouvrées)
-- [ ] Partir de `templates-fr/`, reformuler à chaque boutique, remplacer tous les placeholders
+- [ ] Policies dans Shopify → Settings → Policies (`/policies/*`)
+- [ ] Footer vers ces URLs, pas de page CMS dupliquée
+- [ ] Textes reformulés vs les autres boutiques
+- [ ] Cut-off + fuseau, traitement, transit, fenêtre de retour, délai de remboursement : **mêmes chiffres** policies / FAQ / fiches / GMC — ceux du **fournisseur et de l'échantillon**, pas un barème générique
+- [ ] Adresse de **retour** réelle et utilisable (le client doit savoir où renvoyer)
+- [ ] Médiateur nommé et couverture vérifiée (CM2C ou autre)
+- [ ] Pack `templates-fr/` : marque en façade, OH Ventures en CGV / confidentialité
 
-## 4. Produits, collections & feed
+## 4. Produits, collections, feed
 
 **Collections**
-- [ ] Minimum 5 produits par collection (< 5 = red flag qualité)
-- [ ] Pas seulement 1–2 collections (setup trop mince)
-- [ ] Aucune collection vide ou cachée
+- [ ] Mode **UNIVERS** : viser ≥ 5 produits / collection, pas de vide
+- [ ] Mode **PRODUIT PUR** : exception — héros + variantes, ne pas gonfler pour la règle des 5
+- [ ] Aucune collection publiée vide
 
-**Produits**
-- [ ] Titres, descriptions, SKU uniques et originaux
-- [ ] Titre produit cohérent avec l'URL du produit
-- [ ] Pas de claims exagérés ou invérifiables ; pas d'avis faux ou manipulés
-- [ ] Specs et tailles correctes pour la région de vente
-
-**Images**
-- [ ] Aucun texte incrusté, aucun collage
-- [ ] Pas d'images dupliquées entre produits
-- [ ] Image de variante = variante sélectionnée
-- [ ] Pas d'images embarquées dans les descriptions
-
-**Technique**
-- [ ] Toutes les 404 redirigées ; aucun lien cassé
-- [ ] Score de vitesse > 65
-- [ ] Anciens codes de vérification GMC supprimés (dupliqués = risque)
-- [ ] Pas de thème dupliqué à l'identique entre boutiques
+**Produits / images / technique**
+- [ ] Titres, descriptions, SKU uniques ; titre cohérent avec l'URL
+- [ ] Pas de claims invérifiables
+- [ ] Specs / tailles de la zone (FR)
+- [ ] Pas de texte incrusté, pas de collage, variante = image
+- [ ] Pas d'images dans le body des descriptions
+- [ ] 404 redirigées
+- [ ] **(précaution)** vitesse > 65
 - [ ] Produits en rupture archivés
 
-## 5. Création & vérification GMC (ordre strict)
+## 5. Création GMC (quand le signal commercial le justifie)
 
-1. Domaine acheté, boutique montée, **quelques semaines** d'âge
-2. Gmail dédié-vivant, vieilli 5–7 jours
-3. Boutique terminée (sobre : pas de promo / avis / offres)
-4. Policies finalisées dans Shopify (marque seule, chiffres cohérents)
-5. Produits uploadés
-6. Création du GMC
-7. Vérification + claim du domaine — méthode DNS TXT de préférence (tag HTML et upload de fichier en secours), vérifier la version HTTPS
-8. Policies recopiées **mot pour mot** dans les champs GMC (ne pas reformuler, ne pas simplifier)
-9. Connexion du feed — parc actuel : app Shopify **Google & YouTube** (Ads lié, **zéro campagne**). Terry cite Simprosys : ne pas l'imposer sur un flux déjà vivant
-10. Demande de review
+Search borné peut précéder Shopping (Search n'exige pas Merchant Center).
 
-Ne jamais créer le GMC avant la fin de la boutique : Google peut indexer des pages incomplètes.
+1. Boutique terminée, commande test OK (mobile, checkout, mails, suivi, tél, 404, consentement)
+2. Policies finalisées, chiffres ops
+3. App Shopify **Google & YouTube** → Ads + GMC, **zéro campagne**
+4. Claim domaine DNS TXT, HTTPS
+5. Réglages structurés livraison / retours = policies
+6. Une seule demande de review
+7. 30 jours sans changement brutal
 
-## 6. Avant de demander la review
+## 6. Audit boutique terminée (avant review)
 
-- [ ] Auto-audit complet (checklist ci-dessus, ou scan automatisé type GMC Scout)
-- [ ] Footer = GMC exactement (email, téléphone, adresse) — point de contrôle n°1 des reviewers
-- [ ] Toutes les pages policies accessibles (desktop ET mobile, pas de noindex)
+Dérouler en pass/fail. Un échec = ne pas soumettre.
+
+**Général**
+- [ ] Footer = email / tél / adresse identiques aux policies et au KYC
+- [ ] Policies accessibles desktop + mobile, pas de noindex
 - [ ] Zéro 404
-- [ ] Numéro testé : accepte réellement les appels vocaux
+- [ ] Tél testé en vocal
 - [ ] Trustpilot absent ou ≥ 3,0
-- [ ] Un seul item en échec → ne pas soumettre
+- [ ] Mentions légales + CGV + confidentialité nomment OH Ventures
+- [ ] Commande test complète passée
+
+**Moyens de paiement — obligatoire (cas réel : Apple Pay affiché, pas activé)**
+
+Les trois doivent matcher **exactement** : pictos footer · liste dans la policy « Moyens de paiement » · checkout en visiteur anonyme.
+
+Recette (Maison Noirmont, 15/08 — détail en mémoire `sources-audit-conformite-boutique.md`) :
+
+- [ ] Checkout visiteur anonyme : lister CB, PayPal, Apple Pay, Google Pay, Shop Pay, Klarna, etc. **réellement proposés**
+- [ ] Footer : chaque picto = un moyen du checkout. Un picto en trop (souvent Apple Pay / Shop Pay) = échec
+- [ ] Policy paiement : même liste, rien d'inventé
+- [ ] `https://<domaine>/payments/config` : portefeuilles accélérés (`applePayConfig`, `shopifyPayConfig`, `paypalConfig`, `googlePayConfig`…). **Ne liste pas** les passerelles classiques — Klarna peut être en caisse et absent de ce JSON
+- [ ] Devise facturée : `"currency":"EUR"` dans ce JSON
+- [ ] Si le thème a « Afficher manuellement les icônes » **coché** : risque élevé de picto fantôme → le décocher (le footer suit alors `shop.enabled_payment_types`)
+- [ ] Attribut HTML typique des pictos auto : `aria-labelledby="pi-<type>"`
 
 ## 7. Timeline & refus
 
-- Review initiale : 3–5 jours ouvrés
-- Re-review après refus : 7–10 jours minimum
-- Reviews rapides répétées = taux de succès en chute
-- Après refus : lire la raison, corriger **TOUS** les problèmes (pas seulement celui cité), attendre 7–10 jours, ne jamais faire appel sans avoir corrigé le fond
+Review 3–5 j · re-review 7–10 j · tout corriger, pas seulement le motif cité.
 
-## 8. Post-approbation (30 premiers jours critiques)
+## 8. Post-approbation (30 j)
 
-- Google peut re-reviewer à tout moment ; la plupart des suspensions arrivent APRÈS l'approbation
-- Aucun changement brutal (thème, policies, coordonnées, gros volumes de produits, adresse, téléphone)
-- Coordonnées et policies stables et cohérentes
-- Surveiller les désapprobations produit de près
-- Re-dérouler cette checklist au moindre signal
+Pas de changement brutal. Surveiller les désapprobations produit.

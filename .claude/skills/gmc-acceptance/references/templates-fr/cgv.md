@@ -1,6 +1,6 @@
 # Conditions générales de vente
 
-Les présentes conditions générales de vente (CGV) régissent l'ensemble des ventes conclues sur le site [URL du site], exploité sous la marque [Nom de la boutique]. Toute commande implique l'acceptation sans réserve des présentes CGV.
+Les présentes conditions générales de vente (CGV) régissent l'ensemble des ventes conclues sur le site [URL du site], exploité sous la marque [Nom de la boutique] par [Raison sociale, ex. OH Ventures], [Adresse du siège], SIREN [SIREN]. Toute commande implique l'acceptation sans réserve des présentes CGV.
 
 ## 1. Produits
 

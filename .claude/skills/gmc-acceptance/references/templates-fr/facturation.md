@@ -8,7 +8,7 @@ Chez [Nom de la boutique], votre paiement est 100 % sécurisé.
 - Portefeuilles : [ex. Apple Pay, Google Pay, Shop Pay]
 - [Autres moyens réellement proposés au checkout, ex. PayPal]
 
-Ne lister que ce qui est réellement disponible au checkout. Les icônes du footer doivent correspondre exactement à cette liste.
+Ne lister que ce qui est réellement disponible au checkout. Les icônes du footer, cette page et la caisse doivent correspondre exactement — cas réel à éviter : Apple Pay / Shop Pay affiché alors qu'il n'est pas activé. Recette d'audit : `sources-audit-conformite-boutique.md`.
 
 ## Devise
 

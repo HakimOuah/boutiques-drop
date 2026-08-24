@@ -4,7 +4,7 @@ La présente politique de confidentialité décrit la manière dont [Nom de la b
 
 ## 1. Responsable du traitement
 
-Le responsable du traitement est [Nom de la boutique], [Adresse]. Pour toute question relative à vos données : [Email support].
+Le responsable du traitement est [Raison sociale, ex. OH Ventures], [Adresse du siège], SIREN [SIREN], qui exploite le site sous la marque [Nom de la boutique]. Pour toute question relative à vos données : [Email support].
 
 ## 2. Données collectées
 

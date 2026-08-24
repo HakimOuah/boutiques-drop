@@ -8,10 +8,10 @@ Six templates alignés sur le pack PDF fourni par Hakim le 24/08/2026 (CGV, conf
 2. Remplacer TOUS les `[placeholders]` par les vraies infos de **cette** boutique.
 3. Le texte final doit être **identique** entre Shopify (Settings → Policies), le footer (`/policies/*`) et les champs GMC. C'est le déclencheur n°1 de rejet.
 4. Les chiffres (cut-off + fuseau, traitement, transit, fenêtre de retour, délai de remboursement, délai SAV) doivent être identiques partout : policies, FAQ, fiches produit, GMC.
-5. **Parler au nom de la marque, pas de l'entité.** Interdit dans ces 6 textes : SIREN, n° TVA, SASU, OH Ventures, « la société », « au capital de ». Les mentions légales (page séparée, obligation FR) portent le siège réel — elles ne se recopient pas dans le GMC ni dans ces policies.
+5. **Marque en façade, entité honnête là où la loi l'exige.** Footer, ton, FAQ : nom de la marque. **CGV, confidentialité, mentions légales, infos précontractuelles** : OH Ventures identifié (raison sociale, siège, SIREN). Interdit : adresse Maps décorative, ou faire disparaître le vendeur réel alors que le relevé bancaire l'affichera.
 6. **Les délais du pack ne se publient que s'ils sont vrais.** Le PDF éprouvé affiche préparation 3 j + transit 2–4 j + total 5–7 j (cut-off minuit, heure de Paris). Pour du dropshipping AliExpress, utiliser le barème maison 1–2 j / 6–8 j / 7–10 j. Un transit « 2–4 j » alors qu'on livre en 12 j = mismatch factuel.
 
-Chaque policy se termine par le même bloc contact : nom de la **marque**, adresse vitrine, email, téléphone, horaires (lun–ven 9h–17h, heure de Paris), délai de réponse **24 heures ouvrées**.
+Bloc contact commercial (footer / FAQ) : nom de la **marque**, adresse pro réelle (la même que le KYC), email, téléphone, horaires, délai de réponse **24 heures ouvrées**. En CGV et confidentialité, ajouter le vendeur / responsable de traitement : OH Ventures, siège, SIREN.
 
 Harmonisations faites sur le pack d'origine (il se contredisait, Google l'aurait attrapé) :
 - Annulation : **tant que la commande n'est pas expédiée** (partout, y compris FAQ) — plus le 24 h d'un côté et « avant expédition » de l'autre.
@@ -56,7 +56,7 @@ Structure du pack (plus courte que le modèle Shopify 20 sections, volontairemen
 
 ## 5. Moyens de paiement
 
-- Moyens acceptés : [uniquement ce qui est au checkout]. Footer = cette liste.
+- Moyens acceptés : [uniquement ce qui est au checkout]. Footer = policy = caisse. Audit obligatoire avant review (Apple Pay affiché / non activé = mismatch).
 - Devise EUR TTC.
 - SSL, pas de stockage des données carte, débit à la validation.
 - Bloc contact identique.

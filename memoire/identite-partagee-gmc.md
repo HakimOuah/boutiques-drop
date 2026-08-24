@@ -1,27 +1,25 @@
 ---
 name: identite-partagee-gmc
-description: "Parc actuel : 4 boutiques, même adresse et même téléphone. Nouvelles boutiques (24/08) : un n° et une adresse Maps par store, policies au nom de la marque"
+description: "Parc actuel : même adresse et même téléphone. Nouvelles boutiques (24/08 soir) : isolation des accès, identité légale OH Ventures honnête, pas d'adresse Maps décorative"
 metadata: 
   node_type: memory
   type: project
   originSessionId: 578c8896-7f46-48a6-ab64-d0045d9c4b9c
-  modified: 2026-08-24T13:10:00.000Z
+  modified: 2026-08-24T15:35:00.000Z
 ---
 
-Vérifié le 16/08/2026 : **les quatre boutiques en ligne publient la même adresse et le même téléphone**. Bien Brûlé, Bonum Vitae, Tuftéo et Maison Noirmont affichent toutes `47 rue Vivienne, 75002 Paris` et le `+33 7 56 82 80 94` (avec des écritures variables). Ce n'est pas une négligence : c'est le **siège social de la SASU OH Ventures** (SIREN 103157251), que le droit français impose de publier dans les mentions légales.
+Vérifié le 16/08/2026 : **les quatre boutiques en ligne publient la même adresse et le même téléphone**. Bien Brûlé, Bonum Vitae, Tuftéo et Maison Noirmont affichent toutes `47 rue Vivienne, 75002 Paris` et le `+33 7 56 82 80 94` (avec des écritures variables). C'est le **siège social de la SASU OH Ventures** (SIREN 103157251).
 
-Précédent à connaître : le compte GMC **5806019978** a été suspendu le 15/06/2026 pour « misrepresentation » puis réintégré après correction — et c'est **l'entité OH Ventures** qui a été blanchie, pas seulement la boutique. La suspension attache l'entité.
+Précédent : compte GMC **5806019978** suspendu le 15/06/2026 pour misrepresentation puis réintégré — la suspension attache l'entité.
 
-**Décision de Hakim (16/08/2026) : on assume le linkage sur le parc alors en ligne.** Une seule adresse, un seul numéro, risque de cascade assumé. En contrepartie, soumission **séquentielle** : Tuftéo seul → 30 jours d'observation après approbation → Noirmont seulement ensuite.
+**16/08 :** linkage assumé sur le parc alors en ligne. Soumission séquentielle.
 
-**Décision de Hakim (17/08/2026 ~15h25) : le storefront Noirmont dort.** Pas d'écriture live, pas d'activation des 20 brouillons. Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-17-gel-storefront.md`.
+**17–18/08 :** Noirmont gelé ; GMC via app Google & YouTube, zéro ad ; flux déjà soumis se laisse vivre. [[app-google-youtube-flux-vivant]]
 
-**Décision de Hakim (18/08/2026 ~19h50) : GMC Noirmont via l'app Google & YouTube**, Workspace posé, **pas d'ads**. Le storefront reste gelé ; le flux se laisse vivre. Journal : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-18-gmc-app.md`.
+**24/08 matin :** isolation « une adresse Maps + un n° par store, policies marque seule ».
 
-**Décision de Hakim (18/08/2026) : un flux déjà soumis se laisse vivre.** Tuftéo **et** Bonum Vitae ont un Merchant Center créé par l'app Shopify **Google & YouTube**, sans campagne. Produits d'abord limités, puis validés, stables depuis des semaines. On ne recrée pas, on ne resoumet pas. Chemin pour un nouveau lien : Workspace (adresse pro) → app Google & YouTube → Ads + GMC liés, **zéro ad**. Détail : [[app-google-youtube-flux-vivant]].
+**24/08 soir, Hakim valide l'avis Codex :** isolation = **accès et opérations**, pas une fausse personne morale. Adresse Maps décorative = plus dangereux qu'une adresse commune vraie. Footer / ton = marque. Mentions légales, CGV, confidentialité, KYC GMC = OH Ventures + siège. IPRoyal optionnel (box stable d'abord). Téléphone dédié seulement s'il est tenu. Orysbain au bout du test ; Lumière Matière = domaine seul. Parc validé : on ne touche pas. Skill : [[skill-gmc-acceptance]].
 
-**Décision de Hakim (24/08/2026) : les nouvelles boutiques s'isolent.** Un numéro par store (ligne on/off vocale OK, SIM physique préférée), une adresse Maps distincte par storefront, Gmail dédié et vivant, policies au nom de la **marque** seulement (jamais SIREN / TVA / SASU / OH Ventures dans footer, policies Shopify, champs GMC). Mentions légales (page séparée) gardent le siège réel. Une adresse choisie se **garde** après l'approbation — on ne la swap pas. Le parc déjà validé **ne change pas** d'adresse ni de téléphone. Skill : [[skill-gmc-acceptance]].
+**Why:** le parc a déjà partagé une vraie identité et certaines boutiques ont été approuvées — ça n'annule pas le risque de linkage, ça invalide « coordonnées partagées = refus auto ». Google autorise plusieurs Merchant Center pour une entreprise. Cacher OH Ventures alors que le relevé bancaire l'affiche crée le mismatch.
 
-**Why:** le 16/08, séparer les adresses était incompatible avec « GMC en août ». Le 24/08, la recette GMC (un n° / une adresse par boutique, même société) devient la règle des **prochains** lancements, sans rétro-corriger les flux qui tiennent. Le téléphone unique du parc actuel a été testé le 16/08 et répond en vocal, donc il satisfait la règle anti-VoIP.
-
-**How to apply:** parc actuel = ne pas rouvrir le linkage, ne pas changer les coordonnées. Nouvelle boutique = isolation complète (voir skill `gmc-acceptance`). Policies jamais identiques mot pour mot entre deux boutiques. Mentions légales ≠ policies GMC.
+**How to apply:** parc actuel = ne pas changer les coordonnées. Nouvelle boutique = compte Google / domaine / profil Chrome dédiés, adresse et vendeur **justifiables**. Jamais d'adresse empruntée.

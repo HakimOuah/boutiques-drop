@@ -24,8 +24,8 @@
 - [Mesure express SEMrush par lots](mesure-express-semrush-lots.md) — analyse par lots 100 kw + KMT par URL, recette validée 01/08/2026
 - [Rejets terrain handpan/lit cabane/purificateur](rejets-terrain-handpan-litcabane-purificateur.md) — retours terrain de Hakim priment sur les volumes, 3 rejets du 02/08/2026
 - [AliExpress bloque les couteaux cuisine en France](aliexpress-bloque-couteaux-cuisine-france.md) — catégorie invisible à la livraison FR, tueur de dossier pour toute idée « lame » (02/08/2026, re-test au retour)
-- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — Terry Ecom 2026 + recap 24/08 (isolation n°/adresse, Gmail vivant, pack policies FR, tuto IPRoyal ISP) ; shopping-scaling (PMAX profit-first)
-- [Proxy IPRoyal GMC](proxy-iproyal-gmc.md) — 1 IP ISP France par profil Chrome Gmail/GMC/Ads ; Shopify ailleurs, jamais derrière le proxy
+- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — Terry + 24/08 soir : isolation des accès, OH Ventures honnête, IPRoyal optionnel, audit paiement footer=checkout
+- [Proxy IPRoyal GMC](proxy-iproyal-gmc.md) — option après incident ; box stable d'abord ; jamais Shopify derrière
 - [GitHub source de vérité](github-source-de-verite.md) — 4 repos HakimOuah (hub + pipeline + factory + drop-elite-google-os), réflexe commit+push en fin de toute tâche depuis le 07/08/2026
 - [Méthode Kraken : coach-associé](methode-kraken-coach-associe.md) — drop-elite-google-os = corpus Enzo Honoré 66 contenus, finalité coach/associé proactif, roadmap 11 phases dans strategie-pas-a-pas.md
 - [Plafond des niches Kraken évidentes](plafond-niches-kraken-evidentes.md) — 8 STOP/8 le 08/08 : preuve visible = occupation, dropship FR plafonnés 1-10 k visites, filtres précoces à réutiliser
@@ -40,7 +40,7 @@
 - [Salve niches univers 15/08](salve-niches-univers-2026-08-15.md) — 6 idées boutiques univers de Hakim (literie, bouillottes, globe, astro, goth, ésotérisme), niveau 0, plan 7 étapes mode Kraken dans boutique-pipeline/plans/
 - [Pièges de l'import DSers](pieges-import-dsers.md) — vérifier qu'un article n'est pas déjà le fournisseur d'une fiche active, « Unsaved changes » qui s'ouvre sans modification, galerie qui mélange cadrans marqués et stériles
 - [Variantes sans accent dans le KMT](variantes-sans-accent-kmt.md) — SEMrush traite `ciel etoile` et `ciel étoilé` comme deux corpus ; interroger les deux, écart jusqu'à ×8
-- [Identité partagée et soumission GMC](identite-partagee-gmc.md) — parc actuel : même adresse et même téléphone ; nouvelles boutiques (24/08) : un n° et une adresse Maps par store, policies au nom de la marque
+- [Identité partagée et soumission GMC](identite-partagee-gmc.md) — parc actuel partagé ; nouvelles boutiques : accès isolés, adresse réelle, vendeur OH Ventures visible là où la loi l'exige
 - [App Google & YouTube, flux vivant](app-google-youtube-flux-vivant.md) — GMC via l'app Shopify sans lancer d'ads ; Tuftéo et Bonum Vitae déjà validés après une phase limitée ; on ne recrée pas un flux qui tient
 - [Flotte Grok Bot](flotte-grok-bot.md) — 10 bots dans GROK-BOT-FLEET.md, recherche mutualisée vs exploitation 1/boutique (risque IP GMC), aucun accès GitHub
 - [Plan Q4 2026 (experts, 16/08)](plan-q4-2026-experts-16-08.md) — boutiques prêtes + GMC en août, campagnes en septembre ; tests coupés trop tôt à 120-130 €, seuil produit 20 k

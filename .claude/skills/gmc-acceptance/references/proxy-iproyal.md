@@ -1,6 +1,8 @@
-# Proxy IPRoyal — recette simple (24/08/2026)
+# Proxy IPRoyal — recette (optionnelle)
 
-Google ne voit pas ta box. Il voit une **adresse internet française fixe**, comme si tu étais toujours dans le même foyer.
+**Décision Hakim, 24/08 soir :** IPRoyal n'est **pas** une première brique. Pour une boutique test (Orysbain), une IP de box **stable** suffit. Le proxy est une option **après un incident de compte identifié**. Une IP box propre vaut mieux qu'un proxy cosmétique (erreurs, récupération de compte, géo qui saute).
+
+Si tu l'actives quand même : Google ne voit pas ta box. Il voit une **adresse internet française fixe**.
 
 Sans proxy : ton Mac → Google (il voit ta box, la même pour toutes les boutiques).  
 Avec IPRoyal : ton Mac → serveur IPRoyal en France → Google (il voit **cette** IP, une par boutique).
