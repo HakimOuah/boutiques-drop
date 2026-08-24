@@ -3,6 +3,8 @@
 Établi sur Maison Noirmont les 15/08/2026, après trois audits successifs qui se sont contredits.
 Vaut pour **toute** boutique Shopify auditée avant une demande Merchant Center.
 
+Cette recette est **obligatoire** dans l'audit boutique terminée du skill `gmc-acceptance` (checklist §6) : footer = checkout = policy. Cas réel à attraper : Apple Pay / Shop Pay affiché alors qu'il n'est pas activé.
+
 ## Moyens de paiement : deux sources, et une seule ne suffit pas
 
 - **`https://<domaine>/payments/config`** (public, sans authentification) n'expose que les
