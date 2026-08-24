@@ -16,7 +16,7 @@ Retour des experts externes transmis par Hakim le 16/08/2026. **La recherche de 
 
 **Critères des nouveaux produits Q4 :** ≥ **20 000 recherches/mois**, potentiel saisonnier Q4, offrable à Noël sans être un pur produit cadeau, forte dimension visuelle si exploité en GMC/Shopping. Référence donnée : un produit à ~20 000 recherches a fait **170 000 € de CA en 1,5 mois** au Q4 précédent. Objectif : 3-4 nouveaux produits.
 
-**CSS (Comparison Shopping Services) :** à étudier — ~50 €/mois pour des enchères plus basses et une meilleure stabilité GMC ; décider si le gain le justifie.
+**CSS (Comparison Shopping Services) :** mis de côté le 24/08 — pas une prochaine étape, pas un contournement GMC. En France, Google Shopping passe déjà par un CSS.
 
 **Why:** ce plan renverse la lecture des échecs passés (site/produit → durée de test) et déplace l'effort de la recherche vers la mise en production. Le calendrier est contraint : la revue GMC prend des jours, une suspension des semaines — donc soumettre tôt.
 

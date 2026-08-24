@@ -302,8 +302,9 @@ suspension du 15/06.
 L'ordre de création reste strict et on ne revient pas en arrière proprement : boutique finie →
 policies → produits → GMC → claim du domaine → review.
 
-1. **Le CSS (Comparison Shopping Services)** — environ 50 €/mois pour des enchères plus basses et
-   une meilleure stabilité GMC. À chiffrer, décision non prise.
+1. **Le CSS (Comparison Shopping Services)** — **mis de côté le 24/08**. Ne pas l'ouvrir, ne pas
+   le proposer comme prochaine étape, ne pas le présenter comme un contournement GMC. En France,
+   Google Shopping passe déjà par un CSS. Détail : `drop-elite-google-os/docs/css-shopping-france.md`.
 2. **L'arbitrage Google Ads du repo drop-elite** : méthode « charognard » à CPC manuel (~0,28 €)
    contre lancement direct en tROAS. Défaut actuel = le module 2025, le charognard reste en option
    sur les niches chères.

@@ -43,6 +43,7 @@ Parc déjà validé : **on ne touche pas.**
 - Compte Google « vivant » parce qu'il sert (support, Shopify, factures, Google), pas parce qu'on lance des vidéos YouTube pour simuler un humain.
 - Orysbain : aller au bout du test. Lumière Matière : acheter le domaine, s'arrêter là (pas Shopify, pas Workspace, pas GMC) tant qu'Orysbain n'a pas parlé.
 - Mode **PRODUIT PUR** : héros + 2–4 variantes (ou 5–8 max si chaque source est validée). Ne pas gonfler le catalogue pour satisfaire « 5 produits / collection × plusieurs collections ». Cette règle Terry vaut pour un univers, pas pour un test produit pur.
+- **CSS / Dshop : mis de côté.** Ne pas l'ouvrir, ne pas le proposer comme prochaine étape, ne pas le présenter comme un contournement GMC. En France, Google Shopping passe déjà par un CSS. Détail : `drop-elite-google-os/docs/css-shopping-france.md`.
 
 ## Adaptation maison — flux déjà vivant (18/08/2026)
 
