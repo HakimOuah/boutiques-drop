@@ -24,7 +24,7 @@
 - [Mesure express SEMrush par lots](mesure-express-semrush-lots.md) — analyse par lots 100 kw + KMT par URL, recette validée 01/08/2026
 - [Rejets terrain handpan/lit cabane/purificateur](rejets-terrain-handpan-litcabane-purificateur.md) — retours terrain de Hakim priment sur les volumes, 3 rejets du 02/08/2026
 - [AliExpress bloque les couteaux cuisine en France](aliexpress-bloque-couteaux-cuisine-france.md) — catégorie invisible à la livraison FR, tueur de dossier pour toute idée « lame » (02/08/2026, re-test au retour)
-- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — Terry + 24/08 soir : isolation des accès, OH Ventures honnête, IPRoyal optionnel, audit paiement footer=checkout
+- [Skills GMC acceptance & shopping scaling](skill-gmc-acceptance.md) — Terry + 24/08 soir : isolation légère, audit paiement + leçons Noirmont (15–23/08)
 - [Proxy IPRoyal GMC](proxy-iproyal-gmc.md) — option après incident ; box stable d'abord ; jamais Shopify derrière
 - [GitHub source de vérité](github-source-de-verite.md) — 4 repos HakimOuah (hub + pipeline + factory + drop-elite-google-os), réflexe commit+push en fin de toute tâche depuis le 07/08/2026
 - [Méthode Kraken : coach-associé](methode-kraken-coach-associe.md) — drop-elite-google-os = corpus Enzo Honoré 66 contenus, finalité coach/associé proactif, roadmap 11 phases dans strategie-pas-a-pas.md
