@@ -14,6 +14,7 @@ Tu aides Hakim (OH Ventures, boutiques Shopify dropshipping France) à obtenir e
 - `references/checklist-pre-soumission.md` — checklist pass/fail complète (pré-build → build → policies → produits → création GMC → soumission → post-approbation). **À lire pour tout audit ou préparation de boutique.**
 - `references/templates-policies.md` — règles d'usage du pack policies FR (retours, livraison, confidentialité, CGV, paiement, FAQ). **Ne jamais copier tel quel** : Google détecte les policies dupliquées entre domaines.
 - `references/templates-fr/` — les 6 templates du pack éprouvé, en français. Remplacer les [placeholders], **reformuler des passages à chaque boutique** (jamais deux boutiques avec le même texte mot pour mot), coller le texte final identique dans Shopify ET GMC. Parler **au nom de la marque**, jamais de l'entité (pas de SIREN, TVA, SASU, OH Ventures).
+- `references/proxy-iproyal.md` — une IP ISP IPRoyal par boutique, branchée sur le profil Chrome Gmail/GMC/Ads. Jamais Shopify derrière.
 
 ## Principes non négociables (échec = stop et corrige avant d'avancer)
 
@@ -32,7 +33,7 @@ Pour toute **nouvelle** boutique, l'isolation GMC prime sur le linkage assumé d
 - **Téléphone.** Un numéro **par boutique**, même société. Ligne on/off acceptable si elle reçoit vraiment les appels vocaux. SIM physique > eSIM > VoIP (VoIP = refus fréquent). Même numéro : vérif Gmail, GMC, footer.
 - **Adresse.** Un adresse **par boutique**, réelle et localisable sur Google Maps, différente des autres stores. Elle isole le projet aux yeux de Google, elle ne prouve pas l'identité. Une fois choisie, on la **garde** (la changer juste après l'approbation est un changement brutal). Les documents de vérif GMC n'ont pas à matcher cette adresse vitrine.
 - **Policies au nom de la marque.** Dans les 6 policies + footer + champs GMC : le nom de la marque, l'adresse vitrine, l'email et le téléphone de **cette** boutique. **Jamais** SIREN, n° TVA, SASU, OH Ventures, « la société ». Les mentions légales (page séparée, obligation FR) portent le siège réel — elles ne se recopient **pas** dans le GMC.
-- **Proxy / IP.** Pratique actuelle : un profil Chrome dédié par boutique / Gmail. IP dédiée + proxy : tuto à venir, ne pas improviser. Ne jamais ouvrir Shopify derrière un proxy anti-détection.
+- **Proxy / IP.** Un profil Chrome par boutique, plus **une IP ISP IPRoyal** (statique, France) sur ce profil seulement. Produit à acheter : ISP Proxies, pas le residential qui tourne. Shopify toujours **hors** proxy. Détail : `references/proxy-iproyal.md`.
 
 Le 16/08, le parc existant a assumé une adresse et un téléphone partagés (siège 47 rue Vivienne + un seul n° vocal). Ça reste vrai **pour ces boutiques-là**. Ça ne s'applique plus aux prochaines.
 

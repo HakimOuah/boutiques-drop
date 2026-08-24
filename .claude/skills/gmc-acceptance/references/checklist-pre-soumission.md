@@ -21,7 +21,7 @@ La plupart des échecs GMC naissent ici.
 - [ ] Antidetect / proxy du bon pays pour Gmail, GMC et Ads — **jamais Shopify derrière ce proxy**
 - [ ] Pas de Gmail « aged » acheté
 - [ ] Pas de Gmail → GMC → Ads dans la même heure
-- [ ] Pratique actuelle Hakim : un profil Chrome dédié par boutique / Gmail. IP dédiée : tuto à venir
+- [ ] Profil Chrome dédié + **1 IP ISP IPRoyal France** (statique) sur ce profil. Pas de residential tournant, pas de datacenter. Recette : `proxy-iproyal.md`
 
 **Téléphone — un numéro par boutique, même société**
 - [ ] SIM physique de préférence (eSIM moins bon, VoIP = refus fréquent)
