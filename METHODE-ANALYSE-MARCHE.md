@@ -37,6 +37,19 @@ Les trois inversions de cet ordre sont les trois façons connues de perdre une s
 Huit étapes, dans cet ordre. Chaque étape produit un livrable écrit et daté, parce que l'étape
 suivante s'appuie dessus et que personne ne doit avoir à refaire la mesure de mémoire.
 
+**Trois garde-fous ajoutés le 29/08/2026**, au moment où DataForSEO est devenu la voie de mesure par
+défaut. Ils sont écrits dans l'étape où ils s'appliquent, pas regroupés ici — mais les voici pour
+mémoire, parce que chacun corrige une erreur qu'on a réellement commise :
+
+| | Garde-fou | Où | Ce qu'il empêche |
+|---|---|---|---|
+| **1** | Figer la liste des familles **avant** de mesurer | étape 1 | Un découpage qui suit les chiffres qu'il découvre. C'est ce qui a fait diverger deux mesures du même dossier |
+| **2** | Adjuger les têtes génériques **en SERP, chiffre à l'appui**, et publier le consolidé en trois valeurs | étape 5 | Une adjudication implicite qui décide seule du verdict sans apparaître nulle part |
+| **3** | Une paire accentuée n'est **qu'un seul bucket** : on interroge les deux, on ne somme jamais les deux | étape 3 | Le double comptage que notre propre protocole organisait |
+
+Ils ne dépendent d'aucun outil : ce sont des règles de méthode, valables sur SEMrush comme sur
+DataForSEO.
+
 ### Étape 1. Partir du catalogue, jamais d'une page blanche
 
 **Ce qu'on fait.** On dérive la liste des mots-clés à mesurer **des produits eux-mêmes**, fiche par
@@ -51,6 +64,20 @@ elle a payé ici aussi : `cadran squelette` valait **20**, `montre squelette hom
 **Ce qu'on produit.** Une liste où chaque mot-clé est rattaché à un produit ou une collection réelle.
 Un mot-clé qu'aucune page ne pourrait servir n'a rien à faire dans la liste.
 
+> ### Garde-fou n° 1 — figer la liste des familles **avant** de mesurer
+>
+> **Ajouté le 29/08/2026.** La liste des familles, avec leur périmètre, s'écrit et se date **avant la
+> première mesure**. Une famille ne s'ajoute ensuite qu'en le disant explicitement, et le total est
+> alors republié dans les deux découpes.
+>
+> **Pourquoi.** Sur le rejeu du dossier déco astro, deux chaînes de mesure ont rendu deux verdicts
+> opposés — STOP le 15/08, cas limite le 29/08. La cause n'était **ni l'outil ni les chiffres** :
+> une seule famille, `ciel étoilé`, avait été érigée en famille propre d'un côté et jamais isolée de
+> l'autre. Elle pesait 7 885. Retirée, les deux chaînes retombaient sur le même STOP.
+>
+> Un découpage décidé pendant la mesure suit les chiffres qu'il découvre. C'est la façon la plus
+> discrète de fabriquer le résultat qu'on espère, et elle ne laisse aucune trace dans le rapport.
+
 **Le piège.** La liste faite de tête ne contient que le vocabulaire du métier. Sur Noirmont,
 `cadran stérile`, `cadran sans logo`, `cadran pilote` sont revenus **sans aucun volume restituable**.
 Le mot « stérile » est un mot de spécialiste que le particulier français ne tape jamais. C'est la
@@ -58,8 +85,15 @@ règle mémoire « explicable-particulier, pas technique-pro », vue du côté d
 
 ### Étape 2. Mesurer par lots
 
-**Ce qu'on fait.** SEMrush **base France obligatoire** (`db=fr`), par lots de 100 mots-clés. On relève
-pour chacun : **volume, KD, CPC et intention**. Deux outils, à choisir selon le besoin :
+**Ce qu'on fait.** Base France obligatoire, quelle que soit la source. On relève pour chacun :
+**volume, CPC avec sa devise, intention**, et le KD quand la source en fournit un.
+
+**Deux voies depuis le 29/08/2026** (détail et recettes : skill `recherche-mots-cles`) :
+
+- **DataForSEO, voie par défaut** — découverte par `scripts/kw_dfs.py` (correspondance plein texte,
+  normalisation et déduplication intégrées), volume de tête par `google_ads/search_volume`. Environ
+  0,13 USD la page de 1 000 lignes.
+- **SEMrush**, tant que l'abonnement vit. Deux outils, à choisir selon le besoin :
 
 - **Analyse par lots** : précis, mais consomme des crédits de rafraîchissement (300 pour 300 mots-clés
   sur Noirmont) et son composant de saisie n'est pas toujours pilotable.
@@ -78,8 +112,13 @@ lecture.
   écrit pas pareil.
 - **Le quota épuisé rend des zéros silencieux.** Avant de croire un zéro, on vérifie que des témoins
   connus rendent bien leur volume habituel, et on regarde le compteur de crédits bouger.
-- **La devise est en dollars.** Les CPC ne sont pas des euros. À 0,20 $ ça ne change aucun verdict, à
-  2 $ ça en change.
+- **La devise ne se présume pas.** SEMrush affiche en dollars sauf si l'URL porte `currency=eur` ;
+  DataForSEO rend la devise du compte. On lit la devise à l'écran et on l'écrit à côté du chiffre.
+  À 0,20 ça ne change aucun verdict, à 2 ça en change.
+- **Le KD n'est pas portable d'une source à l'autre.** Mesuré le 29/08 sur 179 mots-clés :
+  corrélation de rangs 0,225, et DataForSEO rend 0 pour 83 % d'entre eux. On ne convertit pas, on ne
+  compare pas deux KD de sources différentes. Ce qui remplace le KD est le comptage de qui tient
+  réellement la page 1 — contrôle n° 6 de l'étape 5.
 
 ### Étape 3. Consolider : la demande d'une famille est la somme des formulations qu'une même page sert
 
@@ -93,7 +132,7 @@ de collection sert**. La famille pèse 17 120, pas 2 900. Le rangement est pass�
 
 | On additionne | On n'additionne pas |
 |---|---|
-| Les variantes d'écriture, d'ordre, de nombre et d'accent : `boite a montre`, `boite à montres`, `boite montre`, `montre boite` | Ce qui appellerait **une autre page** : `femme` sort de chaque total et se compte à part, parce qu'une collection femme est une décision d'offre, pas une variante d'écriture |
+| Les variantes d'écriture, d'ordre et de nombre : `boite a montre`, `boite à montres`, `boite montre`, `montre boite` — **sous réserve du garde-fou n° 3 pour les accents** | Ce qui appellerait **une autre page** : `femme` sort de chaque total et se compte à part, parce qu'une collection femme est une décision d'offre, pas une variante d'écriture |
 | Les **synonymes qu'une même page sert** : boîte + coffret + écrin + étui = une seule collection Rangement | Ce qui relève d'une **autre intention** : la réparation se retire famille par famille et se compte à part |
 | | **Jamais un mot dans deux familles.** `boitier pour montres` va au Rangement ou aux Boîtiers, pas aux deux |
 
@@ -114,6 +153,30 @@ en faudrait deux ?**
 centième ligne est encore à 590 recherches, la famille n'est pas couverte et le total est un
 **plancher**, pas un total. On l'écrit comme tel. Sur Noirmont, trois familles sur vingt étaient dans
 ce cas.
+
+> ### Garde-fou n° 3 — une paire accentuée n'est qu'un seul bucket
+>
+> **Ajouté le 29/08/2026, il corrige une règle maison qui était fausse.** On interrogeait
+> systématiquement les deux orthographes **et on additionnait les deux totaux**. C'était un double
+> comptage.
+>
+> Google sert les formes accentuées et non accentuées dans **un seul bucket** : vérifié sur 6 paires
+> sur 7, avec un volume **et une série mensuelle identiques mois par mois**. Une série identique douze
+> mois de suite n'est pas une coïncidence. Le rapport déco astro du 15/08 attribuait 6 350 recherches
+> sur 13 460 à des « formulations non accentuées jamais lues » : ce volume n'existait pas comme
+> demande adressable distincte.
+>
+> **Ce qui reste vrai :** SEMrush les indexe séparément, donc **on continue d'interroger les deux
+> orthographes** — c'est là que le vocabulaire se découvre, et c'est ce qui a révélé `ciel etoile
+> projecteur` 1 300, invisible depuis la forme accentuée.
+>
+> **Ce qui change :** on ne somme jamais les deux totaux. Le test de décision est la **série
+> mensuelle**, pas le volume seul : identique douze mois de suite → un seul bucket, on retient le MAX.
+> Même raisonnement pour les paires singulier / pluriel, où Google fusionne 3 fois sur 4
+> (`limonadier` et `limonadiers` valent tous les deux 12 100).
+>
+> Une seule exception connue : `planétarium` / `planetarium`, séparés parce que la forme sans accent
+> est un mot anglais et allemand — pas parce que c'est un accent.
 
 ### Étape 4. Net de marque : toujours deux chiffres
 
@@ -159,6 +222,27 @@ fiches produit reclassées en surdotation du jour au lendemain.
 - **Page 1 seulement.** C'est le mandat, mais ça interdit de juger la profondeur de la concurrence.
 - **Les pourcentages de retrait sont des estimations** faites à la composition de la page 1, pas de
   nouvelles mesures. On l'écrit.
+
+> ### Garde-fou n° 2 — une tête générique s'adjuge en SERP, chiffre à l'appui
+>
+> **Ajouté le 29/08/2026.** Une tête générique — `ciel étoilé`, `plateau`, `diffuseur`, `paddle` — ne
+> se verse **jamais en entier** dans une famille, et ne se jette jamais en entier non plus. On lui
+> adjuge une **part chiffrée**, écrite avec son motif, tirée de la composition de la page 1.
+>
+> La marche à suivre, en trois lignes de rapport :
+>
+> 1. Compter, sur la page 1, ce qui relève réellement de notre famille — produits, sites, intention.
+> 2. En déduire une part, exprimée en pourcentage : sur le dossier astro, `ciel étoilé` a été adjugé
+>    à **25 %** et `carte du ciel` à **15 %**.
+> 3. Publier le consolidé en **trois valeurs** : têtes à 0 %, part adjugée, part généreuse. Si le
+>    verdict change d'une valeur à l'autre, **c'est un cas limite, pas un verdict**.
+>
+> **Pourquoi c'est devenu obligatoire.** Sur le dossier astro, les trois valeurs donnaient 38 570,
+> 42 405 et 46 240 pour un plancher à 37 500. La part adjugée décidait à elle seule du verdict — et
+> elle n'était écrite nulle part dans la mesure du 15/08. Une adjudication implicite est une décision
+> prise sans être vue.
+>
+> Cette étape ne dépend d'aucun abonnement : elle se lit sur la page 1 de Google.
 
 ### Étape 6. Puis seulement, aller voir les concurrents
 
