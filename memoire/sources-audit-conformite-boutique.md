@@ -7,6 +7,8 @@ Cette recette est **obligatoire** dans l'audit boutique terminée du skill `gmc-
 
 Les autres défauts corrigés sur Noirmont (15–23/08, dont scan + OneClickBrand + ban GMC du 23/08) sont dans `.claude/skills/gmc-acceptance/references/audit-lecons-noirmont.md`.
 
+Les autres défauts corrigés sur Noirmont (15–23/08, dont scan + OneClickBrand + ban GMC du 23/08) sont dans `.claude/skills/gmc-acceptance/references/audit-lecons-noirmont.md`.
+
 ## Moyens de paiement : deux sources, et une seule ne suffit pas
 
 - **`https://<domaine>/payments/config`** (public, sans authentification) n'expose que les

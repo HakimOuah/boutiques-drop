@@ -21,6 +21,7 @@
 - [Protocole test ads Hakim + experts](protocole-test-ads-hakim-experts.md) — 30 €/j × 5 j sans toucher, tracking achats en place, topo experts ; lancer vite puis instrumenter
 - [Cap Q4 2026 : leçons audit boutiques](cap-q4-2026-lecons-audit-boutiques.md) — Q4 déterminant ; analyse concurrents dropship + pricing = manques n°1, niche brûlée = tueur Lihyl, Notion = backup cloud
 - [Critères détection concurrent dropship](criteres-detection-concurrent-dropship.md) — Shopify d'abord, PDP type drop, entreprise derrière ; marque établie + produit AliExpress = intéressant quand même
+- [Migration SEMrush → DataForSEO](migration-semrush-vers-dataforseo.md) — kw_dfs.py ; ne jamais sommer les volumes bruts de Google, qui pré-agrège les variantes proches
 - [Mesure express SEMrush par lots](mesure-express-semrush-lots.md) — analyse par lots 100 kw + KMT par URL, recette validée 01/08/2026
 - [Rejets terrain handpan/lit cabane/purificateur](rejets-terrain-handpan-litcabane-purificateur.md) — retours terrain de Hakim priment sur les volumes, 3 rejets du 02/08/2026
 - [AliExpress bloque les couteaux cuisine en France](aliexpress-bloque-couteaux-cuisine-france.md) — catégorie invisible à la livraison FR, tueur de dossier pour toute idée « lame » (02/08/2026, re-test au retour)
