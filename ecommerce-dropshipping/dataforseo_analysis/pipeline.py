@@ -16,8 +16,13 @@ from pathlib import Path
 from datetime import datetime
 
 # --- Config ---
-LOGIN = os.environ.get("DATAFORSEO_LOGIN", "houahabi@looking-for-soccer.com")
-PASSWORD = os.environ.get("DATAFORSEO_PASSWORD", "adcc6cf99b87437a")
+LOGIN = os.environ.get("DATAFORSEO_LOGIN")
+PASSWORD = os.environ.get("DATAFORSEO_PASSWORD")
+if not LOGIN or not PASSWORD:
+    raise SystemExit(
+        "DATAFORSEO_LOGIN et DATAFORSEO_PASSWORD doivent etre definis dans "
+        "l'environnement. Aucune valeur de repli n'est codee en dur."
+    )
 BASE_URL = "https://api.dataforseo.com/v3"
 LOCATION_CODE = 2250  # France
 LANGUAGE_CODE = "fr"
