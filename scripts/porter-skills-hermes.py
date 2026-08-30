@@ -16,6 +16,7 @@ pas. Celle-ci se regenere.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import shutil
 import sys
@@ -23,7 +24,12 @@ from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
 SOURCE = RACINE / ".claude" / "skills"
-CIBLE = Path.home() / ".hermes" / "skills" / "oh-ventures"
+# Le profil Hermes des boutiques. Le profil `default` est reserve a d'autres
+# projets (DB-Industrie et ses crons) : ne rien y deposer, sinon les skills
+# metier deviennent visibles dans des sessions qui n'ont rien a voir.
+PROFIL = os.environ.get("HERMES_PROFIL_BOUTIQUES", "oh-ventures")
+BASE = Path.home() / ".hermes" / "profiles" / PROFIL / "skills"
+CIBLE = BASE / "oh-ventures"
 
 # Les agents .claude/agents/ ne sont pas des skills : ce sont des ROLES, les
 # prompts que l'orchestrateur donne a un sous-agent lance par delegate_task.
@@ -32,7 +38,7 @@ CIBLE = Path.home() / ".hermes" / "skills" / "oh-ventures"
 # L'identifiant reste celui de l'agent, pour que les renvois entre skills
 # (<< delegue a phase4-sourcing >>) continuent de resoudre.
 SOURCE_ROLES = RACINE / ".claude" / "agents"
-CIBLE_ROLES = Path.home() / ".hermes" / "skills" / "oh-ventures-roles"
+CIBLE_ROLES = BASE / "oh-ventures-roles"
 
 # Outils dont chaque skill a besoin cote Hermes. Volontairement large : Hermes
 # intersecte avec ce que la session autorise, il ne peut pas gagner d'outil ici.
