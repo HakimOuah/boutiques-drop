@@ -1,0 +1,20 @@
+---
+description: Règles du projet Boutiques Drop et journal éditorial NOX
+alwaysApply: true
+---
+
+Les règles de ce dépôt sont dans `CLAUDE.md` (racine) — elles valent pour tous les agents.
+Lire aussi `AGENTS.md`. GitHub est la source de vérité : committer et pousser en fin de tâche.
+
+**Journal éditorial NOX** — après chaque étape significative d'un projet (création d'un projet,
+d'une boutique, d'un agent, d'une automatisation, d'une intégration, d'une API ; règle de méthode
+apprise ; premier chiffre réel), écrire un événement dans `nox/evenements/` avant de rendre la main :
+
+```bash
+python3 scripts/nox-evenement.py --categorie <cat> --titre "..." --projet <slug> --repo <repo> --axes agents,ecommerce --agent cursor
+```
+
+Ne rien écrire pour une typo, un refactor trivial, un changement cosmétique, une opération Git
+de confort ou un changement technique sans conséquence. En cas de doute, ne pas écrire.
+
+Règle complète et schéma : `nox/README.md` — source unique, ne pas la recopier.

@@ -1,0 +1,49 @@
+filters:
+  and:
+    - 'type == "evenement-nox"'
+properties:
+  date:
+    displayName: Date
+  categorie:
+    displayName: Catégorie
+  titre:
+    displayName: Événement
+  projet:
+    displayName: Projet
+  repo:
+    displayName: Repo
+  axes:
+    displayName: Axes NOX
+  statut_editorial:
+    displayName: Statut
+views:
+  - type: table
+    name: À trier
+    filters:
+      and:
+        - 'statut_editorial == "brut"'
+    order:
+      - date
+      - categorie
+      - titre
+      - projet
+      - axes
+  - type: table
+    name: Retenus
+    filters:
+      and:
+        - 'statut_editorial == "retenu"'
+    order:
+      - date
+      - titre
+      - projet
+      - axes
+  - type: table
+    name: Tout l'historique
+    order:
+      - date
+      - categorie
+      - titre
+      - projet
+      - repo
+      - statut_editorial

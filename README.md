@@ -19,7 +19,9 @@ Hub central du projet e-commerce de Hakim (OH Ventures) : boutiques Shopify drop
 - **`ecommerce-dropshipping/`** — projet Next.js d'outillage + analyses (DataForSEO, baromètres Amazon).
 - **`Bien Brulé/`**, **`Canapé enfant/`**, **`lihyl-lancement/`** — dossiers historiques des boutiques passées (Lihyl : leçon « niche brûlée », voir mémoire).
 - **`CONTEXTE-MEMOIRE-pour-Codex.md`** — contexte historique transmis à Codex.
-- **`scripts/`** — utilitaires du hub (`sync-memoire.sh`).
+- **`nox/`** — journal éditorial NOX : un événement par étape significative de projet, écrit par
+  l'agent qui l'a réalisée, tous repos confondus. Règle et schéma dans [`nox/README.md`](nox/README.md).
+- **`scripts/`** — utilitaires du hub (`sync-memoire.sh`, `nox-evenement.py`).
 - **`drop-elite-google-os/`** — clone autonome ignoré par ce hub ; sa propre racine Git est la source de vérité du corpus et des skills Codex.
 
 ## Installer sur une nouvelle machine
