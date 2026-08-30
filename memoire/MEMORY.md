@@ -46,3 +46,5 @@
 - [Flotte Grok Bot](flotte-grok-bot.md) — 10 bots dans GROK-BOT-FLEET.md, recherche mutualisée vs exploitation 1/boutique (risque IP GMC), aucun accès GitHub
 - [Plan Q4 2026 (experts, 16/08)](plan-q4-2026-experts-16-08.md) — boutiques prêtes + GMC en août, campagnes en septembre ; tests coupés trop tôt à 120-130 €, seuil produit 20 k
 - [DB Industrie : migration REPINFO](db-industrie-migration-repinfo.md) — projet n8n hors dropshipping, VM REPINFO va remplacer l'instance n8n Cloud perso, migration actée le 17/08 pas commencée
+- [Architecture Hermes : un modèle par rôle](architecture-hermes-modele-par-role.md) — Hermes retenu contre Grok Bot ; delegate_task n'a pas de modèle par tâche, seuls les profils l'ont (30/08)
+- [Instrumentation, boucle d'apprentissage](instrumentation-boucle-apprentissage.md) — ce qui se perd si on ne le capture pas ; marge Bonum Vitae jamais chiffrée, 6 produits Tuftéo sous le coût concurrent (30/08)
