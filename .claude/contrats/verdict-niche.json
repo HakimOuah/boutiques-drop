@@ -1,0 +1,112 @@
+{
+  "type": "object",
+  "description": "Recommandation technique. Chaque motif porte sa preuve ou le verdict est nul.",
+  "properties": {
+    "niche": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "PRODUIT_PUR",
+        "UNIVERS"
+      ]
+    },
+    "verdict": {
+      "enum": [
+        "GO",
+        "STOP",
+        "REVIEW"
+      ]
+    },
+    "motifs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "affirmation": {
+            "type": "string",
+            "minLength": 10
+          },
+          "poids": {
+            "enum": [
+              "decisif",
+              "appui",
+              "signal_faible"
+            ]
+          },
+          "preuve": {
+            "type": "object",
+            "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+            "properties": {
+              "type": {
+                "enum": [
+                  "url",
+                  "mention_legale",
+                  "citation",
+                  "mesure",
+                  "capture"
+                ],
+                "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+              },
+              "source": {
+                "type": "string",
+                "minLength": 8,
+                "description": "URL complète, chemin de fichier, ou commande exacte."
+              },
+              "extrait": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+              },
+              "date": {
+                "type": "string",
+                "description": "AAAA-MM-JJ de la lecture."
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "extrait"
+            ]
+          }
+        },
+        "required": [
+          "affirmation",
+          "poids",
+          "preuve"
+        ]
+      }
+    },
+    "contre_arguments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ce qui plaide contre ton propre verdict. Obligatoire même vide."
+    },
+    "confiance": {
+      "enum": [
+        "haute",
+        "moyenne",
+        "faible"
+      ]
+    },
+    "non_fait": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "niche",
+    "verdict",
+    "motifs",
+    "contre_arguments",
+    "confiance",
+    "non_fait"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "verdict-niche"
+}

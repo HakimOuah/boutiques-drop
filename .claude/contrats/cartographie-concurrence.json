@@ -1,0 +1,160 @@
+{
+  "type": "object",
+  "description": "Sortie du rôle de cartographie. Chaque acteur porte une preuve.",
+  "properties": {
+    "requete_testee": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "acteurs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "domaine": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "marketplace",
+              "enseigne",
+              "specialiste",
+              "marque_proprietaire",
+              "affilie_contenu",
+              "comparateur",
+              "fabricant"
+            ]
+          },
+          "position_page1": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "operateur": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Entité juridique derrière le domaine. Exige une preuve de type mention_legale."
+          },
+          "preuve": {
+            "type": "object",
+            "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+            "properties": {
+              "type": {
+                "enum": [
+                  "url",
+                  "mention_legale",
+                  "citation",
+                  "mesure",
+                  "capture"
+                ],
+                "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+              },
+              "source": {
+                "type": "string",
+                "minLength": 8,
+                "description": "URL complète, chemin de fichier, ou commande exacte."
+              },
+              "extrait": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+              },
+              "date": {
+                "type": "string",
+                "description": "AAAA-MM-JJ de la lecture."
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "extrait"
+            ]
+          }
+        },
+        "required": [
+          "domaine",
+          "type",
+          "preuve"
+        ]
+      }
+    },
+    "liens_entre_acteurs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "Deux domaines rattachés au même opérateur. C'est l'affirmation la plus facile à inventer : chaque lien exige sa mention légale.",
+        "properties": {
+          "domaines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2
+          },
+          "operateur": {
+            "type": "string"
+          },
+          "preuve": {
+            "type": "object",
+            "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+            "properties": {
+              "type": {
+                "enum": [
+                  "url",
+                  "mention_legale",
+                  "citation",
+                  "mesure",
+                  "capture"
+                ],
+                "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+              },
+              "source": {
+                "type": "string",
+                "minLength": 8,
+                "description": "URL complète, chemin de fichier, ou commande exacte."
+              },
+              "extrait": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+              },
+              "date": {
+                "type": "string",
+                "description": "AAAA-MM-JJ de la lecture."
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "extrait"
+            ]
+          }
+        },
+        "required": [
+          "domaines",
+          "operateur",
+          "preuve"
+        ]
+      }
+    },
+    "non_fait": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "requete_testee",
+    "acteurs",
+    "non_fait"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cartographie-concurrence"
+}
