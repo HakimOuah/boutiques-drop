@@ -3,6 +3,11 @@
 /New project/
 /drop-elite-google-os/
 
+# Coffre Obsidian — le vault est la racine du hub (décision 30/08/2026).
+# Réglages et état de fenêtre propres à la machine, jamais versionnés.
+# Les vues métier vivent dans boutique-pipeline/instrumentation/vues/*.base, elles.
+.obsidian/
+
 # Temporaire / jetable
 /scratchpad/
 # Export régénérable par scripts/bundle-process.sh — duplique des fichiers déjà versionnés
