@@ -2,7 +2,7 @@
 
 Hub central du projet e-commerce de Hakim (OH Ventures) : boutiques Shopify dropshipping France. **GitHub est la source de vérité** — tout ce qui est modifié localement est commité et poussé (règle détaillée dans [CLAUDE.md](CLAUDE.md)).
 
-## Les 4 repos du projet
+## Les 5 repos du projet
 
 | Repo | Contenu | Local |
 |---|---|---|
@@ -10,6 +10,7 @@ Hub central du projet e-commerce de Hakim (OH Ventures) : boutiques Shopify drop
 | **[boutique-pipeline](https://github.com/HakimOuah/boutique-pipeline)** | Pipeline de recherche produit actif : registre des candidats, chasse aux clusters (Claude + Codex), rapports de phases, boutiques Tufting & Seiko Mod | `~/Documents/Boutiques drop/boutique-pipeline/` |
 | **[dropshipping-product-factory](https://github.com/HakimOuah/dropshipping-product-factory)** | Ancienne usine à produits (« New project ») : playbook recherche, broyeur DropPilot, fiches produits, outputs de recherches (images) | `~/Documents/Boutiques drop/New project/` |
 | **[drop-elite-google-os](https://github.com/HakimOuah/drop-elite-google-os)** (privé) | Corpus de formation autorisé, skills Codex, modèles de politiques FR et système sourcé Google Ads/SEO | `~/Documents/Boutiques drop/drop-elite-google-os/` |
+| **[hermes-orchestration](https://github.com/HakimOuah/hermes-orchestration)** | Architecture d'orchestration multi-agents, journal des missions, benchmark HakimBench. **Ne contient jamais la méthode métier** (décision 30/08/2026) | `~/Documents/hermes-orchestration/` — **hors** de cette arborescence |
 
 ## Contenu de ce hub
 
@@ -33,6 +34,10 @@ cd "Boutiques drop"
 git clone https://github.com/HakimOuah/boutique-pipeline.git
 git clone https://github.com/HakimOuah/dropshipping-product-factory.git "New project"
 git clone https://github.com/HakimOuah/drop-elite-google-os.git
+
+# Hermes se clone à côté du hub, jamais dedans (décision 30/08/2026)
+cd ~/Documents
+git clone https://github.com/HakimOuah/hermes-orchestration.git
 ```
 
 Puis ouvrir Claude Code dans `~/Documents/Boutiques drop/` : les skills et agents sont dans `.claude/`, la mémoire de référence est consultable dans `memoire/` (la mémoire vivante de Claude se reconstruira localement ; `memoire/` sert de sauvegarde et de référence).

@@ -48,7 +48,7 @@ Ne pas recopier cette règle ailleurs — les autres fichiers d'instructions n'e
 python3 scripts/nox-evenement.py --categorie <cat> --titre "..." --projet <slug> --repo <repo> --axes agents,ecommerce
 ```
 
-Vaut pour les quatre repos : un événement né dans `boutique-pipeline/` ou
+Vaut pour les cinq repos : un événement né dans `boutique-pipeline/` ou
 `drop-elite-google-os/` s'écrit **quand même ici**, dans `nox/evenements/`, et se commit ici.
 
 ## Sources de vérité

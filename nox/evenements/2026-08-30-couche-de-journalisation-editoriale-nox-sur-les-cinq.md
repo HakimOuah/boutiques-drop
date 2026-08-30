@@ -2,7 +2,7 @@
 type: evenement-nox
 date: 2026-08-30
 categorie: automatisation
-titre: "Couche de journalisation éditoriale NOX sur les quatre repos"
+titre: "Couche de journalisation éditoriale NOX sur les cinq repos"
 projet: nox
 repo: boutiques-drop
 axes: [agents, automatisation]
@@ -11,7 +11,7 @@ statut_editorial: brut
 commit:
 ---
 
-# Couche de journalisation éditoriale NOX sur les quatre repos
+# Couche de journalisation éditoriale NOX sur les cinq repos
 
 ## Ce qui a changé
 
@@ -30,7 +30,7 @@ l'agent qui vient de le vivre, dans la même minute que le commit.
 ## Le détail qui fait le contenu
 
 Le vrai obstacle n'était pas le schéma, c'était la **découvrabilité de la règle**. En
-inspectant l'arborescence : quatre repos, des `CLAUDE.md` partout — et **aucun `AGENTS.md`
+inspectant l'arborescence : cinq repos, des `CLAUDE.md` partout — et **aucun `AGENTS.md`
 nulle part**. Codex et Cursor travaillaient depuis des mois sur ce projet sans lire une
 seule règle de dépôt : elles étaient toutes écrites dans un fichier que seul Claude ouvre.
 
@@ -49,6 +49,5 @@ chose dans six mois.
 ## Ce qu'on ne peut pas encore dire
 
 Aucun événement n'a encore été produit par Codex ni par Cursor — la règle est posée, son
-respect réel n'est pas observé. `hermes-orchestration` n'est pas cloné sur cette machine :
-son pointeur reste à poser. Et le seuil de significativité ne se règle qu'à l'usage :
-s'il produit du bruit, c'est le test à deux questions qu'il faudra durcir, pas le schéma.
+respect réel n'est pas observé. Et le seuil de significativité ne se règle qu'à l'usage : s'il
+produit du bruit, c'est le test à deux questions qu'il faudra durcir, pas le schéma.

@@ -5,7 +5,7 @@
 passe réellement ici, il faut que ce qui se passe soit *écrit au moment où ça se passe*.
 
 Ce dossier est la seule source de vérité de cette règle. Les `CLAUDE.md` et `AGENTS.md`
-des quatre repos n'en portent qu'un pointeur de trois lignes — la règle ne se recopie pas.
+des cinq repos n'en portent qu'un pointeur de trois lignes — la règle ne se recopie pas.
 
 ## La règle
 
@@ -67,7 +67,7 @@ volontaire : NOX lit un répertoire, pas cinq. Le champ `repo:` garde la trace d
 ```bash
 python3 "$HOME/Documents/Boutiques drop/scripts/nox-evenement.py" \
   --categorie automatisation \
-  --titre "Journal éditorial NOX branché sur les quatre repos" \
+  --titre "Journal éditorial NOX branché sur les cinq repos" \
   --projet nox --repo boutiques-drop --axes agents,automatisation
 ```
 
