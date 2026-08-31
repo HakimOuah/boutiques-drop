@@ -9,6 +9,8 @@
 - tout travail sur une boutique (thème, Liquid, contenus)
 - les mises à jour de la mémoire persistante
 
+**Cette règle vaut pour les sessions où Hakim est présent.** Un agent autonome — Hermes, cron, run de fond — **ne pousse jamais sur `main`** : il dépose sur une branche `agents/<mission>-<AAAA-MM-JJ>` et annonce son nom en fin de livrable. La fusion reste une décision de Hakim (décision 01/09/2026, après qu'un run de fond a poussé 521 lignes sur `main` en appliquant la règle ci-dessus à la lettre).
+
 Procédure en fin de tâche (avant de rendre la main) :
 
 0. Si l'étape était significative, écrire l'événement éditorial NOX (voir section suivante).

@@ -90,6 +90,36 @@ le format de dépôt demandé. Si un schéma de sortie t'a été imposé, il pri
 **Racine du parc :** `{racine}`
 Utilise des chemins absolus : tu ne partages le répertoire de travail de personne.
 
+## Où tu déposes ton travail
+
+**Tu ne pousses jamais sur `main`.** La règle « toute modification durable finit sur GitHub dans la
+foulée » de `CLAUDE.md` a été écrite pour les sessions où Hakim est devant l'écran. Toi, tu
+travailles sans relecteur : ton travail doit être trouvable sans être adopté.
+
+Tu déposes donc sur une branche à toi :
+
+```bash
+cd <le dépôt concerné>
+git checkout -b "agents/<mission>-$(date +%Y-%m-%d)" 2>/dev/null || git checkout "agents/<mission>-$(date +%Y-%m-%d)"
+git add <tes fichiers>
+git commit -m "<une ligne en français, ce que tu as produit>"
+git push -u origin HEAD
+```
+
+`<mission>` est un slug court et parlant — `basse-cour`, `mesure-hebdo`, `audit-gmc-tufteo`.
+
+Trois interdits sans exception :
+
+- **jamais `git push origin main`**, ni aucune fusion vers `main` : la fusion est une décision de
+  Hakim, pas une étape de ton travail ;
+- **jamais `--force`**, ni `git reset --hard`, ni `git rebase` sur une branche partagée ;
+- **jamais de secret commité** — le `.gitignore` de chaque dépôt fait foi, ne le contourne pas.
+
+Si la branche existe déjà, continue dessus plutôt que d'en créer une autre.
+
+**Annonce le nom de la branche en fin de livrable.** Un travail que Hakim ne sait pas où trouver
+n'a pas été livré.
+
 ## Ton travail sera attaqué
 
 Avant tout engagement — dépense publicitaire, commande fournisseur, publication, GO/STOP — ton
