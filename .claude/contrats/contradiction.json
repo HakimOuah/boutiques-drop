@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "contradiction",
+  "type": "object",
+  "description": "Sortie d'un démolisseur. Il ne réécrit rien : il dit ce qui tient.",
+  "properties": {
+    "angle": {
+      "enum": [
+        "preuve",
+        "chiffre",
+        "contre-these"
+      ]
+    },
+    "verdicts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "affirmation": {
+            "type": "string",
+            "minLength": 10
+          },
+          "verdict": {
+            "enum": [
+              "tient",
+              "ne_tient_pas",
+              "inverifiable"
+            ],
+            "description": "inverifiable est un ECHEC, pas un match nul : rien ne peut se fonder dessus."
+          },
+          "motif": {
+            "type": "string",
+            "minLength": 10
+          },
+          "preuve_contraire": {
+            "type": "object",
+            "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+            "properties": {
+              "type": {
+                "enum": [
+                  "url",
+                  "mention_legale",
+                  "citation",
+                  "mesure",
+                  "capture"
+                ],
+                "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+              },
+              "source": {
+                "type": "string",
+                "minLength": 8,
+                "description": "URL complète, chemin de fichier, ou commande exacte."
+              },
+              "extrait": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+              },
+              "date": {
+                "type": "string",
+                "description": "AAAA-MM-JJ de la lecture."
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "extrait"
+            ]
+          }
+        },
+        "required": [
+          "affirmation",
+          "verdict",
+          "motif"
+        ]
+      }
+    },
+    "verdict_survit": {
+      "type": "boolean",
+      "description": "Le verdict d'origine tient-il encore une fois retirées les affirmations tombées ?"
+    },
+    "ce_qui_change_si_non": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "non_verifie": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Obligatoire même vide : ce que tu n'as pas pu contrôler, et pourquoi."
+    }
+  },
+  "required": [
+    "angle",
+    "verdicts",
+    "verdict_survit",
+    "non_verifie"
+  ]
+}
