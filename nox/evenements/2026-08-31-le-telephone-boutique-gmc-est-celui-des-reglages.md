@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [ecommerce]
 agent: cursor
 statut_editorial: brut
-commit:
+commit: 0869b2c
 ---
 # Le téléphone boutique GMC est celui des réglages Shopify, pas celui du parc
 
