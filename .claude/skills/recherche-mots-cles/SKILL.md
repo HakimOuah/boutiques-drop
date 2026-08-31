@@ -128,7 +128,11 @@ Marche : SERP + Shopping → classer les acteurs → paliers et vides → propos
 - Mot ambigu non tranché → fourchette, pas un chiffre.
 - Avant de condamner une famille : comment le client la nomme (« étui » vs « rouleau de voyage »).
 - Un mot-clé se valide sur **trois** critères : volume net, intention SERP, possibilité de l’écrire sans mentir.
-- Aucun AliExpress, aucune idée nouvelle hors brief.
+- Aucun AliExpress.
+- **Idée hors brief : amendé le 31/08/2026.** Tu n'explores pas hors brief de ta propre initiative.
+  Mais si une piste adjacente apparaît dans la table des thèmes co-occurrents avec un volume mesuré
+  **et** une bande de prix relevée, tu la signales dans une section séparée, en fin de dépôt, sans
+  l'instruire. Deux au maximum. Une piste sans chiffre reste pour toi.
 
 ## Dépôt
 

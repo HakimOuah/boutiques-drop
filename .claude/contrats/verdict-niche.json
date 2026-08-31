@@ -97,11 +97,126 @@
       "items": {
         "type": "string"
       }
+    },
+    "requete_decisive": {
+      "type": "object",
+      "description": "Le verdict porte sur UNE requête, et c'est elle qui le commande. La nommer n'est pas optionnel.",
+      "properties": {
+        "requete": {
+          "type": "string"
+        },
+        "motif_du_choix": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Intention d'achat la plus proche du produit vendu, puis volume et panier ensemble."
+        },
+        "requetes_ecartees": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "requete": {
+                "type": "string"
+              },
+              "motif": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "requete",
+              "motif"
+            ]
+          }
+        }
+      },
+      "required": [
+        "requete",
+        "motif_du_choix",
+        "requetes_ecartees"
+      ]
+    },
+    "pistes_adjacentes": {
+      "type": "array",
+      "maxItems": 2,
+      "description": "Droit de contre-proposition. On propose, on ne substitue pas : le verdict sur le marché demandé reste rendu en entier. Une piste sans volume mesuré ET sans bande de prix n'a pas sa place ici.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "produit": {
+            "type": "string"
+          },
+          "volume_mensuel": {
+            "type": "integer",
+            "description": "Volume du `mot_cle_exact`, relevé tel quel. Un volume de niveau supérieur attribué à une longue traîne est la faute la plus courante."
+          },
+          "bande_de_prix_eur": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "pourquoi_elle_tient": {
+            "type": "string",
+            "minLength": 10,
+            "description": "Volume ET panier. L'un sans l'autre ne suffit pas."
+          },
+          "preuve": {
+            "type": "object",
+            "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+            "properties": {
+              "type": {
+                "enum": [
+                  "url",
+                  "mention_legale",
+                  "citation",
+                  "mesure",
+                  "capture"
+                ],
+                "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+              },
+              "source": {
+                "type": "string",
+                "minLength": 8,
+                "description": "URL complète, chemin de fichier, ou commande exacte."
+              },
+              "extrait": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+              },
+              "date": {
+                "type": "string",
+                "description": "AAAA-MM-JJ de la lecture."
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "extrait"
+            ]
+          },
+          "mot_cle_exact": {
+            "type": "string",
+            "description": "La chaîne EXACTE dont le volume est annoncé, telle qu'interrogée. Sert à re-vérifier le chiffre en une requête. Ne jamais donner le volume d'un mot parent pour celui d'une longue traîne."
+          }
+        },
+        "required": [
+          "produit",
+          "mot_cle_exact",
+          "volume_mensuel",
+          "bande_de_prix_eur",
+          "pourquoi_elle_tient",
+          "preuve"
+        ]
+      }
     }
   },
   "required": [
     "niche",
     "verdict",
+    "requete_decisive",
     "motifs",
     "contre_arguments",
     "confiance",

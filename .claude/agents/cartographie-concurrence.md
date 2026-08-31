@@ -164,6 +164,25 @@ produit).
 
 ---
 
+## Choisir la requête décisive — avant tout jugement de verrou
+
+**Règle de Hakim, 31/08/2026.** Le verrou se juge sur **une** requête, et c'est elle qui commande
+le verdict : la même niche jugée sur « poulailler 4 poules » paraît ouverte et sur « porte
+automatique poulailler » paraît verrouillée. Deux sous-marchés réels, deux verdicts légitimes.
+**Le choix de la requête n'est donc pas un détail de méthode, c'est la décision principale.**
+
+Trois critères, dans cet ordre :
+
+1. **L'intention d'achat la plus proche du produit qu'on vendrait.** Critère premier, il tranche
+   seul en cas de conflit. Une requête qui décrit ce qu'on mettrait en fiche, pas la catégorie qui
+   l'englobe ni la pièce qui la compose.
+2. **Le volume et le panier, ensemble.** Ni l'un ni l'autre ne suffit : un produit sans volume ne
+   sert à rien, un produit à fort volume mais à panier faible non plus. Les deux se lisent
+   ensemble ou ne se lisent pas.
+
+Écris la requête retenue, **et celles que tu as écartées avec le motif**. Un verdict rendu sans
+dire sur quelle requête il porte est inexploitable.
+
 ## Le verrou — le critère qui décide
 
 **Règle de Hakim, 31/08/2026.** Écrite après une inversion de verdict : la même niche a rendu STOP
@@ -206,6 +225,23 @@ produit sourçable.** C'est la seule définition qui décide.
 Précédent à connaître : Tuftéo, recalage du 21/07/2026 — **six produits dont le coût rendu
 dépassait le prix du concurrent**, noté en une ligne et jamais instruit. Le critère B était levé et
 personne ne l'a lu.
+
+## Droit de contre-proposition
+
+**Accordé par Hakim le 31/08/2026.** Si le marché confié est verrouillé mais que tu croises, en
+mesurant, une piste adjacente qui tient les deux critères — volume **et** panier — tu as le droit
+de la proposer.
+
+Trois bornes, sans lesquelles ce droit devient de la dispersion :
+
+- **Tu proposes, tu ne substitues jamais.** Le verdict sur le marché demandé est rendu en entier,
+  d'abord. La piste vient après, dans une section séparée.
+- **Deux pistes au maximum**, et chacune porte un volume **mesuré** et une bande de prix relevée.
+  Une piste sans chiffre est une intuition : garde-la pour toi.
+- **Tu ne l'instruis pas.** Tu la signales. C'est Hakim qui décide si elle mérite une mission.
+
+La table des thèmes co-occurrents de `kw_dfs.py` est faite pour ça : c'est là que les pistes
+apparaissent, à côté des contaminations.
 
 ## Livrable
 
