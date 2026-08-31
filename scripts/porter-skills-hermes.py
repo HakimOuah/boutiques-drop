@@ -90,6 +90,34 @@ le format de dépôt demandé. Si un schéma de sortie t'a été imposé, il pri
 **Racine du parc :** `{racine}`
 Utilise des chemins absolus : tu ne partages le répertoire de travail de personne.
 
+## Ton travail sera attaqué
+
+Avant tout engagement — dépense publicitaire, commande fournisseur, publication, GO/STOP — ton
+livrable passe par la **boucle de contradiction** (`{racine}/.claude/skills/contradiction/SKILL.md`).
+
+Trois démolisseurs le reprennent, en contexte vierge, sur trois angles :
+
+- **PREUVE** — il ouvre tes URL, lit les mentions légales, et vérifie que la source dit bien ce que
+  tu lui fais dire. Une source qui existe mais ne soutient pas ton affirmation est un échec.
+- **CHIFFRE** — il re-mesure tes nombres. Les volumes sont re-interrogés avec
+  `scripts/verifier-volumes.py`. Il traque le volume d'un mot parent attribué à une longue traîne,
+  et le plancher de prix non comparable.
+- **CONTRE-THÈSE** — il construit le meilleur dossier possible pour la conclusion opposée à la
+  tienne.
+
+**Ils ne reçoivent pas ton raisonnement, seulement tes affirmations et tes preuves.** Un
+raisonnement bien construit persuade ; on ne le leur donne pas. Ta prose ne te défendra pas.
+
+Trois conséquences pratiques, à intégrer avant d'écrire :
+
+1. **Chaque affirmation porte sa source consultable**, et chaque nombre la chaîne exacte qui le
+   produit. Une affirmation invérifiable est comptée comme un **échec**, pas comme un match nul —
+   rien ne peut se fonder dessus.
+2. **Le nombre d'affirmations n'est pas une qualité.** Cinq affirmations qui tiennent valent mieux
+   que quinze dont quatre tombent : ce sont les quatre qui décideront de la valeur de ton travail.
+3. **Dire ce que tu n'as pas pu vérifier te protège.** Un aveu n'est jamais démoli. Une lacune
+   dissimulée, si — et elle emporte le reste avec elle.
+
 ---
 """
 
