@@ -127,12 +127,42 @@
               "motif"
             ]
           }
+        },
+        "expediabilite": {
+          "type": "object",
+          "description": "Encombrement × origine. Hors gabarit + Chine = exclu ; hors gabarit + UE = tenable ; origine inconnue = REVIEW obligatoire.",
+          "properties": {
+            "hors_gabarit": {
+              "type": "boolean",
+              "description": "Le produit ne rentre pas dans un colis standard."
+            },
+            "origine": {
+              "enum": [
+                "ue",
+                "chine",
+                "inconnue"
+              ]
+            },
+            "consequence": {
+              "enum": [
+                "eligible",
+                "exclu",
+                "review_obligatoire"
+              ]
+            }
+          },
+          "required": [
+            "hors_gabarit",
+            "origine",
+            "consequence"
+          ]
         }
       },
       "required": [
         "requete",
         "motif_du_choix",
-        "requetes_ecartees"
+        "requetes_ecartees",
+        "expediabilite"
       ]
     },
     "pistes_adjacentes": {
@@ -200,6 +230,35 @@
           "mot_cle_exact": {
             "type": "string",
             "description": "La chaîne EXACTE dont le volume est annoncé, telle qu'interrogée. Sert à re-vérifier le chiffre en une requête. Ne jamais donner le volume d'un mot parent pour celui d'une longue traîne."
+          },
+          "expediabilite": {
+            "type": "object",
+            "description": "Encombrement × origine. Hors gabarit + Chine = exclu ; hors gabarit + UE = tenable ; origine inconnue = REVIEW obligatoire.",
+            "properties": {
+              "hors_gabarit": {
+                "type": "boolean",
+                "description": "Le produit ne rentre pas dans un colis standard."
+              },
+              "origine": {
+                "enum": [
+                  "ue",
+                  "chine",
+                  "inconnue"
+                ]
+              },
+              "consequence": {
+                "enum": [
+                  "eligible",
+                  "exclu",
+                  "review_obligatoire"
+                ]
+              }
+            },
+            "required": [
+              "hors_gabarit",
+              "origine",
+              "consequence"
+            ]
           }
         },
         "required": [

@@ -180,6 +180,24 @@ Trois critères, dans cet ordre :
    sert à rien, un produit à fort volume mais à panier faible non plus. Les deux se lisent
    ensemble ou ne se lisent pas.
 
+3. **L'expédiabilité, qui peut disqualifier avant tout le reste.** Règle de Hakim, 31/08/2026 :
+   **un produit hors gabarit est exclu s'il part de Chine, conservé s'il part d'Europe.** Ce n'est
+   pas le volume du colis qui décide, c'est le couple **encombrement × origine** — un colis
+   volumineux expédié d'un entrepôt UE reste tenable (délai court, retour gérable), le même colis
+   parti de Chine ne l'est pas.
+
+   Difficulté à ne pas escamoter : **à ce stade tu ne connais pas l'origine**, elle se détermine au
+   sourcing. Donc, sur un produit manifestement hors gabarit — poulailler, cabane, meuble, arbre à
+   chat, tout ce qui ne rentre pas dans un colis standard :
+
+   - origine **UE établie** → la requête reste éligible ;
+   - origine **Chine établie** → écarte-la, et dis-le ;
+   - origine **inconnue** → tu peux la retenir, mais le verdict plafonne à `REVIEW`, avec la
+     mention explicite que l'origine d'expédition doit être établie avant tout `GO`.
+
+   Le panier élevé d'un produit encombrant n'est pas un argument tant que l'origine est inconnue :
+   c'est précisément ce qui rend le produit attirant et invendable en même temps.
+
 Écris la requête retenue, **et celles que tu as écartées avec le motif**. Un verdict rendu sans
 dire sur quelle requête il porte est inexploitable.
 
