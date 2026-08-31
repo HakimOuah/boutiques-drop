@@ -1,6 +1,6 @@
 ---
 name: variantes-sans-accent-kmt
-description: "SEMrush sépare les corpus accentués et non accentués, Google les fusionne dans un même bucket — additionner les deux compte deux fois ce que Google sert"
+description: "Google fusionne des formulations distinctes dans un même bucket (l'empreinte de série mensuelle le prouve) — ne jamais additionner ; et un NULL d'API n'est pas un zéro de marché"
 metadata: 
   node_type: memory
   type: project
@@ -23,5 +23,11 @@ Ce n'est pas « SEMrush a tort » : il est possible que les gens tapent réellem
 - **Sur SEMrush** (tant que l'abonnement vit) : continuer à interroger les deux pour la découverte de vocabulaire — c'est là que la règle garde toute sa valeur — mais ne pas additionner les deux totaux sans dire que le chiffre est un plafond.
 
 Deux pièges voisins relevés le 15/08 et toujours valables : `lampe demi lune` n'est pas une lampe décorative mais une **lampe UV de manucure** (1 500 à retirer d'office), et `poster` est **rabattu sur `poste`** par SEMrush, qui rend « La Poste espace client » sur 57 290 de volume — la racine `poster` est inutilisable telle quelle.
+
+**Extension du 31/08/2026 — la fusion ne touche pas que les accents, et l'empreinte de série la débusque.** Sur le dossier console rétro, les graines `console rétro` et `retrogaming` — deux mots totalement différents, pas des variantes d'écriture — rendent la **même série au chiffre près** (`8100, 6600, 8100, 8100, 9900, 12100, 14800, 27100, 22200, 14800, 14800, 14800`) : un seul bucket à 14 800, qui absorbe aussi `retro game console`, `retrogaming console`, `la console retrogaming`. La mesure SEMrush du 01/08 en avait fait une somme (8 100 + 2 300 → « 13-15 k »). **La série mensuelle est donc le test général des buckets fusionnés, pas seulement le test des paires accentuées.**
+
+**Deuxième piège découvert le même jour — un NULL n'est pas un zéro.** `keywords_data/google_ads/search_volume` renvoie **NULL** sur `game boy advance`, `game boy color`, `coque game boy advance` — indiscernable d'un 0 si on ne regarde pas. Et **la graphie de la graine change tout** : `game boy` (deux mots) rend 1 795 idées dont **une seule** valorisée, `gameboy` (un mot) en rend 634 **toutes** valorisées, faisant apparaître le vocabulaire cherché (`batterie gameboy advance sp` 320, `gameboy advance modding` 210). Une famille a failli être classée morte sur un artefact d'outil.
+
+**How to apply (ajout)** : avant de conclure à l'absence de demande sur une tête, (1) recouper la tête nulle par une **graphie alternative** de la graine — collé/séparé, avec/sans tiret ; (2) se méfier d'une graine dont *toutes* les suggestions sauf une sont à 0, c'est une signature d'artefact, pas un marché vide.
 
 Voir [[migration-semrush-vers-dataforseo]], [[mesure-express-semrush-lots]], [[salve-niches-univers-2026-08-15]].
