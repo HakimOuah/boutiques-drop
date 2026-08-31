@@ -164,6 +164,49 @@ produit).
 
 ---
 
+## Le verrou — le critère qui décide
+
+**Règle de Hakim, 31/08/2026.** Écrite après une inversion de verdict : la même niche a rendu STOP
+puis GO au passage suivant, parce que ce critère n'était écrit nulle part.
+
+**Une page 1 mixte n'est pas un signe d'ouverture.** C'est l'erreur exacte qui a produit le faux
+GO : « page 1 partagée entre spécialistes, enseignes, comparateur et contenu, sans domination d'un
+type unique » a été lu comme un marché accessible. C'est l'inverse — la mixité décrit un sandwich :
+les marketplaces tiennent le bas sur le prix, les marques installées tiennent le haut sur la
+confiance, et il n'y a pas d'interstice pour un entrant sans produit propre.
+
+Deux critères. **Un seul suffit à conclure au verrou.**
+
+### A — Notoriété grand public
+
+Compte les acteurs de page 1 qu'un acheteur citerait **sans avoir cherché** : marketplaces (Amazon,
+Cdiscount, ManoMano), enseignes nationales (Leroy Merlin, Gamm vert, Truffaut), marques connues
+hors du milieu. Un spécialiste que seul le milieu connaît **ne compte pas** — c'est un concurrent,
+pas un verrou.
+
+Verrou si ces acteurs occupent la majorité de la page 1 : ils ne se battent pas sur le produit mais
+sur la notoriété, terrain où un entrant ne peut pas monter.
+
+### B — Guerre des prix contre le coût de sourcing
+
+Le critère mesurable, et celui qui tranche. Relève le **prix plancher** des acteurs comparables et
+compare-le au **coût rendu** du sourcing.
+
+**Verrou si : prix plancher observé ≤ coût rendu × (1 + marge minimale).** Autrement dit s'il
+n'existe aucune bande de prix où se poser en gagnant de l'argent.
+
+Si le coût rendu n'est pas connu, **dis-le et rends `REVIEW`**. Ne conclus jamais `GO` sans lui :
+un GO sans coût rendu n'est pas un verdict, c'est un espoir.
+
+### Ce que « ouvert » veut dire
+
+Pas « des acteurs de types variés ». **L'existence d'une bande de prix qu'on peut occuper avec un
+produit sourçable.** C'est la seule définition qui décide.
+
+Précédent à connaître : Tuftéo, recalage du 21/07/2026 — **six produits dont le coût rendu
+dépassait le prix du concurrent**, noté en une ligne et jamais instruit. Le critère B était levé et
+personne ne l'a lu.
+
 ## Livrable
 
 Un rapport daté dans le répertoire de la boutique concernée :
