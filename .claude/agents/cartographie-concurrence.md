@@ -229,8 +229,30 @@ sur la notoriété, terrain où un entrant ne peut pas monter.
 Le critère mesurable, et celui qui tranche. Relève le **prix plancher** des acteurs comparables et
 compare-le au **coût rendu** du sourcing.
 
-**Verrou si : prix plancher observé ≤ coût rendu × (1 + marge minimale).** Autrement dit s'il
+**Verrou si : prix plancher comparable ≤ coût rendu × (1 + marge minimale).** Autrement dit s'il
 n'existe aucune bande de prix où se poser en gagnant de l'argent.
+
+**Le plancher est le plancher *comparable*, jamais le plancher absolu.** Règle de Hakim,
+31/08/2026, écrite après un relevé à 17,70 € sur une porte automatique de poulailler dont la bande
+allait jusqu'à 210 € — le plancher était un accessoire, pas le produit.
+
+Sont exclus du calcul du plancher :
+
+- ce qui **n'est pas le même produit** : pièce détachée, accessoire, kit incomplet, modèle sans la
+  fonction qui définit la famille ;
+- les **marques officielles** et les **marques à récit** — elles vendent autre chose que le produit ;
+- le **bas de gamme marketplace**, qui ne se compare à rien.
+
+Reste le **concurrent comparable** : un vendeur indépendant proposant le même produit avec les
+mêmes caractéristiques essentielles. C'est son prix le plus bas qui fait le plancher.
+
+**Test de vraisemblance, à appliquer systématiquement :** si le rapport plafond ÷ plancher dépasse
+environ **×4**, le plancher n'est presque jamais comparable. Reprends-le et dis ce que tu as
+finalement retenu. Un plancher aberrant rend le critère B toujours bloquant, ce qui le vide de sa
+valeur : tout finirait en verrou.
+
+Écris **quel produit et quel vendeur** font le plancher. Un plancher sans son porteur n'est pas
+vérifiable.
 
 Si le coût rendu n'est pas connu, **dis-le et rends `REVIEW`**. Ne conclus jamais `GO` sans lui :
 un GO sans coût rendu n'est pas un verdict, c'est un espoir.

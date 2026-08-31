@@ -270,6 +270,94 @@
           "preuve"
         ]
       }
+    },
+    "critere_prix": {
+      "type": "object",
+      "description": "Critère B, rendu auditable. Le plancher est comparable, jamais absolu.",
+      "properties": {
+        "plancher_eur": {
+          "type": "number"
+        },
+        "produit_du_plancher": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Le produit exact qui porte ce prix. Un plancher sans son porteur n'est pas vérifiable."
+        },
+        "vendeur_du_plancher": {
+          "type": "string",
+          "minLength": 2
+        },
+        "plafond_eur": {
+          "type": "number"
+        },
+        "rapport_plafond_plancher": {
+          "type": "number",
+          "description": "Au-delà de ~4, le plancher n'est presque jamais comparable : le reprendre."
+        },
+        "exclus_du_calcul": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Pièces, accessoires, marques officielles, marques à récit, bas de gamme marketplace."
+        },
+        "cout_rendu_eur": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "null = inconnu, donc verdict plafonné à REVIEW."
+        },
+        "verrou": {
+          "enum": [
+            "oui",
+            "non",
+            "inconnu"
+          ]
+        },
+        "preuve": {
+          "type": "object",
+          "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+          "properties": {
+            "type": {
+              "enum": [
+                "url",
+                "mention_legale",
+                "citation",
+                "mesure",
+                "capture"
+              ],
+              "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+            },
+            "source": {
+              "type": "string",
+              "minLength": 8,
+              "description": "URL complète, chemin de fichier, ou commande exacte."
+            },
+            "extrait": {
+              "type": "string",
+              "minLength": 3,
+              "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+            },
+            "date": {
+              "type": "string",
+              "description": "AAAA-MM-JJ de la lecture."
+            }
+          },
+          "required": [
+            "type",
+            "source",
+            "extrait"
+          ]
+        }
+      },
+      "required": [
+        "plancher_eur",
+        "produit_du_plancher",
+        "vendeur_du_plancher",
+        "verrou",
+        "preuve"
+      ]
     }
   },
   "required": [
@@ -279,7 +367,8 @@
     "motifs",
     "contre_arguments",
     "confiance",
-    "non_fait"
+    "non_fait",
+    "critere_prix"
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "verdict-niche"
