@@ -48,6 +48,15 @@ Brand Search n’est plus une source. Ce qu’il faisait (boutiques qui vivent e
 
 API : `https://api.trendtrack.io`, `Authorization: Bearer $TRENDTRACK_API_KEY`. 1 crédit / ligne retournée. Commencer par `GET /v1/usage`. MCP TrendTrack s’il est chargé ; sinon REST. Pas de Brand Search, même en repli.
 
+### Vues Shop obligatoires
+
+Dans l’onglet **Shop**, consulter explicitement les deux vues créées par Hakim lors de chaque salve de découverte libre :
+
+- **`Shopping FR`** — source prioritaire d’idées observées sur le marché français. Une présence dans cette vue est un signal de découverte, pas une preuve suffisante de demande.
+- **`Shopping Scaling`** — source de produits, niches ou boutiques en accélération. La traiter comme un signal amont à qualifier pour la France, jamais comme un verdict de scalabilité ni comme le skill aval `shopping-scaling`.
+
+Pour chaque idée issue de ces vues, conserver le nom exact de la vue (`Shopping FR` ou `Shopping Scaling`), le domaine ou la référence TrendTrack, la date d’observation et le mode proposé. Une idée de `Shopping Scaling` doit être marquée `À VALIDER FR` jusqu’au passage par `@oh-demande` et DataForSEO. Si une vue est inaccessible ou vide, l’indiquer dans les limites ; ne pas la remplacer silencieusement.
+
 ### PRODUIT PUR — intention Search
 
 - `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` 30 (idéal 30–60), tri `longestRunning`. Pubs qui tiennent sur un **problème**, pas un catalogue.
@@ -96,11 +105,11 @@ Le fournisseur est **exclusivement AliExpress**, après `PASS_PREQUALIFICATION` 
 Mode : PRODUIT PUR | UNIVERS
 
 ## Ce que j’ai fait
-(TrendTrack : google-ads Search|Shopping / shops M1-M2 / ads Meta signal univers)
+(TrendTrack : vues Shop `Shopping FR` + `Shopping Scaling` / google-ads Search|Shopping / shops M1-M2 / ads Meta signal univers)
 (actions + endpoint)
 
 ## Résultats
-idée · mode · boutique preuve · problème ou univers · prix publics datés · angle / pivot · motif de poursuite ou d’écart
+idée · mode · vue d’origine · boutique preuve · problème ou univers · prix publics datés · angle / pivot · statut France (`FR observé` ou `À VALIDER FR`) · motif de poursuite ou d’écart
 
 ## Pivot d’Angle (si M5)
 Hook, Biais d’Autorité, Éducation, Bénéfice Caché

@@ -15,7 +15,7 @@ Si un de ces fichiers est introuvable, arrête-toi et signale-le : ne travaille 
 
 ## Périmètre
 
-Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). Source principale depuis le 19/08/2026 : **TrendTrack** (Google Ads Search = produit pur, Shopping catalogues = univers). Recette : skill `ideation-produit` et agent `mineur-brandsearch` (mineur TrendTrack, nom conservé). **Pas de Brand Search.**
+Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). Source principale depuis le 19/08/2026 : **TrendTrack** (Google Ads Search = produit pur, Shopping catalogues = univers). Dans l’onglet Shop, les vues **`Shopping FR`** et **`Shopping Scaling`** font partie des sources obligatoires d’une exploration libre. `Shopping FR` est un signal local amont ; toute idée issue de `Shopping Scaling` reste `À VALIDER FR` et ne constitue pas une preuve de scalabilité. Recette : skill `ideation-produit` et agent `mineur-brandsearch` (mineur TrendTrack, nom conservé). **Pas de Brand Search.**
 
 Source secondaire, seulement si le brief le demande : Amazon, VEVOR, Flippa, Europages.
 
@@ -34,7 +34,7 @@ Un rapport daté : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/repo
 Sections obligatoires :
 
 1. **Brief reçu** — niche imposée ou exploration libre.
-2. **Idées collectées** — tableau : produit ; source exacte (URL ou référence précise) ; problème ou désir adressé ; prix publics observés (datés) ; première hypothèse d'angle ; famille de critères cochée.
+2. **Idées collectées** — tableau : produit ; vue TrendTrack d’origine (`Shopping FR`, `Shopping Scaling` ou autre parcours) ; source exacte (URL ou référence précise) ; statut France (`FR observé` ou `À VALIDER FR`) ; problème ou désir adressé ; prix publics observés (datés) ; première hypothèse d'angle ; famille de critères cochée.
 3. **Écartés en cours de collecte** — produits vus et non retenus, avec le motif en une ligne (pas de rejet silencieux).
 4. **Doublons registre évités** — produits croisés qui figuraient déjà au registre.
 5. **Limites** — sources inaccessibles, blocages, données manquantes.

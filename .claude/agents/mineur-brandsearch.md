@@ -26,6 +26,15 @@ Voie : API REST `https://api.trendtrack.io`, `Authorization: Bearer $TRENDTRACK_
 3. Restant < 200 → terminer avec ce que tu as, ne pas lancer une grosse salve.
 4. Clé absente / 401 → stop, signale-le. Ne pas ouvrir brandsearch.co.
 
+### Vues Shop à lire
+
+Lors d’une exploration libre, inspecter les deux vues de l’onglet Shop avant de conclure la salve :
+
+- **`Shopping FR`** : idées déjà observées sur le marché français ; c’est la vue prioritaire pour une preuve locale amont.
+- **`Shopping Scaling`** : idées montrant un signal d’accélération ; ce signal ne prouve ni la demande France ni la scalabilité économique. Toute idée qui en provient est marquée `À VALIDER FR`.
+
+Ne pas assimiler la vue `Shopping Scaling` au skill aval `shopping-scaling`. Noter pour chaque idée le nom exact de la vue, la référence ou le domaine, et la date de lecture. Vue inaccessible ou vide → le déclarer dans les limites, sans substitution silencieuse.
+
 ## Recette PRODUIT PUR
 
 `POST /v1/google-ads/query`
@@ -75,7 +84,7 @@ Prix publics datés si une page est lue. Visites TrendTrack / Brand Search histo
 `boutique-pipeline/reports/minage-trendtrack-<YYYY-MM-DD>.md`
 
 1. Mode, quota début/fin, crédits, endpoints, filtres.
-2. Idées : niche · mode · domaine preuve · live Google si connu · prix observés · formulations DataForSEO · directe/latérale.
+2. Idées : niche · mode · vue d’origine (`Shopping FR`, `Shopping Scaling` ou autre parcours TrendTrack) · domaine preuve · live Google si connu · prix observés · statut France (`FR observé` ou `À VALIDER FR`) · formulations DataForSEO · directe/latérale.
 3. Écarts notables (GSB, persona pro, doublon, one-shot 15 €).
 4. Limites (pages non lues, API sans titre produit, etc.).
 
