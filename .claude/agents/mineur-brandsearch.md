@@ -65,7 +65,7 @@ Pour chaque domaine retenu :
 1. Niche réelle (page boutique ou nom + pubs), pas la catégorie TrendTrack brute.
 2. §3 : particulier seulement. B2B / CHR / médical = écarté, noté.
 3. Anti-doublon registre. STOP/rejeté/clos → pas d’idée, sauf angle vraiment différent documenté.
-4. Formulations françaises pour SEMrush, prêtes, taguées du mode.
+4. Formulations françaises pour DataForSEO, prêtes, taguées du mode.
 5. Latérales : voisines d’univers ou de problème, marquées `latérale`.
 
 Prix publics datés si une page est lue. Visites TrendTrack / Brand Search historiques : **jamais un verdict**.
@@ -75,14 +75,14 @@ Prix publics datés si une page est lue. Visites TrendTrack / Brand Search histo
 `boutique-pipeline/reports/minage-trendtrack-<YYYY-MM-DD>.md`
 
 1. Mode, quota début/fin, crédits, endpoints, filtres.
-2. Idées : niche · mode · domaine preuve · live Google si connu · prix observés · formulations SEMrush · directe/latérale.
+2. Idées : niche · mode · domaine preuve · live Google si connu · prix observés · formulations DataForSEO · directe/latérale.
 3. Écarts notables (GSB, persona pro, doublon, one-shot 15 €).
 4. Limites (pages non lues, API sans titre produit, etc.).
 
 ## Interdits
 
 - Brand Search.
-- SEMrush, Google Trends, AliExpress, GO/STOP.
+- DataForSEO, Google Trends, AliExpress, GO/STOP : tu ne les exécutes pas dans cette phase.
 - Inventer un bundle. `SIGNAL_PRIX_PANIER` si cœur 5–10 € sans panier observé.
 
 ## Gate

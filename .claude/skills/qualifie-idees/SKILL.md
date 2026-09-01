@@ -1,13 +1,15 @@
 ---
 name: qualifie-idees
-description: Qualification express d'idées produit — mesure du volume SEMrush et sonde prix AVANT tout travail de filtre, puis chaîne complète jusqu'à la fiche AliExpress vérifiée pour les survivantes. Utiliser quand Hakim apporte une ou plusieurs idées produit, demande de qualifier une idée, ou lance /qualifie-idees.
+description: Qualification express d'idées produit — mesure DataForSEO et sonde prix AVANT tout filtre, puis chaîne complète jusqu'à la fiche AliExpress vérifiée pour les survivantes. Utiliser quand Hakim apporte une ou plusieurs idées produit, demande de qualifier une idée, ou lance /qualifie-idees.
 ---
 
 # Qualification express d'idées
 
 Tu pilotes la voie hybride du pipeline de recherche produit de Hakim (OH Ventures), décidée le 20 juillet 2026 après le bilan de la boucle de balayage : **les idées redeviennent la source, mais chaque idée est mesurée avant qu'on y investisse quoi que ce soit.** Une idée sans volume meurt en quelques minutes, pas après une phase 3 complète.
 
-Tu n'exécutes aucune phase toi-même : tu lances les sous-agents, tu contrôles leurs livrables, tu écris le registre. Design de référence : `boutique-pipeline/specs/2026-07-20-boucle-chasse-clusters-design.md` (les agents, la sonde, les viviers et le critique y sont définis — seule la source des entrées change).
+Tu n'exécutes aucune phase toi-même : sous Hermes, tu routes vers les Bots permanents avec `message_agent`, tu contrôles leurs livrables et tu écris seul le registre. Repli sur `delegate_task` uniquement si un Bot permanent est explicitement indisponible. Design de référence : `boutique-pipeline/specs/2026-07-20-boucle-chasse-clusters-design.md`.
+
+**Routage permanent :** minage/découverte `@oh-scout` ; sonde prix et concurrence `@oh-concurrence` ; filtre `@oh-filtre` ; demande `@oh-demande` ; sourcing `@oh-sourcing` ; économie `@oh-marge` ; audit `@oh-contradicteur`.
 
 ## Entrées
 
@@ -20,7 +22,7 @@ Tu n'exécutes aucune phase toi-même : tu lances les sous-agents, tu contrôles
 1. Lis `boutique-pipeline/registre-candidats.md`. S'il manque, arrête-toi.
 2. Compte les candidats retenus dans la section « Chasse clusters » (lignes du tableau, pas la valeur affichée). L'objectif global reste **20 candidats**, tous chemins confondus.
 3. Date du jour réelle.
-4. Accès SEMrush : Chrome via MCP `claude-in-chrome`, compte déjà connecté — charger l'URL suffit. Écran de connexion = arrêt, demande à Hakim de se reconnecter, ne saisis jamais d'identifiants.
+4. Accès DataForSEO : charge le `.env` du dépôt `ecommerce-dropshipping` sans afficher les secrets et fais contrôler le témoin `tufting` France/français par `@oh-scout`. Erreur API, quota ou témoin incohérent = arrêt déclaré, sans repli.
 
 ## Chaîne par idée
 
@@ -30,16 +32,16 @@ Vérifie l'idée contre tout le registre (synonymes : singulier/pluriel, accents
 
 ### 1. Mesure express — `phase0-decouverte` en mode ciblé
 
-Lance `phase0-decouverte` en lui donnant **l'idée nommée** au lieu d'une famille : il mesure le cluster de l'idée (formulation spécifique → famille de produit → catégorie parente, en niveaux séparés jamais additionnés), base France, chiffres lus à l'écran uniquement. Ses interdits s'appliquent inchangés : aucun verdict, aucune adressabilité jugée, aucune addition de familles distinctes (anti-exemple catio).
+Message `@oh-scout` avec **l'idée nommée** au lieu d'une famille : il mesure via DataForSEO le cluster de l'idée (formulation spécifique → famille de produit → catégorie parente, niveaux séparés jamais additionnés), France/français. Ses interdits s'appliquent inchangés : aucun verdict, aucune adressabilité jugée, aucune addition de familles distinctes (anti-exemple catio).
 
-**Exploration latérale — encouragée, jamais silencieuse.** Le Keyword Magic Tool fait remonter des sous-groupes et du vocabulaire voisin ; c'est une richesse voulue par Hakim, pas du bruit. Deux mécanismes :
+**Exploration latérale — encouragée, jamais silencieuse.** La table des thèmes co-occurrents de `kw_dfs.py` fait remonter des segments et du vocabulaire voisin ; c'est une richesse voulue par Hakim, pas du bruit. Deux mécanismes :
 
-- les **sous-niches** que SEMrush révèle autour de l'idée mesurée (sous-groupes, termes connexes) sont notées en graines dérivées et peuvent être mesurées dans la foulée si leur volume affiché le justifie ;
+- les **sous-niches** révélées par DataForSEO Labs (thèmes co-occurrents, termes connexes) sont notées en graines dérivées et peuvent être mesurées dans la foulée si leur volume mesuré le justifie ;
 - les **associations** — quand une idée en évoque une autre (une boutique d'étanchéité fait penser au béton ciré, à la rénovation décorative), la nouvelle idée est ajoutée à la file de la session, marquée `latérale`, et passera par la même chaîne complète depuis l'étape 0 (anti-doublon compris).
 
 La règle qui borne l'exploration : une idée latérale suit **tout** le chemin — elle ne saute jamais une étape au motif qu'elle ressemble à sa voisine, et elle ne se mesure que si elle est réellement distincte (sinon c'est le même cluster, pas une nouvelle idée).
 
-Traitement du résultat, seuil relu dans `PRODUCT-RESEARCH-CRITERIA.md` **selon le mode** de l'idée (cluster ~10 000 en PRODUIT PUR, dont 9 900 passe ; consolidé familles / 30 000 boutique en UNIVERS) :
+Traitement du résultat, seuil DataForSEO relu dans `PRODUCT-RESEARCH-CRITERIA.md` **selon le mode** de l'idée (12 500 en PRODUIT PUR ; consolidé 37 500 boutique en UNIVERS) :
 
 - **Nettement sous le seuil** (sous la bande −20 %) → l'idée meurt. Inscris-la au registre en `STOP mesure express` avec ses volumes et synonymes — coût total : quelques minutes.
 - **Dans la bande ±20 %** → `CAS LIMITE — décision Hakim requise`. Noté au registre, remonté en fin de session. Tu ne tranches pas.
@@ -47,23 +49,23 @@ Traitement du résultat, seuil relu dans `PRODUCT-RESEARCH-CRITERIA.md` **selon 
 
 ### 2. Sonde prix — `sonde-prix`
 
-Sur le mot-clé de tête. `LOW-TICKET` net → vivier (volume + fourchette + note), l'idée ne continue pas. `DANS LA TRANCHE` ou `INDÉTERMINÉ` → la fourchette datée accompagne l'idée comme seule donnée de prix autorisée.
+Message `@oh-concurrence` sur le mot-clé de tête. `LOW-TICKET` net → vivier ; `DANS LA TRANCHE` ou `INDÉTERMINÉ` → la fourchette datée accompagne l'idée comme seule donnée de prix autorisée.
 
 ### 3. Filtre qualitatif — `phase2-filtre`
 
-Brief chemin B habituel : règle de dérivation (produits attestés par le vocabulaire mesuré — l'idée de Hakim compte comme thèse à instruire, mais son produit doit être attesté par au moins un mot-clé mesuré), fourchette de la sonde, poches non instruites versées en vivier.
+Message `@oh-filtre` avec le brief chemin B habituel : règle de dérivation, fourchette de la sonde, poches non instruites versées en vivier.
 
 ### 4. Demande réelle — `phase3-demande`
 
-Nettoyage SERP, adressabilité, concurrents spécialistes vs enseignes, règle hiérarchique. `STOP_PREQUALIFICATION` ferme l'idée ; `CAS LIMITE` remonte à Hakim sans continuer.
+Message `@oh-demande` : nettoyage SERP, adressabilité, concurrents spécialistes vs enseignes, règle hiérarchique et DataForSEO. `STOP_PREQUALIFICATION` ferme l'idée ; `CAS LIMITE` remonte à Hakim sans continuer.
 
 ### 5. Fournisseur — `phase4-sourcing`
 
-Sur `PASS_PREQUALIFICATION` uniquement. Fiches ouvertes et vérifiées ; la case prouve la **sourçabilité**, pas la qualité du vendeur ni un `GO_FINAL` — niveaux de confiance A/B/C, seuls bloquants : pas de fiche correspondante ou prix rendu ≥ prix marché.
+Sur `PASS_PREQUALIFICATION` uniquement, message `@oh-sourcing` et `@oh-concurrence`. Fiches ouvertes et vérifiées ; la case prouve la **sourçabilité**, pas un `GO_FINAL`. Une fois leurs rapports validés, message `@oh-marge` pour l'économie exacte.
 
 ### 6. Critique technique — `critique-candidat`
 
-Avec les rapports de demande, sourcing et concurrence. **Jamais le compteur ni l'avancement.** Recommandation technique, jamais décision finale.
+Message `@oh-contradicteur` avec les rapports de demande, sourcing, concurrence et marge. **Jamais le compteur ni l'avancement.** Recommandation technique, jamais décision finale.
 
 ### 7. Écriture — après chaque idée, jamais en fin de session
 
@@ -87,7 +89,7 @@ Règles inviolables : (1) le registre local d'abord, Notion ensuite, jamais à l
 
 ## Règles d'arrêt fail-closed
 
-- SEMrush inaccessible, CAPTCHA AliExpress, fichier canonique introuvable, livrable non conforme → arrêt, registre à jour, rapport d'arrêt. Aucune donnée inventée.
+- DataForSEO indisponible ou témoin incohérent, CAPTCHA AliExpress, fichier canonique introuvable, livrable non conforme → arrêt, registre à jour, rapport d'arrêt. Aucune donnée inventée.
 - Aucun assouplissement de critère pour faire passer une idée — l'attachement de Hakim à une idée n'est pas un critère. Si toutes les idées d'une salve meurent, c'est le résultat : dis-le simplement.
 
 ## Interdits stricts

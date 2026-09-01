@@ -1,6 +1,6 @@
 ---
 name: ideation-produit
-description: Idéation produit — deux modes (produit pur / univers), TrendTrack uniquement (Google Ads + shops + Meta comme signal d’univers). Utiliser quand Hakim demande de chercher des idées, miner TrendTrack, un pivot d’angle, ou une boutique preuve. Ne mesure aucun volume SEMrush, ne source pas AliExpress, ne prononce pas le GO.
+description: Idéation produit — deux modes (produit pur / univers), TrendTrack uniquement (Google Ads + shops + Meta comme signal d’univers). Utiliser quand Hakim demande de chercher des idées, miner TrendTrack, un pivot d’angle, ou une boutique preuve. Ne mesure aucun volume, ne source pas AliExpress, ne prononce pas le GO.
 ---
 
 # Idéation produit — deux modes, TrendTrack
@@ -53,7 +53,7 @@ API : `https://api.trendtrack.io`, `Authorization: Bearer $TRENDTRACK_API_KEY`. 
 - `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` 30 (idéal 30–60), tri `longestRunning`. Pubs qui tiennent sur un **problème**, pas un catalogue.
 - Shops : Module 1 Early Market (trafic max 15k, ads min 60, **produits max 100**, croissance +20 %). Top tiers US/UK/UE. Potentiel phare ≥ 50 €.
 - Module 5 : painpoints (humidité, calcaire, linge, bruit…). Tri reach Europe. Hook / autorité / éducation / bénéfice caché = matière Search, pas pub Meta à republier.
-- SEMrush plus tard : clusters **symptôme** (« eau calcaire »), pas l’objet.
+- DataForSEO plus tard, par `@oh-demande` : clusters **symptôme** (« eau calcaire »), pas l’objet.
 
 Écarter : GSB, persona pro, catalogues 200+ SKU (ça c’est UNIVERS — le noter et ne pas le traiter dans cette salve).
 
@@ -83,7 +83,7 @@ Le fournisseur est **exclusivement AliExpress**, après `PASS_PREQUALIFICATION` 
 
 ## Interdits
 
-- Aucun volume SEMrush, aucun chiffre de mémoire, aucune sonde Shopping complète, aucun Google Trends (tu tags le brief).
+- Aucun volume, aucun chiffre de mémoire, aucune sonde Shopping complète, aucun Google Trends (tu tags le brief).
 - Aucune fiche AliExpress.
 - Aucun GO / STOP / MAYBE marché.
 - Aucun scoring chiffré.

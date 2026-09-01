@@ -47,8 +47,7 @@ mémoire, parce que chacun corrige une erreur qu'on a réellement commise :
 | **2** | Adjuger les têtes génériques **en SERP, chiffre à l'appui**, et publier le consolidé en trois valeurs | étape 5 | Une adjudication implicite qui décide seule du verdict sans apparaître nulle part |
 | **3** | Une paire accentuée n'est **qu'un seul bucket** : on interroge les deux, on ne somme jamais les deux | étape 3 | Le double comptage que notre propre protocole organisait |
 
-Ils ne dépendent d'aucun outil : ce sont des règles de méthode, valables sur SEMrush comme sur
-DataForSEO.
+Ils ne dépendent pas de l'interface : ce sont des règles de méthode appliquées aux données DataForSEO.
 
 ### Étape 1. Partir du catalogue, jamais d'une page blanche
 
@@ -88,22 +87,14 @@ règle mémoire « explicable-particulier, pas technique-pro », vue du côté d
 **Ce qu'on fait.** Base France obligatoire, quelle que soit la source. On relève pour chacun :
 **volume, CPC avec sa devise, intention**, et le KD quand la source en fournit un.
 
-**Deux voies depuis le 29/08/2026** (détail et recettes : skill `recherche-mots-cles`) :
+**Voie unique depuis le 01/09/2026** (détail et recettes : skill `recherche-mots-cles`) :
 
-- **DataForSEO, voie par défaut** — découverte par `scripts/kw_dfs.py` (correspondance plein texte,
+- **DataForSEO API** — découverte par `scripts/kw_dfs.py` (correspondance plein texte,
   normalisation et déduplication intégrées), volume de tête par `google_ads/search_volume`. Environ
   0,13 USD la page de 1 000 lignes.
-- **SEMrush**, tant que l'abonnement vit. Deux outils, à choisir selon le besoin :
 
-- **Analyse par lots** : précis, mais consomme des crédits de rafraîchissement (300 pour 300 mots-clés
-  sur Noirmont) et son composant de saisie n'est pas toujours pilotable.
-- **Keyword Magic Tool en « Expression exacte »** (`?q=…&db=fr&mt=phrase`) : rend **tous** les
-  mots-clés contenant tous les mots de la requête, dans n'importe quel ordre, singuliers et pluriels
-  confondus, accentués ou non, **100 lignes triées par volume et 0 crédit consommé**. C'est l'outil de
-  l'étape 3, et 25 requêtes y ont couvert tout un catalogue.
-
-**Ce qu'on produit.** Un tableau par famille : formulation, volume, KD, CPC, intention, date de
-lecture.
+**Ce qu'on produit.** Un tableau par famille : formulation, volume, CPC + devise, intention disponible,
+endpoint, paramètres France/français et date d'appel.
 
 **Le piège.** Trois lectures fausses guettent :
 
@@ -112,8 +103,8 @@ lecture.
   écrit pas pareil.
 - **Le quota épuisé rend des zéros silencieux.** Avant de croire un zéro, on vérifie que des témoins
   connus rendent bien leur volume habituel, et on regarde le compteur de crédits bouger.
-- **La devise ne se présume pas.** SEMrush affiche en dollars sauf si l'URL porte `currency=eur` ;
-  DataForSEO rend la devise du compte. On lit la devise à l'écran et on l'écrit à côté du chiffre.
+- **La devise ne se présume pas.** DataForSEO rend la devise du compte. On lit le champ de devise de
+  la réponse et on l'écrit à côté du chiffre.
   À 0,20 ça ne change aucun verdict, à 2 ça en change.
 - **Le KD n'est pas portable d'une source à l'autre.** Mesuré le 29/08 sur 179 mots-clés :
   corrélation de rangs 0,225, et DataForSEO rend 0 pour 83 % d'entre eux. On ne convertit pas, on ne
@@ -149,8 +140,8 @@ voisines avaient été additionnées pour annoncer 13 000 à 17 000 quand le mot
 test qui tranche est toujours le même : **est-ce qu'une seule page sert ces requêtes, ou est-ce qu'il
 en faudrait deux ?**
 
-**Le second piège : le plancher de lecture.** Le Keyword Magic Tool rend 100 lignes par page. Si la
-centième ligne est encore à 590 recherches, la famille n'est pas couverte et le total est un
+**Le second piège : le plancher de lecture.** DataForSEO Labs rend 1 000 lignes par page. Si la
+dernière ligne est encore à un volume significatif, la famille n'est pas couverte et le total est un
 **plancher**, pas un total. On l'écrit comme tel. Sur Noirmont, trois familles sur vingt étaient dans
 ce cas.
 
@@ -166,9 +157,8 @@ ce cas.
 > sur 13 460 à des « formulations non accentuées jamais lues » : ce volume n'existait pas comme
 > demande adressable distincte.
 >
-> **Ce qui reste vrai :** SEMrush les indexe séparément, donc **on continue d'interroger les deux
-> orthographes** — c'est là que le vocabulaire se découvre, et c'est ce qui a révélé `ciel etoile
-> projecteur` 1 300, invisible depuis la forme accentuée.
+> **Ce qui reste vrai :** on continue d'interroger les deux orthographes dans DataForSEO Labs — c'est
+> là que le vocabulaire se découvre, même si les volumes Google Ads peuvent partager un bucket.
 >
 > **Ce qui change :** on ne somme jamais les deux totaux. Le test de décision est la **série
 > mensuelle**, pas le volume seul : identique douze mois de suite → un seul bucket, on retient le MAX.
@@ -473,7 +463,7 @@ Un dossier daté, dans le répertoire de la boutique, avec au minimum :
 ## Ce que cette méthode ne fait pas
 
 - **Elle ne mesure pas du trafic.** Un volume de recherche n'est pas une prévision de visites, et la
-  règle maison « trafic réel ≈ SimilarWeb × 3 » ne s'applique pas à des volumes SEMrush.
+  règle maison « trafic réel ≈ SimilarWeb × 3 » ne s'applique pas aux volumes DataForSEO.
 - **Elle ne remplace pas le pipeline de recherche produit.** Le pipeline (`/recherche-produit`,
   `/chasse-clusters`, `/qualifie-idees`) décide **s'il faut lancer une boutique**. Cette méthode
   décide **comment on la construit** une fois la niche retenue. Les seuils chiffrés du pipeline

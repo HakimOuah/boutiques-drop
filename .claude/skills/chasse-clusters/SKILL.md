@@ -1,22 +1,24 @@
 ---
 name: chasse-clusters
-description: Boucle autonome de chasse aux candidats produit, volume-first. Balaie des familles de marché sur SEMrush, qualifie les clusters trouvés et accumule des candidats vérifiés dans le registre jusqu'à 20. Utiliser quand Hakim lance /chasse-clusters ou demande d'accumuler des candidats produit en autonomie.
+description: Boucle autonome de chasse aux candidats produit, volume-first. Balaie des familles via DataForSEO, qualifie les clusters et accumule des candidats vérifiés dans le registre jusqu'à 20. Utiliser quand Hakim lance /chasse-clusters ou demande d'accumuler des candidats produit en autonomie.
 ---
 
 # Boucle — Chasse aux clusters
 
-Tu pilotes la boucle de découverte volume-first de Hakim (OH Ventures). Tu n'exécutes **aucune phase toi-même** : tu lances les sous-agents, tu contrôles leurs livrables, tu écris le registre et tu appliques la règle d'arrêt fail-closed.
+Tu pilotes la boucle de découverte volume-first de Hakim (OH Ventures). Tu n'exécutes **aucune phase toi-même** : sous Hermes, tu routes chaque étape vers les Bots permanents avec `message_agent`, tu contrôles leurs livrables, tu écris seul le registre et tu appliques la règle d'arrêt fail-closed. Repli sur `delegate_task` uniquement si le Bot permanent est explicitement indisponible.
 
 Design de référence : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/specs/2026-07-20-boucle-chasse-clusters-design.md`.
 
-Cette boucle est du **PRODUIT PUR** (clusters SEMrush). Un UNIVERS (gothique, montres) ne se chasse pas ici : skill `ideation-produit` mode UNIVERS, puis MOTS-CLÉS Mission B.
+Cette boucle est du **PRODUIT PUR** (clusters DataForSEO). Un UNIVERS (gothique, montres) ne se chasse pas ici : skill `ideation-produit` mode UNIVERS, puis MOTS-CLÉS Mission B.
+
+**Routage permanent :** découverte `@oh-scout` ; sonde prix et concurrence `@oh-concurrence` ; filtre `@oh-filtre` ; demande `@oh-demande` ; sourcing `@oh-sourcing` ; économie `@oh-marge` ; audit indépendant `@oh-contradicteur`.
 
 ## Avant de démarrer
 
 1. Lis `registre-candidats.md` et `familles-exploration.md`. Si l'un manque, arrête-toi et signale-le.
 2. Compte les candidats déjà retenus dans la section « Chasse clusters » du registre, en comptant les lignes du tableau et non la valeur affichée du compteur. Ignore la ligne d'amorce `*aucun candidat retenu à ce jour*`, qui est un placeholder. C'est ton compteur de départ — une relance reprend où la boucle s'est arrêtée.
 3. Détermine la date du jour réelle.
-4. Vérifie l'accès SEMrush : ouvre SEMrush dans Chrome via le MCP `claude-in-chrome`. Le compte de Hakim y est déjà connecté — il n'y a aucune authentification à faire, il suffit de charger l'URL. Confirme que la session est active et que la base est sur France. Si la page renvoie un écran de connexion, arrête-toi et demande à Hakim de se reconnecter ; ne tente jamais de saisir des identifiants toi-même.
+4. Vérifie DataForSEO : charge le `.env` du dépôt `ecommerce-dropshipping` sans afficher les secrets et demande à `@oh-scout` un contrôle témoin `tufting` France/français avant toute famille. Erreur API, quota ou témoin incohérent = arrêt déclaré, sans repli.
 5. Annonce à Hakim le compteur de départ et la famille par laquelle tu commences.
 
 ## Boucle principale
@@ -25,7 +27,7 @@ Tant que le compteur est inférieur à **20** et qu'il reste des familles non ba
 
 ### 1. Découverte
 
-Lance `phase0-decouverte` (Agent, synchrone) sur la famille suivante non balayée, avec ses graines et la date du jour.
+Message `@oh-scout` sur la famille suivante non balayée, avec ses graines, la date, les chemins canoniques et le chemin de rapport attendu. Attends son retour avant de continuer.
 
 Contrôle du livrable : le rapport existe au chemin `reports/chasse-clusters-<famille>-<YYYY-MM-DD>.md`, il est daté du jour, ses sept sections obligatoires sont présentes, aucun produit n'y est proposé, aucun verdict marché n'y figure. Non conforme = arrêt, pas de rattrapage silencieux.
 
@@ -39,7 +41,7 @@ Une reprise n'est possible que si Hakim l'a explicitement demandée et document�
 
 Pour chaque cluster survivant, dans l'ordre décroissant de volume :
 
-**a. Sonde prix sur le cluster** — lance `sonde-prix` sur le mot-clé de tête du cluster, **avant** le filtre qualitatif. Une lecture de Google Shopping France, aucun site marchand visité.
+**a. Sonde prix sur le cluster** — message `@oh-concurrence` pour exécuter `sonde-prix` sur le mot-clé de tête, **avant** le filtre qualitatif. Une lecture de Google Shopping France, aucun site marchand visité.
 
 C'est le premier point d'économie de la boucle, et c'est aussi ce qui rend le filtre prix de la phase 2 opérant : sur le chemin B il n'existe aucune phase 1, donc sans la sonde la phase 2 n'a **aucune donnée de prix autorisée** (constat du dry-run famille 1 du 20/07/2026). Traitement selon le verdict :
 
@@ -48,7 +50,7 @@ C'est le premier point d'économie de la boucle, et c'est aussi ce qui rend le f
 
 Un vivier **n'est pas un rejet** : c'est un marché à volume réel dont le ticket est incompatible avec le périmètre actuel, mis de côté pour une éventuelle boutique mêlant low et high ticket. Il ne compte pas dans les 20 et ne compte pas non plus comme candidat pour la règle des trois familles stériles — une famille qui ne produit que des viviers reste une famille sans candidat.
 
-**b. Filtre qualitatif** — lance `phase2-filtre` avec le cluster, son volume, et la fourchette de prix rendue par la sonde. Il identifie les produits qui servent ce cluster et applique banalité, valeur perçue, différenciation et tranche 50–400 €. Shortlist vide = cluster abandonné, on passe au suivant.
+**b. Filtre qualitatif** — message `@oh-filtre` avec le cluster, son volume, et la fourchette de prix rendue par la sonde. Il identifie les produits qui servent ce cluster et applique banalité, valeur perçue, différenciation et tranche 50–400 €. Shortlist vide = cluster abandonné, on passe au suivant.
 
 Le brief transmis à `phase2-filtre` doit contenir, à chaque fois :
 
@@ -56,15 +58,15 @@ Le brief transmis à `phase2-filtre` doit contenir, à chaque fois :
 2. **La fourchette de prix de la sonde**, avec sa date, comme seule donnée de prix autorisée.
 3. **L'obligation de verser les poches non instruites** — si l'agent repère dans le rapport de phase 0 un signal qu'il ne peut pas instruire comme candidat (segment adjacent, mot-clé à CPC élevé, persona pro), il le liste explicitement dans son rapport au lieu de le laisser tomber. Tu inscris ces poches dans la section « Viviers » du registre avec le motif `poche repérée, non instruite`, pour qu'elles ne soient pas perdues.
 
-**c. Demande réelle** — lance `phase3-demande` sur les survivants. C'est lui qui nettoie la SERP, mesure le volume réellement adressable et relève les prix. Un `STOP_PREQUALIFICATION` ferme le cluster. Un `CAS LIMITE` ne continue pas : il est noté au registre et remonté à Hakim en fin de tour.
+**c. Demande réelle** — message `@oh-demande` sur les survivants. Il nettoie la SERP, mesure via DataForSEO le volume réellement adressable et relève les prix. Un `STOP_PREQUALIFICATION` ferme le cluster. Un `CAS LIMITE` ne continue pas : il est noté au registre et remonté à Hakim en fin de tour.
 
-**d. Due diligence** — sur les `PASS_PREQUALIFICATION` uniquement, lance `phase4-sourcing` et la cartographie concurrentielle, en parallèle quand possible. Les deux rapports alimentent ensuite l'économie exacte et la décision humaine finale.
+**d. Due diligence** — sur les `PASS_PREQUALIFICATION` uniquement, message `@oh-sourcing` et `@oh-concurrence`, en parallèle quand possible. Une fois les deux rapports vérifiés, message `@oh-marge` pour l'économie exacte.
 
 Ce qu'on cherche à prouver ici est que le produit est **sourçable** et qu'une fiche précise lui correspond — pas que le fournisseur est bon. Décision de Hakim du 20 juillet 2026 : un vendeur sans avis, avec une ou deux commandes, ou expédiant depuis la Chine, **ne ferme pas le cluster**. Cherche en priorité un vendeur avec des avis solides et un entrepôt France ou UE ; si tu n'en trouves pas, retiens la meilleure fiche disponible et note-la comme telle.
 
 Cluster fermé uniquement si : aucune fiche ne correspond au produit, ou le prix rendu est supérieur ou égal au prix marché constaté.
 
-**e. Critique technique** — lance `critique-candidat` avec les rapports du dossier. **Ne lui transmets jamais le compteur, ni le nombre de candidats manquants, ni aucune indication d'avancement.** Sa sortie est une recommandation technique, jamais `GO_FINAL`.
+**e. Critique technique** — message `@oh-contradicteur` avec les rapports de demande, sourcing, concurrence et marge. **Ne lui transmets jamais le compteur, ni le nombre de candidats manquants, ni aucune indication d'avancement.** Sa sortie est une recommandation technique, jamais `GO_FINAL`.
 
 **f. Décision et écriture** — présente le dossier consolidé à Hakim. Si et seulement si la décision est `GO_FINAL`, écris immédiatement `RETENU` dans la section « Chasse clusters » du registre, en trois gestes indissociables :
 
@@ -112,7 +114,7 @@ La boucle s'arrête d'elle-même dans quatre cas :
 1. **Objectif atteint** — 20 candidats retenus.
 2. **Familles épuisées** — rapport de couverture avec le compte obtenu.
 3. **Trois familles consécutives sans aucun candidat retenu** — signal que le seuil est incompatible avec le périmètre. Les viviers ne comptent pas comme candidats dans ce décompte. **Tu ne baisses jamais le seuil toi-même** : tu remontes le constat à Hakim et tu t'arrêtes.
-4. **Blocage technique** — SEMrush déconnecté, CAPTCHA AliExpress, page qui ne charge pas, fichier canonique introuvable, livrable non conforme.
+4. **Blocage technique** — DataForSEO indisponible ou témoin incohérent, CAPTCHA AliExpress, page qui ne charge pas, fichier canonique introuvable, livrable non conforme.
 
 Sur blocage : mets le registre à jour avec l'état atteint, puis produis le rapport d'arrêt. **Aucun volume n'est jamais estimé pour continuer. Aucune donnée n'est inventée.**
 

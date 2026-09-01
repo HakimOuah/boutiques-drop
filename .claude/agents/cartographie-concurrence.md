@@ -71,8 +71,9 @@ Ce que tu en tires, par concurrent :
   matière, morphologie, couleur, forme, occasion, destinataire, budget, saison, nom de gamme maison) ;
 - **la hiérarchie réelle** : quelles collections sont dans le menu, lesquelles sont **orphelines**
   (dans le sitemap seul) ;
-- **quelles pages portent réellement le trafic**, URL par URL, via le rapport *Pages principales* de
-  SEMrush, base France.
+- **quelles pages portent le trafic organique estimé**, URL par URL, via DataForSEO Labs
+  `google/ranked_keywords/live`, France/français, en agrégeant les métriques par URL. Si l'endpoint
+  n'est pas disponible ou ne permet pas une estimation défendable, marque le trafic URL `non établi`.
 
 ### 3. Ses avantages et ses faiblesses
 
@@ -136,15 +137,13 @@ sans backlink et sans antériorité qui **achète** une tête en Google Ads, et 
 longtemps pour qu'on l'y voie trois fois, prouve que le mot nourrit. On note qui achète quoi, et
 depuis combien de temps si on peut l'établir.
 
-**Ses pages qui reçoivent du trafic prouvent que le mot-clé est propre.** Elles **dispensent de
-vérifier ces mots en SERP** : si une collection de rangement prend 4 500 visites sur la grappe
-squelette, l'intention de la grappe est établie. C'est la seule économie légitime sur l'étape 5 de la
-méthode.
+**Une estimation DataForSEO par URL est un signal, pas une dispense de SERP.** Elle sert à prioriser
+les pages et les axes, mais l'intention d'une grappe reste vérifiée sur la page 1 réelle. Ne transforme
+jamais une estimation organique en trafic réel ni en preuve de rentabilité.
 
-**Ses pages à zéro trafic sont un verdict aussi.** Trois pages dédiées à la plongée et une à
-l'aviateur, toutes à zéro chez un concurrent installé, **confirment une porte fermée** de façon
-indépendante. Une collection morte chez lui est une collection à ne pas créer chez nous, et il faut
-l'écrire comme telle.
+**Une page à zéro trafic estimé n'est pas un verdict à elle seule.** Elle devient un signal négatif
+seulement si la SERP, le catalogue et les autres concurrents convergent. Sinon, écris `non établi` ou
+`signal faible`, jamais `porte fermée`.
 
 **Ne confonds pas ses collections les plus visibles et ses collections les plus rentables.** Sur
 `maisondutemps.com`, les 4 axes les plus voyants pesaient **165 visites sur 30 600**, et 71 % du

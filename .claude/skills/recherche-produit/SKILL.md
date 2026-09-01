@@ -1,11 +1,25 @@
 ---
 name: recherche-produit
-description: Orchestrateur Claude Code du pipeline de préqualification, due diligence et décision finale. Utiliser quand Hakim lance /recherche-produit ou demande explicitement la chaîne complète.
+description: Orchestrateur du pipeline de préqualification, due diligence et décision finale via la flotte permanente OH Ventures. Utiliser quand Hakim lance /recherche-produit ou demande explicitement la chaîne complète.
 ---
 
 # Orchestrateur — Recherche produit, due diligence et décision finale
 
-Tu pilotes le pipeline de recherche produit de Hakim (OH Ventures). Tu n'exécutes **aucune phase toi-même** : tu lances les sous-agents dédiés, tu contrôles leurs livrables, tu tiens le registre à jour et tu appliques la règle d'arrêt fail-closed. Une recommandation technique ne vaut jamais décision commerciale : Hakim seul peut enregistrer `GO_FINAL`. Design historique : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/specs/2026-07-17-pipeline-agents-phases-1-5-design.md` ; contrat courant : `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`.
+Tu pilotes le pipeline de recherche produit de Hakim (OH Ventures). Tu n'exécutes **aucune phase toi-même** : sous Hermes, tu confies chaque phase au Bot permanent indiqué ci-dessous avec `message_agent`, tu contrôles son livrable, tu tiens seul le registre à jour et tu appliques la règle d'arrêt fail-closed. N'utilise `delegate_task` qu'en repli explicite si le Bot permanent est indisponible. Une recommandation technique ne vaut jamais décision commerciale : Hakim seul peut enregistrer `GO_FINAL`. Design historique : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/specs/2026-07-17-pipeline-agents-phases-1-5-design.md` ; contrat courant : `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md`.
+
+## Routage Hermes — flotte permanente
+
+Chaque message contient le brief complet, la date, les chemins absolus d'entrée et de sortie, la gate et les interdits. Attends le retour du Bot et vérifie le fichier exact avant d'ouvrir la phase suivante.
+
+| Phase | Bot permanent | Skill métier |
+|---|---|---|
+| 1 | `@oh-ideation` | `phase1-ideation` |
+| 2 | `@oh-filtre` | `phase2-filtre` |
+| 3 | `@oh-demande` | `phase3-demande` + `recherche-mots-cles` |
+| 4A | `@oh-sourcing` | `phase4-sourcing` + `sourcing-aliexpress` |
+| 4B | `@oh-concurrence` | `cartographie-concurrence` |
+| 5 | `@oh-marge` | `phase5-marge` |
+| Audit | `@oh-contradicteur` | `critique-candidat` + `contradiction` |
 
 ## Avant de démarrer
 
@@ -20,17 +34,18 @@ Pour les phases 1 à 3, puis la due diligence et l'économie :
 
 | Phase | Agent | Entrée transmise dans le prompt |
 |---|---|---|
-| 1 | `phase1-ideation` | Brief de Hakim + date du jour |
-| 2 | `phase2-filtre` | Chemin du rapport de phase 1 + date |
-| 3 | `phase3-demande` | Chemin du rapport de phase 2 + date |
-| 4A | `phase4-sourcing` | Chemin du rapport de phase 3 + **candidats PASS_PREQUALIFICATION uniquement** + date |
-| 4B | `cartographie-concurrence` | Même liste + requêtes et SERP décisives ; peut fonctionner en parallèle de 4A |
-| 5 | `phase5-marge` | Rapports de demande, sourcing et concurrence + candidats sourçables + date |
+| 1 | `@oh-ideation` | Brief de Hakim + date du jour |
+| 2 | `@oh-filtre` | Chemin du rapport de phase 1 + date |
+| 3 | `@oh-demande` | Chemin du rapport de phase 2 + date |
+| 4A | `@oh-sourcing` | Chemin du rapport de phase 3 + **candidats PASS_PREQUALIFICATION uniquement** + date |
+| 4B | `@oh-concurrence` | Même liste + requêtes et SERP décisives ; peut fonctionner en parallèle de 4A |
+| 5 | `@oh-marge` | Rapports de demande, sourcing et concurrence + candidats sourçables + date |
+| Audit | `@oh-contradicteur` | Dossier consolidé, sans compteur ni objectif de sélection |
 | 6 | Revue Hakim | Dossier consolidé ; sortie `GO_FINAL`, `WATCH_FINAL` ou `NO_GO_FINAL` |
 
 Après CHAQUE phase, avant de lancer la suivante :
 
-1. **Contrôle du livrable** — le rapport existe au chemin annoncé ; il est daté du jour ; ses sections obligatoires (listées dans le fichier de l'agent) sont présentes ; les interdits de la phase n'ont pas été enfreints (ex. un volume SEMrush dans un rapport de phase 2, un verdict marché en phase 4, un « GO fournisseur » où que ce soit = non conforme). Un livrable non conforme = arrêt de la chaîne, pas de rattrapage silencieux.
+1. **Contrôle du livrable** — le rapport existe au chemin annoncé ; il est daté du jour ; ses sections obligatoires sont présentes ; les interdits de la phase n'ont pas été enfreints (ex. une mesure de volume dans un rapport de phase 2, un verdict marché en phase 4, un « GO fournisseur » où que ce soit = non conforme). Un livrable non conforme = arrêt de la chaîne, pas de rattrapage silencieux.
 2. **Mise à jour du registre** — ajoute les nouveaux candidats, mets à jour phase atteinte, verdicts, dates de contrôle et liens vers les rapports. La mise à jour se fait après chaque phase, pas en fin de chaîne, pour qu'une interruption ne perde rien.
 3. **Vérification de la gate** — la condition de passage définie dans le fichier de l'agent est-elle remplie ?
 
@@ -39,8 +54,8 @@ Après CHAQUE phase, avant de lancer la suivante :
 La chaîne s'arrête d'elle-même — sans lancer la phase suivante — dans ces cas :
 
 1. **Verdict négatif** : plus aucun candidat en course (phase 2 : shortlist vide ; phase 3 : zéro `PASS_PREQUALIFICATION` ; phase 4 : aucune offre à tester).
-2. **Cas limite** : volume pertinent à ±20 % du seuil du fichier de critères (ex. entre 8 000 et 12 000 pour un seuil à 10 000), notation vendeur entre 90 et 95 %, données contradictoires, ou tout point que l'agent a marqué `CAS LIMITE — décision Hakim requise`. Ni toi ni l'agent ne tranchez un cas limite.
-3. **Donnée invérifiable** : SEMrush inaccessible, CAPTCHA AliExpress, fichier manquant, livrable non conforme. On n'invente jamais de données pour continuer.
+2. **Cas limite** : volume pertinent à ±20 % du seuil DataForSEO du fichier de critères (10 000 à 15 000 pour le seuil PRODUIT PUR à 12 500), notation vendeur entre 90 et 95 %, données contradictoires, ou tout point que le Bot a marqué `CAS LIMITE — décision Hakim requise`. Ni toi ni le Bot ne tranchez un cas limite.
+3. **Donnée invérifiable** : DataForSEO indisponible ou témoin incohérent, CAPTCHA AliExpress, fichier manquant, livrable non conforme. On n'invente jamais de données pour continuer.
 
 En cas d'arrêt : mets le registre à jour avec l'état atteint, puis produis le rapport d'arrêt (voir ci-dessous). Les candidats `REVIEW_PREQUALIFICATION` et `CAS LIMITE` ne continuent pas automatiquement : ils remontent à Hakim.
 
@@ -56,7 +71,7 @@ Toujours livrer à Hakim, en français, dans cet ordre :
 
 ## Restrictions globales
 
-Elles s'appliquent à toi et à chaque sous-agent, sans exception :
+Elles s'appliquent à toi et à chaque Bot, sans exception :
 
 - aucun contact vendeur, aucun message, aucune commande, aucun ajout au panier, aucune connexion à un compte ;
 - aucune modification Shopify (produits, prix, stocks, thèmes, pages), Google Ads ou Merchant Center ;
@@ -70,7 +85,7 @@ Ce pipeline prépare puis enregistre la décision humaine sur l'opportunité. La
 
 Deux règles de cette méthode valent aussi **à l'intérieur du pipeline**, en phase 0 et en phase 3 :
 
-- **la demande d'une famille est la somme des formulations qu'une même page servirait**, pas sa tête (Keyword Magic Tool en « Expression exacte », `&mt=phrase`, 100 lignes sans crédit), sans jamais additionner deux familles distinctes, ce qui reste l'interdit n° 1 ;
+- **la demande d'une famille est le total dédupliqué des idées normalisées qu'une même page servirait**, établi avec `kw_dfs.py` et les contrôles DataForSEO de tête, sans jamais additionner deux familles distinctes, ce qui reste l'interdit n° 1 ;
 - **toute requête contenant une marque tierce est inutilisable en flux Merchant Center** : on annonce toujours deux chiffres, brut et net de marque.
 
 ## Rappels de maintenance

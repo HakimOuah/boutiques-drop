@@ -42,7 +42,7 @@ Sections obligatoires :
 ## Interdits stricts
 
 - Aucun scoring, aucune note, aucun classement chiffré.
-- Aucun volume de recherche, aucun chiffre SEMrush, même « de mémoire ».
+- Aucun volume de recherche, aucun chiffre de demande, même « de mémoire ».
 - Aucun sourcing AliExpress, aucune fiche fournisseur.
 - Aucun verdict (GO/STOP/MAYBE) — ce n'est pas ta phase.
 - Ne jamais re-proposer un produit du registre sous un autre nom.

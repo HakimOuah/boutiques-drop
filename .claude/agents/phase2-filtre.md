@@ -39,7 +39,7 @@ Sections obligatoires :
 
 ## Interdits stricts
 
-- Aucun chiffre de volume de recherche, aucun CPC, aucune donnée SEMrush — même approximative, même « de mémoire ». C'est la phase 3.
+- Aucun chiffre de volume de recherche, aucun CPC, aucune donnée de demande — même approximative, même « de mémoire ». C'est la phase 3.
 - Aucun verdict marché (GO/STOP). Ta sortie est une shortlist, pas une décision.
 - Aucun sourcing AliExpress, aucune fiche fournisseur.
 - Ne pas garder un candidat faible « pour faire du volume » : mieux vaut une shortlist courte que remplie.
