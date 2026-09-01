@@ -43,7 +43,8 @@ Un item en échec = ne pas demander de review. Après correction d'un ban / mism
 
 ## Produit / trust (causes du ban 23/08)
 
-- [ ] **Zéro marque tierce** dans titres, descriptions, `alt`, tags, **JSON-LD**, **noms de fichiers CDN**. Noirmont : 57/96 fiches « Seiko » ; « Présidentiel » (Rolex) ; tag `skx` ; `904l` dans les filenames.
+- [ ] **Zéro marque tierce** dans titres, descriptions, `alt`, tags, **JSON-LD**, **noms de fichiers CDN**. Noirmont : 57/96 fiches « Seiko » ; « Présidentiel » (Rolex) ; tag `skx` ; `904l` dans les filenames. « Jubilé » (nomenclature Rolex, même famille que Président) survit dans les URL CDN même après purge des titres : un `grep jubil` sur le HTML et sur `products.json` le voit encore.
+- [ ] **`FILE_LOCKED` n'est pas un verrou d'API.** Admin (`FileUpdateNext`) et `fileAcknowledgeUpdateFailed` tapent la même file. Un fichier `READY` peut rester verrouillé des heures. La REST `PUT /products/{id}/images/{id}.json` change l'`alt` sans toucher au nom ; ça ne suffit pas — le crawler lit aussi le filename. Pas de `fileDelete` / réimport pour contourner : ça casse les IDs. Attendre que le verrou lâche, puis `fileUpdate` **un fichier à la fois**.
 - [ ] Claims vagues retirés : bandeau **« Qualité Premium »**, icône verified, « certifié », notes 4,5 / 123 dormantes dans le thème (`disabled` ne suffit pas si les valeurs restent).
 - [ ] **0 avis / note / compteur** publics. Grep `star` / `avis` / `4.8` dans le HTML = surtout des SVG et « changer d'avis » — remonter à JSON-LD / `products.json`.
 - [ ] **0 prix barré** sur les **actives**. Scanner aussi brouillons et archivées (`compareAtPrice`) : ils s'allument au publish. Gabarit « Ancien prix » vide + CSS ≠ absence de donnée.
