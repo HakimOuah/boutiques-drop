@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [ecommerce]
 agent: cursor
 statut_editorial: brut
-commit:
+commit: 31b7a0c
 ---
 # Miyota est une marque Citizen : le filtre Mouvement se crawlait comme Seiko
 
