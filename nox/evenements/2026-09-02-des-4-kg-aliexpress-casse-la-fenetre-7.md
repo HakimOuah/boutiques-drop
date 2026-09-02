@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [ecommerce]
 agent: cursor
 statut_editorial: brut
-commit:
+commit: 7b46049
 ---
 # Dès 4 kg AliExpress casse la fenêtre 7-18 jours
 
