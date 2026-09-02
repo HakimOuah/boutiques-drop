@@ -1,6 +1,6 @@
 ---
 name: identite-partagee-gmc
-description: "Parc actuel : même adresse et même téléphone. Nouvelles boutiques (24/08 soir) : isolation des accès, identité légale OH Ventures honnête, pas d'adresse Maps décorative"
+description: "Parc en ligne (02/09) = Tuftéo, Bonum Vitae, Noirmont — Bien Brûlé fermé ; même adresse et téléphone ; GMC au nom de la marque ; isolation des accès, identité légale OH Ventures honnête"
 metadata: 
   node_type: memory
   type: project
@@ -23,3 +23,5 @@ Précédent : compte GMC **5806019978** suspendu le 15/06/2026 pour misrepresent
 **Why:** le parc a déjà partagé une vraie identité et certaines boutiques ont été approuvées — ça n'annule pas le risque de linkage, ça invalide « coordonnées partagées = refus auto ». Google autorise plusieurs Merchant Center pour une entreprise. Cacher OH Ventures alors que le relevé bancaire l'affiche crée le mismatch.
 
 **How to apply:** parc actuel = ne pas changer les coordonnées. Nouvelle boutique = domaine / profil Chrome / e-mail pro dédiés, adresse et vendeur **justifiables**. Workspace si vérifiable, sinon IONOS à la même adresse. Jamais d'adresse empruntée. `06 77 70 08 10` et `07 56 82 80 94` = brûlés pour *créer* un compte Google ; le 07 reste le n° affiché du parc.
+
+**02/09/2026 :** **Bien Brûlé est fermé** — boutique, compte GMC et compte Google Ads (dit par Hakim). Le parc en ligne = **Tuftéo, Bonum Vitae, Maison Noirmont**. Le même jour, les GMC Tuftéo (5829640586) et Bonum Vitae (5825588636, le vrai — 515754956 est une coquille vide non revendiquée) sont passés au **nom de la marque** ; l'e-mail Gmail du GMC Tuftéo a été remplacé par `contact@tufteo.com`. JSON-LD des trois sites : marque en `name`, OH Ventures en `legalName`.
