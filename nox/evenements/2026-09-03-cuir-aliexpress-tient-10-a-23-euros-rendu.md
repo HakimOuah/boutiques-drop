@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [ecommerce]
 agent: cursor
 statut_editorial: brut
-commit:
+commit: af6536e
 ---
 # Cuir AliExpress tient 10 a 23 euros rendu France
 
