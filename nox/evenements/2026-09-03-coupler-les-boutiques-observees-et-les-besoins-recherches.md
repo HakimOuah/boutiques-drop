@@ -24,6 +24,8 @@ Une boutique peut révéler un besoin qu'on n'aurait pas pensé à rechercher ; 
 
 Les deux vues TrendTrack sauvegardées étaient vides pendant le test, tandis que Weekly Gems et Top Scaling renvoyaient des boutiques. Cela ne démontre ni l'absence de marché ni la réussite Search des shops trouvés. La proposition évite deux filtres trop fermés : exiger un long historique éliminerait les entrants Q4 recherchés ; exiger un résultat positif TrendTrack éliminerait des besoins que l'outil couvre mal. Chercher dans TrendTrack reste utile, trouver une correspondance ne devient pas une preuve obligatoire de viabilité.
 
+Précision de Hakim le même jour : la hausse du trafic ou du nombre d'annonces doit compter positivement dans la découverte. On peut raisonnablement explorer l'hypothèse d'un opérateur qui engage du budget parce que son testing donne des signaux encourageants. La note fait donc remonter ces shops dans l'ordre d'examen, surtout si la progression persiste et concerne la même offre ; elle garde le budget réel et la rentabilité parmi les inconnues. Exiger une preuve comptable dès la découverte supprimerait l'intérêt du signal.
+
 ## Ce qu'on ne peut pas encore dire
 
 Cette direction est documentée, pas déployée dans les agents. Aucun nouveau test payant ni automatisation ; aucun seuil ni score changé. Les douze pistes conservent 7 REVIEW, 5 STOP de périmètre et aucun PASS. Une hausse des créations de shops Q4, la rentabilité des vendeurs et le rendement supérieur de la méthode couplée ne sont pas démontrés.
