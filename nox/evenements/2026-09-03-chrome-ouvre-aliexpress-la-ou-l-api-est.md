@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [agents, ecommerce]
 agent: cursor
 statut_editorial: brut
-commit:
+commit: 1b085f1
 ---
 # Chrome ouvre AliExpress la ou l API est aveugle
 
