@@ -30,3 +30,7 @@ Les trois appels ont coûté 0,10095 USD. Sur « tufting gun » en France, DataF
 Ce test ne tranche pas l'exactitude des deux bases, ne valide aucun marché et ne justifie pas de migrer l'enrichissement de contacts. Ni fiabilité à grande échelle ni routage automatique n'ont été testés.
 
 Rapport : [[boutique-pipeline/journal/2026-09-04-test-treg]].
+
+## Décision après test
+
+Le 4 septembre, Hakim choisit de conserver Monid et demande le retrait local de Treg. CLI désinstallée, skill retiré des skills actifs, jeton local effacé. Ce récit décrit un essai terminé, pas une nouvelle intégration maintenue en production.
