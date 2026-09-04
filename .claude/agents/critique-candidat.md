@@ -22,7 +22,7 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 1 — Volume
 
-- Le volume pertinent, **après nettoyage SERP**, atteint-il le seuil **du mode** du dossier (cluster ~10 000 PRODUIT PUR, 9 900 inclus ; consolidé familles / 30 000 UNIVERS) ?
+- Le volume pertinent, **après nettoyage SERP**, atteint-il le seuil **du mode** du dossier tel qu'il est écrit dans `boutique-pipeline/PRODUCT-RESEARCH-CRITERIA.md` §1 au jour de l'audit (au 04/09/2026 : cluster adressable ~12 500 PRODUIT PUR, bande de cas limite 10 000–15 000 ; consolidé familles ≥ 37 500 UNIVERS) ? Ne jamais reprendre un seuil de mémoire : le fichier de critères fait foi (le 04/09, ce rôle portait encore l'ancien 10 000 / 30 000, relevé par l'audit A6).
 - Ce volume est-il celui de mots-clés effectivement listés, ou une somme dont le détail n'apparaît pas ? Une somme non détaillée est un échec.
 - **PRODUIT PUR :** le cluster additionne-t-il des familles distinctes ? Si oui, échec (anti-exemple catio).
 - **UNIVERS :** une tête seule présentée comme volume boutique est un dossier incomplet. La consolidation par collections d'un même catalogue est exigée, pas un échec.
