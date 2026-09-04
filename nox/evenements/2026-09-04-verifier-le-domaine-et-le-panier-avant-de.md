@@ -27,3 +27,7 @@ L’API SERP n’avait retourné aucune annonce Search ; la lecture du navigateu
 ## Ce qu’on ne peut pas encore dire
 
 Aucune rentabilité du concurrent ou de notre future offre n’est connue. La source exacte adaptée et économiquement viable reste manquante ; aucun sample, test publicitaire ou lancement n’a eu lieu. Noms de produits, marques et sources privées à omettre d’une éventuelle publication ; cet événement reste brut et ne constitue pas une publication.
+
+## Complément du même jour
+
+Une capture fournie par Hakim a permis d’identifier le nom d’un marchand et de retrouver deux références via l’API officielle autorisée. Le magasin exact, les variantes, le stock et le transport vers la France ont ensuite pu être rapprochés, sans contourner le blocage navigateur. Le nouveau piège : une offre intitulée « rasoir avec support » peut améliorer fortement le calcul, mais son contenu et sa qualité doivent être confirmés avant de lui attribuer la marge d’un coffret complet. Une marque dans le titre d’une troisième offre cachait également un autre vendeur.
