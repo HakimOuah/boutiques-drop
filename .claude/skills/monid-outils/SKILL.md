@@ -1,6 +1,6 @@
 ---
 name: monid-outils
-description: Utiliser Monid pour compléter les outils métier à coût contrôlé.
+description: Choisir et exécuter un outil Monid/TinyFish pour une collecte définie, dans les plafonds de coût autorisés.
 ---
 
 # Monid — catalogue d’outils à la demande

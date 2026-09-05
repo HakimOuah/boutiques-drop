@@ -1,6 +1,6 @@
 ---
 name: contradiction
-description: Boucle de démolition — un verdict ou un plan n'est retenu qu'après avoir survécu à des démolisseurs qui ne partagent ni son modèle ni son raisonnement. Utiliser avant tout GO/STOP, tout plan de lancement, toute décision qui engage de la dépense. Ne produit aucun verdict propre, ne réécrit rien.
+description: Contrôler les preuves déterminantes d’un dossier avant une décision engageante ou sur demande de revue critique.
 ---
 
 # Contradiction — faire tomber avant d'engager
@@ -29,11 +29,7 @@ démolisseurs.
 Un raisonnement bien construit persuade — c'est sa fonction. Donner sa synthèse à un critique, c'est
 lui demander d'être d'accord. On donne les briques, pas l'édifice.
 
-Deuxième règle : **les démolisseurs ne tournent pas sur le modèle qui a produit le travail.** Un
-modèle relit ses propres angles morts sans les voir. Sur cette installation, l'orchestrateur est sur
-`gpt-5.6-sol` et les sous-agents sur `grok-4.6` via `delegation.model` — la séparation est déjà
-faite. Si un jour ce n'est plus le cas, lance les démolisseurs dans une session à part
-(`hermes -m <autre modèle> --provider <x> -z "..."`).
+L'indépendance porte sur les preuves et le contexte. Un autre modèle est utile s'il est disponible et autorisé, mais son absence ne rend pas une vérification factuelle impossible. Ne pas modifier la configuration des modèles pour satisfaire cette préférence.
 
 ## Procédure
 
@@ -45,10 +41,9 @@ absence de preuve est précisément ce qu'il faut faire constater.
 
 Ne reformule pas, ne corrige pas, n'améliore pas. Tu transportes, tu ne répares pas.
 
-### 2. Lancer trois démolisseurs, sur trois angles distincts
+### 2. Examiner les angles pertinents
 
-Trois angles différents valent mieux que trois sceptiques identiques : la redondance ne trouve que
-ce qu'un seul aurait trouvé.
+Une revue ciblée peut couvrir les trois angles. Déléguer seulement si autorisé ; plusieurs critiques se justifient par des risques distincts, pas par chaque STOP exploratoire.
 
 | Angle | Mission |
 |---|---|
@@ -56,7 +51,7 @@ ce qu'un seul aurait trouvé.
 | **CHIFFRE** | Chaque nombre est-il re-mesurable et exact ? Re-interroge les volumes (`scripts/verifier-volumes.py`), recompte les prix, vérifie les rapports. Traque le volume d'un parent attribué à une longue traîne, et le plancher non comparable. |
 | **CONTRE-THÈSE** | Construis le meilleur dossier possible pour la conclusion **opposée**. Pas pour la caricaturer — pour la rendre défendable. Si tu n'y arrives pas, dis-le : c'est en soi un résultat. |
 
-Chaque démolisseur travaille **en contexte vierge** et rend le contrat `contradiction.json`.
+Une revue indépendante reçoit affirmations et preuves. Utiliser `contradiction.json` si le consommateur le requiert ; sinon un rapport précis suffit.
 
 ### 3. Arbitrer
 
@@ -91,8 +86,7 @@ C'est le cas le plus important et le plus facile à noyer.
 
 ## Quand la lancer
 
-Avant tout GO/STOP de niche, tout plan de lancement de boutique, toute décision engageant de la
-dépense publicitaire ou une commande fournisseur.
+Avant une décision réelle de lancement, publication, dépense ou commande, ainsi que pour une demande explicite ou un cas limite déterminant. Un STOP exploratoire étayé ne déclenche pas automatiquement la boucle.
 
 **Pas** sur un travail exploratoire ni sur une mesure brute — démolir une liste de volumes ne sert à
 rien, `verifier-volumes.py` le fait pour 0,09 $.

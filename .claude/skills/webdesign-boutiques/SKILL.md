@@ -1,6 +1,6 @@
 ---
 name: webdesign-boutiques
-description: Direction artistique et web design des boutiques Shopify de Hakim — pont entre le moteur ui-ux-pro-max (84 styles, 192 palettes, 98 guidelines) et les règles maison (DA créative, mobile-first, base Horizon). Utiliser dès que Hakim demande une DA, un thème, une homepage, une page produit, des couleurs, des typos, un restyle ou un avis design pour une boutique — ou quand une nouvelle boutique atteint l'étape design du campement de lancement.
+description: Concevoir ou modifier une direction artistique et une interface Shopify en respectant la vérité produit et la base Horizon.
 ---
 
 # Web design boutiques — DA et UI des boutiques Shopify
@@ -9,9 +9,9 @@ Tu conçois la direction artistique et l'UI des boutiques Shopify dropshipping F
 
 ## Workflow obligatoire
 
-**1. Persona d'abord.** Aucune DA sans persona validé (règle bloquante du pipeline, cf. PLAYBOOK 1d). Le persona détermine le registre visuel — un particulier qui découvre le produit, jamais un pro du métier.
+**1. Contexte client.** Réutiliser le persona et la DA validés pour une correction locale. Une nouvelle direction nécessite un positionnement explicite ; une maquette réversible peut préparer sa validation. Le persona détermine le registre visuel — un particulier qui découvre le produit, jamais un pro du métier.
 
-**2. Interroger le moteur ui-ux-pro-max.** Le script se lance par son chemin complet :
+**2. Recherche design si nécessaire.** Pour une nouvelle DA, le moteur ui-ux-pro-max peut aider ; il n’est pas requis pour une correction dans une DA existante. Le script se lance par son chemin complet :
 
 ```bash
 python3 ~/.claude/skills/ui-ux-pro-max/scripts/search.py --domain product "<type de produit + mots-clés>" --max-results 5
@@ -25,7 +25,7 @@ Requêtes utiles par étape :
 - `--design-system --project-name "<boutique>" --format markdown --persist --variance 7 --motion 6` — génère un design system complet (jouer variance/motion selon la niche)
 - Stack : `--stack html-tailwind` est le plus proche du contexte Shopify/Liquid.
 
-**3. Proposer et faire valider la DA par Hakim AVANT d'implémenter.** Règle maison ferme : pour les niches créatives/DIY, une DA « premium fade » (pastels sages, minimalisme froid) est un défaut, pas une qualité — viser pop, mouvement, personnalité (stickers, illustrations, micro-animations). Le moteur recommande justement « Vibrant & Block-based » + Motion-Driven pour l'e-commerce général : c'est la bonne famille par défaut. Réserver les styles glass/luxury aux produits réellement premium (ex. montres 150–400 €). Présenter 2–3 directions avec palette + typos + références, et attendre le choix de Hakim.
+**3. Valider une nouvelle DA avant son adoption.** Préparer une proposition locale révisable ; une correction conforme à la DA déjà approuvée peut avancer directement. Règle maison ferme : pour les niches créatives/DIY, une DA « premium fade » (pastels sages, minimalisme froid) est un défaut, pas une qualité — viser pop, mouvement, personnalité (stickers, illustrations, micro-animations). Le moteur recommande justement « Vibrant & Block-based » + Motion-Driven pour l'e-commerce général : c'est la bonne famille par défaut. Réserver les styles glass/luxury aux produits réellement premium (ex. montres 150–400 €). Présenter 2–3 directions avec palette + typos + références, et attendre le choix de Hakim.
 
 **4. Implémenter sur la base Horizon.** Ne pas réinventer la structure : partir des modèles éprouvés — `boutique-pipeline/docs/horizon-product-page-reference/` (code Liquid byte-exact : blocs PDP, buy-buttons, panier, homepage) et leur documentation dans `notion-export/modeles/` du hub. La DA s'applique par-dessus cette ossature CRO (variables, sections, tokens), pas en la remplaçant. Pour la syntaxe, le skill global `shopify-liquid` fait référence.
 

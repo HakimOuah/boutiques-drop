@@ -1,8 +1,6 @@
 # Méthode d'analyse de marché et de concurrence
 
-**Décision de Hakim, 14/08/2026. S'applique à chaque nouvelle boutique**, avant le sourcing, avant
-l'arborescence, avant la moindre ligne de texte. Elle vaut aussi pour toute boutique existante qu'on
-reprend en main.
+Méthode issue des décisions et observations du 14/08/2026. À charger pour une analyse de marché ou une architecture de catalogue, selon la branche du pipeline ; pas pour chaque correction de texte ou de thème. Mesure express avant due diligence, selon PRODUCT-RESEARCH-CRITERIA.md. Un catalogue concurrent observé peut fournir des hypothèses de familles sans prouver leur demande.
 
 > Cette méthode n'a pas été inventée : elle a été improvisée sur Maison Noirmont les 13 et 14/08/2026,
 > et ce qu'elle a trouvé justifie de l'écrire. Sur 20 familles mesurées, **toutes étaient sous-comptées
@@ -34,7 +32,7 @@ Les trois inversions de cet ordre sont les trois façons connues de perdre une s
 
 ## La séquence
 
-Huit étapes, dans cet ordre. Chaque étape produit un livrable écrit et daté, parce que l'étape
+Les dépendances ci-dessous servent une analyse complète. Pour une reprise ciblée, réutiliser les preuves encore pertinentes et compléter le manque. Chaque résultat déterminant reste daté, parce que l'étape
 suivante s'appuie dessus et que personne ne doit avoir à refaire la mesure de mémoire.
 
 **Trois garde-fous ajoutés le 29/08/2026**, au moment où DataForSEO est devenu la voie de mesure par
@@ -98,9 +96,7 @@ endpoint, paramètres France/français et date d'appel.
 
 **Le piège.** Trois lectures fausses guettent :
 
-- **`n/a` n'est pas `0`.** `n/a` veut dire « sous le seuil de restitution », en pratique moins de 10
-  recherches par mois. Pour une décision d'arborescence les deux se traitent pareil, mais on ne les
-  écrit pas pareil.
+- **`n/a` n’est pas `0`.** La donnée est indisponible ou non restituée ; sa cause doit être vérifiée. Ne pas conclure automatiquement « moins de 10 », ni l’assimiler à zéro pour un gate.
 - **Le quota épuisé rend des zéros silencieux.** Avant de croire un zéro, on vérifie que des témoins
   connus rendent bien leur volume habituel, et on regarde le compteur de crédits bouger.
 - **La devise ne se présume pas.** DataForSEO rend la devise du compte. On lit le champ de devise de
@@ -499,5 +495,5 @@ Vérifié sur Noirmont. Sur `montre squelette`, la page 1 montre un socle à 25-
 2. Classer les acteurs : marque officielle, marque à récit, indépendant comparable, marketplace. Ne retenir que les comparables.
 3. Repérer les paliers et les vides.
 4. Se placer juste sous le comparable, terminaison psychologique.
-5. Vérifier le **ratio prix ÷ CPC ≥ 100** (cible 150-200).
+5. Examiner le ratio prix/CPC dans une même devise : 100 (cible 150–200) reste une heuristique de screening, jamais une preuve de rentabilité ; vérifier contribution et taux de conversion supposé.
 6. Calculer la marge **sur la base HT** : prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les frais de paiement (≈ 1,4 % + 0,25 €). Une marge calculée sur le prix TTC se raconte 20 % qui n'existent pas.

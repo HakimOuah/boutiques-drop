@@ -1,0 +1,71 @@
+# Règles du hub Boutiques Drop
+
+## Réflexe GitHub — source de vérité unique (décision Hakim, 07/08/2026)
+
+**Toute modification durable doit finir sur GitHub dans la foulée, sans que Hakim ait à le demander.** Cela inclut :
+
+- création ou modification d'un skill ou d'un agent dans `.claude/`
+- toute nouvelle doc, spec, registre, rapport, template
+- tout travail sur une boutique (thème, Liquid, contenus)
+- les mises à jour de la mémoire persistante
+
+**Cette règle vaut pour les sessions où Hakim est présent.** Un agent autonome — Hermes, cron, run de fond — **ne pousse jamais sur `main`** : il dépose sur une branche `agents/<mission>-<AAAA-MM-JJ>` et annonce son nom en fin de livrable. La fusion reste une décision de Hakim (décision 01/09/2026, après qu'un run de fond a poussé 521 lignes sur `main` en appliquant la règle ci-dessus à la lettre).
+
+Procédure en fin de tâche (avant de rendre la main) :
+
+0. Si l'étape était significative, écrire l'événement éditorial NOX (voir section suivante).
+1. `bash scripts/sync-memoire.sh` — si la mémoire a été modifiée pendant la session.
+2. `git add` + commit dans le repo concerné (message en français, une ligne de résumé claire).
+3. `git push`.
+
+Le travail se répartit sur 4 repos — committer dans le bon :
+
+| Ce qui a changé | Repo |
+|---|---|
+| Skills, agents, mémoire, export Notion, docs transverses, boutiques historiques | ce repo (`boutiques-drop`, racine) |
+| Pipeline recherche produit, registre candidats, chasse clusters, rapports, Tufting/Seiko | `boutique-pipeline/` |
+| Usine à produits historique (« New project ») | `New project/` |
+| Corpus Drop Elite autorisé, skills Codex, politiques FR et OS Google Ads/SEO | `drop-elite-google-os/` |
+| Architecture d'orchestration multi-agents, audits, benchmark HakimBench | `hermes-orchestration` (cloné à part, hors de cette arborescence) |
+
+**`hermes-orchestration` ne contient jamais la méthode métier** (décision 30/08/2026, cf. son `docs/audit-2026-08-30.md`) : la méthode vit ici et dans `boutique-pipeline/`. Ce repo porte l'orchestration, le journal des missions et le benchmark, et pointe vers la méthode sans la recopier.
+
+Dans `drop-elite-google-os`, mettre aussi à jour `CHANGELOG.md`, `DECISIONS.md` ou `OPERATIONS_LOG.md` selon la nature du changement, puis exécuter `python3 scripts/validate_repo.py` avant le push.
+
+Ne jamais committer : secrets (`.env`, caches contenant des clés API), `node_modules/`, venvs, `scratchpad/`, `settings.local.json`. Le `.gitignore` de chaque repo fait foi — ne pas le contourner avec `git add -f`.
+
+## Réflexe NOX — journal éditorial (décision Hakim, 30/08/2026)
+
+**Après chaque étape significative d'un projet, écrire un événement dans `nox/evenements/`
+avant de rendre la main** — création d'un projet, d'une boutique, d'un agent, d'une
+automatisation, d'une intégration, d'une API ; règle de méthode apprise ; premier chiffre réel.
+
+**Jamais** pour une typo, un refactor trivial, un changement cosmétique, une opération Git
+de confort ou un changement technique sans conséquence. En cas de doute, ne pas écrire.
+
+La règle complète, le test de significativité et le schéma : **[`nox/README.md`](nox/README.md)**.
+Ne pas recopier cette règle ailleurs — les autres fichiers d'instructions n'en portent qu'un pointeur.
+
+```bash
+python3 scripts/nox-evenement.py --categorie <cat> --titre "..." --projet <slug> --repo <repo> --axes agents,ecommerce
+```
+
+Vaut pour les cinq repos : un événement né dans `boutique-pipeline/` ou
+`drop-elite-google-os/` s'écrit **quand même ici**, dans `nox/evenements/`, et se commit ici.
+
+## Sources de vérité
+
+- **GitHub** = source de vérité et sauvegarde. Les fichiers locaux en sont le clone de travail.
+- **Obsidian** = surface de lecture de la donnée métier (décision Hakim, 30/08/2026). **Le coffre est la racine de ce repo** — il n'y a donc rien à exporter ni à synchroniser : les agents écrivent les fichiers, Git les versionne, Obsidian les affiche. Les vues (plugin cœur *Bases*, propriétés du frontmatter) vivent dans `boutique-pipeline/instrumentation/vues/*.base`. Toute nouvelle donnée métier va dans le coffre, pas dans Notion.
+- **Notion** = conservé pour ce qui y vit déjà (hub « Pipeline Boutiques Drop », kanban de lancement), jamais la référence. Ne plus y créer de nouvelle base de données métier.
+- **Mémoire Claude** (`~/.claude/projects/-Users-Hakim-Documents-Boutiques-drop/memory/`) = contexte inter-sessions ; sa copie versionnée vit dans `memoire/` via `scripts/sync-memoire.sh`.
+
+## Repères projet
+
+- **Analyse de marché et de concurrence : `METHODE-ANALYSE-MARCHE.md` (racine).** Séquence obligatoire pour **chaque nouvelle boutique**, dans l'ordre : partir du catalogue → mesurer par lots → consolider par famille → net de marque → **vérifier en SERP** → puis seulement les concurrents → cartographier → arborescence, trous d'offre et axe. Contient le catalogue des pièges (retournement pièce/produit fini, rabattement orthographique, marque cachée, KD trompeur…), tous vérifiés sur Maison Noirmont les 13-14/08/2026. Cartographie d'un concurrent : agent `cartographie-concurrence`.
+- Recherche produit, trois skills étanches : `ideation-produit` (deux modes PRODUIT PUR / UNIVERS, TrendTrack seulement — Brand Search retiré le 19/08/2026) · `recherche-mots-cles` (**DataForSEO API uniquement** + SERP + sonde prix + Trends) · `sourcing-aliexpress` (après `PASS_PREQUALIFICATION`). Chaîne 5 phases : orchestrateur `/recherche-produit`. Boucle `/chasse-clusters` (PRODUIT PUR seulement), qualification express `/qualifie-idees` — flotte permanente Hermes `@oh-scout` → `@oh-ideation` → `@oh-filtre` → `@oh-demande` → `@oh-sourcing` / `@oh-concurrence` → `@oh-marge` → `@oh-contradicteur`.
+- Conformité Google : skill `gmc-acceptance` (approbation Merchant Center, templates policies FR) ; scaling : skill `shopping-scaling` (PMAX profit-first).
+- Registre des candidats et rapports : dans `boutique-pipeline/` (pas ici).
+- **Répartition des modèles Hermes (décision Hakim, 31/08/2026)** : orchestrateur sur `gpt-5.6-sol` (`openai-codex`), workers sur `grok-4.6` (`xai-oauth`) via `delegation.model`. Contrainte à connaître : `delegation.model` fixe le modèle de **tous** les sous-agents d'un coup — on ne peut pas isoler le contradicteur sur un troisième modèle sans passer par des profils, donc un processus par rôle. Un critique d'un autre modèle que les workers se lance aujourd'hui dans une session séparée.
+- **Portage des skills vers Hermes : `scripts/porter-skills-hermes.py`** (31/08/2026). La source de vérité reste `.claude/skills/<nom>/SKILL.md` — un seul endroit où une règle se modifie. Le script en dérive la version Hermes dans `~/.hermes/skills/oh-ventures/`, en ajoutant le frontmatter attendu et un bloc d'exécution (outils requis, chemins absolus, chargement des `.env`). Les 11 agents `.claude/agents/` sont portés séparément avec `--roles`, dans l'espace `oh-ventures-roles` : ce ne sont pas des skills mais des **rôles de délégation**, les prompts qu'un sous-agent charge au démarrage. **Relancer le script après toute modification d'un skill ou d'un agent** : sans ça, Hermes travaille sur une version périmée. Leçon tirée de `GROK-BOT-FLEET.md`, où les instructions recopiées à la main ne se propageaient pas. **Attention (05/09/2026)** : le script ne porte que le profil `oh-ventures` par défaut, alors que chaque profil worker `oh-*` a sa propre copie des skills — le contradicteur a tourné sur des seuils périmés pour cette raison. Boucler sur les neuf profils : `for p in oh-ventures oh-scout oh-ideation oh-filtre oh-demande oh-sourcing oh-concurrence oh-marge oh-contradicteur; do HERMES_PROFIL_BOUTIQUES=$p python3 scripts/porter-skills-hermes.py --tous; HERMES_PROFIL_BOUTIQUES=$p python3 scripts/porter-skills-hermes.py --roles; done`.
+- **Instrumentation et boucle d'apprentissage : `boutique-pipeline/instrumentation/`** (30/08/2026). Quatre objets : `croyances/` (ce qu'on croyait avant de lancer — irrécupérable après coup), `mesures/` (relevé hebdo qui ne s'écrase jamais, contrairement à `ETAT.md`), le frontmatter des entrées de `journal/` (posé par `backfill-frontmatter.py`, à relancer après chaque nouvelle entrée), et `regles/` (règles apprises, jamais promues en `validee` sans accord de Hakim). Ne remplace rien de `METHODE-TABLEAU.md`.

@@ -1,270 +1,146 @@
 #!/usr/bin/env python3
-"""Porte les skills du parc vers Hermes, sans les dupliquer a la main.
-
-La source de verite reste `.claude/skills/<nom>/` — un seul endroit ou une
-regle se modifie. Ce script en derive la version Hermes dans
-`~/.hermes/skills/oh-ventures/<nom>/`, en ajoutant le frontmatter attendu par
-Hermes et un bloc d'execution (toolsets, chemins absolus, chargement des
-identifiants) que Claude Code n'a pas besoin de lire mais qu'Hermes exige.
-
-Lecon de GROK-BOT-FLEET.md : une instruction recopiee a la main ne se propage
-pas. Celle-ci se regenere.
-
-    python3 scripts/porter-skills-hermes.py --tous
-    python3 scripts/porter-skills-hermes.py recherche-mots-cles
-"""
+"""Derive les Skills/roles Hermes de .claude ; --check ne modifie aucun fichier."""
 from __future__ import annotations
-
 import argparse
+import hashlib
+import json
 import os
 import re
-import shutil
-import sys
+import subprocess
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-SOURCE = RACINE / ".claude" / "skills"
-# Le profil Hermes des boutiques. Le profil `default` est reserve a d'autres
-# projets (DB-Industrie et ses crons) : ne rien y deposer, sinon les skills
-# metier deviennent visibles dans des sessions qui n'ont rien a voir.
-PROFIL = os.environ.get("HERMES_PROFIL_BOUTIQUES", "oh-ventures")
-BASE = Path.home() / ".hermes" / "profiles" / PROFIL / "skills"
-CIBLE = BASE / "oh-ventures"
-
-# Les agents .claude/agents/ ne sont pas des skills : ce sont des ROLES, les
-# prompts que l'orchestrateur donne a un sous-agent lance par delegate_task.
-# Hermes n'a pas de format d'agent — on les expose donc comme skills dans un
-# espace de noms distinct, que le sous-agent charge lui-meme au demarrage.
-# L'identifiant reste celui de l'agent, pour que les renvois entre skills
-# (<< delegue a phase4-sourcing >>) continuent de resoudre.
-SOURCE_ROLES = RACINE / ".claude" / "agents"
-CIBLE_ROLES = BASE / "oh-ventures-roles"
-
-# Outils dont chaque skill a besoin cote Hermes. Volontairement large : Hermes
-# intersecte avec ce que la session autorise, il ne peut pas gagner d'outil ici.
-TOOLSETS = "terminal, file, web, browser, todo"
-
-BLOC = """
-## Exécution sous Hermes
-
-**Outils requis :** {toolsets}. Si l'un manque, dis-le et arrête-toi — pas de mode dégradé
-silencieux.
-
-**Racine du parc :** `{racine}`
-Les chemins cités plus bas sont relatifs à cette racine. Hermes ne partage pas le répertoire de
-travail de Claude Code : utilise des chemins absolus, ou place-toi explicitement.
-
-**Identifiants.** Ils vivent dans des `.env` jamais versionnés, à charger avant tout appel :
-
-```bash
-cd "{racine}/ecommerce-dropshipping" && set -a && . ./.env && set +a   # DataForSEO
-cd "{racine}/boutique-pipeline"      && set -a && . ./.env && set +a   # Shopify
-```
-
-Aucune valeur n'est codée en dur nulle part. Un script qui manque d'identifiant échoue avec le
-nom exact de la variable attendue — lis le message, ne devine pas.
-
-**Coût.** `kw_dfs.py` met en cache sur disque : relancer une graine déjà interrogée coûte 0.
-Une graine neuve coûte ~0,13 USD la page de 1 000 lignes. Annonce le coût dans ton dépôt.
-
-**Dépôt.** Écris ton rapport dans un fichier du dépôt, pas seulement dans la conversation —
-la conversation se perd, le fichier est versionné.
-
----
-"""
+PROFILS = ('oh-ventures', 'oh-scout', 'oh-ideation', 'oh-filtre', 'oh-demande',
+           'oh-sourcing', 'oh-concurrence', 'oh-marge', 'oh-contradicteur')
 
 
-BLOC_ROLE = """
-## Ce que tu es
-
-Tu es lancé comme **sous-agent**, dans un contexte vierge : tu ne sais rien de la conversation qui
-t'a créé, et c'est voulu. Tout ce dont tu as besoin est ci-dessous ou dans les fichiers cités.
-
-Ton périmètre est **fermé**. Les interdits de ce rôle ne sont pas des recommandations : ils
-existent parce qu'un agent qui déborde produit un résultat que personne ne peut plus vérifier.
-Si la tâche demandée sort de ce périmètre, dis-le et arrête-toi plutôt que de l'élargir.
-
-Ta réponse finale **est** le livrable — elle sera lue par une machine, pas par un humain. Respecte
-le format de dépôt demandé. Si un schéma de sortie t'a été imposé, il prime sur tout le reste.
-
-**Racine du parc :** `{racine}`
-Utilise des chemins absolus : tu ne partages le répertoire de travail de personne.
-
-## Où tu déposes ton travail
-
-**Tu ne pousses jamais sur `main`.** La règle « toute modification durable finit sur GitHub dans la
-foulée » de `CLAUDE.md` a été écrite pour les sessions où Hakim est devant l'écran. Toi, tu
-travailles sans relecteur : ton travail doit être trouvable sans être adopté.
-
-Tu déposes donc sur une branche à toi :
-
-```bash
-cd <le dépôt concerné>
-git checkout -b "agents/<mission>-$(date +%Y-%m-%d)" 2>/dev/null || git checkout "agents/<mission>-$(date +%Y-%m-%d)"
-git add <tes fichiers>
-git commit -m "<une ligne en français, ce que tu as produit>"
-git push -u origin HEAD
-```
-
-`<mission>` est un slug court et parlant — `basse-cour`, `mesure-hebdo`, `audit-gmc-tufteo`.
-
-Trois interdits sans exception :
-
-- **jamais `git push origin main`**, ni aucune fusion vers `main` : la fusion est une décision de
-  Hakim, pas une étape de ton travail ;
-- **jamais `--force`**, ni `git reset --hard`, ni `git rebase` sur une branche partagée ;
-- **jamais de secret commité** — le `.gitignore` de chaque dépôt fait foi, ne le contourne pas.
-
-Si la branche existe déjà, continue dessus plutôt que d'en créer une autre.
-
-**Annonce le nom de la branche en fin de livrable.** Un travail que Hakim ne sait pas où trouver
-n'a pas été livré.
-
-## Ton travail sera attaqué
-
-Avant tout engagement — dépense publicitaire, commande fournisseur, publication, GO/STOP — ton
-livrable passe par la **boucle de contradiction** (`{racine}/.claude/skills/contradiction/SKILL.md`).
-
-Trois démolisseurs le reprennent, en contexte vierge, sur trois angles :
-
-- **PREUVE** — il ouvre tes URL, lit les mentions légales, et vérifie que la source dit bien ce que
-  tu lui fais dire. Une source qui existe mais ne soutient pas ton affirmation est un échec.
-- **CHIFFRE** — il re-mesure tes nombres. Les volumes sont re-interrogés avec
-  `scripts/verifier-volumes.py`. Il traque le volume d'un mot parent attribué à une longue traîne,
-  et le plancher de prix non comparable.
-- **CONTRE-THÈSE** — il construit le meilleur dossier possible pour la conclusion opposée à la
-  tienne.
-
-**Ils ne reçoivent pas ton raisonnement, seulement tes affirmations et tes preuves.** Un
-raisonnement bien construit persuade ; on ne le leur donne pas. Ta prose ne te défendra pas.
-
-Trois conséquences pratiques, à intégrer avant d'écrire :
-
-1. **Chaque affirmation porte sa source consultable**, et chaque nombre la chaîne exacte qui le
-   produit. Une affirmation invérifiable est comptée comme un **échec**, pas comme un match nul —
-   rien ne peut se fonder dessus.
-2. **Le nombre d'affirmations n'est pas une qualité.** Cinq affirmations qui tiennent valent mieux
-   que quinze dont quatre tombent : ce sont les quatre qui décideront de la valeur de ton travail.
-3. **Dire ce que tu n'as pas pu vérifier te protège.** Un aveu n'est jamais démoli. Une lacune
-   dissimulée, si — et elle emporte le reste avec elle.
-
----
-"""
+def empreinte(data):
+    return hashlib.sha256(data).hexdigest()
 
 
-def porter_role(nom: str) -> bool:
-    src = SOURCE_ROLES / f"{nom}.md"
-    if not src.exists():
-        print(f"  ✗ {nom} — introuvable ({src})")
-        return False
-    texte = src.read_text(encoding="utf-8")
-    m = re.match(r"---\n(.*?)\n---\n(.*)", texte, re.S)
+def racine_execution():
+    try:
+        common = subprocess.check_output(
+            ['git', '-C', str(RACINE), 'rev-parse', '--path-format=absolute', '--git-common-dir'],
+            text=True, stderr=subprocess.DEVNULL).strip()
+        return Path(common).parent
+    except (OSError, subprocess.CalledProcessError):
+        return RACINE
+
+
+def generer(nom, role, runtime_root):
+    relative = Path('.claude/agents') / f'{nom}.md' if role else Path('.claude/skills') / nom / 'SKILL.md'
+    src = RACINE / relative
+    texte = src.read_text(encoding='utf-8')
+    m = re.match(r'---\n(.*?)\n---\n(.*)', texte, re.S)
     if not m:
-        print(f"  ✗ {nom} — pas de frontmatter")
-        return False
-    champs = dict(re.findall(r"^(\w+):\s*(.*)$", m.group(1), re.M))
-    description = champs.get("description", "").strip().replace('"', "'")
-    corps = m.group(2)
-
-    # `model:` et `tools:` sont propres a Claude Code — Hermes ne sait pas
-    # choisir un modele par sous-agent, et les outils sont herites du parent.
-    nouveau = (
-        "---\n"
-        f"name: {nom}\n"
-        f'description: "{description}"\n'
-        "version: 1.0.0\n"
-        "author: Hakim Ouahabi — OH Ventures\n"
-        "license: proprietary\n"
-        "platforms: [macos]\n"
-        "metadata:\n"
-        "  hermes:\n"
-        "    tags: [OH-Ventures, Role, Sous-agent]\n"
-        f"    source: .claude/agents/{nom}.md\n"
-        "---\n\n"
-        f"# Rôle — {nom}\n"
-        + BLOC_ROLE.format(racine=RACINE)
-    )
-    dest = CIBLE_ROLES / nom
-    dest.mkdir(parents=True, exist_ok=True)
-    (dest / "SKILL.md").write_text(nouveau + corps, encoding="utf-8")
-    print(f"  ✓ {nom} → {dest}")
-    return True
+        raise ValueError(f'Frontmatter absent : {relative}')
+    desc = re.search(r'^description:\s*(.+)$', m.group(1), re.M)
+    if not desc or desc.group(1).strip() in ('|', '>'):
+        raise ValueError(f'Description scalaire requise : {relative}')
+    description = desc.group(1).strip().strip('"').strip("'")
+    bloc = (f'\n## Exécution Hermes\n\nRacine du parc : `{runtime_root}`. '
+            'Lire ses `instructions/README.md` si absentes du contexte. '
+            'Utiliser les seuls outils et identifiants nécessaires à la tâche, sans afficher de secret. '
+            'Un outil manquant bloque les actions dépendantes ; poursuivre le travail indépendant utile. '
+            'Comptabiliser les appels payants dans le budget autorisé ; un cache ne rend pas les contrôles live gratuits.\n')
+    if role:
+        bloc += ('\nRôle délégué : respecter le brief, fournir preuves et limites au responsable. '
+                 'Un schéma est obligatoire seulement si le destinataire le consomme. '
+                 'Ne pas changer la branche d’un checkout partagé ; livrer dans le worktree de mission.\n')
+    prefix = Path('oh-ventures-roles' if role else 'oh-ventures') / nom
+    front = ('---\n' + f'name: {nom}\ndescription: {json.dumps(description, ensure_ascii=False)}\n'
+             'version: 2.0.0\nauthor: Hakim Ouahabi — OH Ventures\nlicense: proprietary\nplatforms: [macos]\n'
+             f'metadata:\n  hermes:\n    source: {relative.as_posix()}\n'
+             f'    source_sha256: {empreinte(src.read_bytes())}\n---\n')
+    files = {prefix / 'SKILL.md': (front + bloc + '\n' + m.group(2)).encode()}
+    if not role:
+        for sub in ('references', 'scripts', 'templates', 'assets'):
+            for p in sorted((src.parent / sub).rglob('*')):
+                if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc':
+                    files[prefix / p.relative_to(src.parent)] = p.read_bytes()
+    return files
 
 
-def porter(nom: str) -> bool:
-    src = SOURCE / nom / "SKILL.md"
-    if not src.exists():
-        print(f"  ✗ {nom} — introuvable ({src})")
-        return False
-
-    texte = src.read_text(encoding="utf-8")
-    m = re.match(r"---\n(.*?)\n---\n(.*)", texte, re.S)
-    if not m:
-        print(f"  ✗ {nom} — pas de frontmatter")
-        return False
-    tete, corps = m.group(1), m.group(2)
-
-    champs = dict(re.findall(r"^(\w+):\s*(.*)$", tete, re.M))
-    description = champs.get("description", "").strip().replace('"', "'")
-
-    nouveau = (
-        "---\n"
-        f"name: {nom}\n"
-        f'description: "{description}"\n'
-        "version: 1.0.0\n"
-        "author: Hakim Ouahabi — OH Ventures\n"
-        "license: proprietary\n"
-        "platforms: [macos]\n"
-        "metadata:\n"
-        "  hermes:\n"
-        "    tags: [OH-Ventures, E-commerce, France]\n"
-        "    source: .claude/skills/" + nom + "/SKILL.md\n"
-        "---\n"
-    )
-
-    # Le bloc d'execution s'insere apres le titre H1, avant le contenu metier.
-    bloc = BLOC.format(toolsets=TOOLSETS, racine=RACINE)
-    if re.search(r"^# .+$", corps, re.M):
-        corps = re.sub(r"^(# .+\n)", r"\1" + bloc, corps, count=1, flags=re.M)
-    else:
-        corps = bloc + corps
-
-    dest = CIBLE / nom
-    dest.mkdir(parents=True, exist_ok=True)
-    (dest / "SKILL.md").write_text(nouveau + corps, encoding="utf-8")
-
-    # references/ et scripts/ eventuels
-    for sous in ("references", "scripts", "templates"):
-        o = SOURCE / nom / sous
-        if o.is_dir():
-            shutil.rmtree(dest / sous, ignore_errors=True)
-            shutil.copytree(o, dest / sous)
-
-    print(f"  ✓ {nom} → {dest}")
-    return True
+def plan_sync(dest, expected):
+    """Preserve unknown files and refuse to destroy locally modified generated files."""
+    manifest = dest / '.oh-ventures-generated.json'
+    previous = json.loads(manifest.read_text()) if manifest.exists() else {}
+    hashes = dict(previous)
+    writes, removes = {}, []
+    # Partial runs update only selected skill/role folders.
+    selected = {Path(p).parts[:2] for p in expected}
+    for relative, old_hash in previous.items():
+        rp = Path(relative)
+        if rp.is_absolute() or '..' in rp.parts:
+            raise ValueError('Chemin non sûr dans le manifeste')
+        if rp.parts[:2] not in selected:
+            continue
+        p = dest / rp
+        if p.exists() and empreinte(p.read_bytes()) != old_hash:
+            if rp not in expected or p.read_bytes() != expected[rp]:
+                raise ValueError(f'Copie générée modifiée localement : {p}')
+        if rp not in expected:
+            removes.append(p)
+            hashes.pop(relative, None)
+    for relative, data in expected.items():
+        p = dest / relative
+        hashes[relative.as_posix()] = empreinte(data)
+        if not p.exists() or p.read_bytes() != data:
+            writes[p] = data
+    data = (json.dumps(hashes, indent=2, sort_keys=True) + '\n').encode()
+    if not manifest.exists() or manifest.read_bytes() != data:
+        writes[manifest] = data
+    return writes, removes
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("skills", nargs="*")
-    ap.add_argument("--tous", action="store_true")
-    ap.add_argument("--roles", action="store_true", help="porte les agents .claude/agents/")
-    a = ap.parse_args()
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('skills', nargs='*')
+    ap.add_argument('--tous', action='store_true')
+    ap.add_argument('--roles', action='store_true')
+    ap.add_argument('--all-profiles', action='store_true', help='synchroniser les neuf profils OH existants')
+    ap.add_argument('--check', action='store_true', help='comparaison seule, code 1 si une copie diffère')
+    ap.add_argument('--profiles-root', type=Path, default=Path.home()/'.hermes/profiles')
+    ap.add_argument('--runtime-root', type=Path, default=racine_execution())
+    args = ap.parse_args()
+    profils = PROFILS if args.all_profiles else (os.environ.get('HERMES_PROFIL_BOUTIQUES', 'oh-ventures'),)
+    if any(not re.fullmatch(r'oh-[a-z0-9-]+', p) for p in profils):
+        ap.error('Profil OH invalide')
+    expected = {}
+    noms = [p.parent.name for p in sorted((RACINE/'.claude/skills').glob('*/SKILL.md'))] if args.tous else args.skills
+    if any(not re.fullmatch(r'[a-z0-9-]+', n) for n in noms):
+        ap.error('Nom de Skill invalide')
+    try:
+        for nom in noms:
+            expected.update(generer(nom, False, args.runtime_root))
+        if args.roles:
+            for p in sorted((RACINE/'.claude/agents').glob('*.md')):
+                expected.update(generer(p.stem, True, args.runtime_root))
+        if not expected:
+            ap.error('Indiquer un nom, --tous ou --roles')
+        plans = []
+        for profil in profils:
+            dest = args.profiles_root / profil
+            if not dest.is_dir():
+                raise ValueError(f'Profil absent, aucun profil créé : {dest}')
+            plans.append((profil, *plan_sync(dest/'skills', expected)))
+        # Preflight every profile before the first write.
+        changed = False
+        for profil, writes, removes in plans:
+            changed |= bool(writes or removes)
+            if not args.check:
+                for p,data in writes.items():
+                    p.parent.mkdir(parents=True, exist_ok=True)
+                    p.write_bytes(data)
+                for p in removes:
+                    p.unlink()
+            print(f'{profil}: {len(writes)} fichiers à actualiser, {len(removes)} anciennes copies générées à retirer')
+        return int(args.check and changed)
+    except (OSError, ValueError) as exc:
+        print(f'ERREUR : {exc}')
+        return 2
 
-    if a.roles:
-        noms = [f.stem for f in sorted(SOURCE_ROLES.glob("*.md"))]
-        print(f"Portage des rôles vers {CIBLE_ROLES}")
-        return 0 if all([porter_role(n) for n in noms]) else 1
 
-    noms = ([d.name for d in sorted(SOURCE.iterdir()) if (d / "SKILL.md").exists()]
-            if a.tous else a.skills)
-    if not noms:
-        print("Rien à porter. Donne un nom de skill ou --tous.")
-        print("Disponibles :", ", ".join(d.name for d in sorted(SOURCE.iterdir()) if d.is_dir()))
-        return 1
-    print(f"Portage vers {CIBLE}")
-    return 0 if all([porter(n) for n in noms]) else 1
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__ == '__main__':
+    raise SystemExit(main())

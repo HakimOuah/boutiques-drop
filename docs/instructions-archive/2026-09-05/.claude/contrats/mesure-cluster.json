@@ -1,0 +1,161 @@
+{
+  "type": "object",
+  "description": "Sortie du rôle de mesure de demande. Ne contient aucun verdict.",
+  "properties": {
+    "graines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "base": {
+      "enum": [
+        "dataforseo",
+        "semrush",
+        "ahrefs"
+      ],
+      "description": "Les seuils du parc sont calibrés SEMrush : dire quelle base a produit chaque chiffre."
+    },
+    "date": {
+      "type": "string"
+    },
+    "temoin_avant": {
+      "type": "integer"
+    },
+    "temoin_apres": {
+      "type": "integer"
+    },
+    "temoin_conforme": {
+      "type": "boolean",
+      "description": "Faux = quota épuisé ou zéros silencieux. Aucun chiffre n'est exploitable."
+    },
+    "idees_distinctes": {
+      "type": "integer"
+    },
+    "lignes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string"
+          },
+          "volume": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "null = n/a (sous le seuil), jamais 0."
+          },
+          "niveau": {
+            "enum": [
+              "piece",
+              "produit_fini",
+              "categorie_parente"
+            ]
+          },
+          "net_de_marque": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "expression",
+          "volume"
+        ]
+      }
+    },
+    "contaminations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "terme": {
+            "type": "string"
+          },
+          "volume": {
+            "type": "integer"
+          },
+          "nature": {
+            "enum": [
+              "marque",
+              "local",
+              "culturel",
+              "service",
+              "reparation",
+              "hors_sujet"
+            ]
+          },
+          "preuve": {
+            "type": "object",
+            "description": "Preuve vérifiable. Sans elle, l'affirmation est rejetée.",
+            "properties": {
+              "type": {
+                "enum": [
+                  "url",
+                  "mention_legale",
+                  "citation",
+                  "mesure",
+                  "capture"
+                ],
+                "description": "mesure = sortie d'un outil déterministe (kw_dfs, ShopifyQL)."
+              },
+              "source": {
+                "type": "string",
+                "minLength": 8,
+                "description": "URL complète, chemin de fichier, ou commande exacte."
+              },
+              "extrait": {
+                "type": "string",
+                "minLength": 3,
+                "description": "Le passage qui soutient l'affirmation, recopié mot pour mot."
+              },
+              "date": {
+                "type": "string",
+                "description": "AAAA-MM-JJ de la lecture."
+              }
+            },
+            "required": [
+              "type",
+              "source",
+              "extrait"
+            ]
+          }
+        },
+        "required": [
+          "terme",
+          "volume",
+          "nature"
+        ]
+      }
+    },
+    "cout_usd": {
+      "type": "number"
+    },
+    "plancher_de_lecture": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Volume de la dernière ligne rendue. S'il reste haut, c'est un plancher, pas un total."
+    },
+    "non_fait": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Obligatoire même vide : quota, CAPTCHA, graine non mesurée."
+    }
+  },
+  "required": [
+    "graines",
+    "base",
+    "temoin_avant",
+    "temoin_apres",
+    "temoin_conforme",
+    "lignes",
+    "non_fait"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mesure-cluster"
+}

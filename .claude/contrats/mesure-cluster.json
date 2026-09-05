@@ -11,11 +11,9 @@
     },
     "base": {
       "enum": [
-        "dataforseo",
-        "semrush",
-        "ahrefs"
+        "dataforseo"
       ],
-      "description": "Les seuils du parc sont calibrés SEMrush : dire quelle base a produit chaque chiffre."
+      "description": "Source unique de mesure et de gate : DataForSEO. Seuils dans PRODUCT-RESEARCH-CRITERIA.md."
     },
     "date": {
       "type": "string"
@@ -46,7 +44,7 @@
               "integer",
               "null"
             ],
-            "description": "null = n/a (sous le seuil), jamais 0."
+            "description": "null = donnée indisponible ou non restituée ; ne pas convertir en zéro."
           },
           "niveau": {
             "enum": [

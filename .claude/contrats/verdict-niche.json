@@ -7,15 +7,16 @@
     },
     "mode": {
       "enum": [
-        "PRODUIT_PUR",
+        "PRODUIT PUR",
         "UNIVERS"
       ]
     },
     "verdict": {
       "enum": [
-        "GO",
-        "STOP",
-        "REVIEW"
+        "TECHNICAL_PASS",
+        "TECHNICAL_WATCH",
+        "TECHNICAL_FAIL",
+        "TECHNICAL_INCONCLUSIVE"
       ]
     },
     "motifs": {
@@ -100,7 +101,7 @@
     },
     "requete_decisive": {
       "type": "object",
-      "description": "Le verdict porte sur UNE requête, et c'est elle qui le commande. La nommer n'est pas optionnel.",
+      "description": "Nommer la requête de référence ; en UNIVERS, elle ne remplace pas la consolidation par familles.",
       "properties": {
         "requete": {
           "type": "string"
@@ -358,6 +359,31 @@
         "verrou",
         "preuve"
       ]
+    },
+    "consolidation_familles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "famille": {
+            "type": "string"
+          },
+          "volume_net": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "preuve": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "famille",
+          "volume_net",
+          "preuve"
+        ]
+      }
     }
   },
   "required": [
@@ -368,8 +394,30 @@
     "contre_arguments",
     "confiance",
     "non_fait",
-    "critere_prix"
+    "critere_prix",
+    "mode"
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "verdict-niche"
+  "title": "verdict-niche",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "UNIVERS"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "consolidation_familles"
+        ],
+        "properties": {
+          "consolidation_familles": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
 }

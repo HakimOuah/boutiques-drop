@@ -51,3 +51,7 @@ delegate_task(tasks=[{
 
 Garder les schémas **permissifs** : n'exiger que les champs qu'on lira réellement. Un contrat trop
 strict se fait contourner par des valeurs vides, ce qui est pire qu'un contrat absent.
+
+## Migration du 5 septembre 2026
+
+`verdict-niche` utilise désormais les recommandations TECHNICAL_* et un mode explicite ; UNIVERS exige une consolidation par familles. `mesure-cluster` accepte uniquement DataForSEO et conserve null comme donnée manquante. Les anciens dossiers JSON restent historiques ; ne pas les convertir silencieusement en décisions actuelles. Un consommateur d’anciens noms doit être adapté avant reprise. Aucun consommateur codé de ces deux schémas n’a été trouvé dans les scripts du hub lors de cette migration.
