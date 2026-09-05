@@ -59,8 +59,8 @@ n'a rien mesuré.
 ## Ce qu'on ne peut pas encore dire
 
 Le remplaçant n'est pas choisi : BigBuy, Octopia et Syncee sont identifiés mais
-aucun prix de gros n'a encore été relevé, et la clé `BIGBUY_API_KEY` du dépôt
-répond `Invalid Token`. On ne sait donc pas si une source EU laisse réellement
+aucun prix de gros n'a encore été relevé, et la ligne `BIGBUY_API_KEY=` du dépôt
+est vide — jamais renseignée, pas expirée. On ne sait donc pas si une source EU laisse réellement
 la marge sur le volumineux — seulement qu'AliExpress ne la donne pas. Rien n'a
 été testé en publicité, et aucun des cinq GO du jour n'a de coût fournisseur
 vérifié, sauf la pressothérapie.
