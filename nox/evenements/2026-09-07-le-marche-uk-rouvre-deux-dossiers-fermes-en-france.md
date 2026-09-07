@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [agents, ecommerce]
 agent: claude-code
 statut_editorial: brut
-commit: à compléter
+commit: 1679e0f (boutique-pipeline)
 ---
 # Le marché UK rouvre deux dossiers fermés en France
 
