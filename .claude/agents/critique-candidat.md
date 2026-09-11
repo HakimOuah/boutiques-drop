@@ -22,7 +22,7 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 1 — Volume
 
-- Le volume pertinent, **après nettoyage SERP**, atteint-il le seuil **du mode** du dossier (cluster ~10 000 PRODUIT PUR, 9 900 inclus ; consolidé familles / 30 000 UNIVERS) ?
+- Le volume pertinent, **net de marque**, atteint-il le seuil **du mode** du dossier (cluster 12 500 PRODUIT PUR, hors SMP ; consolidé familles **≥ 30 000 UNIVERS SMP**) **et**, en UNIVERS, chaque collection courte traîne **≥ 800**/mois ? On **compte** fautes, graphies sans accent, variantes. On **retire** « marque + produit ». Brut ≠ règle. Après SERP ≠ règle. Une page 1 généraliste ne retranche pas le volume.
 - Ce volume est-il celui de mots-clés effectivement listés, ou une somme dont le détail n'apparaît pas ? Une somme non détaillée est un échec.
 - **PRODUIT PUR :** le cluster additionne-t-il des familles distinctes ? Si oui, échec (anti-exemple catio).
 - **UNIVERS :** une tête seule présentée comme volume boutique est un dossier incomplet. La consolidation par collections d'un même catalogue est exigée, pas un échec.
@@ -30,10 +30,12 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 2 — Concurrence
 
-- Le prix marché constaté permet-il de défendre une offre entre 50 et 400 € ?
-- Le comptage sépare-t-il bien concurrents institutionnels et dropshippers ?
-- Le marché est-il dominé par des enseignes généralistes au sens du §4 des critères ? Si oui, échec.
-- Existe-t-il une différenciation défendable, ou l'offre est-elle immédiatement comparable sur le prix ?
+- Le prix marché constaté permet-il de défendre une offre (viser ≥ 50 € ; **30–40 € OK si marge**) ?
+- Le comptage sépare-t-il bien concurrents institutionnels, dropshippers et généralistes ?
+- Le marché est-il **uniquement** généraliste ? Si oui, ce n’est **pas** un échec : noter « faisabilité sourcing + marge », pas STOP.
+- Existe-t-il une différenciation défendable, ou l’offre est-elle immédiatement comparable sur le prix ?
+- CPC lu dans la bande de prix (low jusqu’à 50 € / middle 50–500 € / high ticket +500 €), **sans** ratio prix ÷ CPC ≥ 100.
+  <!-- SMP: CPC low/middle/high — chiffres à recopier des screenshots Hakim -->
 
 ### Case 3 — Fournisseur
 

@@ -36,7 +36,7 @@ Cette règle vient d'une erreur réelle (cas « suspension rotin XXL » : conclu
 
 ### 3. Contrôle SERP et Shopping réels
 
-Pour chaque candidat, ouvre la SERP Google France de la ou des requêtes décisives : intention réelle, annonces visibles, prix observés (datés), types de concurrents — en séparant **spécialistes/DTC** et **marketplaces/grandes enseignes** (ces dernières ne servent que de repères). Relève la saisonnalité (lecture qualitative des tendances ; n'invente jamais de variation chiffrée que l'outil n'affiche pas).
+Pour chaque candidat, ouvre la SERP Google France de la ou des requêtes décisives : intention réelle, annonces visibles, prix observés (datés), types de concurrents — en séparant **dropshippers**, **spécialistes/DTC** et **marketplaces/grandes enseignes**. Dropshippers = preuve de marché. Une page 1 **100 % généralistes ne ferme pas** et **ne retranche pas** le volume : noter faisabilité sourcing + marge. Relève la saisonnalité (lecture qualitative des tendances ; n'invente jamais de variation chiffrée que l'outil n'affiche pas).
 
 **Ne confonds jamais « carrousel Shopping sponsorisé visible » avec « annonces Search texte confirmées ».** Si tu ne peux pas isoler les annonces texte, dis-le explicitement.
 

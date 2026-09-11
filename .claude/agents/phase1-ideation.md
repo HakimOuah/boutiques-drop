@@ -15,11 +15,9 @@ Si un de ces fichiers est introuvable, arrête-toi et signale-le : ne travaille 
 
 ## Périmètre
 
-Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). Source principale depuis le 19/08/2026 : **TrendTrack** (Google Ads Search = produit pur, Shopping catalogues = univers). Dans l’onglet Shop, les vues **`Shopping FR`** et **`Shopping Scaling`** font partie des sources obligatoires d’une exploration libre. `Shopping FR` est un signal local amont ; toute idée issue de `Shopping Scaling` reste `À VALIDER FR` et ne constitue pas une preuve de scalabilité. Recette : skill `ideation-produit` et agent `mineur-brandsearch` (mineur TrendTrack, nom conservé). **Pas de Brand Search.**
+Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). **Chemin SMP = UNIVERS.** Sources d’inspiration **à égalité** : TrendTrack, OneClickBrand (Trend Niche), **et** Amazon, Vevor, best-sellers, trends réseaux — TrendTrack + OCB s’ajoutent, ils **ne remplacent pas** les généralistes. Dans l’onglet Shop, les vues **`Shopping FR`** et **`Shopping Scaling`** font partie des sources obligatoires d’une exploration libre. `Shopping FR` est un signal local amont ; toute idée issue de `Shopping Scaling` reste `À VALIDER FR` et ne constitue pas une preuve de scalabilité. Recette : skill `ideation-produit` et agent `mineur-brandsearch` (mineur TrendTrack, nom conservé). **Pas de Brand Search.** **Animalerie écartée**, thème animal OK. Catalogue UNIVERS **sans plafond SKU**.
 
-Source secondaire, seulement si le brief le demande : Amazon, VEVOR, Flippa, Europages.
-
-Si ton brief impose une niche ou une consigne, reste dedans. Sinon, exploration TrendTrack selon le mode.
+Si ton brief impose une niche ou une consigne, reste dedans. Sinon, exploration selon le mode.
 
 ## Filtres à appliquer DÈS la collecte (pas après)
 

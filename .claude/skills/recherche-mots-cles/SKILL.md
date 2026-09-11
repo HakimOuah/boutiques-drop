@@ -27,7 +27,7 @@ Cinq étapes, dans cet ordre. Détail et catalogue des pièges : `METHODE-ANALYS
 2. **Mesurer par lots.** OUTIL + CONTRÔLES.
 3. **Préparer la consolidation, sans la faire.** Regrouper les candidates. Hakim tranche l’arborescence. On additionne ce qu’**une même page** servirait (variantes d’écriture, synonymes d’une collection). On n’additionne pas une autre page (femme à part) ni une autre intention (réparation retirée, pesée en volume). Jamais un mot dans deux familles. Recoupement **mesuré**, pas estimé. Test : une page ou deux ?
 4. **Net de marque : toujours deux chiffres.** Brut et net. Requête avec marque tierce = inutilisable Merchant Center / titre.
-5. **Vérifier en SERP.** Section SERP. C’est l’étape qui a retourné 3 familles sur 20 (Noirmont).
+5. **Vérifier en SERP.** Section SERP. C’est l’étape qui a retourné 3 familles sur 20 (Noirmont). Chemin SMP : dropshippers = preuve ; SERP 100 % généralistes ≠ STOP et ≠ retrait de volume.
 
 Références Noirmont : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-13-recherche-mots-cles.md`, `2026-08-14-volumes-consolides.md`, `2026-08-14-verification-serp.md`.
 
@@ -61,6 +61,12 @@ Conséquence : on somme des **idées normalisées**, une par groupe, en retenant
 
 Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne les convertis pas et n'applique aucun seuil historique provenant d'une autre base.
 
+**Chemin SMP (UNIVERS, 11/09/2026).** Deux conditions **ensemble**, toujours lues dans DataForSEO : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP. Hakim applique les seuils ; toi tu fournis les chiffres.
+
+### OneClickBrand — après coup seulement
+
+OneClickBrand (Trend Niche, données Semrush) est autorisé **après** la mesure DataForSEO pour creuser : concurrents, mots-clés secondaires, wishlist. **Jamais** pour le chiffre de décision, jamais en repli si DataForSEO est down. Un volume OCB lu à l’écran se note en limite, il ne remplace pas une ligne DataForSEO.
+
 ## Contrôles — les six, chaque passe
 
 1. **Deux orthographes — pour découvrir, jamais pour additionner.** Interroge toujours les deux : c'est là que le vocabulaire se découvre. Google Ads pré-agrège souvent accents et variantes, donc **ne somme jamais les deux totaux** sans avoir établi que les séries mensuelles et les corpus sont distincts. Le test de décision est la série mensuelle, pas le volume seul. Corollaire : `coffret senteur` / `coffret senteurs` rendent le même corpus à 100 %, quand `diffuseur bâtonnets` / `diffuseur batonnets` n'ont que 6 lignes communes — ne présume ni la fusion ni la séparation, mesure-la.
@@ -74,7 +80,13 @@ Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne l
 
 ## SERP — page 1, chaque tête de famille
 
-google.fr `hl=fr&gl=fr`, session non connectée. Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (marketplaces / 10 et / 20) · bande de prix · volume retenu ou retiré + motif.
+google.fr `hl=fr&gl=fr`, session non connectée. Deux lectures distinctes (détail : `METHODE-ANALYSE-MARCHE.md` étape 5) :
+
+**(a) Qualité de la requête** — les six contrôles ci-dessous. Motif de **retrait** de volume uniquement.
+
+**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP.
+
+Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (**dropshippers / spécialistes / généralistes**, / 10 et / 20) · bande de prix · volume retenu ou retiré **pour (a) seulement** + motif.
 
 Six contrôles, un par un :
 
@@ -100,11 +112,13 @@ Tu ne rends pas le GO. Tu décris la forme (plat / bosse Q4 / saison unique / mo
 
 30–50 prix visibles, catégories cœur. Médiane, min, max, part sous 15 €, paliers **et vides**, type de vendeur : marque officielle / marque à récit / indépendant comparable / marketplace.
 
-Cible maison : 50–400 € TTC.
+Cible maison : viser **≥ 50 €** TTC au mieux ; **30–40 € OK si la marge tient**. Décimales autorisées. La bande 50–400 € reste le confort, plus un plancher dur.
 
 Positionnement : **juste sous le concurrent comparable**, jamais sous le plus cher. Écarter marques officielles, marques à récit, bas de gamme marketplace. Un vide de marché n’est pas une place à prendre (squelette : 429 € dans le trou 300–440 ; comparable 285–295 → 279 €).
 
-Marche : SERP + Shopping → classer les acteurs → paliers et vides → proposer un prix (terminaison psychologique) → ratio **prix ÷ CPC ≥ 100** (cible 150–200, CPC en $) → marge **sur base HT** seulement si un coût rendu est déjà dans le brief (sinon l’écrire « coût rendu manquant — skill sourcing »). Tu **proposes** le prix, Hakim fixe.
+Marche : SERP + Shopping → classer les acteurs → paliers et vides → proposer un prix (terminaison psychologique) → lire le **CPC dans la bande** (low jusqu’à 50 € / middle 50–500 € / high ticket +500 €) → marge **sur base HT** seulement si un coût rendu est déjà dans le brief (sinon l’écrire « coût rendu manquant — skill sourcing »). Tu **proposes** le prix, Hakim fixe. **Ne pas** réintroduire le ratio prix ÷ CPC ≥ 100.
+
+<!-- SMP: CPC low/middle/high — chiffres à recopier des screenshots Hakim -->
 
 ## Interdits
 
@@ -126,13 +140,13 @@ Marche : SERP + Shopping → classer les acteurs → paliers et vides → propos
 # MOTS-CLÉS — <sujet> — <AAAA-MM-JJ HH:MM> — Mission A|B
 
 ## Ce que j’ai fait
-(actions, appels DataForSEO / google.fr / Shopping)
+(actions, appels DataForSEO / google.fr / Shopping ; OCB seulement après, jamais comme chiffre de gate)
 
 ## Résultats
 tableau : formulation · volume · **source DataForSEO + endpoint** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
 sonde prix : fourchette, paliers, vides, comparable, prix proposé
 Google Trends : forme (plat / socle+Q4 / saison unique) · période · formulation
-SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · acteurs de page 1
+SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait)
 
 ## Niveau de confiance par ligne
 A = réponse API ou page directement vérifiée · B = liste/JSON/suggestions · C = titre

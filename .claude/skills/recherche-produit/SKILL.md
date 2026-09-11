@@ -54,7 +54,7 @@ Après CHAQUE phase, avant de lancer la suivante :
 La chaîne s'arrête d'elle-même — sans lancer la phase suivante — dans ces cas :
 
 1. **Verdict négatif** : plus aucun candidat en course (phase 2 : shortlist vide ; phase 3 : zéro `PASS_PREQUALIFICATION` ; phase 4 : aucune offre à tester).
-2. **Cas limite** : volume pertinent à ±20 % du seuil DataForSEO du fichier de critères (10 000 à 15 000 pour le seuil PRODUIT PUR à 12 500), notation vendeur entre 90 et 95 %, données contradictoires, ou tout point que le Bot a marqué `CAS LIMITE — décision Hakim requise`. Ni toi ni le Bot ne tranchez un cas limite.
+2. **Cas limite** : volume pertinent à ±20 % du seuil DataForSEO du fichier de critères — **PRODUIT PUR hors SMP** : 10 000 à 15 000 autour de 12 500 ; **UNIVERS SMP** : autour de **30 000 net de marque** (et/ou une collection sous 800). Notation vendeur entre 90 et 95 %, données contradictoires, ou tout point que le Bot a marqué `CAS LIMITE — décision Hakim requise`. Ni toi ni le Bot ne tranchez un cas limite.
 3. **Donnée invérifiable** : DataForSEO indisponible ou témoin incohérent, CAPTCHA AliExpress, fichier manquant, livrable non conforme. On n'invente jamais de données pour continuer.
 
 En cas d'arrêt : mets le registre à jour avec l'état atteint, puis produis le rapport d'arrêt (voir ci-dessous). Les candidats `REVIEW_PREQUALIFICATION` et `CAS LIMITE` ne continuent pas automatiquement : ils remontent à Hakim.
@@ -86,7 +86,7 @@ Ce pipeline prépare puis enregistre la décision humaine sur l'opportunité. La
 Deux règles de cette méthode valent aussi **à l'intérieur du pipeline**, en phase 0 et en phase 3 :
 
 - **la demande d'une famille est le total dédupliqué des idées normalisées qu'une même page servirait**, établi avec `kw_dfs.py` et les contrôles DataForSEO de tête, sans jamais additionner deux familles distinctes, ce qui reste l'interdit n° 1 ;
-- **toute requête contenant une marque tierce est inutilisable en flux Merchant Center** : on annonce toujours deux chiffres, brut et net de marque.
+- **toute requête contenant une marque tierce est inutilisable en flux Merchant Center** : on annonce toujours deux chiffres, brut et net de marque. **Chemin SMP :** le gate 30 000 se lit sur le **net seulement**.
 
 ## Rappels de maintenance
 

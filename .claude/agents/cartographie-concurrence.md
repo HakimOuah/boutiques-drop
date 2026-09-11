@@ -301,7 +301,7 @@ Sections obligatoires :
 6. **Ce qu'ils font qu'on ne fait pas** : tableau pratique par pratique, avec qui le fait et ce qu'on
    en fait.
 7. **Ce qui est sourçable chez nos fournisseurs et ce qui ne l'est pas**, en trois blocs : à sourcer,
-   sourçable mais à écarter formellement (avec le motif : ratio prix ÷ CPC, mur de prix, marque
+   sourçable mais à écarter formellement (avec le motif : CPC hors bande de prix, mur de prix, marque
    tierce en flux), non sourçable.
 8. **Ce que je n'ai pas pu établir, dit franchement** : catalogues tronqués à 250 produits par la
    limite de l'API publique, sites hors Shopify dont l'arborescence est partielle, entreprises non
