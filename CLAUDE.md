@@ -30,6 +30,8 @@ Le travail se répartit sur 4 repos — committer dans le bon :
 
 **`hermes-orchestration` ne contient jamais la méthode métier** (décision 30/08/2026, cf. son `docs/audit-2026-08-30.md`) : la méthode vit ici et dans `boutique-pipeline/`. Ce repo porte l'orchestration, le journal des missions et le benchmark, et pointe vers la méthode sans la recopier.
 
+**Exception cloud (décision Hakim, 11/09/2026).** Si un agent cloud se voit refuser l'écriture sur `HakimOuah/boutique-pipeline` (403 `cursor[bot]`), il **n'insiste pas** et ne relance pas un environnement pour contourner. Il commit le **delta** de méthode ou de critères **dans ce hub** — fichier court sous `docs/`, pas un clone de `PRODUCT-RESEARCH-CRITERIA.md` ni du pipeline. Claude (Code, machine d'Hakim) porte vers `boutique-pipeline` **si on en a besoin**. Cette exception **ne déplace pas** la méthode métier dans `hermes-orchestration`. Canon critères pipeline : [PR #3](https://github.com/HakimOuah/boutique-pipeline/pull/3) (merge `21ebd3a`). Inventaire du portage : [`docs/smp-portage-pipeline.md`](docs/smp-portage-pipeline.md).
+
 Dans `drop-elite-google-os`, mettre aussi à jour `CHANGELOG.md`, `DECISIONS.md` ou `OPERATIONS_LOG.md` selon la nature du changement, puis exécuter `python3 scripts/validate_repo.py` avant le push.
 
 Ne jamais committer : secrets (`.env`, caches contenant des clés API), `node_modules/`, venvs, `scratchpad/`, `settings.local.json`. Le `.gitignore` de chaque repo fait foi — ne pas le contourner avec `git add -f`.

@@ -9,7 +9,7 @@ Elles vivent dans **[`CLAUDE.md`](CLAUDE.md)**, à la racine, et valent pour tou
 pas seulement Claude. Le lire avant toute modification. En résumé de ce qu'il impose :
 
 - **GitHub est la source de vérité** — committer et pousser en fin de tâche, sans qu'on le demande.
-- **Cinq repos**, chacun son périmètre — un tableau dans `CLAUDE.md` dit où va quoi.
+- **Cinq repos**, chacun son périmètre — un tableau dans `CLAUDE.md` dit où va quoi. Exception cloud 11/09 (403 `boutique-pipeline`) : `CLAUDE.md` + [`docs/smp-portage-pipeline.md`](docs/smp-portage-pipeline.md).
 - Jamais de secrets, de `node_modules/`, de venv ni de `scratchpad/` dans Git.
 
 ## Journal éditorial NOX — après chaque étape significative
