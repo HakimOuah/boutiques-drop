@@ -57,6 +57,8 @@ La chaîne s'arrête d'elle-même — sans lancer la phase suivante — dans ces
 2. **Cas limite** : volume pertinent à ±20 % du seuil DataForSEO du fichier de critères — **PRODUIT PUR hors SMP** : 10 000 à 15 000 autour de 12 500 ; **UNIVERS SMP** : autour de **30 000 net de marque** (et/ou une collection sous 800). Notation vendeur entre 90 et 95 %, données contradictoires, ou tout point que le Bot a marqué `CAS LIMITE — décision Hakim requise`. Ni toi ni le Bot ne tranchez un cas limite.
 3. **Donnée invérifiable** : DataForSEO indisponible ou témoin incohérent, CAPTCHA AliExpress, fichier manquant, livrable non conforme. On n'invente jamais de données pour continuer.
 
+Une **passe Ads** non faite ou une tenure **< 180 j** (3–5 mois intéressant) **n'arrête pas** la chaîne : c'est un gap / un repère, pas un fail-closed. Volume et CPC restent les gates durs.
+
 En cas d'arrêt : mets le registre à jour avec l'état atteint, puis produis le rapport d'arrêt (voir ci-dessous). Les candidats `REVIEW_PREQUALIFICATION` et `CAS LIMITE` ne continuent pas automatiquement : ils remontent à Hakim.
 
 ## Rapport final (fin normale ou arrêt)

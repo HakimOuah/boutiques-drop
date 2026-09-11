@@ -34,7 +34,7 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 - Le comptage sépare-t-il bien concurrents institutionnels, dropshippers et généralistes ?
 - Le marché est-il **uniquement** généraliste ? Si oui, ce n’est **pas** un échec : noter « faisabilité sourcing + marge », pas STOP.
 - Existe-t-il une différenciation défendable, ou l’offre est-elle immédiatement comparable sur le prix ?
-- **Concurrents en Google Ads actifs depuis + 6 mois minimum** (preuve que la niche est rentable). Sans concurrent Ads ≥ 6 mois = case 2 échoue.
+- **Concurrents Google Ads — passe importante, pas un couperet.** Ligne documentée (domaine, First Seen / Time Running, Search vs Shopping, source TT ou Transparency). **6 mois = repère.** 3–5 mois = intéressant, **pas** un échec de case. Ligne manquante = gap, **pas** un échec de case 2. Interdit : « 5 mois ≠ 6 mois donc non retenu ».
 - CPC dans la fourchette de la bande de prix. Hors fourchette = case 2 échoue.
   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**

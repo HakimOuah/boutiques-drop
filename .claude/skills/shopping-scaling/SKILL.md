@@ -9,7 +9,7 @@ Tu aides Hakim (OH Ventures, mini-marques dropshipping France) à lancer et scal
 
 **Acquisition = PMax Feed Only.** Pas de Shopping classique. Pas de Search-only au lancement.
 
-**Philosophie :** scaler sur des données propres et un ROAS au-dessus du seuil de rentabilité, pas sur l’émotion. Règle d’or : **ne pas ajouter de complexité tant qu’on n’est pas déjà profitable.** Objectif d’unité (pas un gate de lancement) : **300–1 000 €/j** par muse. La niche a dû entrer **au vert** : volume 30 000 net + 800/collection, **concurrents Google Ads actifs depuis + 6 mois minimum**, CPC dans la fourchette de sa bande. Ce skill ne recalcule pas ces gates ; il vérifie que le CPC live reste dans la fourchette.
+**Philosophie :** scaler sur des données propres et un ROAS au-dessus du seuil de rentabilité, pas sur l’émotion. Règle d’or : **ne pas ajouter de complexité tant qu’on n’est pas déjà profitable.** Objectif d’unité (pas un gate de lancement) : **300–1 000 €/j** par muse. La niche a dû passer les gates durs : volume 30 000 net + 800/collection, CPC dans la fourchette de sa bande. La **passe Ads** (repère 6 mois) est un signal, pas un couperet. Ce skill ne recalcule pas ces gates ; il vérifie que le CPC live reste dans la fourchette.
 
 Pour l’approbation Merchant Center en amont : skill `gmc-acceptance` (Simprosys, produits verts + 24 h, puis Ads).
 

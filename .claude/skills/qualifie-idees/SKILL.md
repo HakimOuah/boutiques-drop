@@ -47,9 +47,9 @@ Traitement du résultat, seuil DataForSEO relu dans `PRODUCT-RESEARCH-CRITERIA.m
 - **Dans la bande ±20 %** → `CAS LIMITE — décision Hakim requise`. Noté au registre, remonté en fin de session. Tu ne tranches pas.
 - **Au-dessus** → étape 2.
 
-**Gates SMP (tous au vert, 11/09/2026).** Volume ci-dessus **et** :
+**Passe Ads SMP (recommandée, 11/09/2026).** Volume ci-dessus **et** CPC (ci-dessous) sont les **gates durs**. En plus :
 
-- **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. À relever dès la SERP / TrendTrack (étape 4 le confirme). Sans concurrent Ads ≥ 6 mois : l'idée n'est pas au vert ; `STOP` ou `CAS LIMITE` selon la preuve, jamais « presque ».
+- **Passe Ads** TrendTrack (prioritaire) ou Transparency : ligne domaine / First Seen ou Time Running / Search vs Shopping / source. **6 mois = repère**, pas couperet. Un concurrent **3, 4 ou 5 mois reste intéressant** — décrire, **ne pas** `STOP`. Passe non faite = gap, l'idée **continue**.
 - **CPC dans les bonnes fourchettes**, combinées avec le prix de la sonde :
   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**

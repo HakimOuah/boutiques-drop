@@ -40,7 +40,7 @@ Pour chaque candidat, ouvre la SERP Google France de la ou des requêtes décisi
 
 **Ne confonds jamais « carrousel Shopping sponsorisé visible » avec « annonces Search texte confirmées ».** Si tu ne peux pas isoler les annonces texte, dis-le explicitement.
 
-**Gate Ads SMP :** au moins un concurrent en Google Ads **actif depuis + 6 mois minimum** (preuve que la niche est rentable). Relève la durée. Une pub 30–60 j ne suffit pas. Sans cette preuve, pas de `PASS_PREQUALIFICATION` au vert.
+**Passe Ads SMP (importante, pas veto) :** TrendTrack **prioritaire**, sinon **Google Ads Transparency**. Relève une ligne : domaine, First Seen / Time Running, Search vs Shopping, source. **6 mois = repère** de preuve solide, pas un couperet. 3–5 mois = intéressant (« encore court »), **ne pas** refuser le PASS. Passe non faite = **gap**, pas `STOP_PREQUALIFICATION`. Le minage 60–90 n’est pas cette passe. Volume et CPC restent les gates durs.
 
 **Gate CPC SMP** — fourchettes combinées avec le prix observé :
 
@@ -52,7 +52,7 @@ CPC hors fourchette → pas au vert (pas de `PASS_PREQUALIFICATION` sauf `CAS LI
 
 ### 4. Préqualification par candidat
 
-- **PASS_PREQUALIFICATION** : cluster adressable nettement au-dessus du seuil + intention commerciale + une boutique spécialisée peut exister **et**, chemin SMP, les trois verts : volume (30 000 net + 800/collection) + Ads concurrents **≥ 6 mois** + CPC dans la fourchette de la bande. Autorise uniquement la due diligence.
+- **PASS_PREQUALIFICATION** : cluster adressable nettement au-dessus du seuil + intention commerciale + une boutique spécialisée peut exister **et**, chemin SMP, les gates durs : volume (30 000 net + 800/collection, DataForSEO + OCB Semrush noté) + CPC dans la fourchette de la bande. La **ligne Ads** est **recommandée** (repère 6 mois) : tenure 3–5 mois ou gap **n’empêchent pas** le PASS. Autorise uniquement la due diligence.
 - **REVIEW_PREQUALIFICATION** : demande suffisante mais obstacle majeur identifié (concurrence, sécurité, conformité, SAV).
 - **STOP_PREQUALIFICATION** : cluster adressable sous le seuil après application de la règle hiérarchique, ou marché manifestement indéfendable.
 - **Cas limite** : volume pertinent à ±20 % du seuil, données contradictoires ou outil partiellement inaccessible → tu ne tranches PAS. Marque `CAS LIMITE — décision Hakim requise` avec les éléments des deux côtés.
@@ -64,7 +64,7 @@ Un rapport daté : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/repo
 Sections obligatoires :
 
 1. **Entrée et méthode** — rapport de phase 2 utilisé, racines contrôlées par candidat, limites de calcul.
-2. **Tableau de décision** — par candidat : volume brut ; volume pertinent estimé ; CPC avec devise **et bande (low / mid / high ticket)** ; tendance qualitative ; concurrence publicitaire **(durée Ads, ≥ 6 mois oui/non)** ; prix observés ; verdict ; justification.
+2. **Tableau de décision** — par candidat : volume brut ; volume pertinent estimé ; CPC avec devise **et bande (low / mid / high ticket)** ; tendance qualitative ; **ligne Ads** (domaine · durée · Search|Shopping · source) ou gap — 6 mois = repère, pas oui/non veto ; prix observés ; verdict ; justification.
 3. **Détail par candidat** — mots-clés retenus (avec volumes), mots-clés exclus (avec motifs), **niveaux de généralité testés et niveau retenu**, lecture de la SERP.
 4. **Concurrents observés** — spécialistes vs grandes enseignes, par candidat.
 5. **Risques et à vérifier**.

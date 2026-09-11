@@ -63,10 +63,10 @@ Conséquence : on somme des **idées normalisées**, une par groupe, en retenant
 
 Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne les convertis pas et n'applique aucun seuil historique provenant d'une autre base.
 
-**Chemin SMP (UNIVERS, 11/09/2026).** Tous les critères doivent être au vert pour être sûr à 100 % que la niche va fonctionner. Tu fournis les chiffres ; Hakim applique.
+**Chemin SMP (UNIVERS, 11/09/2026).** Gates **durs** au vert : volume + CPC. La passe Ads est **importante** mais **pas un couperet**. Tu fournis les chiffres ; Hakim applique.
 
 1. **Volume** — deux conditions **ensemble** pour le gate étude rapide, lues dans **DataForSEO** : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). Un volume **OCB/Semrush** **compte** (l’écrire à côté, source nommée) ; il ne remplace pas ce gate. On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
-2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Le minage **60–90 j** ne suffit pas. Sans cette preuve, la niche n'est pas au vert.
+2. **Concurrents Google Ads — passe importante, pas un couperet.** Faire une passe **TrendTrack** (prioritaire) **ou** **Google Ads Transparency** (`https://adstransparency.google.com`). Ligne : domaine, First Seen / Time Running, Search vs Shopping, source TT ou Transparency. **6 mois = point de repère** de preuve solide. Un concurrent actif **3, 4 ou 5 mois reste intéressant** — décrire, **interdit** de jeter (« 5 mois ≠ 6 mois donc je prends pas »). Recommandé, **pas obligatoire** : ligne manquante ou tenure < 180 j = **gap**, **pas** un STOP, **pas** un veto du gate volume. Le minage **60–90 j** n’est pas cette passe.
 3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
    - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
    - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
@@ -104,7 +104,7 @@ google.fr `hl=fr&gl=fr`, session non connectée. Deux lectures distinctes (déta
 
 **(a) Qualité de la requête** — les six contrôles ci-dessous. Motif de **retrait** de volume uniquement.
 
-**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP. **Gate Ads :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`).
+**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP. **Passe Ads (recommandée) :** TrendTrack prioritaire, sinon Transparency. Ligne domaine / durée / Search|Shopping / source. **6 mois = repère**, pas couperet. 3–5 mois = intéressant. Passe non faite = gap, pas STOP.
 
 Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (**dropshippers / spécialistes / généralistes**, / 10 et / 20) · bande de prix · volume retenu ou retiré **pour (a) seulement** + motif.
 
@@ -170,7 +170,7 @@ Fourchettes CPC (chemin SMP, à combiner avec le prix proposé / observé) :
 tableau : formulation · volume · **source (DataForSEO + endpoint, ou OCB/Semrush)** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
 sonde prix : fourchette, paliers, vides, comparable, prix proposé · bande (low / mid / high ticket) · CPC vs fourchette
 Google Trends : forme (plat / socle+Q4 / saison unique) · période · formulation
-SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait) · Ads concurrents **≥ 6 mois** (oui/non, durée relevée)
+SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait) · **ligne Ads** (domaine · First Seen / Time Running · Search|Shopping · source) ou **gap** — 6 mois = repère, 3–5 mois intéressant, pas veto
 
 ## Niveau de confiance par ligne
 A = réponse API ou page directement vérifiée · B = liste/JSON/suggestions · C = titre

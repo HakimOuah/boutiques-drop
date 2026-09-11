@@ -1,6 +1,6 @@
 ---
 name: ideation-produit
-description: Idéation produit — deux modes (produit pur / univers), TrendTrack + OneClickBrand + généralistes (Amazon, Vevor, best-sellers, trends réseaux). Utiliser quand Hakim demande de chercher des idées, miner TrendTrack, un pivot d’angle, ou une boutique preuve. Ne lance pas DataForSEO, ne source pas AliExpress, ne prononce pas le GO. Minage Ads 60–90 j ≠ gate preuve 180 j.
+description: Idéation produit — deux modes (produit pur / univers), TrendTrack + OneClickBrand + généralistes (Amazon, Vevor, best-sellers, trends réseaux). Utiliser quand Hakim demande de chercher des idées, miner TrendTrack, un pivot d’angle, ou une boutique preuve. Ne lance pas DataForSEO, ne source pas AliExpress, ne prononce pas le GO. Minage Ads 60–90 j ≠ passe tenure 180 j (repère, pas couperet).
 ---
 
 # Idéation produit — deux modes, plusieurs sources
@@ -23,8 +23,8 @@ Avant toute requête : **PRODUIT PUR** ou **UNIVERS**. Jamais les deux dans la m
 | Concurrent qui exécute | occupation du cluster | validation de la demande |
 | Trends (ensuite, MOTS-CLÉS) | platitude ~5 ans | socle ≥ 8 mois, Q4 peut amplifier |
 | Seuil volume (MOTS-CLÉS, pas toi) | cluster 12 500 ; hors SMP | **≥ 30 000**/mois **net de marque** **et** **≥ 800**/mois par collection courte traîne — DataForSEO = gate étude rapide ; volume OCB Semrush **valide** surtout en approfondissement |
-| Recette Ads **minage** (toi) | Ads → Google → **Actives depuis Min 60–90** (Search) | Ads → Google → **Actives depuis Min 60–90** (Shopping). Ça **ne vert pas** le gate |
-| Gate Ads **preuve** | **Min 180** (6 mois) — **case à part**, après shortlist, **pas** dans le même geste que le minage | idem. **Mélanger 60 et 180 = faux verts** |
+| Recette Ads **minage** (toi) | Ads → Google → **Actives depuis Min 60–90** (Search) | Ads → Google → **Actives depuis Min 60–90** (Shopping). Ça **n’est pas** la tenure |
+| Passe Ads **tenure** | Après shortlist, geste séparé. **180 j = repère** de preuve solide, **pas un couperet**. 3–5 mois = intéressant | idem. **Mélanger 60 et 180 = faux verts**. Pas de veto si < 180 ou ligne manquante |
 
 Un gadget drop 15–20 € n’est ni l’un ni l’autre. `SIGNAL_PRIX_PANIER` si le cœur visible est 5–10 € sans panier **observé**.
 
@@ -45,7 +45,7 @@ Registre anti-doublon **avant** toute idée : `boutique-pipeline/registre-candid
 - Technique-particulier **OK** (osmoseur). Technique-pro / persona métier = exclusion (plieuse zinc).
 - Raisonnement économique : SASU, HT, TVA au réel, IS.
 - DataForSEO, CPC, marge, Trends **ne se lancent pas ici**. Un **volume OCB** (Semrush à l’écran) **compte** : le noter, source `OCB/Semrush`. Ce n’est pas le gate étude rapide DataForSEO.
-- **Deux recettes Ads, deux chiffres — ne pas les mélanger.** **60–90 j** = minage / idéation. **180 j (6 mois)** = gate preuve, **case à part** après shortlist. Un skill qui mélange 60 et 180 produit des **faux verts**.
+- **Deux recettes Ads, deux chiffres — ne pas les mélanger.** **60–90 j** = minage / idéation. **180 j (6 mois)** = **repère** de preuve solide, passe **à part** après shortlist, **pas un couperet**. Un skill qui mélange 60 et 180 produit des **faux verts**.
 
 ## Où tu cherches — sources d’inspiration, à égalité
 
@@ -61,12 +61,12 @@ API : `https://api.trendtrack.io`, `Authorization: Bearer $TRENDTRACK_API_KEY`. 
 
 **Deux recettes Ads, deux chiffres :**
 
-| Usage | Chemin UI | Chiffre | Vert le gate GO ? |
+| Usage | Chemin UI | Chiffre | Rôle |
 |---|---|---|---|
-| **Minage / idéation** | Ads → **Google** → **Actives depuis** / Days Running | **Min 60**, parfois **90** (Max 365) | **Non** |
-| **Preuve / gate GO** | Même chemin, **geste séparé** après shortlist | **Min 180** (6 mois), Max 365 | **Oui** |
+| **Minage / idéation** | Ads → **Google** → **Actives depuis** / Days Running | **Min 60**, parfois **90** (Max 365) | Trouver des pubs qui tiennent. **Pas** la tenure |
+| **Passe tenure** | Geste **séparé** après shortlist : TT (prioritaire) ou Transparency | **180 j = repère** de preuve solide. 3–5 mois = intéressant | Ligne à documenter, **pas un veto** |
 
-API minage : `minDaysRunning: 60` (parfois 90). **Ne pas** poser `maxDaysRunning: 60` : ça exclurait les pubs longues et mélangerait les deux recettes. Le slider UI va de 0 à 365. Le filtre 180 n’entre **pas** dans la requête de minage.
+API minage : `minDaysRunning: 60` (parfois 90). **Ne pas** poser `maxDaysRunning: 60` : ça exclurait les pubs longues et mélangerait les deux recettes. Le slider UI va de 0 à 365. Le filtre Min 180 n’entre **pas** dans la requête de minage (ça cacherait les 3–5 mois).
 
 #### Vues Shop + salve Google-only
 
@@ -80,7 +80,7 @@ Pour chaque idée : nom exact de la vue ou recette (`Shopping FR` / `Scaling sho
 
 #### Similar Shops — expansion, pas verdict
 
-Dès qu’un **shop preuve FR** est identifié : ouvrir l’onglet **Similar Shops** (bas de fiche). Garder **5–8 voisins** **Visitor Country** FR avec **Google Ads > 0**. Les passer au **gate 180** (geste séparé). Plafond : 5–8, **pas 13 pages**. Ça remplace une partie de l’ancien Brand Search « boutiques du même rayon ». Ce n’est pas un vert.
+Dès qu’un **shop preuve FR** est identifié : ouvrir l’onglet **Similar Shops** (bas de fiche). Garder **5–8 voisins** **Visitor Country** FR avec **Google Ads > 0**. Les passer à la **passe tenure** (geste séparé). Plafond : 5–8, **pas 13 pages**. Ça remplace une partie de l’ancien Brand Search « boutiques du même rayon ». Ce n’est pas un vert.
 
 ### 2. OneClickBrand (Trend Niche)
 
@@ -101,7 +101,7 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 
 ### PRODUIT PUR — intention Search (hors SMP)
 
-- **Minage :** `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` **60** (parfois **90**), tri `longestRunning`. **Pas** de `maxDaysRunning: 60`. Pubs qui tiennent sur un **problème**, pas un catalogue. Ça **ne vert pas** le gate 180.
+- **Minage :** `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` **60** (parfois **90**), tri `longestRunning`. **Pas** de `maxDaysRunning: 60`. Pubs qui tiennent sur un **problème**, pas un catalogue. Ça **n’est pas** la passe tenure.
 - Shops : Module 1 Early Market (trafic max 15k, ads min 60, **produits max 100**, croissance +20 %). Top tiers US/UK/UE. Potentiel phare ≥ 50 €.
 - Module 5 : painpoints (humidité, calcaire, linge, bruit…). Tri reach Europe. Hook / autorité / éducation / bénéfice caché = matière Search, pas pub Meta à republier.
 - DataForSEO plus tard, par `@oh-demande` : clusters **symptôme** (« eau calcaire »), pas l’objet.
@@ -110,17 +110,21 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 
 ### UNIVERS — le catalogue est la preuve (chemin SMP)
 
-- **Minage :** `POST /v1/google-ads/query` : `networks: ["shopping"]`, audience FR, `minDaysRunning` **60** (parfois **90**), hors GSB. **Pas** de `maxDaysRunning: 60`. **Ne pas écarter** une boutique parce qu’elle n’a pas « un seul phare » — c’est le profil cherché. Ça **ne vert pas** le gate 180.
+- **Minage :** `POST /v1/google-ads/query` : `networks: ["shopping"]`, audience FR, `minDaysRunning` **60** (parfois **90**), hors GSB. **Pas** de `maxDaysRunning: 60`. **Ne pas écarter** une boutique parce qu’elle n’a pas « un seul phare » — c’est le profil cherché. Ça **n’est pas** la passe tenure.
 - Shops : **Shopping FR** + salve **Simprosys−Meta** (pays visiteurs FR) **en plus**, profondeur catalogue (dizaines à des centaines de produits, **pas de plafond**), `minBestSellerPrice` ~50 comme filtre de confort. Module 2 (winners massifs) pour un **pivot d’univers** FR, pas pour copier Ooni.
-- **Similar Shops** dès qu’un shop preuve FR est là (5–8 voisins FR, Google Ads > 0) → ensuite seulement le gate 180.
+- **Similar Shops** dès qu’un shop preuve FR est là (5–8 voisins FR, Google Ads > 0) → ensuite seulement la **passe tenure**.
 - Meta / TikTok (Modules 3–4, ads Meta) : **signal de trend d’univers** à importer en Shopping, jamais un brief Search — **et** source d’inspiration au même titre que les généralistes.
 - Fenêtre Q4 : `publishedAfter` 1er oct N-1, `publishedBefore` 1er jan N, `minDaysRunning` 30, tri `reach`. Socle annuel à faire vérifier ensuite par Trends, pas seulement le pic Noël.
 
 Écarter : GSB (Boulanger, Castorama, Westwing, Darty…) **comme concurrent à copier**, one-product-store maquillé, textile tailles si Hakim l’a exclu, licences, **animalerie**. Un GSB / Amazon / Vevor **comme source d’idée** reste valide.
 
-### Gate preuve 180 — case à part, après shortlist
+### Passe Ads tenure — après shortlist, pas un couperet
 
-**Pas dans le même geste que le minage 60–90.** Après une shortlist (idées / shops preuve FR, y compris voisins Similar Shops) : Ads → Google → **Actives depuis Min 180** / Max 365, **Platform type Shopping** (UNIVERS) ou Search (PUR), pays FR. UI : **Time Running ≥ ~180** ou **First Seen** ≥ 6 mois **et** **Still Running**. Repli sans compte : **Google Ads Transparency Center** (`https://adstransparency.google.com`) — **Last shown**, pas First Seen. Sans cette preuve : noter `ADS < 6 MOIS`, ne pas vendre l’idée comme niche sûre. **Ne pas** exiger cette case pendant le minage : un skill qui mélange 60 et 180 produit des faux verts. Tu ne calcules pas le CPC ici.
+**Pas dans le même geste que le minage 60–90.** La passe est **importante** (attendue dans le workflow) : TrendTrack **prioritaire**, repli **Google Ads Transparency** (`https://adstransparency.google.com`) — Transparency = **Last shown**, pas First Seen.
+
+Documenter **une ligne** : domaine · First Seen / Time Running · Search vs Shopping · source TT ou Transparency.
+
+**180 j (6 mois) = point de repère** de preuve solide, **pas une règle binaire**. Un concurrent actif **3, 4 ou 5 mois reste intéressant** : écrire « 4 mois, encore court ». **Interdit :** « 5 mois ≠ 6 mois donc je prends pas ». Recommandé, **pas obligatoire** : passe non faite = **gap** à noter, pas un STOP, pas un veto d’idée. Volume et CPC restent les gates durs (skill mots-clés). Tu ne calcules pas le CPC ici. Ne pas poser Min 180 sur la requête de minage.
 
 ## Filtres d’amont (un par un, motivés)
 
@@ -130,13 +134,14 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 - **Animalerie** (destination animal : accessoires chiens/chats, aquariophilie, petit élevage). Thème animal OK.
 - En PRODUIT PUR : offre comparable uniquement sur le prix ; catégorie verrouillée par quelques marques si le générique n’est pas défendable.
 - En UNIVERS : un spécialiste / dropshipper qui exécute = **poursuite** (preuve), pas un écart. Une SERP 100 % généralistes **n’écarte pas l’idée** : elle part en MOTS-CLÉS puis faisabilité sourcing. Occupation = densité + absence d’espace, pas le premier concurrent.
-- Le **gate 180** n’est **pas** un filtre d’amont du minage : voir « Gate preuve 180 — case à part ». Tu ne calcules pas le CPC ici.
+- La **passe tenure** n’est **pas** un filtre d’amont du minage : voir « Passe Ads tenure ». Tu ne calcules pas le CPC ici.
 - Exclusions explicites inchangées : bureaux assis-debout, chaises gaming, tables basses génériques, canapés standards, meubles courants sans usage différencié. Rotin seul ≠ idée.
 
 ## Interdits
 
 - Aucun DataForSEO, aucun chiffre de mémoire, aucune sonde Shopping complète, aucun Google Trends (tu tags le brief). Un **volume OCB/Semrush** lu à l’écran **compte** : le noter avec sa source. Ce n’est **pas** le gate étude rapide DataForSEO, et ce n’est **pas** un chiffre à interdire.
-- **Ne pas mélanger** minage **60–90 j** et gate **180 j** dans le même geste / la même requête.
+- **Ne pas mélanger** minage **60–90 j** et passe tenure **180 j** (repère) dans le même geste / la même requête.
+- **Ne pas jeter** une idée parce que la tenure est 3–5 mois ou que la ligne Ads manque.
 - Aucune fiche AliExpress. Ignorer le bloc AliExpress des fiches OCB.
 - Aucun GO / STOP / MAYBE marché.
 - Aucun scoring chiffré.
@@ -149,7 +154,7 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 Mode : PRODUIT PUR | UNIVERS
 
 ## Ce que j’ai fait
-(TrendTrack minage 60–90 : Ads Google Actives depuis Min 60/90 — **pas** 180
+(TrendTrack minage 60–90 : Ads Google Actives depuis Min 60/90 — **pas** Min 180
 vues Shop `Shopping FR` + `Scaling shopping` + salve Simprosys−Meta (pays visiteurs FR)
 Similar Shops : 5–8 voisins FR Google Ads > 0
 OneClickBrand : Trend Niche — passe Facile **et** passe sans filtre de difficulté ; High Ticket = tri
@@ -157,7 +162,7 @@ Généralistes : Amazon, Vevor, best-sellers, trends réseaux — conservés, pa
 + actions + endpoint)
 
 ## Résultats
-idée · mode · source (TrendTrack / OCB / généraliste / trend réseau) · vue ou recette d’origine · boutique preuve · minage 60–90 (oui) · **case 180** (oui/non/pas encore — geste séparé) · volume OCB/Semrush s’il a été lu · problème ou univers · prix publics datés · angle / pivot · statut France (`FR observé` ou `À VALIDER FR`) · motif de poursuite ou d’écart
+idée · mode · source (TrendTrack / OCB / généraliste / trend réseau) · vue ou recette d’origine · boutique preuve · minage 60–90 (oui) · **ligne Ads** (domaine · First Seen / Time Running · Search|Shopping · source TT|Transparency) ou **gap** · volume OCB/Semrush s’il a été lu · problème ou univers · prix publics datés · angle / pivot · statut France (`FR observé` ou `À VALIDER FR`) · motif de poursuite ou d’écart
 
 ## Pivot d’Angle (si M5)
 Hook, Biais d’Autorité, Éducation, Bénéfice Caché
