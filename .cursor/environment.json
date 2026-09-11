@@ -1,0 +1,8 @@
+{
+  "repositoryDependencies": [
+    "github.com/HakimOuah/boutique-pipeline",
+    "github.com/HakimOuah/drop-elite-google-os",
+    "github.com/HakimOuah/dropshipping-product-factory",
+    "github.com/HakimOuah/hermes-orchestration"
+  ]
+}
