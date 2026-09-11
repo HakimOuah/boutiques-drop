@@ -54,7 +54,7 @@ Ils ne dépendent pas de l'interface : ce sont des règles de méthode appliqué
 Tous les critères doivent être au vert pour être sûr à 100 % que la niche va fonctionner :
 
 1. **Volume de recherche suffisant** — ≥ 30 000/mois net de marque **et** ≥ 800/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas).
-2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable.
+2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`).
 3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
    - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
    - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
@@ -233,7 +233,7 @@ Pour chacune on relève cinq choses :
 | **Intention** | La requête désigne-t-elle bien notre produit : oui, partiellement, ou pas du tout |
 | **Commercial ou informationnel** | La page 1 vend-elle, ou explique-t-elle ? Quatre positions éditoriales sur dix veut dire qu'une collection seule ne prendra pas la page |
 | **Qui tient la page 1** | On **compte** dropshippers, spécialistes et généralistes. Dropshippers = preuve. Généralistes seuls = faisabilité ensuite, pas STOP |
-| **Ads ≥ 6 mois** | **Gate SMP.** Au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum**. Preuve que la niche est rentable. Une pub récente (30–60 j) ne suffit pas. |
+| **Ads ≥ 6 mois** | **Gate SMP.** Au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum**. Preuve que la niche est rentable. Une pub récente (30–60 j) ne suffit pas. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). |
 | **Volume** | Le gate reste le **net de marque** (étape 4). On **ne retranche pas** le volume SERP généraliste. Les constats de qualité (a) s'écrivent, ils ne recalculent pas les 30 000 |
 
 **Ce qu'on produit.** Un tableau par famille : preuve dropshipping ou faisabilité, plus les

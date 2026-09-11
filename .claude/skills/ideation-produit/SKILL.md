@@ -23,7 +23,7 @@ Avant toute requête : **PRODUIT PUR** ou **UNIVERS**. Jamais les deux dans la m
 | Concurrent qui exécute | occupation du cluster | validation de la demande |
 | Trends (ensuite, MOTS-CLÉS) | platitude ~5 ans | socle ≥ 8 mois, Q4 peut amplifier |
 | Seuil (Hakim / MOTS-CLÉS, pas toi) | cluster 12 500 ; hors SMP | **≥ 30 000**/mois **net de marque** **et** **≥ 800**/mois par collection courte traîne |
-| Gate Ads (preuve, toi) | **concurrents Google Ads actifs depuis + 6 mois minimum** | **concurrents en Google Ads actifs depuis + 6 mois minimum** |
+| Gate Ads (preuve, toi) | **concurrents Google Ads actifs depuis + 6 mois minimum** | **concurrents en Google Ads actifs depuis + 6 mois minimum** — **en priorité TrendTrack**, repli sans compte `https://adstransparency.google.com` |
 
 Un gadget drop 15–20 € n’est ni l’un ni l’autre. `SIGNAL_PRIX_PANIER` si le cœur visible est 5–10 € sans panier **observé**.
 
@@ -43,7 +43,7 @@ Registre anti-doublon **avant** toute idée : `boutique-pipeline/registre-candid
 - **Animalerie écartée** (accessoires chiens, arbre à chat, fontaine pour chat, aquariophilie, petit élevage). **Thème animal autorisé** (chaussons koala, bouillottes peluche).
 - Technique-particulier **OK** (osmoseur). Technique-pro / persona métier = exclusion (plieuse zinc).
 - Raisonnement économique : SASU, HT, TVA au réel, IS.
-- Volume, CPC, marge, Trends **ne se calculent pas ici**. Le **gate Ads 6 mois** se relève ici (durée d'activité, pas un CPC).
+- Volume, CPC, marge, Trends **ne se calculent pas ici**. Le **gate Ads 6 mois** se relève ici (durée d'activité, pas un CPC). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`).
 
 ## Où tu cherches — sources d’inspiration, à égalité
 
@@ -80,7 +80,7 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 
 ### PRODUIT PUR — intention Search (hors SMP)
 
-- `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` 30 (idéal 30–60), tri `longestRunning`. Pubs qui tiennent sur un **problème**, pas un catalogue. **Gate :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve de rentabilité). Le 30–60 j sert au minage ; sans concurrent ≥ 6 mois, l'idée n'est pas au vert.
+- `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` 30 (idéal 30–60), tri `longestRunning`. Pubs qui tiennent sur un **problème**, pas un catalogue. **Gate :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve de rentabilité). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Le 30–60 j sert au minage ; sans concurrent ≥ 6 mois, l'idée n'est pas au vert.
 - Shops : Module 1 Early Market (trafic max 15k, ads min 60, **produits max 100**, croissance +20 %). Top tiers US/UK/UE. Potentiel phare ≥ 50 €.
 - Module 5 : painpoints (humidité, calcaire, linge, bruit…). Tri reach Europe. Hook / autorité / éducation / bénéfice caché = matière Search, pas pub Meta à republier.
 - DataForSEO plus tard, par `@oh-demande` : clusters **symptôme** (« eau calcaire »), pas l’objet.
@@ -89,7 +89,7 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 
 ### UNIVERS — le catalogue est la preuve (chemin SMP)
 
-- `POST /v1/google-ads/query` : `networks: ["shopping"]`, audience FR, 30–60 j, hors GSB. **Ne pas écarter** une boutique parce qu’elle n’a pas « un seul phare » — c’est le profil cherché. **Gate :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable). Le 30–60 j sert au minage ; une pub récente ne suffit pas au vert.
+- `POST /v1/google-ads/query` : `networks: ["shopping"]`, audience FR, 30–60 j, hors GSB. **Ne pas écarter** une boutique parce qu’elle n’a pas « un seul phare » — c’est le profil cherché. **Gate :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Le 30–60 j sert au minage ; une pub récente ne suffit pas au vert.
 - Shops : profondeur catalogue (dizaines à des centaines de produits, **pas de plafond**), `minBestSellerPrice` ~50 comme filtre de confort, Ads Google. Module 2 (winners massifs) pour un **pivot d’univers** FR, pas pour copier Ooni.
 - Meta / TikTok (Modules 3–4, ads Meta) : **signal de trend d’univers** à importer en Shopping, jamais un brief Search — **et** source d’inspiration au même titre que les généralistes.
 - Fenêtre Q4 : `publishedAfter` 1er oct N-1, `publishedBefore` 1er jan N, `minDaysRunning` 30, tri `reach`. Socle annuel à faire vérifier ensuite par Trends, pas seulement le pic Noël.
@@ -104,7 +104,7 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 - **Animalerie** (destination animal : accessoires chiens/chats, aquariophilie, petit élevage). Thème animal OK.
 - En PRODUIT PUR : offre comparable uniquement sur le prix ; catégorie verrouillée par quelques marques si le générique n’est pas défendable.
 - En UNIVERS : un spécialiste / dropshipper qui exécute = **poursuite** (preuve), pas un écart. Une SERP 100 % généralistes **n’écarte pas l’idée** : elle part en MOTS-CLÉS puis faisabilité sourcing. Occupation = densité + absence d’espace, pas le premier concurrent.
-- **Gate Ads SMP :** concurrents en Google Ads **actifs depuis + 6 mois minimum**. Sans cette preuve, l'idée n'est pas au vert — la noter (`ADS < 6 MOIS`), ne pas la vendre comme niche sûre. Tu ne calcules pas le CPC ici.
+- **Gate Ads SMP :** concurrents en Google Ads **actifs depuis + 6 mois minimum**. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Sans cette preuve, l'idée n'est pas au vert — la noter (`ADS < 6 MOIS`), ne pas la vendre comme niche sûre. Tu ne calcules pas le CPC ici.
 - Exclusions explicites inchangées : bureaux assis-debout, chaises gaming, tables basses génériques, canapés standards, meubles courants sans usage différencié. Rotin seul ≠ idée.
 
 ## Interdits

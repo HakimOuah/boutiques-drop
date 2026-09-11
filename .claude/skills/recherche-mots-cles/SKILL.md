@@ -64,7 +64,7 @@ Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne l
 **Chemin SMP (UNIVERS, 11/09/2026).** Tous les critères doivent être au vert pour être sûr à 100 % que la niche va fonctionner. Tu fournis les chiffres ; Hakim applique.
 
 1. **Volume** — deux conditions **ensemble**, toujours lues dans DataForSEO : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
-2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Une pub récente (30–60 j) ne suffit pas. Relève la durée d'activité Ads des concurrents (TrendTrack, page Ads, historique). Sans cette preuve, la niche n'est pas au vert.
+2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Une pub récente (30–60 j) ne suffit pas. Sans cette preuve, la niche n'est pas au vert.
 3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
    - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
    - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
@@ -93,7 +93,7 @@ google.fr `hl=fr&gl=fr`, session non connectée. Deux lectures distinctes (déta
 
 **(a) Qualité de la requête** — les six contrôles ci-dessous. Motif de **retrait** de volume uniquement.
 
-**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP. **Gate Ads :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable).
+**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP. **Gate Ads :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`).
 
 Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (**dropshippers / spécialistes / généralistes**, / 10 et / 20) · bande de prix · volume retenu ou retiré **pour (a) seulement** + motif.
 
