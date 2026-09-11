@@ -22,7 +22,7 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 1 — Volume
 
-- Le volume pertinent, **après nettoyage SERP**, atteint-il le seuil **du mode** du dossier (cluster ~10 000 PRODUIT PUR, 9 900 inclus ; consolidé familles / 30 000 UNIVERS) ?
+- Le volume pertinent, **net de marque**, atteint-il le seuil **du mode** du dossier (cluster 12 500 PRODUIT PUR, hors SMP ; consolidé familles **≥ 30 000 UNIVERS SMP**) **et**, en UNIVERS, chaque collection courte traîne **≥ 800**/mois ? On **compte** fautes, graphies sans accent, variantes. On **retire** « marque + produit ». Brut ≠ règle. Après SERP ≠ règle. Une page 1 généraliste ne retranche pas le volume.
 - Ce volume est-il celui de mots-clés effectivement listés, ou une somme dont le détail n'apparaît pas ? Une somme non détaillée est un échec.
 - **PRODUIT PUR :** le cluster additionne-t-il des familles distinctes ? Si oui, échec (anti-exemple catio).
 - **UNIVERS :** une tête seule présentée comme volume boutique est un dossier incomplet. La consolidation par collections d'un même catalogue est exigée, pas un échec.
@@ -30,10 +30,15 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 
 ### Case 2 — Concurrence
 
-- Le prix marché constaté permet-il de défendre une offre entre 50 et 400 € ?
-- Le comptage sépare-t-il bien concurrents institutionnels et dropshippers ?
-- Le marché est-il dominé par des enseignes généralistes au sens du §4 des critères ? Si oui, échec.
-- Existe-t-il une différenciation défendable, ou l'offre est-elle immédiatement comparable sur le prix ?
+- Le prix marché constaté permet-il de défendre une offre (viser ≥ 50 € ; **30–40 € OK si marge**) ?
+- Le comptage sépare-t-il bien concurrents institutionnels, dropshippers et généralistes ?
+- Le marché est-il **uniquement** généraliste ? Si oui, ce n’est **pas** un échec : noter « faisabilité sourcing + marge », pas STOP.
+- Existe-t-il une différenciation défendable, ou l’offre est-elle immédiatement comparable sur le prix ?
+- **Concurrents Google Ads — passe importante, pas un couperet.** Ligne documentée (domaine, First Seen / Time Running, Search vs Shopping, source TT ou Transparency). **6 mois = repère.** 3–5 mois = intéressant, **pas** un échec de case. Ligne manquante = gap, **pas** un échec de case 2. Interdit : « 5 mois ≠ 6 mois donc non retenu ».
+- CPC dans la fourchette de la bande de prix. Hors fourchette = case 2 échoue.
+  - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+  - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+  - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
 
 ### Case 3 — Fournisseur
 

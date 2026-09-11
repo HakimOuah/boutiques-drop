@@ -14,7 +14,7 @@ Tu n'exécutes aucune phase toi-même : sous Hermes, tu routes vers les Bots per
 ## Entrées
 
 - **Une ou plusieurs idées de Hakim** — passées en argument ou dans la conversation.
-- **Sans idée fournie : minage TrendTrack** (depuis le 19/08/2026 ; Brand Search retiré). Lance `mineur-brandsearch` — c'est le mineur TrendTrack. Dis-lui le **mode** (PRODUIT PUR ou UNIVERS). Sans précision : UNIVERS. Chaque idée arrive adossée à un domaine preuve. Puis traite chaque idée comme ci-dessous, les `directes` avant les `latérales`. Le mode voyage avec l'idée jusqu'à la mesure (seuils §1 des critères).
+- **Sans idée fournie : minage** TrendTrack **et** OneClickBrand (Trend Niche), **plus** Amazon / Vevor / best-sellers / trends réseaux (généralistes **conservés**, pas relégués). Lance `mineur-brandsearch` pour TrendTrack. Dis-lui le **mode** (chemin SMP = UNIVERS). Chaque idée arrive adossée à une source. Puis traite chaque idée comme ci-dessous, les `directes` avant les `latérales`. Le mode voyage avec l'idée jusqu'à la mesure (seuils §1 des critères).
 - `phase1-ideation` (idéation libre par sources d'inspiration) et le balayage par familles (`/chasse-clusters`, `familles-exploration.md`) sont **mis de côté** : ne les utilise que si Hakim les demande explicitement.
 
 ## Avant de démarrer
@@ -41,11 +41,21 @@ Message `@oh-scout` avec **l'idée nommée** au lieu d'une famille : il mesure v
 
 La règle qui borne l'exploration : une idée latérale suit **tout** le chemin — elle ne saute jamais une étape au motif qu'elle ressemble à sa voisine, et elle ne se mesure que si elle est réellement distincte (sinon c'est le même cluster, pas une nouvelle idée).
 
-Traitement du résultat, seuil DataForSEO relu dans `PRODUCT-RESEARCH-CRITERIA.md` **selon le mode** de l'idée (12 500 en PRODUIT PUR ; consolidé 37 500 boutique en UNIVERS) :
+Traitement du résultat, seuil DataForSEO relu dans `PRODUCT-RESEARCH-CRITERIA.md` **selon le mode** de l'idée (12 500 en PRODUIT PUR, **hors SMP** ; UNIVERS SMP : consolidé **≥ 30 000 net de marque** + **≥ 800**/mois par collection courte traîne). Brut ≠ gate. Après SERP ≠ gate. Une SERP 100 % généralistes ne retranche pas le volume.
 
 - **Nettement sous le seuil** (sous la bande −20 %) → l'idée meurt. Inscris-la au registre en `STOP mesure express` avec ses volumes et synonymes — coût total : quelques minutes.
 - **Dans la bande ±20 %** → `CAS LIMITE — décision Hakim requise`. Noté au registre, remonté en fin de session. Tu ne tranches pas.
 - **Au-dessus** → étape 2.
+
+**Passe Ads SMP (recommandée, 11/09/2026).** Volume ci-dessus **et** CPC (ci-dessous) sont les **gates durs**. En plus :
+
+- **Passe Ads** TrendTrack (prioritaire) ou Transparency : ligne domaine / First Seen ou Time Running / Search vs Shopping / source. **6 mois = repère**, pas couperet. Un concurrent **3, 4 ou 5 mois reste intéressant** — décrire, **ne pas** `STOP`. Passe non faite = gap, l'idée **continue**.
+- **CPC dans les bonnes fourchettes**, combinées avec le prix de la sonde :
+  - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+  - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+  - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+  CPC lu en DataForSEO (étape 1, avec devise) ; bande lue à la sonde (étape 2). Hors fourchette → l'idée n'est pas au vert. Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
 
 ### 2. Sonde prix — `sonde-prix`
 

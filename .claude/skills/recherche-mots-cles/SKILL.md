@@ -1,6 +1,6 @@
 ---
 name: recherche-mots-cles
-description: Mesure de demande France via l'API DataForSEO, sonde prix Google Shopping et vérification SERP page 1. Utiliser quand Hakim demande des volumes, un cluster, une sonde prix ou le métier MOTS-CLÉS. Ne consolide pas l’arborescence, ne source pas, ne prononce pas le GO.
+description: Mesure de demande France via l'API DataForSEO (gate étude rapide), volume OCB/Semrush valide en approfondissement, sonde prix Google Shopping et vérification SERP page 1. Utiliser quand Hakim demande des volumes, un cluster, une sonde prix ou le métier MOTS-CLÉS. Ne consolide pas l’arborescence, ne source pas, ne prononce pas le GO.
 ---
 
 # Recherche de mots-clés — mesurer et vérifier
@@ -27,13 +27,15 @@ Cinq étapes, dans cet ordre. Détail et catalogue des pièges : `METHODE-ANALYS
 2. **Mesurer par lots.** OUTIL + CONTRÔLES.
 3. **Préparer la consolidation, sans la faire.** Regrouper les candidates. Hakim tranche l’arborescence. On additionne ce qu’**une même page** servirait (variantes d’écriture, synonymes d’une collection). On n’additionne pas une autre page (femme à part) ni une autre intention (réparation retirée, pesée en volume). Jamais un mot dans deux familles. Recoupement **mesuré**, pas estimé. Test : une page ou deux ?
 4. **Net de marque : toujours deux chiffres.** Brut et net. Requête avec marque tierce = inutilisable Merchant Center / titre.
-5. **Vérifier en SERP.** Section SERP. C’est l’étape qui a retourné 3 familles sur 20 (Noirmont).
+5. **Vérifier en SERP.** Section SERP. C’est l’étape qui a retourné 3 familles sur 20 (Noirmont). Chemin SMP : dropshippers = preuve ; SERP 100 % généralistes ≠ STOP et ≠ retrait de volume.
 
 Références Noirmont : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-13-recherche-mots-cles.md`, `2026-08-14-volumes-consolides.md`, `2026-08-14-verification-serp.md`.
 
-## Outil — DataForSEO uniquement, France obligatoire
+## Outil — DataForSEO (gate étude rapide) + OCB Semrush (volume valide)
 
-**Décision Hakim du 01/09/2026.** SEMrush n'est pas utilisé. DataForSEO API est l'unique source de volume et de gate. Une panne d'API, un quota épuisé ou des identifiants absents provoquent un arrêt déclaré : aucun repli silencieux vers une autre base.
+**Décision Hakim du 01/09/2026, amendée le 11/09/2026.** DataForSEO API reste le gate **étude rapide** (seuils 30 000 net + 800/collection lus ici). **Le volume OCB compte** : c’est du **Semrush**, Hakim lui fait confiance. OCB Semrush est une source de volume **valide**, surtout en approfondissement. **Ne plus interdire** OCB comme chiffre de volume. OCB **n’est pas** le gate unique à la place de DataForSEO.
+
+Une panne DataForSEO, un quota épuisé ou des identifiants absents provoquent un arrêt déclaré du **gate étude rapide** : aucun repli silencieux qui ferait d’OCB le seul gate. Un volume OCB déjà lu se cite avec la source `OCB/Semrush` ; ce n’est pas une ligne DataForSEO.
 
 ### DataForSEO
 
@@ -61,6 +63,30 @@ Conséquence : on somme des **idées normalisées**, une par groupe, en retenant
 
 Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne les convertis pas et n'applique aucun seuil historique provenant d'une autre base.
 
+**Chemin SMP (UNIVERS, 11/09/2026).** Gates **durs** au vert : volume + CPC. La passe Ads est **importante** mais **pas un couperet**. Tu fournis les chiffres ; Hakim applique.
+
+1. **Volume** — deux conditions **ensemble** pour le gate étude rapide, lues dans **DataForSEO** : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). Un volume **OCB/Semrush** **compte** (l’écrire à côté, source nommée) ; il ne remplace pas ce gate. On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
+2. **Concurrents Google Ads — passe importante, pas un couperet.** Faire une passe **TrendTrack** (prioritaire) **ou** **Google Ads Transparency** (`https://adstransparency.google.com`). Ligne : domaine, First Seen / Time Running, Search vs Shopping, source TT ou Transparency. **6 mois = point de repère** de preuve solide. Un concurrent actif **3, 4 ou 5 mois reste intéressant** — décrire, **interdit** de jeter (« 5 mois ≠ 6 mois donc je prends pas »). Recommandé, **pas obligatoire** : ligne manquante ou tenure < 180 j = **gap**, **pas** un STOP, **pas** un veto du gate volume. Le minage **60–90 j** n’est pas cette passe.
+3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
+   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+   - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+   Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
+
+### OneClickBrand — volume Semrush valide, surtout en approfondissement
+
+OneClickBrand (Trend Niche, données **Semrush**) : **le volume OCB compte**. Le noter avec la source `OCB/Semrush`, date, pays. DataForSEO reste le gate **étude rapide** ; OCB ne le remplace pas comme gate unique.
+
+En approfondissement (après ou à côté de DataForSEO) : concurrents, mots-clés secondaires, intention, CPC comme ordre de grandeur à recouper, wishlist.
+
+**Deux passes Trend Niche** si tu lis OCB pour des noms ou des volumes :
+
+1. Filtre **Facile** (concurrence 0–40) — **une** passe.
+2. **Toujours** une passe **sans filtre de difficulté** — sinon on rate des niches.
+
+**High Ticket** = filtre de **tri**, pas un couperet unique. Animalerie écartée par la règle maison, pas par OCB.
+
 ## Contrôles — les six, chaque passe
 
 1. **Deux orthographes — pour découvrir, jamais pour additionner.** Interroge toujours les deux : c'est là que le vocabulaire se découvre. Google Ads pré-agrège souvent accents et variantes, donc **ne somme jamais les deux totaux** sans avoir établi que les séries mensuelles et les corpus sont distincts. Le test de décision est la série mensuelle, pas le volume seul. Corollaire : `coffret senteur` / `coffret senteurs` rendent le même corpus à 100 %, quand `diffuseur bâtonnets` / `diffuseur batonnets` n'ont que 6 lignes communes — ne présume ni la fusion ni la séparation, mesure-la.
@@ -74,7 +100,13 @@ Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne l
 
 ## SERP — page 1, chaque tête de famille
 
-google.fr `hl=fr&gl=fr`, session non connectée. Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (marketplaces / 10 et / 20) · bande de prix · volume retenu ou retiré + motif.
+google.fr `hl=fr&gl=fr`, session non connectée. Deux lectures distinctes (détail : `METHODE-ANALYSE-MARCHE.md` étape 5) :
+
+**(a) Qualité de la requête** — les six contrôles ci-dessous. Motif de **retrait** de volume uniquement.
+
+**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP. **Passe Ads (recommandée) :** TrendTrack prioritaire, sinon Transparency. Ligne domaine / durée / Search|Shopping / source. **6 mois = repère**, pas couperet. 3–5 mois = intéressant. Passe non faite = gap, pas STOP.
+
+Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (**dropshippers / spécialistes / généralistes**, / 10 et / 20) · bande de prix · volume retenu ou retiré **pour (a) seulement** + motif.
 
 Six contrôles, un par un :
 
@@ -100,11 +132,17 @@ Tu ne rends pas le GO. Tu décris la forme (plat / bosse Q4 / saison unique / mo
 
 30–50 prix visibles, catégories cœur. Médiane, min, max, part sous 15 €, paliers **et vides**, type de vendeur : marque officielle / marque à récit / indépendant comparable / marketplace.
 
-Cible maison : 50–400 € TTC.
+Cible maison : viser **≥ 50 €** TTC au mieux ; **30–40 € OK si la marge tient**. Décimales autorisées. La bande 50–400 € reste le confort, plus un plancher dur.
 
 Positionnement : **juste sous le concurrent comparable**, jamais sous le plus cher. Écarter marques officielles, marques à récit, bas de gamme marketplace. Un vide de marché n’est pas une place à prendre (squelette : 429 € dans le trou 300–440 ; comparable 285–295 → 279 €).
 
-Marche : SERP + Shopping → classer les acteurs → paliers et vides → proposer un prix (terminaison psychologique) → ratio **prix ÷ CPC ≥ 100** (cible 150–200, CPC en $) → marge **sur base HT** seulement si un coût rendu est déjà dans le brief (sinon l’écrire « coût rendu manquant — skill sourcing »). Tu **proposes** le prix, Hakim fixe.
+Marche : SERP + Shopping → classer les acteurs → paliers et vides → proposer un prix (terminaison psychologique) → lire le **CPC dans la fourchette de la bande** → marge **sur base HT** seulement si un coût rendu est déjà dans le brief (sinon l’écrire « coût rendu manquant — skill sourcing »). Tu **proposes** le prix, Hakim fixe.
+
+Fourchettes CPC (chemin SMP, à combiner avec le prix proposé / observé) :
+
+- **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+- **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+- **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
 
 ## Interdits
 
@@ -126,13 +164,13 @@ Marche : SERP + Shopping → classer les acteurs → paliers et vides → propos
 # MOTS-CLÉS — <sujet> — <AAAA-MM-JJ HH:MM> — Mission A|B
 
 ## Ce que j’ai fait
-(actions, appels DataForSEO / google.fr / Shopping)
+(actions, appels DataForSEO / google.fr / Shopping ; volumes OCB/Semrush notés avec source, pas comme gate unique)
 
 ## Résultats
-tableau : formulation · volume · **source DataForSEO + endpoint** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
-sonde prix : fourchette, paliers, vides, comparable, prix proposé
+tableau : formulation · volume · **source (DataForSEO + endpoint, ou OCB/Semrush)** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
+sonde prix : fourchette, paliers, vides, comparable, prix proposé · bande (low / mid / high ticket) · CPC vs fourchette
 Google Trends : forme (plat / socle+Q4 / saison unique) · période · formulation
-SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · acteurs de page 1
+SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait) · **ligne Ads** (domaine · First Seen / Time Running · Search|Shopping · source) ou **gap** — 6 mois = repère, 3–5 mois intéressant, pas veto
 
 ## Niveau de confiance par ligne
 A = réponse API ou page directement vérifiée · B = liste/JSON/suggestions · C = titre

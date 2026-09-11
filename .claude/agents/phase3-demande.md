@@ -36,13 +36,23 @@ Cette règle vient d'une erreur réelle (cas « suspension rotin XXL » : conclu
 
 ### 3. Contrôle SERP et Shopping réels
 
-Pour chaque candidat, ouvre la SERP Google France de la ou des requêtes décisives : intention réelle, annonces visibles, prix observés (datés), types de concurrents — en séparant **spécialistes/DTC** et **marketplaces/grandes enseignes** (ces dernières ne servent que de repères). Relève la saisonnalité (lecture qualitative des tendances ; n'invente jamais de variation chiffrée que l'outil n'affiche pas).
+Pour chaque candidat, ouvre la SERP Google France de la ou des requêtes décisives : intention réelle, annonces visibles, prix observés (datés), types de concurrents — en séparant **dropshippers**, **spécialistes/DTC** et **marketplaces/grandes enseignes**. Dropshippers = preuve de marché. Une page 1 **100 % généralistes ne ferme pas** et **ne retranche pas** le volume : noter faisabilité sourcing + marge. Relève la saisonnalité (lecture qualitative des tendances ; n'invente jamais de variation chiffrée que l'outil n'affiche pas).
 
 **Ne confonds jamais « carrousel Shopping sponsorisé visible » avec « annonces Search texte confirmées ».** Si tu ne peux pas isoler les annonces texte, dis-le explicitement.
 
+**Passe Ads SMP (importante, pas veto) :** TrendTrack **prioritaire**, sinon **Google Ads Transparency**. Relève une ligne : domaine, First Seen / Time Running, Search vs Shopping, source. **6 mois = repère** de preuve solide, pas un couperet. 3–5 mois = intéressant (« encore court »), **ne pas** refuser le PASS. Passe non faite = **gap**, pas `STOP_PREQUALIFICATION`. Le minage 60–90 n’est pas cette passe. Volume et CPC restent les gates durs.
+
+**Gate CPC SMP** — fourchettes combinées avec le prix observé :
+
+- **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+- **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+- **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+CPC hors fourchette → pas au vert (pas de `PASS_PREQUALIFICATION` sauf `CAS LIMITE` si la lecture est incomplète). Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
+
 ### 4. Préqualification par candidat
 
-- **PASS_PREQUALIFICATION** : cluster adressable nettement au-dessus du seuil + intention commerciale + une boutique spécialisée peut exister. Autorise uniquement la due diligence.
+- **PASS_PREQUALIFICATION** : cluster adressable nettement au-dessus du seuil + intention commerciale + une boutique spécialisée peut exister **et**, chemin SMP, les gates durs : volume (30 000 net + 800/collection, DataForSEO + OCB Semrush noté) + CPC dans la fourchette de la bande. La **ligne Ads** est **recommandée** (repère 6 mois) : tenure 3–5 mois ou gap **n’empêchent pas** le PASS. Autorise uniquement la due diligence.
 - **REVIEW_PREQUALIFICATION** : demande suffisante mais obstacle majeur identifié (concurrence, sécurité, conformité, SAV).
 - **STOP_PREQUALIFICATION** : cluster adressable sous le seuil après application de la règle hiérarchique, ou marché manifestement indéfendable.
 - **Cas limite** : volume pertinent à ±20 % du seuil, données contradictoires ou outil partiellement inaccessible → tu ne tranches PAS. Marque `CAS LIMITE — décision Hakim requise` avec les éléments des deux côtés.
@@ -54,7 +64,7 @@ Un rapport daté : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/repo
 Sections obligatoires :
 
 1. **Entrée et méthode** — rapport de phase 2 utilisé, racines contrôlées par candidat, limites de calcul.
-2. **Tableau de décision** — par candidat : volume brut ; volume pertinent estimé ; CPC avec devise ; tendance qualitative ; concurrence publicitaire ; prix observés ; verdict ; justification.
+2. **Tableau de décision** — par candidat : volume brut ; volume pertinent estimé ; CPC avec devise **et bande (low / mid / high ticket)** ; tendance qualitative ; **ligne Ads** (domaine · durée · Search|Shopping · source) ou gap — 6 mois = repère, pas oui/non veto ; prix observés ; verdict ; justification.
 3. **Détail par candidat** — mots-clés retenus (avec volumes), mots-clés exclus (avec motifs), **niveaux de généralité testés et niveau retenu**, lecture de la SERP.
 4. **Concurrents observés** — spécialistes vs grandes enseignes, par candidat.
 5. **Risques et à vérifier**.

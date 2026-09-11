@@ -49,6 +49,20 @@ mémoire, parce que chacun corrige une erreur qu'on a réellement commise :
 
 Ils ne dépendent pas de l'interface : ce sont des règles de méthode appliquées aux données DataForSEO.
 
+### Gates SMP — volume et CPC durs ; Ads = repère (11/09/2026)
+
+Les gates **durs** (tous au vert) :
+
+1. **Volume de recherche suffisant** — ≥ 30 000/mois net de marque **et** ≥ 800/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). DataForSEO = étude rapide ; volume OCB Semrush **compte**.
+2. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
+   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+   - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+**Passe Ads (importante, pas un couperet).** TrendTrack prioritaire, sinon Google Ads Transparency. Ligne : domaine, First Seen / Time Running, Search vs Shopping, source. **6 mois = point de repère** de preuve solide. 3–5 mois reste **intéressant** — on décrit, on ne jette pas. Passe non faite = gap, pas STOP.
+
+Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
+
 ### Étape 1. Partir du catalogue, jamais d'une page blanche
 
 **Ce qu'on fait.** On dérive la liste des mots-clés à mesurer **des produits eux-mêmes**, fiche par
@@ -171,8 +185,13 @@ ce cas.
 ### Étape 4. Net de marque : toujours deux chiffres
 
 **Ce qu'on fait.** On retire du brut toute formulation contenant un nom de marque ou de modèle
-déposé, détection par liste (90 marques et modèles sur Noirmont). On publie **deux chiffres partout :
-brut et net de marque**.
+déposé (« marque + produit »), détection par liste (90 marques et modèles sur Noirmont). On publie
+**deux chiffres partout : brut et net de marque**.
+
+**Chemin SMP (11/09/2026, tranché).** Le gate **≥ 30 000**/mois se lit sur le **net de marque
+seulement**. Brut ≠ règle. On **compte** les fautes d'orthographe, les graphies sans accent et les
+variantes (elles restent dans le consolidé). Si Google sert le même bucket, on retient le MAX, on
+ne double pas (garde-fou n° 3). **Après SERP ≠ règle** : l'étape 5 ne recalcule pas ce gate.
 
 **Pourquoi cette règle existe.** Une requête qui contient une marque tierce est **inutilisable en flux
 Merchant Center et en titre produit**. Le brut décrit un marché ; **le net décrit ce qu'on peut
@@ -190,20 +209,37 @@ ci-dessous.
 **C'est l'étape que personne ne fait, et c'est elle qui a retourné trois familles sur vingt.**
 
 **Ce qu'on fait.** On ouvre la page 1 réelle de Google France (`google.fr`, `hl=fr`, `gl=fr`) sur
-**chaque tête de famille**, en lecture texte, une requête après l'autre. Pour chacune on relève cinq
-choses :
+**chaque tête de famille**, en lecture texte, une requête après l'autre.
+
+Deux lectures distinctes, à ne pas mélanger. **Aucune des deux ne redéfinit le gate 30 000**
+(celui-ci se lit à l'étape 4, net de marque).
+
+**(a) Contrôles qualité de la requête** — inchangés. Rabattement, retournement pièce/produit fini,
+contamination, marque cachée, intention de réparation, KD vs qui tient vraiment la page : le
+catalogue des pièges ci-dessous. Ils disent si la requête est bien notre produit (Noirmont : 24 500
+recherches qui n'étaient pas l'offre). Sur le chemin SMP ils **n'amputent pas** le chiffre de gate.
+
+**(b) Lecture concurrentielle** — chemin SMP (11/09/2026). On cherche d'abord des **dropshippers**
+en page 1 : c'est la **preuve de marché**. Une page 1 100 % généralistes (Amazon, Vevor, GSB,
+marketplaces) **ne ferme pas la porte** et **ne retranche pas le volume**. On passe alors au test
+de faisabilité : sourcing facile + marges applicables (skill `sourcing-aliexpress`, sondage léger
+SMP). Le 800/mois par collection est un gate **de page**, pas un retrait SERP : sous 800, la
+collection ne se crée pas, même si le total niche passe.
+
+Pour chacune on relève cinq choses :
 
 | Colonne | Ce qu'on y met |
 |---|---|
 | **Ce que Google sert** | La nature des produits et des sites en page 1, Shopping et organique |
 | **Intention** | La requête désigne-t-elle bien notre produit : oui, partiellement, ou pas du tout |
 | **Commercial ou informationnel** | La page 1 vend-elle, ou explique-t-elle ? Quatre positions éditoriales sur dix veut dire qu'une collection seule ne prendra pas la page |
-| **Qui tient la page 1** | On **compte** les positions organiques des marketplaces. Boutiques indépendantes majoritaires = porte ouverte |
-| **Volume** | Retenu, ou retiré avec le motif et le pourcentage |
+| **Qui tient la page 1** | On **compte** dropshippers, spécialistes et généralistes. Dropshippers = preuve. Généralistes seuls = faisabilité ensuite, pas STOP |
+| **Ads (passe)** | **Recommandé, pas veto.** TrendTrack prioritaire, sinon Transparency. Ligne domaine / durée / Search|Shopping / source. **6 mois = repère.** 3–5 mois = intéressant. Passe non faite = gap, pas STOP. Le minage 60–90 j n'est pas cette passe. |
+| **Volume** | Le gate reste le **net de marque** (étape 4). On **ne retranche pas** le volume SERP généraliste. Les constats de qualité (a) s'écrivent, ils ne recalculent pas les 30 000 |
 
-**Ce qu'on produit.** Un tableau par famille et un classement corrigé, avec le total des retraits.
-Sur Noirmont : **24 500 recherches retirées**, deux familles déplacées de 6 et de 11 rangs, et onze
-fiches produit reclassées en surdotation du jour au lendemain.
+**Ce qu'on produit.** Un tableau par famille : preuve dropshipping ou faisabilité, plus les
+constats de qualité. Sur Noirmont, 24 500 recherches n'étaient pas l'offre — diagnostic utile,
+**pas** la colonne du gate SMP.
 
 **Le piège.** Trois précautions à écrire dans le rapport :
 
@@ -499,5 +535,10 @@ Vérifié sur Noirmont. Sur `montre squelette`, la page 1 montre un socle à 25-
 2. Classer les acteurs : marque officielle, marque à récit, indépendant comparable, marketplace. Ne retenir que les comparables.
 3. Repérer les paliers et les vides.
 4. Se placer juste sous le comparable, terminaison psychologique.
-5. Vérifier le **ratio prix ÷ CPC ≥ 100** (cible 150-200).
+5. Relire le **CPC dans la fourchette de la bande de prix** (chemin SMP, 11/09/2026). Hors fourchette = pas au vert.
+   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+   - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+   Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
 6. Calculer la marge **sur la base HT** : prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les frais de paiement (≈ 1,4 % + 0,25 €). Une marge calculée sur le prix TTC se raconte 20 % qui n'existent pas.

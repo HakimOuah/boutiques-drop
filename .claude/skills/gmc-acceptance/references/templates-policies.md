@@ -1,10 +1,10 @@
 # Templates de policies GMC — pack FR éprouvé (24/08/2026)
 
-Six templates alignés sur le pack PDF fourni par Hakim le 24/08/2026 (CGV, confidentialité, remboursement, expédition, moyens de paiement, FAQ). Ce pack a déjà passé des reviews GMC à plusieurs reprises. Les versions prêtes à coller sont dans `templates-fr/`.
+Six templates alignés sur le pack PDF fourni par Hakim le 24/08/2026 (CGV, confidentialité, remboursement, expédition, moyens de paiement, FAQ). Ce pack a déjà passé des reviews GMC à plusieurs reprises. Les versions de **structure** sont dans `templates-fr/` — on en **paraphrase** le sens, on ne les colle pas telles quelles sur un nouveau domaine.
 
 **Règles d'usage impératives :**
 
-1. **Ne jamais copier verbatim entre boutiques** — Google détecte les pages policies dupliquées entre domaines. À chaque nouvelle boutique, partir du template FR mais reformuler des tournures, varier l'ordre de certaines sections secondaires et adapter le ton à la marque.
+1. **Paraphraser à partir du gabarit, ne pas coller le texte d’un autre domaine.** Même sens (obligations, délais réels, OH Ventures, CM2C), **texte différent**. Google détecte les pages policies identiques d’un site à l’autre. Structure **NoBrand** conservée : CGV et CGU **réunies** dans Conditions d’utilisation (ne pas remplir « Conditions de vente » à part), plus confidentialité, retours, livraison, moyens de paiement, FAQ, mentions légales. Les blocs propres à une niche (carport, colis lourds, sur-mesure) se **réécrivent** pour le produit de *cette* boutique — on ne les transpose pas.
 2. Remplacer TOUS les `[placeholders]` par les vraies infos de **cette** boutique.
 3. Le texte final doit être **identique** entre Shopify (Settings → Policies), le footer (`/policies/*`) et les champs GMC. C'est le déclencheur n°1 de rejet.
 4. Les chiffres (cut-off + fuseau, traitement, transit, fenêtre de retour, délai de remboursement, délai SAV) doivent être identiques partout : policies, FAQ, fiches produit, GMC.

@@ -29,7 +29,7 @@ Pour chaque fiche, relève et date :
 
 - la **variante exacte** visée et le **prix de cette variante** (jamais celui de la variante d'appel) ;
 - livraison vérifiée vers une adresse française ; pays d'expédition (priorité France/UE) ;
-- délai annoncé (cible : idéalement < 10 jours, de préférence < 15) ;
+- délai annoncé (priorité Europe / France ; **Chine à délai long acceptée** — plus de cible dure < 10 j) ;
 - frais de livraison et **coût rendu** ;
 - stock annoncé ; commandes/ventes ; note produit ; nombre d'avis ;
 - notation vendeur (% d'avis positifs) et ancienneté si disponible ;

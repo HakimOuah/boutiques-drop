@@ -1,6 +1,6 @@
 ---
 name: sourcing-aliexpress
-description: Sourcing fournisseur AliExpress après un PASS_PREQUALIFICATION écrit — fiche, variante, coût rendu, confiance A/B/C. Utiliser quand Hakim demande un fournisseur, une fiche AliExpress, un coût rendu, ou le métier SOURCING. Jamais avant la préqualification. Aucun achat, aucun contact vendeur, aucun GO fournisseur.
+description: Sourcing fournisseur AliExpress — due diligence après PASS_PREQUALIFICATION ; sondage léger SMP avant PASS si SERP sans dropshipper. Fiche, variante, coût rendu, confiance A/B/C. Europe d’abord, Chine à délai long OK. Aucun achat, aucun contact vendeur, aucun GO fournisseur.
 ---
 
 # Sourcing AliExpress
@@ -9,15 +9,25 @@ Tu sources des fournisseurs sur AliExpress pour Hakim (OH Ventures, livraison Fr
 
 Ce n’est **pas** `ideation-produit`, **pas** `recherche-mots-cles`. Un bon fournisseur **ne renverse jamais** un verdict marché.
 
-## Verrou d’entrée
+## Deux intensités, un seul fournisseur
 
-Tu ne travailles **que** sur des candidats en **`PASS_PREQUALIFICATION` écrit** (brief, registre, ou phrase de Hakim dans l’app). `STOP_PREQUALIFICATION`, `REVIEW_PREQUALIFICATION`, idée brute, ou « on verra le volume plus tard » → refuse et signale.
+**AliExpress exclusivement.** Ni BigBuy, ni Amazon, ni VEVOR, ni Alibaba. Ces sites servent tout au plus à comparer un prix public (et, en idéation, d’inspiration — pas ici).
+
+**SMP Logistic** n’est **pas** le sourcing de lancement. Il s’ouvre à partir de **30–40 commandes/mois**. Jusque-là : AliExpress.
+
+Chaîne étanche : préqualification → **fiche AliExpress (toi)** + concurrence → économie exacte → décision humaine finale → commande test → lancement. Tu ne prononces aucune décision finale.
+
+### Due diligence complète — verrou `PASS_PREQUALIFICATION`
+
+La due diligence (3+ fiches, A/B/C, coût rendu, PDP ouvertes) ne court **que** sur des candidats en **`PASS_PREQUALIFICATION` écrit** (brief, registre, ou phrase de Hakim dans l’app). `STOP_PREQUALIFICATION`, `REVIEW_PREQUALIFICATION`, idée brute, ou « on verra le volume plus tard » → refuse la due diligence et signale.
 
 Ce pass autorise uniquement la due diligence. Ton rapport alimente la synthèse finale avec la concurrence et l'économie exacte ; il ne constitue ni un `GO_FINAL` ni une autorisation de lancement.
 
-**AliExpress exclusivement.** Ni BigBuy, ni Amazon, ni VEVOR, ni Alibaba. Ces sites servent tout au plus à comparer un prix public.
+### Sondage léger SMP — avant PASS, chemin UNIVERS seulement
 
-Chaîne étanche : préqualification → **fiche AliExpress (toi)** + concurrence → économie exacte → décision humaine finale → commande test → lancement. Tu ne prononces aucune décision finale.
+Arbitrage SERP 11/09/2026 : une page 1 sans dropshipper **ne ferme pas**. Avant d’investir une phase 3 complète, le chemin SMP autorise un **sondage léger de sourçabilité** : 1–2 requêtes AliExpress, existence d’offres, ordre de grandeur de délai et de prix, **sans** PDP complète, **sans** statut `FOURNISSEUR RETENU`, **sans** coût rendu définitif.
+
+Tu déclares explicitement `SONDAGE_SMP` en tête de dépôt. Si tu n’as ni PASS ni consigne SMP / « faisabilité SERP généraliste », tu refuses.
 
 ## La règle de lecture qui coûte le plus cher
 
@@ -29,7 +39,7 @@ Sur une SERP AliExpress, « 531 vendus » se lit **5,0 étoiles / 31 ventes**. N
 - **B** = liste de résultats ou JSON
 - **C** = titre seul
 
-Commence **toujours** par ouvrir la PDP. Anti-bot / page vide → plafonner à B, le dire. Ne jamais déguiser un B en A.
+Commence **toujours** par ouvrir la PDP (sauf sondage léger SMP, plafonné à B). Anti-bot / page vide → plafonner à B, le dire. Ne jamais déguiser un B en A.
 
 ## Comment chercher : deux mots rares, jamais un mot fréquent
 
@@ -51,9 +61,9 @@ URL retenues : uniquement `https://fr.aliexpress.com/item/....html` — jamais u
 
 Titre · URL · magasin · **note réelle** · **ventes réelles** · **prix de la variante visée** (promo, pas le prix de liste / d’appel, souvent le double) · stock · variantes · délai et transporteur vers la France · frais de port FR · **coût rendu** · photos + résolution · notation vendeur (% positifs) et ancienneté si dispo · protection acheteur / retours.
 
-Priorité expédition France/UE. Délai cible : idéalement < 10 j, de préférence < 15 j.
+**Délais (SMP, 11/09/2026).** Priorité **Europe / France**. **Chine à délai long : acceptée.** Plus de cible dure < 10 j / < 15 j. On n’ampute pas le catalogue pour tenir 7 jours. Les policies afficheront les **vrais** délais, pas un barème 7–10 j inventé.
 
-Plusieurs fiches par candidat si possible (idéalement 3+). Alternatives et rejets **motivés**.
+Plusieurs fiches par candidat si possible (idéalement 3+ ; sondage léger : 1–2 suffisent). Alternatives et rejets **motivés**. Plancher « 2 fournisseurs / famille cœur » : **garder** (cohérent avec « sourcing facile »).
 
 Vérifier qu’un article n’est pas déjà le fournisseur d’une fiche active d’une boutique de la maison.
 
@@ -74,6 +84,7 @@ Prix, stocks, délais : dynamiques. Rappeler qu’ils se reconfirment au panier 
 2. `OFFRE TROUVÉE` — fiche existante, éléments essentiels manquants
 3. `FOURNISSEUR À TESTER` — fiche complète, réserves listées
 4. `FOURNISSEUR RETENU POUR COMMANDE TEST` — meilleure fiche, réserves listées
+5. `SONDAGE_SMP` — existence d’offres / ordre de grandeur seulement, avant PASS
 
 **`GO fournisseur` n’existe pas** : il exige une commande test reçue (niveau 3).
 
@@ -85,13 +96,15 @@ Aucun achat, commande, panier, message vendeur, compte créé. Aucun verdict de 
 
 ```
 # SOURCING — <sujet> — <AAAA-MM-JJ HH:MM>
+Intensité : DUE DILIGENCE (PASS) | SONDAGE_SMP
 
 ## Ce que j’ai fait
 (requêtes, tris, URL ouvertes)
 
 ## Résultats
-par candidat : statut · URL /item/ · variante · prix daté · coût rendu · note/ventes réelles · magasin · délai FR · confiance A/B/C · réserves
+par candidat : statut · URL /item/ · variante · prix daté · coût rendu · note/ventes réelles · magasin · délai FR · entrepôt (UE vs Chine) · confiance A/B/C · réserves
 alternatives et rejets motivés
+Chine longue : notée, pas un motif de rejet
 
 ## Niveau de confiance par ligne
 A = PDP lue · B = liste/JSON · C = titre
