@@ -61,7 +61,16 @@ Conséquence : on somme des **idées normalisées**, une par groupe, en retenant
 
 Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne les convertis pas et n'applique aucun seuil historique provenant d'une autre base.
 
-**Chemin SMP (UNIVERS, 11/09/2026).** Deux conditions **ensemble**, toujours lues dans DataForSEO : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP. Hakim applique les seuils ; toi tu fournis les chiffres.
+**Chemin SMP (UNIVERS, 11/09/2026).** Tous les critères doivent être au vert pour être sûr à 100 % que la niche va fonctionner. Tu fournis les chiffres ; Hakim applique.
+
+1. **Volume** — deux conditions **ensemble**, toujours lues dans DataForSEO : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
+2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Une pub récente (30–60 j) ne suffit pas. Relève la durée d'activité Ads des concurrents (TrendTrack, page Ads, historique). Sans cette preuve, la niche n'est pas au vert.
+3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
+   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+   - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+   Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
 
 ### OneClickBrand — après coup seulement
 
@@ -84,7 +93,7 @@ google.fr `hl=fr&gl=fr`, session non connectée. Deux lectures distinctes (déta
 
 **(a) Qualité de la requête** — les six contrôles ci-dessous. Motif de **retrait** de volume uniquement.
 
-**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP.
+**(b) Lecture concurrentielle (SMP).** On cherche d’abord des **dropshippers** = preuve de marché. Une page 1 **100 % généralistes** (Amazon, Vevor, GSB, marketplaces) **ne ferme pas** et **ne retire pas** le volume. On note « faisabilité sourcing + marge » et on continue. Le 800/collection n’est pas un retrait SERP. **Gate Ads :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable).
 
 Rendre : ce que Google sert · intention (oui / partiellement / non) · commercial vs informationnel (compter les positions éditoriales) · qui tient la page 1 (**dropshippers / spécialistes / généralistes**, / 10 et / 20) · bande de prix · volume retenu ou retiré **pour (a) seulement** + motif.
 
@@ -116,9 +125,13 @@ Cible maison : viser **≥ 50 €** TTC au mieux ; **30–40 € OK si la marge 
 
 Positionnement : **juste sous le concurrent comparable**, jamais sous le plus cher. Écarter marques officielles, marques à récit, bas de gamme marketplace. Un vide de marché n’est pas une place à prendre (squelette : 429 € dans le trou 300–440 ; comparable 285–295 → 279 €).
 
-Marche : SERP + Shopping → classer les acteurs → paliers et vides → proposer un prix (terminaison psychologique) → lire le **CPC dans la bande** (low jusqu’à 50 € / middle 50–500 € / high ticket +500 €) → marge **sur base HT** seulement si un coût rendu est déjà dans le brief (sinon l’écrire « coût rendu manquant — skill sourcing »). Tu **proposes** le prix, Hakim fixe. **Ne pas** réintroduire le ratio prix ÷ CPC ≥ 100.
+Marche : SERP + Shopping → classer les acteurs → paliers et vides → proposer un prix (terminaison psychologique) → lire le **CPC dans la fourchette de la bande** → marge **sur base HT** seulement si un coût rendu est déjà dans le brief (sinon l’écrire « coût rendu manquant — skill sourcing »). Tu **proposes** le prix, Hakim fixe.
 
-<!-- SMP: CPC low/middle/high — chiffres à recopier des screenshots Hakim -->
+Fourchettes CPC (chemin SMP, à combiner avec le prix proposé / observé) :
+
+- **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+- **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+- **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
 
 ## Interdits
 
@@ -144,9 +157,9 @@ Marche : SERP + Shopping → classer les acteurs → paliers et vides → propos
 
 ## Résultats
 tableau : formulation · volume · **source DataForSEO + endpoint** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
-sonde prix : fourchette, paliers, vides, comparable, prix proposé
+sonde prix : fourchette, paliers, vides, comparable, prix proposé · bande (low / mid / high ticket) · CPC vs fourchette
 Google Trends : forme (plat / socle+Q4 / saison unique) · période · formulation
-SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait)
+SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait) · Ads concurrents **≥ 6 mois** (oui/non, durée relevée)
 
 ## Niveau de confiance par ligne
 A = réponse API ou page directement vérifiée · B = liste/JSON/suggestions · C = titre

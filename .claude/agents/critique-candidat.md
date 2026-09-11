@@ -34,8 +34,11 @@ Si un fichier manque, réponds **non retenu** pour dossier incomplet.
 - Le comptage sépare-t-il bien concurrents institutionnels, dropshippers et généralistes ?
 - Le marché est-il **uniquement** généraliste ? Si oui, ce n’est **pas** un échec : noter « faisabilité sourcing + marge », pas STOP.
 - Existe-t-il une différenciation défendable, ou l’offre est-elle immédiatement comparable sur le prix ?
-- CPC lu dans la bande de prix (low jusqu’à 50 € / middle 50–500 € / high ticket +500 €), **sans** ratio prix ÷ CPC ≥ 100.
-  <!-- SMP: CPC low/middle/high — chiffres à recopier des screenshots Hakim -->
+- **Concurrents en Google Ads actifs depuis + 6 mois minimum** (preuve que la niche est rentable). Sans concurrent Ads ≥ 6 mois = case 2 échoue.
+- CPC dans la fourchette de la bande de prix. Hors fourchette = case 2 échoue.
+  - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+  - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+  - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
 
 ### Case 3 — Fournisseur
 

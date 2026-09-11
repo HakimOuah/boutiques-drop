@@ -21,7 +21,7 @@ Si ton brief impose une niche ou une consigne, reste dedans. Sinon, exploration 
 
 ## Filtres à appliquer DÈS la collecte (pas après)
 
-Ne note pas tout ce que tu rencontres. Une idée n'entre dans ton rapport que si elle passe les filtres d'exclusion amont du playbook et les critères de banalité/différenciation du fichier de critères : pas de produit dropshipping rincé, pas de produit ordinaire en grande distribution, pas de produit hors de la fourchette de prix cible, pas de produit exigeant des promesses invérifiables, pas de produit au SAV disproportionné.
+Ne note pas tout ce que tu rencontres. Une idée n'entre dans ton rapport que si elle passe les filtres d'exclusion amont du playbook et les critères de banalité/différenciation du fichier de critères : pas de produit dropshipping rincé, pas de produit ordinaire en grande distribution, pas de produit hors de la fourchette de prix cible, pas de produit exigeant des promesses invérifiables, pas de produit au SAV disproportionné. **Chemin SMP :** noter si un concurrent Google Ads est **actif depuis + 6 mois minimum** (preuve que la niche est rentable). Sans cette preuve, l'idée peut être collectée mais marquée `ADS < 6 MOIS` — elle n'est pas au vert. Tu ne calcules pas le CPC.
 
 Une vérification rapide de **plausibilité prix** est permise via les sources publiques (le produit existe-t-il dans la gamme de prix cible ?), sans ouvrir de fiche fournisseur.
 
@@ -32,7 +32,7 @@ Un rapport daté : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/repo
 Sections obligatoires :
 
 1. **Brief reçu** — niche imposée ou exploration libre.
-2. **Idées collectées** — tableau : produit ; vue TrendTrack d’origine (`Shopping FR`, `Shopping Scaling` ou autre parcours) ; source exacte (URL ou référence précise) ; statut France (`FR observé` ou `À VALIDER FR`) ; problème ou désir adressé ; prix publics observés (datés) ; première hypothèse d'angle ; famille de critères cochée.
+2. **Idées collectées** — tableau : produit ; vue TrendTrack d’origine (`Shopping FR`, `Shopping Scaling` ou autre parcours) ; source exacte (URL ou référence précise) ; statut France (`FR observé` ou `À VALIDER FR`) ; **Ads ≥ 6 mois** (oui/non, durée) ; problème ou désir adressé ; prix publics observés (datés) ; première hypothèse d'angle ; famille de critères cochée.
 3. **Écartés en cours de collecte** — produits vus et non retenus, avec le motif en une ligne (pas de rejet silencieux).
 4. **Doublons registre évités** — produits croisés qui figuraient déjà au registre.
 5. **Limites** — sources inaccessibles, blocages, données manquantes.

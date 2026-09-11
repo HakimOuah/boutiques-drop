@@ -49,6 +49,19 @@ mémoire, parce que chacun corrige une erreur qu'on a réellement commise :
 
 Ils ne dépendent pas de l'interface : ce sont des règles de méthode appliquées aux données DataForSEO.
 
+### Gates SMP — tous au vert (11/09/2026)
+
+Tous les critères doivent être au vert pour être sûr à 100 % que la niche va fonctionner :
+
+1. **Volume de recherche suffisant** — ≥ 30 000/mois net de marque **et** ≥ 800/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas).
+2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable.
+3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
+   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+   - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
+
 ### Étape 1. Partir du catalogue, jamais d'une page blanche
 
 **Ce qu'on fait.** On dérive la liste des mots-clés à mesurer **des produits eux-mêmes**, fiche par
@@ -220,6 +233,7 @@ Pour chacune on relève cinq choses :
 | **Intention** | La requête désigne-t-elle bien notre produit : oui, partiellement, ou pas du tout |
 | **Commercial ou informationnel** | La page 1 vend-elle, ou explique-t-elle ? Quatre positions éditoriales sur dix veut dire qu'une collection seule ne prendra pas la page |
 | **Qui tient la page 1** | On **compte** dropshippers, spécialistes et généralistes. Dropshippers = preuve. Généralistes seuls = faisabilité ensuite, pas STOP |
+| **Ads ≥ 6 mois** | **Gate SMP.** Au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum**. Preuve que la niche est rentable. Une pub récente (30–60 j) ne suffit pas. |
 | **Volume** | Le gate reste le **net de marque** (étape 4). On **ne retranche pas** le volume SERP généraliste. Les constats de qualité (a) s'écrivent, ils ne recalculent pas les 30 000 |
 
 **Ce qu'on produit.** Un tableau par famille : preuve dropshipping ou faisabilité, plus les
@@ -520,9 +534,10 @@ Vérifié sur Noirmont. Sur `montre squelette`, la page 1 montre un socle à 25-
 2. Classer les acteurs : marque officielle, marque à récit, indépendant comparable, marketplace. Ne retenir que les comparables.
 3. Repérer les paliers et les vides.
 4. Se placer juste sous le comparable, terminaison psychologique.
-5. Relire le **CPC dans la bande de prix** (chemin SMP, 11/09/2026) — **pas** le ratio prix ÷ CPC ≥ 100, retiré.
-   - **low** jusqu'à 50 €
-   - **middle** 50–500 €
-   - **high ticket** +500 €
-   <!-- SMP: CPC low/middle/high — chiffres à recopier des screenshots Hakim -->
+5. Relire le **CPC dans la fourchette de la bande de prix** (chemin SMP, 11/09/2026). Hors fourchette = pas au vert.
+   - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+   - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+   - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+   Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
 6. Calculer la marge **sur la base HT** : prix TTC ÷ 1,2, moins le coût rendu fret compris, moins les frais de paiement (≈ 1,4 % + 0,25 €). Une marge calculée sur le prix TTC se raconte 20 % qui n'existent pas.

@@ -47,6 +47,16 @@ Traitement du résultat, seuil DataForSEO relu dans `PRODUCT-RESEARCH-CRITERIA.m
 - **Dans la bande ±20 %** → `CAS LIMITE — décision Hakim requise`. Noté au registre, remonté en fin de session. Tu ne tranches pas.
 - **Au-dessus** → étape 2.
 
+**Gates SMP (tous au vert, 11/09/2026).** Volume ci-dessus **et** :
+
+- **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. À relever dès la SERP / TrendTrack (étape 4 le confirme). Sans concurrent Ads ≥ 6 mois : l'idée n'est pas au vert ; `STOP` ou `CAS LIMITE` selon la preuve, jamais « presque ».
+- **CPC dans les bonnes fourchettes**, combinées avec le prix de la sonde :
+  - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+  - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+  - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
+
+  CPC lu en DataForSEO (étape 1, avec devise) ; bande lue à la sonde (étape 2). Hors fourchette → l'idée n'est pas au vert. Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
+
 ### 2. Sonde prix — `sonde-prix`
 
 Message `@oh-concurrence` sur le mot-clé de tête. `LOW-TICKET` net → vivier ; `DANS LA TRANCHE` ou `INDÉTERMINÉ` → la fourchette datée accompagne l'idée comme seule donnée de prix autorisée.

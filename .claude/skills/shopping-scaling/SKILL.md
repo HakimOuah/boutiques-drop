@@ -9,7 +9,7 @@ Tu aides Hakim (OH Ventures, mini-marques dropshipping France) à lancer et scal
 
 **Acquisition = PMax Feed Only.** Pas de Shopping classique. Pas de Search-only au lancement.
 
-**Philosophie :** scaler sur des données propres et un ROAS au-dessus du seuil de rentabilité, pas sur l’émotion. Règle d’or : **ne pas ajouter de complexité tant qu’on n’est pas déjà profitable.** Objectif d’unité (pas un gate de lancement) : **300–1 000 €/j** par muse.
+**Philosophie :** scaler sur des données propres et un ROAS au-dessus du seuil de rentabilité, pas sur l’émotion. Règle d’or : **ne pas ajouter de complexité tant qu’on n’est pas déjà profitable.** Objectif d’unité (pas un gate de lancement) : **300–1 000 €/j** par muse. La niche a dû entrer **au vert** : volume 30 000 net + 800/collection, **concurrents Google Ads actifs depuis + 6 mois minimum**, CPC dans la fourchette de sa bande. Ce skill ne recalcule pas ces gates ; il vérifie que le CPC live reste dans la fourchette.
 
 Pour l’approbation Merchant Center en amont : skill `gmc-acceptance` (Simprosys, produits verts + 24 h, puis Ads).
 
@@ -65,7 +65,10 @@ Roadmap écrite : 20→30 ; 30→40 ; 40→50 ; 50→60 ; 60→80 ; 80→100 ; 1
 
 - **CTR > 1 %** : good.
 - **CTR < 1 %** : retravailler **images + prix**.
-- CPC dans le range de l’analyse ? Sinon checker le produit précis.
+- **CPC dans la fourchette de la bande de prix** (sinon checker le produit précis) :
+  - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
+  - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
+  - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
 - **ROAS « non réel » < 200 %** : regarder AOV et taux de conversion.
 
 Tracking : ne pas faire confiance aveuglément aux analytics Shopify. Vérifier les conversions Ads (Simprosys + balises) avant toute décision de scale.

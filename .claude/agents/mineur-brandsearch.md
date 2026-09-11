@@ -76,6 +76,7 @@ Pour chaque domaine retenu :
 3. Anti-doublon registre. STOP/rejeté/clos → pas d’idée, sauf angle vraiment différent documenté.
 4. Formulations françaises pour DataForSEO, prêtes, taguées du mode.
 5. Latérales : voisines d’univers ou de problème, marquées `latérale`.
+6. **Gate Ads SMP :** pour chaque idée, relever si un concurrent (boutique preuve ou autre) est en Google Ads **actif depuis + 6 mois minimum**. `daysRunning` / `longestRunning` ≥ 180 j = au vert sur ce gate. Le minage 30–60 j reste pour découvrir ; une pub récente ne prouve pas que la niche est rentable. Sans concurrent ≥ 6 mois : marquer `ADS < 6 MOIS`. Tu ne calcules pas le CPC.
 
 Prix publics datés si une page est lue. Visites TrendTrack / Brand Search historiques : **jamais un verdict**.
 
