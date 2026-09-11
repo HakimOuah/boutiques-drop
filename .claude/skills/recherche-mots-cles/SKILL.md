@@ -1,6 +1,6 @@
 ---
 name: recherche-mots-cles
-description: Mesure de demande France via l'API DataForSEO, sonde prix Google Shopping et vérification SERP page 1. Utiliser quand Hakim demande des volumes, un cluster, une sonde prix ou le métier MOTS-CLÉS. Ne consolide pas l’arborescence, ne source pas, ne prononce pas le GO.
+description: Mesure de demande France via l'API DataForSEO (gate étude rapide), volume OCB/Semrush valide en approfondissement, sonde prix Google Shopping et vérification SERP page 1. Utiliser quand Hakim demande des volumes, un cluster, une sonde prix ou le métier MOTS-CLÉS. Ne consolide pas l’arborescence, ne source pas, ne prononce pas le GO.
 ---
 
 # Recherche de mots-clés — mesurer et vérifier
@@ -31,9 +31,11 @@ Cinq étapes, dans cet ordre. Détail et catalogue des pièges : `METHODE-ANALYS
 
 Références Noirmont : `boutique-pipeline/boutique-seiko-mod/journal/2026-08-13-recherche-mots-cles.md`, `2026-08-14-volumes-consolides.md`, `2026-08-14-verification-serp.md`.
 
-## Outil — DataForSEO uniquement, France obligatoire
+## Outil — DataForSEO (gate étude rapide) + OCB Semrush (volume valide)
 
-**Décision Hakim du 01/09/2026.** SEMrush n'est pas utilisé. DataForSEO API est l'unique source de volume et de gate. Une panne d'API, un quota épuisé ou des identifiants absents provoquent un arrêt déclaré : aucun repli silencieux vers une autre base.
+**Décision Hakim du 01/09/2026, amendée le 11/09/2026.** DataForSEO API reste le gate **étude rapide** (seuils 30 000 net + 800/collection lus ici). **Le volume OCB compte** : c’est du **Semrush**, Hakim lui fait confiance. OCB Semrush est une source de volume **valide**, surtout en approfondissement. **Ne plus interdire** OCB comme chiffre de volume. OCB **n’est pas** le gate unique à la place de DataForSEO.
+
+Une panne DataForSEO, un quota épuisé ou des identifiants absents provoquent un arrêt déclaré du **gate étude rapide** : aucun repli silencieux qui ferait d’OCB le seul gate. Un volume OCB déjà lu se cite avec la source `OCB/Semrush` ; ce n’est pas une ligne DataForSEO.
 
 ### DataForSEO
 
@@ -63,8 +65,8 @@ Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne l
 
 **Chemin SMP (UNIVERS, 11/09/2026).** Tous les critères doivent être au vert pour être sûr à 100 % que la niche va fonctionner. Tu fournis les chiffres ; Hakim applique.
 
-1. **Volume** — deux conditions **ensemble**, toujours lues dans DataForSEO : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
-2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Une pub récente (30–60 j) ne suffit pas. Sans cette preuve, la niche n'est pas au vert.
+1. **Volume** — deux conditions **ensemble** pour le gate étude rapide, lues dans **DataForSEO** : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). Un volume **OCB/Semrush** **compte** (l’écrire à côté, source nommée) ; il ne remplace pas ce gate. On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
+2. **Concurrents en Google Ads actifs depuis + 6 mois minimum** → preuve que la niche est rentable. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Le minage **60–90 j** ne suffit pas. Sans cette preuve, la niche n'est pas au vert.
 3. **CPC dans les bonnes fourchettes**, combinées avec les bandes de prix :
    - **Low ticket** (prix jusqu'à 50 €) : CPC **0 à 0,40 €**
    - **Mid ticket** (prix 50 à 500 €) : CPC **0,40 à 0,60 €**
@@ -72,9 +74,18 @@ Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne l
 
    Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
 
-### OneClickBrand — après coup seulement
+### OneClickBrand — volume Semrush valide, surtout en approfondissement
 
-OneClickBrand (Trend Niche, données Semrush) est autorisé **après** la mesure DataForSEO pour creuser : concurrents, mots-clés secondaires, wishlist. **Jamais** pour le chiffre de décision, jamais en repli si DataForSEO est down. Un volume OCB lu à l’écran se note en limite, il ne remplace pas une ligne DataForSEO.
+OneClickBrand (Trend Niche, données **Semrush**) : **le volume OCB compte**. Le noter avec la source `OCB/Semrush`, date, pays. DataForSEO reste le gate **étude rapide** ; OCB ne le remplace pas comme gate unique.
+
+En approfondissement (après ou à côté de DataForSEO) : concurrents, mots-clés secondaires, intention, CPC comme ordre de grandeur à recouper, wishlist.
+
+**Deux passes Trend Niche** si tu lis OCB pour des noms ou des volumes :
+
+1. Filtre **Facile** (concurrence 0–40) — **une** passe.
+2. **Toujours** une passe **sans filtre de difficulté** — sinon on rate des niches.
+
+**High Ticket** = filtre de **tri**, pas un couperet unique. Animalerie écartée par la règle maison, pas par OCB.
 
 ## Contrôles — les six, chaque passe
 
@@ -153,10 +164,10 @@ Fourchettes CPC (chemin SMP, à combiner avec le prix proposé / observé) :
 # MOTS-CLÉS — <sujet> — <AAAA-MM-JJ HH:MM> — Mission A|B
 
 ## Ce que j’ai fait
-(actions, appels DataForSEO / google.fr / Shopping ; OCB seulement après, jamais comme chiffre de gate)
+(actions, appels DataForSEO / google.fr / Shopping ; volumes OCB/Semrush notés avec source, pas comme gate unique)
 
 ## Résultats
-tableau : formulation · volume · **source DataForSEO + endpoint** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
+tableau : formulation · volume · **source (DataForSEO + endpoint, ou OCB/Semrush)** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
 sonde prix : fourchette, paliers, vides, comparable, prix proposé · bande (low / mid / high ticket) · CPC vs fourchette
 Google Trends : forme (plat / socle+Q4 / saison unique) · période · formulation
 SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait) · Ads concurrents **≥ 6 mois** (oui/non, durée relevée)

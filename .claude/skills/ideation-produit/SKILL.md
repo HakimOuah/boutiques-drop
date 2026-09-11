@@ -1,11 +1,11 @@
 ---
 name: ideation-produit
-description: Idéation produit — deux modes (produit pur / univers), TrendTrack + OneClickBrand + généralistes (Amazon, Vevor, best-sellers, trends réseaux). Utiliser quand Hakim demande de chercher des idées, miner TrendTrack, un pivot d’angle, ou une boutique preuve. Ne mesure aucun volume, ne source pas AliExpress, ne prononce pas le GO.
+description: Idéation produit — deux modes (produit pur / univers), TrendTrack + OneClickBrand + généralistes (Amazon, Vevor, best-sellers, trends réseaux). Utiliser quand Hakim demande de chercher des idées, miner TrendTrack, un pivot d’angle, ou une boutique preuve. Ne lance pas DataForSEO, ne source pas AliExpress, ne prononce pas le GO. Minage Ads 60–90 j ≠ gate preuve 180 j.
 ---
 
 # Idéation produit — deux modes, plusieurs sources
 
-Tu cherches des **idées** pour Hakim (OH Ventures, SASU, dropshipping France, Google Ads). Tu collectes et tu pré-filtres. Tu ne mesures pas, tu ne sources pas, tu ne tranches pas.
+Tu cherches des **idées** pour Hakim (OH Ventures, SASU, dropshipping France, Google Ads). Tu collectes et tu pré-filtres. Tu ne lances pas DataForSEO, tu ne sources pas, tu ne tranches pas.
 
 Ce n’est **pas** `recherche-mots-cles`, **pas** `sourcing-aliexpress`, **pas** l’orchestrateur `/recherche-produit`.
 
@@ -22,8 +22,9 @@ Avant toute requête : **PRODUIT PUR** ou **UNIVERS**. Jamais les deux dans la m
 | Catalogue | un phare + complémentaires | **sans plafond SKU**, tant que le sourcing est facile et la marge applicable |
 | Concurrent qui exécute | occupation du cluster | validation de la demande |
 | Trends (ensuite, MOTS-CLÉS) | platitude ~5 ans | socle ≥ 8 mois, Q4 peut amplifier |
-| Seuil (Hakim / MOTS-CLÉS, pas toi) | cluster 12 500 ; hors SMP | **≥ 30 000**/mois **net de marque** **et** **≥ 800**/mois par collection courte traîne |
-| Gate Ads (preuve, toi) | **concurrents Google Ads actifs depuis + 6 mois minimum** | **concurrents en Google Ads actifs depuis + 6 mois minimum** — **en priorité TrendTrack**, repli sans compte `https://adstransparency.google.com` |
+| Seuil volume (MOTS-CLÉS, pas toi) | cluster 12 500 ; hors SMP | **≥ 30 000**/mois **net de marque** **et** **≥ 800**/mois par collection courte traîne — DataForSEO = gate étude rapide ; volume OCB Semrush **valide** surtout en approfondissement |
+| Recette Ads **minage** (toi) | Ads → Google → **Actives depuis Min 60–90** (Search) | Ads → Google → **Actives depuis Min 60–90** (Shopping). Ça **ne vert pas** le gate |
+| Gate Ads **preuve** | **Min 180** (6 mois) — **case à part**, après shortlist, **pas** dans le même geste que le minage | idem. **Mélanger 60 et 180 = faux verts** |
 
 Un gadget drop 15–20 € n’est ni l’un ni l’autre. `SIGNAL_PRIX_PANIER` si le cœur visible est 5–10 € sans panier **observé**.
 
@@ -43,7 +44,8 @@ Registre anti-doublon **avant** toute idée : `boutique-pipeline/registre-candid
 - **Animalerie écartée** (accessoires chiens, arbre à chat, fontaine pour chat, aquariophilie, petit élevage). **Thème animal autorisé** (chaussons koala, bouillottes peluche).
 - Technique-particulier **OK** (osmoseur). Technique-pro / persona métier = exclusion (plieuse zinc).
 - Raisonnement économique : SASU, HT, TVA au réel, IS.
-- Volume, CPC, marge, Trends **ne se calculent pas ici**. Le **gate Ads 6 mois** se relève ici (durée d'activité, pas un CPC). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`).
+- DataForSEO, CPC, marge, Trends **ne se lancent pas ici**. Un **volume OCB** (Semrush à l’écran) **compte** : le noter, source `OCB/Semrush`. Ce n’est pas le gate étude rapide DataForSEO.
+- **Deux recettes Ads, deux chiffres — ne pas les mélanger.** **60–90 j** = minage / idéation. **180 j (6 mois)** = gate preuve, **case à part** après shortlist. Un skill qui mélange 60 et 180 produit des **faux verts**.
 
 ## Où tu cherches — sources d’inspiration, à égalité
 
@@ -53,24 +55,43 @@ Brand Search n’est plus une source.
 
 ### 1. TrendTrack
 
-Recette agent : `.claude/agents/mineur-brandsearch.md` (mineur TrendTrack, ancien nom conservé).
+Recette agent : `.claude/agents/mineur-brandsearch.md` (mineur TrendTrack, ancien nom conservé). Mode opératoire UI : canon SMP `trendtrack-mode-operatoire.md`.
 
 API : `https://api.trendtrack.io`, `Authorization: Bearer $TRENDTRACK_API_KEY`. 1 crédit / ligne retournée. Commencer par `GET /v1/usage`. MCP TrendTrack s’il est chargé ; sinon REST. Pas de Brand Search, même en repli.
 
-#### Vues Shop obligatoires
+**Deux recettes Ads, deux chiffres :**
 
-Dans l’onglet **Shop**, consulter explicitement les deux vues créées par Hakim lors de chaque salve de découverte libre :
+| Usage | Chemin UI | Chiffre | Vert le gate GO ? |
+|---|---|---|---|
+| **Minage / idéation** | Ads → **Google** → **Actives depuis** / Days Running | **Min 60**, parfois **90** (Max 365) | **Non** |
+| **Preuve / gate GO** | Même chemin, **geste séparé** après shortlist | **Min 180** (6 mois), Max 365 | **Oui** |
 
-- **`Shopping FR`** — source prioritaire d’idées observées sur le marché français. Une présence dans cette vue est un signal de découverte, pas une preuve suffisante de demande.
-- **`Shopping Scaling`** — source de produits, niches ou boutiques en accélération. La traiter comme un signal amont à qualifier pour la France, jamais comme un verdict de scalabilité ni comme le skill aval `shopping-scaling`.
+API minage : `minDaysRunning: 60` (parfois 90). **Ne pas** poser `maxDaysRunning: 60` : ça exclurait les pubs longues et mélangerait les deux recettes. Le slider UI va de 0 à 365. Le filtre 180 n’entre **pas** dans la requête de minage.
 
-Pour chaque idée issue de ces vues, conserver le nom exact de la vue (`Shopping FR` ou `Shopping Scaling`), le domaine ou la référence TrendTrack, la date d’observation et le mode proposé. Une idée de `Shopping Scaling` doit être marquée `À VALIDER FR` jusqu’au passage par `@oh-demande` et DataForSEO. Si une vue est inaccessible ou vide, l’indiquer dans les limites ; ne pas la remplacer silencieusement.
+#### Vues Shop + salve Google-only
+
+Lors de chaque salve UNIVERS de découverte libre :
+
+- **`Shopping FR`** (`view=9281`, `market=FR=main`) — source prioritaire d’idées observées en France. Signal de découverte, pas une preuve de demande.
+- **`Scaling shopping`** (libellé UI exact, pas « Shopping Scaling ») — accélération. Toute idée issue de cette vue = `À VALIDER FR`. Ne pas la confondre avec le skill aval `shopping-scaling`. **Ne pas** exiger Simprosys comme filtre par défaut de `Shopping FR` : ça peut vider la vue (leçon 03/09).
+- **Salve Google-only (en plus, pas à la place)** — Shops → **Toutes les shops** → **Application Shopify** **Simprosys Google Shopping Feed** **Inclure** + **Pixels** **Meta Pixel** **Exclure** + **Pays visiteurs** **Main France**. Idéation feed MC sans pixel Meta. Noter la vue / recette d’origine. Jamais un GO.
+
+Pour chaque idée : nom exact de la vue ou recette (`Shopping FR` / `Scaling shopping` / `Simprosys−Meta`), domaine, date, mode. Vue inaccessible ou vide → le dire ; ne pas la remplacer silencieusement.
+
+#### Similar Shops — expansion, pas verdict
+
+Dès qu’un **shop preuve FR** est identifié : ouvrir l’onglet **Similar Shops** (bas de fiche). Garder **5–8 voisins** **Visitor Country** FR avec **Google Ads > 0**. Les passer au **gate 180** (geste séparé). Plafond : 5–8, **pas 13 pages**. Ça remplace une partie de l’ancien Brand Search « boutiques du même rayon ». Ce n’est pas un vert.
 
 ### 2. OneClickBrand (Trend Niche)
 
-Écran `https://app.oneclickbrand.ai/top-niches` — niches France, données Semrush embarquées. C’est une **source d’idées** (Hakim y trouve aussi ses niches) et un outil de profondeur **après** le gate DataForSEO. Ici tu lis Trend Niche, wishlist, filtres catégorie / volume / CPC / prix : tu **notes** une idée, tu ne recopies pas le volume OCB comme chiffre de décision.
+Écran `https://app.oneclickbrand.ai/top-niches` — niches France, **données Semrush**. C’est une source d’idées **et** une source de **volume valide** (Hakim fait confiance à Semrush via OCB). DataForSEO reste le gate **étude rapide** ; OCB ne le remplace pas comme gate unique.
 
-Pas besoin d’attendre une démo pour citer l’écran. Quota « Analyses approfondies » ≠ crédits du header : ne pas lancer d’analyse payante sans demande de Hakim.
+**Deux passes, toujours :**
+
+1. **Facile** (concurrence 0–40) — **une** passe. High Ticket = **filtre de tri**, pas un couperet unique (on peut croiser High Ticket sur cette passe, on ne s’arrête pas là).
+2. **Sans filtre de difficulté** — sinon on rate des niches.
+
+Noter le volume OCB avec la source `OCB/Semrush`. Ne plus l’interdire comme chiffre de volume. Ne pas en faire le seul chiffre de gate à la place de DataForSEO. CPC OCB = ordre de grandeur à recouper, pas le palier SMP. **Animaux / animalerie** écartés ici (règle maison), pas par OCB. Quota « Analyses approfondies » ≠ crédits du header : ne pas lancer d’analyse payante sans demande de Hakim. AliExpress « produits populaires » sur la fiche niche : **ignorer**, pas sourcer.
 
 ### 3. Généralistes et trends — conservés
 
@@ -80,7 +101,7 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 
 ### PRODUIT PUR — intention Search (hors SMP)
 
-- `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` 30 (idéal 30–60), tri `longestRunning`. Pubs qui tiennent sur un **problème**, pas un catalogue. **Gate :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve de rentabilité). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Le 30–60 j sert au minage ; sans concurrent ≥ 6 mois, l'idée n'est pas au vert.
+- **Minage :** `POST /v1/google-ads/query` : `networks: ["search"]`, audience FR, `status` active, `minDaysRunning` **60** (parfois **90**), tri `longestRunning`. **Pas** de `maxDaysRunning: 60`. Pubs qui tiennent sur un **problème**, pas un catalogue. Ça **ne vert pas** le gate 180.
 - Shops : Module 1 Early Market (trafic max 15k, ads min 60, **produits max 100**, croissance +20 %). Top tiers US/UK/UE. Potentiel phare ≥ 50 €.
 - Module 5 : painpoints (humidité, calcaire, linge, bruit…). Tri reach Europe. Hook / autorité / éducation / bénéfice caché = matière Search, pas pub Meta à republier.
 - DataForSEO plus tard, par `@oh-demande` : clusters **symptôme** (« eau calcaire »), pas l’objet.
@@ -89,12 +110,17 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 
 ### UNIVERS — le catalogue est la preuve (chemin SMP)
 
-- `POST /v1/google-ads/query` : `networks: ["shopping"]`, audience FR, 30–60 j, hors GSB. **Ne pas écarter** une boutique parce qu’elle n’a pas « un seul phare » — c’est le profil cherché. **Gate :** au moins un concurrent en Google Ads actif depuis **+ 6 mois minimum** (preuve que la niche est rentable). Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Le 30–60 j sert au minage ; une pub récente ne suffit pas au vert.
-- Shops : profondeur catalogue (dizaines à des centaines de produits, **pas de plafond**), `minBestSellerPrice` ~50 comme filtre de confort, Ads Google. Module 2 (winners massifs) pour un **pivot d’univers** FR, pas pour copier Ooni.
+- **Minage :** `POST /v1/google-ads/query` : `networks: ["shopping"]`, audience FR, `minDaysRunning` **60** (parfois **90**), hors GSB. **Pas** de `maxDaysRunning: 60`. **Ne pas écarter** une boutique parce qu’elle n’a pas « un seul phare » — c’est le profil cherché. Ça **ne vert pas** le gate 180.
+- Shops : **Shopping FR** + salve **Simprosys−Meta** (pays visiteurs FR) **en plus**, profondeur catalogue (dizaines à des centaines de produits, **pas de plafond**), `minBestSellerPrice` ~50 comme filtre de confort. Module 2 (winners massifs) pour un **pivot d’univers** FR, pas pour copier Ooni.
+- **Similar Shops** dès qu’un shop preuve FR est là (5–8 voisins FR, Google Ads > 0) → ensuite seulement le gate 180.
 - Meta / TikTok (Modules 3–4, ads Meta) : **signal de trend d’univers** à importer en Shopping, jamais un brief Search — **et** source d’inspiration au même titre que les généralistes.
 - Fenêtre Q4 : `publishedAfter` 1er oct N-1, `publishedBefore` 1er jan N, `minDaysRunning` 30, tri `reach`. Socle annuel à faire vérifier ensuite par Trends, pas seulement le pic Noël.
 
 Écarter : GSB (Boulanger, Castorama, Westwing, Darty…) **comme concurrent à copier**, one-product-store maquillé, textile tailles si Hakim l’a exclu, licences, **animalerie**. Un GSB / Amazon / Vevor **comme source d’idée** reste valide.
+
+### Gate preuve 180 — case à part, après shortlist
+
+**Pas dans le même geste que le minage 60–90.** Après une shortlist (idées / shops preuve FR, y compris voisins Similar Shops) : Ads → Google → **Actives depuis Min 180** / Max 365, **Platform type Shopping** (UNIVERS) ou Search (PUR), pays FR. UI : **Time Running ≥ ~180** ou **First Seen** ≥ 6 mois **et** **Still Running**. Repli sans compte : **Google Ads Transparency Center** (`https://adstransparency.google.com`) — **Last shown**, pas First Seen. Sans cette preuve : noter `ADS < 6 MOIS`, ne pas vendre l’idée comme niche sûre. **Ne pas** exiger cette case pendant le minage : un skill qui mélange 60 et 180 produit des faux verts. Tu ne calcules pas le CPC ici.
 
 ## Filtres d’amont (un par un, motivés)
 
@@ -104,13 +130,14 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 - **Animalerie** (destination animal : accessoires chiens/chats, aquariophilie, petit élevage). Thème animal OK.
 - En PRODUIT PUR : offre comparable uniquement sur le prix ; catégorie verrouillée par quelques marques si le générique n’est pas défendable.
 - En UNIVERS : un spécialiste / dropshipper qui exécute = **poursuite** (preuve), pas un écart. Une SERP 100 % généralistes **n’écarte pas l’idée** : elle part en MOTS-CLÉS puis faisabilité sourcing. Occupation = densité + absence d’espace, pas le premier concurrent.
-- **Gate Ads SMP :** concurrents en Google Ads **actifs depuis + 6 mois minimum**. Se lit **en priorité sur TrendTrack**. Repli **sans compte** : **Google Ads Transparency Center** (`https://adstransparency.google.com`). Sans cette preuve, l'idée n'est pas au vert — la noter (`ADS < 6 MOIS`), ne pas la vendre comme niche sûre. Tu ne calcules pas le CPC ici.
+- Le **gate 180** n’est **pas** un filtre d’amont du minage : voir « Gate preuve 180 — case à part ». Tu ne calcules pas le CPC ici.
 - Exclusions explicites inchangées : bureaux assis-debout, chaises gaming, tables basses génériques, canapés standards, meubles courants sans usage différencié. Rotin seul ≠ idée.
 
 ## Interdits
 
-- Aucun volume, aucun chiffre de mémoire, aucune sonde Shopping complète, aucun Google Trends (tu tags le brief). Un volume OCB lu à l’écran n’est **pas** un chiffre de gate.
-- Aucune fiche AliExpress.
+- Aucun DataForSEO, aucun chiffre de mémoire, aucune sonde Shopping complète, aucun Google Trends (tu tags le brief). Un **volume OCB/Semrush** lu à l’écran **compte** : le noter avec sa source. Ce n’est **pas** le gate étude rapide DataForSEO, et ce n’est **pas** un chiffre à interdire.
+- **Ne pas mélanger** minage **60–90 j** et gate **180 j** dans le même geste / la même requête.
+- Aucune fiche AliExpress. Ignorer le bloc AliExpress des fiches OCB.
 - Aucun GO / STOP / MAYBE marché.
 - Aucun scoring chiffré.
 - Aucun Brand Search.
@@ -122,13 +149,15 @@ Ce n’est **pas** un fournisseur (AliExpress reste exclusif au skill sourcing).
 Mode : PRODUIT PUR | UNIVERS
 
 ## Ce que j’ai fait
-(TrendTrack : vues Shop `Shopping FR` + `Shopping Scaling` / google-ads Search|Shopping / shops M1-M2 / ads Meta
-OneClickBrand : Trend Niche / wishlist / filtres
+(TrendTrack minage 60–90 : Ads Google Actives depuis Min 60/90 — **pas** 180
+vues Shop `Shopping FR` + `Scaling shopping` + salve Simprosys−Meta (pays visiteurs FR)
+Similar Shops : 5–8 voisins FR Google Ads > 0
+OneClickBrand : Trend Niche — passe Facile **et** passe sans filtre de difficulté ; High Ticket = tri
 Généralistes : Amazon, Vevor, best-sellers, trends réseaux — conservés, pas relégués
 + actions + endpoint)
 
 ## Résultats
-idée · mode · source (TrendTrack / OCB / généraliste / trend réseau) · vue d’origine le cas échéant · boutique preuve · **Ads ≥ 6 mois** (oui/non, durée) · problème ou univers · prix publics datés · angle / pivot · statut France (`FR observé` ou `À VALIDER FR`) · motif de poursuite ou d’écart
+idée · mode · source (TrendTrack / OCB / généraliste / trend réseau) · vue ou recette d’origine · boutique preuve · minage 60–90 (oui) · **case 180** (oui/non/pas encore — geste séparé) · volume OCB/Semrush s’il a été lu · problème ou univers · prix publics datés · angle / pivot · statut France (`FR observé` ou `À VALIDER FR`) · motif de poursuite ou d’écart
 
 ## Pivot d’Angle (si M5)
 Hook, Biais d’Autorité, Éducation, Bénéfice Caché

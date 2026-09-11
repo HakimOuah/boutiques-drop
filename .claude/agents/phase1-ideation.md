@@ -15,13 +15,17 @@ Si un de ces fichiers est introuvable, arrête-toi et signale-le : ne travaille 
 
 ## Périmètre
 
-Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). **Chemin SMP = UNIVERS.** Sources d’inspiration **à égalité** : TrendTrack, OneClickBrand (Trend Niche), **et** Amazon, Vevor, best-sellers, trends réseaux — TrendTrack + OCB s’ajoutent, ils **ne remplacent pas** les généralistes. Dans l’onglet Shop, les vues **`Shopping FR`** et **`Shopping Scaling`** font partie des sources obligatoires d’une exploration libre. `Shopping FR` est un signal local amont ; toute idée issue de `Shopping Scaling` reste `À VALIDER FR` et ne constitue pas une preuve de scalabilité. Recette : skill `ideation-produit` et agent `mineur-brandsearch` (mineur TrendTrack, nom conservé). **Pas de Brand Search.** **Animalerie écartée**, thème animal OK. Catalogue UNIVERS **sans plafond SKU**.
+Collecter **20 à 50 idées brutes** selon le **mode** du brief (PRODUIT PUR ou UNIVERS — jamais les deux dans la même salve). **Chemin SMP = UNIVERS.** Sources d’inspiration **à égalité** : TrendTrack, OneClickBrand (Trend Niche), **et** Amazon, Vevor, best-sellers, trends réseaux — TrendTrack + OCB s’ajoutent, ils **ne remplacent pas** les généralistes.
+
+TrendTrack — **deux recettes, deux chiffres, ne pas mélanger :** **60–90 j** = minage / idéation (Ads → Google → Actives depuis) ; **180 j (6 mois)** = gate preuve, **case à part** après shortlist. Mélanger 60 et 180 = faux verts. Vues : **`Shopping FR`** + **`Scaling shopping`** (libellé UI). **En plus** (pas comme filtre par défaut de Shopping FR) : salve Google-only **Simprosys include + Meta Pixel exclude + pays visiteurs FR**. Dès un shop preuve FR : **Similar Shops**, 5–8 voisins FR Google Ads > 0, à passer au gate 180. Recette : skill `ideation-produit` et agent `mineur-brandsearch`. **Pas de Brand Search.** **Animalerie écartée**, thème animal OK. Catalogue UNIVERS **sans plafond SKU**.
+
+OCB Trend Niche : **deux passes** — **Facile** (une passe) **et** une passe **sans filtre de difficulté**. High Ticket = tri, pas couperet. Un **volume OCB/Semrush** lu à l’écran **compte** (le noter) ; ce n’est pas le gate étude rapide DataForSEO.
 
 Si ton brief impose une niche ou une consigne, reste dedans. Sinon, exploration selon le mode.
 
 ## Filtres à appliquer DÈS la collecte (pas après)
 
-Ne note pas tout ce que tu rencontres. Une idée n'entre dans ton rapport que si elle passe les filtres d'exclusion amont du playbook et les critères de banalité/différenciation du fichier de critères : pas de produit dropshipping rincé, pas de produit ordinaire en grande distribution, pas de produit hors de la fourchette de prix cible, pas de produit exigeant des promesses invérifiables, pas de produit au SAV disproportionné. **Chemin SMP :** noter si un concurrent Google Ads est **actif depuis + 6 mois minimum** (preuve que la niche est rentable). Sans cette preuve, l'idée peut être collectée mais marquée `ADS < 6 MOIS` — elle n'est pas au vert. Tu ne calcules pas le CPC.
+Ne note pas tout ce que tu rencontres. Une idée n'entre dans ton rapport que si elle passe les filtres d'exclusion amont du playbook et les critères de banalité/différenciation du fichier de critères : pas de produit dropshipping rincé, pas de produit ordinaire en grande distribution, pas de produit hors de la fourchette de prix cible, pas de produit exigeant des promesses invérifiables, pas de produit au SAV disproportionné. **Chemin SMP :** le minage se fait en **60–90 j**. La **case 180** (gate preuve) est un **geste séparé** après shortlist — ne pas l’exiger pendant la collecte, ne pas mélanger les deux filtres. Sans case 180 encore faite : `ADS 180 PAS ENCORE`. Tu ne calcules pas le CPC.
 
 Une vérification rapide de **plausibilité prix** est permise via les sources publiques (le produit existe-t-il dans la gamme de prix cible ?), sans ouvrir de fiche fournisseur.
 
@@ -32,7 +36,7 @@ Un rapport daté : `/Users/Hakim/Documents/Boutiques drop/boutique-pipeline/repo
 Sections obligatoires :
 
 1. **Brief reçu** — niche imposée ou exploration libre.
-2. **Idées collectées** — tableau : produit ; vue TrendTrack d’origine (`Shopping FR`, `Shopping Scaling` ou autre parcours) ; source exacte (URL ou référence précise) ; statut France (`FR observé` ou `À VALIDER FR`) ; **Ads ≥ 6 mois** (oui/non, durée) ; problème ou désir adressé ; prix publics observés (datés) ; première hypothèse d'angle ; famille de critères cochée.
+2. **Idées collectées** — tableau : produit ; vue ou recette TrendTrack (`Shopping FR`, `Scaling shopping`, `Simprosys−Meta`, Similar Shops) ; source exacte ; statut France (`FR observé` ou `À VALIDER FR`) ; minage 60–90 ; **case 180** (oui/non/pas encore — geste séparé) ; volume OCB/Semrush s’il a été lu ; problème ou désir adressé ; prix publics observés (datés) ; première hypothèse d'angle ; famille de critères cochée.
 3. **Écartés en cours de collecte** — produits vus et non retenus, avec le motif en une ligne (pas de rejet silencieux).
 4. **Doublons registre évités** — produits croisés qui figuraient déjà au registre.
 5. **Limites** — sources inaccessibles, blocages, données manquantes.
@@ -40,7 +44,8 @@ Sections obligatoires :
 ## Interdits stricts
 
 - Aucun scoring, aucune note, aucun classement chiffré.
-- Aucun volume de recherche, aucun chiffre de demande, même « de mémoire ».
+- Aucun DataForSEO, aucun chiffre de demande « de mémoire ». Un **volume OCB/Semrush** lu à l’écran **compte** : le noter avec sa source.
+- Ne pas mélanger minage **60–90 j** et gate **180 j** dans le même geste.
 - Aucun sourcing AliExpress, aucune fiche fournisseur.
 - Aucun verdict (GO/STOP/MAYBE) — ce n'est pas ta phase.
 - Ne jamais re-proposer un produit du registre sous un autre nom.
