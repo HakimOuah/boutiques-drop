@@ -1,0 +1,62 @@
+{
+  "observed_at_utc": "2026-09-12T17:36:29Z",
+  "shopping_median_ttc_eur": 77.5,
+  "ht_from_median": 64.58,
+  "method": "search_products_raw (never orders, never search_and_normalize) then get_product_detail + quote_aliexpress_sku + get_shipping_cost country FR",
+  "shippable": [
+    {
+      "product_id": "1005012068439562",
+      "sku_id": "12000057431095563",
+      "status": "QUOTED",
+      "title": "Ensemble de boules de pétanque en métal 3/6/8 pièces pour la plage, la pelouse, les tournois, les fêtes, les sports de plein air",
+      "variant": "Color Bleu A8",
+      "stock": 1,
+      "product_cost_eur_ttc": 85.99,
+      "shipping_cost_eur": 1.99,
+      "landed_cost_eur_ttc": 87.98,
+      "marge_ht_vs_7750": -23.4,
+      "ship_from": "CN",
+      "is_eu_warehouse": false,
+      "delivery_quote_days": "23-29",
+      "freight_query": {
+        "code": "CAINIAO_FULFILLMENT_OVER_WH",
+        "company": "AliExpress Selection Shipping for Oversized Goods",
+        "fee_eur": 1.99,
+        "min_days": 34,
+        "max_days": 43,
+        "guaranteed_days": 75,
+        "available_stock": "1"
+      },
+      "store": {
+        "id": 1103562422,
+        "name": "SportFlow Shop Store",
+        "country": "CN"
+      },
+      "package": {
+        "kg": 6.02,
+        "cm": [
+          31,
+          16,
+          8
+        ]
+      },
+      "url": "https://www.aliexpress.com/item/1005012068439562.html"
+    }
+  ],
+  "out_of_stock": [
+    {
+      "sku_id": "12000057431095561",
+      "variant": "Rouge A3",
+      "product_cost_eur_ttc": 56.39,
+      "stock": 0,
+      "status": "OUT_OF_STOCK"
+    },
+    {
+      "sku_id": "12000057431095562",
+      "variant": "BLANC A6",
+      "product_cost_eur_ttc": 104.99,
+      "stock": 0,
+      "status": "OUT_OF_STOCK"
+    }
+  ]
+}
