@@ -188,8 +188,8 @@ Chrome, **prise européenne sélectionnée** avant de relever le prix (le prix c
 - **Stock européen possible mais sans marge** : la seule fiche expédiée de France coûte
   274,69 €, au niveau du prix de vente des indépendants.
 - **Marge indicative.** Comparable « juste en dessous » : Dreo Tech à 199,97 €. Vente à 189 € sur
-  une paire à 65,69–72,99 € : **116 à 123 € avant publicité**, soit ≈ 97 à 103 € HT après TVA sur la
-  vente. À 199 € : 126 à 133 €. Avec un CPC de 0,50–0,60 € et un taux de conversion de 1,5–2 %,
+  une paire à 65,69–72,99 € : **116 à 123 € avant publicité**, soit, hors TVA, ≈ 97 à 103 € si la TVA
+  d'achat est récupérable et ≈ 85 à 92 € sinon. À 199 € : 126 à 133 €. Avec un CPC de 0,50–0,60 € et un taux de conversion de 1,5–2 %,
   le coût d'acquisition tourne autour de 25 à 40 € : la marge tient.
 - **Conformité** : les titres fournisseurs promettent « drainage lymphatique », « varices »,
   « rééducation ». Aucune de ces mentions ne passe sur la fiche boutique. Le marquage CE n'est
