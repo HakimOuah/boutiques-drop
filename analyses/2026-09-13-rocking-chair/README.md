@@ -106,3 +106,63 @@ requêtes anglaises (`rockers for a rocking chair`), occasion (`old`, `ancien`, 
 **`PASS_PREQUALIFICATION` sur les trois lectures.** La famille relax élargit le catalogue (Oscille
 en a une collection), mais c'est aussi là que les enseignes pèsent le plus. `fauteuil relax jardin`
 (3 600) est saisonnier.
+
+## 6. Sourcing — 14/09/2026
+
+### Méthode (Chrome bloqué)
+
+L'extension Chrome n'a plus répondu après le lancement d'un agent ChatGPT dans le même Chrome.
+Le sourcing est passé par deux canaux sans navigateur :
+
+1. **Découverte** : pages de recherche AliExpress récupérées directement (`fr.aliexpress.com/w/…`,
+   tri par commandes). Le JSON des 60 cartes est dans `_dida_config_._init_data_` ; 42 requêtes,
+   une par famille de l'arborescence.
+2. **Vérification** : passerelle VPS de l'**API AliExpress Open Platform (Dropshipper)**,
+   `boutique-pipeline/codex-chasse-clusters/tools/aliexpress_vps_gateway.py`, actions `variants` et
+   `exact`. Pour chaque fiche : prix dropshipper par variante, stock, entrepôt, note et ventes,
+   boutique, poids du colis, puis **fret vers la France** pour la variante retenue (transporteur,
+   port, délai). C'est la source de prix de DSers : **niveau A sur le prix, le stock et la
+   livraison**. Les photos et la qualité perçue ne sont pas contrôlées.
+
+Filtres : livrable en France, variante en stock, entrepôt UE préféré. Écartés : HOMCOM/Aosom
+(ancre de prix publique, motif du NON RETENU du 02/08), fauteuils gamer ou de bureau, chaises de
+camping, fiches mal notées. Les modèles chinois les mieux notés (Shop1104926532, 229 avis à 5,0)
+**ne livrent pas la France** (`DELIVERY_NOT_AVAILABLE_TO_YOUR_ADDRESS`).
+
+### Résultat (onglet « Rocking chair »)
+
+| | |
+|---|---:|
+| Produits avec lien AliExpress | **86** (62 lignes de l'arborescence + 24 variantes éclatées pour DSers) |
+| Fiches uniques | 46 |
+| Entrepôt | Allemagne 69 · Pologne 9 · France 3 · Espagne 1 · Chine 4 (accessoires) |
+| Livraison | gratuite, 2 à 10 jours depuis l'UE |
+| Coût médian livré | **147 €** |
+| Prix cible médian | 254 € (juste sous Sunlay/Oscille) |
+| Marge brute médiane | **122 €, 46 %** |
+
+### Preuve sociale : la réserve §4 du 02/08 n'est pas levée
+
+Sur les 62 fiches principales, **19 n'ont aucun avis** et **22 seulement en ont 10 ou plus**. Le
+meuble se vend peu par fiche sur AliExpress UE. Les fiches les mieux prouvées :
+
+| Fiche | Preuve | Coût |
+|---|---|---:|
+| TWISTERCK — fauteuil à bascule rotin, coussin épais (œuf) | ★4,8 · 76 avis · 387 ventes | 165 € |
+| COMHOMA — fauteuil relax massant inclinable | ★4,5 · 72 avis · 92 ventes | 431 € |
+| COMHOMA — fauteuil TV inclinable | ★4,5 · 52 avis · 72 ventes | 290 € |
+| SucceBuy — relax extérieur zéro gravité | ★4,8 · 50 avis · 279 ventes | 74 € |
+| Local Depot — fauteuil relax électrique | ★4,7 · 25 avis · 86 ventes | 163 € |
+| Miroir Home — fauteuil suspendu œuf | ★4,9 · 17 avis · 71 ventes | 118 € |
+
+**16 produits portent une marque Amazon** (COMHOMA, SoBuy, SucceBuy, HiMISS). Leur prix public est
+visible, ce qui fait une ancre de prix : c'est le même risque que HOMCOM le 02/08. Ils sont signalés
+dans la colonne Notes.
+
+**Trous restants** : rocking chair enfant (seules des chaises bébé 2-en-1 sont livrables),
+acacia (remplacé par du bois massif), plaid et coussins depuis la Chine, stock faible sur trois
+fiches (coussin 2, COMHOMA inclinable 5, IXan06 5).
+
+**Avant toute décision** : commande échantillon sur deux ou trois fiches clés (TWISTERCK rotin,
+Local Depot électrique, un teddy Superaly ou Simurq) pour établir la qualité perçue à 229–349 €.
+C'est la condition de reprise écrite le 02/08.
