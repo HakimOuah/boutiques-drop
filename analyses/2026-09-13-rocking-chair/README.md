@@ -90,9 +90,9 @@ Quatre graines, lignes du haut de chaque liste triée par volume (planchers) :
 La valeur SEMrush est retenue. `rocking chairs chair` 5 400 et `rocking rocking chair` 5 400 sont
 des artefacts, non comptés.
 
-**Exclusions** : enseignes (Conforama ≈ 16 000, IKEA ≈ 7 100, But ≈ 7 300, Stressless 1 390,
+**Exclusions** : enseignes (Conforama ≈ 16 000, IKEA ≈ 7 100, But ≈ 8 000, Stressless 1 390,
 Amazon 960, Leboncoin 1 490, Maisons du Monde 1 230, Vertbaudet/Orchestra, Orthosanté/Orthosénior),
-**releveur et « médical »** (≈ 2 900, recoupe le STOP maintien à domicile senior), « pas cher »,
+**releveur et « médical »** (≈ 3 500, recoupe le STOP maintien à domicile senior), « pas cher »,
 requêtes anglaises (`rockers for a rocking chair`), occasion (`old`, `ancien`, `antique`).
 
 ### Univers consolidé (onglet Sheet « Rocking chair », 12 collections, 62 produits)
