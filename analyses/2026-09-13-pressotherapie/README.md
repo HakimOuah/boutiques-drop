@@ -106,3 +106,49 @@ indépendants à 200–350 €, et la marge est la meilleure de la chasse.
 1. SEMrush sur l'angle récupération — `bottes de récupération`, `bottes de compression`,
    `récupération musculaire jambes` — pour savoir si la demande sans allégation santé tient.
 2. Sourcing niveau A de trois à quatre paires de bottes AliExpress pour confirmer le coût.
+
+## 5. Angle récupération — SEMrush France fourni par Hakim, 13/09/2026
+
+| Graine | Mots-clés produit retenus | Net |
+|---|---|---:|
+| `bottes de récupération` | bottes de récupération 320 | **320** |
+| `bottes de compression` | bottes de compression 1 600 · pneumatique 20 | **≈ 1 620** |
+| `récupération musculaire jambes` | récupération (musculaire) jambe(s) 210 · recuperation jambe 170 · produit(s) récupération musculaire 70 | **≈ 450** |
+
+`récupération musculaire` 1 000 non retenu : intention informationnelle, sujet général
+(nutrition, repos, étirements), pas un produit. Variantes d'accent fusionnées
+(`récupération musculaire` 1 000 / `recuperation musculaire` 260 = une seule requête pour
+Google).
+
+**Marques** : Jolt 140 + 70 (**CPC 7,71 et 8,86 €** sur son propre nom), Decathlon 320 + 30 +
+20 + 10 + 10, Compex 40 + 40 + 20, Therabody, Theragun, Blackroll, Fitem, Revive Active.
+Sur l'angle sport, la récupération est **un marché de marques**.
+
+### Lecture
+
+**L'angle récupération pèse ≈ 2 400 recherches, dix fois moins que `pressothérapie`.**
+Contrairement aux chaussures — où l'angle propre, « pied large », portait autant de volume
+que l'angle médical — ici la demande vit dans le mot santé. On ne peut pas déplacer le
+mot-clé.
+
+Conséquence pratique : **acheter le mot `pressothérapie` en publicité, mais tenir la page sur
+le confort, la légèreté et la récupération.** Le terme recherché n'est pas une allégation ;
+le texte de la fiche, si.
+
+## 6. Verdict consolidé
+
+| Source | Net |
+|---|---:|
+| Cluster `pressothérapie` | 27 300 à 33 900 |
+| `bottes de compression` | ≈ 1 620 |
+| `bottes de récupération` | 320 |
+| **Total** | **≈ 29 200 à 35 800** |
+
+Seuil 30 000 : **encadré**, et toujours adossé à une tête à moitié servicielle.
+
+**Statut : `REVIEW_PREQUALIFICATION`, remonté à Hakim.** Recommandation technique :
+**`TECHNICAL_WATCH`**. Pour : CPC réel, Shopping ouvert à des indépendants à 200–350 €, marge
+la plus forte de la chasse. Contre : demande à la limite du seuil, la moitié de la tête
+cherche une séance, et le segment sport est tenu par des marques.
+
+Reste ouvert : sourcing niveau A de trois à quatre paires de bottes.
