@@ -303,3 +303,25 @@ ventes** — c'est le produit que SerenitaHome vend **249,90 €**.
 
 Bottes d'hiver confort (59,99 € chez Confortal) · bottines imperméables (45,99 € chez
 Orthopeca) · sabots Boston (45,99 €). Inscrites dans le Sheet comme collection à couvrir.
+
+## 13. Les trois dernières familles du catalogue concurrent — 13/09/2026
+
+| Produit | Coût | Niveau A | Prix cible | Marge |
+|---|---:|---|---:|---:|
+| Sabots en daim à boucle | 22,19 € | 4,7 · 472 avis · **+5 000** · **20 variantes** | 49,90 € | 27,71 € (56 %) |
+| Bottines femme fourrées imperméables | 25,19 € | 4,7 · 718 avis · +3 000 · 3 var | 64,90 € | 39,71 € (61 %) |
+| Chaussures de neige imperméables | **9,59 €** | 4,7 · **1 964 avis** · +5 000 · 5 var | 39,90 € | 30,31 € (**76 %**) |
+
+Le sabot en daim porte **20 variantes** — la fiche la plus profonde du catalogue. Orthopeca
+vend ses sabots Boston 45,99 €, Confortal ses bottes d'hiver 59,99 € : le positionnement
+cible se place juste dessous.
+
+La famille bottes est **saisonnière** : collection Q4 et hiver, à ne pas mettre en tête de
+boutique au printemps.
+
+### État final
+
+**11 collections, 35 produits dont 26 avec lien AliExpress, 15 fiches en niveau A.**
+Arborescence **36 480** contre un seuil de 30 000 → **PASS**.
+
+Le catalogue couvre désormais toutes les familles relevées chez Confortal et Orthopeca.
