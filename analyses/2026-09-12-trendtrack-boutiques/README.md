@@ -124,3 +124,103 @@ valgus), pas sur le produit lui-même.
 
 **Statut : candidat à instruire** — mesure DataForSEO, concurrence Shopping et sourcing
 restent à faire.
+
+## Familles rideaux, déco/mobilier et sacs portés — 13/09/2026
+
+Catalogues lus via `products.json`, rebonds « shops similaires » TrendTrack (8 par boutique,
+144 crédits, 2 099 restants), Google Shopping France et base OCB (consultation gratuite).
+
+### Rideaux — non réinstruits (anti-doublon)
+
+Rideaux Paris et Rideaux Maison recoupent l'univers **rideaux occultation** du 28/08
+(`PASS_PREQUALIFICATION`, registre M1). Les deux boutiques confirment ce dossier. Elles ne
+changent rien à la mesure.
+
+### Oscille — oscille.fr — **univers rocking chair : à mesurer**
+
+| | |
+|---|---|
+| Catalogue | 38 produits, **189 à 599 €** (médiane 346 €), créé en mars 2026 |
+| Gamme | rocking chairs cocon/teddy/rotin, fauteuils à bascule scandinaves, fauteuils relax pivotants, papasan |
+| Visites | 2K |
+
+**Rebonds TrendTrack : quatre boutiques françaises indépendantes, 100 % FR, dont trois créées en 2026**
+— sunlay.fr (26 produits, médiane 309 €, 3,1K), machaiseabascule.fr (54 produits, 2,4K),
+alramo.fr (4 produits, ≈ 230 €, 2,1K), fauteuil-a-bascule.com (159 produits, médiane 150 €,
+742, depuis 2024). Aucune n'a de pub Meta. Des lancements simultanés sans Meta pointent vers une
+acquisition Google, ce qui reste à vérifier. La niche se remplit.
+
+**OCB — niche « Fauteuil à bascule » (déjà analysée)** : 12 100/mois, stable sur 12 mois, CPC
+0,12 €, difficulté 93. Mots-clés : `rocking chair` **27 100** · `fauteuil bascule` 6 600 ·
+`chaise à bascule` 2 900 · allaitement ≈ 600–1 200 · jardin 590 · scandinave 480 · rotin 390 ·
+design 390 · bois 210–390 · repose-pied 320. Marques exclues : Conforama, But, Maisons du Monde.
+**Estimation d'univers : 45 000 à 50 000**, avant fauteuil relax pivotant et cocon.
+
+**Google Shopping** : `rocking chair`, bloc sponsorisé **8/8 AliExpress en direct** ;
+`fauteuil à bascule`, AliExpress ×5 + Made in Bébé 378,90 · FlexiSpot 499,99 · Kave 339.
+Organique : IKEA Poäng, But, Amazon, Tectake.
+
+**Anti-doublon** : le PRODUIT PUR `fauteuil d'allaitement` a été **NON RETENU le 02/08** sur
+le §4. La meilleure fiche était un HOMCOM, et la qualité perçue à 250–400 € n'était pas démontrée.
+Le rocking chair déco était alors noté « hors cluster, upside ». La lecture UNIVERS est une
+**reprise motivée**, comme les poufs. La réserve §4 sur la qualité reste entière.
+
+**Réserves** : CPC très bas (0,12–0,19 €), sponsorisé saturé par AliExpress en direct, quatre
+clones apparus en 2026. **Statut : à mesurer**, arborescence OCB complète et sourcing qualité.
+
+### OBERIAN — oberian.fr — **pieds de table : à mesurer, analyse OCB à lancer**
+
+| | |
+|---|---|
+| Catalogue | 35 pieds de table métalliques (table haute, table à manger, formes X/M/A/V/sablier), **109 à 389 €** |
+| Visites | 1,6K, 100 % FR, 27 annonces Google référencées dont 3 actives |
+| Ancienneté | février 2023 |
+
+**Rebonds TrendTrack : c'est la famille la plus solide**. lafabriquedespieds.com (**39K
+visites, +43 %, 867 produits, 29 pubs Meta, FR 76 %**), aubonpied.fr (3,3K, 100 % FR,
+WooCommerce, 95–135 €), piedtable.fr (2K, 100 % FR), talywood.fr (Shopify, 940, médiane 172 €).
+Le leader et deux concurrents ne sont pas sur Shopify, probablement des fabricants ou artisans.
+
+**Google Shopping `pied de table métal`** : Kasa-Store 382 €, AliExpress 56,99 · 89,99 €,
+GGM Möbel et EMH (**fournisseurs CHR professionnels**). Réserve : une partie de la demande
+est professionnelle (restauration).
+
+**OCB : niche absente de la base.** Analyse `pied de table` à lancer par Hakim.
+
+### Baraylis et Le Lierre Artificiel — **écartées**
+
+Baraylis : 395 fiches à ≈ 30 € (murs végétaux artificiels, jardinières), titres au format SEO
+automatique. Le Lierre Artificiel : 42 produits à 20 € de médiane, catalogue figé depuis 2023,
+366 visites. **Ticket bas** ; TrendTrack ne trouve **aucun pair français** (voisins UK, DE, NL) ;
+Shopping tenu par des spécialistes (Synthaietik, WoodUpp) et AliExpress. Antécédent : `mur
+végétal intérieur modulaire` STOP le 17/07 (le parent `mur vegetal` 9 900 est artificiel, stabilisé
+ou prestation). Absent de la base OCB.
+
+### Maison Cyclades — **écartée**
+
+Généraliste déco méditerranéenne (172 produits), 56 visites. Pas une niche.
+
+### Sacs portés — **écartés**
+
+| Boutique | Catalogue | Lecture |
+|---|---|---|
+| Yo Sac | 110 sacs à dos et cartables enfants, médiane 48 € | Rentrée scolaire, **hors fenêtre** en septembre ; licences (Pikachu) |
+| City Sac | 330 produits maroquinerie homme/femme, médiane 64 € | Généraliste, déjà couvert par l'onglet « Bagages de voyage » |
+| VALMONT | 103 produits cuir (ceintures, sacs de voyage), médiane 130 € | Positionnement marque, recoupe « Bagages de voyage » |
+| Crossbody Wear | 383 sacs banane/demi-lune, médiane 45 € | Voir ci-dessous |
+
+**Sac banane** — OCB 22 200/mois, CPC 0,43 €, prix bas, +24 %. Mais TrendTrack remonte **sept
+boutiques françaises mono-niche, dont cinq mortes** (0 visite) et deux plafonnées à 1,5K. Médiane
+35–55 €. Le Shopping est tenu par des marques cuir (Benedetti Paris 167,90 €, Maison Novaluce),
+avec Decathlon en organique. **Niche saturée à ticket bas.**
+
+### Bilan de la passe
+
+| Famille | Statut | Suite |
+|---|---|---|
+| Rocking chair / fauteuil à bascule | **À mesurer** (≈ 45–50K estimés) | Arborescence OCB, Shopping détaillé, sourcing qualité |
+| Pieds de table | **À mesurer** | Analyse OCB `pied de table` à lancer |
+| Rideaux | Doublon, dossier du 28/08 | — |
+| Mur végétal / lierre artificiel | Écarté | — |
+| Sacs portés | Écartés | — |
+| Maison Cyclades | Écartée | — |
