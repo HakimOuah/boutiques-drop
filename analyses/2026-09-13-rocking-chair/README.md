@@ -74,3 +74,35 @@ Antécédent du 02/08 : sur AliExpress France, les rocking chairs partent **d'en
 Allemagne** (96–181 € livrés, 1 à 8 jours), mais la preuve sociale par fiche est mince (0–7 ventes)
 et plusieurs vendeurs sont sous 95 %. Critères de ce passage : vendeur ≥ 95 %, marque blanche (pas
 HOMCOM/Aosom), avis avec photos, entrepôt UE, dimensions et matière déclarées.
+
+## 5. Demande complétée — SEMrush France fourni par Hakim, 13/09/2026
+
+Quatre graines, lignes du haut de chaque liste triée par volume (planchers) :
+
+| Graine | Mots-clés SEMrush | Brut SEMrush | Retenu net dans l'arborescence |
+|---|---:|---:|---:|
+| `rocking chair` | 7 753 | 72 590 | tête **18 100** + extérieur 1 900 · bois 1 300 · fauteuil rocking chair 1 300 · rotin 1 000 · coussin 720 · design 480 · scandinave 480 · vintage 390 · blanc 390 |
+| `fauteuil allaitement` | 240 | 13 440 | **5 400** + à bascule allaitement 1 900 + chambre bébé, confortable, meilleur 110 chacun |
+| `fauteuil relax` | 9 344 | 200 690 | tête **49 500** + électrique 6 600 · jardin 3 600 · moderne 2 400 · manuel 1 900 · cuir 1 600 · design 1 600 · inclinable 1 300 · salon 1 000 · pivotant 720 · scandinave 720 · 7 lignes à 480 · 3 à 390/320 · beige 260 |
+| `fauteuil cocon` | — | — | **590** + extérieur 140 · suspendu 110 |
+
+**Écart OCB / SEMrush sur la tête** : `rocking chair` vaut 27 100 chez OCB et **18 100 chez SEMrush**.
+La valeur SEMrush est retenue. `rocking chairs chair` 5 400 et `rocking rocking chair` 5 400 sont
+des artefacts, non comptés.
+
+**Exclusions** : enseignes (Conforama ≈ 16 000, IKEA ≈ 7 100, But ≈ 7 300, Stressless 1 390,
+Amazon 960, Leboncoin 1 490, Maisons du Monde 1 230, Vertbaudet/Orchestra, Orthosanté/Orthosénior),
+**releveur et « médical »** (≈ 2 900, recoupe le STOP maintien à domicile senior), « pas cher »,
+requêtes anglaises (`rockers for a rocking chair`), occasion (`old`, `ancien`, `antique`).
+
+### Univers consolidé (onglet Sheet « Rocking chair », 12 collections, 62 produits)
+
+| Lecture | Volume |
+|---|---:|
+| Arborescence complète | **131 920** |
+| Sans la tête générique `fauteuil relax` (49 500, dominée par les enseignes) | **82 420** |
+| Cœur rocking chair / bascule / allaitement / cocon, sans la famille relax | ≈ 50 000 |
+
+**`PASS_PREQUALIFICATION` sur les trois lectures.** La famille relax élargit le catalogue (Oscille
+en a une collection), mais c'est aussi là que les enseignes pèsent le plus. `fauteuil relax jardin`
+(3 600) est saisonnier.
