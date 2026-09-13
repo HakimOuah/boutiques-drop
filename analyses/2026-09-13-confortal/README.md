@@ -214,3 +214,61 @@ plancher, cohérent avec la règle « somme des mots-clés sélectionnés ».*
    distincte de `chaussure orthopédique` déjà cartographiée.
 4. Google Trends avant tout GO.
 5. Décision humaine de Hakim.
+
+## 11. Enrichissement du catalogue d'après les concurrents — 13/09/2026
+
+### Ce que les catalogues concurrents ont appris
+
+**Orthopeca** (`orthopeca.com`, 59,99 € dans le bloc Shopping) : le catalogue est
+majoritairement composé de **chaussures de sécurité** — S1P, anti-perforation, bottes
+isolantes 6KV, baskets à bout renforcé, 45,99 à 89,90 €. Ils utilisent l'angle
+« orthopédique » pour vendre de l'EPI. **Persona professionnel : hors périmètre (§3).**
+À noter au passage, ils pratiquent l'upsell numérique : « E-book OFFERT — Guide Pratique
+pour une Marche… » à 0,00 € puis 9,99 €.
+
+**SerenitaHome** (`serenitahome.com`, 89,90 € dans le bloc Shopping) : **ce n'est pas une
+boutique de chaussures.** C'est une boutique de **maintien à domicile senior** :
+
+| Produit | Prix |
+|---|---:|
+| Scooter électrique senior 4 roues pliable | **1 599,90 €** |
+| Fauteuil releveur électrique 2 moteurs | 1 590,90 € |
+| Fauteuil releveur massage et chauffage | 799,90 € |
+| Fauteuil releveur velours côtelé | 697,90 € |
+| Déambulateur grandes roues | 299,90 € |
+| Masseur de jambes à compression | 249,90 € |
+| Masseur de jambes complet chauffant | 189,90 € |
+| Canne-siège automatique 2-en-1 | 189,99 € |
+| Vélo elliptique assis senior | 198,90 € |
+| Table de lit inclinable | 69,90 € |
+| Pilulier électronique à alarme | 39,90 € |
+
+Ticket **40 à 1 600 €**, univers multi-collections, acheteur particulier, produit qui
+demande de la pédagogie et de l'aide au choix. **C'est une piste à part entière, et son
+profil coche les critères mieux que les chaussures.** Réserve à lever avant tout
+enthousiasme : déambulateurs et fauteuils releveurs relèvent en partie de la LPPR et du
+remboursement — le même piège que celui qui a tué la famille semelle. À mesurer.
+
+### Fiches ajoutées au Sheet
+
+| Produit | Coût | Niveau A | Prix cible | Marge |
+|---|---:|---|---:|---:|
+| Baskets à bout large pour gros pieds | 22,19 € | 4,7 · 74 avis · +500 · 7 var | 64,90 € | 42,71 € (66 %) |
+| Chaussures respirantes confort femme | 10,99 € | 4,9 · 93 avis · ~329 · 5 var | 44,90 € | 33,91 € (76 %) |
+| Semelles 5D à mémoire de forme | **1,69 €** | 4,9 · **1 366 avis** · **+10 000** · 8 var | 14,90 € | 13,21 € (**89 %**) |
+
+La semelle est vendue de 1 à 16 paires, le prix varie fortement selon le lot. **Accessoire
+de panier uniquement** : son marché SEO est mort (CPC 0,00 €), mais elle se vend sur la
+fiche produit.
+
+### État de l'onglet
+
+**7 collections, 29 produits dont 20 avec lien AliExpress**, 9 fiches en niveau A,
+arborescence à **36 480** contre un seuil de 30 000 → **PASS**.
+
+### Familles du concurrent encore à sourcer
+
+Relevées sur Confortal et Orthopeca, inscrites dans le Sheet comme collection à couvrir :
+bottes d'hiver confort (59,99 € chez Confortal) · claquettes anti-douleurs (29,90 €,
+48 variantes) · sabots et mules (45,99 €) · bottines imperméables (45,99 €) · masseur de
+pieds EMS (39,90 €).
