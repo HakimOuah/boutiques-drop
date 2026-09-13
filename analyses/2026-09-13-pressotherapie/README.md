@@ -152,3 +152,48 @@ la plus forte de la chasse. Contre : demande à la limite du seuil, la moitié d
 cherche une séance, et le segment sport est tenu par des marques.
 
 Reste ouvert : sourcing niveau A de trois à quatre paires de bottes.
+
+## 7. Sourcing AliExpress — fiches ouvertes, 13/09/2026
+
+Recherche `air compression leg massager boots`, tri par commandes. Chaque fiche ouverte dans
+Chrome, **prise européenne sélectionnée** avant de relever le prix (le prix change avec la prise).
+
+### Retenues — niveau A
+
+| Fiche | Vendeur | Note · ventes | Variante prise UE | Prix | Livraison |
+|---|---|---|---|---:|---|
+| [1005010596864436](https://fr.aliexpress.com/item/1005010596864436.html) | jinkairui Official Store, Choice | 4,7 · 145 avis · 900+ vendus | Short / Long | **65,69 €** / 72,99 € | 18–23 sept. |
+| [1005012736715868](https://fr.aliexpress.com/item/1005012736715868.html) | — | 4,9 · 282 ventes | Basic / TypeC / universel / Extended | **67,69 €** / 72,99 / 69,39 / 82,99 € | septembre |
+| [1005009887176888](https://fr.aliexpress.com/item/1005009887176888.html) | HAOYUE BEAUTY Store | 4,4 · 156 évaluations | Lengthen | **68,39 €** | septembre |
+| [1005010155077198](https://fr.aliexpress.com/item/1005010155077198.html) | Choice | 4,9 · 60 avis · 391 ventes | Lengthen, 6 chambres | **82,99 €** | 18–22 sept. |
+| [1005012540888778](https://fr.aliexpress.com/item/1005012540888778.html) | expédié depuis la France | 4,9 · 37 avis · 212 ventes | Prise UE seule | **274,69 €** (barré 356,90) | 15–23 sept. |
+
+### Écartées
+
+| Fiche | Motif |
+|---|---|
+| [1005008660079890](https://fr.aliexpress.com/item/1005008660079890.html) (89,99 €) | **Aucune prise européenne** : UK, US, AU seulement |
+| [1005005726036120](https://fr.aliexpress.com/item/1005005726036120.html) VamsLuna, chauffant (≈ 106 €) | **Aucune prise européenne** : AU, US, UK |
+| [1005010375977339](https://fr.aliexpress.com/item/1005010375977339.html) sans fil (192,51 €) | **Non livrable** à l'adresse française |
+| [1005007345468030](https://fr.aliexpress.com/item/1005007345468030.html) | Masseur de mollets, pas une botte |
+| [1005008721318536](https://fr.aliexpress.com/item/1005008721318536.html) Jinkairui Marque+ (94,39 €) | Niveau B : pas de sélecteur de prise, alimentation non confirmée |
+
+### Lecture
+
+- **Coût d'une paire standard : 65 à 83 € TTC livrée**, prise UE, livraison gratuite en une
+  dizaine de jours. Le chiffre de 70,39 € repéré en niveau B tombe dans la fourchette.
+- **Point de vigilance nouveau : la prise.** Sur les huit fiches, deux n'ont pas de prise
+  européenne et le prix affiché par défaut est souvent celui d'une prise UK ou AU. Toute
+  importation DSers doit forcer la variante UE.
+- **Stock européen possible mais sans marge** : la seule fiche expédiée de France coûte
+  274,69 €, au niveau du prix de vente des indépendants.
+- **Marge indicative.** Comparable « juste en dessous » : Dreo Tech à 199,97 €. Vente à 189 € sur
+  une paire à 65,69–72,99 € : **116 à 123 € avant publicité**, soit ≈ 97 à 103 € HT après TVA sur la
+  vente. À 199 € : 126 à 133 €. Avec un CPC de 0,50–0,60 € et un taux de conversion de 1,5–2 %,
+  le coût d'acquisition tourne autour de 25 à 40 € : la marge tient.
+- **Conformité** : les titres fournisseurs promettent « drainage lymphatique », « varices »,
+  « rééducation ». Aucune de ces mentions ne passe sur la fiche boutique. Le marquage CE n'est
+  pas vérifiable depuis AliExpress : à demander au vendeur avant tout lancement.
+
+Le sourcing ne bloque pas le dossier. Le statut reste **`REVIEW_PREQUALIFICATION`, décision
+Hakim**, et la seule réserve est la demande.
