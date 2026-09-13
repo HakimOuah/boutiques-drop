@@ -272,3 +272,34 @@ Relevées sur Confortal et Orthopeca, inscrites dans le Sheet comme collection �
 bottes d'hiver confort (59,99 € chez Confortal) · claquettes anti-douleurs (29,90 €,
 48 variantes) · sabots et mules (45,99 €) · bottines imperméables (45,99 €) · masseur de
 pieds EMS (39,90 €).
+
+## 12. Familles complémentaires sourcées — 13/09/2026
+
+| Produit | Coût | Niveau A | Prix cible | Marge |
+|---|---:|---|---:|---:|
+| Mules orthopédiques femme | 11,19 € | 4,9 · 207 avis · +1 000 · 5 var | 34,90 € | 23,71 € (68 %) |
+| Chaussons d'été respirants anti-odeur | 12,89 € | 4,3 · 237 avis · +1 000 · 4 var | 34,90 € | 22,01 € (63 %) |
+| Masseur de pieds électrique chauffant | 12,29 € | 4,9 · 39 avis · +500 · 2 var | 44,90 € | 32,61 € (73 %) |
+
+La famille **claquettes et mules** se source entre **7,19 et 15,49 €** — Confortal vend la
+sienne 29,90 € avec 48 variantes, c'est son best-seller apparent.
+
+La famille **bien-être du pied** est la plus rentable : les tapis de massage EMS se
+sourcent à **4,59–6,59 € avec +2 000 à +3 000 ventes**, quand Confortal vend son masseur
+39,90 €. À noter aussi, les bottes de compression pour jambes à **70,39 € avec +10 000
+ventes** — c'est le produit que SerenitaHome vend **249,90 €**.
+
+### État final de l'onglet
+
+| | |
+|---|---|
+| Collections | **9** |
+| Produits | **32** dont 23 avec lien AliExpress |
+| **Fiches en niveau A** | **12** |
+| Marge brute moyenne | **28,67 €** |
+| Arborescence | **36 480** contre un seuil de 30 000 → **PASS** |
+
+### Reste à sourcer
+
+Bottes d'hiver confort (59,99 € chez Confortal) · bottines imperméables (45,99 € chez
+Orthopeca) · sabots Boston (45,99 €). Inscrites dans le Sheet comme collection à couvrir.
