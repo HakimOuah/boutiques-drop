@@ -49,3 +49,4 @@
 - [Architecture Hermes : un modèle par rôle](architecture-hermes-modele-par-role.md) — Hermes retenu contre Grok Bot ; delegate_task n'a pas de modèle par tâche, seuls les profils l'ont (30/08)
 - [Instrumentation, boucle d'apprentissage](instrumentation-boucle-apprentissage.md) — ce qui se perd si on ne le capture pas ; marge Bonum Vitae jamais chiffrée, 6 produits Tuftéo sous le coût concurrent (30/08)
 - [Accès GMC Noirmont & limites connecteur Shopify](acces-gmc-noirmont-et-limites-connecteur-shopify.md) — GMC 5840460291 = profil Chrome « Noirmont » seulement ; pas de bouton « Demander un examen » ; MCP Shopify : policies/dépublication impossibles, fileUpdate en lot se verrouille (01/09)
+- [Tracking Purchase Tuftéo (Google & YouTube)](tracking-purchase-google-youtube-tufteo.md) — Purchase jamais reçu jusqu'au 10/09, réparé après « Toujours activé » + réassociation ; lire « Toutes les actions de conversion », jamais tester en session admin
