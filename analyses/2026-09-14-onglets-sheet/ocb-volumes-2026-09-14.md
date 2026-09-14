@@ -1,8 +1,30 @@
 # Mesures OCB (OneClickBrand, données SEMrush FR) — 14/09/2026
 
-12 analyses « Analyse mots-clés » lancées depuis la session de Hakim (quota approfondi). Exports bruts : mot-clé → volume mensuel FR. Report dans le Sheet : onglets **Style biker** (total 24 010, REVIEW sous seuil 30 000) et **Paravent** (collection rotin/bambou : « paravent bambou » 1 000 → total 53 070).
+21 analyses « Analyse mots-clés » lancées depuis la session de Hakim. Exports bruts : mot-clé → volume mensuel FR.
 
-Règles appliquées au report : un mot-clé par ligne, jamais de total de famille ; exclus l'équipement homologué/protection, les marques, les stickers « kit déco », les requêtes informationnelles ; variantes quasi identiques comptées une fois.
+Report dans le Sheet :
+- **Style biker** : 24 010, sous le seuil de 30 000, archivé.
+- **Bagagerie moto** : recentrage décidé par Hakim le 14/09, tête « sacoche moto » 2 900, 14 collections, total 29 040, REVIEW.
+- **Paravent** : collection bambou « paravent bambou » 1 000, total 53 070.
+
+Règles de report : un mot-clé par ligne, jamais de total de famille. Exclus : équipement homologué ou de protection, marques (Givi, Shad, Kappa, Bagster, SW-Motech, Dafy, BMW, KTM, CF Moto, Harley, Zara…), stickers « kit déco », requêtes informationnelles. Variantes d'ordre de mots (« bagagerie moto » / « moto bagagerie ») comptées une fois.
+
+## bagagerie moto vol=1000
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | moto bagagerie | 880 |
+| courte | bagagerie moto souple | 320 |
+| courte | sangle bagagerie moto | 140 |
+| courte | bagagerie moto trail | 110 |
+| courte | bagagerie souple moto trail | 110 |
+| courte | bagagerie moto vintage | 90 |
+| courte | bagagerie moto shad | 70 |
+| courte | bagagerie cf moto 450 mt | 70 |
+| courte | bagagerie cf moto 800 mt | 70 |
+| courte | support bagagerie moto | 70 |
+| longue | bagagerie moto givi | 50 |
+| longue | bagagerie moto bmw | 50 |
 
 ## bague biker vol=210
 
@@ -205,6 +227,46 @@ Règles appliquées au report : un mot-clé par ligne, jamais de total de famill
 | courte | patch moto vintage | 50 |
 | courte | patch biker france | 50 |
 
+## porte bagage moto vol=320
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | porte bagage moto | 390 |
+| courte | porte-bagage universel moto | 140 |
+| courte | sacoche porte bagage moto | 110 |
+| courte | sac porte bagage moto | 110 |
+| courte | porte paquet top case | 90 |
+| courte | porte bagage top case moto | 70 |
+| courte | porte-bagage moto adaptable | 50 |
+| courte | sacoche porte bagage moto vintage | 50 |
+
+## sac à dos moto vol=1000
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | sac à dos moto | 1000 |
+| courte | sac à dos étanche moto | 720 |
+| courte | sac a dos casque moto | 480 |
+| courte | sac à dos moto homologué | 140 |
+| courte | sac à dos moto vintage | 140 |
+| courte | sac à dos moto led | 90 |
+| courte | sac à dos airbag moto | 90 |
+| courte | sac à dos imperméable moto | 90 |
+| courte | sac à dos moto dainese | 70 |
+| courte | meilleur sac à dos moto étanche | 70 |
+| longue | sac à dos moto alpinestar | 70 |
+| longue | sac à dos moto dafy | 50 |
+| longue | sac à dos moto femme | 50 |
+
+## sac casque moto vol=480
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | sac casque moto | 720 |
+| courte | sac a dos casque moto | 480 |
+| courte | sac casque moto antivol | 170 |
+| courte | sac transport casque moto | 70 |
+
 ## sacoche moto vol=2900
 
 | Traîne | Mot-clé | Volume |
@@ -300,6 +362,109 @@ Règles appliquées au report : un mot-clé par ligne, jamais de total de famill
 | longue | sacoche cavaliere moto dafy | 50 |
 | longue | sacoche porte bagage moto vintage | 50 |
 | longue | sacoche latérale moto trail | 50 |
+
+## sacoche reservoir moto vol=1300
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | sacoche reservoir moto | 1600 |
+| courte | sacoche réservoir moto magnétique | 170 |
+| courte | sacoche réservoir moto tanklock | 90 |
+| courte | mini sacoche reservoir moto | 90 |
+| courte | petite sacoche réservoir moto | 90 |
+| courte | sacoche reservoir moto aimanté | 70 |
+| courte | sacoche reservoir chien moto | 70 |
+| courte | sacoche reservoir aimantée pour moto | 70 |
+| courte | sacoche réservoir moto givi | 70 |
+| courte | sacoche reservoir moto vintage | 50 |
+| longue | sacoche réservoir moto fixation bouchon | 50 |
+| longue | sacoche réservoir moto bagster | 50 |
+
+## sacoche scooter vol=140
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | tablier scooter | 480 |
+| courte | valise scooter | 260 |
+| courte | sacoche scooter | 170 |
+
+## top case moto vol=3600
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | top case moto | 4400 |
+| courte | top case moto 2 casques | 320 |
+| courte | top case chien moto | 260 |
+| courte | top case moto pour chien 20 kg | 260 |
+| courte | top case givi moto | 170 |
+| courte | top case moto pour chien 30 kg | 170 |
+| courte | top case moto pour chien 10kg | 170 |
+| courte | top case moto pour chien 10 kg | 140 |
+| courte | top case moto 125 | 110 |
+| courte | dafy moto top case | 110 |
+| longue | top case moto pour chien 15 kg | 110 |
+| longue | top case cf moto 450 mt | 110 |
+| longue | top case aluminium moto | 90 |
+| longue | top case souple moto | 90 |
+| longue | top case alu moto | 90 |
+| longue | porte bagage top case moto | 70 |
+| longue | top case cf moto 700 mt | 70 |
+| longue | top case moto shad | 70 |
+| longue | comment monter sur une moto avec top case | 70 |
+| longue | top case cf moto | 70 |
+| longue | petit top case moto | 70 |
+| longue | top case moto vintage | 70 |
+| longue | top case moto grand volume | 70 |
+| longue | top case cuir moto | 50 |
+| longue | top case moto bmw | 50 |
+| longue | comment monter sur une moto passager avec top case | 50 |
+| longue | top case valise moto | 50 |
+| longue | mini top case moto | 50 |
+| longue | top case 2 casques dafy moto | 50 |
+| longue | top case lateral moto | 50 |
+| longue | top case cf moto 800 mt | 50 |
+| longue | top case moto occasion | 50 |
+| longue | top case moto pour chien 40 kg | 50 |
+| longue | top case moto custom | 50 |
+
+## top case scooter vol=880
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | top case scooter | 1000 |
+| courte | top case scooter 125 | 140 |
+| courte | top case scooter 50cc | 110 |
+| courte | top case scooter universel | 70 |
+| courte | top case scooter 50 | 70 |
+| courte | housse scooter mp3 500 avec top case | 50 |
+| courte | top case chien scooter | 50 |
+
+## valise moto vol=880
+
+| Traîne | Mot-clé | Volume |
+|---|---|---:|
+| courte | valise moto | 1000 |
+| courte | valise laterale moto | 320 |
+| courte | valise moto souple | 210 |
+| courte | valise moto bmw | 170 |
+| courte | valise moto universelle | 140 |
+| courte | valise moto shad | 140 |
+| courte | valise givi moto | 110 |
+| courte | valise aluminium moto | 90 |
+| courte | sac intérieur valise moto bmw | 90 |
+| courte | valise alu moto | 90 |
+| longue | valise rigide moto | 70 |
+| longue | sac interieur valise moto | 70 |
+| longue | support valise moto universel | 70 |
+| longue | protection valise moto | 50 |
+| longue | valise kappa moto | 50 |
+| longue | valise moto guzzi v85tt | 50 |
+| longue | top case valise moto | 50 |
+| longue | valise cf moto 700 mt | 50 |
+| longue | support valise moto | 50 |
+| longue | valise cf moto 800 mt | 50 |
+| longue | valise cavaliere moto | 50 |
+| longue | valise latérale moto universelle | 50 |
 
 ## veste biker cuir homme vol=90
 
