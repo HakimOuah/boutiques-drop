@@ -232,3 +232,37 @@ de base.
 TWISTERCK, COMHOMA et Miroir Home ont assez de photos clients pour se passer d'échantillon.
 
 Notes QA reportées dans la colonne Notes de l'onglet (31 lignes).
+
+## 8. Doublons retirés et prix ajustés — 14/09/2026
+
+**Doublons retirés.**
+
+- **Doublons d'usine** : Superaly Home et Anajqaqia (teddy à oreilles) sont remplacés par **Rosahqnda**, déclinée
+  en coloris. Comanlai (bouclette à bascule bois) est remplacé par **Simurq**. IXan06 (photos non conformes) est
+  retiré ; `siège à bascule` (480) passe « à sourcer ».
+- **Même fiche et même variante sur deux mots-clés** : la seconde ligne garde son mot-clé et son volume, mais
+  pointe vers la fiche propriétaire, sans lien propre. Elles sont 10 : blanc bouclette, confortable XXL,
+  rocking chair scandinave, relax inclinable, haut de gamme, tissu, électrique design, avec repose-pieds,
+  meilleur, beige.
+- **Erreur de mappage corrigée** : `fauteuil relax électrique cuir` pointait sur le relax électrique tissu
+  Local Depot. Il pointe désormais sur COMHOMA électrique (420,06 €, revêtement à vérifier, cf. similicuir de
+  la fiche TV).
+
+**Prix ajustés (juste sous le comparable Sunlay / Oscille / IKEA).**
+
+| Fiche | Avant | Après | Comparable |
+|---|---:|---:|---|
+| Teddy à oreilles Rosahqnda, Heimart, Rosahqnda agneau | 199–249 € | **179 €** | Sunlay FLUVÉA / SOFFÉA 219 € |
+| Teddy dossier haut appui-tête HoerFuriy | 229 € | **199 €** | Sunlay NORVÉA 259 € |
+| Bouclette bascule bois Simurq | 249–299 € | **199 €** | Sunlay SOFFÉA 219 € |
+| Allaitement velours Simurq | 279 € | **219 €** | Alramo VELTA 229 € |
+| Clone Poäng SoBuy | 199 € | **139 €** | IKEA Poäng 149 € |
+| Papasan à pouf Acekool | 329 € | **259 €** | Sunlay PAPÉVA 279 € |
+| TWISTERCK papasan rotin | 299 € | **269 €** | Sunlay OVÉA 279 € |
+| Bois massif Anajqaqia | 329 € | **279 €** | Sunlay ACACÉA 289 € |
+| Papasan rotin Local Depot | 259 € | **249 €** | Sunlay MAXXÉA 259 € |
+| Relax pivotant similicuir Kekayi | 599 € | **499 €** | Oscille LAGOM 519 € |
+
+**Catalogue après nettoyage** : 84 lignes produit, dont **73 avec lien** (43 fiches uniques) et 11 mots-clés
+pointés ou à sourcer. Coût médian 142 €, prix cible médian 249 €, **marge brute médiane 104 € (43 %)**,
+contre 122 € (46 %) avant ajustement.
