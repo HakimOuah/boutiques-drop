@@ -651,3 +651,60 @@ est donc atteint ou tout proche selon la règle de découpage retenue.
 1. Re-sourcer la fiche inaccessible `1005007542492451`.
 2. Google Trends sur `robinet` et `colonne douche` avant tout GO.
 3. Décision humaine de Hakim : `GO_FINAL` / `WATCH_FINAL` / `NO_GO_FINAL`.
+
+## Bras « Ads » repris via le MCP TrendTrack — 14/09/2026
+
+Recherche `search_google_ads_library` : Google, audience France, diffusion ≥ 120 jours, app Simprosys,
+d'abord toutes plateformes (tri par ancienneté, lot pollué par un artefact de date 2021-10-25), puis
+**Shopping trié par portée** (dates cohérentes). 41 annonceurs caractérisés, catalogues vérifiés en
+`products.json`. 160 crédits consommés, 1 939 restants à ce stade, puis 1 949 affichés après
+l'instruction Bbchoupette : l'écart vient de l'ordre de lecture des soldes.
+
+### Les annonceurs de la vue Hakim, enfin identifiés
+
+| Annonceur | Boutique | Ancienneté max | Univers | Catalogue | Statut |
+|---|---|---:|---|---|---|
+| SHOPADVENTURE | laboutiquedubracelet.fr | **919 j** | Bracelets de montre connectée, 419 annonces Google + Meta, multi-pays UE | 250+ produits, médiane 39,99 € | Écarté (ticket) — preuve que l'univers tient en Ads longue durée |
+| Mathieu Stanowski | **puzzido.com** | 120 j | **Puzzle 3D bois** | 87 produits, médiane 58,90 € | Preuve versée au dossier puzzle 3D (GO conditionnel du 08/08) |
+| BROTHER&SISTER UNITED | dodoetlune.com | 190 j | Bébé, sommeil | 7 produits, 19,99 € | Écarté |
+| ARRAJJ VENTURES | maison-du-sac.com · le-mitigeur.com | 118 j | Généraliste · robinetterie | 250 · 146 produits | Écarté · déjà couvert (robinetterie) |
+| DAUMAS ENZO | lumio-o.com · le-petit-luminaire.com | — | Luminaires | — | Exclu (Lumière Matière) |
+
+### Découvertes de la recherche Shopping
+
+| Boutique | Annonces · ancienneté max | Univers | Médiane prix | Lecture |
+|---|---|---|---:|---|
+| **plaquedeces.fr** | 79 · **1 083 j** | Plaques funéraires personnalisées | **87 €** | Idée déjà **qualifiée volume** au registre (salve 01/08 : ≥ 15 k, KD 58–62, niveau 0) ; Codex : famille 69 200 FR |
+| **muralconcept.fr** | 153 · **1 646 j** | Papier peint panoramique sur mesure | **360 €** | Déjà au registre **« À APPROFONDIR »** (40 500 exact ; le sur-mesure guidé est le standard, une dizaine de spécialistes DTC installés) |
+| **boutique-biker.com** | 12–14 · **1 466 j** | Équipement biker (casques, bottes, gants) | **159,90 €** | **Absent du registre** (seuls la surselle moto STOP et les outils d'atelier moto y figurent) |
+| lesacbandouliere.fr | 3 · 617 j | Sacoches cuir | 49,90 € | Au plancher ; maroquinerie déjà couverte |
+| leoetviolette.com | 3 · 962 j | Sacs façon luxe | 470 € | ⚠ risque contrefaçon (noms évoquant des sacs de créateurs) |
+| surplus-militaires.fr | 20 · 500 j | Surplus militaire | 82,90 € | Écarté (équipement militaire, registre) |
+| outdoortoys.fr | 38 · 1 280 j | Portiques et aires de jeux | 1 079 € | Revendeur allemand établi, pour mémoire |
+| lamaisonduchapeau, chevaliere-prestige, diyara, latelierdufoulard, lacompagniedelapeluche, bebeetbambin, jouvio | 9–72 · 321–1 404 j | Chapeaux, chevalières, bijoux prénom, foulards, peluches, bébé, gadgets | 20–43 € | Écartés (ticket) |
+| gardpro, sybotanica, isinwheel, ciarra, fiido, arthur-aston, sports-tech + marques UK/AU | — | Marques établies | — | Exclus |
+
+**Lecture** : la durée d'annonce distingue bien les offres rentables, mais la moitié des plus anciennes
+sont des marques. Chez les indépendants, les tickets élevés et durables sont **personnalisés ou sur
+mesure** (plaques funéraires, papier peint panoramique), avec deux dossiers déjà ouverts au registre.
+Seul l'équipement biker est une piste neuve.
+
+## Bbchoupette — bbchoupette.com — **vivier** — 14/09/2026
+
+Dropshipping catalogue, exploitant probablement canadien ciblant la France : un seul vendor, noms maison
+en ™. Créée en mai 2023, **22 400 visites/mois (FR 79 %)**, 30 annonces Google (Search dominant) et
+**100 annonces Meta** : le filtre « sans pixel Meta » n'est pas étanche. 520 produits, 93 collections,
+médiane 34,90 € (74 % sous 50 €).
+
+| Famille | Produits | Prix | Lecture |
+|---|---:|---|---|
+| Book Nook / maison miniature / puzzle 3D bois | ≈ 40 | 55–100 € | **Déjà au registre** : puzzle 3D bois GO conditionnel (08/08), 85 fiches sourcées |
+| Microscope enfant | 40 | 20–70 € | Libre |
+| Appareil photo enfant | 11 | 35–90 € | Libre, saturation probable |
+| Montre GPS / connectée enfant | 13 | 25–90 € | Libre, terrain sensible (localisation d'enfant, marques) |
+| Sac à dos / cartable | 14 | 30–80 € | Déjà écarté (fenêtre de rentrée) |
+| Éveil, Montessori, mathématiques, veilleuses | ≈ 140 | 15–70 € | Ticket bas |
+
+Pairs français : jeuxpourtoi, tresorsdeveil, babysblou, mon-jouet-educatif, tous sous 2 500 visites.
+**Verdict : vivier.** Le modèle catalogue jouets éducatifs marche, mais la meilleure famille est déjà
+instruite et le reste est sous le plancher ou sensible.
