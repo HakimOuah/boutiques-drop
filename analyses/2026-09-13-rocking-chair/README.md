@@ -166,3 +166,17 @@ fiches (coussin 2, COMHOMA inclinable 5, IXan06 5).
 **Avant toute décision** : commande échantillon sur deux ou trois fiches clés (TWISTERCK rotin,
 Local Depot électrique, un teddy Superaly ou Simurq) pour établir la qualité perçue à 229–349 €.
 C'est la condition de reprise écrite le 02/08.
+
+### Contrôle des pages publiques dans Chrome — 14/09/2026
+
+Chrome répond de nouveau après la fin de l'agent ChatGPT. Les 46 fiches ont été rouvertes sur le site
+public :
+
+- **45 en ligne**, prix publics conformes aux prix DS (Miroir Home 99,94 € public contre 118,41 € DS,
+  Domelino 125,58 € contre 94,73 € : les promotions jouent dans les deux sens).
+- **1 introuvable** : Superaly 1005012518456918, remplacée par **Superaly Home 1005012379632546**
+  (teddy gris clair, 138,48 €, Allemagne, en ligne).
+- Le lien direct `fr.aliexpress.com/item/…` de TWISTERCK renvoyait « page introuvable » alors que
+  `www.aliexpress.com/item/…` s'ouvre : **tous les liens du Sheet passent au format `www`**.
+
+Reste non fait : relecture des photos et avis photo (qualité perçue), condition de reprise du 02/08.
