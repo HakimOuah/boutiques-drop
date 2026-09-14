@@ -180,3 +180,55 @@ public :
   `www.aliexpress.com/item/…` s'ouvre : **tous les liens du Sheet passent au format `www`**.
 
 Reste non fait : relecture des photos et avis photo (qualité perçue), condition de reprise du 02/08.
+
+## 7. Contrôle qualité — photos et avis, 14/09/2026
+
+Avis lus via l'API publique `feedback.aliexpress.com/pc/searchEvaluation.do` (jusqu'à 60 par fiche,
+16 fiches), photos clients et galeries vendeur relues en planches.
+
+### Fiches avec preuve réelle (photos clients conformes)
+
+| Fiche | Avis | Ce que montrent photos et avis | Verdict |
+|---|---|---|---|
+| **TWISTERCK** papasan à bascule rotin | 76 (★4,8), 31 photos | Conforme : papasan XXL, cadre métal + rotin PE, coussin capitonné épais. Très confortable, bien emballé. Tissu un peu rugueux, montage en force, **inclinaison très prononcée** (lounge plus qu'assise) | ✅ la plus sûre |
+| **COMHOMA** relax massant | 72 (★4,5), 14 photos | Conforme : recliner à oreilles, porte-gobelets. Montage facile, 2 colis. Vibration bruyante, **pas de chauffage malgré la description**, commandes non indépendantes | ✅ fiable, style recliner US |
+| **COMHOMA** fauteuil TV | 52 (★4,5), 14 photos | Conforme, recliner noir. **Similicuir vendu comme cuir** (avis 1★ « trompeur »), 2 « inconfortable » | ⚠ ne jamais écrire « cuir » |
+| **Local Depot** relax électrique | 25 (★4,7), 6 photos | Conforme, sobre. **Carton GARVEE** : marque Amazon rebadgée. Un moteur arrivé cassé, retour à la charge du client | ⚠ SAV électrique à cadrer |
+| **Miroir Home** fauteuil œuf suspendu | 17 (★4,9), 5 photos | Conforme, robuste, housse incluse, assise un peu courte | ✅ |
+| **SoBuy** FST16 | 12 (★4,8), 7 photos | **Clone IKEA Poäng** (bois cintré). Carton éventré | ⚠ ancre Poäng 149 € : prix ≤ 139 € |
+| **SucceBuy** zéro gravité | 50 (★4,8) | Chaise type camping, très confortable ; **rouille à la pluie** | entrée de gamme |
+| **IXan06** rembourré | 3, 5 photos | Photos d'un fauteuil inclinable à panneaux, **bascule non visible** | ❌ à écarter ou vérifier |
+
+### Le cœur teddy / allaitement : aucune preuve, et des doublons d'usine
+
+Les fiches teddy, bouclette et allaitement (celles qui font le catalogue Sunlay/Oscille) ont **zéro
+photo client**. Leurs galeries sont des **rendus 3D** ou des images reprises d'annonces Amazon.
+
+La relecture montre surtout que **plusieurs vendeurs vendent le même modèle d'usine** :
+
+- **Teddy capitonné à oreilles, piètement métal + patins bois** : Rosahqnda (83 €), Superaly Home
+  (138 €), Anajqaqia (107 €). Modèle aussi vendu sur Amazon autour de 100–140 €. On garde **Rosahqnda**
+  en coloris ; les deux autres lignes sont des doublons.
+- **Bouclette dossier haut, bascule bois, poche latérale** : Simurq (128 €) = Comanlai (165 €),
+  mêmes rendus. On garde **Simurq** ; Comanlai est à retirer.
+- **Différenciants** à tester en échantillon : Fangange (glider bouclette à repose-pieds escamotable,
+  patins noyer, 169 €) et Anajqaqia velours côtelé à pouf (185 €, proche Sunlay LAMBÉA/CORDÉA
+  319–359 €).
+
+### Conséquence sur le prix
+
+Ces teddy génériques sont les mêmes que TEDDÉA (159 €), FLUVÉA et SOFFÉA (219 €) chez Sunlay. La
+règle « juste sous le comparable » les place à **149–199 €**, pas aux 229–299 € de l'onglet. Avec des
+coûts de 83 à 128 €, la marge unitaire tombe à ≈ 60–100 €. **La marge se fait sur les modèles
+différenciants et prouvés** (TWISTERCK, relax, glider Fangange, côtelé Anajqaqia), pas sur le teddy
+de base.
+
+### Échantillons recommandés (par ordre)
+
+1. **Rosahqnda teddy à oreilles** (83 €) : c'est le modèle générique du marché ; il faut savoir s'il tient à 179 €.
+2. **Fangange glider allaitement** (169 €) : c'est le différenciant de la collection allaitement.
+3. **Anajqaqia velours côtelé + pouf** (185 €) : c'est le différenciant design.
+
+TWISTERCK, COMHOMA et Miroir Home ont assez de photos clients pour se passer d'échantillon.
+
+Notes QA reportées dans la colonne Notes de l'onglet (31 lignes).
