@@ -8,7 +8,7 @@ repo: boutique-pipeline
 axes: [ecommerce]
 agent: claude-code
 statut_editorial: brut
-commit:
+commit: d4d27ba
 ---
 # Maison Noirmont fermée trois jours après son déban
 
