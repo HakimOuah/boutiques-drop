@@ -20,13 +20,13 @@ NDD + Workspace → 1 Gmail = 1 Shopify = 1 Merchant Center = 1 Google Ads
   → FullBranding après 1–4 semaines selon niveau MC
 ```
 
-**Simprosys** est le pont Shopify ↔ MC ↔ Ads pour une **nouvelle** muse. L'app **Google & YouTube** reste le flux **déjà vivant** du parc (Tuftéo, Bonum Vitae, Noirmont) : on ne le migre pas. Ne pas proposer Google & YouTube pour un lancement SMP.
+**Simprosys** est le pont Shopify ↔ MC ↔ Ads pour une **nouvelle** muse. L'app **Google & YouTube** reste le flux **déjà vivant** du parc (Tuftéo, Bonum Vitae) : on ne le migre pas. Ne pas proposer Google & YouTube pour un lancement SMP.
 
 **Méthode Z est hors chemin.** Hors ban GMC non débannissable, on ne l'exécute pas. Process : vidéo formation — ne pas inventer.
 
 **Idée centrale : Google note des signaux, pas des intentions.** La review est machine d'abord, humain ensuite. La misrepresentation est **cumulative**. Les explications ne compensent jamais un mismatch.
 
-**Socle qui reste non négociable :** boutique terminée avant review GMC · délais / retours / coordonnées cohérents partout · une seule demande de review après audit complet · stabilité 30 jours · délais publiés = ops réelle · aucune modification rétroactive du parc déjà validé (Tuftéo, Bonum Vitae, Noirmont — Bien Brûlé est fermé).
+**Socle qui reste non négociable :** boutique terminée avant review GMC · délais / retours / coordonnées cohérents partout · une seule demande de review après audit complet · stabilité 30 jours · délais publiés = ops réelle · aucune modification rétroactive du parc déjà validé (Tuftéo, Bonum Vitae — Bien Brûlé et Noirmont sont fermés).
 
 Plusieurs heuristiques Terry (domaine 30 j, Gmail chauffé 5–7 j, IP dédiée, n° unique, 5 produits / collection) sont des **précautions possibles**, pas des gates officiels. Ne pas les imposer comme des exigences démontrées.
 

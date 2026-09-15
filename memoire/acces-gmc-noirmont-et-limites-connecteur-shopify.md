@@ -1,6 +1,6 @@
 ---
 name: acces-gmc-noirmont-et-limites-connecteur-shopify
-description: "GMC Noirmont 5840460291 = profil Chrome « Noirmont » uniquement ; le connecteur Shopify MCP ne peut ni écrire les policies, ni dépublier, et fileUpdate en lot se verrouille (productUpdateMedia contourne pour les alt)"
+description: "Noirmont FERMÉE le 15/09 (GMC 5840460291 fermé) ; limites du connecteur Shopify toujours valables : pas de policies ni de dépublication, pas d écriture sur le thème MAIN, fileUpdate en lot se verrouille"
 metadata: 
   node_type: memory
   type: project
@@ -8,7 +8,7 @@ metadata:
   modified: 2026-09-01T22:02:26.371Z
 ---
 
-**GMC Maison Noirmont (5840460291, entité OH Ventures)** n'est visible que depuis le profil Chrome
+**[Archivé — boutique et GMC fermés le 15/09/2026]** **GMC Maison Noirmont (5840460291, entité OH Ventures)** n'est visible que depuis le profil Chrome
 **« Noirmont »** — extension Claude installée dedans le 01/09/2026, il apparaît alors comme un second
 navigateur dans `list_connected_browsers` (demander à Hakim lequel choisir). Les trois comptes Google du
 profil principal (`ouahabi.hakim@`, `hakim.ouahabi4@`, `vpnpascher@`) n'y ont pas accès ; le principal ne

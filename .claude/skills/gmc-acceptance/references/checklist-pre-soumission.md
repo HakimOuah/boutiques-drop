@@ -2,7 +2,7 @@
 
 Consolidation Terry Ecom + décisions Hakim 24/08 soir (avis Codex validé). Un item en échec = corriger avant d'avancer.
 
-Parc déjà validé (Tuftéo, Bonum Vitae, Noirmont) : ne pas rétro-corriger. Bien Brûlé est fermé — boutique, GMC et Ads — depuis début juillet 2026.
+Parc déjà validé (Tuftéo, Bonum Vitae) : ne pas rétro-corriger. Fermées, boutique + GMC + Ads : Bien Brûlé (début juillet 2026), Maison Noirmont (15/09/2026, re-suspendue trois jours après un déban).
 
 Les items marqués **(précaution)** ne sont pas des gates officiels Google.
 
