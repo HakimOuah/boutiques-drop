@@ -1,0 +1,888 @@
+{
+    "version": "0.1.20260902",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "3.6602 sec.",
+    "cost": 0.09,
+    "tasks_count": 1,
+    "tasks_error": 0,
+    "tasks": [
+        {
+            "id": "09121650-1621-0367-0000-4b508fdca36f",
+            "status_code": 20000,
+            "status_message": "Ok.",
+            "time": "3.5642 sec.",
+            "cost": 0.09,
+            "result_count": 12,
+            "path": [
+                "v3",
+                "keywords_data",
+                "google_ads",
+                "search_volume",
+                "live"
+            ],
+            "data": {
+                "api": "keywords_data",
+                "function": "search_volume",
+                "se": "google_ads",
+                "keywords": [
+                    "tufting",
+                    "lampe à lave",
+                    "lampe a lave",
+                    "lava lamp",
+                    "lampe lave",
+                    "lampes à lave",
+                    "lampes a lave",
+                    "lava lamps",
+                    "lampes lave",
+                    "lampe a lave geante",
+                    "lampe à lave géante",
+                    "lampe lave magique"
+                ],
+                "location_name": "France",
+                "language_name": "French"
+            },
+            "result": [
+                {
+                    "keyword": "tufting",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 97,
+                    "search_volume": 12100,
+                    "low_top_of_page_bid": 0.58,
+                    "high_top_of_page_bid": 2.55,
+                    "cpc": 1.45,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 8100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 14800
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampe à lave",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 6600,
+                    "low_top_of_page_bid": 0.12,
+                    "high_top_of_page_bid": 0.65,
+                    "cpc": 0.34,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 12100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 5400
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampe a lave",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 22200,
+                    "low_top_of_page_bid": 0.11,
+                    "high_top_of_page_bid": 0.52,
+                    "cpc": 0.29,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 12100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 18100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 18100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 22200
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 60500
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 40500
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 22200
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 18100
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lava lamp",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 3600,
+                    "low_top_of_page_bid": 0.06,
+                    "high_top_of_page_bid": 0.34,
+                    "cpc": 0.27,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 1900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 1900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 8100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 4400
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampe lave",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 9900,
+                    "low_top_of_page_bid": 0.1,
+                    "high_top_of_page_bid": 0.44,
+                    "cpc": 0.26,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 8100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 33100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 27100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 8100
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampes à lave",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 6600,
+                    "low_top_of_page_bid": 0.12,
+                    "high_top_of_page_bid": 0.65,
+                    "cpc": 0.34,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 12100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 5400
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampes a lave",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 22200,
+                    "low_top_of_page_bid": 0.11,
+                    "high_top_of_page_bid": 0.52,
+                    "cpc": 0.29,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 12100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 14800
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 18100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 18100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 22200
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 60500
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 40500
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 22200
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 18100
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lava lamps",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 3600,
+                    "low_top_of_page_bid": 0.06,
+                    "high_top_of_page_bid": 0.34,
+                    "cpc": 0.27,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 1900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 1900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 3600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 2900
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 8100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 4400
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampes lave",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 9900,
+                    "low_top_of_page_bid": 0.1,
+                    "high_top_of_page_bid": 0.44,
+                    "cpc": 0.26,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 4400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 5400
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 8100
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 6600
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 33100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 27100
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 9900
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 8100
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampe a lave geante",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 720,
+                    "low_top_of_page_bid": 0.09,
+                    "high_top_of_page_bid": 0.56,
+                    "cpc": 0.19,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 720
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 390
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 320
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 590
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 480
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 720
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 720
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 720
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 1000
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 1000
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 720
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 590
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampe à lave géante",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": "HIGH",
+                    "competition_index": 100,
+                    "search_volume": 210,
+                    "low_top_of_page_bid": 0.12,
+                    "high_top_of_page_bid": 0.41,
+                    "cpc": 0.19,
+                    "monthly_searches": [
+                        {
+                            "year": 2026,
+                            "month": 8,
+                            "search_volume": 210
+                        },
+                        {
+                            "year": 2026,
+                            "month": 7,
+                            "search_volume": 110
+                        },
+                        {
+                            "year": 2026,
+                            "month": 6,
+                            "search_volume": 90
+                        },
+                        {
+                            "year": 2026,
+                            "month": 5,
+                            "search_volume": 140
+                        },
+                        {
+                            "year": 2026,
+                            "month": 4,
+                            "search_volume": 170
+                        },
+                        {
+                            "year": 2026,
+                            "month": 3,
+                            "search_volume": 170
+                        },
+                        {
+                            "year": 2026,
+                            "month": 2,
+                            "search_volume": 210
+                        },
+                        {
+                            "year": 2026,
+                            "month": 1,
+                            "search_volume": 260
+                        },
+                        {
+                            "year": 2025,
+                            "month": 12,
+                            "search_volume": 390
+                        },
+                        {
+                            "year": 2025,
+                            "month": 11,
+                            "search_volume": 260
+                        },
+                        {
+                            "year": 2025,
+                            "month": 10,
+                            "search_volume": 210
+                        },
+                        {
+                            "year": 2025,
+                            "month": 9,
+                            "search_volume": 210
+                        }
+                    ]
+                },
+                {
+                    "keyword": "lampe lave magique",
+                    "spell": null,
+                    "location_code": 2250,
+                    "language_code": "fr",
+                    "search_partners": false,
+                    "competition": null,
+                    "competition_index": null,
+                    "search_volume": null,
+                    "low_top_of_page_bid": null,
+                    "high_top_of_page_bid": null,
+                    "cpc": null,
+                    "monthly_searches": null
+                }
+            ]
+        }
+    ]
+}
