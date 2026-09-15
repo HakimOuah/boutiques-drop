@@ -1,0 +1,78 @@
+{
+  "never": [
+    "sort=orders",
+    "search_and_normalize"
+  ],
+  "queries": [
+    {
+      "q": "triplette petanque",
+      "sort": "price_desc",
+      "hit": "1005012068439562 metal pétanque 3/6/8 — seul listing boules retenu"
+    },
+    {
+      "q": "73mm petanque",
+      "sort": "price_asc",
+      "hit": "ping-pong edge tape / pneumatic fittings — 0 boules"
+    },
+    {
+      "q": "petanque steel balls",
+      "sort": "price_desc",
+      "hit": "dumpling/tapioca factories + billiard tables — rabattement boules"
+    },
+    {
+      "q": "boules petanque metal",
+      "sort": "price_desc",
+      "hit": "dumpling factories + billiard — 0 pétanque"
+    },
+    {
+      "q": "french petanque set",
+      "sort": "price_asc",
+      "hit": "frites / chess / spatulas — 0 boules"
+    },
+    {
+      "q": "bocce petanque metal",
+      "sort": "price_asc",
+      "hit": "poker coins / badges — 0 boules"
+    },
+    {
+      "q": "jeu de boules acier",
+      "sort": "price_desc",
+      "hit": "inflatables / meatball machines — 0 pétanque"
+    },
+    {
+      "q": "cochonnet petanque",
+      "sort": "price_desc",
+      "hit": "TPE car mats (cochonnet→tpe?) — 0 cochonnet"
+    },
+    {
+      "q": "petanque 8pcs metal",
+      "sort": "price_desc",
+      "hit": "mechanical pencils 8pcs — 0 boules"
+    },
+    {
+      "q": "boules striees petanque",
+      "sort": "price_desc",
+      "hit": "billiard / pickleball — 0 striées"
+    },
+    {
+      "q": "bocce ball steel 8pcs",
+      "sort": "price_asc",
+      "hit": "jig heads / stainless bearing balls — 0 pétanque"
+    }
+  ],
+  "serp": [
+    {
+      "q": "boules de petanque site:aliexpress.com/item",
+      "note": "Google ignored site: on p1 (news/youtube); p2 merch tshirts + snippet of 1005012068439562"
+    },
+    {
+      "q": "\"petanque\" \"boules\" site:www.aliexpress.com/item/",
+      "note": "ignored; phone batteries"
+    },
+    {
+      "q": "\"Ensemble de boules de pétanque\" aliexpress",
+      "note": "DataForSEO 40106 partial"
+    }
+  ],
+  "ue_warehouse": 0
+}
