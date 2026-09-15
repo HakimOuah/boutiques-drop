@@ -1,6 +1,6 @@
 ---
 name: recherche-mots-cles
-description: Mesure de demande France via l'API DataForSEO (gate étude rapide), volume OCB/Semrush valide en approfondissement, sonde prix Google Shopping et vérification SERP page 1. Utiliser quand Hakim demande des volumes, un cluster, une sonde prix ou le métier MOTS-CLÉS. Ne consolide pas l’arborescence, ne source pas, ne prononce pas le GO.
+description: Mesure de demande France via l'API DataForSEO (gate étude rapide), volume OCB/Semrush valide en approfondissement, sonde prix Google Shopping, Google Trends (FAIL/PAS ENCORE hors saison) et vérification SERP page 1. Utiliser quand Hakim demande des volumes, un cluster, une sonde prix, une courbe Trends ou le métier MOTS-CLÉS. Ne consolide pas l’arborescence, ne source pas, ne prononce pas le GO.
 ---
 
 # Recherche de mots-clés — mesurer et vérifier
@@ -15,13 +15,13 @@ Le brief d'idéation doit porter le **mode**. Sans mode : le demander avant de m
 
 ## Mission A — mesure express (PRODUIT PUR)
 
-Volume du cluster + sonde prix + **Google Trends** (platitude ~5 ans). Applique OUTIL, CONTRÔLES, SONDE PRIX, TRENDS. Rends. Pas d'étude qualitative, pas d'AliExpress.
+Volume du cluster + sonde prix + **Google Trends** (DataForSEO France, courbe ~5 ans). Applique OUTIL, CONTRÔLES, SONDE PRIX, TRENDS. Rends. Pas d'étude qualitative, pas d'AliExpress.
 
 Niveaux hiérarchiques **séparés, jamais additionnés** : formulation particulière → produit fini → catégorie parente.
 
 ## Mission B — analyse de marché (UNIVERS / boutique)
 
-Cinq étapes, dans cet ordre. Détail et catalogue des pièges : `METHODE-ANALYSE-MARCHE.md` (étapes 1–5 + 9). Source qui fait foi. **Google Trends** : socle ≥ 8 mois, Q4 peut amplifier ; un univers 100 % saisonnier = le noter, Hakim tranche.
+Cinq étapes, dans cet ordre. Détail et catalogue des pièges : `METHODE-ANALYSE-MARCHE.md` (étapes 1–5 + 9). Source qui fait foi. **Google Trends** (DataForSEO France, tête + 1–2 collections, 5 ans) : forme plat / saisonnier / haussier. Saisonnier **et** hors fenêtre de vente → **FAIL / PAS ENCORE**. Un socle DFS ≥ 30k hors saison **ne suffit pas** à lancer maintenant. Ads 6 mois = case à part.
 
 1. **Catalogue, jamais page blanche.** Par produit : mot de la maison · mot d’un particulier · catégorie parente. Un mot qu’aucune page ne servirait n’entre pas. Piège : vocabulaire de métier (« cadran stérile ») = 0 en France.
 2. **Mesurer par lots.** OUTIL + CONTRÔLES.
@@ -51,6 +51,8 @@ Le script interroge `dataforseo_labs/google/keyword_suggestions` (correspondance
 
 Volume de tête précis : `keywords_data/google_ads/search_volume/live`, `location_name: France`, `language_name: French`. Environ 0,09 USD pour 180 mots-clés.
 
+Courbe : `keywords_data/google_trends/explore/live` — même France / français, `type: web`, `time_range: past_5_years`, tête + 1–2 collections. Voir section Google Trends.
+
 **Endpoint interdit : `keywords_data/google_ads/keywords_for_keywords`.** Il filtre sémantiquement sur l'intention publicitaire et masque les contaminations. Testé le 29/08 sur `diffuseur` : **0 ligne coiffure sur 1 774**, alors que `diffuseur cheveux` vaut 18 100. Un outil qui nettoie à notre place nous rend aveugles au piège qu'on cherche.
 
 Relève : volume, CPC **avec sa devise**, intention disponible, date de lecture, endpoint et paramètres France/français. Ne fabrique aucun indice de difficulté absent de la réponse.
@@ -63,7 +65,7 @@ Conséquence : on somme des **idées normalisées**, une par groupe, en retenant
 
 Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne les convertis pas et n'applique aucun seuil historique provenant d'une autre base.
 
-**Chemin SMP (UNIVERS, 11/09/2026).** Gates **durs** au vert : volume + CPC. La passe Ads est **importante** mais **pas un couperet**. Tu fournis les chiffres ; Hakim applique.
+**Chemin SMP (UNIVERS, 11/09/2026).** Gates **durs** au vert : volume + CPC + **courbe Trends** (pas saisonnier hors fenêtre). La passe Ads est **importante** mais **pas un couperet**. Tu fournis les chiffres ; Hakim applique — sauf **FAIL / PAS ENCORE** saison, que tu flags.
 
 1. **Volume** — deux conditions **ensemble** pour le gate étude rapide, lues dans **DataForSEO** : niche **≥ 30 000**/mois **net de marque seulement** **et** **≥ 800**/mois sur le mot-clé courte traîne de chaque collection (sous 800 → la page ne se crée pas). Un volume **OCB/Semrush** **compte** (l’écrire à côté, source nommée) ; il ne remplace pas ce gate. On **retire** les recherches « marque + produit ». On **compte** fautes d'orthographe, graphies sans accent, variantes (MAX du bucket, pas somme). Brut ≠ règle. Après SERP ≠ règle : une SERP généraliste **ne retranche pas** ce volume. PRODUIT PUR 12 500 = hors SMP.
 2. **Concurrents Google Ads — passe importante, pas un couperet.** Faire une passe **TrendTrack** (prioritaire) **ou** **Google Ads Transparency** (`https://adstransparency.google.com`). Ligne : domaine, First Seen / Time Running, Search vs Shopping, source TT ou Transparency. **6 mois = point de repère** de preuve solide. Un concurrent actif **3, 4 ou 5 mois reste intéressant** — décrire, **interdit** de jeter (« 5 mois ≠ 6 mois donc je prends pas »). Recommandé, **pas obligatoire** : ligne manquante ou tenure < 180 j = **gap**, **pas** un STOP, **pas** un veto du gate volume. Le minage **60–90 j** n’est pas cette passe.
@@ -73,6 +75,7 @@ Les seuils chiffrés DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md`. Ne l
    - **High ticket** (prix +500 €) : CPC **0,60 à 1 €**
 
    Illustration (pas un seuil) : CPC moyen 0,60 € → 60 € = 100 visites si 1 % de conv = 1 achat ; panier moyen 250 € ; marge ×2 → 125 € de marge − 60 € = 65 € par article ; CPA = CPC / taux de conversion = 60 €.
+4. **Google Trends** — DataForSEO France, tête + 1–2 collections, 5 ans. Forme plat / saisonnier / haussier. Saisonnier **et** hors fenêtre → **FAIL / PAS ENCORE**. DFS ≥ 30k hors saison **≠** lancer maintenant. **Ads 6 mois = case à part**, pas ce veto.
 
 ### OneClickBrand — volume Semrush valide, surtout en approfondissement
 
@@ -119,14 +122,20 @@ Six contrôles, un par un :
 
 Précautions à écrire : carrousel Shopping ≠ annonces Search texte · page 1 seulement · % de retrait = estimation, pas mesure.
 
-## Google Trends — avant tout GO (Hakim l'applique, tu mesures)
+## Google Trends — DataForSEO France, avant tout GO
 
-`trends.google.fr`, France, 5 ans, la formulation de tête **et** 1–2 synonymes.
+Endpoint **`keywords_data/google_trends/explore/live`**. `location_name: France`, `language_name: French`, `type: web`, `time_range: past_5_years` (si l’API refuse 5 ans : l’écrire, relire 12 mois, ne pas inventer). `item_types: ["google_trends_graph"]`. **Tête + 1–2 collections** (pas cinq têtes). Les keywords API **n’acceptent pas** `- + = ~ ! : * ( )` etc. → `grille pain`, pas `grille-pain`.
 
-- **PRODUIT PUR :** la courbe doit être un besoin continu. Un pic unique / une chute hors saison = l'écrire. Platitude = continuité.
-- **UNIVERS :** un socle hors Q4 (environ 8 mois au-dessus d'un plancher visible). Le droit d'avoir une bosse oct–janv. Un univers plat 2 mois par an = événementiel, pas boutique.
+Coût : 1 requête Live par lot (jusqu’à 5 mots), pas par mot. Relève : `check_url`, `datetime`, `averages`, série `date_from` / `values` (0–100 relatif au pic du lot).
 
-Tu ne rends pas le GO. Tu décris la forme (plat / bosse Q4 / saison unique / mort).
+Forme à rendre : **plat / saisonnier / haussier** (une bosse Q4 sur un socle le reste de l’année n’est pas une saison unique).
+
+**Chemin SMP (UNIVERS).** Si la demande est **clairement saisonnière** et qu’on est **hors fenêtre de vente** → **FAIL / PAS ENCORE**. Ce n’est pas un STOP définitif : on revient dans la fenêtre. Septembre 2026 : barbecue / glacière = été terminé. Un socle DataForSEO ≥ **30 000** **hors saison ne suffit pas** à lancer maintenant. **Ads 6 mois reste une case à part** (repère recommandé, pas ce veto).
+
+- **PRODUIT PUR :** besoin continu. Pic unique / chute hors saison = l’écrire. Platitude = continuité.
+- **UNIVERS :** même veto saison. Droit à une bosse oct–janv. Un univers plat 2 mois par an = événementiel, pas boutique.
+
+Tu ne rends pas le GO. Tu décris la forme. Hors fenêtre clairement saisonnière = **FAIL / PAS ENCORE**.
 
 ## Sonde prix — Google Shopping France
 
@@ -148,7 +157,7 @@ Fourchettes CPC (chemin SMP, à combiner avec le prix proposé / observé) :
 
 - Tu ne consolides pas par famille, tu ne tranches pas l’arborescence.
 - Tu ne réutilises jamais un chiffre d’un document antérieur sans le remesurer, ou sans date + source. Un 15 500 a circulé neuf fois ; remesuré il valait 20.
-- Tu ne rends aucun GO/STOP. Les seuils DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md` et **Hakim les applique** selon le mode. Tu fournis les chiffres nets, l'endpoint, les paramètres France/français et la forme Trends.
+- Tu ne rends aucun GO. Les seuils DataForSEO vivent dans `PRODUCT-RESEARCH-CRITERIA.md` et **Hakim les applique** selon le mode. Tu fournis les chiffres nets, l'endpoint, les paramètres France/français et la forme Trends. **Exception saison :** clairement saisonnier **et** hors fenêtre = **FAIL / PAS ENCORE** (pas un STOP définitif). DFS ≥ 30k hors saison ≠ lancer maintenant. Ads 6 mois = case à part.
 - Mot ambigu non tranché → fourchette, pas un chiffre.
 - Avant de condamner une famille : comment le client la nomme (« étui » vs « rouleau de voyage »).
 - Un mot-clé se valide sur **trois** critères : volume net, intention SERP, possibilité de l’écrire sans mentir.
@@ -169,7 +178,7 @@ Fourchettes CPC (chemin SMP, à combiner avec le prix proposé / observé) :
 ## Résultats
 tableau : formulation · volume · **source (DataForSEO + endpoint, ou OCB/Semrush)** · CPC + **devise** · intention · niveau hiérarchique · brut/net de marque · date
 sonde prix : fourchette, paliers, vides, comparable, prix proposé · bande (low / mid / high ticket) · CPC vs fourchette
-Google Trends : forme (plat / socle+Q4 / saison unique) · période · formulation
+Google Trends : endpoint `google_trends/explore/live` · France · 5 ans · tête + 1–2 collections · forme (**plat / saisonnier / haussier**) · **FAIL / PAS ENCORE** si saisonnier et hors fenêtre (DFS ≥ 30k hors saison ≠ lancer maintenant) · Ads 6 mois = case à part
 SERP (si faite) : tête · rabattement · retournement · contamination · marque cachée · réparation · dropshippers vs généralistes (100 % généralistes ≠ retrait) · **ligne Ads** (domaine · First Seen / Time Running · Search|Shopping · source) ou **gap** — 6 mois = repère, 3–5 mois intéressant, pas veto
 
 ## Niveau de confiance par ligne
