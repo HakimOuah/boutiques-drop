@@ -2,7 +2,7 @@
 
 Consolidation Terry Ecom + décisions Hakim 24/08 soir (avis Codex validé). Un item en échec = corriger avant d'avancer.
 
-Parc déjà validé (Tuftéo, Bonum Vitae, Noirmont) : ne pas rétro-corriger. Bien Brûlé est fermé — boutique, GMC et Ads — depuis début juillet 2026.
+Parc déjà validé (Tuftéo, Bonum Vitae) : ne pas rétro-corriger sans demande. Bien Brûlé est fermé depuis début juillet 2026, Maison Noirmont depuis le 15/09/2026. Lumière Matière : suspendue le 17/09/2026 pour déclarations trompeuses (voir §6 bis).
 
 Les items marqués **(précaution)** ne sont pas des gates officiels Google.
 
@@ -166,6 +166,52 @@ Produit / trust (causes du ban 23/08)
 - [ ] Handle changé → 301 (pas 404)
 
 Après correction d'un flag GMC : attendre **7–10 j**, pas d'ads.
+
+## 6 bis. Audit de véracité — obligatoire (cas Lumière Matière, 17/09)
+
+La §6 vérifie que le site ne se contredit pas. Celle-ci vérifie qu'il ne ment pas. **Les deux
+sont nécessaires** : Lumière Matière passait la §6 et a été suspendue le lendemain de sa première
+campagne. Lexique détaillé : [`lexique-interdit.md`](lexique-interdit.md).
+
+**Outil**
+- [ ] `python3 .claude/skills/gmc-acceptance/scripts/scan_veracite.py https://<domaine> --email contact@<domaine> --metafields <export.json>` → **0 occurrence bloquante** (faux positifs justifiés par écrit)
+
+**Modèle d'activité** — question à poser à chaque phrase : *est-ce vrai pour un produit qu'on ne touche jamais ?*
+- [ ] Notre histoire / À propos : pas de « boutique parisienne », pas de local, pas d'atelier, pas de conception revendiquée
+- [ ] Politique d'expédition : la préparation ne dit pas « contrôle » ni « emballage » par nous ; aucun transporteur nommé qui n'est pas utilisé de bout en bout
+- [ ] **Origine d'expédition dite** dans la politique d'expédition, la page FAQ et la FAQ de chaque fiche
+- [ ] **Adresse de retour : pays et coût dits** dans la politique de retour, la FAQ et les CGV
+- [ ] Politique de confidentialité : fabricants partenaires hors UE listés comme destinataires
+- [ ] Aucun « l'équipe répond de Paris » / « installée à Paris » si ce n'est pas démontrable
+- [ ] Aucun jargon interne dans la copie client (« attribut fournisseur », « photo fournisseur », « le fournisseur… »)
+
+**Matière et attributs**
+- [ ] Chaque titre relu contre la ligne « Matière : » de sa fiche : aucune matière noble sans preuve (pierre, travertin, laiton, soie, noyer, verre soufflé, fibre naturelle…) → sinon « effet », « aspect », « finition », « teinte »
+- [ ] Même mot dans titre, libellés de variantes, specs, FAQ, `alt`, collection, menu
+- [ ] Nombre ou couleur dans le titre = vrai pour toutes (ou la majorité) des variantes
+- [ ] « LED » seulement si la source est intégrée ou fournie ; aucune E27 nue dans une collection « LED »
+- [ ] Source lumineuse lue sur la plaque, pas sur l'étiquette d'axe (`Max 60 W` = douille)
+
+**Garanties**
+- [ ] 0 icône `verified` / `workspace_premium` / `new_releases`
+- [ ] 0 garantie de photo (« la texture que vous voyez », « celui des photos », « photo réelle »)
+- [ ] 0 proclamation d'honnêteté (« pas de vocabulaire flou », « transparence totale »)
+- [ ] CGV : visuels déclarés comme mises en scène
+
+**Collections**
+- [ ] 0 collection publiée vide (compte en visiteur via `products.json`)
+- [ ] Chaque description de collection décrit les fiches **publiées**, pas les brouillons
+- [ ] Chaque nom de collection correspond à son contenu (« Osier » ≠ rotin, « LED » ≠ E27)
+
+**Détails qui trahissent**
+- [ ] Horaires identiques partout (policy Coordonnées comprise)
+- [ ] 0 `mailto:` vers un autre domaine, même invisible
+- [ ] Liste des moyens de paiement des pages = pictos du footer
+- [ ] Procédure « produit défectueux » identique FAQ / politique
+
+**Porte avant la première campagne**
+- [ ] §6 bis refaite **après** la validation Merchant Center et **avant** la première dépense
+- [ ] Commande test reçue : matière, source lumineuse et délai confirmés sur la pièce
 
 ## 7. Timeline & refus
 
