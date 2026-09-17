@@ -57,6 +57,20 @@ disait déjà « composite » — l'écart avait été vu le 07/09 et laissé.
   « Plafonniers LED » ; « Osier » retiré du menu ; 15 descriptions de collection réécrites sur le
   catalogue public.
 
+## Le trou de la passe du 17/09 : les titres SEO
+
+Les 3 actions faites, le scan est retombé à 0 bloquant. En rescannant les **fiches rendues** plutôt
+que les champs de l'API, 32 alertes sont apparues : **les titres SEO et les méta descriptions
+n'avaient pas suivi les titres produit.** 20 disaient encore « travertin », « laiton », « soie »,
+« osier » ; 5 collections aussi, dont « Applique murale **pierre, travertin** et verre » ; et trois
+méta descriptions annonçaient « LED intégrée, aucune ampoule à prévoir » là où la fiche disait
+« l'ampoule est fournie, une LED 4 W sur douille E27 ».
+
+C'est la balise `<title>` de l'onglet et le résultat Google. Corrigé le jour même : 30 fiches et
+5 collections. Le scanner charge maintenant chaque page publiée pour lire son `<title>` et sa méta
+description — **`products.json` ne les montre pas**, et c'est ce qui a permis au trou de passer deux
+audits. Voir la section « Le titre SEO est un second titre » du lexique.
+
 ## Ce que le connecteur refuse — à faire par Hakim
 
 - **Politiques** (`write_legal_policies` absent) : textes prêts dans

@@ -3,7 +3,7 @@
 
 Cherche les termes et tournures interdits (voir references/lexique-interdit.md) dans :
   - les pages publiques clés (home, pages CMS, policies),
-  - toutes les fiches publiées (titre, corps, via products.json),
+  - toutes les fiches publiées (titre, corps, via products.json) et leur titre SEO rendu,
   - optionnellement les métachamps exportés en JSON (--metafields fichier.json).
 
 Usage :
@@ -12,7 +12,7 @@ Usage :
 Sortie : une ligne par occurrence, groupée par règle. Code de sortie 1 si au moins une
 occurrence bloquante. Un faux positif se justifie dans le rapport d'audit, il ne se tait pas.
 """
-import argparse, html, json, re, sys, urllib.request
+import argparse, html, json, re, sys, time, urllib.error, urllib.request
 
 UA = {"User-Agent": "Mozilla/5.0 (scan-veracite)"}
 
@@ -59,10 +59,20 @@ def scan_prose_matiere(label, txt, hits):
         s_ = max(0, m.start() - 50); e_ = min(len(txt), m.end() + 50)
         hits.append(("alerte", "MAT-PROSE", label, txt[s_:e_].strip(), f"« {m.group(0)} » dans la prose : vérifier qu'il est qualifié ou prouvé"))
 
-def fetch(url):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=40) as r:
-        return r.read().decode("utf-8", "replace")
+def fetch(url, essais=3):
+    """Charge une URL. Shopify renvoie 429 au-delà d'environ deux requêtes par seconde :
+    un scan complet en fait une centaine, donc on temporise et on réessaie."""
+    for n in range(essais):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=40) as r:
+                out = r.read().decode("utf-8", "replace")
+            time.sleep(0.4)
+            return out
+        except urllib.error.HTTPError as ex:
+            if ex.code != 429 or n == essais - 1:
+                raise
+            time.sleep(2 * (n + 1))
 
 def text_of(raw):
     raw = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", raw)
@@ -94,12 +104,36 @@ def scan_title(label, title, hits):
             hits.append(("bloquant", "MAT-TITRE", label, title,
                          f"« {m.group(0)} » affirmé sans qualificatif (effet / aspect / finition) — exige une preuve de matière"))
 
+TITLE_TAG = re.compile(r"<title[^>]*>(.*?)</title>", re.S | re.I)
+META_DESC = re.compile(r"""<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)""", re.I)
+
+def scan_meta(label, page_html, hits):
+    """Scanne le titre SEO et la méta description d'une page rendue.
+
+    Ce sont des champs **distincts** du titre et de la description du produit : corriger un
+    titre par `productUpdate(product: {title})` ne les touche pas. Ce sont eux que Google lit
+    et qui s'affichent dans l'onglet. Angle mort qui a survécu à la passe du 17/09 sur
+    Lumière Matière : 20 titres SEO disaient encore « travertin », « laiton », « soie » alors
+    que les titres produit étaient corrigés, et trois méta descriptions annonçaient une LED
+    intégrée là où la fiche disait l'ampoule fournie.
+    """
+    for rx, quoi in ((TITLE_TAG, "titre SEO"), (META_DESC, "méta description")):
+        m = rx.search(page_html)
+        if not m:
+            continue
+        t = html.unescape(re.sub(r"\s+", " ", m.group(1))).strip()
+        lab = f"{label} ({quoi})"
+        scan(lab, t, hits)
+        scan_title(lab, t, hits) if quoi == "titre SEO" else scan_prose_matiere(lab, t, hits)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("site")
     ap.add_argument("--pages", default="/,/pages/notre-histoire,/pages/faq,/pages/contact,/policies/shipping-policy,/policies/refund-policy,/policies/terms-of-service,/policies/legal-notice,/policies/privacy-policy,/policies/contact-information,/pages/conditions-paiement,/cart")
     ap.add_argument("--email", default=None, help="seul e-mail public autorisé (ex. contact@domaine.fr)")
     ap.add_argument("--metafields", help="JSON {handle: {cle: valeur}} exporté depuis l'Admin")
+    ap.add_argument("--sans-meta", action="store_true",
+                    help="ne pas charger chaque page fiche / collection pour lire son titre SEO")
     a = ap.parse_args()
     site = a.site.rstrip("/")
     allowed = re.escape(a.email or ("contact@" + re.sub(r"^https?://(www\\.)?", "", site)))
@@ -120,6 +154,11 @@ def main():
         scan(lab + " (corps)", text_of(pr.get("body_html") or ""), hits)
         scan_matiere(lab + " (corps)", text_of(pr.get("body_html") or ""), hits)
         scan_prose_matiere(lab + " (corps)", text_of(pr.get("body_html") or ""), hits)
+        if not a.sans_meta:
+            try:
+                scan_meta(lab, fetch(f"{site}/products/{pr['handle']}"), hits)
+            except Exception as ex:
+                hits.append(("alerte", "HTTP", lab, str(ex), "fiche illisible"))
     # collections publiées : vides, maigres, descriptions
     try:
         cols = json.loads(fetch(site + "/collections.json?limit=250")).get("collections", [])
@@ -141,6 +180,11 @@ def main():
         scan_title(lab, c["title"], hits)
         body = text_of(c.get("body_html") or "")
         scan(lab, body, hits); scan_matiere(lab, body, hits); scan_prose_matiere(lab, body, hits)
+        if not a.sans_meta and n != 0:
+            try:
+                scan_meta(lab, fetch(f"{site}/collections/{h}"), hits)
+            except Exception as ex:
+                hits.append(("alerte", "HTTP", lab, str(ex), "collection illisible"))
     if a.metafields:
         for h, mf in json.load(open(a.metafields, encoding="utf-8")).items():
             for k, v in mf.items():

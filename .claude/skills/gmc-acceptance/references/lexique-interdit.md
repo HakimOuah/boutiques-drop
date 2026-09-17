@@ -100,6 +100,27 @@ empilent les mots-clés.
 - **« Max 60 W »** est le calibre d'une douille. Une LED intégrée n'a pas de maximum, elle a une
   puissance. `4W(Max 60W)` = douille E27 + ampoule 4 W fournie, pas « LED intégrée ».
 
+### Le titre SEO est un second titre, et c'est celui que Google lit
+
+Une fiche Shopify porte **deux titres et deux descriptions** : le titre produit, et le titre SEO
+(`seo.title` / `seo.description`, « Référencement des moteurs de recherche » dans l'admin).
+Corriger le premier ne touche pas le second. Le titre SEO est ce qui s'affiche dans l'onglet du
+navigateur, dans le résultat Google et dans l'aperçu de partage — donc **ce que la review lit en
+premier**. Même chose pour les collections.
+
+Sur Lumière Matière, la passe du 17/09 a corrigé 30 titres produit et n'a pas touché les titres
+SEO : **20 disaient encore « travertin », « laiton », « soie », « osier »** pendant que la fiche
+disait « effet travertin » et « monture dorée ». Pire, trois méta descriptions annonçaient
+« LED intégrée, aucune ampoule à prévoir » là où la fiche disait « l'ampoule est fournie, une LED
+4 W sur douille E27 ». Un écart entre le titre d'un onglet et le corps de la même page est le
+mismatch le plus facile à constater qui soit.
+
+**Règle : toute correction de titre, de matière ou de source lumineuse se répercute le même jour
+sur `seo.title` et `seo.description` de la fiche et de la collection.** Et le scan se fait sur la
+**page rendue**, pas sur les champs de l'API : `scan_veracite.py` charge chaque fiche et chaque
+collection publiée pour lire sa balise `<title>` et sa méta description. C'est exactement ce que
+`products.json` ne montre pas.
+
 ---
 
 ## 3. Se porter garant de ce qu'on ne vérifie pas
